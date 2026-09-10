@@ -15,6 +15,7 @@ These observations are empirical evidence. They do not by themselves certify an 
 | v0.2b NO-INLINE | 0 | 207 RomFS replacements + Korean font + one page-mapper IPS record emitted with the old offset convention | Boots; Korean title `태합입지전 V DX` is displayed |
 | v0.2c | 5,518 selected patterns | same old-offset IPS convention | Still fails/freezes |
 | P0N v0.2f | 5,519 intended no-op records | same RomFS/font baseline + page mapper; **old IPS offsets** | Freeze |
+| P0N2 v0.2g | 5,519 true no-op records | same RomFS/font baseline + corrected page mapper; **all IPS offsets mapped+0x100** | **Boots, reaches Korean title, accepts input, reaches next main menu** |
 
 ### Address-ordered half split
 
@@ -46,7 +47,7 @@ All development IPS builds through P0N v0.2f emitted mapped offsets directly wit
 
 This supersedes the earlier interpretation that the P0N failure demonstrated a large-record-count or semantic-inline failure.
 
-### Corrected control: P0N2 v0.2g
+### Corrected control: P0N2 v0.2g — PASSED
 
 Artifact:
 
@@ -56,14 +57,35 @@ Artifact:
 - emitted offset rule: `mapped flat offset + 0x100`
 - page mapper: mapped `0x44650C` -> emitted IPS `0x44660C`
 - static round-trip: VERIFIED; every 5,519 no-op payload equals the original bytes at `(IPS offset - 0x100)`
-- runtime result: **PENDING**
+- runtime result: **PASS — boot, Korean title, button input, and next main menu all reached**
 
-Only this corrected build can answer whether 5,519 no-op IPS records themselves are accepted by the target Eden runtime. Do not rerun P0N v0.2f.
+This establishes the following narrow conclusions:
+
+1. Eden accepts the corrected classic-IPS coordinate convention used by P0N2.
+2. A 5,520-record classic IPS is not intrinsically causing the observed freeze on this test path.
+3. The old P0N freeze is explained by the `-0x100` misapplication and must not be used as a large-record-count failure result.
+4. The corrected page-mapper record coexists with the baseline through the tested menu path, but this is still only path coverage, not exhaustive mapper proof.
+
+### MVI content testing begins
+
+Next diagnostic is `M1A v0.2h`:
+
+- corrected page mapper;
+- 207 RomFS replacements + Korean 64-page font;
+- exactly one real inline replacement;
+- T5K record ID `489`;
+- Japanese: `シナリオを選んでください`;
+- Korean: `시나리오를 선택하세요`;
+- mapped Switch offset: `0x69B6A1`;
+- emitted Eden IPS offset: `0x69B7A1`;
+- all other historical inline candidates absent.
+
+Required runtime route: boot -> title -> main menu -> new game -> scenario-selection screen. Confirm both that the prompt is Korean and that input/game progression remains responsive.
 
 ### Current interpretation
 
-- The dominant confirmed implementation defect is the missing `+0x100` Eden/NSO-header IPS offset shift in all IPS builds through P0N v0.2f.
-- The core builder and P0N diagnostic builder now serialize mapped offsets with the required `+0x100` shift.
+- The dominant confirmed implementation defect in all pre-P0N2 IPS builds was the missing `+0x100` Eden/NSO-header IPS offset shift.
+- P0N2 proves the corrected large-record-count no-op path works through the main menu.
 - Previous IPS-bearing runtime results remain useful historical observations but must not be used as candidate-safety evidence.
-- Semantic inline validation is still required for release quality, but the old runtime failures cannot be cited as proof that the 5,519 mappings were inherently unsafe.
+- Semantic inline validation is still required for release quality; P0N2 does not make the old 5,519 selector safe by itself.
 - Future IPS generators must validate both mapped offsets and emitted Eden IPS offsets separately.
