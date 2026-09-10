@@ -2,21 +2,20 @@
 
 ## 2026-09-11
 
-### Compact Korean single-byte font path mapped; W0 prepared
+### W0 partial pass; W1 render-width diagnostic prepared
 
-- Traced the missing `츠` in `마츠다이라 모토야스` to a PC compact single-byte Korean mechanism rather than a translation omission.
-- T5K R9751/R9752 encode `마츠다이라 모토야스` in a 16-byte fixed field using page-63 single-byte `B2/BD/AA = 마/츠/다`, then normal two-byte Korean for the remainder.
-- Direct BC3 decode of the exact Korean G1T verifies valid source glyph artwork for compact `마/츠/다` and normal two-byte `케/자`; source-font corruption is ruled out for these glyphs.
-- Decoded PC `font_page_limit` semantics: threshold `0xFF -> 0xA0`, making A1+ single-byte codes take the alternate/full-width path.
-- Identified six Switch v1.1.3 semantic counterpart/inlined comparisons at mapped `0x445EAC`, `0x445FC8`, `0x446198`, `0x4472E8`, `0x447344`, `0x447C44`.
-- Added `builder/build_w0_fontwidth.py`; W0 changes only these six `cmp w8,#0x100` instructions to `cmp w8,#0xA1` on top of D5519.
-- Prepared `W0_Taiko5DX_KR_DBG_FONTWIDTH_A1_v0.2m.zip`, SHA-256 `e453d5958793748ebf841f295ef4005a9a612fdbe643439fe9c2a2c0183ea2ad`, 5,526 IPS records total. Runtime pending.
-- A separate `cmp #0x100` in conversion logic around mapped `0x4304F8` is explicitly excluded from this patch family.
+- User runtime-tested `W0 v0.2m` in Eden Android. The build remained stable on the tested route.
+- W0 corrected the previously odd `케/자` rendering in `나야 스케자에몬`.
+- The compact single-byte second glyph in `松平元康` still did not render. Correct transcription is **`마쓰다이라 모토야스`**, with page-63 `B2/BD/AA = 마/쓰/다`; earlier project text saying `마츠다이라` / `BD=츠` was a transcription error and has been corrected in canonical docs.
+- Further Switch disassembly established that JP per-character decode around `0x445C60` already accepts `0xA1..0xDF` as one-byte values, so `BD=쓰` is not dropped at the basic byte-decoding layer.
+- Found a missed text-render/layout compare at mapped `0x44D9D0`: codes `<0x100` are forced to width 8 immediately before the alternate width path and glyph draw/construction call.
+- Prepared `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`, SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`.
+- W1 is W0 plus exactly one edit: mapped `0x44D9D0` / Eden IPS `0x44DAD0`, `cmp w8,#0x100 -> cmp w8,#0xA1`. Static original-byte guard and IPS round-trip pass. Runtime pending.
 
 ### Y0 runtime result: narrow suppression hypothesis incomplete
 
 - User runtime-tested `Y0 v0.2l` in Eden Android.
-- Y0 remained stable, but the garbled small reading rows in protagonist selection and dialogue nameplates **did not disappear**.
+- Y0 remained stable, but the garbled small reading rows in protagonist selection and dialogue nameplates did not disappear.
 - The eight direct `mov w6,#1` call sites to shared routine `0x45B0F8` remain valid static mappings, but they do not control the observed two rows by themselves, or another wrapper/path renders/re-enables them.
 - Do not repeat the eight-site-only suppression attempt. Internal Japanese yomi preservation remains the data policy while the actual visible-row path is deferred behind the higher-impact compact-name/font issue.
 
@@ -43,12 +42,12 @@
 - Pooled date suffix objects identified: `年 0x69785A`, `月 0x68925A`, `日 0x6A3CC6`; pointer table `0x59C730..0x59C768` references them consecutively. Multiple PC records all agree on `년/월/일`.
 - Pooled standalone `城` object identified at `0x6A15DC`, with multiple pointer refs; PC replacements agree on `성`.
 - `清洲`: two T5K padded records with identical replacement `기요스`; Switch has exactly two corresponding fixed-field objects at `0x6AE269` and `0x6AEFE9`.
-- New rule: recover repeated **objects**, not every raw byte match. Require replacement agreement and independent boundary/pointer/stride evidence.
+- New rule: recover repeated objects, not every raw byte match. Require replacement agreement and independent boundary/pointer/stride evidence.
 - Currency `貫/文` remains a separate structural pass because many visible uses are embedded in longer format strings.
 
 ### Canonical documentation advanced
 
-- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/RUNTIME_TEST_RESULTS.md`, `docs/VALIDATION_LEDGER.md`, and `docs/POST_D5519_ANALYSIS.md` so W0 is the current runtime diagnostic and the Y0 result is not repeated as an unresolved test.
+- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/RUNTIME_TEST_RESULTS.md`, `docs/VALIDATION_LEDGER.md`, and `docs/POST_D5519_ANALYSIS.md` so W1 is the current isolated runtime diagnostic.
 
 ## 2026-09-10
 
