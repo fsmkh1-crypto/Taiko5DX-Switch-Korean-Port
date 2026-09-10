@@ -2,6 +2,15 @@
 
 ## 2026-09-10
 
+### M1A corrected real-inline test passed
+
+- User runtime-tested `M1A v0.2h` in Eden Android and progressed successfully through the early scenario/protagonist-selection flow without freeze or forced exit.
+- M1A contains exactly one real T5K inline replacement: `R489`, `シナリオを選んでください` -> `시나리오를 선택하세요`, mapped `0x69B6A1`, Eden IPS `0x69B7A1`.
+- This proves at least one corrected real inline record can coexist with the corrected RomFS/font/page-mapper baseline. It does not certify the historical 5,519-set.
+- Screenshot-visible Korean names/descriptions elsewhere are primarily baseline RomFS/font output and are not being misattributed to R489.
+- Prepared two more independent one-record controls before scaling to 10 records: `M1B v0.2i` (`R674`, `主人公選択` -> `주인공선택`, mapped `0x682DA4`) and `M1C v0.2j` (`R726`, `はじめから` -> `처음부터`, mapped `0x684140`).
+- Updated `PROJECT_STATE.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/VALIDATION_LEDGER.md` so M1A PASS is canonical and the next action is M1B/M1C.
+
 ### P0N2 passed; corrected MVI testing started
 
 - User runtime-tested `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip` in Eden Android.
@@ -77,7 +86,7 @@
 
 ### Still pending
 
-- Additional corrected 1-record MVI tests, then 10/100-record MVI aggregation.
+- Run M1B and M1C independently, then 10/100-record MVI aggregation if they pass.
 - Exact Steam build-9163702 PC EXE for optional PC-binary context/homology work.
 - Full 17,103-record inline correspondence/validation pipeline after Phase 0.
 - 7,494 -> 10,036 Switch mapping table relocation/reference/count patches.
