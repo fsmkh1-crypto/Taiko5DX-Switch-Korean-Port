@@ -4,37 +4,68 @@ This document defines the mandatory diagnosis that precedes implementation of th
 
 ## 1. Why Phase 0 exists
 
-The observed Eden failures are compatible with at least two broad fault classes:
+The observed Eden failures are compatible with several fault classes:
 
-1. **candidate faults** — some PC inline records are mapped to the wrong Switch objects or violate Switch field structure;
-2. **systemic faults** — the patch/build/runtime path has a prerequisite that fails whenever enough or certain Korean inline data is present, independent of whether a particular candidate is semantically correct.
+1. **build/application faults** — generated IPS coordinates or serialization do not match Eden's NSO patch coordinate system;
+2. **candidate faults** — PC inline records are mapped to the wrong Switch objects or violate Switch field structure;
+3. **runtime-prerequisite faults** — semantically correct Korean inline data reaches an unported conversion/validation/runtime path.
 
-The validator is designed to solve class (1). Before investing in the full validator, Phase 0 must test whether class (2) is independently present.
+Phase 0 must separate class (1) before drawing conclusions about classes (2) or (3).
 
-Do not state that "any inline set fails". The actually observed facts are narrower: the old 5,519 set failed, v0.2c still failed, A failed, and B reached title then failed after input.
+## 2. Critical Eden IPS coordinate rule
 
-## 2. Phase 0 order
+Source inspection after the first P0N runtime failure established a previously missing `+0x100` rule.
+
+Eden/Yuzu's NSO loader decompresses the NSO into `codeset.memory`, then constructs a patch image as:
+
+```text
+0x000000..0x0000FF  NSOHeader (0x100 bytes)
+0x000100..          decompressed mapped NSO image
+```
+
+Classic IPS is applied to that header-prefixed patch image. Therefore:
+
+```text
+emitted IPS offset = mapped flat NSO offset + 0x100
+```
+
+Example:
+
+- intended mapped page-mapper offset: `0x44650C`
+- correct Eden IPS offset: `0x44660C`
+
+All test builds through `P0N v0.2f` omitted this shift. Those tests remain historical runtime observations but cannot be used to infer candidate-level safety.
+
+## 3. Phase 0 order
 
 ### P0-A — source identity and reproducible measurements
 
 Run `builder/phase0_probe.py` against the exact Switch `main` and PC patch ZIP. Record input hashes and count units.
 
-If a PC original executable is supplied, it must be checked against the T5K target size/hash before it can be used for PC-RVA neighborhood/homology analysis.
+If a PC original executable is supplied, check it against the T5K target size/hash before using it for PC-RVA neighborhood/homology analysis.
 
-### P0-B — IPS/build-layer control
+### P0-B — corrected IPS/build-layer control
 
-Use a diagnostic build containing the known-good NO-INLINE baseline plus **5,519 no-op inline IPS records** at the historical selected offsets. Each no-op record writes the exact original Switch bytes back to itself. The page mapper remains the only intentional code change.
+The original `P0N v0.2f` attempted 5,519 no-op records but was **not a true no-op at runtime** because every mapped offset was emitted without the required `+0x100`. It froze and thereby exposed the coordinate error.
+
+The corrected control is **`P0N2 v0.2g`**:
+
+- 207 RomFS replacements + Korean font;
+- corrected page-mapper IPS record at `0x44660C` for mapped target `0x44650C`;
+- 5,519 historical inline locations, each writing the original Switch bytes back to itself;
+- every emitted inline IPS offset is mapped offset `+0x100`;
+- 5,520 IPS records total.
 
 Interpretation:
 
-- **boots like NO-INLINE**: record count/classic-IPS packaging/application is not the current failure cause; proceed to content MVI tests;
-- **fails**: stop semantic-validator work and investigate IPS generation/loading/application first.
+- **P0N2 boots**: corrected classic-IPS large-record path is viable; old P0N freeze is explained by the coordinate bug. Proceed to corrected semantic/MVI testing.
+- **P0N2 fails**: isolate corrected page mapper from corrected 5,519 no-op records before any semantic-validator work.
 
-The generated test identifier is `P0N`. Test artifact binaries are not committed to this public repository.
+Do not rerun old `P0N v0.2f`; its hypothesis was invalidated.
 
 ### P0-C — Minimal Viable Inline (MVI)
 
-Only after P0N passes, test a small number of independently selected, very-high-confidence real inline replacements.
+Only after P0N2 passes, test independently selected, very-high-confidence real inline replacements using the corrected `+0x100` emitter.
 
 Do not infer a systemic fault from one failing record. Use several independent candidates from different structural/text blocks.
 
@@ -44,72 +75,61 @@ Recommended progression:
 2. 10-record high-confidence build;
 3. 100-record high-confidence build.
 
-Interpretation must remain conditional:
+Interpretation remains conditional:
 
 - one candidate fails while others pass -> candidate-specific evidence;
-- several structurally independent high-confidence candidates fail on the same transition -> systemic-prerequisite evidence strengthens;
-- 1-record tests pass but a larger set fails -> cumulative/build-path or shared runtime-path hypothesis strengthens;
+- several independent high-confidence candidates fail on the same transition -> runtime-prerequisite evidence strengthens;
+- 1-record tests pass but a larger set fails -> cumulative/shared runtime-path hypothesis strengthens;
 - 100 high-confidence records pass -> proceed with full validator implementation; this still does not prove every candidate safe.
 
 ### P0-D — runtime prerequisite analysis
 
-Before attributing failures solely to bad candidate mappings, inspect the PC runtime descriptors and Switch counterparts, prioritizing:
+Before attributing corrected-offset failures solely to candidate mappings, inspect PC runtime descriptors and Switch counterparts, prioritizing:
 
 1. `mapping_lookup_1A` / `mapping_lookup_2A`;
 2. `runtime_byte_validation`;
 3. `font_page_limit`;
 4. then `ui_width_1~4` and `description_font_1~2` as symptom/reachability requires.
 
-The remaining descriptors are not automatically prerequisites to beginning the validator; their actual semantics and reachability decide priority.
+## 4. Confirmed mapping-loop observation
 
-## 3. Confirmed mapping-loop observation
-
-For fixed Switch v1.1.3 `main`, both known conversion loops still contain the original mapping-count limit `0x1D46 = 7,494`:
+For fixed Switch v1.1.3 `main`, both conversion loops still contain the original mapping-count limit `0x1D46 = 7,494`:
 
 - `0x430350` UTF-16 -> game-code path: count load at `0x4303AC`;
 - `0x4305D0` game-code -> UTF-16 path: count load at `0x430624`.
 
-Manual ARM64 disassembly of the fixed flat image also establishes that a table miss has a defined fallback rather than an immediately undefined return:
+Manual ARM64 disassembly shows defined miss fallbacks:
 
-- UTF-16 -> game-code miss falls back to bytes corresponding to `0x81A1` in the observed routine;
-- game-code -> UTF-16 miss falls back to `U+25A0`.
+- UTF-16 -> game-code miss -> `0x81A1` bytes;
+- game-code -> UTF-16 miss -> `U+25A0`.
 
-Therefore the missing 10,036-entry expansion is a real functional gap, but **it is not presently proven to be the direct freeze mechanism**. It can still break search/sort/compare/save/conversion semantics and must be ported safely; do not use it as a crash conclusion without runtime/use-site evidence.
+The missing 10,036-entry expansion is therefore a real functional gap, but is not yet proven to be a freeze mechanism.
 
-## 4. Build-layer checks
+## 5. Build-layer checks
 
-Classic IPS remains viable for the fixed flat image because mapped end `0xA20430` is below the 24-bit IPS offset ceiling `0xFFFFFF`.
+Classic IPS remains viable because mapped end `0xA20430` plus the `0x100` header prefix remains below `0xFFFFFF`.
 
 Every diagnostic/release IPS generator must:
 
-- reject offsets above `0xFFFFFF`;
-- reject a record beginning at `0x454F46` (`EOF`) unless format handling explicitly changes;
-- reparse the finished IPS;
-- reconstruct the simulated patched image from the emitted IPS and compare it against the intended image/patch plan;
-- distinguish flat NSO mapped offsets from compressed NSO file offsets.
+- keep analysis/PatchPlan offsets in mapped flat-image coordinates;
+- add exactly `0x100` when serializing Eden/Yuzu classic IPS;
+- reject emitted offsets above `0xFFFFFF`;
+- reject emitted record start `0x454F46` (`EOF`) unless the format changes;
+- reparse the final IPS;
+- subtract `0x100` when validating emitted records against the mapped flat image;
+- compare reconstructed post-patch bytes against the intended patch plan;
+- never confuse compressed NSO file offsets, mapped flat offsets, and emitted IPS offsets.
 
-P0N tests the loader/large-record-count path at runtime without introducing any inline content change.
+## 6. Transition to the full validator
 
-## 5. Transition to the full validator
+If P0N2 passes and corrected-offset MVI evidence does not expose a general runtime prerequisite failure, proceed to the full validator under `docs/INLINE_VALIDATION_POLICY.md`.
 
-If P0N passes and MVI evidence does not reveal a general prerequisite failure, proceed to the full validator under `docs/INLINE_VALIDATION_POLICY.md`.
+The validator retains the review-derived structural axes: relocation/reference evidence, `.data` as evidence but not auto-patch target, rodata-wide tail-merge/subsequence checks, local/piecewise homology using order and distance consistency, independent control-code whitelist, shuffled negative controls for `info_len`, set-level invariants, and final emitted-IPS reparse/diff.
 
-The validator must then add the review-derived structural axes:
+Collinearity is strong evidence but not a universal mandatory gate.
 
-- relocation/reference evidence as strong positive evidence, not an absolute requirement;
-- `.data` excluded from auto-patching but retained as an evidence source;
-- rodata-wide tail-merge/subsequence detection;
-- local/piecewise block homology using order **and distance consistency**;
-- multi-match recovery only when ambiguity is actually resolved;
-- independent control-code whitelist frozen before classification;
-- a negative/shuffled control group when choosing `info_len` thresholds;
-- set-level post-patch invariants and nearby-patch interaction checks;
-- final IPS reparse/diff against the intended simulated image.
+## 7. Runtime testing rule
 
-Collinearity is not a universal mandatory gate. Strong independent structural evidence can support a candidate in a reordered block; conversely, collinearity alone cannot make a candidate safe.
+Record every Phase-0 runtime result in `docs/RUNTIME_TEST_RESULTS.md` and `docs/VALIDATION_LEDGER.md`.
 
-## 6. Runtime testing rule
-
-Phase 0 runtime tests answer narrow questions only. Record each result in `docs/RUNTIME_TEST_RESULTS.md` and the validation ledger.
-
-A successful diagnostic run means only that the specific tested hypothesis did not fail on that path. It never promotes an unvalidated candidate to SAFE.
+A successful diagnostic run answers only its narrow hypothesis. It never promotes an unvalidated candidate to SAFE.
