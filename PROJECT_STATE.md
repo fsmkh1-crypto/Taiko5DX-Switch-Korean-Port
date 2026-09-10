@@ -198,6 +198,20 @@ Local builder execution against the fixed 1.1.3 `main` completed successfully an
 
 `CWTDAT_JP.TR5`, the 10,036-entry mapping relocation, the 56 pointer mappings, and remaining UI/runtime counterparts are still pending.
 
+### Eden Android installation constraint
+
+Do **not** assume normal Android file-manager access to Eden's internal folder. In the actual target phone environment, Eden's internal folder was not directly accessible.
+
+For current development ZIPs, the supported install flow is:
+
+1. extract the ZIP into an ordinary accessible location such as Android `Download`;
+2. open the target game's Eden per-game Add-ons screen;
+3. choose `+ Install` -> `Mods and cheats`;
+4. select the extracted mod root directory itself, which must contain `exefs/` and/or `romfs/` directly beneath it;
+5. confirm the mod is listed/enabled, then run with update 1.1.3 active.
+
+Do not tell the user to manually browse into or copy files directly to Eden's hidden/internal Android storage as the default procedure. See `docs/EDEN_ANDROID_TEST_GUIDE.md`.
+
 ## 14. Development output strategy
 
 Primary dev output remains one Eden mod directory continuously replaced during testing:
