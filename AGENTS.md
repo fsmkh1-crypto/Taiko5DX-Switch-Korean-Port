@@ -17,3 +17,5 @@ Operating rules for ChatGPT, Claude, or any other coding/research agent working 
 13. Final end-user frontend is Android APK first. The APK is a separate patch-generation app that accepts the user's extracted Switch 1.1.3 dump and PC Korean patch archive, then emits an Eden-ready mod using user-granted Android Storage Access Framework locations.
 14. Do not create a second independent patch engine for Android. Finish and stabilize the core builder first, then make the APK a frontend/wrapper around the same patch-generation logic.
 15. A Windows CLI/EXE may be added later only as a secondary frontend sharing the same core logic.
+16. **Do not assume direct filesystem access to Eden's internal Android folder.** In the actual target environment the user could not access the Eden folder directly. Development-build instructions must use Eden's own per-game Add-ons installer (`+ Install` -> `Mods and cheats`) with an extracted mod root containing `exefs/` and/or `romfs/`.
+17. Keep `docs/EDEN_ANDROID_TEST_GUIDE.md` aligned with every development build when installation or required test observations change.
