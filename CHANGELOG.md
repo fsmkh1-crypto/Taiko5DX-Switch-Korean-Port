@@ -2,6 +2,17 @@
 
 ## 2026-09-10
 
+### Distribution strategy
+
+- Fixed the primary final user-facing patcher target as an **Android APK**, matching Eden Android as the main usage environment.
+- The APK will be a separate patch-generation app, not an Eden plugin or executable installed inside Eden.
+- Standard inputs remain a complete extracted Switch v1.1.3 dump plus `Taiko5DX_Korean_Patcher_v1.02.zip`.
+- Standard output will be an Eden-ready mod directory containing `exefs/` and `romfs/`.
+- Android Storage Access Framework / user-granted folder access will be used for source selection and output placement.
+- The APK will not embed copyrighted game files, the PC patch archive, translated payloads, fonts, keys, XCI/NSP/NCA, or full dumps.
+- Development order is fixed as core builder first, Android APK frontend second. The APK must reuse the same patch engine rather than fork the logic.
+- A Windows CLI/EXE frontend may be added later only as a secondary convenience layer.
+
 ### Integrated port expansion
 
 - Added direct PE resource extraction for `dinput8.dll` `RT_RCDATA/101`.
