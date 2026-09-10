@@ -16,6 +16,7 @@ These observations are empirical evidence. They do not by themselves certify an 
 | v0.2c | 5,518 selected patterns | same old-offset IPS convention | Still fails/freezes |
 | P0N v0.2f | 5,519 intended no-op records | same RomFS/font baseline + page mapper; **old IPS offsets** | Freeze |
 | P0N2 v0.2g | 5,519 true no-op records | same RomFS/font baseline + corrected page mapper; **all IPS offsets mapped+0x100** | **Boots, reaches Korean title, accepts input, reaches next main menu** |
+| M1A v0.2h | 1 real inline (`R489`) | same corrected RomFS/font/page-mapper baseline | **PASS — reaches scenario selection, scenario description, protagonist selection; remains responsive** |
 
 ### Address-ordered half split
 
@@ -66,9 +67,9 @@ This establishes the following narrow conclusions:
 3. The old P0N freeze is explained by the `-0x100` misapplication and must not be used as a large-record-count failure result.
 4. The corrected page-mapper record coexists with the baseline through the tested menu path, but this is still only path coverage, not exhaustive mapper proof.
 
-### MVI content testing begins
+### MVI content test M1A v0.2h — PASSED
 
-Next diagnostic is `M1A v0.2h`:
+Configuration:
 
 - corrected page mapper;
 - 207 RomFS replacements + Korean 64-page font;
@@ -80,12 +81,24 @@ Next diagnostic is `M1A v0.2h`:
 - emitted Eden IPS offset: `0x69B7A1`;
 - all other historical inline candidates absent.
 
-Required runtime route: boot -> title -> main menu -> new game -> scenario-selection screen. Confirm both that the prompt is Korean and that input/game progression remains responsive.
+User runtime evidence on 2026-09-10 shows successful progression through the corrected build: title/main flow, scenario screen, scenario-description screen, and protagonist-selection screen all render and remain responsive. Screenshots also show extensive Korean text from the RomFS/font baseline. Those baseline Korean strings must not be misattributed to the single M1A inline record.
+
+Narrow conclusion: **at least one corrected real inline record can coexist with the corrected page mapper/RomFS/font baseline without reproducing the former freeze on this route.** This weakens a blanket hypothesis that any real inline content necessarily causes immediate failure. It does not certify the historical 5,519 set or prove that every runtime descriptor is already unnecessary.
+
+### Next MVI controls
+
+Two additional independent one-record builds are prepared before scaling to 10 records:
+
+- `M1B v0.2i`: T5K `R674`, mapped `0x682DA4` / IPS `0x682EA4`, `主人公選択` -> `주인공선택`.
+- `M1C v0.2j`: T5K `R726`, mapped `0x684140` / IPS `0x684240`, `はじめから` -> `처음부터`.
+
+Test each build independently with all other Korean diagnostic mods disabled. If both remain stable and the target label visibly changes, proceed to a corrected 10-record MVI build.
 
 ### Current interpretation
 
 - The dominant confirmed implementation defect in all pre-P0N2 IPS builds was the missing `+0x100` Eden/NSO-header IPS offset shift.
 - P0N2 proves the corrected large-record-count no-op path works through the main menu.
+- M1A proves one corrected real inline replacement can survive substantially beyond the title on the tested route.
 - Previous IPS-bearing runtime results remain useful historical observations but must not be used as candidate-safety evidence.
-- Semantic inline validation is still required for release quality; P0N2 does not make the old 5,519 selector safe by itself.
+- Semantic inline validation is still required for release quality; P0N2/M1A do not make the old 5,519 selector safe by themselves.
 - Future IPS generators must validate both mapped offsets and emitted Eden IPS offsets separately.
