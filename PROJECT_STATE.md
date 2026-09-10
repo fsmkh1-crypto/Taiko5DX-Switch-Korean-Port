@@ -34,8 +34,8 @@ Current runtime screenshots establish several independent residual classes:
 
 1. garbled auxiliary yomi/furigana rows on protagonist-selection and dialogue name UIs;
 2. repeated short Japanese UI objects such as `はい`, date suffixes, `城`, and repeated `清洲` fields missed by unique-only matching;
-3. compact/fixed-field Korean name rendering: `마쓰다이라 모토야스` still loses compact `쓰` on the tested nameplate;
-4. the earlier odd `케/자` shapes in `나야 스케자에몬` are corrected by W0;
+3. the tested Matsudaira nameplate still appears without `쓰`, but this is no longer established as a compact-glyph rendering failure because the historical D5519 unique-only selector did not patch the duplicated `松平元康` fixed fields;
+4. the earlier odd `케/자` shapes in `나야 스케자에몬` disappear in W0, but direct causality to the A1+ single-byte threshold family is not established because `케/자` are normal two-byte Korean codes;
 5. currency format strings containing `貫/文`, which require format-object analysis rather than global replacement.
 
 These are quality/coverage/runtime-behavior issues, not a recurrence of the old immediate freeze.
@@ -81,7 +81,7 @@ Direct BC3 decoding of the exact Korean G1T confirms correct source glyph art fo
 
 The PC runtime descriptor `font_page_limit` changes a threshold from `0xFF` to `0xA0`, making single-byte codes above `0xA0` take the alternate/full-width path.
 
-## 7. W0 result — partial pass
+## 7. W0 result — observation retained, causality downgraded
 
 W0 v0.2m adds six Switch equivalents of the PC A1+ half/fullwidth threshold:
 
@@ -103,14 +103,14 @@ cmp w8,#0x100 -> cmp w8,#0xA1
 Runtime on 2026-09-11:
 
 - stable on the tested route;
-- `나야 스케자에몬` now renders `케/자` correctly;
-- `마쓰다이라 모토야스` still lacks compact `BD=쓰` visually.
+- `나야 스케자에몬` renders `케/자` correctly in W0;
+- the tested Matsudaira nameplate still lacks `쓰` visually.
 
-Therefore the W0 family is functionally relevant but incomplete.
+These observations remain valid. However, do not claim that W0 directly fixed `케/자` through the A1+ single-byte threshold family, and do not use the Matsudaira result as proof that compact `BD=쓰` reached the renderer. The active-name data premise was not established.
 
-## 8. W1 diagnostic — current immediate test
+## 8. W1 result — direct-cause hypothesis invalidated
 
-Further disassembly found an additional text-render/layout gate at mapped `0x44D9D0` that W0 missed:
+Further disassembly found an additional text-render/layout gate at mapped `0x44D9D0`:
 
 ```text
 and w8,w26,#0xffff
@@ -121,9 +121,7 @@ mov w19,#8
 bl 0x44E400
 ```
 
-The old path forces every code `<0x100` to width 8 immediately before glyph construction/draw. This is a high-confidence reason compact page-63 `BD=쓰` can remain visually clipped/absent even after W0.
-
-Prepared W1 v0.2n = W0 + one isolated edit:
+W1 v0.2n changed only this compare on top of W0:
 
 ```text
 mapped 0x44D9D0 : cmp w8,#0x100 -> cmp w8,#0xA1
@@ -137,7 +135,11 @@ Artifact:
 - W0 records 5,526 -> W1 5,527
 - original-byte guard + IPS round-trip PASS.
 
-**Immediate action:** enable W1 alone and check the Matsudaira nameplate for `마쓰다이라 모토야스`; verify `나야 스케자에몬` stays correct and note spacing/clipping/stability.
+Runtime on 2026-09-11: the tested Matsudaira nameplate still appears without `쓰`. Therefore the prior claim that `0x44D9D0` was the direct cause of the missing compact `쓰` is invalidated. The static width gate itself remains real, but its causal link to this symptom is not established.
+
+Subsequent static inspection also found two corresponding Switch `松平元康` fixed fields at mapped `0x729D4D` and `0x729D5E`. The historical D5519 unique-only selector patched neither because the original pattern occurs twice. Therefore the earlier premise that an active compact `BD=쓰` byte was reaching the tested renderer was not established.
+
+Do not repeat W1 as a compact-`쓰` fix without first establishing the actual active name-slot/data-selection path.
 
 ## 9. Repeated short-object recovery already established
 
@@ -182,22 +184,25 @@ The Drive `PC_Original/Taiko5DX.exe` is not the exact T5K target and must not be
 
 Switch functions include `0x430350` UTF-16->game code, `0x4305D0` game code->UTF-16, `0x445C60` per-character decode, `0x445DE0` width selection, `0x446310` segmentation/count, and `0x446420` GetFontTexIndex.
 
-The per-character JP decode around `0x445C60` accepts `0xA1..0xDF` as single-byte values, so compact `BD=쓰` is not being discarded at basic decode. Both conversion loops still search only 7,494 mapping entries; expansion remains needed for full input/conversion behavior.
+The per-character JP decode around `0x445C60` accepts `0xA1..0xDF` as single-byte values, so compact `BD=쓰` is not discarded at basic decode. Both conversion loops still search only 7,494 mapping entries; expansion remains needed for full input/conversion behavior.
 
 ## 13. Validator role after D5519
 
 The full 17,103-record validator remains a release-audit/recovery mechanism, not the primary explanation for the old freeze. It must recover missed repeated/string-pool/fixed-field mappings safely and audit late-game structural risk.
 
-## 14. Priority after W1 result
+## 14. Priority after W1 invalidation
 
-1. evaluate W1 compact `쓰` result and regressions;
-2. integrate the confirmed font-width/render threshold family into the main builder;
-3. trace the actual auxiliary-yomi draw path;
-4. recover high-confidence repeated UI objects;
-5. map `貫/文` complete format objects;
-6. expand 7,494 -> 10,036 conversion mapping;
-7. map remaining runtime descriptors / 56 pointer records / Switch-native CWTDAT changes;
-8. full release validator and broad runtime route.
+1. establish the actual protagonist/nameplate data path: event/person ID -> current name/alias slot -> rendered name object;
+2. survey duplicated person-name/renaming/alias fixed slots that the historical unique-only selector could have skipped, using actual PC replacements as ground truth;
+3. only after that analysis, decide whether any data recovery or runtime renderer change is justified;
+4. trace the actual auxiliary-yomi draw path;
+5. recover high-confidence repeated UI objects;
+6. map `貫/文` complete format objects;
+7. expand 7,494 -> 10,036 conversion mapping;
+8. map remaining runtime descriptors / 56 pointer records / Switch-native CWTDAT changes;
+9. full release validator and broad runtime route.
+
+No new patch/build is authorized by this state update; the next analysis/implementation stage requires a fresh user execution signal.
 
 ## 15. Eden Android / final distribution
 

@@ -14,15 +14,15 @@ Status values:
 | Eden IPS coordinate | Windows runtime writes process RVAs; not applicable directly | Eden NSO classic IPS image | CONFIRMED | emitted offset = mapped flat offset + `0x100`; pre-P0N2 builds were `0x100` early |
 | Runtime page mapper | `EB~F8` -> font pages 49~62 | `GetFontTexIndex` around `0x446420`; rewrite `0x44650C..0x446534` | IMPLEMENTED | correct Eden emitted start `0x44660C`; P0N2/M1A/D5519 routes stable |
 | Character segmentation | accepts game 2-byte ranges | `0x446310` | CONFIRMED | `EB~F8` already inside existing `E0~FC` lead range |
-| Compact A1+ byte decode | accepts compact single-byte Korean codes | JP per-character decode around `0x445C60` | CONFIRMED | native path already accepts `A1..DF` as one-byte values; `BD=쓰` is not dropped at basic decode |
+| Compact A1+ byte decode | accepts compact single-byte Korean codes | JP per-character decode around `0x445C60` | CONFIRMED | native path already accepts `A1..DF` as one-byte values; if `BD=쓰` reaches this layer it is not dropped at basic decode |
 | Game-code -> UTF-16 lookup | search 10,036 mapping entries | `0x4305D0` | NEXT | loop still 7,494 at `0x430624`; miss -> `U+25A0` |
 | UTF-16 -> game-code lookup | search 10,036 mapping entries | `0x430350` | NEXT | loop still 7,494 at `0x4303AC`; miss -> `0x81A1` |
 | Mapping table | 7,494 original + 2,542 Korean | original JP table around `0x799E4E` | NEXT | safe expansion/relocation required for full conversion/input behavior |
 | Runtime byte validation | broaden Korean code behavior | counterpart not finalized | NEXT | PC helper explicitly recognizes `A1..DF` single-byte; map by behavior |
-| Font page/threshold | PC changes half/fullwidth threshold `0xFF -> 0xA0` for repurposed A1+ compact Korean glyphs | W0 six width/layout compares + W1 render-width compare `0x44D9D0` | VALIDATE | W0 is stable and fixes `케/자` but not compact `쓰`; W1 adds the missed immediate pre-draw width gate, runtime pending |
+| Font page/threshold | PC changes half/fullwidth threshold `0xFF -> 0xA0` for repurposed A1+ compact Korean glyphs | W0 six width/layout compares + W1 render-width compare `0x44D9D0` | VALIDATE | static counterparts exist; W1 runtime did not restore the tested Matsudaira `쓰`, so `0x44D9D0` is not established as the direct cause. Do not infer compact-name causality until active name-slot selection is established |
 | Description font 1~2 | runtime font/layout adjustment | counterparts not finalized | NEXT | map by behavior/signature |
-| UI width 1~4 | Korean width/layout adjustment | counterparts not finalized | NEXT | some behavior overlaps W0/W1 width cluster; remaining descriptors still need semantic mapping |
-| Historical 5,519 inline | same-length PC EXE replacements | Switch homologous rodata objects | VALIDATE | D5519 with corrected offsets reaches early gameplay without freeze; working diagnostic baseline, not release-certified |
+| UI width 1~4 | Korean width/layout adjustment | counterparts not finalized | NEXT | some behavior may overlap W0/W1 width cluster; remaining descriptors still need semantic mapping |
+| Historical 5,519 inline | same-length PC EXE replacements | Switch homologous rodata objects | VALIDATE | D5519 with corrected offsets reaches early gameplay without freeze; unique-only selection misses duplicated objects including two `松平元康` fixed fields |
 | Internal yomi fields | PC patch translates many halfwidth-kana readings | Switch name/yomi tables | VALIDATE | 2,099 D5519 records are halfwidth-kana/NUL fields; Switch policy is preserve original yomi internally |
 | Visible yomi line | PC/UI shows auxiliary reading | actual Switch path not yet fully mapped | NEXT | eight direct callers of `0x45B0F8` were confirmed, but Y0 disabling those eight did not suppress observed rows; do not repeat narrow attempt |
 | Repeated `はい` | `はい` -> `예` | standalone object `0x6A15A5` | NEXT | 7 raw matches but one true standalone object; pointer ref `0x58D0D0` |
@@ -63,7 +63,7 @@ B2 BD AA F3 6B EE 93 20 EF 90 F5 E2 F2 7E F1 B8
 
 Correct semantics: `B2/BD/AA = 마/쓰/다`, then normal two-byte `이라 모토야스`. The intended display is `마쓰다이라 모토야스`.
 
-The PC `font_page_limit` descriptor changes threshold `0xFF -> 0xA0`; Switch equivalent threshold is `code < 0xA1` for the halfwidth path.
+The PC `font_page_limit` descriptor changes threshold `0xFF -> 0xA0`; Switch W0/W1 experiments changed selected `code < 0x100` decisions to `code < 0xA1`.
 
 W0 changes six mapped compares:
 
@@ -74,16 +74,18 @@ W0 changes six mapped compares:
 
 `cmp w8,#0x100 -> cmp w8,#0xA1`.
 
-W0 runtime: stable; `케/자` in `나야 스케자에몬` become normal; compact `BD=쓰` remains absent.
+W0 runtime observation: stable; `케/자` in `나야 스케자에몬` render normally; the tested Matsudaira name still lacks `쓰`. Do not treat the `케/자` observation as direct proof of the A1+ single-byte mechanism because those glyphs are normal two-byte Korean codes.
 
-W1 adds a seventh, newly proven text-render decision:
+W1 adds one additional text-render decision:
 
 ```text
 mapped 0x44D9D0 -> Eden IPS 0x44DAD0
 cmp w8,#0x100 -> cmp w8,#0xA1
 ```
 
-At this site the old path hardcodes width 8 for `<0x100` immediately before glyph construction/draw. W1 runtime is pending.
+W1 runtime on 2026-09-11 did not restore `쓰`. The static gate exists, but the hypothesis that it directly caused the missing `쓰` symptom is invalidated.
+
+Static inspection also established two corresponding Switch `松平元康` fixed fields at mapped `0x729D4D` and `0x729D5E`; historical D5519 unique-only matching selected neither because the original pattern is duplicated. Therefore the earlier assumption that an active compact `BD=쓰` byte was reaching the tested renderer was not established.
 
 ## T5K121R resource layout
 
@@ -104,7 +106,7 @@ Target PC EXE: size `18,685,960`, SHA-256 `10C69BAB50D29BAF6311360CAFBF7383716A1
 
 Reverified counts: 17,103 PC records; 8,713 unique originals; 5,523 unique-rodata candidates; 4 overlap skips; 5,519 historical selected patterns covering 5,521 PC records.
 
-Corrected evidence: P0N2 5,519 true no-ops passes; M1A one real inline passes; D5519 all historical 5,519 real replacements passes into normal early gameplay. The set is a useful diagnostic baseline, but `unique exact match` remains insufficient as release-safety proof.
+Corrected evidence: P0N2 5,519 true no-ops passes; M1A one real inline passes; D5519 all historical 5,519 real replacements passes into normal early gameplay. The set is a useful diagnostic baseline, but `unique exact match` remains insufficient as release-safety proof and can omit duplicated fixed objects.
 
 ## Yomi mapping policy and Y0 result
 

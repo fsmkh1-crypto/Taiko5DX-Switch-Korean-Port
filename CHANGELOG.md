@@ -2,6 +2,15 @@
 
 ## 2026-09-11
 
+### W1 runtime result: direct compact-`쓰` cause hypothesis invalidated
+
+- User runtime-tested `W1 v0.2n`; the tested Matsudaira nameplate still appears without `쓰`.
+- The static render-width gate at mapped `0x44D9D0` remains a verified control-flow fact, but the hypothesis that it directly caused the missing compact `쓰` symptom is invalidated.
+- Static inspection found two corresponding Switch `松平元康` fixed fields at mapped `0x729D4D` and `0x729D5E`; the historical D5519 unique-only selector patched neither because the original pattern occurs twice. The preceding `松平竹千代` occurrence was unique and therefore selected.
+- Therefore the prior premise that an active compact `BD=쓰` byte was reaching the tested nameplate renderer was not established. W1 must not be repeated as a compact-`쓰` fix without first tracing the actual event/person -> current name/alias slot -> rendered-name path.
+- W0 observations are retained, but the claim that W0 directly fixed `케/자` through the A1+ single-byte threshold family is downgraded because `케/자` are normal two-byte Korean codes.
+- Updated canonical state/ledger/runtime/analysis/mapping documents only. No new code patch or diagnostic build was created.
+
 ### Project operating rules strengthened
 
 - Strengthened `AGENTS.md` so a single observed symptom must not be patched in isolation once a common mechanism is suspected. Agents must first survey the full root-cause family: affected data classes, code paths, call sites, runtime descriptors, and analogous visible symptoms.
@@ -15,26 +24,26 @@
 ### W0 partial pass; W1 render-width diagnostic prepared
 
 - User runtime-tested `W0 v0.2m` in Eden Android. The build remained stable on the tested route.
-- W0 corrected the previously odd `케/자` rendering in `나야 스케자에몬`.
-- The compact single-byte second glyph in `松平元康` still did not render. Correct transcription is **`마쓰다이라 모토야스`**, with page-63 `B2/BD/AA = 마/쓰/다`; earlier project text saying `마츠다이라` / `BD=츠` was a transcription error and has been corrected in canonical docs.
-- Further Switch disassembly established that JP per-character decode around `0x445C60` already accepts `0xA1..0xDF` as one-byte values, so `BD=쓰` is not dropped at the basic byte-decoding layer.
-- Found a missed text-render/layout compare at mapped `0x44D9D0`: codes `<0x100` are forced to width 8 immediately before the alternate width path and glyph draw/construction call.
+- W0 corrected the previously odd `케/자` rendering in `나야 스케자에몬` as an observed runtime change; direct causality to the A1+ single-byte threshold family is now downgraded by the later W1/name-slot findings.
+- The compact single-byte second glyph in the PC `松平元康` replacement is correctly transcribed as **`쓰`**: page-63 `B2/BD/AA = 마/쓰/다`; earlier project text saying `마츠다이라` / `BD=츠` was a transcription error and has been corrected in canonical docs.
+- Switch disassembly established that JP per-character decode around `0x445C60` already accepts `0xA1..0xDF` as one-byte values, so any `BD=쓰` that reaches that path is not dropped at basic byte decoding.
+- Found a text-render/layout compare at mapped `0x44D9D0`: codes `<0x100` are forced to width 8 immediately before the alternate width path and glyph draw/construction call.
 - Prepared `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`, SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`.
-- W1 is W0 plus exactly one edit: mapped `0x44D9D0` / Eden IPS `0x44DAD0`, `cmp w8,#0x100 -> cmp w8,#0xA1`. Static original-byte guard and IPS round-trip pass. Runtime pending.
+- W1 is W0 plus exactly one edit: mapped `0x44D9D0` / Eden IPS `0x44DAD0`, `cmp w8,#0x100 -> cmp w8,#0xA1`. Static original-byte guard and IPS round-trip pass. Later runtime result is recorded above and invalidates the direct-cause hypothesis.
 
 ### Y0 runtime result: narrow suppression hypothesis incomplete
 
 - User runtime-tested `Y0 v0.2l` in Eden Android.
 - Y0 remained stable, but the garbled small reading rows in protagonist selection and dialogue nameplates did not disappear.
 - The eight direct `mov w6,#1` call sites to shared routine `0x45B0F8` remain valid static mappings, but they do not control the observed two rows by themselves, or another wrapper/path renders/re-enables them.
-- Do not repeat the eight-site-only suppression attempt. Internal Japanese yomi preservation remains the data policy while the actual visible-row path is deferred behind the higher-impact compact-name/font issue.
+- Do not repeat the eight-site-only suppression attempt. Internal Japanese yomi preservation remains the data policy while the actual visible-row path is deferred behind higher-priority name-data analysis.
 
 ### D5519 corrected full-inline diagnostic passed
 
 - User runtime-tested `D5519 v0.2k`, which reuses the historical v0.2a 5,519 real inline payload bytes but fixes every Eden IPS address to `mapped + 0x100`.
 - D5519 reached title, menu, scenario selection/description, protagonist selection, and normal gameplay without freeze/forced exit on the tested route.
 - This strongly shifts the old freeze diagnosis from "the 5,519 inline set is broadly unsafe" to "the pre-P0N2 builds were dominated by the missing +0x100 IPS coordinate bug". The 5,519 set is still not release-certified for all paths.
-- Visible residual issues are now treated as UI/data-coverage problems: garbled auxiliary yomi line, repeated short Japanese UI tokens, repeated place-name fields, and compact/fixed-field Korean name rendering.
+- Visible residual issues are now treated as UI/data-coverage problems: garbled auxiliary yomi line, repeated short Japanese UI tokens, repeated place-name fields, and person-name/fixed-slot coverage/selection issues.
 
 ### Yomi strategy established
 
@@ -57,14 +66,14 @@
 
 ### Canonical documentation advanced
 
-- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/RUNTIME_TEST_RESULTS.md`, `docs/VALIDATION_LEDGER.md`, and `docs/POST_D5519_ANALYSIS.md` so W1 is the current isolated runtime diagnostic.
+- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/RUNTIME_TEST_RESULTS.md`, `docs/VALIDATION_LEDGER.md`, and `docs/POST_D5519_ANALYSIS.md` to record W1's failed direct-cause test and remove the stale runtime-pending state.
 
 ## 2026-09-10
 
 ### Corrected Eden IPS coordinate bug
 
 - Confirmed Eden/Yuzu NSO classic IPS operates on `0x100-byte NSOHeader + decompressed mapped image`.
-- Canonical rule: `emitted IPS offset = mapped flat NSO offset + 0x100`.
+- Canonical rule: `emitted IPS offset = mapped flat offset + 0x100`.
 - Corrected `builder/build.py` and diagnostic builders to preserve mapped offsets internally and add `+0x100` only during IPS serialization.
 - Pre-P0N2 IPS-bearing builds patched `0x100` bytes early; their crashes cannot be used as candidate-safety evidence.
 

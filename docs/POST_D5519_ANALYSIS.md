@@ -18,7 +18,7 @@ Screenshots establish separate problems that must not be conflated:
 2. Small auxiliary reading/yomi rows render as garbled kana/Latin-like glyphs.
 3. Repeated short UI tokens remain Japanese in some places (`はい`, date/currency suffixes, `城`).
 4. Repeated location components such as `清洲` remain Japanese because the historical selector rejected non-unique matches.
-5. Compact/fixed-field Korean names exercise a separate width/render path. `마쓰다이라 모토야스` loses compact `쓰`; the earlier `케/자` display issue in `나야 스케자에몬` is corrected by W0.
+5. The tested Matsudaira nameplate lacks `쓰`; this is no longer established as compact/fixed-field glyph loss because later static evidence shows the historical selector did not patch the duplicated `松平元康` fixed fields. The earlier `케/자` appearance change in `나야 스케자에몬` under W0 remains an observation, not a settled causal proof for the A1+ single-byte threshold family.
 
 ## 3. Yomi policy and Y0 result
 
@@ -97,10 +97,10 @@ cmp w8,#0x100 -> cmp w8,#0xA1
 Runtime result:
 
 - stable on the tested route;
-- `나야 스케자에몬` now renders `케/자` correctly;
-- compact `BD=쓰` in `마쓰다이라 모토야스` remains visually absent.
+- `나야 스케자에몬` renders `케/자` correctly in W0;
+- the tested Matsudaira nameplate still lacks `쓰` visually.
 
-Therefore W0 proves the threshold family is relevant but incomplete.
+These observations remain valid. The former causal interpretation is downgraded: `케/자` are normal two-byte Korean codes rather than direct A1+ single-byte targets, and the Matsudaira observation did not establish that compact `BD=쓰` was present in the active name string reaching the renderer.
 
 Artifact:
 
@@ -112,11 +112,11 @@ Artifact:
 
 Switch function around mapped `0x445C60` performs per-character decoding in the JP path. It recognizes `0x81..0x9F` and `0xE0..0xFC` as two-byte leads, while `0xA1..0xDF` falls through as a valid one-byte code.
 
-Therefore compact `BD=쓰` is not simply rejected or consumed as an invalid byte at this basic decode layer. The remaining failure is later width/layout/render behavior.
+Therefore, if compact `BD=쓰` reaches this decode layer, it is not simply rejected or consumed as an invalid byte. This static fact remains valid, but the later W1 result shows that the tested Matsudaira symptom cannot be used to prove such a byte was actually entering this renderer.
 
-## 7. W1: missed render-width gate
+## 7. W1: render-width gate exists, direct-cause hypothesis invalidated
 
-Further disassembly found a high-confidence text-render decision at mapped `0x44D9D0` that W0 did not include:
+Further disassembly found a text-render decision at mapped `0x44D9D0` that W0 did not include:
 
 ```text
 0x44D9C4  and w8,w26,#0xffff
@@ -127,7 +127,7 @@ Further disassembly found a high-confidence text-render decision at mapped `0x44
 0x44DA30  bl 0x44E400
 ```
 
-Old behavior forces every one-byte code below `0x100`, including page-63 compact Korean codes, to width 8 immediately before glyph construction/draw. This can explain why W0 corrected ordinary `케/자` behavior yet the compact `쓰` remained clipped/absent.
+The static control flow is real: codes below `0x100` take the width-8 path before glyph construction/draw.
 
 W1 v0.2n is W0 plus only:
 
@@ -142,8 +142,13 @@ Artifact:
 - `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`
 - SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`
 - W0 base records 5,526 -> W1 5,527
-- original-byte guard and emitted-IPS round-trip PASS
-- runtime pending.
+- original-byte guard and emitted-IPS round-trip PASS.
+
+Runtime result on 2026-09-11: the tested Matsudaira nameplate still appears without `쓰`. Therefore the prior hypothesis that `0x44D9D0` was the direct cause of the missing compact `쓰` symptom is invalidated.
+
+Subsequent static inspection found two corresponding Switch `松平元康` fixed fields at mapped `0x729D4D` and `0x729D5E`. The historical D5519 unique-only selector patched neither because the same original pattern occurs twice. By contrast, the preceding `松平竹千代` occurrence was unique and therefore selected.
+
+Accordingly, the prior premise that an active compact `BD=쓰` byte was reaching the tested nameplate renderer was not established. Do not repeat W1 as a compact-`쓰` fix until the actual event/person ID -> current name/alias slot -> rendered name path is established.
 
 ## 8. Repeated short strings
 
@@ -170,12 +175,11 @@ A repeated pattern may be recovered only when:
 6. no incompatible overlap remains;
 7. emitted IPS uses `mapped+0x100` and round-trips back to the intended mapped object.
 
-## 10. Immediate implementation sequence
+## 10. Immediate next analysis sequence
 
-1. Runtime-test W1 alone for compact `쓰`, `케/자` regression, spacing and stability.
-2. If W1 succeeds, integrate the confirmed A1+ width/render threshold family into the main builder.
-3. Recover the high-confidence repeated objects (`はい`, `年/月/日`, `城`, `清洲`).
-4. Map complete `貫/文` format objects separately.
-5. Trace the actual visible yomi-row draw path; do not repeat Y0's eight-site-only suppression attempt.
-6. Continue conversion-table expansion and remaining runtime descriptor/pointer/CWTDAT work.
-7. Keep the full 17,103 validator as release audit/recovery, not as the explanation for the resolved old freeze.
+1. Establish the actual protagonist/nameplate data path: event/person ID -> current name/alias slot -> rendered name object.
+2. Survey duplicated person-name/renaming/alias fixed slots skipped by historical unique-only matching, grounded in the PC patch's actual replacement bytes.
+3. Report the full affected root-cause family before proposing any new patch or diagnostic build.
+4. Separately continue the visible-yomi-row path, repeated-object recovery, currency format objects, conversion-table expansion, remaining runtime descriptors/pointers, and Switch-native CWTDAT work according to project priority.
+
+No new patch/build is authorized by this analysis update.
