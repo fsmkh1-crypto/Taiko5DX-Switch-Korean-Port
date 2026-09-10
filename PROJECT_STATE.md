@@ -212,9 +212,26 @@ Taiko5DX_KR_DEV/
 
 Internal feature isolation is for debugging only. Do not return to serial P0/P1/P2 packaging unless a concrete runtime failure requires it.
 
-Final public distribution target: a builder/patcher that consumes the user's locally available Switch 1.1.3 dump and PC patch archive and produces the mod. Do not publish copyrighted game/translation payload files in this repository.
+## 15. Final distribution target
 
-## 15. Work priority from here
+The final user-facing patcher target is **Android APK first**, because Eden Android is the primary usage environment.
+
+The APK is a separate patch-generation app; it is not installed into Eden itself. Its job is to:
+
+1. let the user select a complete extracted Switch 1.1.3 dump root;
+2. let the user select `Taiko5DX_Korean_Patcher_v1.02.zip`;
+3. validate the expected Build ID / source layout;
+4. run the same patch-generation logic as the development builder;
+5. emit an Eden-ready `Taiko5DX_KR` mod directory containing `exefs/` and `romfs/`;
+6. use Android Storage Access Framework / user-granted folder access for output so the user can place the result where Eden can import or manage it.
+
+The APK must **not embed or redistribute** copyrighted game binaries, the PC patch archive, translated game-data payloads, fonts, keys, XCI/NSP/NCA files, or full game dumps. Those remain user-supplied inputs.
+
+Development order is fixed: **finish and validate the core builder first, then wrap the same logic in the Android APK UI.** Do not fork the patch logic into a separate implementation that would require maintaining two independent patch engines.
+
+A Windows CLI/EXE frontend may be added later as a convenience, but it is secondary and must reuse the same core patch logic.
+
+## 16. Work priority from here
 
 1. Run the current integrated Eden build and collect first real runtime symptoms.
 2. In parallel, implement Switch-side 10,036 mapping relocation/count patches.
@@ -222,7 +239,8 @@ Final public distribution target: a builder/patcher that consumes the user's loc
 4. Locate/port `ui_width_1~4` and `description_font_1~2` counterparts where runtime behavior shows they matter.
 5. Reconstruct Switch-native `CWTDAT_JP.TR5` selectively.
 6. Keep replacing one integrated dev mod and use failures to drive deeper work.
+7. After the core builder is functionally stable, add the Android APK frontend using SAF-based file/folder selection and Eden-oriented output.
 
-## 16. Anti-loop rule
+## 17. Anti-loop rule
 
 Do not spend an entire work session re-validating one already-established point. If a fact is marked confirmed here, reuse it unless a new implementation result contradicts it. Prefer integrated forward progress and real test feedback.
