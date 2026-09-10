@@ -28,6 +28,12 @@ RODATA_SIZE = 0x432018
 DATA_MEM_OFF = 0x9C0000
 DATA_SIZE = 0x60430
 
+# Eden/Yuzu applies classic IPS to an artificial image consisting of a
+# 0x100-byte NSO header followed by the decompressed mapped NSO image.
+# PatchPlan offsets are always mapped flat-image offsets; write_ips adds this
+# prefix when serializing the actual .ips file.
+IPS_IMAGE_HEADER_SIZE = 0x100
+
 GETFONT_OFFSET = 0x44650C
 GETFONT_ORIGINAL = bytes.fromhex(
     "690a4011293d00123ffd2b7168010054093940510ae09b1208010a0b"
@@ -185,12 +191,17 @@ class PatchPlan:
         self.records.append((offset, original, replacement, module))
 
 
+def mapped_to_ips_offset(mapped_offset: int) -> int:
+    return mapped_offset + IPS_IMAGE_HEADER_SIZE
+
+
 def write_ips(records: list[tuple[int, bytes, bytes, str]], out: Path) -> None:
     records = sorted(records, key=lambda r: r[0])
     out.parent.mkdir(parents=True, exist_ok=True)
     with out.open("wb") as f:
         f.write(b"PATCH")
-        for offset, _original, replacement, _module in records:
+        for mapped_offset, _original, replacement, _module in records:
+            offset = mapped_to_ips_offset(mapped_offset)
             if offset > 0xFFFFFF:
                 raise RuntimeError(f"IPS offset 0x{offset:X} exceeds classic IPS range")
             if len(replacement) > 0xFFFF:
@@ -276,6 +287,10 @@ def build(args: argparse.Namespace) -> None:
         "switch_dump_root": str(dump_root),
         "main": str(main_path),
         "romfs": str(romfs_root),
+        "ips_offset_coordinate": "0x100-byte NSOHeader + mapped flat NSO",
+        "ips_offset_shift": IPS_IMAGE_HEADER_SIZE,
+        "page_mapper_mapped_offset": GETFONT_OFFSET,
+        "page_mapper_emitted_ips_offset": mapped_to_ips_offset(GETFONT_OFFSET),
         "romfs_payload_files_copied": copied,
         "romfs_payload_files_skipped": skipped,
         "ips_record_count": len(plan.records),
@@ -305,8 +320,8 @@ def build(args: argparse.Namespace) -> None:
             "switch_native_cwtdat",
         ],
         "notes": [
-            "The integrated dev build applies exact-unique T5K inline originals found in Switch rodata.",
-            "Ambiguous/missing matches remain in BUILD_REPORT statistics instead of being guessed.",
+            "PatchPlan addresses are mapped flat NSO offsets; emitted Eden/Yuzu classic-IPS offsets add 0x100 for NSOHeader.",
+            "The historical exact-unique selector is retained only for regression/diagnostic use and is not a release-safety proof.",
             "CWTDAT_JP.TR5 is excluded until reconstructed on the Switch-native structure.",
         ],
     }
@@ -316,6 +331,7 @@ def build(args: argparse.Namespace) -> None:
     print(f"Copied PC payload files: {copied}")
     print(f"IPS records: {len(plan.records)} ({inline_stats['selected_patterns']} mapped inline patterns + page mapper)")
     print(f"Mapped PC inline records covered: {inline_stats['selected_pc_records_covered']} / {inline_stats['pc_records_total']}")
+    print(f"Eden IPS offset shift: +0x{IPS_IMAGE_HEADER_SIZE:X}")
     print("Skipped PC CWTDAT_JP.TR5 intentionally; Switch-native reconstruction is pending.")
 
 
