@@ -2,6 +2,14 @@
 
 ## 2026-09-10
 
+### Validation ledger promoted to mandatory workflow
+
+- Promoted `docs/VALIDATION_LEDGER.md` into the mandatory pre-read path in `AGENTS.md`.
+- Any agent must consult the ledger before repeating a prior validation. A new chat/model/agent is never by itself a reason to revalidate.
+- Revalidation is allowed only for changed inputs/version/hash, contradictory new evidence, inadequate provenance for a current high-risk decision, or proof that the original method was unsound.
+- When a prior result is too poorly documented to reuse safely, it may be revalidated once, but the revalidation must record exact claim, input identity/hash/version, method/script/parameters, offsets/ranges/count units, observed result, status, and reproducible artifact/report/commit path.
+- Future meaningful sessions must update the ledger whenever facts are newly verified, reverified, invalidated, or superseded, so repeated analysis is avoided.
+
 ### Canonical inline-validation redesign
 
 - Added `docs/INLINE_VALIDATION_POLICY.md` as the normative project-level policy for all future T5K inline mapping.
