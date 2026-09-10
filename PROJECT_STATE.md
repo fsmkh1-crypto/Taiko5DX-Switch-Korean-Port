@@ -34,7 +34,7 @@ All development IPS builds through **P0N v0.2f** emitted mapped offsets directly
 
 This discovery changes interpretation of every earlier IPS-bearing runtime test.
 
-## 3. Runtime evidence: corrected control now passes
+## 3. Runtime evidence: corrected controls are working
 
 Observed historical facts remain real:
 
@@ -55,35 +55,32 @@ The corrected control **P0N2 v0.2g** uses `mapped+0x100` for every IPS record an
 - accepts button input;
 - reaches the next main menu.
 
-Therefore the corrected classic-IPS coordinate path is viable through the main menu, and a 5,520-record classic IPS is not intrinsically the earlier freeze mechanism. This does **not** make the old 5,519 real replacements safe.
+The first real-inline MVI build **M1A v0.2h** also passes:
 
-## 4. Current Phase-0 step: MVI content tests
+- exactly one real inline replacement, T5K `R489`;
+- `シナリオを選んでください` -> `시나리오를 선택하세요`;
+- mapped `0x69B6A1` -> Eden IPS `0x69B7A1`;
+- user progressed through scenario selection/description and protagonist selection without freeze or forced exit.
 
-With P0N2 passed, Phase 0 now moves to Minimal Viable Inline testing using the corrected coordinate convention.
+Therefore the corrected classic-IPS path is viable and **at least one real corrected inline record can coexist with the baseline** on a substantial early-game route. This does not make the historical 5,519 replacement set SAFE.
 
-A reusable builder exists at `builder/build_mvi.py`. MVI inclusion is diagnostic only and never promotes a record to release SAFE.
+## 4. Current Phase-0 step: independent one-record MVI controls
 
-First test artifact: **M1A v0.2h**
+Phase 0 remains in Minimal Viable Inline testing. The purpose is to distinguish candidate-specific failures from a blanket runtime prerequisite failure before scaling up.
 
-- baseline: 207 RomFS replacements + Korean 64-page font + corrected page mapper;
-- exactly one real inline replacement;
-- T5K record ID: `489`;
-- Japanese: `シナリオを選んでください`;
-- Korean: `시나리오를 선택하세요`;
-- mapped Switch offset: `0x69B6A1`;
-- emitted Eden IPS offset: `0x69B7A1`;
-- all other historical inline candidates absent.
+Completed:
 
-Required runtime route:
+- `P0N2 v0.2g`: corrected 5,519-no-op large-IPS control — PASS.
+- `M1A v0.2h`: corrected single real inline `R489` — PASS.
 
-1. boot;
-2. title;
-3. main menu;
-4. start a new game;
-5. reach scenario-selection screen;
-6. confirm the prompt is Korean and the game remains responsive.
+Prepared next:
 
-If M1A passes, continue with additional independent 1-record MVI candidates before 10-record and 100-record MVI aggregation. A single failing record must not by itself be treated as systemic proof.
+- **M1B v0.2i** — T5K `R674`, `主人公選択` -> `주인공선택`, mapped `0x682DA4`, Eden IPS `0x682EA4`.
+- **M1C v0.2j** — T5K `R726`, `はじめから` -> `처음부터`, mapped `0x684140`, Eden IPS `0x684240`.
+
+Each build contains only the corrected page mapper plus one real inline record, with the 207 RomFS replacements and Korean 64-page font baseline. Test them independently with every other Korean diagnostic mod disabled.
+
+If M1B and M1C both pass, proceed to a corrected 10-record MVI aggregation. If one fails while the other passes, investigate the failing record/field rather than declaring a systemic failure.
 
 ## 5. Fixed Switch target
 
@@ -156,7 +153,7 @@ Switch functions:
 - `0x446310`: segmentation/count
 - `0x446420`: `GetFontTexIndex`
 
-The page-mapper rewrite bytes for mapped `0x44650C..0x446534` are statically verified. P0N2 confirms that the corrected mapper record coexists with the baseline through the tested main-menu path; later coverage is still required for exhaustive behavior.
+The page-mapper rewrite bytes for mapped `0x44650C..0x446534` are statically verified. P0N2/M1A confirm that the corrected mapper record coexists with the baseline through the tested early-game route; later coverage is still required for exhaustive behavior.
 
 ## 9. Mapping-loop result
 
@@ -228,7 +225,7 @@ The final validator still targets all 17,103 records and retains these invariant
 
 ## 12. Remaining runtime/port work
 
-- complete additional corrected 1-record MVI tests, then 10/100-record MVI aggregation;
+- run M1B/M1C independently, then 10/100-record MVI aggregation if they pass;
 - safe 7,494 -> 10,036 mapping relocation/reference/count patches;
 - `runtime_byte_validation` counterpart;
 - `font_page_limit` counterpart;
@@ -243,15 +240,13 @@ Do not assume direct normal-file-manager access to Eden's internal Android folde
 
 ## 14. Immediate next action
 
-Run **M1A v0.2h only**, with all older diagnostic Korean mods disabled.
+Run **M1B v0.2i** and **M1C v0.2j** separately, never simultaneously.
 
-Expected path: boot -> title -> main menu -> new game -> scenario-selection screen. Record whether:
+For M1B, reach protagonist selection and check that `主人公選択` becomes `주인공선택` while input remains normal.
 
-1. the game remains responsive;
-2. the scenario-selection prompt appears as Korean `시나리오를 선택하세요`;
-3. selection/input can continue normally.
+For M1C, reach the screen that previously displayed `はじめから` and check that it becomes `처음부터` while navigation remains normal.
 
-Then run at least one or two additional independent 1-record MVI builds before aggregating 10 and 100 records.
+If both pass, build the corrected 10-record MVI set next.
 
 ## 15. Final distribution target
 
