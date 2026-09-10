@@ -2,6 +2,28 @@
 
 ## 2026-09-10
 
+### Integrated port expansion
+
+- Added direct PE resource extraction for `dinput8.dll` `RT_RCDATA/101`.
+- Added exact parser for the `T5K121R` container.
+- Confirmed and encoded the resource layout: 10,036 mappings, 602-byte pointer string pool, 158-byte helper blob, 17,103 inline records, 56 pointer records, and 11 runtime descriptors.
+- Added a single-pass Aho-Corasick matcher for the 17,103 PC inline replacement records.
+- Added conservative automatic Switch mapping: exact unique original bytes, Switch rodata only, no conflicting replacement, no overlap guessing.
+- On the fixed Switch 1.1.3 `main`, selected 5,519 unique inline patterns covering 5,521 PC records.
+- Reworked IPS generation to support thousands of patch records in one integrated Eden build.
+- Integrated 207 directly reusable PC Korean RomFS payload files; `CMENU/CWTDAT_JP.TR5` remains intentionally excluded.
+- Added fixed NSO segment-layout guards and original Switch font hash guard.
+- Local build-generation test completed with 5,520 IPS records total: 5,519 inline translations + the ARM64 page mapper.
+- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, and builder documentation to make this the new canonical resume point.
+
+### Still pending
+
+- 7,494 -> 10,036 Switch mapping table relocation/reference/count patches.
+- Switch correspondence for the 56 pointer records.
+- Context-aware mapping for ambiguous/missing inline records.
+- `ui_width_1~4` / `description_font_1~2` Switch runtime counterparts.
+- Switch-native `CWTDAT_JP.TR5` reconstruction.
+
 ### Repository initialization
 
 - Established Nintendo Switch v1.1.3 / Title ID / NSO Build ID as the fixed development target.
@@ -24,4 +46,4 @@ A local P0 Eden mod was produced containing:
 - PC Korean-patched `FONT_JPN.G1T`
 - one translated EVENT TS5 smoke-test file
 
-This P0 is a development artifact only and is not stored in this public repository.
+This P0 is superseded by the integrated development build path and is not stored in this public repository.
