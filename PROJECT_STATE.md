@@ -12,14 +12,14 @@ Development policy: build an integrated mod first, then fix failures found in re
 
 ## 2. Input assumption
 
-From this point forward, development assumes a **complete extracted Switch 1.1.3 dump is locally available**. The working tool may consume the dump root directly.
+Development assumes a **complete extracted Switch 1.1.3 dump is locally available**. The builder consumes the dump root directly.
 
 Expected local source material:
 
 - Switch 1.1.3 ExeFS, including `main`
 - Switch 1.1.3 RomFS
-- PC original files when comparison is needed
 - `Taiko5DX_Korean_Patcher_v1.02.zip`
+- PC original files only when a comparison task specifically needs them
 
 Large/binary source material stays outside this public repository.
 
@@ -31,11 +31,13 @@ Large/binary source material stays outside this public repository.
 - Compressed `main` observed size: 5,287,359 bytes
 - NSO mapped uncompressed end: `0xA20430`
 
-NSO segments already parsed:
+NSO segments:
 
 - text: mem `0x000000`, decompressed `0x58CE60`
 - rodata: mem `0x58D000`, decompressed `0x432018`
 - data: mem `0x9C0000`, decompressed `0x60430`
+
+The builder now guards this exact segment layout in addition to the Build ID.
 
 ## 4. PC Korean patch structure already confirmed
 
@@ -51,7 +53,7 @@ Therefore: 208 game-data replacement items + `dinput8.dll`.
 
 All 208 target relative paths exist in the Switch 1.1.3 RomFS. Do not re-run path-existence validation unless the dump itself changes.
 
-Representative files were already confirmed byte-identical between Switch original and PC original, including `TAI5MSG_JP.DAT`, original `FONT_JPN.G1T`, representative EVENT TS5 files, TITLE/UI G1T files, and SNR0~SNR8 TR5 files.
+The integrated builder currently copies **207** of those game-data replacements directly and deliberately excludes only `CMENU/CWTDAT_JP.TR5`.
 
 ## 5. Known platform exception: CWTDAT
 
@@ -61,9 +63,9 @@ Representative files were already confirmed byte-identical between Switch origin
 - PC original JP size: 548,530 bytes
 - PC Korean patched size: 548,530 bytes
 
-The 68,148-byte size difference is a **platform difference**, not a Korean-patch expansion. Never replace the whole Switch CWTDAT with the PC file.
+The 68,148-byte size difference is a platform difference, not a Korean-patch expansion. Never replace the whole Switch CWTDAT with the PC file.
 
-PC original vs PC Korean CWTDAT changes are small (about 201 changed bytes). A subset of changes occurs at offsets shared with the Switch file and can be selectively reconstructed later from the Switch base.
+PC original vs PC Korean CWTDAT changes are small. A subset occurs at offsets shared with the Switch file and can be selectively reconstructed later from the Switch base.
 
 ## 6. Font and Korean byte encoding
 
@@ -76,7 +78,7 @@ The Switch original `FONT/FONT_JPN.G1T` and Steam original font are byte-identic
 - PC Korean patched font SHA-256: `c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932`
 - Patched texture pages: 64
 
-Original pages 0~48 are unchanged. Korean pages 49~62 correspond to lead bytes `EB~F8`. Page 63 is the single-byte/ASCII-ish final page. Do not repeat the old incorrect claim that original page 49 merely moved unchanged to page 63.
+Original pages 0~48 are unchanged. Korean pages 49~62 correspond to lead bytes `EB~F8`. Page 63 is the final single-byte/ASCII-ish page.
 
 Korean text uses the game's custom two-byte code space, not UTF-8/UTF-16. Confirmed examples include `EBE0=기`, `ECE9=노`, `F5B6=타`.
 
@@ -87,37 +89,44 @@ Korean text uses the game's custom two-byte code space, not UTF-8/UTF-16. Confir
 - `0x446310`: 1/2-byte character segmentation/count
 - `0x446420`: `GetFontTexIndex`
 
-Switch JP segmentation already treats `0x81~0x9F` and `0xE0~0xFC` as two-byte leads. Therefore Korean lead bytes `EB~F8` already segment correctly; basic static rendering does not need a separate segmentation patch.
+Switch JP segmentation already treats `0x81~0x9F` and `0xE0~0xFC` as two-byte leads. Korean lead bytes `EB~F8` therefore already segment correctly.
 
-## 8. `dinput8.dll` findings
+## 8. `dinput8.dll` / T5K121R is now parsed directly
 
 `dinput8.dll` SHA-256: `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`.
 
-Observed runtime descriptor names include:
+The builder now extracts `RT_RCDATA/101` from `dinput8.dll` and parses the `T5K121R` resource itself. No raw DLL file-offset assumption is needed.
 
-- `runtime_byte_validation`
-- `font_page_limit`
-- `runtime_page_mapper`
-- `description_font_1`, `description_font_2`
-- `ui_width_1` ~ `ui_width_4`
-- mapping lookup patches
+Directly parsed resource layout:
 
-The PC runtime page mapper is confirmed to map Korean lead bytes `EB~F8` to font pages 49~62 and otherwise fall back to original behavior.
+```text
+resource size                  613,685 (0x95D35)
+header                         0x0000..0x0047
+mapping table                  0x0048..0x9D17  (10,036 x 4 bytes)
+pointer replacement strings    0x9D18..0x9F71  (602 bytes)
+runtime helper blob            0x9F72..0xA00F  (158 bytes)
+inline patch records            0xA010..0x951BF  (17,103 variable records)
+pointer patch records           0x951C0..0x9553F (56 x 16 bytes)
+runtime descriptors             0x95540..end     (11 descriptors)
+```
 
-## 9. Confirmed Switch page-mapper patch
+Header values agree with the known patch:
 
-Switch original `GetFontTexIndex` behavior:
+- version 1
+- inline records 17,103
+- pointer records 56
+- runtime descriptors 11
+- target PC EXE size 18,685,960
 
-- `81~9F` -> pages 0~30
-- `E0~EA` -> pages 31~41
-- `FA~FC` -> pages 46~48
-- one-byte code -> `texture_count - 1`
+Runtime descriptor names include `ui_width_1~4`, `description_font_1~2`, `mapping_lookup_1A/2A`, `runtime_byte_validation`, `font_page_limit`, and `runtime_page_mapper`.
 
-An in-place ARM64 rewrite at `0x44650C..0x446534` is already assembled and locally verified. It preserves existing JP mapping and adds:
+## 9. Confirmed and implemented Switch page mapper
+
+An in-place ARM64 rewrite at `0x44650C..0x446534` preserves the existing JP mapping and adds:
 
 - `EB~F8` -> pages 49~62
 
-No code cave is required for this patch.
+No code cave is required.
 
 Original 44 bytes at `0x44650C`:
 
@@ -129,36 +138,69 @@ Replacement 44 bytes:
 
 ## 10. Unicode/game-code mapping expansion
 
-Original mapping table contains exactly **7,494** entries and matches the PC original table byte-for-byte.
+The T5K resource contains exactly **10,036** mapping entries.
 
-The Korean patch adds exactly **2,542** entries:
+- original mapping: 7,494
+- Korean additions: 2,542
+- total: 10,036
 
-- 2,350 KS X 1001 completed Hangul mappings
-- 192 PUA mappings
+The PC DLL changes the lookup count from `0x1D46` (7,494) to `0x2734` (10,036).
 
-Total: **10,036** entries.
+Switch functions at `0x430350` and `0x4305D0` still use the 7,494-entry JP mapping. Full Unicode/input conversion support still requires relocating/expanding the table and changing lookup references/counts.
 
-The PC DLL changes the lookup count from `0x1D46` (7494) to `0x2734` (10036).
+Do not overwrite neighboring language mapping data blindly. This remains a real pending implementation item.
 
-Switch functions at `0x430350` and `0x4305D0` each use the 7,494-entry JP mapping. Full Unicode/input conversion support requires relocating/expanding the table and changing lookup references/counts.
+## 11. 17,103 inline records: meaningful subset now integrated
 
-A physically large enough neighboring table area exists, but cross-reference safety has not yet been proven. Do not overwrite another language table blindly.
+The builder now parses all 17,103 same-length PC replacement records and maps a conservative subset automatically into Switch `main`.
 
-## 11. PC EXE patch records
+For the fixed Switch 1.1.3 `main`:
 
-The patch resource contains **17,103** fixed-width same-length in-place replacement records of the form conceptually:
+```text
+PC records total                 17,103
+unique original patterns          8,713
+no Switch match                     186
+multiple Switch matches            2,476
+unique match outside rodata          528
+candidate rodata patterns           5,523
+overlap-skipped                         4
+selected unique patterns            5,519
+PC records covered                  5,521
+```
 
-`[PC RVA][length][original bytes][Korean bytes]`
+Selection rule is intentionally simple and reproducible:
 
-These are not a single 571 KB string blob that must be inserted into Switch `main`.
+- exact original bytes occur exactly once in the whole Switch `main`;
+- duplicate PC records with the same original bytes must agree on replacement bytes;
+- match must lie inside Switch rodata (`0x58D000..0x9BF018`), not ARM64 text;
+- overlapping candidates are resolved longest-first.
 
-There are also **56** separate pointer-patch records.
+This is now part of the integrated Eden build. The remaining records are not discarded; they remain pending for context-aware matching instead of being guessed.
 
-The next task is to map these PC targets to corresponding Switch locations using binary/context signatures and then apply the safe mappings through the unified builder.
+## 12. 56 pointer records
 
-## 12. Development output strategy
+The exact 56-record T5K pointer table is now parsed and retained by the builder/reporting layer. Switch correspondence is not yet emitted because the PC slots/RVAs cannot be copied directly into the NSO.
 
-Primary dev output is one Eden mod directory continuously replaced during testing:
+This is the next major hardcoded-text expansion after the exact-unique inline subset.
+
+## 13. Current integrated Eden development build
+
+The unified builder now emits one `Taiko5DX_KR_DEV` mod containing:
+
+- Build-ID IPS
+- ARM64 page mapper
+- 5,519 exact-unique inline translation patches (5,521 PC records covered)
+- 207 directly reusable PC Korean RomFS payload files
+- the 64-page Korean font
+- `BUILD_REPORT.json` with T5K parse and mapping statistics
+
+Local builder execution against the fixed 1.1.3 `main` completed successfully and produced **5,520 IPS records total** (5,519 inline + 1 page mapper). This is a build-generation test, not yet a claim of successful Eden runtime behavior.
+
+`CWTDAT_JP.TR5`, the 10,036-entry mapping relocation, the 56 pointer mappings, and remaining UI/runtime counterparts are still pending.
+
+## 14. Development output strategy
+
+Primary dev output remains one Eden mod directory continuously replaced during testing:
 
 ```text
 Taiko5DX_KR_DEV/
@@ -168,19 +210,19 @@ Taiko5DX_KR_DEV/
    └─ ...
 ```
 
-Internal builder feature switches are only for debugging/isolation. They are not intended as separate public patch editions.
+Internal feature isolation is for debugging only. Do not return to serial P0/P1/P2 packaging unless a concrete runtime failure requires it.
 
-Final public distribution target: a builder/patcher that uses the user's locally available source material and produces the mod. Do not publish copyrighted game/translation payload files in this repository.
+Final public distribution target: a builder/patcher that consumes the user's locally available Switch 1.1.3 dump and PC patch archive and produces the mod. Do not publish copyrighted game/translation payload files in this repository.
 
-## 13. Work priority from here
+## 15. Work priority from here
 
-1. Convert the current proof-of-concept builder to accept the full Switch 1.1.3 dump root.
-2. Port remaining `dinput8.dll` behavior into Switch ARM64/data patches, prioritizing mapping lookup + table expansion and width/font runtime fixes.
-3. Build automated correspondence for 17,103 inline records and 56 pointer records.
-4. Integrate the 208 PC payload files while reconstructing Switch-native CWTDAT selectively.
-5. Produce one integrated Eden development mod and test it.
-6. Use failures from real execution to decide what needs deeper analysis.
+1. Run the current integrated Eden build and collect first real runtime symptoms.
+2. In parallel, implement Switch-side 10,036 mapping relocation/count patches.
+3. Map the 56 pointer records and then the ambiguous/missing inline records with context-aware matching.
+4. Locate/port `ui_width_1~4` and `description_font_1~2` counterparts where runtime behavior shows they matter.
+5. Reconstruct Switch-native `CWTDAT_JP.TR5` selectively.
+6. Keep replacing one integrated dev mod and use failures to drive deeper work.
 
-## 14. Anti-loop rule
+## 16. Anti-loop rule
 
 Do not spend an entire work session re-validating one already-established point. If a fact is marked confirmed here, reuse it unless a new implementation result contradicts it. Prefer integrated forward progress and real test feedback.
