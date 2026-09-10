@@ -2,6 +2,16 @@
 
 ## 2026-09-11
 
+### Project operating rules strengthened
+
+- Strengthened `AGENTS.md` so a single observed symptom must not be patched in isolation once a common mechanism is suspected. Agents must first survey the full root-cause family: affected data classes, code paths, call sites, runtime descriptors, and analogous visible symptoms.
+- Added a PC-patch-first rule: when the Windows Korean patch already implements equivalent behavior, inspect its actual replacement bytes, font strategy, runtime descriptors, pointer handling, and related implementation before inventing a Switch-only workaround.
+- Split analysis and implementation into explicit phases. After an analysis result is reported, a fresh user execution signal is required before code edits, build generation, or commits for the next stage.
+- Clarified that one execution signal authorizes only the scope agreed at that moment; it does not carry forward automatically into later stages.
+- Added diagnostic-build discipline: one root-cause family per diagnostic artifact, while all proven instances of that same mechanism should be tested together rather than patched one-by-one.
+- Added explicit hypothesis-invalidation recording so failed local approaches are not repeated under new names.
+- Added source-grounded naming/encoding rule: when Korean spelling, compact glyph codes, or replacements are directly available from the PC patch/font/canonical data, verify them from source instead of guessing from romanization or screen appearance.
+
 ### W0 partial pass; W1 render-width diagnostic prepared
 
 - User runtime-tested `W0 v0.2m` in Eden Android. The build remained stable on the tested route.
