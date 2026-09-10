@@ -2,6 +2,14 @@
 
 ## 2026-09-10
 
+### Eden Android test packaging
+
+- Added `docs/EDEN_ANDROID_TEST_GUIDE.md`.
+- Recorded a real target-environment constraint: the user could not directly access Eden's internal Android folder with the normal file manager.
+- Current development ZIP instructions now use Eden's own per-game Add-ons importer: extract to an ordinary Android folder, then `+ Install` -> `Mods and cheats`, selecting the mod root containing `exefs/` and `romfs/`.
+- Added a first-run checklist focused on boot success, Korean glyph rendering, clipping/width problems, event dialogue behavior, and crash/log capture.
+- Repacked the current integrated build as Android-oriented v0.2a with the guide embedded; patch payload itself is unchanged from integrated v0.2.
+
 ### Distribution strategy
 
 - Fixed the primary final user-facing patcher target as an **Android APK**, matching Eden Android as the main usage environment.
