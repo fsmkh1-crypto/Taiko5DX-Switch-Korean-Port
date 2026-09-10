@@ -1,104 +1,131 @@
 # RUNTIME TEST RESULTS
 
-Observed Eden Android behavior for Taiko5DX Switch Korean-port development builds.
+Observed Eden Android behavior for the Taiko5DX Switch Korean-port development builds. Runtime success is route evidence, not by itself release-SAFE certification.
 
-These observations are empirical evidence. They do not by themselves certify an inline candidate as SAFE.
+## 2026-09-10 / 2026-09-11
 
-## 2026-09-10
+| Variant | Key configuration | Result |
+|---|---|---|
+| Add-on disabled | no mod | Game boots/runs normally |
+| v0.2a | historical 5,519 real inline + old no-shift IPS convention | Freeze |
+| v0.2b NO-INLINE | RomFS/font + old no-shift page-mapper record | Boots; Korean title visible |
+| v0.2c | 5,518 real inline + old no-shift convention | Fails/freezes |
+| A | 2,759 old-offset real inline | Freeze |
+| B | 2,759 old-offset real inline | Title then crash after input |
+| P0N v0.2f | 5,519 intended no-op records but old no-shift convention | Freeze |
+| P0N2 v0.2g | corrected page mapper + 5,519 true no-ops, all `mapped+0x100` | **PASS: title -> input -> main menu** |
+| M1A v0.2h | corrected page mapper + one real inline `R489` | **PASS through scenario/protagonist flow** |
+| D5519 v0.2k | corrected page mapper + historical 5,519 real replacements, all `mapped+0x100` | **PASS through early gameplay; no freeze/forced exit observed** |
+| Y0 v0.2l | D5519-derived non-yomi inline + internal yomi restored + visible yomi call sites disabled | **Prepared; runtime pending** |
 
-### Baseline / integrated tests
+## Critical build-layer correction
 
-| Variant | Inline set | Other Korean-port components | Result |
-|---|---:|---|---|
-| Add-on disabled | 0 | none | Game boots/runs normally |
-| v0.2a integrated | 5,519 selected patterns | 207 RomFS replacements + Korean font + IPS records emitted with the old offset convention | Freeze |
-| v0.2b NO-INLINE | 0 | 207 RomFS replacements + Korean font + one page-mapper IPS record emitted with the old offset convention | Boots; Korean title `태합입지전 V DX` is displayed |
-| v0.2c | 5,518 selected patterns | same old-offset IPS convention | Still fails/freezes |
-| P0N v0.2f | 5,519 intended no-op records | same RomFS/font baseline + page mapper; **old IPS offsets** | Freeze |
-| P0N2 v0.2g | 5,519 true no-op records | same RomFS/font baseline + corrected page mapper; **all IPS offsets mapped+0x100** | **Boots, reaches Korean title, accepts input, reaches next main menu** |
-| M1A v0.2h | 1 real inline (`R489`) | same corrected RomFS/font/page-mapper baseline | **PASS — reaches scenario selection, scenario description, protagonist selection; remains responsive** |
-
-### Address-ordered half split
-
-The remaining 5,518 inline patterns were split by Switch offset order only for diagnosis. These builds also used the old IPS-offset convention and therefore cannot be used to infer candidate-level safety or multi-fault distribution.
-
-| Group | Count | Approx. mapped Switch offset range | Result |
-|---|---:|---|---|
-| A | 2,759 | `0x682AE5..0x72028D` | Freeze |
-| B | 2,759 | `0x72034F..0x783F9A` | Korean title appears; pressing a button causes forced exit/crash |
-
-### Critical IPS-offset correction discovered after P0N failure
-
-Inspection of Eden/Yuzu-derived NSO loading shows that ExeFS IPS patches are applied to an artificial patch image consisting of:
+Eden/Yuzu applies classic IPS to an artificial image consisting of:
 
 ```text
 0x000000..0x0000FF  NSOHeader (0x100 bytes)
 0x000100..          decompressed mapped NSO image
 ```
 
-Eden's NSO loader copies the decompressed `codeset.memory` after `sizeof(NSOHeader)`, and `NSOHeader` is statically `0x100` bytes. Therefore a mapped flat-image offset `X` must be emitted to classic IPS as **`X + 0x100`**.
+Canonical rule:
 
-All development IPS builds through P0N v0.2f emitted mapped offsets directly without the required `+0x100`. Consequently:
+```text
+emitted IPS offset = mapped flat NSO offset + 0x100
+```
 
-- the P0N records were **not true no-ops in Eden** even though they round-tripped against our flat-image model;
-- a record intended for flat offset `X` actually overwrote flat offset `X - 0x100` in Eden;
-- the page-mapper record intended for flat `0x44650C` was emitted at IPS `0x44650C`, which targets flat `0x44640C`; the correct Eden IPS offset is `0x44660C`;
-- prior v0.2a/v0.2c/A/B crashes do **not** prove that the selected inline candidates themselves were wrong, because they were never applied at the intended addresses;
-- v0.2b boot/Korean-title observation remains a real runtime fact, but it does **not** validate the intended page-mapper rewrite because that IPS record was also shifted by `-0x100` at application time.
+All IPS-bearing builds through P0N v0.2f omitted this shift. Therefore their observed crashes are historical runtime facts but cannot be used as candidate-level safety evidence: each intended mapped target `X` was actually patched at mapped `X-0x100`.
 
-This supersedes the earlier interpretation that the P0N failure demonstrated a large-record-count or semantic-inline failure.
+P0N2 is the first true large no-op control under the correct coordinate convention and passed.
 
-### Corrected control: P0N2 v0.2g — PASSED
+## P0N2 v0.2g — PASS
 
 Artifact:
 
-- filename: `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip`
-- SHA-256: `1ccb27e7f8836b8687ade7e147b0f549d49069dcecebaf808fa6eabd3277e8f6`
-- IPS records: 5,520 total = corrected page mapper + 5,519 true no-op inline records
-- emitted offset rule: `mapped flat offset + 0x100`
-- page mapper: mapped `0x44650C` -> emitted IPS `0x44660C`
-- static round-trip: VERIFIED; every 5,519 no-op payload equals the original bytes at `(IPS offset - 0x100)`
-- runtime result: **PASS — boot, Korean title, button input, and next main menu all reached**
+- `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip`
+- SHA-256 `1ccb27e7f8836b8687ade7e147b0f549d49069dcecebaf808fa6eabd3277e8f6`
+- 5,520 IPS records = corrected page mapper + 5,519 verified true no-op records.
 
-This establishes the following narrow conclusions:
+Observed: boot, Korean title, button input, next main menu all succeeded.
 
-1. Eden accepts the corrected classic-IPS coordinate convention used by P0N2.
-2. A 5,520-record classic IPS is not intrinsically causing the observed freeze on this test path.
-3. The old P0N freeze is explained by the `-0x100` misapplication and must not be used as a large-record-count failure result.
-4. The corrected page-mapper record coexists with the baseline through the tested menu path, but this is still only path coverage, not exhaustive mapper proof.
+Narrow conclusions:
 
-### MVI content test M1A v0.2h — PASSED
+1. corrected `+0x100` classic-IPS coordinate path works on the tested route;
+2. 5,520 classic-IPS records are not intrinsically causing the old freeze;
+3. old P0N freeze is explained by wrong-address writes, not by true no-op count.
 
-Configuration:
+## M1A v0.2h — PASS
 
-- corrected page mapper;
-- 207 RomFS replacements + Korean 64-page font;
-- exactly one real inline replacement;
-- T5K record ID `489`;
-- Japanese: `シナリオを選んでください`;
-- Korean: `시나리오를 선택하세요`;
-- mapped Switch offset: `0x69B6A1`;
-- emitted Eden IPS offset: `0x69B7A1`;
-- all other historical inline candidates absent.
+Exactly one real inline replacement:
 
-User runtime evidence on 2026-09-10 shows successful progression through the corrected build: title/main flow, scenario screen, scenario-description screen, and protagonist-selection screen all render and remain responsive. Screenshots also show extensive Korean text from the RomFS/font baseline. Those baseline Korean strings must not be misattributed to the single M1A inline record.
+- T5K `R489`;
+- `シナリオを選んでください` -> `시나리오를 선택하세요`;
+- mapped `0x69B6A1` -> emitted `0x69B7A1`.
 
-Narrow conclusion: **at least one corrected real inline record can coexist with the corrected page mapper/RomFS/font baseline without reproducing the former freeze on this route.** This weakens a blanket hypothesis that any real inline content necessarily causes immediate failure. It does not certify the historical 5,519 set or prove that every runtime descriptor is already unnecessary.
+Observed progression through scenario selection/description and protagonist selection without freeze/forced exit.
 
-### Next MVI controls
+## D5519 v0.2k — PASS WITH RESIDUAL UI ISSUES
 
-Two additional independent one-record builds are prepared before scaling to 10 records:
+D5519 is the historical v0.2a 5,519-real-inline payload with only the IPS coordinate convention corrected by `+0x100`.
 
-- `M1B v0.2i`: T5K `R674`, mapped `0x682DA4` / IPS `0x682EA4`, `主人公選択` -> `주인공선택`.
-- `M1C v0.2j`: T5K `R726`, mapped `0x684140` / IPS `0x684240`, `はじめから` -> `처음부터`.
+Artifact SHA-256:
+`46017206ed2679a645b1e0121aff6b7742fcbec94f41197e5f5681f517c9fae2`
 
-Test each build independently with all other Korean diagnostic mods disabled. If both remain stable and the target label visibly changes, proceed to a corrected 10-record MVI build.
+User runtime screenshots show successful progression through:
 
-### Current interpretation
+- title;
+- main menu;
+- scenario selection;
+- scenario explanation;
+- protagonist selection;
+- entry into normal gameplay.
 
-- The dominant confirmed implementation defect in all pre-P0N2 IPS builds was the missing `+0x100` Eden/NSO-header IPS offset shift.
-- P0N2 proves the corrected large-record-count no-op path works through the main menu.
-- M1A proves one corrected real inline replacement can survive substantially beyond the title on the tested route.
-- Previous IPS-bearing runtime results remain useful historical observations but must not be used as candidate-safety evidence.
-- Semantic inline validation is still required for release quality; P0N2/M1A do not make the old 5,519 selector safe by themselves.
-- Future IPS generators must validate both mapped offsets and emitted Eden IPS offsets separately.
+No freeze or forced exit was observed on this route.
+
+Visible residual issues:
+
+- Korean main text/names broadly render;
+- small auxiliary yomi/furigana line is garbled on name UIs;
+- some short repeated UI tokens remain Japanese (`はい`, date/currency suffixes, `城`);
+- some repeated place-name components such as `清洲` remain Japanese.
+
+This strongly supports the corrected interpretation that the earlier immediate freezes were dominated by the missing `+0x100` build-layer bug. It does **not** prove all 5,519 records are safe for every late-game path.
+
+## Y0 v0.2l — PREPARED, RUNTIME PENDING
+
+Purpose: preserve original Japanese halfwidth-kana yomi internally while removing the unnecessary visible reading line from Korean name UIs.
+
+Artifact:
+
+- `Y0_Taiko5DX_KR_DBG_NOYOMI_v0.2l.zip`
+- SHA-256 `ae67b2bdece0e261239a3a505ad018761904c25124f0857cf0a917f9a4a6c869`
+
+Static composition:
+
+- page mapper: 1;
+- retained non-yomi historical inline records: 3,420;
+- removed/restored-to-original halfwidth-yomi translations: 2,099;
+- yomi-render enable call-site edits: 8;
+- final IPS records: 3,429.
+
+Eight mapped call sites change:
+
+```text
+26 00 80 52   mov w6,#1
+```
+
+to:
+
+```text
+E6 03 1F 2A   mov w6,wzr
+```
+
+before calls to shared mapped routine `0x45B0F8`.
+
+Next runtime check: run Y0 alone and verify that Korean main names remain, the garbled small yomi line disappears, and navigation/sorting remain stable.
+
+## Current interpretation
+
+- `+0x100` omission is the dominant confirmed defect behind pre-P0N2 IPS builds.
+- D5519 changes the next priority from crash-halving to residual UI/data-layer recovery.
+- Yomi and repeated short strings are separate problems: yomi should be preserved internally but hidden visually; repeated short UI strings should be recovered at confirmed Switch object locations rather than by global raw substring replacement.
+- See `docs/POST_D5519_ANALYSIS.md` for static evidence and the recovery rule.
