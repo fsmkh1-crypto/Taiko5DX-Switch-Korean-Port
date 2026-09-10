@@ -2,7 +2,7 @@
 
 Operating rules for ChatGPT, Claude, or any other coding/research agent working on this repository.
 
-1. Read `PROJECT_STATE.md`, `PATCH_MAP.md`, and `docs/INLINE_VALIDATION_POLICY.md` before starting work that touches inline mapping, text validation, IPS generation, or crash diagnosis.
+1. Read `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, and `docs/RUNTIME_TEST_RESULTS.md` before starting work that touches inline mapping, text validation, IPS generation, or crash diagnosis.
 2. Treat facts marked confirmed there as established unless a new implementation result directly contradicts them.
 3. Optimize for an integrated working Eden mod, not endless isolated validation phases.
 4. When debugging, use internal feature switches or delta debugging only to isolate a reproducible failure; never infer that a passing split is globally safe.
