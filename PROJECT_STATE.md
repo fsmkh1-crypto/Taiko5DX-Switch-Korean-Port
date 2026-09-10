@@ -2,62 +2,82 @@
 
 Last updated: 2026-09-10 (KST)
 
-This file is the canonical resume point for the project. Read it together with `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, and `docs/RUNTIME_TEST_RESULTS.md` before touching inline mapping or runtime crash diagnosis.
+This file is the canonical resume point for the project. Before inline/crash work, read it together with `docs/VALIDATION_LEDGER.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/PHASE0_FAILURE_MODE_PLAN.md`, and `docs/RUNTIME_TEST_RESULTS.md`.
 
 ## 1. Goal
 
 Port the existing PC Korean patch `Taiko5DX_Korean_Patcher_v1.02` to Nintendo Switch **TAIKO RISHHIDEN V DX v1.1.3**, with Eden Android as the primary development/test target.
 
-Primary development direction remains one integrated Eden mod, but inline patches now have a mandatory static validation gate before they can re-enter the integrated build.
+Primary output remains one integrated Eden mod. Final end-user frontend remains Android APK using the same stabilized core patch logic.
 
-## 2. Project-level inline premise
+## 2. Current decision point: Phase 0 before full validator
 
-The old rule "exact original bytes occur uniquely in Switch `main` rodata, therefore patch them" is superseded.
+The old `5,519 exact-unique rodata` inline selector is invalid as a safety rule, but the observed failures do not yet prove that every failure is candidate-specific.
 
-`unique exact match` is **candidate-discovery evidence only**. It is not a safety criterion.
+Before building the full 17,103-record semantic validator, follow `docs/PHASE0_FAILURE_MODE_PLAN.md` to distinguish:
 
-A releasable inline patch must be supported by all of the following:
+- bad/wrong inline candidates and field-structure violations; from
+- IPS/build-loader/runtime prerequisites that can fail even for semantically correct candidates.
 
-1. valid game-code decoding/encoding;
-2. PC-to-Switch structural homology, preferably piecewise-collinear/anchor-supported;
-3. independently established Switch-side field/boundary structure;
-4. no unresolved overlap or severe binary-structure risk;
-5. simulated post-patch offline re-validation.
+Current first runtime control is **P0N**:
 
-Runtime success is a final sanity check, not proof that a candidate is safe.
+- same known-good NO-INLINE baseline: 207 RomFS replacements + Korean font + page mapper;
+- plus 5,519 historical inline IPS records that are true **no-ops** (each writes the original Switch bytes back to itself);
+- 5,520 IPS records total including page mapper;
+- generator reparses the emitted IPS and verifies every no-op record against the flat image.
 
-The normative details are in `docs/INLINE_VALIDATION_POLICY.md`.
+Interpretation:
 
-## 3. Input assumption
+- P0N boots like v0.2b -> large classic-IPS record count/packaging/application is not the current cause; proceed to MVI content tests;
+- P0N fails -> stop semantic-validator implementation and investigate the IPS/build-loader/application layer first.
 
-Development assumes a **complete extracted Switch 1.1.3 dump is locally available**. The builder consumes the dump root directly.
-
-Expected local source material:
-
-- Switch 1.1.3 ExeFS including `main`;
-- Switch 1.1.3 RomFS;
-- `Taiko5DX_Korean_Patcher_v1.02.zip`;
-- PC original `Taiko5DX.exe` when PC RVA/context comparison is required.
-
-Large/binary source material stays outside this public repository.
-
-## 4. Fixed target identity
+## 3. Fixed Switch target
 
 - Title ID: `0100346017304000`
 - Switch version: `1.1.3`
-- `main` NSO Build ID: `D9120950C258610A746F4A31CE3A3B376DE393D9`
+- `main` Build ID: `D9120950C258610A746F4A31CE3A3B376DE393D9`
 - compressed `main` observed size: 5,287,359 bytes
-- mapped uncompressed end: `0xA20430`
+- compressed `main` SHA-256 used by Phase 0: `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
+- mapped flat end: `0xA20430` (10,617,904 bytes)
 
 NSO segments:
 
-- text: mem `0x000000`, decompressed `0x58CE60`
-- rodata: mem `0x58D000`, decompressed `0x432018`
-- data: mem `0x9C0000`, decompressed `0x60430`
+- text: `0x000000 + 0x58CE60`
+- rodata: `0x58D000 + 0x432018`
+- data: `0x9C0000 + 0x60430`
+
+## 4. Current source material and identity warning
+
+Available Phase-0 inputs were located in the project Drive:
+
+- Switch `main`;
+- Switch original `FONT_JPN.G1T`;
+- Switch `CWTDAT_JP/CN/TW.TR5`;
+- `Taiko5DX_Korean_Patcher_v1.02.zip`;
+- a `PC_Original/Taiko5DX.exe`.
+
+The supplied PC EXE is **not the exact executable targeted by T5K121R** and must not be used for PC-RVA neighborhood/homology evidence.
+
+Supplied Drive EXE:
+
+- version resource: `1.2.1.0`
+- size: `18,479,304`
+- SHA-256: `22e1cd1afbd7d87a58b3560e7549f7e0fb462c723b4db9e1b1e747babb765ef6`
+
+Exact PC patch target from README/T5K:
+
+- Steam `1.2.1.0`, build `9163702`
+- size: `18,685,960`
+- SHA-256: `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
+
+Obtain that exact EXE before any validation that requires real PC binary context. T5K record RVAs/order and embedded original/replacement bytes remain usable without it.
 
 ## 5. PC Korean patch structure
 
-Embedded `patch_payload.zip` contains 209 items:
+PC patch ZIP SHA-256 used by Phase 0:
+`df1b62de95e992369e9686c9731d814e7a7e4634888f610430635429e24f7cec`
+
+Embedded `patch_payload.zip`: 209 items = 208 game replacements + `dinput8.dll`.
 
 - 169 `EVENT/*.TS5`
 - 28 G1T
@@ -65,100 +85,65 @@ Embedded `patch_payload.zip` contains 209 items:
 - 1 `TAI5MSG_JP.DAT`
 - 1 `dinput8.dll`
 
-Therefore: 208 game-data replacements + `dinput8.dll`.
+`dinput8.dll` SHA-256:
+`ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`
 
-All 208 target relative paths exist in Switch 1.1.3 RomFS. The builder may reuse 207 directly; `CMENU/CWTDAT_JP.TR5` is the deliberate platform exception.
+`RT_RCDATA/101` SHA-256:
+`5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`
 
-## 6. CWTDAT platform exception
+T5K121R:
 
-`CMENU/CWTDAT_JP.TR5` is structurally different between PC and Switch.
+- mappings: 10,036
+- original mappings: 7,494 (`0x1D46`)
+- Korean additions: 2,542
+- inline records: 17,103
+- pointer records: 56
+- runtime descriptors: 11
 
-- Switch JP size: 480,382 bytes
-- PC original JP size: 548,530 bytes
-- PC Korean patched size: 548,530 bytes
-
-Never replace the Switch file wholesale with the PC file. Reconstruct only validated Korean changes onto the Switch-native structure.
-
-## 7. Font and Korean encoding
+## 6. Font / encoding / page mapper
 
 Switch original `FONT/FONT_JPN.G1T` and Steam original font are byte-identical.
 
-- original font: 13,108,628 bytes, 50 pages
-- original SHA-256: `9c886848c31c31d09aeeed0ac5c44b909d561220110ca04da0f7fa32d3a0083e`
-- Korean patched font: 16,779,036 bytes, 64 pages
-- patched SHA-256: `c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932`
+- original: 13,108,628 bytes / 50 pages / SHA-256 `9c886848c31c31d09aeeed0ac5c44b909d561220110ca04da0f7fa32d3a0083e`
+- Korean patched: 16,779,036 bytes / 64 pages / SHA-256 `c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932`
 
-Pages 0~48 are unchanged. Korean pages 49~62 correspond to lead bytes `EB~F8`. Page 63 is the final single-byte/ASCII-ish page.
+Korean uses the game custom 1/2-byte code space. Korean lead bytes `EB~F8` map to font pages 49~62.
 
-Korean text uses the game's custom 1/2-byte code system, not generic UTF-8/UTF-16 and not a generic Shift-JIS decoder. Confirmed examples include `EBE0=기`, `ECE9=노`, `F5B6=타`.
-
-## 8. Switch text/font functions
+Switch functions:
 
 - `0x430350`: UTF-16 -> game code
 - `0x4305D0`: game code -> UTF-16
-- `0x446310`: 1/2-byte segmentation/count
+- `0x446310`: character segmentation/count
 - `0x446420`: `GetFontTexIndex`
 
-Existing segmentation accepts `0x81~0x9F` and `0xE0~0xFC` as two-byte leads, so Korean `EB~F8` already segments correctly.
+Implemented page mapper rewrite at `0x44650C..0x446534` adds `EB~F8 -> pages 49~62` and is proven through Korean-title rendering in NO-INLINE runtime testing.
 
-## 9. T5K121R resource
+## 7. Mapping-loop Phase-0 result
 
-`dinput8.dll` SHA-256: `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`.
+Both Switch conversion routines still use the original 7,494-entry limit:
 
-The builder extracts `RT_RCDATA/101` and parses `T5K121R` directly.
+- `0x4303AC` in `0x430350` path: `0x1D46`
+- `0x430624` in `0x4305D0` path: `0x1D46`
 
-Canonical layout:
+Direct ARM64 disassembly of the fixed flat image shows defined table-miss fallbacks:
 
-```text
-resource size                  613,685 (0x95D35)
-header                         0x0000..0x0047
-mapping table                  0x0048..0x9D17   (10,036 x 4)
-pointer replacement strings    0x9D18..0x9F71   (602 bytes)
-runtime helper blob            0x9F72..0xA00F   (158 bytes)
-inline patch records            0xA010..0x951BF  (17,103)
-pointer patch records           0x951C0..0x9553F (56 x 16)
-runtime descriptors             0x95540..end      (11)
-```
+- UTF-16 -> game-code miss -> fallback `0x81A1` bytes;
+- game-code -> UTF-16 miss -> `U+25A0`.
 
-Header values:
+Therefore 7,494 -> 10,036 expansion is a real functional requirement but **not yet proven as the direct freeze cause**. It may still break search/sort/compare/save/conversion semantics and remains a priority runtime prerequisite.
 
-- version 1
-- inline records 17,103
-- pointer records 56
-- runtime descriptors 11
-- target PC EXE size 18,685,960
+## 8. CWTDAT platform exception
 
-## 10. Page mapper
+Never replace Switch `CMENU/CWTDAT_JP.TR5` wholesale with the PC file.
 
-Implemented Switch ARM64 in-place rewrite at `0x44650C..0x446534`:
+- Switch JP: 480,382 bytes
+- PC original/patched: 548,530 bytes
 
-- preserves existing Japanese mapping;
-- adds `EB~F8 -> font pages 49~62`;
-- no code cave required.
+Reconstruct only validated Korean changes onto the Switch-native structure later.
 
-Original 44 bytes:
+## 9. Inline corpus and reverified historical selector
 
-`690a4011293d00123ffd2b7168010054093940510ae09b1208010a0b3f01007108b1891a087d0813007d0011`
-
-Replacement 44 bytes:
-
-`693e08532a8103515f610071680100545f29007168000054407d00110400001440990011020000141f2003d5`
-
-## 11. Mapping expansion
-
-Canonical counts:
-
-- original mapping: 7,494 (`0x1D46`)
-- Korean additions: 2,542
-- total: 10,036 (`0x2734`)
-
-Any contrary count such as 7,334 is unverified and must not replace the confirmed 7,494 baseline without a reproducible measurement explaining the discrepancy.
-
-Switch `0x430350` / `0x4305D0` still use the original 7,494-entry mapping. Full Unicode/input conversion support still requires safe table expansion/relocation plus reference/count patches.
-
-## 12. Inline corpus and superseded selector
-
-Canonical corpus:
+Reverified fixed-input counts:
 
 ```text
 PC records total                 17,103
@@ -169,118 +154,108 @@ unique match outside rodata          528
 candidate rodata patterns           5,523
 overlap-skipped                         4
 old selected unique patterns       5,519
-PC records covered by old set       5,521
+PC records covered                  5,521
 ```
 
-The old 5,519-set was selected by exact-unique rodata matching and non-overlap. **It is no longer considered pre-approved or safe.** It is retained only as a regression/reference set.
+The 5,519 set is historical/regression data only, never a SAFE set.
 
-The new validator target is the full **17,103-record corpus** so it can both reject false positives and recover valid repeated/ambiguous mappings using structural evidence.
+## 10. Reverified structural statistics
 
-Counts must always distinguish records, unique patterns, and candidate locations.
+The earlier external collinearity observation was reproduced with explicit units:
 
-## 13. Measured/externally reviewed structural evidence
+Record-level unique-match pairs:
 
-Review measurements indicate large order-preserving PC-RVA -> Switch-offset runs, suggesting substantial block-level collinearity between PC `.rdata` and Switch `.rodata`.
+- 6,053 record pairs
+- global LIS length 3,524
+- 2,529 record pairs outside that LIS
+- top adjacent monotonic runs: 1,844 / 1,074 / 978 / 78
 
-This is treated as a hypothesis/evidence source to reproduce in our own validator, not as an unquestioned imported result. The implementation must use **piecewise monotonic blocks/anchors**, not assume one global ordering across the entire binary.
+Pattern-level equivalent:
 
-Similarly, reports that many PC replacements consume NUL/padding are treated as a major risk signal. They do not automatically prove run-on on Switch: Switch-side field type/width must be established independently.
+- 6,051 unique pattern pairs
+- LIS length 3,522
 
-## 14. Current Eden Android runtime evidence
+This confirms strong large-block order preservation exists, but global LIS is reference evidence only. Final homology uses piecewise/local blocks plus structural evidence.
 
-Empirical results are recorded in `docs/RUNTIME_TEST_RESULTS.md`.
+NUL statistics reverified:
 
-Established results:
+- original contains NUL and replacement contains none: 12,347 records
+- original contains no NUL: 4,747 records
 
-- add-on OFF: normal boot/run;
-- `v0.2b NO-INLINE` = 207 RomFS replacements + Korean font + page mapper, zero inline: boots and renders Korean title `태합입지전 V DX`;
-- integrated inline set: freezes;
-- v0.2c with one suspicious record removed: still fails;
-- address-ordered half A: freezes;
-- address-ordered half B: reaches title, then pressing a button causes forced exit/crash.
+Do not interpret those counts as automatic run-on failures; Switch field type/width remains authoritative.
 
-Therefore inline patches are the current differentiating failure source and more than one unsafe mapping may exist. A passing split can never be treated as globally safe.
+External `430` termination and `8,981/1,242 >=5-match` counts were **not reproduced under the stated definitions** and remain non-canonical. See ledger V011C/V011D.
 
-## 15. Inline validation architecture
+## 11. Runtime evidence already established
 
-Mandatory pipeline, summarized from `docs/INLINE_VALIDATION_POLICY.md`:
+Recorded in `docs/RUNTIME_TEST_RESULTS.md`:
 
-1. normalize all 17,103 records with stable record/pattern IDs;
-2. validate original and replacement using the game's real mapping rules;
-3. enumerate all Switch candidate positions instead of forcing uniqueness;
-4. exclude ordinary `.text` mapping and keep `.data` out of auto-SAFE;
-5. derive piecewise PC↔Switch collinearity blocks;
-6. establish strong ANCHOR records;
-7. resolve repeat/multi-match candidates inside reliable anchor blocks;
-8. infer Switch field type/width independently from PC record length;
-9. verify NUL/boundary/stride preservation;
-10. flag integer/float/pointer/offset/table/padding/non-text risks;
-11. use XREF/use-site evidence where feasible;
-12. audit overlap and pattern-inclusion conflicts;
-13. simulate applying the candidate set to the flat Switch image;
-14. re-decode and re-check all patched fields offline;
-15. classify ANCHOR / SAFE-A / SAFE-B / PROBABLE / HOLD / REJECT.
+- add-on OFF -> normal boot/run;
+- v0.2b NO-INLINE -> boots and renders `태합입지전 V DX`;
+- integrated 5,519 inline set -> freeze;
+- v0.2c one-record removal -> still fails;
+- address-half A -> freeze;
+- address-half B -> title, then button input -> forced exit/crash.
 
-Do not automatically shorten translations to satisfy a guessed field width. If the original PC translation cannot be proven safe on Switch, HOLD it until a separate translation decision is made.
+Do not overstate this as "any inline set fails".
 
-Do not hard-code arbitrary minimum lengths before corpus measurements. Use effective `info_len` distributions and structural evidence to determine thresholds.
+## 12. Full validator architecture after Phase 0
 
-## 16. Pointer records and remaining runtime work
+If Phase 0 clears the architecture, build the validator for all 17,103 records, not just the old 5,519.
 
-The exact 56 pointer records are parsed and retained, but Switch correspondence is not yet emitted.
+Mandatory principles:
 
-Remaining major items after/alongside inline validation:
+- game-specific encoding validity;
+- all Switch candidate positions, not unique-only;
+- `.text` ordinary-inline exclusion;
+- `.data` excluded from auto-patching but retained as an analysis/evidence source;
+- relocation/reference evidence as strong evidence, not a universal requirement;
+- rodata-wide tail-merge/subsequence/conflict checks;
+- piecewise/local PC-RVA <-> Switch-offset blocks using order and distance consistency;
+- collinearity is not the sole mandatory route to SAFE;
+- independent Switch field classification and boundary/stride semantics;
+- control-code whitelist derived independently and frozen before classification;
+- shuffled/negative controls when choosing `info_len` thresholds;
+- simulated patching, field-type-specific set invariants, adjacent-patch interaction checks;
+- final IPS reparse and diff against the intended patch plan/image;
+- ANCHOR / SAFE-A / SAFE-B / PROBABLE / HOLD / REJECT hard-gate classification;
+- no automatic translation shortening.
 
-- 7,494 -> 10,036 mapping relocation/reference/count patches;
-- 56 pointer-record Switch mapping;
-- `runtime_byte_validation` counterpart if required;
-- font threshold behavior if required;
+Runtime success remains sanity evidence only.
+
+## 13. Pointer/runtime work remaining
+
+- safe 7,494 -> 10,036 mapping relocation/reference/count patches;
+- `runtime_byte_validation` counterpart;
+- `font_page_limit` counterpart;
+- 56 pointer-record Switch mappings;
 - `description_font_1~2`;
 - `ui_width_1~4`;
-- Switch-native `CWTDAT_JP.TR5` reconstruction.
+- Switch-native CWTDAT reconstruction.
 
-## 17. Eden Android installation constraint
+Runtime descriptors should be investigated by actual semantics/reachability; do not assume all are prerequisites for the validator.
 
-Do **not** assume normal Android file-manager access to Eden's internal folder.
+## 14. Eden Android constraint
 
-Development ZIP flow:
+Do not assume normal file-manager access to Eden internal Android storage.
 
-1. extract into an ordinary accessible location such as `Download`;
-2. Eden target-game Add-ons;
+Development mod installation:
+
+1. extract to accessible Android storage;
+2. Eden per-game Add-ons;
 3. `+ Install` -> `Mods and cheats`;
-4. select the extracted mod root containing `exefs/` and/or `romfs/` directly beneath it;
-5. enable only the intended test build.
+4. select the mod root containing `exefs/` and/or `romfs/`;
+5. enable only the intended diagnostic build.
 
-See `docs/EDEN_ANDROID_TEST_GUIDE.md`.
+## 15. Immediate next actions
 
-## 18. Final distribution target
+1. Run **P0N** in Eden Android and record the result.
+2. If P0N passes, prepare independently selected MVI real-inline tests rather than arbitrary address splits.
+3. Obtain the exact Steam build-9163702 PC EXE before PC binary-context homology work.
+4. Continue Phase-0 runtime-descriptor/reachability analysis while avoiding claims not supported by evidence.
+5. Only after Phase 0 clears the architecture, implement the full 17,103-record validator.
+6. Update `docs/VALIDATION_LEDGER.md` with every new/reverified/invalidated fact so later agents do not repeat checks.
 
-Primary end-user frontend: **Android APK**.
+## 16. Final distribution target
 
-The APK is a separate patch-generation app, not an Eden plugin. It will:
-
-1. accept a user-selected complete extracted Switch 1.1.3 dump;
-2. accept `Taiko5DX_Korean_Patcher_v1.02.zip`;
-3. validate Build ID/source layout;
-4. reuse the same core patch engine;
-5. emit an Eden-ready `exefs/` + `romfs/` mod;
-6. use Android SAF/user-granted locations.
-
-It must not embed or redistribute game binaries, translated payloads/fonts, the PC patch archive, keys, XCI/NSP/NCA, or full dumps.
-
-## 19. Work priority from here
-
-1. Treat `docs/INLINE_VALIDATION_POLICY.md` as the mandatory premise for all inline work.
-2. Build the full-corpus 17,103-record correspondence/validation pipeline when the user explicitly authorizes implementation.
-3. Reproduce and measure collinearity, field structure, NUL/boundary behavior, `info_len` distributions, and conflict/risk classes.
-4. Produce auditable machine-readable output plus a human-review summary.
-5. Create ANCHOR-only, then SAFE-A, then SAFE-A+SAFE-B runtime builds only after offline gates pass.
-6. Use delta debugging only if a statically validated set still produces a reproducible runtime failure.
-7. Continue mapping expansion, pointer records, runtime/UI counterparts, and CWTDAT after the core text-safety architecture is stable enough to avoid reintroducing unsafe inline patches.
-8. Wrap the stabilized core builder in the Android APK frontend last.
-
-## 20. Anti-loop and execution rules
-
-Do not revalidate established facts without new contradictory evidence. Prefer forward progress, but do not bypass the mandatory inline safety gates.
-
-Do not begin implementation merely because design discussion is ongoing. Follow the explicit user-start rule in `AGENTS.md`.
+Primary end-user frontend remains Android APK. It will accept the user's complete extracted Switch v1.1.3 dump and PC patch ZIP, reuse the same core patch engine, and emit an Eden-ready mod via Android SAF/user-granted locations. It must not embed game binaries, patch payloads/fonts, keys, XCI/NSP/NCA, or full dumps.
