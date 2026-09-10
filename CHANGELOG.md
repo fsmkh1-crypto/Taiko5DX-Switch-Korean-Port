@@ -2,6 +2,15 @@
 
 ## 2026-09-10
 
+### First Eden Android runtime result
+
+- Integrated v0.2a freezes when the add-on is enabled.
+- With the same game and Eden environment, disabling the add-on restores normal boot/execution.
+- This confirms the immediate failure is inside the current mod package rather than a baseline Eden/game launch problem.
+- Do not attribute the freeze to Eden's Global/Custom per-game setting at this stage; the add-on enable/disable state is the confirmed differentiator.
+- Prepared `v0.2b NO-INLINE` as the next diagnostic build: 207 RomFS replacements + Korean font + page mapper remain, while all 5,519 inline IPS translation patches are removed.
+- Next interpretation: if v0.2b boots, narrow the inline set by binary splitting; if it still freezes, isolate page mapper vs RomFS/font.
+
 ### Eden Android test packaging
 
 - Added `docs/EDEN_ANDROID_TEST_GUIDE.md`.
