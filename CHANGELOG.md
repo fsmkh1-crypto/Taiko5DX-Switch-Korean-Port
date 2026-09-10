@@ -2,12 +2,23 @@
 
 ## 2026-09-10
 
+### Critical Eden IPS offset correction
+
+- Confirmed from Eden/Yuzu NSO loading code that ExeFS classic IPS is applied to an artificial image composed of `0x100-byte NSOHeader + decompressed mapped NSO image`.
+- Canonical rule is now: `emitted IPS offset = mapped flat NSO offset + 0x100`.
+- Corrected `builder/build.py` so internal `PatchPlan` addresses remain mapped offsets and `write_ips()` adds `+0x100` only at serialization time.
+- Corrected `builder/build_p0n_noop.py` to generate `P0N2` under the same coordinate rule and to reparse the emitted IPS back to mapped coordinates for verification.
+- Runtime result `P0N v0.2f = freeze` is real, but its original interpretation was invalidated: P0N was not a true no-op in Eden because every record was applied `0x100` too early.
+- The same applies to all IPS-bearing builds through P0N v0.2f, including v0.2a/v0.2b/v0.2c/A/B. Their observations remain historical runtime facts, but they cannot be used as candidate-safety evidence.
+- In particular, v0.2b reaching the Korean title does not prove that the intended page mapper at mapped `0x44650C` ran; the old emitted record targeted mapped `0x44640C`. The corrected emitted IPS offset is `0x44660C`.
+- Generated corrected diagnostic `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip`, SHA-256 `1ccb27e7f8836b8687ade7e147b0f549d49069dcecebaf808fa6eabd3277e8f6`.
+- P0N2 contains 5,520 IPS records total: corrected page mapper plus 5,519 verified true no-op inline records. Static round-trip verification passes; Eden runtime result is pending.
+- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/PHASE0_FAILURE_MODE_PLAN.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/VALIDATION_LEDGER.md` so later work cannot reuse the old no-shift interpretation.
+
 ### Phase 0 failure-mode diagnosis started
 
 - Added `docs/PHASE0_FAILURE_MODE_PLAN.md` as the mandatory prerequisite before implementing the full 17,103-record inline validator.
 - Added `builder/phase0_probe.py` for reproducible count/provenance measurements and `builder/build_p0n_noop.py` for the first runtime build-layer control.
-- Generated local diagnostic `P0N`: the proven NO-INLINE baseline plus 5,519 historical inline IPS records that write the exact original Switch bytes back to themselves; 5,520 IPS records total including the page mapper.
-- P0N generator reparses its emitted IPS, checks exact equality with the patch plan, and verifies all 5,519 inline records are true no-ops. Eden runtime result is still pending.
 - Reverified the historical selector counts on fixed inputs: 17,103 records, 8,713 unique original patterns, 5,523 unique-rodata candidates, 4 overlap skips, 5,519 historical selected patterns covering 5,521 PC records.
 - Reproduced record-level collinearity statistics with explicit units: 6,053 unique-match record pairs, global LIS 3,524, 2,529 outside; top monotonic runs 1,844 / 1,074 / 978 / 78. Global LIS remains reference evidence only, not a safety hard gate.
 - Reproduced NUL statistics: 12,347 records where the original contains NUL and replacement contains none; 4,747 originals contain no NUL. These are risk statistics, not automatic run-on verdicts.
@@ -41,19 +52,18 @@
 ### Eden runtime evidence refinement
 
 - Add-on disabled: baseline game boots/runs normally.
-- `v0.2b NO-INLINE` (207 RomFS replacements + Korean font + page mapper, zero inline) boots and renders the Korean title `태합입지전 V DX`.
+- `v0.2b NO-INLINE` boots and renders the Korean title `태합입지전 V DX`; later IPS-coordinate analysis showed its intended page-mapper rewrite was not actually applied at the intended mapped offset.
 - `v0.2c` with one suspicious inline removed still fails.
 - Address-ordered half A freezes.
 - Address-ordered half B reaches the Korean title, then forced-exits/crashes after button input.
-- This disproves the single-bad-record assumption and confirms that address splitting is diagnostic only, not a safety classifier.
+- These observations are retained as history, but the old inference of candidate-level/multi-fault behavior is superseded because all those IPS records were emitted `0x100` too early.
 
 ### First Eden Android runtime result
 
 - Integrated v0.2a freezes when the add-on is enabled.
 - With the same game and Eden environment, disabling the add-on restores normal boot/execution.
-- This confirms the immediate failure is inside the current mod package rather than a baseline Eden/game launch problem.
+- This confirms only that the enabled mod package affected execution; later analysis found the IPS coordinate bug, so v0.2a cannot be used as clean semantic-inline evidence.
 - Do not attribute the freeze to Eden's Global/Custom per-game setting at this stage; the add-on enable/disable state is the confirmed differentiator.
-- Prepared `v0.2b NO-INLINE` as the next diagnostic build: 207 RomFS replacements + Korean font + page mapper remain, while all 5,519 inline IPS translation patches are removed.
 
 ### Eden Android test packaging
 
@@ -61,7 +71,6 @@
 - Recorded a real target-environment constraint: the user could not directly access Eden's internal Android folder with the normal file manager.
 - Current development ZIP instructions use Eden's own per-game Add-ons importer: extract to an ordinary Android folder, then `+ Install` -> `Mods and cheats`, selecting the mod root containing `exefs/` and `romfs/`.
 - Added a first-run checklist focused on boot success, Korean glyph rendering, clipping/width problems, event dialogue behavior, and crash/log capture.
-- Repacked the integrated build as Android-oriented v0.2a with the guide embedded; patch payload itself was unchanged from integrated v0.2.
 
 ### Distribution strategy
 
@@ -81,15 +90,15 @@
 - Confirmed and encoded the resource layout: 10,036 mappings, 602-byte pointer string pool, 158-byte helper blob, 17,103 inline records, 56 pointer records, and 11 runtime descriptors.
 - Added a single-pass Aho-Corasick matcher for the 17,103 PC inline replacement records.
 - Added the former exact-unique Switch mapping selector: exact unique original bytes, Switch rodata only, no conflicting replacement, no overlap guessing.
-- On the fixed Switch 1.1.3 `main`, that former selector chose 5,519 unique inline patterns covering 5,521 PC records. Runtime evidence later showed this selection rule was not sufficient for safety; it is retained only as a reference/regression set.
+- On the fixed Switch 1.1.3 `main`, that former selector chose 5,519 unique inline patterns covering 5,521 PC records. It is retained only as a reference/regression set; release safety still requires the full validation policy.
 - Reworked IPS generation to support thousands of patch records in one integrated Eden build.
 - Integrated 207 directly reusable PC Korean RomFS payload files; `CMENU/CWTDAT_JP.TR5` remains intentionally excluded.
 - Added fixed NSO segment-layout guards and original Switch font hash guard.
 
 ### Still pending
 
-- P0N Eden runtime result, then MVI 1/10/100 content tests if P0N passes.
-- Exact Steam build-9163702 PC EXE for PC-binary context/homology work.
+- **P0N2 Eden runtime result**; then corrected MVI 1/10/100 content tests if P0N2 passes.
+- Exact Steam build-9163702 PC EXE for optional PC-binary context/homology work.
 - Full 17,103-record inline correspondence/validation pipeline after Phase 0.
 - 7,494 -> 10,036 Switch mapping table relocation/reference/count patches.
 - Switch correspondence for the 56 pointer records.
