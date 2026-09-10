@@ -30,17 +30,17 @@ D5519 strongly attributes the former immediate freezes to the missing `+0x100` b
 
 ## 4. Current visible issues
 
-D5519/Y0 runtime screenshots establish several independent residual classes:
+Current runtime screenshots establish several independent residual classes:
 
 1. garbled auxiliary yomi/furigana rows on protagonist-selection and dialogue name UIs;
 2. repeated short Japanese UI objects such as `はい`, date suffixes, `城`, and repeated `清洲` fields missed by unique-only matching;
-3. compact/fixed-field Korean name rendering defects, especially `마츠다이라 모토야스` displaying without `츠` on a nameplate;
-4. user-observed odd shapes around `케/자` in `나야 스케자에몬`;
+3. compact/fixed-field Korean name rendering: `마쓰다이라 모토야스` still loses compact `쓰` on the tested nameplate;
+4. the earlier odd `케/자` shapes in `나야 스케자에몬` are corrected by W0;
 5. currency format strings containing `貫/文`, which require format-object analysis rather than global replacement.
 
 These are quality/coverage/runtime-behavior issues, not a recurrence of the old immediate freeze.
 
-## 5. Yomi result: Y0 did not hide the observed rows
+## 5. Yomi result
 
 D5519 classification found 2,099 historical inline records whose original non-NUL bytes are entirely halfwidth kana `0xA1..0xDF`, leaving 3,420 non-yomi records.
 
@@ -51,44 +51,39 @@ Eight direct call sites set `mov w6,#1` before calls to shared name/yomi routine
 0x2A7FE4  0x2ADE5C  0x2BC1A0  0x2BD5C8
 ```
 
-`Y0 v0.2l` restored the 2,099 internal yomi records to original Switch bytes and changed those eight enables to zero. Runtime remained stable, but the garbled small reading rows in protagonist selection and dialogue nameplates **still appeared**.
+`Y0 v0.2l` restored the 2,099 internal yomi records to original Switch bytes and changed those eight enables to zero. Runtime remained stable, but the garbled small reading rows still appeared.
 
-Therefore:
+Therefore do not repeat the same eight-site-only suppression attempt. Preserve internal Japanese yomi for sort/comparison compatibility while the actual visible-row path is traced later.
 
-- the eight call-site mapping remains a valid static finding;
-- the hypothesis that those eight sites alone control the observed two rows is disproved/incomplete;
-- do not repeat the same eight-site-only suppression attempt;
-- preserve internal Japanese yomi for sort/comparison compatibility while the actual visible-row path is traced later.
+## 6. Compact Korean mechanism — corrected transcription
 
-## 6. New critical font-width finding
-
-The missing `츠` in `마츠다이라 모토야스` is not a translation omission and not corrupt source glyph art.
-
-PC T5K records for `松平元康` use a 16-byte compact replacement:
+PC T5K R9751/R9752 for `松平元康` use a 16-byte compact replacement:
 
 ```text
 B2 BD AA F3 6B EE 93 20 EF 90 F5 E2 F2 7E F1 B8
 ```
 
-Semantics:
+Correct semantics:
 
 ```text
-B2 = 마  (single-byte compact glyph on Korean font page 63)
-BD = 츠  (single-byte compact glyph on Korean font page 63)
-AA = 다  (single-byte compact glyph on Korean font page 63)
+B2 = 마
+BD = 쓰
+AA = 다
 F36B = 이
 EE93 = 라
 20   = space
 EF90 F5E2 F27E F1B8 = 모토야스
 ```
 
-The exact Korean G1T atlas contains correct page-63 `마/츠/다` glyphs. The normal two-byte `케` (`F568`) and `자` (`F379`) glyph cells are also correct. Therefore the visible defects are runtime classification/layout/render behavior, not bad font artwork.
+The intended Korean display is **`마쓰다이라 모토야스`**. Earlier project text that called `BD` `츠` was a transcription error and is superseded.
 
-The PC runtime descriptor `font_page_limit` changes a threshold from `0xFF` to `0xA0`. Semantically, bytes above `0xA0` are moved from the single-byte halfwidth path to the alternate/full-width path. This explains why the compact A1+ Korean glyph system needs a runtime patch in addition to the font asset.
+Direct BC3 decoding of the exact Korean G1T confirms correct source glyph art for compact `마/쓰/다` and normal two-byte `케/자`. The source font is not the defect.
 
-## 7. W0 diagnostic — current immediate test
+The PC runtime descriptor `font_page_limit` changes a threshold from `0xFF` to `0xA0`, making single-byte codes above `0xA0` take the alternate/full-width path.
 
-Six Switch v1.1.3 width/layout sites implement or inline the corresponding `code < 0x100` halfwidth decision:
+## 7. W0 result — partial pass
+
+W0 v0.2m adds six Switch equivalents of the PC A1+ half/fullwidth threshold:
 
 ```text
 0x445EAC
@@ -99,30 +94,52 @@ Six Switch v1.1.3 width/layout sites implement or inline the corresponding `code
 0x447C44
 ```
 
-At all six sites:
+Each changes:
 
 ```text
-old: 1F 01 04 71   cmp w8,#0x100
-new: 1F 85 02 71   cmp w8,#0xA1
+cmp w8,#0x100 -> cmp w8,#0xA1
 ```
 
-A separate `cmp #0x100` in conversion logic around `0x4304F8` is unrelated and must not be patched.
+Runtime on 2026-09-11:
 
-Prepared diagnostic:
+- stable on the tested route;
+- `나야 스케자에몬` now renders `케/자` correctly;
+- `마쓰다이라 모토야스` still lacks compact `BD=쓰` visually.
 
-- `W0_Taiko5DX_KR_DBG_FONTWIDTH_A1_v0.2m.zip`
-- SHA-256 `e453d5958793748ebf841f295ef4005a9a612fdbe643439fe9c2a2c0183ea2ad`
-- basis: D5519 v0.2k;
-- D5519 5,520 IPS records retained;
-- six threshold records added;
-- final IPS record count 5,526;
-- all six original-instruction guards and emitted-IPS round-trip checks pass.
+Therefore the W0 family is functionally relevant but incomplete.
 
-Reproducible builder: `builder/build_w0_fontwidth.py`.
+## 8. W1 diagnostic — current immediate test
 
-**Immediate action:** enable W0 alone, reach the Matsudaira Motoyasu nameplate and check whether `마츠다이라 모토야스` now includes `츠`. Also check `나야 스케자에몬` for `케/자` appearance and inspect general spacing/halfwidth regressions.
+Further disassembly found an additional text-render/layout gate at mapped `0x44D9D0` that W0 missed:
 
-## 8. Repeated short-object recovery already established
+```text
+and w8,w26,#0xffff
+cmp w8,#0x100
+b.hs 0x44D9E0
+mov w19,#8
+...
+bl 0x44E400
+```
+
+The old path forces every code `<0x100` to width 8 immediately before glyph construction/draw. This is a high-confidence reason compact page-63 `BD=쓰` can remain visually clipped/absent even after W0.
+
+Prepared W1 v0.2n = W0 + one isolated edit:
+
+```text
+mapped 0x44D9D0 : cmp w8,#0x100 -> cmp w8,#0xA1
+Eden IPS 0x44DAD0
+```
+
+Artifact:
+
+- `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`
+- SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`
+- W0 records 5,526 -> W1 5,527
+- original-byte guard + IPS round-trip PASS.
+
+**Immediate action:** enable W1 alone and check the Matsudaira nameplate for `마쓰다이라 모토야스`; verify `나야 스케자에몬` stays correct and note spacing/clipping/stability.
+
+## 9. Repeated short-object recovery already established
 
 Use actual Switch string objects, not every raw substring occurrence.
 
@@ -137,67 +154,52 @@ Currency `貫/文` remains separate because many uses occur inside longer format
 
 Reproducible analyzer: `builder/repeated_token_probe.py`.
 
-## 9. Fixed target identity
+## 10. Fixed target identity
 
 - Title ID `0100346017304000`
 - Switch version `1.1.3`
 - `main` Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`
-- compressed main size 5,287,359 bytes
 - compressed main SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
 - mapped flat size `10,617,904 / 0xA20430`
 - text `0x000000 + 0x58CE60`
 - rodata `0x58D000 + 0x432018`
 - data `0x9C0000 + 0x60430`
 
-## 10. PC patch source facts
+## 11. PC patch source facts
 
 PC patch ZIP SHA-256 `df1b62de95e992369e9686c9731d814e7a7e4634888f610430635429e24f7cec`.
 
-T5K121R:
-
-- mapping entries 10,036;
-- original mapping entries 7,494 (`0x1D46`);
-- Korean additions 2,542;
-- inline records 17,103;
-- pointer records 56;
-- runtime descriptors 11.
-
-`dinput8.dll` SHA-256 `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`.
+T5K121R: 10,036 mapping entries; 7,494 originals; 2,542 Korean additions; 17,103 inline records; 56 pointer records; 11 runtime descriptors.
 
 The Drive `PC_Original/Taiko5DX.exe` is not the exact T5K target and must not be used for PC binary-context evidence. Exact target is Steam build 9163702, size 18,685,960, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`.
 
-## 11. Encoding/font/conversion status
+## 12. Encoding/font/conversion status
 
 - Switch original font == Steam original: 13,108,628 bytes / 50 pages / SHA-256 `9c886848...a0083e`.
 - Korean font: 16,779,036 bytes / 64 pages / SHA-256 `c82d80da...66932`.
 - Normal Korean uses the custom two-byte game code; lead bytes `EB~F8` map to pages 49~62.
 - PC patch additionally repurposes page-63 single-byte codes above `0xA0` for compact Korean glyphs in tight fixed fields.
 
-Switch functions:
+Switch functions include `0x430350` UTF-16->game code, `0x4305D0` game code->UTF-16, `0x445C60` per-character decode, `0x445DE0` width selection, `0x446310` segmentation/count, and `0x446420` GetFontTexIndex.
 
-- `0x430350`: UTF-16 -> game code;
-- `0x4305D0`: game code -> UTF-16;
-- `0x446310`: segmentation/count;
-- `0x446420`: GetFontTexIndex.
+The per-character JP decode around `0x445C60` accepts `0xA1..0xDF` as single-byte values, so compact `BD=쓰` is not being discarded at basic decode. Both conversion loops still search only 7,494 mapping entries; expansion remains needed for full input/conversion behavior.
 
-Both conversion loops still search 7,494 entries; misses are defined (`0x81A1`, `U+25A0`). Expansion to 10,036 remains needed for full input/conversion behavior but D5519 proves it is not required merely for survival of the tested rendered-text route.
+## 13. Validator role after D5519
 
-## 12. Validator role after D5519
+The full 17,103-record validator remains a release-audit/recovery mechanism, not the primary explanation for the old freeze. It must recover missed repeated/string-pool/fixed-field mappings safely and audit late-game structural risk.
 
-The full 17,103-record validator remains a release-audit/recovery mechanism, not the primary explanation for the old freeze. It must recover missed repeated/string-pool/fixed-field mappings safely and audit late-game structural risk. `unique exact match` remains discovery evidence only; runtime pass remains route evidence only.
+## 14. Priority after W1 result
 
-## 13. Priority after W0 result
-
-1. evaluate W0 compact-font result and regressions;
-2. if W0 fixes compact glyphs, promote the six-site threshold patch into the integrated builder;
-3. trace the actual auxiliary-yomi draw path later; do not repeat Y0's eight-site-only attempt;
-4. recover high-confidence repeated UI objects (`はい`, date suffixes, `城`, both `清洲` fields);
-5. structurally map currency format strings (`貫/文`);
+1. evaluate W1 compact `쓰` result and regressions;
+2. integrate the confirmed font-width/render threshold family into the main builder;
+3. trace the actual auxiliary-yomi draw path;
+4. recover high-confidence repeated UI objects;
+5. map `貫/文` complete format objects;
 6. expand 7,494 -> 10,036 conversion mapping;
 7. map remaining runtime descriptors / 56 pointer records / Switch-native CWTDAT changes;
 8. full release validator and broad runtime route.
 
-## 14. Eden Android / final distribution
+## 15. Eden Android / final distribution
 
 Development builds must be installed through Eden's per-game Add-ons importer; direct normal file-manager access to Eden internal storage is not assumed.
 
