@@ -2,6 +2,20 @@
 
 ## 2026-09-10
 
+### Phase 0 failure-mode diagnosis started
+
+- Added `docs/PHASE0_FAILURE_MODE_PLAN.md` as the mandatory prerequisite before implementing the full 17,103-record inline validator.
+- Added `builder/phase0_probe.py` for reproducible count/provenance measurements and `builder/build_p0n_noop.py` for the first runtime build-layer control.
+- Generated local diagnostic `P0N`: the proven NO-INLINE baseline plus 5,519 historical inline IPS records that write the exact original Switch bytes back to themselves; 5,520 IPS records total including the page mapper.
+- P0N generator reparses its emitted IPS, checks exact equality with the patch plan, and verifies all 5,519 inline records are true no-ops. Eden runtime result is still pending.
+- Reverified the historical selector counts on fixed inputs: 17,103 records, 8,713 unique original patterns, 5,523 unique-rodata candidates, 4 overlap skips, 5,519 historical selected patterns covering 5,521 PC records.
+- Reproduced record-level collinearity statistics with explicit units: 6,053 unique-match record pairs, global LIS 3,524, 2,529 outside; top monotonic runs 1,844 / 1,074 / 978 / 78. Global LIS remains reference evidence only, not a safety hard gate.
+- Reproduced NUL statistics: 12,347 records where the original contains NUL and replacement contains none; 4,747 originals contain no NUL. These are risk statistics, not automatic run-on verdicts.
+- Did **not** reproduce the external `430` termination and `8,981 records / 1,242 patterns >=5-match` counts under the stated definitions. They remain non-canonical until the original scope/unit is identified.
+- Confirmed both Switch conversion loops still use `0x1D46 = 7,494`. ARM64 disassembly also shows defined miss fallbacks (`0x81A1` for UTF-16->game code, `U+25A0` for game code->UTF-16), so mapping expansion is required functionally but is not yet proven as the direct freeze cause.
+- Found a critical source-identity issue: the Drive `PC_Original/Taiko5DX.exe` is version-string `1.2.1.0` but does not match the T5K target. Supplied EXE is 18,479,304 bytes / SHA-256 `22e1cd1a...65ef6`; T5K target is 18,685,960 bytes / SHA-256 `10c69bab...65a2` (Steam build 9163702). The supplied EXE is barred from PC-RVA neighborhood/homology evidence.
+- Updated `AGENTS.md`, `PROJECT_STATE.md`, `PATCH_MAP.md`, and `docs/VALIDATION_LEDGER.md` so later agents cannot skip Phase 0 or reuse the wrong PC EXE as context evidence.
+
 ### Validation ledger promoted to mandatory workflow
 
 - Promoted `docs/VALIDATION_LEDGER.md` into the mandatory pre-read path in `AGENTS.md`.
@@ -74,10 +88,12 @@
 
 ### Still pending
 
-- Full 17,103-record inline correspondence/validation pipeline under `docs/INLINE_VALIDATION_POLICY.md`.
+- P0N Eden runtime result, then MVI 1/10/100 content tests if P0N passes.
+- Exact Steam build-9163702 PC EXE for PC-binary context/homology work.
+- Full 17,103-record inline correspondence/validation pipeline after Phase 0.
 - 7,494 -> 10,036 Switch mapping table relocation/reference/count patches.
 - Switch correspondence for the 56 pointer records.
-- `ui_width_1~4` / `description_font_1~2` Switch runtime counterparts.
+- `runtime_byte_validation`, font threshold, `ui_width_1~4`, `description_font_1~2` counterparts as evidence requires.
 - Switch-native `CWTDAT_JP.TR5` reconstruction.
 
 ### Repository initialization
