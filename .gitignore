@@ -1,0 +1,66 @@
+# Nintendo / game dumps
+*.xci
+*.xcz
+*.nsp
+*.nsz
+*.nca
+*.tik
+*.cert
+*.cnmt
+
+# Keys / secrets
+prod.keys
+title.keys
+keys.txt
+*.keys
+
+# Executables and source binaries
+main
+main.*.bin
+*.nso
+*.exe
+*.dll
+
+# Game/patch payload binaries
+*.G1T
+*.g1t
+*.TS5
+*.ts5
+*.TR5
+*.tr5
+*.DAT
+*.dat
+*.bin
+*.ips
+*.ips32
+*.pchtxt
+
+# Archives / generated packages
+*.zip
+*.7z
+*.rar
+*.tar
+*.gz
+
+# Local work/output
+work/
+output/
+build/
+dist/
+dump/
+romfs/
+exefs/
+Eden_Builds/
+Test_Results/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# IDE / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
