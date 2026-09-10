@@ -2,6 +2,29 @@
 
 ## 2026-09-10
 
+### Canonical inline-validation redesign
+
+- Added `docs/INLINE_VALIDATION_POLICY.md` as the normative project-level policy for all future T5K inline mapping.
+- Added `docs/RUNTIME_TEST_RESULTS.md` to preserve the actual Eden Android observations separately from safety conclusions.
+- Promoted the key rule to `AGENTS.md`: `unique exact match` is candidate-discovery evidence only and can never by itself authorize a release patch.
+- Changed the validator target from the old 5,519 exact-unique rodata subset to the full 17,103-record T5K inline corpus.
+- Defined mandatory safety axes: game-code validity, PC↔Switch structural homology, independently established Switch field/boundary structure, conflict/binary-risk rejection, and simulated post-patch offline re-validation.
+- Adopted piecewise collinearity/anchor analysis as the preferred global homology model; do not assume one global LIS or perfect ordering across the whole binary.
+- Prohibited automatic translation shortening merely to fit an unproven Switch field width. Uncertain candidates are HOLD until field structure is established.
+- Defined ANCHOR / SAFE-A / SAFE-B / PROBABLE / HOLD / REJECT classes and made hard gates primary over weighted confidence scoring.
+- Restricted binary split / delta debugging to isolating currently reproducible failures. A passing split is never evidence that all members are safe.
+- Added the explicit user-start gate to `AGENTS.md`: design/review discussion does not authorize implementation/build/commit work unless the user explicitly starts it; documentation-only requests authorize only the requested documentation edits.
+- Updated `PROJECT_STATE.md` and `PATCH_MAP.md` so the old 5,519 selector is no longer presented as a safe implemented subset.
+
+### Eden runtime evidence refinement
+
+- Add-on disabled: baseline game boots/runs normally.
+- `v0.2b NO-INLINE` (207 RomFS replacements + Korean font + page mapper, zero inline) boots and renders the Korean title `태합입지전 V DX`.
+- `v0.2c` with one suspicious inline removed still fails.
+- Address-ordered half A freezes.
+- Address-ordered half B reaches the Korean title, then forced-exits/crashes after button input.
+- This disproves the single-bad-record assumption and confirms that address splitting is diagnostic only, not a safety classifier.
+
 ### First Eden Android runtime result
 
 - Integrated v0.2a freezes when the add-on is enabled.
@@ -9,15 +32,14 @@
 - This confirms the immediate failure is inside the current mod package rather than a baseline Eden/game launch problem.
 - Do not attribute the freeze to Eden's Global/Custom per-game setting at this stage; the add-on enable/disable state is the confirmed differentiator.
 - Prepared `v0.2b NO-INLINE` as the next diagnostic build: 207 RomFS replacements + Korean font + page mapper remain, while all 5,519 inline IPS translation patches are removed.
-- Next interpretation: if v0.2b boots, narrow the inline set by binary splitting; if it still freezes, isolate page mapper vs RomFS/font.
 
 ### Eden Android test packaging
 
 - Added `docs/EDEN_ANDROID_TEST_GUIDE.md`.
 - Recorded a real target-environment constraint: the user could not directly access Eden's internal Android folder with the normal file manager.
-- Current development ZIP instructions now use Eden's own per-game Add-ons importer: extract to an ordinary Android folder, then `+ Install` -> `Mods and cheats`, selecting the mod root containing `exefs/` and `romfs/`.
+- Current development ZIP instructions use Eden's own per-game Add-ons importer: extract to an ordinary Android folder, then `+ Install` -> `Mods and cheats`, selecting the mod root containing `exefs/` and `romfs/`.
 - Added a first-run checklist focused on boot success, Korean glyph rendering, clipping/width problems, event dialogue behavior, and crash/log capture.
-- Repacked the current integrated build as Android-oriented v0.2a with the guide embedded; patch payload itself is unchanged from integrated v0.2.
+- Repacked the integrated build as Android-oriented v0.2a with the guide embedded; patch payload itself was unchanged from integrated v0.2.
 
 ### Distribution strategy
 
@@ -36,19 +58,17 @@
 - Added exact parser for the `T5K121R` container.
 - Confirmed and encoded the resource layout: 10,036 mappings, 602-byte pointer string pool, 158-byte helper blob, 17,103 inline records, 56 pointer records, and 11 runtime descriptors.
 - Added a single-pass Aho-Corasick matcher for the 17,103 PC inline replacement records.
-- Added conservative automatic Switch mapping: exact unique original bytes, Switch rodata only, no conflicting replacement, no overlap guessing.
-- On the fixed Switch 1.1.3 `main`, selected 5,519 unique inline patterns covering 5,521 PC records.
+- Added the former exact-unique Switch mapping selector: exact unique original bytes, Switch rodata only, no conflicting replacement, no overlap guessing.
+- On the fixed Switch 1.1.3 `main`, that former selector chose 5,519 unique inline patterns covering 5,521 PC records. Runtime evidence later showed this selection rule was not sufficient for safety; it is retained only as a reference/regression set.
 - Reworked IPS generation to support thousands of patch records in one integrated Eden build.
 - Integrated 207 directly reusable PC Korean RomFS payload files; `CMENU/CWTDAT_JP.TR5` remains intentionally excluded.
 - Added fixed NSO segment-layout guards and original Switch font hash guard.
-- Local build-generation test completed with 5,520 IPS records total: 5,519 inline translations + the ARM64 page mapper.
-- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, and builder documentation to make this the new canonical resume point.
 
 ### Still pending
 
+- Full 17,103-record inline correspondence/validation pipeline under `docs/INLINE_VALIDATION_POLICY.md`.
 - 7,494 -> 10,036 Switch mapping table relocation/reference/count patches.
 - Switch correspondence for the 56 pointer records.
-- Context-aware mapping for ambiguous/missing inline records.
 - `ui_width_1~4` / `description_font_1~2` Switch runtime counterparts.
 - Switch-native `CWTDAT_JP.TR5` reconstruction.
 
@@ -61,17 +81,7 @@
 - Recorded the Switch CWTDAT structural exception.
 - Recorded the confirmed 64-page Korean font layout and custom Korean byte-code range.
 - Recorded Switch text/font functions at `0x430350`, `0x4305D0`, `0x446310`, and `0x446420`.
-- Recorded and implemented the first ARM64 page-mapper rewrite adding `EB~F8 -> pages 49~62`.
+- Recorded and implemented the ARM64 page-mapper rewrite adding `EB~F8 -> pages 49~62`.
 - Recorded exact mapping counts: 7,494 original + 2,542 Korean = 10,036.
-- Corrected previous misunderstanding of 17,103 PC EXE records: they are primarily same-length in-place replacement records, not a monolithic injected text blob.
+- Corrected the old misunderstanding of 17,103 PC EXE records: they are primarily same-length in-place replacement records, not a monolithic injected text blob.
 - Established integrated-build-first workflow and Eden Android as the primary test target.
-
-### Existing local proof-of-concept
-
-A local P0 Eden mod was produced containing:
-
-- Build-ID IPS with the page-mapper patch
-- PC Korean-patched `FONT_JPN.G1T`
-- one translated EVENT TS5 smoke-test file
-
-This P0 is superseded by the integrated development build path and is not stored in this public repository.
