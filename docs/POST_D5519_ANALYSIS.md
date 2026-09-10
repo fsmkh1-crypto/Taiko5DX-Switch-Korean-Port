@@ -6,57 +6,33 @@ Canonical analysis after the corrected-offset full-inline diagnostic build `D551
 
 `D5519 v0.2k` re-ran the historical 5,519 exact-unique inline replacement set with the Eden NSO IPS coordinate corrected from `X` to `X + 0x100`.
 
-Observed early-game route:
+Observed early-game route: boot, title, main menu, scenario selection/description, protagonist selection, and entry into normal gameplay all PASS; no freeze or forced exit was observed.
 
-- boot: PASS;
-- title: PASS;
-- main menu: PASS;
-- scenario selection/description: PASS;
-- protagonist selection: PASS;
-- entry into normal gameplay: PASS;
-- no freeze or forced exit was observed on this route.
+This strongly attributes the old immediate freezes to the missing `+0x100` IPS coordinate shift. It does not certify all 5,519 historical candidates for every late-game path.
 
-This is strong evidence that the pre-P0N2 freezes were dominated by the missing `+0x100` IPS coordinate shift. It does **not** certify all 5,519 historical candidates as release-safe for all game paths.
+## 2. Visible anomaly classes
 
-## 2. Visible anomalies in D5519
+Screenshots establish separate problems that must not be conflated:
 
-Screenshots show four different classes and they must not be conflated:
+1. Korean main names/text broadly work.
+2. Small auxiliary reading/yomi rows render as garbled kana/Latin-like glyphs.
+3. Repeated short UI tokens remain Japanese in some places (`はい`, date/currency suffixes, `城`).
+4. Repeated location components such as `清洲` remain Japanese because the historical selector rejected non-unique matches.
+5. Some fixed-field Korean names show glyph/spacing defects: `마츠다이라 모토야스` loses `츠` in a nameplate; `나야 스케자에몬` shows user-observed odd appearance around `케/자`.
 
-1. Korean main names/text render correctly in many places.
-2. A small auxiliary reading/yomi line above or near names renders as garbled kana/Latin-like glyphs.
-3. Short repeated UI tokens remain Japanese in some places, e.g. `はい`, `年/月/日`, `貫/文`, `城`.
-4. Some location-name components such as `清洲` remain Japanese because the historical selector rejected non-unique matches.
+## 3. Yomi policy and Y0 result
 
-## 3. Yomi policy for the Switch port
+For the Switch Korean port, preserve original Japanese halfwidth-kana yomi internally where possible because it may participate in sorting/comparison/input. Do not translate internal yomi merely to show a redundant reading line when the main name is already Korean.
 
-For the Korean Switch port, the visible Japanese reading/furigana line is not needed when the main name itself is already rendered directly in Korean.
-
-Policy:
-
-- keep Korean main-name display;
-- preserve the original Japanese halfwidth-kana yomi bytes internally where possible, because yomi may participate in sort/comparison/input logic;
-- do not translate internal yomi merely for display;
-- suppress the visible auxiliary yomi line at the rendering call sites instead of deleting the field or zeroing the internal key.
-
-This is intentionally Switch-port-specific behavior. It does not attempt to reproduce every PC runtime presentation choice when that choice is unnecessary for Korean readability.
-
-## 4. Static evidence for the yomi diagnosis
-
-Against the fixed Switch v1.1.3 mapped `main` and the corrected D5519 patch set:
-
-- D5519 real inline records: 5,519;
-- records whose original non-NUL bytes are entirely halfwidth-kana `0xA1..0xDF`: **2,099**;
-- retained non-yomi historical inline records after excluding those: **3,420**.
-
-The garbled small line therefore has a direct structural explanation: thousands of halfwidth-yomi fields were replaced with the custom Korean code space, while the Switch auxiliary-reading renderer is not yet equivalent to the PC runtime path.
-
-A shared name/yomi drawing routine is called at mapped address `0x45B0F8`. Eight direct callers explicitly enable the auxiliary reading line with instruction bytes:
+D5519 classification:
 
 ```text
-26 00 80 52   ; mov w6, #1
+real inline records                         5,519
+halfwidth-kana/NUL yomi-like fields         2,099
+non-yomi historical inline                  3,420
 ```
 
-Mapped call-site offsets:
+A shared name/yomi drawing routine exists at mapped `0x45B0F8`. Eight direct callers explicitly enable an auxiliary reading line with `mov w6,#1`:
 
 ```text
 0x2A0ABC
@@ -69,97 +45,170 @@ Mapped call-site offsets:
 0x2BD5C8
 ```
 
-At each site a nearby `BL` resolves to `0x45B0F8`. The diagnostic Y0 strategy changes only the enable argument to zero:
+Y0 v0.2l restored the 2,099 internal yomi fields to original Switch bytes and changed those eight enables to zero. Runtime remained stable, but **the garbled small reading rows visible in protagonist selection and dialogue nameplates remained present**.
+
+Therefore:
+
+- the eight call sites are genuine static yomi-enable sites;
+- they are not sufficient to control the two observed UI rows, or an additional wrapper/renderer draws those rows;
+- the narrow Y0 suppression hypothesis is invalid/incomplete;
+- do not repeat the same eight-site-only attempt;
+- keep the internal-yomi preservation policy while actual visible-row tracing is deferred behind the higher-value compact-font test.
+
+## 4. Compact Korean single-byte mechanism: root cause candidate for missing `츠`
+
+The user-observed missing `츠` in `마츠다이라 모토야스` is not a transliteration choice and not a missing byte in the PC replacement.
+
+T5K records R9751/R9752 replace padded `松平元康` with exactly 16 bytes:
 
 ```text
-E6 03 1F 2A   ; mov w6, wzr
+B2 BD AA F3 6B EE 93 20 EF 90 F5 E2 F2 7E F1 B8
 ```
 
-while restoring the 2,099 internal halfwidth-yomi records to the original Switch bytes.
+The first three bytes are not normal two-byte Korean codes. The Korean G1T deliberately repurposes page-63 single-byte cells:
 
-## 5. Repeated short strings: why the old selector misses them
+```text
+B2 = 마
+BD = 츠
+AA = 다
+```
 
-The historical selector rejects a pattern whenever its raw byte sequence appears more than once anywhere in the flat image. This is too conservative for short Japanese strings because their bytes also occur as substrings inside longer prose or identifiers.
+The remainder is normal two-byte Korean:
 
-Examples from the fixed Switch `main`:
+```text
+F36B = 이
+EE93 = 라
+20   = space
+EF90 F5E2 F27E F1B8 = 모토야스
+```
+
+This compact form is necessary because the full normal two-byte spelling would not fit the 16-byte field.
+
+Direct BC3 decoding of the exact Korean `FONT_JPN.G1T` shows that page-63 cells `B2`, `BD`, and `AA` contain correct `마/츠/다` glyph artwork. The normal two-byte cells for `케` (`F568`) and `자` (`F379`) are also correct. Therefore the source font atlas itself is not corrupt.
+
+The runtime screenshot is especially diagnostic: `마` and `다` render while the middle compact `츠` is effectively missing. The remaining task is runtime classification/width/layout behavior.
+
+## 5. PC `font_page_limit` semantics and Switch counterpart
+
+The PC T5K runtime descriptor named `font_page_limit` is now decoded semantically. It modifies the comparison threshold from `0xFF` to `0xA0`, causing single-byte codes above `0xA0` to take the alternate/full-width path. It is not a literal font-page-count patch.
+
+The Switch v1.1.3 font/width cluster contains a matching semantic decision: several routines compare a character code against `0x100` and select the halfwidth path for values below that threshold.
+
+Six confirmed equivalent/inlined sites are:
+
+```text
+0x445EAC
+0x445FC8
+0x446198
+0x4472E8
+0x447344
+0x447C44
+```
+
+Each original instruction is:
+
+```text
+1F 01 04 71   cmp w8,#0x100
+```
+
+The PC-equivalent Switch threshold is:
+
+```text
+1F 85 02 71   cmp w8,#0xA1
+```
+
+so `0x00..0xA0` remains on the halfwidth side and `0xA1+` takes the alternate/full-width side.
+
+A different `cmp #0x100` around mapped `0x4304F8` belongs to conversion logic and must not be included in this patch family.
+
+## 6. W0 diagnostic
+
+`W0 v0.2m` uses D5519 as the baseline and adds only the six threshold edits above.
+
+Artifact:
+
+- `W0_Taiko5DX_KR_DBG_FONTWIDTH_A1_v0.2m.zip`
+- SHA-256 `e453d5958793748ebf841f295ef4005a9a612fdbe643439fe9c2a2c0183ea2ad`
+- D5519 base records: 5,520
+- added width/layout records: 6
+- final IPS records: 5,526
+- all original-instruction guards PASS;
+- no D5519 record collision;
+- emitted classic IPS exact round-trip PASS.
+
+Reproducible builder: `builder/build_w0_fontwidth.py`.
+
+Runtime test must answer three narrow questions:
+
+1. does `마츠다이라 모토야스` regain the missing `츠`?
+2. does `나야 스케자에몬` improve or change around `케/자`?
+3. are there regressions in general spacing or halfwidth Japanese UI text?
+
+W0 is diagnostic until those runtime observations are recorded.
+
+## 7. Repeated short strings: why the old selector misses them
+
+The historical selector rejects a pattern whenever its raw byte sequence appears more than once anywhere in the flat image. This is too conservative for short Japanese strings because their bytes also occur as substrings inside longer prose.
 
 ### `はい` -> `예`
 
-- T5K has one intended record: `R2277`, `はい` -> `예`.
-- raw `はい` byte sequence appears 7 times in Switch rodata;
-- only **one** occurrence is a standalone NUL-delimited string object: mapped `0x6A15A5`;
-- it is referenced by a pointer-table entry at `0x58D0D0`;
-- the immediately adjacent pointer-table object is `いいえ` at `0x6A65B2`, which the historical unique selector already translates to `아니오`.
-
-Therefore the 7 raw matches are not 7 equivalent UI objects; most are substring hits such as `とはいえ` or `にはいかなかった`. Object-boundary + pointer evidence isolates the intended `はい` safely.
+- one intended T5K record;
+- 7 raw rodata byte matches;
+- exactly one standalone NUL-delimited string object at mapped `0x6A15A5`;
+- pointer reference at `0x58D0D0`;
+- adjacent pointer-table object is `いいえ`, already translated to `아니오` by the historical selector.
 
 ### `年 / 月 / 日`
 
-The Switch linker/compiler has pooled the standalone date suffix objects:
+Standalone pooled objects:
 
 ```text
-年  mapped 0x69785A
-月  mapped 0x68925A
-日  mapped 0x6A3CC6
+年  0x69785A
+月  0x68925A
+日  0x6A3CC6
 ```
 
-At pointer table `0x59C730..0x59C768`, the three objects are referenced consecutively as `年`, `月`, `日`. `年` is also referenced from another UI registration table at `0x597090` next to `名前を入力してください` and `生年を入力してください`.
-
-Raw byte matching finds many occurrences because the same kanji occurs inside longer text, but there is exactly one standalone NUL-delimited pooled object for each suffix in rodata. Multiple PC T5K records for these suffixes all use the same Korean replacement (`년/월/일`), so a many-PC-to-one-Switch pooled mapping is semantically non-conflicting.
+Pointer table `0x59C730..0x59C768` references them consecutively. Multiple PC records agree on `년/월/일`, so the many-PC-to-one-Switch pooling is non-conflicting.
 
 ### `城`
 
-- T5K has two `城` -> `성` records.
-- raw `城` appears many times inside longer strings;
-- Switch has one standalone NUL-delimited `城` object at mapped `0x6A15DC`;
-- that object has multiple pointer-table references.
-
-This is another safe-pooling candidate when all PC-side replacements agree.
+T5K has two `城` -> `성` records. Switch has one standalone pooled `城` object at mapped `0x6A15DC` with multiple references. PC replacements agree.
 
 ### `清洲`
 
-T5K has two padded records `清洲\0\0` -> `기요스`. Switch has exactly two corresponding padded occurrences:
+T5K has two padded `清洲\0\0` records with identical replacement `기요스`. Switch has exactly two corresponding padded fixed-field occurrences:
 
 ```text
 0x6AE269
 0x6AEFE9
 ```
 
-Both sit inside obvious fixed-stride place-name/yomi tables. Because both PC records share the same replacement and both Switch objects are structurally valid name fields, this is a strong two-to-two recovery candidate without arbitrary occurrence selection.
+Both lie in fixed-stride place-name/yomi tables.
 
-## 6. Currency/date unit policy
+## 8. Currency/date unit policy
 
-The PC T5K data does contain explicit translations such as:
+The PC T5K contains explicit translations `年->년`, `月->월`, `日->일`, `貫->관`, `文->문`, `はい->예`, `いいえ->아니오`.
 
-- `年` -> `년`;
-- `月` -> `월`;
-- `日` -> `일`;
-- `貫` -> `관`;
-- `文` -> `문`;
-- `はい` -> `예`;
-- `いいえ` -> `아니오`.
+Do not globally replace raw one/two-character byte sequences. Currency units in particular occur inside multiple longer format strings such as `%d貫` and combined 貫/文 layouts. Recover complete string objects or structurally confirmed fields only.
 
-Therefore Japanese unit suffixes seen in D5519 are not evidence that the PC patch intentionally leaves every such UI untouched. However the Switch port should not globally replace every raw `年/日/貫/文` byte sequence: many occurrences are substrings inside longer strings.
+## 9. Repeated-object recovery rule
 
-Recovery must operate on **string objects / pointer-table objects / confirmed fixed fields**, not raw global substring replacement.
+A repeated pattern may be recovered only when:
 
-## 7. New recovery rule
+1. relevant PC replacements agree;
+2. Switch object boundaries/field structure are independently established;
+3. substring hits inside longer strings are excluded;
+4. pointer/relocation/stride evidence supports the selected object;
+5. pooling creates no replacement conflict;
+6. no incompatible overlap remains;
+7. emitted IPS uses `mapped+0x100` and round-trips back to the intended mapped object.
 
-A repeated pattern may be promoted from historical MULTI/HOLD to a Switch candidate when all of the following are true:
+## 10. Immediate implementation sequence
 
-1. all relevant PC records agree on the replacement bytes;
-2. Switch candidate object boundaries are independently established (NUL object, fixed-width field, fixed-stride table, or pointer/relocation evidence);
-3. substring occurrences inside longer strings are excluded;
-4. any many-to-one pooling is replacement-consistent;
-5. no patched range overlaps another incompatible object;
-6. emitted IPS uses the canonical `mapped + 0x100` coordinate rule and round-trips back to the intended mapped object.
-
-This rule is narrower and safer than either `unique exact match` or global short-string replacement.
-
-## 8. Immediate implementation sequence
-
-1. Runtime-test `Y0 v0.2l` to confirm that the auxiliary yomi line disappears while Korean main names and navigation remain stable.
-2. Add a repeated-object recovery analyzer using pointer-table/boundary evidence.
-3. First recovery diagnostic should target high-confidence visible cases only: `はい`, pooled `年/月/日`, pooled `城`, and both `清洲` objects.
-4. Treat `貫/文` format-string cases separately because several visible currency strings embed the unit inside longer format strings; do not patch every raw occurrence globally.
-5. Keep the full 17,103-record validator as the release-audit mechanism, but its role is now residual coverage/safety recovery rather than explaining the already-resolved pre-P0N2 freeze.
+1. Runtime-test W0 before adding repeated short-string recovery so the font-width variable stays isolated.
+2. If W0 fixes the compact `츠` path without regressions, promote the six-site threshold behavior into the integrated builder.
+3. If `케/자` remain visually wrong, investigate their two-byte UI-specific advance/scaling path separately; the G1T glyph cells are already verified correct.
+4. Recover high-confidence repeated objects (`はい`, pooled `年/月/日`, pooled `城`, both `清洲` fields).
+5. Map `貫/文` complete format objects separately.
+6. Return to the actual visible yomi-row draw path after higher-impact name/font issues are stable.
+7. Keep the full 17,103 validator as release audit/recovery, not as the explanation for the resolved pre-P0N2 freeze.
