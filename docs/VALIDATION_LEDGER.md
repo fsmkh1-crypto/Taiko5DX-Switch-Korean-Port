@@ -1,86 +1,78 @@
 # VALIDATION_LEDGER
 
-Canonical record of what has actually been validated, what still needs revalidation, and what has been invalidated or superseded.
+Canonical record of validated, runtime-validated, superseded, invalidated, and still-unresolved facts.
 
 ## Operating rule
 
-The project must not repeatedly re-check an already well-recorded fact. However, a prior conclusion whose evidence/provenance is incomplete may be revalidated **once when the result materially matters to current work**. After that revalidation, the result must be recorded here with enough detail that another agent can reproduce or trust it without starting over.
+Do not repeat a well-recorded validation. Revalidation is allowed only when:
 
-A validation may be repeated only when at least one of the following is true:
+1. input file/version/hash changes;
+2. new static/runtime evidence directly contradicts the record;
+3. provenance is insufficient for the current high-risk decision;
+4. the prior validation method is shown to be unsound.
 
-1. an input file/version/hash changed;
-2. a new runtime or static-analysis result directly contradicts the recorded conclusion;
-3. the original record lacks enough provenance to support a current implementation decision;
-4. the validation method itself is later shown to be unsound.
+A new chat/model/agent is never by itself a revalidation trigger.
 
-Do not revalidate merely because a new chat, agent, or model is starting.
-
-## Required evidence for new validations
-
-Every meaningful validation entry should record, where applicable:
-
-- validation ID and date;
-- exact claim being tested;
-- input identity: filename/role, version, size, hash, Build ID as available;
-- method/tool/script and relevant parameters;
-- exact offsets/ranges/count units when relevant;
-- observed result;
-- final status;
-- artifact/report/script path or commit that can reproduce the result;
-- reason for any later revalidation, invalidation, or supersession.
-
-Counts must state their unit explicitly, e.g. `records`, `unique patterns`, or `candidate locations`.
+When revalidation is required, perform it once and record validation ID/date, exact claim, input identity/hash/version, method/script/parameters, offsets/ranges/count units, result/status, and a reproducible artifact/report/commit path.
 
 ## Status values
 
-- `VERIFIED`: direct evidence is sufficiently recorded for reuse.
-- `VERIFIED-RUNTIME`: directly observed in the target runtime; keep static-safety claims separate.
-- `VERIFIED-LEGACY`: likely valid prior result, but provenance is not yet sufficient for a high-risk implementation decision. Revalidate once if that decision depends on it.
-- `NEEDS-REVERIFY`: conflicting, incomplete, or externally reported result that must be reproduced before becoming canonical.
-- `INVALIDATED`: a previous conclusion was disproved.
-- `SUPERSEDED`: still historically true, but replaced by a stronger/newer rule or result.
+- `VERIFIED`: direct evidence sufficiently recorded for reuse.
+- `VERIFIED-RUNTIME`: directly observed in Eden/runtime; keep safety claims narrow to the tested route.
+- `VERIFIED-LEGACY`: likely valid, but provenance is insufficient for a current high-risk decision.
+- `NEEDS-REVERIFY`: conflicting/incomplete/external result that must be reproduced before canonical use.
+- `INVALIDATED`: previous conclusion disproved.
+- `SUPERSEDED`: historical fact/interpretation replaced by stronger evidence or policy.
 
 ## Current ledger
 
-| ID | Claim | Status | Recorded evidence / reuse rule |
+| ID | Claim | Status | Evidence / reuse rule |
 |---|---|---|---|
-| V001 | Fixed Switch target is v1.1.3, Title ID `0100346017304000`, `main` Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`. | VERIFIED | Recorded in `PROJECT_STATE.md`; builder hard-guards the Build ID. Recheck only if target version/dump changes. |
-| V002 | Switch NSO mapped layout is text `0x000000+0x58CE60`, rodata `0x58D000+0x432018`, data `0x9C0000+0x60430`. | VERIFIED | Recorded in `PROJECT_STATE.md`; builder hard-guards the exact segment layout. Recheck only if `main` changes. |
-| V003 | Switch original `FONT_JPN.G1T` matches Steam original; original SHA-256 `9c886848...a0083e`; PC Korean font SHA-256 `c82d80da...66932`; 50 -> 64 pages. | VERIFIED | Recorded in `PROJECT_STATE.md`; original/patched font hash guards exist in builder. Recheck only if source patch/dump changes. |
-| V004 | T5K121R contains 10,036 mappings, 17,103 inline records, 56 pointer records, 11 runtime descriptors. | VERIFIED | Parsed directly from `RT_RCDATA/101`; layout and counts recorded in `PROJECT_STATE.md`/`PATCH_MAP.md` and parser path. Do not recount unless PC patch archive changes. |
-| V005 | Original mapping count is 7,494 (`0x1D46`), Korean additions 2,542, total 10,036 (`0x2734`). | VERIFIED | Recorded consistently in `PROJECT_STATE.md` and `PATCH_MAP.md`. Any conflicting `7,334` claim is non-canonical until reproduced and explained. |
-| V006 | The page-mapper rewrite bytes are correct for mapped flat offset `0x44650C` and logically add `EB~F8 -> pages 49~62` while preserving existing ranges. | VERIFIED | Static byte/disassembly evidence remains valid. **Previous Eden runtime evidence does not validate this rewrite**, because all earlier IPS generators omitted the required `+0x100` NSO-header shift; the old IPS record targeted flat `0x44640C`, not `0x44650C`. Correct Eden IPS offset is `0x44660C`. |
-| V007 | Historical exact-unique scan: 17,103 records -> 8,713 unique original patterns; 5,523 candidate rodata patterns; 4 overlap-skipped; 5,519 selected patterns covering 5,521 PC records. | VERIFIED | Reproduced again on 2026-09-10 by `builder/phase0_probe.py`/historical selector against Switch `main` SHA-256 `b366e692...3109b` and PC patch ZIP SHA-256 `df1b62de...f7cec`. These are regression counts only; they are not a release-safety proof. |
-| V008 | `unique exact match in rodata` by itself is sufficient to classify an inline patch as safe. | SUPERSEDED | The project policy rejects this as an insufficient methodology because it proves location uniqueness, not field semantics/structure. **Do not cite old v0.2a/A/B failures as proof of this claim's failure**, because those IPS records were all applied `0x100` early. `docs/INLINE_VALIDATION_POLICY.md` remains normative. |
-| V009 | v0.2b NO-INLINE boots and reaches Korean title in Eden Android. | VERIFIED-RUNTIME | The observed boot/title is valid. However, the build's page-mapper IPS record used the wrong no-shift convention, so this result proves only that the RomFS/font baseline plus that misapplied 44-byte write reaches title. It does **not** prove the intended page mapper at flat `0x44650C` works at runtime. |
-| V010 | A half of the old inline set freezes; B half reaches title then exits after button input. | VERIFIED-RUNTIME | The observations are real historical results, but their prior semantic interpretation is SUPERSEDED: both builds used IPS offsets `0x100` too low, so they cannot establish multiple candidate faults or candidate safety. Retain only as history. |
-| V011A | Record-level unique-match PC-RVA/Switch-offset data has strong global monotonic structure: 6,053 record pairs, LIS 3,524, 2,529 outside the LIS; top adjacent monotonic runs 1,844 / 1,074 / 978 / 78. | VERIFIED | Reproduced on 2026-09-10 with `builder/phase0_probe.py` using fixed input hashes below. Pattern-level equivalent is 6,051 unique pairs, LIS 3,522. Global LIS is evidence/reference only, not a release hard gate. |
-| V011B | 12,347 / 17,103 inline records contain at least one NUL in the original and no NUL in the replacement; 4,747 originals contain no NUL. | VERIFIED | Reproduced on 2026-09-10 by direct T5K record scan in `builder/phase0_probe.py`. This is a risk statistic, not proof of Switch run-on because Switch field type must be established independently. |
-| V011C | External claim that `430` cases are structurally confirmed termination/run-on failures. | NEEDS-REVERIFY | The claim is not reproducible under the clearest unique-match definition. Our fixed-input probe gives 98 **records** where a unique match is followed by a non-zero byte after the full record, 266 records where any capped candidate has that property, and 439 capped candidate instances. The external `430` likely used a different unit/selection rule. Do not use `430` as a hard gate until its exact definition is reproduced. |
-| V011D | External claim that patterns occurring `>=5` times correspond to `8,981 records / 1,242 patterns`. | NEEDS-REVERIFY | Fixed-input whole-flat scan capped at 5 gives `9,557 records / 1,539 unique patterns` with `>=5` observed occurrences. The discrepancy is material and likely reflects a different scope/filter. Do not use the external values canonically until scope is identified. |
-| V012 | The currently supplied Drive `PC_Original/Taiko5DX.exe` is **not** the exact T5K target executable and must not be used for PC-RVA neighborhood/homology evidence. | VERIFIED | Supplied file: size `18,479,304`, SHA-256 `22e1cd1afbd7d87a58b3560e7549f7e0fb462c723b4db9e1b1e747babb765ef6`, version resource `1.2.1.0`. T5K/README target: size `18,685,960`, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`, Steam build 9163702. File-version equality is insufficient. Exact target EXE is optional for Switch-side work but required before PC-binary-context claims. |
-| V013 | Both fixed Switch conversion routines still use mapping-count `0x1D46 = 7,494`; table misses have defined fallback behavior rather than an immediately uninitialized/undefined return. | VERIFIED | Fixed flat `main` derived from SHA-256 `b366e692...3109b`. ARM64 disassembly: `0x4303AC` loads 7,494 in UTF-16->game-code loop; `0x430624` loads 7,494 in game-code->UTF-16 loop. Miss paths observed at `0x4304E0` -> fallback `0x81A1` bytes and `0x430798` -> `U+25A0`. This confirms the 10,036 expansion is functionally needed but does **not** prove it is the direct freeze cause. |
-| V014 | Eden/Yuzu-style classic IPS offsets for NSO patches include a `0x100` NSO-header prefix: mapped flat offset `X` must be emitted as IPS offset `X + 0x100`. | VERIFIED | Source-level proof: Eden NSO loader builds `pi_header = sizeof(NSOHeader) + decompressed patchable_section`, copies `codeset.memory` at `+sizeof(NSOHeader)`, then passes that image to `PatchNSO`; `sizeof(NSOHeader)==0x100`. Confirmed in Eden mirror commit `5f142c7926d0c7fcbbd0ce30794d72f638a43b2a` and the emuall Eden code path. This directly invalidates the builder's former no-shift emitter. |
-| V015 | P0N v0.2f with 5,519 intended no-op records freezes in Eden Android. | VERIFIED-RUNTIME | User-observed on 2026-09-10. Because v0.2f emitted mapped offsets without `+0x100`, the records were **not true no-ops in Eden**. The result must not be interpreted as evidence that 5,519 IPS records or no-op writes themselves cause the freeze. |
-| V016 | The statement "P0N v0.2f is a true no-op control in Eden" is valid. | INVALIDATED | Local round-trip checked the wrong coordinate system. Eden applies IPS to a 0x100-byte NSOHeader-prefixed decompressed image, so each intended no-op at mapped `X` actually overwrote mapped `X-0x100`. Corrected control is `P0N2 v0.2g` with all emitted offsets shifted `+0x100`. |
-| V017 | Corrected `P0N2 v0.2g` is a true 5,519-record no-op control at the intended mapped locations, with the intended page mapper emitted at `0x44660C`. | VERIFIED | Artifact `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip`, SHA-256 `1ccb27e7f8836b8687ade7e147b0f549d49069dcecebaf808fa6eabd3277e8f6`. Static reparse verifies 5,520 IPS records total; subtracting `0x100` from emitted offsets yields the intended mapped plan, and all 5,519 no-op payloads equal original Switch bytes. Runtime is tracked separately as V018. |
-| V018 | Corrected `P0N2 v0.2g` boots, reaches the Korean title, accepts input, and reaches the next main menu in Eden Android. | VERIFIED-RUNTIME | User-observed on 2026-09-10 with screenshot evidence. This validates the corrected large classic-IPS/no-op path through the main menu and disproves the hypothesis that 5,520 classic-IPS records are intrinsically causing the earlier freeze. It does **not** certify any real inline candidate as SAFE. |
-| V019 | Corrected one-record MVI build `M1A v0.2h` with real inline T5K `R489` (`シナリオを選んでください` -> `시나리오를 선택하세요`, mapped `0x69B6A1`, IPS `0x69B7A1`) remains stable through scenario and protagonist-selection flow. | VERIFIED-RUNTIME | User-observed on 2026-09-10 with multiple screenshots. The build progressed through title/main, scenario selection/description, and protagonist selection without freeze or forced exit. This proves at least one corrected real inline can coexist with the corrected baseline on this route. Korean text visible elsewhere in the screenshots is largely RomFS/font baseline and is not attributed to R489. This does not certify the old 5,519 set. |
+| V001 | Fixed target is Switch v1.1.3, Title ID `0100346017304000`, main Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`. | VERIFIED | Builder hard-guards Build ID. Recheck only if target dump/version changes. |
+| V002 | Mapped NSO layout is text `0x000000+0x58CE60`, rodata `0x58D000+0x432018`, data `0x9C0000+0x60430`. | VERIFIED | Builder hard-guards segment layout. |
+| V003 | Switch original `FONT_JPN.G1T` equals Steam original; original SHA-256 `9c886848...a0083e`; Korean font SHA-256 `c82d80da...66932`; 50 -> 64 pages. | VERIFIED | Hash-guarded in builder. |
+| V004 | T5K121R contains 10,036 mappings, 17,103 inline records, 56 pointer records, 11 runtime descriptors. | VERIFIED | Direct parse of `RT_RCDATA/101`; parser is `builder/t5k.py`. |
+| V005 | Mapping counts are 7,494 original (`0x1D46`) + 2,542 Korean = 10,036 (`0x2734`). | VERIFIED | Direct T5K parse. Conflicting 7,334 claim is non-canonical. |
+| V006 | Page-mapper rewrite at mapped `0x44650C` adds `EB~F8 -> pages 49~62`; correct Eden emitted offset is `0x44660C`. | VERIFIED | Static bytes/logic plus canonical IPS coordinate rule. |
+| V007 | Historical selector: 17,103 records -> 8,713 unique original patterns -> 5,523 unique-rodata candidates -> 4 overlap skips -> 5,519 selected patterns covering 5,521 PC records. | VERIFIED | Reproduced with `builder/phase0_probe.py`; regression/reference only. |
+| V008 | `unique exact match in rodata` alone is sufficient to classify a release-safe inline patch. | SUPERSEDED | Policy now requires structural/object evidence and offline validation. |
+| V009 | Old v0.2b NO-INLINE booted and showed Korean title. | VERIFIED-RUNTIME | Observation is real but page-mapper IPS was `0x100` early, so do not use it to validate intended mapper execution. |
+| V010 | Old A freezes; old B reaches title then crashes after input. | VERIFIED-RUNTIME | Historical observations only. Both used wrong IPS coordinates and cannot prove multi-fault/candidate safety. |
+| V011A | Unique-match record pairs show strong monotonic structure: 6,053 pairs, global LIS 3,524, 2,529 outside; top runs 1,844/1,074/978/78. | VERIFIED | `builder/phase0_probe.py`; global LIS is evidence/reference, not hard gate. |
+| V011B | 12,347/17,103 records have NUL in original and none in replacement; 4,747 originals have no NUL. | VERIFIED | Direct T5K scan; risk statistic only, not automatic run-on verdict. |
+| V011C | External `430` cases are structurally confirmed termination failures. | NEEDS-REVERIFY | Fixed-input probe did not reproduce the stated unit/definition. Do not use 430 as a hard gate. |
+| V011D | External `8,981 records / 1,242 patterns` are >=5-match counts. | NEEDS-REVERIFY | Fixed-input whole-flat probe gives different counts under the clearest definition. |
+| V012 | Drive `PC_Original/Taiko5DX.exe` is not exact T5K target and cannot support PC-RVA neighborhood/XREF claims. | VERIFIED | Supplied: 18,479,304 bytes, SHA-256 `22e1cd1a...65ef6`; target: Steam build 9163702, 18,685,960 bytes, SHA-256 `10c69bab...65a2`. |
+| V013 | Switch conversion functions still use mapping count 7,494 and have defined misses (`0x81A1`, `U+25A0`). | VERIFIED | Mapped main disassembly at `0x4303AC`, `0x430624` and miss paths. Expansion remains functionally needed, but not proven freeze cause. |
+| V014 | Eden/Yuzu classic IPS for NSO uses a `0x100` NSOHeader prefix: emitted offset = mapped offset + `0x100`. | VERIFIED | Eden/Yuzu loader source path plus successful P0N2 control. |
+| V015 | P0N v0.2f freezes. | VERIFIED-RUNTIME | User observed. It was not a true no-op because offsets were `0x100` early. |
+| V016 | P0N v0.2f is a true no-op control in Eden. | INVALIDATED | Wrong coordinate model; P0N wrote bytes from `X` to mapped `X-0x100`. |
+| V017 | P0N2 v0.2g is a true 5,519-record no-op control with corrected mapper/offsets. | VERIFIED | Artifact SHA-256 `1ccb27e7...7e8f6`; emitted IPS reparsed and mapped back successfully. |
+| V018 | P0N2 boots, reaches Korean title, accepts input, reaches main menu. | VERIFIED-RUNTIME | User screenshot/runtime evidence. Proves large corrected classic-IPS/no-op path works on tested route. |
+| V019 | M1A v0.2h real inline `R489` remains stable through scenario/protagonist flow. | VERIFIED-RUNTIME | `シナリオを選んでください` -> `시나리오를 선택하세요`, mapped `0x69B6A1`, emitted `0x69B7A1`. |
+| V020 | D5519 v0.2k applies the historical 5,519 real replacements at corrected `+0x100` offsets and reaches normal early gameplay without freeze/forced exit. | VERIFIED-RUNTIME | User tested title -> menu -> scenario -> protagonist selection -> normal gameplay with screenshots. Artifact SHA-256 `46017206ed2679a645b1e0121aff6b7742fcbec94f41197e5f5681f517c9fae2`. This strongly attributes pre-P0N2 immediate freezes to the coordinate bug, but does not certify all late-game paths. |
+| V021 | Of D5519's 5,519 real inline records, 2,099 target fields whose original non-NUL bytes are entirely halfwidth-kana `0xA1..0xDF`; 3,420 are non-yomi historical records. | VERIFIED | Reproduced against fixed mapped main by classifying each D5519 mapped record using original bytes. Reproducible builder: `builder/build_y0_noyomi.py`; analysis documented in `docs/POST_D5519_ANALYSIS.md`. |
+| V022 | Eight direct call sites explicitly enable the auxiliary name-reading line with `mov w6,#1` before a `BL` to shared mapped routine `0x45B0F8`. | VERIFIED | Call-site offsets: `0x2A0ABC`, `0x2A565C`, `0x2A6F4C`, `0x2A7720`, `0x2A7FE4`, `0x2ADE5C`, `0x2BC1A0`, `0x2BD5C8`. Original bytes at all sites are `26 00 80 52`; nearby BL targets resolve to `0x45B0F8`. Y0 changes the enable argument to zero with `E6 03 1F 2A`. Runtime effect still pending Y0 test. |
+| V023 | D5519 garbled small name-reading line is consistent with translated halfwidth-yomi fields entering a Switch auxiliary-render path; Korean main names themselves render correctly. | VERIFIED-RUNTIME | User screenshots show the main Korean name readable while only the small auxiliary line is garbled. Combined with V021/V022, project policy is to preserve internal Japanese yomi and hide only the visible reading line. Exact runtime success of Y0 suppression remains pending. |
+| V024 | Repeated short strings can be safely distinguished from substring collisions using object-boundary/pointer evidence. | VERIFIED | `builder/repeated_token_probe.py` and `docs/POST_D5519_ANALYSIS.md`: `はい` has 7 raw rodata matches but exactly one standalone NUL object at `0x6A15A5`, pointer-ref `0x58D0D0`, adjacent to unique `いいえ`; pooled `年/月/日` objects are `0x69785A/0x68925A/0x6A3CC6` and referenced consecutively at `0x59C730..0x59C768`; pooled standalone `城` is `0x6A15DC`; all relevant PC replacements agree. |
+| V025 | `清洲` repeated recovery has strong fixed-field evidence. | VERIFIED | T5K contains two `清洲\0\0` records with identical Korean replacement `기요스`; Switch has exactly two corresponding padded occurrences at mapped `0x6AE269` and `0x6AEFE9`, both in fixed-stride place-name/yomi tables. No arbitrary one-of-N selection is needed. |
 
-## Reproducible Phase-0 input identity
-
-The 2026-09-10 Phase-0 probe used:
+## Reproducible fixed input identity
 
 - Switch compressed `main` SHA-256: `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`;
-- Switch mapped flat size: `10,617,904 (0xA20430)`;
+- mapped flat size: `10,617,904 (0xA20430)`;
 - PC patch ZIP SHA-256: `df1b62de95e992369e9686c9731d814e7a7e4634888f610430635429e24f7cec`;
 - embedded `dinput8.dll` SHA-256: `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`;
 - `RT_RCDATA/101` SHA-256: `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`.
 
-Reproduce these measurements with `builder/phase0_probe.py`; do not hand-recount them in later chats.
+Do not hand-recount established Phase-0 figures in later chats. Use `builder/phase0_probe.py`, `builder/repeated_token_probe.py`, and the ledger.
 
-## Inline-validation precedence
+## Current precedence
 
-For inline mapping, `docs/INLINE_VALIDATION_POLICY.md` is the normative safety policy. `docs/PHASE0_FAILURE_MODE_PLAN.md` is the mandatory prerequisite diagnosis before the full validator. This ledger answers a different question: **which underlying measurements and facts are already sufficiently proven, and which must be revalidated before use?**
+- release inline safety policy: `docs/INLINE_VALIDATION_POLICY.md`;
+- validated fact/revalidation authority: this ledger;
+- corrected-runtime observations: `docs/RUNTIME_TEST_RESULTS.md`;
+- D5519/yomi/repeated-object analysis: `docs/POST_D5519_ANALYSIS.md`;
+- current resume point: `PROJECT_STATE.md`.
 
-When a new validation changes a canonical fact, update this ledger first or in the same commit as `PROJECT_STATE.md` / `PATCH_MAP.md` / `CHANGELOG.md`.
+When a new result changes a canonical fact, update this ledger in the same work session as the affected state/runtime/changelog documents.
