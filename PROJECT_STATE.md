@@ -34,9 +34,9 @@ All development IPS builds through **P0N v0.2f** emitted mapped offsets directly
 
 This discovery changes interpretation of every earlier IPS-bearing runtime test.
 
-## 3. Runtime evidence: what remains valid and what is superseded
+## 3. Runtime evidence: corrected control now passes
 
-Observed facts remain real:
+Observed historical facts remain real:
 
 - add-on OFF -> game boots/runs normally;
 - v0.2b NO-INLINE -> boots and displays Korean title `태합입지전 V DX`;
@@ -44,34 +44,46 @@ Observed facts remain real:
 - v0.2c -> failure;
 - old A -> freeze;
 - old B -> title then crash after input;
-- **P0N v0.2f -> freeze**.
+- P0N v0.2f -> freeze.
 
-However, v0.2a/v0.2b/v0.2c/A/B/P0N all used the wrong no-shift IPS convention. Therefore:
+However, v0.2a/v0.2b/v0.2c/A/B/P0N all used the wrong no-shift IPS convention. Therefore they cannot establish candidate-level safety/failure.
 
-- they do **not** prove that the historical inline candidates themselves were unsafe;
-- A/B do **not** prove multiple semantic faults;
-- v0.2b does **not** prove that the intended page mapper at mapped `0x44650C` executed, because its IPS record targeted mapped `0x44640C`;
-- P0N v0.2f was **not a true no-op in Eden** even though local flat-image round-trip checks said it was.
+The corrected control **P0N2 v0.2g** uses `mapped+0x100` for every IPS record and contains 5,519 true no-op inline records plus the corrected page mapper. Runtime result:
 
-The old runtime interpretations are superseded, not erased. See the validation ledger and runtime-results document.
+- boots successfully;
+- reaches Korean title;
+- accepts button input;
+- reaches the next main menu.
 
-## 4. Immediate runtime control: P0N2 v0.2g
+Therefore the corrected classic-IPS coordinate path is viable through the main menu, and a 5,520-record classic IPS is not intrinsically the earlier freeze mechanism. This does **not** make the old 5,519 real replacements safe.
 
-The next required test is **P0N2**:
+## 4. Current Phase-0 step: MVI content tests
 
-- 207 RomFS replacements;
-- Korean 64-page font;
-- page-mapper record emitted at corrected IPS offset `0x44660C`;
-- 5,519 historical inline locations written as true no-ops;
-- every emitted IPS record uses mapped offset `+0x100`;
-- total IPS records: 5,520.
+With P0N2 passed, Phase 0 now moves to Minimal Viable Inline testing using the corrected coordinate convention.
 
-Interpretation:
+A reusable builder exists at `builder/build_mvi.py`. MVI inclusion is diagnostic only and never promotes a record to release SAFE.
 
-- **P0N2 boots** -> the corrected large classic-IPS path is viable; the old P0N freeze is explained by the coordinate bug. Then continue with corrected MVI tests and structural validation.
-- **P0N2 fails** -> isolate corrected page mapper versus corrected 5,519 no-op-record application before semantic validator work.
+First test artifact: **M1A v0.2h**
 
-Do not rerun old P0N v0.2f.
+- baseline: 207 RomFS replacements + Korean 64-page font + corrected page mapper;
+- exactly one real inline replacement;
+- T5K record ID: `489`;
+- Japanese: `シナリオを選んでください`;
+- Korean: `시나리오를 선택하세요`;
+- mapped Switch offset: `0x69B6A1`;
+- emitted Eden IPS offset: `0x69B7A1`;
+- all other historical inline candidates absent.
+
+Required runtime route:
+
+1. boot;
+2. title;
+3. main menu;
+4. start a new game;
+5. reach scenario-selection screen;
+6. confirm the prompt is Korean and the game remains responsive.
+
+If M1A passes, continue with additional independent 1-record MVI candidates before 10-record and 100-record MVI aggregation. A single failing record must not by itself be treated as systemic proof.
 
 ## 5. Fixed Switch target
 
@@ -144,7 +156,7 @@ Switch functions:
 - `0x446310`: segmentation/count
 - `0x446420`: `GetFontTexIndex`
 
-The page-mapper rewrite bytes for mapped `0x44650C..0x446534` are statically verified. Correct runtime application still needs P0N2-or-later confirmation because prior builds emitted the wrong IPS coordinate.
+The page-mapper rewrite bytes for mapped `0x44650C..0x446534` are statically verified. P0N2 confirms that the corrected mapper record coexists with the baseline through the tested main-menu path; later coverage is still required for exhaustive behavior.
 
 ## 9. Mapping-loop result
 
@@ -216,6 +228,7 @@ The final validator still targets all 17,103 records and retains these invariant
 
 ## 12. Remaining runtime/port work
 
+- complete additional corrected 1-record MVI tests, then 10/100-record MVI aggregation;
 - safe 7,494 -> 10,036 mapping relocation/reference/count patches;
 - `runtime_byte_validation` counterpart;
 - `font_page_limit` counterpart;
@@ -230,13 +243,15 @@ Do not assume direct normal-file-manager access to Eden's internal Android folde
 
 ## 14. Immediate next action
 
-Run **P0N2 v0.2g only**, with all older diagnostic Korean mods disabled. Record whether it:
+Run **M1A v0.2h only**, with all older diagnostic Korean mods disabled.
 
-1. boots;
-2. displays title;
-3. accepts button input and reaches the next menu.
+Expected path: boot -> title -> main menu -> new game -> scenario-selection screen. Record whether:
 
-Only after that result decide whether to proceed to corrected MVI tests or isolate corrected page mapper/no-op application.
+1. the game remains responsive;
+2. the scenario-selection prompt appears as Korean `시나리오를 선택하세요`;
+3. selection/input can continue normally.
+
+Then run at least one or two additional independent 1-record MVI builds before aggregating 10 and 100 records.
 
 ## 15. Final distribution target
 
