@@ -46,13 +46,24 @@ All development IPS builds through P0N v0.2f emitted mapped offsets directly wit
 
 This supersedes the earlier interpretation that the P0N failure demonstrated a large-record-count or semantic-inline failure.
 
-### Next control
+### Corrected control: P0N2 v0.2g
 
-`P0N2 v0.2g` repeats the same 5,519 no-op control but emits every IPS offset as mapped offset `+0x100`. Only this corrected build can answer whether 5,519 no-op IPS records themselves are accepted by the target Eden runtime.
+Artifact:
+
+- filename: `P0N2_Taiko5DX_KR_DBG_NOOP5519_PLUS100_v0.2g.zip`
+- SHA-256: `1ccb27e7f8836b8687ade7e147b0f549d49069dcecebaf808fa6eabd3277e8f6`
+- IPS records: 5,520 total = corrected page mapper + 5,519 true no-op inline records
+- emitted offset rule: `mapped flat offset + 0x100`
+- page mapper: mapped `0x44650C` -> emitted IPS `0x44660C`
+- static round-trip: VERIFIED; every 5,519 no-op payload equals the original bytes at `(IPS offset - 0x100)`
+- runtime result: **PENDING**
+
+Only this corrected build can answer whether 5,519 no-op IPS records themselves are accepted by the target Eden runtime. Do not rerun P0N v0.2f.
 
 ### Current interpretation
 
-- The dominant confirmed implementation defect is the missing `+0x100` Eden/NSO-header IPS offset shift.
+- The dominant confirmed implementation defect is the missing `+0x100` Eden/NSO-header IPS offset shift in all IPS builds through P0N v0.2f.
+- The core builder and P0N diagnostic builder now serialize mapped offsets with the required `+0x100` shift.
 - Previous IPS-bearing runtime results remain useful historical observations but must not be used as candidate-safety evidence.
 - Semantic inline validation is still required for release quality, but the old runtime failures cannot be cited as proof that the 5,519 mappings were inherently unsafe.
 - Future IPS generators must validate both mapped offsets and emitted Eden IPS offsets separately.
