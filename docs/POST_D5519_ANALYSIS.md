@@ -18,7 +18,7 @@ Screenshots establish separate problems that must not be conflated:
 2. Small auxiliary reading/yomi rows render as garbled kana/Latin-like glyphs.
 3. Repeated short UI tokens remain Japanese in some places (`はい`, date/currency suffixes, `城`).
 4. Repeated location components such as `清洲` remain Japanese because the historical selector rejected non-unique matches.
-5. Some fixed-field Korean names show glyph/spacing defects: `마츠다이라 모토야스` loses `츠` in a nameplate; `나야 스케자에몬` shows user-observed odd appearance around `케/자`.
+5. Compact/fixed-field Korean names exercise a separate width/render path. `마쓰다이라 모토야스` loses compact `쓰`; the earlier `케/자` display issue in `나야 스케자에몬` is corrected by W0.
 
 ## 3. Yomi policy and Y0 result
 
@@ -47,54 +47,37 @@ A shared name/yomi drawing routine exists at mapped `0x45B0F8`. Eight direct cal
 
 Y0 v0.2l restored the 2,099 internal yomi fields to original Switch bytes and changed those eight enables to zero. Runtime remained stable, but **the garbled small reading rows visible in protagonist selection and dialogue nameplates remained present**.
 
-Therefore:
+Therefore the eight call sites are genuine static yomi-enable sites but the narrow suppression hypothesis is incomplete. Do not repeat the same eight-site-only attempt. Keep internal yomi preserved while the actual visible-row path is traced later.
 
-- the eight call sites are genuine static yomi-enable sites;
-- they are not sufficient to control the two observed UI rows, or an additional wrapper/renderer draws those rows;
-- the narrow Y0 suppression hypothesis is invalid/incomplete;
-- do not repeat the same eight-site-only attempt;
-- keep the internal-yomi preservation policy while actual visible-row tracing is deferred behind the higher-value compact-font test.
+## 4. Compact Korean single-byte mechanism — corrected mapping
 
-## 4. Compact Korean single-byte mechanism: root cause candidate for missing `츠`
-
-The user-observed missing `츠` in `마츠다이라 모토야스` is not a transliteration choice and not a missing byte in the PC replacement.
-
-T5K records R9751/R9752 replace padded `松平元康` with exactly 16 bytes:
+T5K R9751/R9752 replace padded `松平元康` with exactly 16 bytes:
 
 ```text
 B2 BD AA F3 6B EE 93 20 EF 90 F5 E2 F2 7E F1 B8
 ```
 
-The first three bytes are not normal two-byte Korean codes. The Korean G1T deliberately repurposes page-63 single-byte cells:
+Correct compact mapping:
 
 ```text
 B2 = 마
-BD = 츠
+BD = 쓰
 AA = 다
-```
-
-The remainder is normal two-byte Korean:
-
-```text
 F36B = 이
 EE93 = 라
 20   = space
 EF90 F5E2 F27E F1B8 = 모토야스
 ```
 
-This compact form is necessary because the full normal two-byte spelling would not fit the 16-byte field.
+Thus the intended Korean display is **`마쓰다이라 모토야스`**. Earlier project text that called the second compact glyph `츠` was a transcription error, not a change in source data.
 
-Direct BC3 decoding of the exact Korean `FONT_JPN.G1T` shows that page-63 cells `B2`, `BD`, and `AA` contain correct `마/츠/다` glyph artwork. The normal two-byte cells for `케` (`F568`) and `자` (`F379`) are also correct. Therefore the source font atlas itself is not corrupt.
+Direct BC3 decoding of the exact Korean `FONT_JPN.G1T` shows valid page-63 glyph art for `마/쓰/다`. Normal two-byte `케` (`F568`) and `자` (`F379`) glyphs are also correct. Source font art is not the defect.
 
-The runtime screenshot is especially diagnostic: `마` and `다` render while the middle compact `츠` is effectively missing. The remaining task is runtime classification/width/layout behavior.
+## 5. PC `font_page_limit` and W0
 
-## 5. PC `font_page_limit` semantics and Switch counterpart
+The PC T5K runtime descriptor `font_page_limit` changes comparison threshold `0xFF -> 0xA0`, making single-byte codes above `0xA0` use the alternate/full-width path.
 
-The PC T5K runtime descriptor named `font_page_limit` is now decoded semantically. It modifies the comparison threshold from `0xFF` to `0xA0`, causing single-byte codes above `0xA0` to take the alternate/full-width path. It is not a literal font-page-count patch.
-
-The Switch v1.1.3 font/width cluster contains a matching semantic decision: several routines compare a character code against `0x100` and select the halfwidth path for values below that threshold.
-
-Six confirmed equivalent/inlined sites are:
+W0 v0.2m ports six Switch width/layout decisions:
 
 ```text
 0x445EAC
@@ -105,91 +88,75 @@ Six confirmed equivalent/inlined sites are:
 0x447C44
 ```
 
-Each original instruction is:
+Each changes:
 
 ```text
-1F 01 04 71   cmp w8,#0x100
+cmp w8,#0x100 -> cmp w8,#0xA1
 ```
 
-The PC-equivalent Switch threshold is:
+Runtime result:
 
-```text
-1F 85 02 71   cmp w8,#0xA1
-```
+- stable on the tested route;
+- `나야 스케자에몬` now renders `케/자` correctly;
+- compact `BD=쓰` in `마쓰다이라 모토야스` remains visually absent.
 
-so `0x00..0xA0` remains on the halfwidth side and `0xA1+` takes the alternate/full-width side.
-
-A different `cmp #0x100` around mapped `0x4304F8` belongs to conversion logic and must not be included in this patch family.
-
-## 6. W0 diagnostic
-
-`W0 v0.2m` uses D5519 as the baseline and adds only the six threshold edits above.
+Therefore W0 proves the threshold family is relevant but incomplete.
 
 Artifact:
 
 - `W0_Taiko5DX_KR_DBG_FONTWIDTH_A1_v0.2m.zip`
 - SHA-256 `e453d5958793748ebf841f295ef4005a9a612fdbe643439fe9c2a2c0183ea2ad`
-- D5519 base records: 5,520
-- added width/layout records: 6
-- final IPS records: 5,526
-- all original-instruction guards PASS;
-- no D5519 record collision;
-- emitted classic IPS exact round-trip PASS.
+- final IPS records 5,526.
 
-Reproducible builder: `builder/build_w0_fontwidth.py`.
+## 6. Why basic byte decoding is not dropping `BD`
 
-Runtime test must answer three narrow questions:
+Switch function around mapped `0x445C60` performs per-character decoding in the JP path. It recognizes `0x81..0x9F` and `0xE0..0xFC` as two-byte leads, while `0xA1..0xDF` falls through as a valid one-byte code.
 
-1. does `마츠다이라 모토야스` regain the missing `츠`?
-2. does `나야 스케자에몬` improve or change around `케/자`?
-3. are there regressions in general spacing or halfwidth Japanese UI text?
+Therefore compact `BD=쓰` is not simply rejected or consumed as an invalid byte at this basic decode layer. The remaining failure is later width/layout/render behavior.
 
-W0 is diagnostic until those runtime observations are recorded.
+## 7. W1: missed render-width gate
 
-## 7. Repeated short strings: why the old selector misses them
-
-The historical selector rejects a pattern whenever its raw byte sequence appears more than once anywhere in the flat image. This is too conservative for short Japanese strings because their bytes also occur as substrings inside longer prose.
-
-### `はい` -> `예`
-
-- one intended T5K record;
-- 7 raw rodata byte matches;
-- exactly one standalone NUL-delimited string object at mapped `0x6A15A5`;
-- pointer reference at `0x58D0D0`;
-- adjacent pointer-table object is `いいえ`, already translated to `아니오` by the historical selector.
-
-### `年 / 月 / 日`
-
-Standalone pooled objects:
+Further disassembly found a high-confidence text-render decision at mapped `0x44D9D0` that W0 did not include:
 
 ```text
-年  0x69785A
-月  0x68925A
-日  0x6A3CC6
+0x44D9C4  and w8,w26,#0xffff
+0x44D9D0  cmp w8,#0x100
+0x44D9D4  b.hs 0x44D9E0
+0x44D9D8  mov w19,#8
+0x44D9E0  ... alternate/table width path ...
+0x44DA30  bl 0x44E400
 ```
 
-Pointer table `0x59C730..0x59C768` references them consecutively. Multiple PC records agree on `년/월/일`, so the many-PC-to-one-Switch pooling is non-conflicting.
+Old behavior forces every one-byte code below `0x100`, including page-63 compact Korean codes, to width 8 immediately before glyph construction/draw. This can explain why W0 corrected ordinary `케/자` behavior yet the compact `쓰` remained clipped/absent.
 
-### `城`
-
-T5K has two `城` -> `성` records. Switch has one standalone pooled `城` object at mapped `0x6A15DC` with multiple references. PC replacements agree.
-
-### `清洲`
-
-T5K has two padded `清洲\0\0` records with identical replacement `기요스`. Switch has exactly two corresponding padded fixed-field occurrences:
+W1 v0.2n is W0 plus only:
 
 ```text
-0x6AE269
-0x6AEFE9
+mapped 0x44D9D0 : cmp w8,#0x100 -> cmp w8,#0xA1
+Eden IPS 0x44DAD0
+bytes: 1F 01 04 71 -> 1F 85 02 71
 ```
 
-Both lie in fixed-stride place-name/yomi tables.
+Artifact:
 
-## 8. Currency/date unit policy
+- `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`
+- SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`
+- W0 base records 5,526 -> W1 5,527
+- original-byte guard and emitted-IPS round-trip PASS
+- runtime pending.
 
-The PC T5K contains explicit translations `年->년`, `月->월`, `日->일`, `貫->관`, `文->문`, `はい->예`, `いいえ->아니오`.
+## 8. Repeated short strings
 
-Do not globally replace raw one/two-character byte sequences. Currency units in particular occur inside multiple longer format strings such as `%d貫` and combined 貫/文 layouts. Recover complete string objects or structurally confirmed fields only.
+Historical unique-only matching is too conservative for short objects because raw bytes also occur inside longer prose. Recover actual Switch string objects, not every raw substring.
+
+High-confidence objects:
+
+- `はい -> 예`: standalone object `0x6A15A5`, pointer ref `0x58D0D0`;
+- `年/月/日 -> 년/월/일`: pooled objects `0x69785A / 0x68925A / 0x6A3CC6`, consecutive pointer-table registration around `0x59C730..0x59C768`;
+- `城 -> 성`: pooled standalone object `0x6A15DC`;
+- `清洲 -> 기요스`: fixed-field objects `0x6AE269`, `0x6AEFE9`.
+
+PC replacements agree for each recovered object. Currency `貫/文` remains separate because many uses are embedded in longer format strings.
 
 ## 9. Repeated-object recovery rule
 
@@ -205,10 +172,10 @@ A repeated pattern may be recovered only when:
 
 ## 10. Immediate implementation sequence
 
-1. Runtime-test W0 before adding repeated short-string recovery so the font-width variable stays isolated.
-2. If W0 fixes the compact `츠` path without regressions, promote the six-site threshold behavior into the integrated builder.
-3. If `케/자` remain visually wrong, investigate their two-byte UI-specific advance/scaling path separately; the G1T glyph cells are already verified correct.
-4. Recover high-confidence repeated objects (`はい`, pooled `年/月/日`, pooled `城`, both `清洲` fields).
-5. Map `貫/文` complete format objects separately.
-6. Return to the actual visible yomi-row draw path after higher-impact name/font issues are stable.
-7. Keep the full 17,103 validator as release audit/recovery, not as the explanation for the resolved pre-P0N2 freeze.
+1. Runtime-test W1 alone for compact `쓰`, `케/자` regression, spacing and stability.
+2. If W1 succeeds, integrate the confirmed A1+ width/render threshold family into the main builder.
+3. Recover the high-confidence repeated objects (`はい`, `年/月/日`, `城`, `清洲`).
+4. Map complete `貫/文` format objects separately.
+5. Trace the actual visible yomi-row draw path; do not repeat Y0's eight-site-only suppression attempt.
+6. Continue conversion-table expansion and remaining runtime descriptor/pointer/CWTDAT work.
+7. Keep the full 17,103 validator as release audit/recovery, not as the explanation for the resolved old freeze.
