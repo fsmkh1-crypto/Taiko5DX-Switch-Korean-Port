@@ -185,7 +185,7 @@ This is the next major hardcoded-text expansion after the exact-unique inline su
 
 ## 13. Current integrated Eden development build
 
-The unified builder now emits one `Taiko5DX_KR_DEV` mod containing:
+The unified builder emits one `Taiko5DX_KR_DEV` mod containing:
 
 - Build-ID IPS
 - ARM64 page mapper
@@ -194,7 +194,20 @@ The unified builder now emits one `Taiko5DX_KR_DEV` mod containing:
 - the 64-page Korean font
 - `BUILD_REPORT.json` with T5K parse and mapping statistics
 
-Local builder execution against the fixed 1.1.3 `main` completed successfully and produced **5,520 IPS records total** (5,519 inline + 1 page mapper). This is a build-generation test, not yet a claim of successful Eden runtime behavior.
+Local builder execution against the fixed 1.1.3 `main` completed successfully and produced **5,520 IPS records total** (5,519 inline + 1 page mapper).
+
+### First real Eden Android runtime result
+
+The first integrated v0.2a test produced a **freeze with the add-on enabled**. With the same game/environment and the add-on disabled, the game boots/runs normally. Therefore the failure is inside the current mod package, not a baseline Eden/game launch failure.
+
+This result does **not yet identify which mod component is responsible**. The immediate diagnostic build is `v0.2b NO-INLINE`, which keeps the 207 RomFS replacements, Korean font, and page-mapper patch but removes all 5,519 inline IPS translations.
+
+Interpretation of the next test:
+
+- v0.2b boots: the 5,519 inline patch set is the primary freeze suspect and must be narrowed/fixed.
+- v0.2b still freezes: isolate page-mapper versus RomFS/font next.
+
+Do not attribute the freeze to Eden's Global/Custom per-game setting merely because Custom was selected; add-on disable restoring normal execution makes the mod itself the current variable of interest.
 
 `CWTDAT_JP.TR5`, the 10,036-entry mapping relocation, the 56 pointer mappings, and remaining UI/runtime counterparts are still pending.
 
@@ -247,13 +260,14 @@ A Windows CLI/EXE frontend may be added later as a convenience, but it is second
 
 ## 16. Work priority from here
 
-1. Run the current integrated Eden build and collect first real runtime symptoms.
-2. In parallel, implement Switch-side 10,036 mapping relocation/count patches.
-3. Map the 56 pointer records and then the ambiguous/missing inline records with context-aware matching.
-4. Locate/port `ui_width_1~4` and `description_font_1~2` counterparts where runtime behavior shows they matter.
-5. Reconstruct Switch-native `CWTDAT_JP.TR5` selectively.
-6. Keep replacing one integrated dev mod and use failures to drive deeper work.
-7. After the core builder is functionally stable, add the Android APK frontend using SAF-based file/folder selection and Eden-oriented output.
+1. Run `v0.2b NO-INLINE` in Eden Android and record whether it boots.
+2. If v0.2b boots, binary-split the 5,519 inline set until the offending patch cluster is identified; if it still freezes, isolate page mapper vs RomFS/font instead.
+3. In parallel, implement Switch-side 10,036 mapping relocation/count patches.
+4. Map the 56 pointer records and then the ambiguous/missing inline records with context-aware matching.
+5. Locate/port `ui_width_1~4` and `description_font_1~2` counterparts where runtime behavior shows they matter.
+6. Reconstruct Switch-native `CWTDAT_JP.TR5` selectively.
+7. Keep replacing one integrated dev mod and use failures to drive deeper work.
+8. After the core builder is functionally stable, add the Android APK frontend using SAF-based file/folder selection and Eden-oriented output.
 
 ## 17. Anti-loop rule
 
