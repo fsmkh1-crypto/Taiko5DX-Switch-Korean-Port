@@ -14,3 +14,6 @@ Operating rules for ChatGPT, Claude, or any other coding/research agent working 
 10. At the end of any meaningful work session, update `PROJECT_STATE.md`, `PATCH_MAP.md` when relevant, and `CHANGELOG.md`.
 11. Record failed approaches briefly so later agents do not repeat them.
 12. Prefer implementation plus real Eden testing over speculative micro-analysis when both are possible.
+13. Final end-user frontend is Android APK first. The APK is a separate patch-generation app that accepts the user's extracted Switch 1.1.3 dump and PC Korean patch archive, then emits an Eden-ready mod using user-granted Android Storage Access Framework locations.
+14. Do not create a second independent patch engine for Android. Finish and stabilize the core builder first, then make the APK a frontend/wrapper around the same patch-generation logic.
+15. A Windows CLI/EXE may be added later only as a secondary frontend sharing the same core logic.
