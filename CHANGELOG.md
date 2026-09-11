@@ -2,6 +2,22 @@
 
 ## 2026-09-11
 
+### PC Runtime Canonical Closure complete
+
+- Added `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`, `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`, and `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`.
+- Rewrote `docs/PC_RUNTIME_DLL_SPEC.md` as the closed PHASE 1–4 PC reference and removed stale aggregate wording that conflicted with later validated phases.
+- Corrected pointer grammar to `u32 slot / u32 original_target / u8 mode / reserved[3] / u32 arg`; mode 0 resolves `EXE base + arg`, mode 1 resolves `prefix base + arg`.
+- Corrected size terminology: mapping = 40,144 bytes (`0x9CD0`), pointer pool = 602 bytes (`0x25A`), prefix total = 40,746 bytes (`0x9F2A`).
+- Corrected allocation wording: PHASE 1 establishes one contiguous private allocation containing page-aligned prefix/helper regions, not two mandatory independent allocations.
+- Preserved PHASE 4 control-flow corrections: byte-validation helper fallback resumes original processing at `0x68328A`; `font_page_limit` remains raw threshold `0xFF -> 0xA0` only.
+- Separated PC specification completion from Switch port status; closure adds no V062+ facts and V001–V061 remain factual authority.
+- Added five-axis Switch survey baseline: mapping, pointer 56, helper semantics, descriptor 14 semantics, inline/data-selection coverage; CWTDAT remains separate.
+- Added evidence requirement for any `NATIVE_EQUIVALENT` classification and banned Switch unique-match as a coverage gate.
+- Split storage risk by axis: mapping additional capacity, pointer replacement strings, optional helper executable space, and in-place descriptor/inline possibilities.
+- Recorded compact `쓰` as a three-path unresolved problem: data selection, pointer/reference selection, byte-validation/copy.
+- Recorded PCREF1 delivery verification as parallel to static survey but mandatory before interpreting a new counterpart-derived runtime result.
+- No new Switch disassembly, ARM64 edit, IPS, build, or runtime test was performed. Next stage is Switch Functional Counterpart Survey after a fresh user signal.
+
 ### PC DLL PHASE 4 complete — helper and descriptor runtime semantics
 
 - Added `docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md` and `docs/VALIDATION_LEDGER_PHASE4.md`; advanced canonical resume state to PHASE 4 complete / STOP.
@@ -41,16 +57,11 @@
 
 ### PC DLL PHASE 1 complete — loading, initialization and transaction only
 
-- Added cumulative `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with exact DLL RVA
-  evidence for PE/proxy/once initialization, resource acquisition, target identity,
-  staging, commit, rollback and fatal errors.
-- Reused fixed input identities and existing PC runtime facts; no mapping/pointer/
-  descriptor/helper semantic reanalysis or Switch counterpart work in this phase.
-- Clarified one contiguous private allocation, inline/pointer/code write priorities,
-  and best-effort rollback limits (unchecked rollback API returns and no atomicity guarantee).
+- Added cumulative `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with exact DLL RVA evidence for PE/proxy/once initialization, resource acquisition, target identity, staging, commit, rollback and fatal errors.
+- Reused fixed input identities and existing PC runtime facts; no mapping/pointer/descriptor/helper semantic reanalysis or Switch counterpart work in this phase.
+- Clarified one contiguous private allocation, inline/pointer/code write priorities, and best-effort rollback limits (unchecked rollback API returns and no atomicity guarantee).
 - Added V034–V039 and an active PHASE 1 complete / STOP resume gate.
 - Documentation-only change. No executable, builder, patch, IPS, build or test automation changed.
-
 
 ### W1 runtime result: direct compact-`쓰` cause hypothesis invalidated
 

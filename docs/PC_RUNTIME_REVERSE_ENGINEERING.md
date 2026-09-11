@@ -6,21 +6,24 @@
 - PHASE 2 완료: T5K parser `0x2640` wire grammar / bounds / parsed representation / failure propagation.
 - PHASE 3 완료: mapping 10,036 runtime storage / lookup relocation / pointer 56 mode-arg application engine.
 - PHASE 4 완료: 158-byte helper / descriptor search+application / 11 descriptors / 14 subpatch semantics.
-- 다음 단계는 PC Runtime Canonical Closure이며, 사용자의 새로운 실행 신호 없이는 시작하지 않는다.
-- PC runtime closure 전까지 Switch counterpart 조사, ARM64, IPS, 빌드 생성을 하지 않는다.
+- **PC Runtime Canonical Closure 완료.**
+- 다음 단계는 **Switch Functional Counterpart Survey**이며, 사용자의 새로운 실행 신호 없이는 시작하지 않는다.
+- counterpart survey 전에는 ARM64 구현, code/data cave 설계 확정, IPS, 빌드 생성을 하지 않는다.
 
-## Canonical phase records
+## Canonical records
 
-이 master는 단계별 상세 기록의 index다. 확정 사실을 새 채팅/모델이라는 이유로 재검증하지 않는다.
+확정 사실을 새 채팅/모델이라는 이유만으로 재검증하지 않는다.
 
-1. PHASE 1 상세: `docs/PC_RUNTIME_REVERSE_ENGINEERING_PHASE1.md`
-2. PHASE 2 상세/인계: `docs/PC_RUNTIME_PHASE2_PARSER_SPEC.md`
-3. PHASE 3 상세/인계: `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md`
-4. PHASE 4 상세/인계: `docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md`
-5. 검증 원장 index: `docs/VALIDATION_LEDGER.md`
-6. 현재 resume point: `PROJECT_STATE.md`
-
-새 단계가 완료되면 해당 상세 문서를 추가하고 이 index, validation ledger, state, changelog를 함께 갱신한 뒤 STOP한다.
+1. PHASE 1: `docs/PC_RUNTIME_REVERSE_ENGINEERING_PHASE1.md`
+2. PHASE 2: `docs/PC_RUNTIME_PHASE2_PARSER_SPEC.md`
+3. PHASE 3: `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md`
+4. PHASE 4: `docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md`
+5. Canonical closure: `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`
+6. Closed PC runtime spec: `docs/PC_RUNTIME_DLL_SPEC.md`
+7. PC -> Switch status matrix: `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`
+8. next-stage survey rules: `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`
+9. validation authority: `docs/VALIDATION_LEDGER.md`
+10. current resume point: `PROJECT_STATE.md`
 
 ## Fixed PC inputs
 
@@ -30,43 +33,83 @@
 - exact PC target EXE: Steam 1.2.1.0 build 9163702, 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
 - supplied mismatched PC EXE must not be used for PC RVA neighborhood/XREF evidence.
 
-## PHASE 3 canonical result
+## Closure canonical result
 
-- The runtime prefix is `0x9F2A` bytes: 10,036 x 4-byte mapping entries (`0x9CD0`) plus a 602-byte pointer replacement pool (`0x25A`).
-- The expanded mapping table is copied into private runtime storage; it is not builder-only metadata.
-- Two lookup paths collectively redirect three table/address operands to relocated mapping storage and expand two limits from 7,494 (`0x1D46`) to 10,036 (`0x2734`).
-- All 56 pointer records stage 8-byte absolute pointer writes.
-- Mode 0 (5 records): destination = EXE/module base + `arg`; the five records converge on two module-resident targets translated by inline patches.
-- Mode 1 (51 records): destination = private prefix base + `arg`; the 51 records reference 47 distinct replacement strings.
-- Pointer-record application and mapping relocation are separate engines sharing the private prefix allocation.
-- Exact target EXE absence limits whole-program XREF/table/UI naming only; it does not reopen the established base/count/write semantics.
+### Initialization / transaction
 
-## PHASE 4 canonical result
+- `DllMain` does not apply the patch; `DirectInput8Create` triggers separate proxy and patch once guards.
+- T5K parse -> disk identity -> memory PE profile -> private storage -> staging -> final storage protections -> commit.
+- one contiguous private allocation contains page-aligned prefix/helper regions.
+- staging requires exact preimage and rejects overlap; no record-by-record skip on mismatch.
+- commit priorities are inline 0 -> pointer 1 -> code 2.
+- failure is fail-closed; rollback is best-effort, not a full atomicity guarantee.
 
-- The 158-byte helper has two descriptor-used logical entries: `+0x00` and `+0x20`.
-- The helper handoff counts 42 reachable instructions plus 4 bytes of unreachable alignment/padding and four runtime-fixed control-transfer targets.
-- Descriptor search scans `.text`; mask `0x00` ignores a byte and nonzero compares the whole byte. Success requires exactly one match and exact anchor agreement.
-- Fixed-package staging separately requires 14 generated subpatches, even though 14 is not a PHASE-2 parser hard denominator.
-- Subpatch formulas:
-  - kind 0: literal payload;
-  - kind 1: `i32(P-W-4)` RIP-relative relocated-prefix displacement;
-  - kind 2: `i32(P-M)` module-relative relocated-prefix displacement;
-  - kind 3: `E9 || i32(H+arg-W-5)` helper JMP.
-- kind 1/2 do not use `arg`; kind 3 uses `arg` as helper-entry offset.
-- `runtime_page_mapper` jumps to helper `+0x00`: `EB..F8 -> pages 49..62`, otherwise original-path continuation at EXE RVA `0x6933D5`.
-- `runtime_byte_validation` jumps to helper `+0x20`: directly handles accepted 1/2-byte forms, successful handled cases jump to `0x6832BC`, other inputs resume the original path at `0x68328A`; it is not a Boolean-return validator.
-- All 11 descriptors / 14 subpatches are accounted for with kind population `9/2/1/2`.
-- Raw `font_page_limit` behavior is compare threshold `0xFF -> 0xA0`; a literal font-page-count interpretation is rejected.
-- Exact EXE absence still limits caller/XREF/UI naming and actual target-process runtime confirmation, not the DLL-generated patch formulas/control flow.
+### T5K grammar
+
+- exact `0x48` header and fixed parser denominators are established.
+- pointer wire grammar is `u32 slot, u32 original_target, u8 mode, reserved[3], u32 arg`; the older `<IIII>` representation is superseded.
+- 14 subpatches are a fixed-resource population and staging invariant, not a parser hard denominator.
+
+### Mapping / pointer data layer
+
+- prefix total `0x9F2A = 40,746` bytes = mapping `0x9CD0 = 40,144` bytes + pool `0x25A = 602` bytes.
+- mapping content is 7,494 originals + 2,542 Korean = 10,036.
+- two lookup paths alter three mapping-address operands plus two `7,494 -> 10,036` limits.
+- all 56 pointer records stage 8-byte absolute writes.
+- mode 0: 5 records, destination = EXE/module base + `arg`, converging on two inline-translated module targets.
+- mode 1: 51 records, destination = private prefix base + `arg`, referencing 47 distinct pool strings.
+- mapping relocation and pointer application are separate engines.
+
+### Helper / descriptor code layer
+
+- helper: 158 bytes, descriptor-used entries `+0x00` and `+0x20`.
+- descriptor search is PC `.text` masked search with exact uniqueness + exact anchor requirement.
+- kind formulas:
+  - kind0 = payload
+  - kind1 = `i32(P-W-4)`
+  - kind2 = `i32(P-M)`
+  - kind3 = `E9 || i32(H+arg-W-5)`
+- kind1/2 do not use `arg`; kind3 uses helper-entry offset.
+- page mapper `+0x00`: `EB..F8 -> pages 49..62`; otherwise returns to original PC flow at `0x6933D5`.
+- byte-validation/copy `+0x20`: handles accepted one/two-byte forms then jumps to `0x6832BC`; other input resumes original processing at `0x68328A`. It is not a Boolean validator.
+- all 11 descriptors / 14 subpatches are accounted for; kind population `9/2/1/2`.
+- raw `font_page_limit` behavior is threshold `0xFF -> 0xA0`, not a proven literal page-count edit.
+
+## Closure corrections to stale SPEC wording
+
+The closed `docs/PC_RUNTIME_DLL_SPEC.md` now corrects all identified PHASE 2–4 conflicts:
+
+- pointer record grammar / universal string-offset naming;
+- separate-allocation wording for helper;
+- helper `+0x20` fallback semantics;
+- `font_page_limit` semantic overclaim;
+- PC descriptor uniqueness policy being misread as a future Switch discovery gate.
+
+The closure introduces no V062+ factual validations. V001–V061 remain the factual ledger authority.
+
+## PC completion vs Switch completion
+
+The PC runtime reference is closed. Switch porting is not.
+
+The next-stage matrix intentionally keeps Switch statuses separate. In particular:
+
+- mapping additional capacity is a primary unresolved placement risk;
+- pointer 56 remains a separate survey axis and shares replacement-storage concerns with mapping/prefix design;
+- helper code space is not assumed mandatory because equivalent behavior may be achievable in existing ARM64 control flow;
+- `NATIVE_EQUIVALENT` claims require concrete Switch evidence; otherwise status remains `UNSURVEYED` / `PARTIAL_EVIDENCE` / `UNRESOLVED`.
+
+The missing compact `쓰` symptom remains a three-path unresolved model: data selection / pointer-reference selection / byte-validation-copy path. No single path is promoted to root cause by closure.
+
+PCREF1 delivery verification may run in parallel with static counterpart survey but must be closed before a new counterpart-derived runtime result is used as causal evidence.
 
 ## PHASE 4 transfer provenance
 
-The original PHASE 4 handoff reported auxiliary verification JSON, a probe script and a ZIP containing raw signature/mask/preimage/payload evidence. Those files were not available to the repository-importing agent and were not recreated. The canonical PHASE 4 detail/ledger preserve the reported results and this transfer limitation explicitly.
+The original PHASE 4 handoff reported `docs/PC_RUNTIME_PHASE4_VERIFICATION.json`, `tools/pc_phase4_probe.py`, and a raw-evidence/handoff ZIP. Those auxiliary files were not available at canonical-import time and were not fabricated. This remains recorded provenance, not a reason to reopen already-validated PHASE 4 claims absent a high-risk evidence need.
 
 ## Next authorized scope after a fresh signal
 
-The next stage is **PC Runtime Canonical Closure** only.
+**Switch Functional Counterpart Survey only.**
 
-Closure should integrate PHASE 1–4, supersede/correct stale wording in `docs/PC_RUNTIME_DLL_SPEC.md` without losing provenance, separate raw byte behavior from inferred human-readable roles, and produce the authoritative PC reference package for later Switch counterpart analysis.
+Follow `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`. Survey the five primary axes (mapping, pointer 56, helper semantics, descriptor 14 semantics, inline/data-selection coverage), keep CWTDAT as a separate data axis, produce full counterpart and space/capacity matrices, report, and STOP.
 
-Do not inspect Switch counterparts, ARM64, code/data caves, IPS or builds until closure is separately authorized and completed.
+Do not proceed directly to implementation, IPS, diagnostic build or runtime testing under the closure authorization.
