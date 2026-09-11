@@ -115,6 +115,31 @@ The following remain outside V094:
 
 No prior F1 exclusion or safety rule is relaxed.
 
+## V095 — F1 Build-ID terminology / duplicate-run cleanup is documentation-only
+
+**Status:** `VERIFIED / METADATA-ONLY`
+
+A cleanup review found no change to F1 membership, target resolution, or static authorization. The apparent Build-ID discrepancy is representational:
+
+- canonical project Build ID = 20-byte identity `D9120950C258610A746F4A31CE3A3B376DE393D9`;
+- NSO header field at `0x40:0x60` = 32 bytes;
+- the canonical `main` stores the 20-byte identity followed by 12 zero padding bytes;
+- `tools/f1_static_authorization.py` compares the exact 32-byte NSO field by design;
+- `F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json` schema V1 uses the legacy key `canonical_build_id` for that 32-byte serialized field. This key name is retained to avoid needless artifact churn; the project-level Build ID remains the 20-byte identity above.
+
+The duplicate-execution concern was also checked at the canonical repository level. The canonical tree contains one F1 machine manifest, one summary, one replay tool, one report, and one F1 authorization ledger. Repeated local replay outputs used during provenance closure were not committed as duplicate canonical artifacts.
+
+The canonical replay invariants remain unchanged:
+
+- static-authorized rows: `158`;
+- manifest-content SHA-256: `c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`;
+- compressed manifest SHA-256: `8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`;
+- ordered authorized `source_id` SHA-256: `87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e`.
+
+No builder/IPS/runtime work and no reauthorization was performed by this cleanup.
+
+**Reuse rule:** Treat V095 as terminology/provenance cleanup only. Do not reopen V093/V094 or regenerate the 158-row set solely because the summary V1 key stores the padded NSO field.
+
 ## Stopping point
 
 F1 row-level provenance and static authorization closure is complete for the 158-row set.

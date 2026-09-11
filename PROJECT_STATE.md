@@ -17,7 +17,7 @@ The exact 158 F1 actions are now row-level `DIRECT_PORT` authorized for future s
 Canonical target:
 - Title ID `0100346017304000`
 - Switch v1.1.3
-- Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`
+- Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9` (canonical 20-byte identity; NSO header field `0x40:0x60` contains this value plus 12 zero padding bytes)
 - `main` SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
 
 ## Accounting snapshot
@@ -69,7 +69,7 @@ Row-level artifacts:
 - `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz`
 - `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json`
 
-Manifest content SHA-256: `c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`; canonical compressed file SHA-256: `8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`.
+Manifest content SHA-256: `c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`; canonical compressed file SHA-256: `8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`. The summary V1 legacy key `canonical_build_id` stores the full 32-byte NSO header field; the project Build ID above remains the 20-byte identity.
 
 Important boundaries:
 
@@ -98,7 +98,7 @@ Important boundaries:
 - F1 static authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
 - validation index: `docs/VALIDATION_LEDGER.md`
 
-R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, and F1 authorization ledger facts remain canonical; do not revalidate them merely because a new chat/model is used.
+R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, F1 authorization, and V095 metadata-cleanup ledger facts remain canonical; do not revalidate them merely because a new chat/model is used.
 
 ## Mandatory boundaries
 

@@ -51,7 +51,8 @@ The exact 16 rejected residual source rows also reproduce V088:
 Inputs:
 
 - Switch `main` SHA-256: `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
-- Build ID: `D9120950C258610A746F4A31CE3A3B376DE393D9`
+- Build ID (canonical project identity, 20 bytes): `D9120950C258610A746F4A31CE3A3B376DE393D9`
+- NSO header Build-ID field (`0x40:0x60`, 32 bytes): the 20-byte identity above followed by 12 zero padding bytes. The existing replay tool intentionally validates the entire 32-byte field. In `F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json` schema V1, the legacy key `canonical_build_id` stores this full serialized 32-byte field; do not reinterpret the trailing zero padding as part of the canonical project Build ID.
 - Stage-1 `source_ledger.jsonl`: `0ef81c629adb2e348a72922efcb030908c76fb3cff964804948bf84cd7fd1570`
 - Stage-1 `exceptions.jsonl`: `10b13fe7156225109d86f8d0707dd385d3c24c66dcbe590ae56425e1dc936257`
 - Stage-1 `localization_language_inventory.json`: `d7b90f7f7f1e43c54b87d97524b14b1582f390aa8a4672e25c2c48d2f9fac550`
