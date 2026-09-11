@@ -19,6 +19,33 @@ Observed Eden Android behavior for the Taiko5DX Switch Korean-port development b
 | Y0 v0.2l | remove 2,099 translated halfwidth-yomi records + disable eight known yomi-enable callers | **Stable, but target garbled yomi rows still appear; suppression hypothesis incomplete** |
 | W0 v0.2m | D5519 + six A1+ fullwidth-threshold patches | **Observed stable; `케/자` render normally; tested Matsudaira name still lacks `쓰`** |
 | W1 v0.2n | W0 + render-width gate change at mapped `0x44D9D0` | **NO FIX: tested Matsudaira name still lacks `쓰`; direct-cause hypothesis invalidated** |
+| DCTRL7 | mapper + V019 R489 control + 5 repeated-object records | **PARTIAL PASS: scenario `1560年 -> 1560년`; tested `岡崎城` unchanged; in-game HUD date reported unchanged** |
+
+## DCTRL7 — CURRENT DELIVERY CONTROL / REPEATED-OBJECT DISCRIMINATOR
+
+Artifact:
+
+- builder source commit `ccb13b3e85b8a72339b628f57bf12dda789fffe3`;
+- IPS SHA-256 `2114f14ccc098103524b7cb4afaf416a8bc0185bc607dd198ce4f9511d2d6fab`;
+- package `DCTRL7_Taiko5DX_KR_EDEN.zip`;
+- package SHA-256 `c1092c6cb43da985a536c94dd01f132516540af35232f11d634e1afc0341fb33`;
+- 7/7 guards PASS, no skips/extras, exact self-reparse and `mapped+0x100` round-trip PASS;
+- Drive-retained package was redownloaded byte-identical before runtime use.
+
+Runtime on Eden Android v0.2.1:
+
+- scenario-selection display changed `1560年 日輪の章` to `1560년 日輪の章`;
+- this establishes runtime delivery/consumption of DCTRL7's standalone `年` record at mapped `0x69785A` on that route and proves the Korean font/page-mapper can render the replacement;
+- protagonist basic-information screen still showed `拠点 岡崎城` even though DCTRL7 includes standalone `城 @ 0x6A15DC -> 성`, so that standalone record is not sufficient for the tested screen;
+- user reported the in-game HUD still showed `1560年 2月30日`; this HUD observation has narrower evidence because no DCTRL7 HUD screenshot was retained in the R0 documentation session;
+- R489, standalone `月`, standalone `日`, and `はい` were not directly exposed on the supplied DCTRL7 route and must not be classified as failures.
+
+Retained screenshots:
+
+- scenario `1560년`: `DCTRL7_01_scenario_1560nyeon.jpg`, Drive ID `17XlqbJWd5aaEAUtsV0QRedPRNkKcPctR`, SHA-256 `5dc08060b4e0d18eecc962a7512347486b2253e20d2a1d9a5b361efa11e5f75f`;
+- unchanged `岡崎城`: `DCTRL7_02_basic_info_okazaki_castle_jp.jpg`, Drive ID `1eY4pPcBP80HnDfkSfodPTX5oi_C7ppjj`, SHA-256 `76a450b0770ab155c85f0e4272bc51bbe80daac78e5b764975f834dcd8bf25bb`.
+
+Canonical consequence: the current feedback loop is restored for the tested `年 @ 0x69785A` path. Global DCTRL7/ExeFS delivery failure is rejected. The remaining repeated-object work is now a source/consumer-coverage problem, not a reason to reopen the current artifact-delivery chain. Detailed record: `docs/diagnostics/DCTRL7_RUNTIME_RESULT.md`.
 
 ## Critical build-layer correction
 
@@ -133,8 +160,9 @@ Do not repeat W1 as a compact-`쓰` fix without first establishing the actual ev
 ## Current interpretation
 
 - The old freeze mechanism is dominated by the fixed `+0x100` IPS-coordinate defect.
+- DCTRL7 restores the current feedback loop for standalone `年 @ 0x69785A` and proves repeated-object failures now need consumer/source analysis rather than a global delivery explanation.
 - Y0 disproves only the narrow eight-site suppression hypothesis for the observed yomi rows; it does not disprove the internal-yomi classification or the policy of preserving yomi internally.
 - W0 runtime observations remain valid, but direct causality between the A1+ threshold changes and the `케/자` correction is not established.
 - W1 disproves the narrow claim that mapped `0x44D9D0` is the direct cause of the missing `쓰` symptom.
 - The Matsudaira symptom must not be treated as proof of compact-glyph render loss until the active name slot/data selection path is established; duplicated `松平元康` fixed fields were skipped by the historical unique-only selector.
-- Repeated short UI strings remain a separate object-recovery task.
+- Repeated short UI strings are now tracked through R0's RELA/registry/place-table structure rather than universal standalone-token assumptions.
