@@ -21,12 +21,13 @@ Status values remain `VERIFIED`, `VERIFIED-RUNTIME`, `VERIFIED-LEGACY`, `NEEDS-R
 - V040–V045, PC DLL PHASE 2 parser grammar: `docs/VALIDATION_LEDGER_PHASE2.md`
 - V046–V051, PC DLL PHASE 3 mapping/pointer runtime semantics: `docs/VALIDATION_LEDGER_PHASE3.md`
 - V052–V061, PC DLL PHASE 4 helper/descriptor runtime semantics: `docs/VALIDATION_LEDGER_PHASE4.md`
+- V062, PCREF1 emitted-delivery provenance gap: `docs/VALIDATION_LEDGER_PCREF1.md`
 
 All files are part of the canonical ledger. Later factual phases must append a new ledger part and update this index rather than revalidating established entries.
 
 ## PC Runtime Canonical Closure accounting
 
-The 2026-09-11 PC Runtime Canonical Closure is an integration/audit stage, not a new factual validation stage. It therefore adds **no V062+ IDs**.
+The 2026-09-11 PC Runtime Canonical Closure is an integration/audit stage, not a new factual validation stage. It therefore added no V062+ IDs at closure time. V062 was created later by the separately authorized PCREF1 delivery-verification stage.
 
 Closure products:
 
@@ -36,6 +37,19 @@ Closure products:
 - `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`
 
 These documents must trace factual PC claims to V001–V061. The closure corrected stale aggregate wording; it did not reopen established phase facts.
+
+## PCREF1 delivery-verification accounting
+
+V062 records that historical PCREF1 emitted-IPS integrity is **not established** because the actual ZIP/IPS, SHA-256, final record count, guard report, manifest, round-trip report and reproducible builder were not retained in the canonical sources available to the verification session.
+
+Consequences:
+
+- the historical PCREF1 screen-no-change observation is retained only as an observation;
+- it must not be used as negative evidence against V024/V025/V033 object/fixed-field findings;
+- a later fresh reproducible delivery-control diagnostic is required before a new runtime no-change result can be interpreted causally;
+- a new artifact can validate the current delivery pipeline but cannot retroactively prove what the lost PCREF1 artifact contained.
+
+Detailed report: `docs/PCREF1_DELIVERY_VERIFICATION.md`.
 
 ### Narrow precedence correction for V029
 
@@ -58,6 +72,7 @@ Key closure corrections that must not be reintroduced:
 
 - release inline safety policy: `docs/INLINE_VALIDATION_POLICY.md`
 - validated fact/revalidation authority: this index and its ledger parts, with later narrower-scope corrections taking precedence over older semantic overclaims
+- PCREF1 delivery-verification record: `docs/PCREF1_DELIVERY_VERIFICATION.md`
 - closed PC runtime aggregate specification: `docs/PC_RUNTIME_DLL_SPEC.md`
 - PC runtime closure/audit: `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`
 - corrected-runtime observations: `docs/RUNTIME_TEST_RESULTS.md`
