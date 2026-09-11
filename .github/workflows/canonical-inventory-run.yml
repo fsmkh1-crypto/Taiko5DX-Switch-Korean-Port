@@ -1,0 +1,50 @@
+name: Canonical inventory run
+
+on:
+  push:
+    paths:
+      - '.github/workflows/canonical-inventory-run.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  canonical:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install gdown==5.2.0
+      - name: Download canonical Switch main
+        run: |
+          mkdir -p .canonical
+          gdown --id 1nfnXSCmSHp0rP_bbDNSyhKCroKSTtTPQ -O .canonical/main.bin
+          echo 'b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b  .canonical/main.bin' | sha256sum -c -
+      - name: Download canonical PC patch package
+        run: |
+          gdown --id 1dYepodubrgFKIVByUtITkpclRJSGKbDE -O .canonical/Taiko5DX_Korean_Patcher_v1.02.zip
+          echo 'df1b62de95e992369e9686c9731d814e7a7e4634888f610430635429e24f7cec  .canonical/Taiko5DX_Korean_Patcher_v1.02.zip' | sha256sum -c -
+      - name: Run read-only inventory validator twice
+        run: |
+          python tools/full_port_inventory.py --main .canonical/main.bin --pc-patcher .canonical/Taiko5DX_Korean_Patcher_v1.02.zip --out-dir .canonical/reports1
+          python tools/full_port_inventory.py --main .canonical/main.bin --pc-patcher .canonical/Taiko5DX_Korean_Patcher_v1.02.zip --out-dir .canonical/reports2
+          diff -ru .canonical/reports1 .canonical/reports2
+      - name: Assert report-only outputs
+        run: |
+          test -f .canonical/reports1/SUMMARY.json
+          test -f .canonical/reports1/OUTPUT_HASHES.json
+          find .canonical/reports1 -maxdepth 1 -type f -printf '%f\n' | sort
+      - name: Upload canonical inventory reports
+        uses: actions/upload-artifact@v4
+        with:
+          name: canonical-inventory-reports
+          path: .canonical/reports1/
+          if-no-files-found: error
+          retention-days: 7
