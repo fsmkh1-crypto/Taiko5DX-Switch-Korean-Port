@@ -2,6 +2,20 @@
 
 ## 2026-09-11
 
+### PC DLL PHASE 4 complete — helper and descriptor runtime semantics
+
+- Added `docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md` and `docs/VALIDATION_LEDGER_PHASE4.md`; advanced canonical resume state to PHASE 4 complete / STOP.
+- Confirmed the 158-byte helper has two descriptor-used logical entries (`+0x00`, `+0x20`), with the PHASE 4 handoff reporting 42 reachable instructions, 4 bytes of unreachable padding/alignment, and four runtime-fixed control-transfer targets.
+- Confirmed descriptor search scans target `.text`; mask byte zero ignores a position while nonzero compares the full byte. Success requires exactly one match and exact declared-anchor agreement, so a unique relocated signature is not accepted.
+- Confirmed the fixed package's 14-subpatch total is separately checked during staging even though 14 is not a parser hard denominator.
+- Canonicalized subpatch formulas: kind0=`payload`; kind1=`i32(P-W-4)`; kind2=`i32(P-M)`; kind3=`E9 || i32(H+arg-W-5)`. Kinds 1/2 do not use `arg`; kind3 uses it as the helper-entry offset.
+- Confirmed `runtime_page_mapper` -> helper `+0x00`: `EB..F8` maps to pages 49..62; nonmatching input resumes original PC flow at RVA `0x6933D5`.
+- Corrected `runtime_byte_validation` semantics: helper `+0x20` directly handles accepted one/two-byte forms and jumps to `0x6832BC`; fallback resumes the original processing path at `0x68328A`. It is not a Boolean-return validator.
+- Accounted for all 11 descriptors / 14 subpatches with fixed-resource kind population 9/2/1/2 and successful write RVAs recorded in the PHASE 4 detail document.
+- Corrected `font_page_limit` wording: raw confirmed behavior is compare threshold `0xFF -> 0xA0`, not a directly proven literal font-page-count assignment.
+- The original PHASE 4 handoff listed a verification JSON, probe script, and raw-evidence ZIP. Those auxiliary files were not available during canonical import and were not fabricated; the transfer limitation is recorded in the PHASE 4 detail/ledger.
+- No Switch counterpart research, ARM64, IPS, build, or runtime test was performed. Next stage is PC Runtime Canonical Closure only after a fresh user signal.
+
 ### PC DLL PHASE 3 complete — mapping relocation and pointer engine
 
 - Added `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md` and a PHASE 3 validation-ledger part.

@@ -2,33 +2,38 @@
 
 Last updated: 2026-09-11 (KST)
 
-## Active staged analysis — PC DLL PHASE 3 complete / STOP
+## Active staged analysis — PC DLL PHASE 4 complete / handoff / STOP
 
 Latest user scope supersedes older next-action lists below. PHASE 1 established DLL loading,
 initialization, EXE validation and transaction framework. PHASE 2 established the exact
 `T5K121R` parser grammar, bounds rules, parsed representation and failure propagation.
-PHASE 3 established the runtime mapping/pointer data layer. Master:
-`docs/PC_RUNTIME_REVERSE_ENGINEERING.md`.
+PHASE 3 established the runtime mapping/pointer data layer. PHASE 4 established the
+remaining helper/descriptor runtime-code layer. Master: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`.
 
-- The `0x9F2A` runtime prefix is 10,036 x 4-byte mapping entries (`0x9CD0`) plus a
-  602-byte pointer replacement pool (`0x25A`) and is copied into private runtime storage.
-- Two mapping lookup paths collectively redirect three address/table-base operands to the
-  relocated mapping storage and change two limits from 7,494 (`0x1D46`) to 10,036 (`0x2734`).
-- All 56 pointer records were surveyed. They stage 8-byte absolute pointer writes using
-  PHASE-2's canonical `u8 mode + reserved[3] + u32 arg` grammar.
-- Mode 0: 5 records, destination = EXE/module base + `arg`; they converge on two
-  module-resident targets that are translated by the inline layer.
-- Mode 1: 51 records, destination = private prefix base + `arg`; they reference 47
-  distinct replacement strings in private-prefix storage.
-- Pointer application and mapping relocation are separate engines; the pointer records do
-  not themselves relocate the 10,036-entry mapping table.
-- Exact target PC EXE absence leaves whole-program XREF/table/UI naming unresolved, but
-  does not reopen the verified mapping-base/count/pointer-write semantics.
-- Pending PHASE 4 only after a fresh user execution signal: 158-byte helper semantics and
-  runtime descriptor/subpatch application semantics.
-- PHASE 1~5 still forbid Switch counterpart research, ARM64, IPS and builds.
-- At each authorized phase end: update phase detail, ledger/state/changelog, commit, report,
-  then STOP.
+- Runtime helper: 158 bytes, two descriptor-used logical entries at `+0x00` and `+0x20`.
+- PHASE 4 handoff reports 42 reachable helper instructions, 4 bytes of unreachable
+  alignment/padding, and four control-transfer targets fixed up after helper allocation.
+- Descriptor search scans `.text`; mask byte zero ignores and nonzero compares the whole
+  signature byte. Success requires exactly one match and exact declared-anchor agreement.
+- The fixed resource still has 11 descriptors / 14 subpatches with kind population
+  `9/2/1/2`; PHASE 4 establishes a separate staging-time check requiring total 14.
+- Subpatch formulas are now canonical:
+  kind0=`payload`, kind1=`i32(P-W-4)`, kind2=`i32(P-M)`,
+  kind3=`E9 || i32(H+arg-W-5)`.
+- kind1/kind2 do not use `arg`; kind3 uses `arg` as helper-entry offset.
+- `runtime_page_mapper` -> helper `+0x00`: `EB..F8` maps to pages `49..62`; fallback
+  reproduces displaced original behavior and resumes at PC EXE RVA `0x6933D5`.
+- `runtime_byte_validation` -> helper `+0x20`: accepted one/two-byte forms are handled
+  directly and continue at `0x6832BC`; other inputs resume original processing at
+  `0x68328A`. It is not a Boolean-return validator.
+- `font_page_limit` raw confirmed behavior is compare threshold `0xFF -> 0xA0`; do not
+  describe it as a proven literal font-page-count assignment.
+- Exact target PC EXE absence still limits full XREF/caller/UI naming and actual target-process
+  runtime verification, but not the DLL-generated helper/descriptor formulas above.
+- PHASE 4 handoff listed a verification JSON, probe script and raw-evidence ZIP, but those
+  auxiliary files were not available during canonical import and were not fabricated.
+- Pending next stage only after a fresh user execution signal: **PC Runtime Canonical Closure**.
+- Closure itself must finish before Switch counterpart research, ARM64, IPS or builds resume.
 
 This is the canonical resume point. Before inline/crash/UI work, read it with `docs/VALIDATION_LEDGER.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/PHASE0_FAILURE_MODE_PLAN.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/POST_D5519_ANALYSIS.md`.
 
@@ -107,7 +112,7 @@ The intended Korean display is **`마쓰다이라 모토야스`**. Earlier proje
 
 Direct BC3 decoding of the exact Korean G1T confirms correct source glyph art for compact `마/쓰/다` and normal two-byte `케/자`. The source font is not the defect.
 
-The PC runtime descriptor `font_page_limit` changes a threshold from `0xFF` to `0xA0`, making single-byte codes above `0xA0` take the alternate/full-width path.
+The PC runtime descriptor `font_page_limit` changes a threshold from `0xFF` to `0xA0`. PHASE 4 supersedes any stronger wording that treated this as a directly proven literal page-count edit; the raw confirmed behavior is a compare-threshold change.
 
 ## 7. W0 result — observation retained, causality downgraded
 
@@ -220,17 +225,21 @@ The full 17,103-record validator remains a release-audit/recovery mechanism, not
 
 ## 14. Priority after W1 invalidation
 
+The older priority list below predates completion of PC DLL PHASE 1–4. The active resume gate at the top of this document takes precedence: perform PC Runtime Canonical Closure first, then define the Switch counterpart survey from that closed specification.
+
+Historical Switch-side priorities remain useful after closure:
+
 1. establish the actual protagonist/nameplate data path: event/person ID -> current name/alias slot -> rendered name object;
 2. survey duplicated person-name/renaming/alias fixed slots that the historical unique-only selector could have skipped, using actual PC replacements as ground truth;
 3. only after that analysis, decide whether any data recovery or runtime renderer change is justified;
 4. trace the actual auxiliary-yomi draw path;
 5. recover high-confidence repeated UI objects;
 6. map `貫/文` complete format objects;
-7. expand 7,494 -> 10,036 conversion mapping;
-8. map remaining runtime descriptors / 56 pointer records / Switch-native CWTDAT changes;
+7. reproduce the closed PC mapping/pointer/runtime-code families where Switch does not already provide equivalent behavior;
+8. map Switch-native CWTDAT changes;
 9. full release validator and broad runtime route.
 
-No new patch/build is authorized by this state update; the next analysis/implementation stage requires a fresh user execution signal.
+No new patch/build is authorized by this state update; the next stage requires a fresh user execution signal.
 
 ## 15. Eden Android / final distribution
 
