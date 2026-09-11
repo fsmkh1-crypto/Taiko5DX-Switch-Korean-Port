@@ -1,0 +1,35 @@
+{
+  "test_id": "DCTRL5",
+  "status": "READY_FOR_EDEN_RUNTIME_TEST",
+  "builder_source_commit": "bc3db0fd42ebecfd0a6ebc7d61651ea18f738fbf",
+  "build_report_and_emit_log_commit": "e5c223231bf0dec69dbd45581002a235e5fbd07e",
+  "artifact": {
+    "filename": "DCTRL5_Taiko5DX_KR_EDEN.zip",
+    "sha256": "49a314996f2305a952250f23853f483d0f435494167eec87b8c5077bf10f53f5",
+    "drive_file_id": "14zNK28eud_s6aqSRs8Rjuee0UOBBBqBm",
+    "drive_location": "태합입지전 포팅/Eden_Builds/DCTRL5_Taiko5DX_KR_EDEN.zip",
+    "drive_redownload_sha256": "49a314996f2305a952250f23853f483d0f435494167eec87b8c5077bf10f53f5",
+    "drive_redownload_verified": true
+  },
+  "ips": {
+    "filename": "D9120950C258610A746F4A31CE3A3B376DE393D9.ips",
+    "sha256": "a199337897c96482fda10d6ec34325d347f977de59fea29c988e1060ebe13304",
+    "record_count": 6,
+    "offset_shift": 256,
+    "self_reparse_exact": true,
+    "coordinate_roundtrip_exact": true,
+    "extra_records": 0
+  },
+  "guards": {
+    "pass": 6,
+    "fail": 0,
+    "skip": 0
+  },
+  "scope": {
+    "prerequisite_records": 1,
+    "diagnostic_records": 5,
+    "prerequisite": "V006 runtime_page_mapper",
+    "diagnostics": ["月", "年", "はい", "城", "日"]
+  },
+  "runtime_result": null
+}
