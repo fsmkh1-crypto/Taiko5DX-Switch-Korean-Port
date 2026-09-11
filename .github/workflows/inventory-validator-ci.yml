@@ -1,0 +1,29 @@
+name: Inventory validator CI
+
+on:
+  push:
+    paths:
+      - 'tools/full_port_inventory.py'
+      - 'builder/build.py'
+      - 'builder/t5k.py'
+      - 'requirements.txt'
+      - '.github/workflows/inventory-validator-ci.yml'
+  pull_request:
+    paths:
+      - 'tools/full_port_inventory.py'
+      - 'builder/build.py'
+      - 'builder/t5k.py'
+      - 'requirements.txt'
+  workflow_dispatch:
+
+jobs:
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - run: python -m py_compile tools/full_port_inventory.py builder/build.py builder/t5k.py
+      - run: python tools/full_port_inventory.py --help
