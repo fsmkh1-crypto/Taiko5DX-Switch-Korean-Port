@@ -1,0 +1,87 @@
+{
+  "starting_remote_main_sha": "06177d3e67717a890ef8364b8110499c1f4f7b78",
+  "analysis": "COMPLETE (static/synthetic scope)",
+  "documentation": "COMPLETE",
+  "new_validation_ids": [
+    "V052",
+    "V053",
+    "V054",
+    "V055",
+    "V056",
+    "V057",
+    "V058",
+    "V059",
+    "V060",
+    "V061"
+  ],
+  "created_files": [
+    "docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md",
+    "docs/VALIDATION_LEDGER_PHASE4.md",
+    "docs/PC_RUNTIME_PHASE4_VERIFICATION.json",
+    "tools/pc_phase4_probe.py"
+  ],
+  "modified_files": [
+    "docs/PC_RUNTIME_REVERSE_ENGINEERING.md",
+    "docs/VALIDATION_LEDGER.md",
+    "PROJECT_STATE.md",
+    "CHANGELOG.md"
+  ],
+  "files": [
+    {
+      "path": "docs/PC_RUNTIME_PHASE4_HELPER_DESCRIPTOR_SPEC.md",
+      "action": "create",
+      "baseline_sha256": null,
+      "sha256": "b948a412c3589e399727c6f4dc4dcc992fc8493a849ee71fc1cbc65bc051d0ff",
+      "bytes": 41260
+    },
+    {
+      "path": "docs/VALIDATION_LEDGER_PHASE4.md",
+      "action": "create",
+      "baseline_sha256": null,
+      "sha256": "fbedbd9b7e2fc99e27a4c248d8fdeb1f763618de0b886e662bd2d38bc6afe381",
+      "bytes": 5581
+    },
+    {
+      "path": "docs/PC_RUNTIME_PHASE4_VERIFICATION.json",
+      "action": "create",
+      "baseline_sha256": null,
+      "sha256": "68abae6d9299ae698a9e4bfcb37a8807ac5e92a31a53f9bda6be0a83415ee612",
+      "bytes": 1371
+    },
+    {
+      "path": "tools/pc_phase4_probe.py",
+      "action": "create",
+      "baseline_sha256": null,
+      "sha256": "bf613c1ac3cfa9d402aec3bb2fd12fc2445f4b3f1357fc8c652637d4a6856a23",
+      "bytes": 9467
+    },
+    {
+      "path": "docs/PC_RUNTIME_REVERSE_ENGINEERING.md",
+      "action": "modify",
+      "baseline_sha256": "28ec3aeb4583652ebd3712647fafa86573b25347fbf27a92be4704d7da45deab",
+      "sha256": "417070219d3f87f82b3bff46f8880e9e8d94585e594ed33341bdb851f46643ff",
+      "bytes": 4112
+    },
+    {
+      "path": "docs/VALIDATION_LEDGER.md",
+      "action": "modify",
+      "baseline_sha256": "3d158792a53451e2ecc1b4f0feab1a9579048a0771f0a4ef369ea10d9928914c",
+      "sha256": "2043b1d7685f6e5d7d736c7d5f378234d05d365c77cf2bf3fed192f4e615c55d",
+      "bytes": 1757
+    },
+    {
+      "path": "PROJECT_STATE.md",
+      "action": "modify",
+      "baseline_sha256": "b35ed7e08024475c8dc75c168b8326794501f22bd8aac3e35ba70e662e2bd3b0",
+      "sha256": "0253bfa8b578c6780850a341e7ed2f8d091443c838d76a96333eaa6d191d9189",
+      "bytes": 13994
+    },
+    {
+      "path": "CHANGELOG.md",
+      "action": "modify",
+      "baseline_sha256": "8090ed31d78440064e32c8ff69c33003469921a37efaa301ddfbddfa5f1e3a1d",
+      "sha256": "50dee0ef0384d47f7af48206509c1d40da6aa79a2424d8182eaab56b245667b8",
+      "bytes": 15724
+    }
+  ]
+}
