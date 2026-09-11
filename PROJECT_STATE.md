@@ -10,7 +10,9 @@ Branch: `main`
 Stage 1 canonical inventory: COMPLETE.
 Stage 2 affine structural targeting: COMPLETE.
 F1 unique-anchor bounded localization sequence audit: COMPLETE.
-No builder/IPS/runtime implementation is authorized by the F1 audit.
+F1 158-row static write authorization/provenance closure: COMPLETE.
+
+The exact 158 F1 actions are now row-level `DIRECT_PORT` authorized for future static builder consumption, subject to their manifest guards. No builder, IPS, ZIP, runtime artifact, or game-file modification was performed in this authorization stage.
 
 Canonical target:
 - Title ID `0100346017304000`
@@ -33,39 +35,58 @@ conservative later target-resolved             451
 conservative target-unresolved residual        797
 ```
 
-The `797` figure is the current conservative target-resolution working count after the F1 audit correction. It does not mean the remaining 451 resolved rows are all write-authorized.
+The `797` target-unresolved working count is unchanged by static authorization of already target-resolved rows.
 
-## F1 audit snapshot
+## F1 authorization snapshot
 
-F1 residual population: 278.
+Historical F1 residual population: 278.
 
 ```text
-TARGET_RESOLVED_WRITE_SAFE_STATIC              158
-TARGET_RESOLVED_CAPACITY_FAIL                    4
+F1_STATIC_WRITE_AUTHORIZED                    158
+TARGET_RESOLVED_CAPACITY_FAIL                   4
 TARGET_RESOLVED_PADDING_RECONSTRUCTION_REQUIRED 75
-TARGET_RESOLVED_OTHER_BLOCKER                   25
-F1_RULE_REJECTED                                16
-TOTAL                                           278
+TARGET_RESOLVED_OTHER_BLOCKER                  25
+F1_RULE_REJECTED                               16
+TOTAL                                          278
 ```
+
+Deterministic selector replay reproduced exactly:
+
+```text
+search segments            142
+anchor-bounded mapped    1,402
+residual in bounds          278
+accepted segments           112
+accepted mapped           1,311
+accepted residual           262
+rejected residual            16
+```
+
+Row-level artifacts:
+
+- `tools/f1_static_authorization.py`
+- `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
+- `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz`
+- `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json`
+
+Manifest content SHA-256: `c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`; canonical compressed file SHA-256: `8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`.
 
 Important boundaries:
 
-- accepted F1 residual targets: 262;
-- 16 rows are returned to unresolved because the final unique-anchor-bounded interval is shorter than five rows;
-- 158 rows satisfy the current static write-safety audit conditions but are not release/builder authorization;
-- 4 full-window PASS rows consume the terminating NUL and fail actual object capacity;
-- 75 accepted rows require storage reconstruction because PC padding is occupied by following JP objects on Switch;
-- 25 accepted rows remain blocked on shared-physical-object owner obligation binding;
-- no proven case currently requires conflicting replacement values simultaneously on one shared physical Switch object.
+- the 158 authorized rows are 158 unique PC source rows -> 158 unique localization IDs -> 158 unique physical JP-only objects;
+- every authorized action has an exact original-byte guard, 1:1 object cardinality, terminating-NUL proof, single logical owner, and zero overlap with the F1 full-window set and Stage-2 targets;
+- 4 capacity failures, 75 padding-reconstruction rows, 25 shared-owner rows, and 16 F1-rule rejects remain excluded;
+- no builder/IPS/runtime work is implied by authorization alone.
 
 ## Canonical safety rules added by F1
 
 - full original-byte guard plus same replacement length is not sufficient for a string write;
-- capacity includes the terminating NUL and is bounded by the actual Switch object boundary;
+- capacity includes the terminating NUL and is bounded by actual Switch storage;
 - PC NUL padding must not be assumed available on Switch;
 - raw PC-length writes are forbidden for the F1 padding-mismatch family;
 - shared physical object overwrite requires source obligation closure for all relevant logical owners;
-- an F1 final anchor-bounded segment itself must satisfy the minimum five-row promotion gate.
+- an F1 final anchor-bounded segment itself must satisfy the minimum five-row promotion gate;
+- the canonical F1 selector is now reproducible and must not be replaced by raw uniqueness or aggregate-count fitting.
 
 ## Canonical documents
 
@@ -74,9 +95,10 @@ Important boundaries:
 - Stage 1: `docs/FULL_PORT_INVENTORY_STAGE1.md`
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
 - F1 audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
+- F1 static authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
 - validation index: `docs/VALIDATION_LEDGER.md`
 
-R0/R1/R1B/R1C, Stage 1, Stage 2, and F1 ledger facts remain canonical; do not revalidate them merely because a new chat/model is used.
+R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, and F1 authorization ledger facts remain canonical; do not revalidate them merely because a new chat/model is used.
 
 ## Mandatory boundaries
 
@@ -92,4 +114,4 @@ R0/R1/R1B/R1C, Stage 1, Stage 2, and F1 ledger facts remain canonical; do not re
 
 Fresh execution signal required.
 
-Recommended next scope: F1 static-safe 158 rows only. Formalize row-level evidence and final write-authorization invariants without mixing in the 25 shared-owner rows, 4 terminator failures, 75 padding-reconstruction rows, yomi, F2-F5, bounded-gap candidates, CN sequence, UTF-16, builder/IPS, or runtime diagnostic work.
+If the next scope is implementation, consume exactly the 158 manifest actions as one F1 static-direct family with fail-closed canonical-input and per-row original-byte guards. Do not mix the 25 shared-owner rows, 4 capacity failures, 75 padding-reconstruction rows, yomi, F2-F5, bounded-gap candidates, CN sequence, UTF-16, or unrelated runtime work into that implementation step.
