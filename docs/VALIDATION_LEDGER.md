@@ -1,6 +1,6 @@
-# VALIDATION_LEDGER
+# VALIDATION_LEDGER â€” index
 
-Canonical record of validated, runtime-validated, superseded, invalidated, and still-unresolved facts.
+Canonical validation authority for the project.
 
 ## Operating rule
 
@@ -13,62 +13,22 @@ Do not repeat a well-recorded validation. Revalidation is allowed only when:
 
 A new chat/model/agent is never by itself a revalidation trigger.
 
-When revalidation is required, perform it once and record validation ID/date, exact claim, input identity/hash/version, method/script/parameters, offsets/ranges/count units, result/status, and a reproducible artifact/report/commit path.
+Status values remain `VERIFIED`, `VERIFIED-RUNTIME`, `VERIFIED-LEGACY`, `NEEDS-REVERIFY`, `INVALIDATED`, `SUPERSEDED`.
 
-## Status values
+## Canonical ledger parts
 
-- `VERIFIED`: direct evidence sufficiently recorded for reuse.
-- `VERIFIED-RUNTIME`: directly observed in Eden/runtime; keep safety claims narrow to the tested route.
-- `VERIFIED-LEGACY`: likely valid, but provenance is insufficient for a current high-risk decision.
-- `NEEDS-REVERIFY`: conflicting/incomplete/external result that must be reproduced before canonical use.
-- `INVALIDATED`: previous conclusion disproved.
-- `SUPERSEDED`: historical fact/interpretation replaced by stronger evidence or policy.
+- V001â€“V039, including all pre-PC-DLL findings and PC DLL PHASE 1: `docs/VALIDATION_LEDGER_THROUGH_PHASE1.md`
+- V040â€“V045, PC DLL PHASE 2 parser grammar: `docs/VALIDATION_LEDGER_PHASE2.md`
 
-## Current ledger
+Both files are part of the canonical ledger. Later phases must append a new phase ledger part and update this index, rather than revalidating established entries.
 
-| ID | Claim | Status | Evidence / reuse rule |
-|---|---|---|---|
-| V001 | Fixed target is Switch v1.1.3, Title ID `0100346017304000`, main Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`. | VERIFIED | Builder hard-guards Build ID. Recheck only if target dump/version changes. |
-| V002 | Mapped NSO layout is text `0x000000+0x58CE60`, rodata `0x58D000+0x432018`, data `0x9C0000+0x60430`. | VERIFIED | Builder hard-guards segment layout. |
-| V003 | Switch original `FONT_JPN.G1T` equals Steam original; original SHA-256 `9c886848...a0083e`; Korean font SHA-256 `c82d80da...66932`; 50 -> 64 pages. | VERIFIED | Hash-guarded in builder. |
-| V004 | T5K121R contains 10,036 mappings, 17,103 inline records, 56 pointer records, 11 runtime descriptors. | VERIFIED | Direct `RT_RCDATA/101` parse; counts are also hard denominators in DLL parser `0x2640` (V040). `builder/t5k.py` reproduces the fixed-blob counts but is not the canonical wire-format authority. |
-| V005 | Mapping counts are 7,494 original (`0x1D46`) + 2,542 Korean = 10,036 (`0x2734`). | VERIFIED | Direct T5K parse. Conflicting 7,334 claim is non-canonical. |
-| V006 | Page-mapper rewrite at mapped `0x44650C` adds `EB~F8 -> pages 49~62`; correct Eden emitted offset is `0x44660C`. | VERIFIED | Static bytes/logic plus canonical IPS coordinate rule. |
-| V007 | Historical selector: 17,103 records -> 8,713 unique original patterns -> 5,523 unique-rodata candidates -> 4 overlap skips -> 5,519 selected patterns covering 5,521 PC records. | VERIFIED | Reproduced with `builder/phase0_probe.py`; regression/reference only. |
-| V008 | `unique exact match in rodata` alone is sufficient to classify a release-safe inline patch. | SUPERSEDED | Policy now requires structural/object evidence and offline validation. |
-| V009 | Old v0.2b NO-INLINE booted and showed Korean title. | VERIFIED-RUNTIME | Observation is real but page-mapper IPS was `0x100` early, so do not use it to validate intended mapper execution. |
-| V010 | Old A freezes; old B reaches title then crashes after input. | VERIFIED-RUNTIME | Historical observations only. Both used wrong IPS coordinates and cannot prove multi-fault/candidate safety. |
-| V011A | Unique-match record pairs show strong monotonic structure: 6,053 pairs, global LIS 3,524, 2,529 outside; top runs 1,844/1,074/978/78. | VERIFIED | `builder/phase0_probe.py`; global LIS is evidence/reference, not hard gate. |
-| V011B | 12,347/17,103 records have NUL in original and none in replacement; 4,747 originals have no NUL. | VERIFIED | Direct T5K scan; risk statistic only, not automatic run-on verdict. |
-| V011C | External `430` cases are structurally confirmed termination failures. | NEEDS-REVERIFY | Fixed-input probe did not reproduce the stated unit/definition. Do not use 430 as a hard gate. |
-| V011D | External `8,981 records / 1,242 patterns` are >=5-match counts. | NEEDS-REVERIFY | Fixed-input whole-flat probe gives different counts under the clearest definition. |
-| V012 | Drive `PC_Original/Taiko5DX.exe` is not exact T5K target and cannot support PC-RVA neighborhood/XREF claims. | VERIFIED | Supplied: 18,479,304 bytes, SHA-256 `22e1cd1a...65ef6`; target: Steam build 9163702, 18,685,960 bytes, SHA-256 `10c69bab...65a2`. |
-| V013 | Switch conversion functions still use mapping count 7,494 and have defined misses (`0x81A1`, `U+25A0`). | VERIFIED | Mapped main disassembly at `0x4303AC`, `0x430624` and miss paths. Expansion remains functionally needed, but not proven freeze cause. |
-| V014 | Eden/Yuzu classic IPS for NSO uses a `0x100` NSOHeader prefix: emitted offset = mapped offset + `0x100`. | VERIFIED | Eden/Yuzu loader source path plus successful P0N2 control. |
-| V015 | P0N v0.2f freezes. | VERIFIED-RUNTIME | User observed. It was not a true no-op because offsets were `0x100` early. |
-| V016 | P0N v0.2f is a true no-op control in Eden. | INVALIDATED | Wrong coordinate model; P0N wrote bytes from `X` to mapped `X-0x100`. |
-| V017 | P0N2 v0.2g is a true 5,519-record no-op control with corrected mapper/offsets. | VERIFIED | Artifact SHA-256 `1ccb27e7...7e8f6`; emitted IPS reparsed and mapped back successfully. |
-| V018 | P0N2 boots, reaches Korean title, accepts input, reaches main menu. | VERIFIED-RUNTIME | User screenshot/runtime evidence. Proves large corrected classic-IPS/no-op path works on tested route. |
-| V019 | M1A v0.2h real inline `R489` remains stable through scenario/protagonist flow. | VERIFIED-RUNTIME | `ã‚·ãƒŠãƒªã‚ªã‚’é¸ã‚“ã§ãã ã•ã„` -> `ì‹œë‚˜ë¦¬ì˜¤ë¥¼ ì„ íƒí•˜ì„¸ìš”`, mapped `0x69B6A1`, emitted `0x69B7A1`. |
-| V020 | D5519 v0.2k applies the historical 5,519 real replacements at corrected `+0x100` offsets and reaches normal early gameplay without freeze/forced exit. | VERIFIED-RUNTIME | User tested title -> menu -> scenario -> protagonist selection -> normal gameplay with screenshots. Artifact SHA-256 `46017206ed2679a645b1e0121aff6b7742fcbec94f41197e5f5681f517c9fae2`. This strongly attributes pre-P0N2 immediate freezes to the coordinate bug, but does not certify all late-game paths. |
-| V021 | Of D5519's 5,519 real inline records, 2,099 target fields whose original non-NUL bytes are entirely halfwidth-kana `0xA1..0xDF`; 3,420 are non-yomi historical records. | VERIFIED | Reproduced against fixed mapped main by classifying each D5519 mapped record using original bytes. Reproducible builder: `builder/build_y0_noyomi.py`; analysis documented in `docs/POST_D5519_ANALYSIS.md`. |
-| V022 | Eight direct call sites explicitly enable the auxiliary name-reading line with `mov w6,#1` before a `BL` to shared mapped routine `0x45B0F8`. | VERIFIED | Call-site offsets: `0x2A0ABC`, `0x2A565C`, `0x2A6F4C`, `0x2A7720`, `0x2A7FE4`, `0x2ADE5C`, `0x2BC1A0`, `0x2BD5C8`. Original bytes at all sites are `26 00 80 52`; nearby BL targets resolve to `0x45B0F8`. |
-| V023 | D5519 garbled small name-reading line is consistent with translated halfwidth-yomi fields entering a Switch auxiliary-render path; Korean main names themselves render correctly. | VERIFIED-RUNTIME | User screenshots show the main Korean name readable while only the small auxiliary line is garbled. Internal-yomi preservation remains the preferred data policy. |
-| V024 ²È="24¸Q¡•Í”…É”10Õ…É½¹ÍÑ…¹ÑÌ°¹½Ðµ•…ÍÕÉ•µ•¹ÑÌ½˜…¸Õ¹…Ù…¥±…‰±”a¸5…ÍÑ•Èƒ
-Ÿ
-œÓŠLÔ¸ð)ðXÀÌÜð=¹”½¹Ñ¥Õ½ÕÌI\ÁÉ¥Ù…Ñ”…±±½…Ñ¥½¸¥ÌÍÁ±¥Ð¥¹Ñ¼Á…”µ…±¥¹•ÁÉ•™¥à½¡•±Á•ÈÉ•¥½¹ÌìÍÑ…¥¹œÁÉ••‘•Ì™¥¹…°H½I`ÁÉ½Ñ•Ñ¥½¸…¹a½µµ¥Ð¸½µµ½¸ÍÑ…¥¹œÉ•ÅÕ¥É•Ì•á…ÐÁÉ•¥µ…”…¹•ÅÕ…°¹½¹é•É¼ÝÉ¥Ñ”±•¹Ñ¡Ìì½Ù•É±…À¥ÌÉ•©•Ñ•¸ðYI%%ð€ÁàØÄÌÁ€°Y¥ÉÑÕ…±±±½Œ€ÁàØÈäÉ€°½Á¥•Ì€ÁàØÌÈÐ¼ÁàØÌÌÕ€°ÍÑ…¥¹œ€ÁàØÐäÁ€€¼€ÁàÐåÁ€°½µÁ…É”€ÁàÑÉ	€°½Ù•É±…À€ÁàÔÀÈÁ€ìÁÉ½Ñ•Ñ¥½¹Ì€ÁàÝÐä¼ÁàÝÑ€ì½µµ¥Ð…±°€ÁàÝÌÁ€¸5…ÍÑ•Èƒ
-Ÿ
-œÛŠLÜ¸ð)ðXÀÌàð½µµ¥ÐÝÉ¥Ñ•Ì¥¹±¥¹”ÁÉ¥½É¥Ñä€À°Á½¥¹Ñ•È€Ä°½‘”€Èì¡…ÌÉ•Ù•ÉÍ”É½±±‰…¬°…¡”™±ÕÍ …¹ÁÉ½Ñ•Ñ¥½¸É•ÍÑ½É…Ñ¥½¸¸%Ð¥Ì‰•ÍÐµ•™™½ÉÐ°¹½Ð…¸…Ñ½µ¥Œ½ÈÕ…É…¹Ñ••É•ÍÑ½É…Ñ¥½¸µ•¡…¹¥Í´¸ðYI%%ð€ÁàÔäàÁ€èÝÉ¥Ñ…‰±”Á…•Ì€ÁàÔÌÐÁ€ìÁÉ¥½É¥Ñä½É‘•É¥¹œ€ÁàÕÈÀ¸¸ÁàÕ€ì½Áä€ÁàÕÁ€ƒŠH€ÁàÔÌÈÁ€ì™±ÕÍ €ÁàÕÌÕ€ìÉ•ÍÑ½É”€ÁàÕÝ€ìÉ½±±‰…¬€ÁàÔàÈÁ€°Á…ÉÑ¥…°µÝÉ¥Ñ”‰É…¹ €ÁàÕÜÈ¸¸ÁàÕÕ	€°É•ÍÑ½É”µ™…¥±ÕÉ”‰É…¹ €ÁàÕÌÄ¼ÁàÕÐÉ€¸I½±±‰…¬™±ÕÍ ½ÁÉ½Ñ•ÐÉ•ÑÕÉ¹Ì…É”¹½Ð¡•­•¸9¼½µµ¥ÐµÑ¥µ”ÁÉ•¥µ…”É•¡•¬½È…µ”µÑ¡É•…ÍÕÍÁ•¹Í¥½¸¥¸Ñ¡¥ÌÁ…Ñ ¸5…ÍÑ•Èƒ
-œà¸ð)ðXÀÌäð9½Éµ…°Á…Ñ ™…¥±ÕÉ”‘½•Ì¹½ÐÍ­¥À„™…¥±•É•½É…¹½¹Ñ¥¹Õ”Ñ¡”…µ”¸…¥±•Á…Ñ ™±…œ…ÕÍ•Ì½ÁÑ¥½¹…°5•ÍÍ…•	½àÑ¡•¸ÁÉ½•ÍÌÑ•Éµ¥¹…Ñ¥½¸ì9=U$½¹±äÍÕÁÁÉ•ÍÍ•ÌÑ¡”‘¥…±½œ¸ðYI%%ð…±±‰…¬±½¥¹œ€ÁàáÑ€ì™±…œ…Ñ”€ÁàáÌÕ€ì™…Ñ…°€ÁàáÌÁ€°•¹Ø€ÁàáàÉ€°5•ÍÍ…•	½à€Áàá	á€°Q•Éµ¥¹…Ñ•AÉ½•ÍÌ€Áàá		€°á¥ÑAÉ½•ÍÌ€Áàá	Ý€°•á¥Ð½‘”€ÁáÅ€¸=Ñ¡•ÈÁÉ½áä•áÁ½ÉÑÌ¡…Ù”Í•Á…É…Ñ”¹½¹™…Ñ…°É•ÑÕÉ¸‰•¡…Ù¥½È¸5…ÍÑ•Èƒ
-Ÿ
-œÌ°ä¸ð()I•©•Ñ•¥¹Ñ•ÉÁÉ•Ñ…Ñ¥½¹Ì™½ÈÑ¡¥ÌÁ¡…Í”èÁ…Ñ •á•ÕÑ¥½¸¥¹Í¥‘”±±5…¥¸½Q1L…±±‰…¬ì)•áÁ½ÉÐµ™½ÉÝ…É‘•Èµ½¹±ä10ìÙ•ÉÍ¥½¸µÍÑÉ¥¹œµ½¹±äa…ÁÁÉ½Ù…°ìÍ­¥Àµ½¸µµ¥Íµ…Ñ ì)Õ…É…¹Ñ••…Ñ½µ¥ŒÉ½±±‰…¬ì9=U$‰åÁ…ÍÍ¥¹œÙ…±¥‘…Ñ¥½¸½Ñ•Éµ¥¹…Ñ¥½¸ì¹••ÍÍ…É¥±äÍ•Á…É…Ñ”)ÁÉ•™¥à½¡•±Á•È…±±½…Ñ¥½¹Ìì•Ù•Éä•áÁ½ÉÐ¥¹¥Ñ¥…±¥é¥¹œÑ¡”Á…Ñ ½ÈÑ•Éµ¥¹…Ñ¥¹œ½¸•ÉÉ½È¸)Q¡•Í”…É”É•©•Ñ•‰äÍÑ…Ñ¥Œ‰É…¹¡•Ì…‰½Ù”°¹½Ð¹•ÜÉÕ¹Ñ¥µ”™…¥±ÕÉ”½‰Í•ÉÙ…Ñ¥½¹Ì¸)U¹­¹½Ý¸è•á…Ð…µ”µÍ¥‘”±½…‘•È½¥µÁ½ÉÐ½…±±•ÈÁ…Ñ °…ÑÕ…°…‘‘É•ÍÍ•Ì½Ñ¡É•…ÍÑ…Ñ”°)ÉÕ¹Ñ¥µ”±½œÍÕ•ÍÌ…¹•ÉÉ½Èµ¥¹©•Ñ¥½¸½ÕÑ½µ•Ì¸Q¡”µ¥Íµ…Ñ¡•aÉ•µ…¥¹ÌÁÉ½¡¥‰¥Ñ•¸)A!M€È¬¥ÌÁ•¹‘¥¹œ„™É•Í ÕÍ•È•á•ÕÑ¥½¸Í¥¹…°¸((ŒŒA10A!M€ÈƒŠP€ÈÀÈØ´Àä´ÄÄ()±°•¹ÑÉ¥•Ì‰•±½ÜÕÍ”Ñ¡”•á…Ð•µ‰•‘‘•10M!´ÈÔØ)™™”Ý”å‘„á”ÀÁŒäÙ‰•ŒØÌÅˆÐÕ„Í”åŒÑÍ˜ÌÄÐÔÔÄØÈÌÌÔÅ˜Í”ÜÀÈÑ”ÀÌÄàäÄÍŒÙˆÝ€)…¹IQ}IQ¼ÄÀÅ€M!´ÈÔØ)€ÕŒÙ˜Ñ•‰„áŒÙ˜ÀÔÄØÌØÕ”ÐÔÄá˜ÈÝ”åáŒàÐÁ…•…ÐØÍˆÕ„ÈäÌá‘Å”ÀáˆääÜÈÙÈå€¸)5•Ñ¡½èÍÑ…Ñ¥ŒààØ´ØÐÉ•½¹ÍÑÉÕÑ¥½¸½˜Á…ÉÍ•È€ÁàÈØÐÁ€Á±ÕÌ•á…Ðµ½¹ÍÕµÁÑ¥½¸Á…ÉÍ¥¹œ½˜Ñ¡”™¥á•É•Í½ÕÉ”¸IÕ¹Ñ¥µ”Í•µ…¹Ñ¥Ì½˜µ…ÁÁ¥¹œ½Á½¥¹Ñ•È½¡•±Á•È½‘•ÍÉ¥ÁÑ½ÉÌÝ•É”¥¹Ñ•¹Ñ¥½¹…±±ä‘•™•ÉÉ•¸()ð%ð±…¥´ðMÑ…ÑÕÌðÙ¥‘•¹”€¼É•ÕÍ”ÉÕ±”ð)ð´´µð´´µð´´µð´´µð)ðXÀÐÀðPÕ,¡•…‘•È¥Ì•á…Ñ±ä€ÁàÐá€‰åÑ•Ìèµ…¥lát°Ù•ÉÍ¥½¸ÔÌÈ°¥¹±¥¹”½Á½¥¹Ñ•È½‘•ÍÉ¥ÁÑ½È½Õ¹ÑÌÔÌÈ°ÁÉ•™¥á}±•¸ÔÌÈ°¡•±Á•É}±•¸ÔÌÈ°Ñ…É•ÐaÍ¥é”ÔØÐ°M!´ÈÔÙlÌÉt¸A…ÉÍ•È¡…ÉµÙ…±¥‘…Ñ•ÌÙ•ÉÍ¥½¸€Å€°½Õ¹ÑÌ€ÄÜÄÀÌ¼ÔØ¼ÄÅ€°ÁÉ•™¥à€ÁàåÉ€°¡•±Á•È€Áàå€ì¥Ð‘½•Ì¹½Ð¡…Éµ½‘”Ñ¡”Ñ…É•ÐaÍ¥é”½¡…Í ¸ðYI%%ðA…ÉÍ•È€ÁàÈÙÔ¸¸ÁàÈÜØÑ€ìÑ…É•ÐÍ¥é”½¡…Í …É”½Á¥•¥¸Ñ¡”É…Ü¡•…‘•È…¹±…Ñ•È½¹ÍÕµ•‰äA!M´Ä¥‘•¹Ñ¥ÑäÁ…Ñ ¸5…ÍÑ•ÈA!M€Èƒ
-Ÿ
-œÇŠLÈ¸ð)ðXÀÐÄðQ½Àµ±•Ù•°Á…ÉÍ”½É‘•È¥Ì¡•…‘•ÈƒŠHÁÉ•™¥àÍÁ…¸ƒŠH¡•±Á•ÈÍÁ…¸ƒŠH€ÄÜ°ÄÀÌ¥¹±¥¹”É•½É‘ÌƒŠH€ÔØÁ½¥¹Ñ•ÈÉ•½É‘ÌƒŠH€ÄÄÉÕ¹Ñ¥µ”‘•ÍÉ¥ÁÑ½ÉÌì•á…ÐÕÉÉ•¹Ð‰½Õ¹‘…É¥•Ì…É”€ÁàÐà¼ÁàåÜÈ¼ÁáÀÄÀ¼ÁàäÔÅÀ¼ÁàäÔÔÐÀ¼ÁàäÕÌÕ€°…¹ÑÉ…¥±¥¹œ‰åÑ•Ì…É”™½É‰¥‘‘•¸¸ðYI%%ðA…ÉÍ•È€ÁàÈÜÜÜ¸¸ÁàÌÀÈÕ€ì™¥á•É•Í½ÕÉ”É•Á…ÉÍ•ÌÑ¼™¥¹…°ÕÉÍ½È€ÁàäÕÌÕ€Ý¥Ñ é•É¼ÑÉ…¥±¥¹œ‰åÑ•Ì¸5…ÍÑ•ÈA!M€Èƒ
-œÌ¸ð)ðXÀÐÈð%¹±¥¹”Ý¥É”É•½É¥ÌÔÌÈÁ}ÉÙ„°ÔÌÈ±•¹Ñ °½É¥¥¹…±m±•¹Ñ¡t°É•Á±…•µ•¹Ñm±•¹Ñ¡u€ìÁ½¥¹Ñ•ÈÝ¥É”É•½É¥ÌÔÌÈÍ±½Ñ}ÉÙ„°ÔÌÈ½É¥¥¹…±}Ñ…É•Ñ}ÉÙ„°Ôàµ½‘”°ÔàÉ•Í•ÉÙ•‘lÍt°ÔÌÈ…É€°Ý¥Ñ Á…ÉÍ•Èµ±•Ù•°µ½‘”€ðô€Å€¸ðYI%%ð%¹±¥¹”Á…ÉÍ•È€ÁàÈàÜÀ¸¸ÁàÈäÁ€ìÁ½¥¹Ñ•ÈÁ…ÉÍ•È€ÁàÈåÀ¸¸ÁàÉÜÕ€¸ÕÉÉ•¹Ð‰±½ˆ¡…Ì¥¹±¥¹”±•¹Ñ¡Ì€Ä¸¸ÐÐÔ…¹Á½¥¹Ñ•Èµ½‘•Ì€ÔÇ\Ä€¼€×\ÀìÑ¡•Í”Á½ÁÕ±…Ñ¥½¹Ì…É”½‰Í•ÉÙ…Ñ¥½¹Ì°¹½ÐÁ…ÉÍ•Èµ…á¥µ„¸5…ÍÑ•ÈA!M€Èƒ
-Ÿ
-œÓŠLÔ¸ð)ðXÀÐÌð•ÍÉ¥ÁÑ½È¡•…‘•È¥Ì™½ÕÈÔÌÈ™¥•±‘Ì€¡…¹¡½É}ÉÙ„°Í¥¹…ÑÕÉ•}±•¸°Á…Ñ¡}½Õ¹Ð°¹…µ•}±•¸¥€™½±±½Ý•‰ä¹…µ”½Í¥¹…ÑÕÉ”½µ…Í¬…¹Ù…É¥…‰±”ÍÕ‰Á…Ñ¡•Ì¸MÑÉÕÑÕÉ…°‰½Õ¹‘Ì…É”Í¥¹…ÑÕÉ”€Ä¸¸ÁàÄÀÀÀ°Á…Ñ¡}½Õ¹ÐøÀ°¹…µ•}±•¸€Ä¸¸Áá¸MÕ‰Á…Ñ ¡•…‘•È¥Ì½™™Í•ÐÔÌÈ°ÁÉ•¥µ…•}±•¸ÔÌÈ°­¥¹Ôà°É•Í•ÉÙ•‘lÍt°…ÉœÔÌÈ°Á…å±½…‘}±•¸ÔÌÉ€°Ý¥Ñ ­¥¹ðôÍ€°¥¸µÍ¥¹…ÑÕÉ”ÁÉ•¥µ…”‰½Õ¹‘Ì°…¹Á…å±½…ÉÕ±”­¥¹Àõ±•¸¡ÁÉ•¥µ…”¤°­¥¹Ä¸¸ÌôÀ¸ðYI%%ð•ÍÉ¥ÁÑ½ÈÁ…ÉÍ•È€ÁàÉ	Ð¸¸ÁàÉÕ€ìÍÕ‰Á…Ñ Á…ÉÍ•È€ÁàÉäÀ¸¸ÁàÉàÑ€¸ÕÉÉ•¹Ð‰±½ˆ¡…Ì€ÄÐÍÕ‰Á…Ñ¡•Ì€ ä¼È¼Ä¼È™½È­¥¹‘Ì€À¼Ä¼È¼Ì¤°‰ÕÐÑ½Ñ…°€ÄÐ¥Ì¹½Ð„Á…ÉÍ•È‘•¹½µ¥¹…Ñ½È¸5…ÍÑ•ÈA!M€Èƒ
-Ÿ
-œÛŠLÜ¸ð)ðXÀÐÐðA…ÉÍ•È½ÕÑÁÕÐ¥Ì„ÑåÁ•½ÍÁ…¸É•ÁÉ•Í•¹Ñ…Ñ¥½¸É…Ñ¡•ÈÑ¡…¸„™Õ±°‰±½ˆ½ÁäèÉ…Ü€ÁàÐà¡•…‘•È°é•É¼µ½ÁäÁÉ•™¥à½¡•±Á•ÈÍÁ…¹Ì°Ù•Ñ½ÉÌ™½È¥¹±¥¹”½Á½¥¹Ñ•È½‘•ÍÉ¥ÁÑ½ÉÌ°…¹é•É¼µ½ÁäÁ…å±½…ÍÁ…¹Ììµ…±™½Éµ••áÁ±¥¥ÐÙ…±¥‘…Ñ¥½¸É•ÑÕÉ¹Ì™…±Í”…¹¥¹¥Ð‘½•Ì¹½ÐÁÉ½••Ñ¼‘¥Í¬¥‘•¹Ñ¥Ñä½ÍÑ…¥¹œ½½µµ¥Ð¸ðYI%%ðA…ÉÍ•½‰©•Ð™¥•±‘Ì…Ð€¬ÁàÐà¸¸¬Ááá€ì¥¹±¥¹”Á…ÉÍ••¹ÑÉäÍ¥é”€ÁàÈá€°‘•ÍÉ¥ÁÑ½È•¹ÑÉä€ÁàØÁ€°ÍÕ‰Á…Ñ •¹ÑÉä€ÁàÌÁ€ìÁ…ÉÍ•È™…±Í”ÁÉ½Á……Ñ•ÌÙ¥„…±±•È€ÁàÝÕ€¸5…ÍÑ•ÈA!M€Èƒ
-Ÿ
-œãŠLä¸ð)ðXÀÐÔð‰Õ¥±‘•È½ÐÕ¬¹Áå€¥Ì¹½ÐÑ¡”…¹½¹¥…°AÝ¥É”µ™½Éµ…ÐÁ…ÉÍ•Èè¥ÐÉ•…‘ÌÑ…É•ÐaÍ¥é”…ÌÔÌÈ°¡…Éµ¡•­ÌÑ¡…ÐÍ¥é”‘ÕÉ¥¹œÁ…ÉÍ”°‘½•Ì¹½Ð¡…Éµ¡•¬ÁÉ•™¥à½¡•±Á•È‘•¹½µ¥¹…Ñ½ÉÌ°™½±‘ÌÁ½¥¹Ñ•Èµ½‘”½É•Í•ÉÙ•¥¹Ñ¼ÔÌÈ°…¹ÑÉ•…ÑÌÉÕ¹Ñ¥µ”‘•ÍÉ¥ÁÑ½ÉÌ…ÌÉ•Í¥‘Õ…°ÍÕ‰ÍÑÉ¥¹œ‘…Ñ„¸%ÑÌµ…ÁÁ¥¹}±½½­ÕÁ|Å¼É€µ…Ñ¡•ÌÉ½ÍÌÑ¡”…ÑÕ…°¹…µ”½Í¥¹…ÑÕÉ”‰½Õ¹‘…ÉäìÉ•…°¹…µ•Ì…É”µ…ÁÁ¥¹}±½½­ÕÁ|Ä¼É€¸ðYI%%ð¥É•ÐÍ½ÕÉ”…Õ‘¥Ð……¥¹ÍÐ10€ÁàÈØÐÁ€É…µµ…È¸á¥ÍÑ¥¹œ™¥á•µ‰±½ˆ½Õ¹Ð½µ…ÁÁ¥¹œÕÍ•ÌÉ•µ…¥¸Ù…±¥Ý¡•É”Í•Á…É…Ñ•±ä•ÍÑ…‰±¥Í¡•ì¹¼‰Õ¥±‘•È½‘”Ý…Ì¡…¹•¥¸A!M€È¸5…ÍÑ•ÈA!M€Èƒ
-œÄÀ¸ð()I•©•Ñ•¥¹Ñ•ÉÁÉ•Ñ…Ñ¥½¹Ì™½ÈÑ¡¥ÌÁ¡…Í”è¡•…‘•Èµ…ÁÁ¥¹œµ½Õ¹Ð™¥•±ìÁ…ÉÍ•Èµ¡…É‘½‘•Ñ…É•ÐÍ¥é”½¡…Í …Ñ”ìÁ½¥¹Ñ•Èµ½‘”…Ì„™Õ±°ÔÌÈ™¥•±ì9U0µÑ•Éµ¥¹…Ñ•½ÍÕ‰ÍÑÉ¥¹œ‘•ÍÉ¥ÁÑ½ÈÉ…µµ…ÈìÑÉ…¥±¥¹œµ‘…Ñ„Ñ½±•É…¹”ìÁ…ÉÍ•È¡…Éµ‘•¹½µ¥¹…Ñ½È½˜€ÄÐÑ½Ñ…°ÍÕ‰Á…Ñ¡•Ì¸)U¹­¹½Ý¸½‘•™•ÉÉ•èÁÉ•™¥à¥¹Ñ•É¹…°ÉÕ¹Ñ¥µ”µ•…¹¥¹œ°Á½¥¹Ñ•Èµ½‘”½…ÉœÍ•µ…¹Ñ¥Ì°‘•ÍÉ¥ÁÑ½È­¥¹½…ÉœÉÕ¹Ñ¥µ”Í•µ…¹Ñ¥Ì°¡•±Á•È½‘”Í•µ…¹Ñ¥Ì°…¹Í¥¹…ÑÕÉ”µµ…Í¬…ÁÁ±¥…Ñ¥½¸‰•¡…Ù¥½È¸Q¡•Í”…É”A!M€Ì¼ÐÑ½Á¥Ì¸)A!M€Ì¬¥ÌÁ•¹‘¥¹œ„™É•Í ÕÍ•È•á•ÕÑ¥½¸Í¥¹…°¸((ŒŒI•ÁÉ½‘Õ¥‰±”™¥á•¥¹ÁÕÐ¥‘•¹Ñ¥Ñä((´MÝ¥Ñ ½µÁÉ•ÍÍ•µ…¥¹€M!´ÈÔØèˆÌØÙ”ØäÈÈÀá˜ÍŒÁŒÄá‰ŒÄààÑ•˜äÔØàåˆÙˆÄÅÜÈÉ™„ÉÜÐåˆàÔÀÁ…‰‰ŒÌÄÀå‰€ì(´µ…ÁÁ•™±…ÐÍ¥é”è€ÄÀ°ØÄÜ°äÀÐ€ ÁáÈÀÐÌÀ¥€ì(´AÁ…Ñ i%@M!´ÈÔØè‘˜ÅˆØÉ‘”äÕ”ääÈÌØå”äØàÙŒäÜÌÅàÄÑ”Ý„Ý”ÐØÌÐààá˜ØÄÀÐÌÀØÌÔÐÈå”ÈÑ˜Ý•€ì(´•µ‰•‘‘•‘¥¹ÁÕÐà¹‘±±€M!´ÈÔØè™™”Ý”å‘„á”ÀÁŒäÙ‰•ŒØÌÅˆÐÕ„Í”åŒÑÍ˜ÌÄÐÔÔÄØÈÌÌÔÅ˜Í”ÜÀÈÑ”ÀÌÄàäÄÍŒÙˆÝ€ì(´IQ}IQ¼ÄÀÅ€M!´ÈÔØè€ÕŒÙ˜Ñ•‰„áŒÙ˜ÀÔÄØÌØÕ”ÐÔÄá˜ÈÝ”åáŒàÐÁ…•…ÐØÍˆÕ„ÈäÌá‘Å”ÀáˆääÜÈÙÈå€¸()¼¹½Ð¡…¹µÉ•½Õ¹Ð•ÍÑ…‰±¥Í¡•A¡…Í”´À™¥ÕÉ•Ì¥¸±…Ñ•È¡…ÑÌ¸UÍ”‰Õ¥±‘•È½Á¡…Í”Á}ÁÉ½‰”¹Áå€°‰Õ¥±‘•È½É•Á•…Ñ•‘}Ñ½­•¹}ÁÉ½‰”¹Áå€°…¹Ñ¡”±•‘•È¸((ŒŒÕÉÉ•¹ÐÁÉ••‘•¹”((´É•±•…Í”¥¹±¥¹”Í…™•ÑäÁ½±¥äè‘½Ì½%91%9}Y1%Q%=9}A=1%d¹µ‘€ì(´Ù…±¥‘…Ñ•™…Ð½É•Ù…±¥‘…Ñ¥½¸…ÕÑ¡½É¥ÑäèÑ¡¥Ì±•‘•Èì(´½ÉÉ•Ñ•µÉÕ¹Ñ¥µ”½‰Í•ÉÙ…Ñ¥½¹Ìè‘½Ì½IU9Q%5}QMQ}IMU1QL¹µ‘€ì(´ÔÔÄä½å½µ¤½É•Á•…Ñ•µ½‰©•Ð½™½¹ÐµÝ¥‘Ñ …¹…±åÍ¥Ìè‘½Ì½A=MQ}ÔÔÄå}91eM%L¹µ‘€ì(´AÉÕ¹Ñ¥µ”É•Ù•ÉÍ”µ•¹¥¹••É¥¹œµ…ÍÑ•Èè‘½Ì½A}IU9Q%5}IYIM}9%9I%9¹µ‘€ì(´ÕÉÉ•¹ÐÉ•ÍÕµ”Á½¥¹ÐèAI=)Q}MQQ¹µ‘€¸()]¡•¸„¹•ÜÉ•ÍÕ±Ð¡…¹•Ì„…¹½¹¥…°™…Ð°ÕÁ‘…Ñ”Ñ¡¥Ì±•‘•È¥¸Ñ¡”Í…µ”Ý½É¬Í•ÍÍ¥½¸…ÌÑ¡”…™™•Ñ•ÍÑ…Ñ”½ÉÕ¹Ñ¥µ”½¡…¹•±½œ‘½Õµ•¹ÑÌ¸
+## Current precedence
+
+- release inline safety policy: `docs/INLINE_VALIDATION_POLICY.md`
+- validated fact/revalidation authority: this index and its ledger parts
+- corrected-runtime observations: `docs/RUNTIME_TEST_RESULTS.md`
+- D5519/yomi/repeated-object/font-width analysis: `docs/POST_D5519_ANALYSIS.md`
+- PC runtime reverse engineering index: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`
+- current resume point: `PROJECT_STATE.md`
+
+When a new result changes a canonical fact, update the relevant ledger part/index in the same authorized work session as state/changelog documentation.
