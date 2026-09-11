@@ -2,47 +2,41 @@
 
 Last updated: 2026-09-11 (KST)
 
-## Active staged analysis — PC Runtime Canonical Closure complete / STOP
+## Active staged analysis — PCREF1 delivery verification complete / ARTIFACT_INSUFFICIENT / STOP
 
-PC DLL PHASE 1–4 and the subsequent Canonical Closure are complete. The closed PC reference is `docs/PC_RUNTIME_DLL_SPEC.md`; integration/audit details are in `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`.
+PC DLL PHASE 1–4 and PC Runtime Canonical Closure remain complete. The subsequent PCREF1 delivery-verification stage is also complete, but it could not verify the historical emitted IPS because the actual PCREF1 artifact was not retained.
 
-Canonical closure results:
+Current canonical result:
 
-- PHASE 1–4 factual authority remains validation ledger V001–V061; closure adds no V062+ claims.
-- the Windows runtime package is structurally closed through initialization, T5K parser, mapping 10,036, pointer 56, helper 2 entries, descriptor 11/subpatch 14, staging and transaction commit.
-- canonical pointer grammar is `u32 slot, u32 original_target, u8 mode, reserved[3], u32 arg`; old `<IIII>` aggregate wording is superseded.
-- prefix total `0x9F2A = 40,746` bytes = mapping `0x9CD0 = 40,144` bytes + pointer replacement pool `0x25A = 602` bytes.
-- prefix/helper use one contiguous PC private allocation with page-aligned regions; older separate-allocation wording is superseded.
-- `runtime_byte_validation` helper `+0x20` is a copy/control-flow trampoline; fallback resumes original processing at PC RVA `0x68328A`, not immediate rejection.
-- `font_page_limit` raw confirmed behavior is threshold `0xFF -> 0xA0`, not a literal page-count assignment.
-- PC descriptor unique-match + exact-anchor behavior is PC target-version application machinery, not a future Switch counterpart uniqueness gate.
+- PC runtime factual authority remains V001–V061; V062 now records the separate PCREF1 delivery-provenance gap.
+- `docs/PCREF1_DELIVERY_VERIFICATION.md` is the canonical PCREF1 verification report.
+- historical PCREF1 was described as an inline-only PC-reference-clean build of roughly 14,544 instances, including duplicated `松平元康`, `はい`, `年/月/日`, `城`, and repeated `清洲`; it did not include pointer 56, mapping 10,036, or descriptor 11 runtime layers.
+- the reported PCREF1 runtime result was no visible screen change, but that observation has no retained ZIP/IPS, SHA-256, final record count, guard log, manifest, or round-trip report.
+- Google Drive `Eden_Builds/` and `Test_Results/` are empty; repository/File Library searches did not recover the PCREF1 artifact in the sources available to the verification session.
+- therefore PCREF1 delivery status is **ARTIFACT_INSUFFICIENT**, not `DELIVERY VERIFIED` and not `DELIVERY FAILED`.
+- PCREF1 no-change must not be used to invalidate V024/V025/V033 object/fixed-field findings or to conclude that the game does not read those objects.
+- the feedback loop is **not yet restored**. Before any new runtime no-change result is interpreted causally, a fresh reproducible delivery-control diagnostic must preserve manifest, original-byte guard result, mapped->emitted coordinates, IPS reparse/round-trip, artifact SHA-256 and record count.
+- a new delivery-control artifact can validate the current pipeline only; it cannot retroactively prove what the lost PCREF1 artifact contained.
 
-Switch port status is intentionally separate from PC completion. Baseline matrix: `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`.
+PC Runtime Canonical Closure remains authoritative for the closed Windows reference:
 
-Primary next-stage axes:
+- the Windows runtime package is structurally closed through initialization, T5K parser, mapping 10,036, pointer 56, helper 2 entries, descriptor 11/subpatch 14, staging and transaction commit;
+- canonical pointer grammar is `u32 slot, u32 original_target, u8 mode, reserved[3], u32 arg`;
+- prefix total `0x9F2A = 40,746` bytes = mapping `0x9CD0 = 40,144` bytes + pointer replacement pool `0x25A = 602` bytes;
+- prefix/helper use one contiguous PC private allocation with page-aligned regions;
+- `runtime_byte_validation` helper `+0x20` is a copy/control-flow trampoline whose fallback resumes original processing at PC RVA `0x68328A`;
+- raw `font_page_limit` behavior is threshold `0xFF -> 0xA0`, not a literal page-count assignment;
+- PC descriptor unique-match + exact-anchor behavior is PC target-version application machinery, not a Switch counterpart uniqueness gate.
 
-1. mapping 10,036 storage/references/counts;
-2. pointer 56 and replacement-string ownership;
-3. helper semantics (`runtime_page_mapper`, byte-validation/copy);
-4. all 14 descriptor subpatch semantics;
-5. inline 17,103 / repeated objects / fixed fields / data-selection coverage.
-
-CWTDAT compatibility remains a separate data-port axis.
-
-Current major placement risks are also split by axis:
-
-- mapping: 2,542 Korean additions require representable capacity somewhere beyond the known original 7,494-entry behavior unless a complete equivalent table is later found elsewhere;
-- pointer mode-1: the PC implementation uses a 602-byte pool, but Switch may or may not need comparable new storage depending on object reuse;
-- helper: new executable storage is **not** assumed mandatory because equivalent behavior may be possible through existing ARM64 control-flow edits;
-- literal descriptor counterparts may be in-place.
+Switch port status remains separate from PC completion. Baseline matrix: `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`.
 
 The compact `쓰` symptom remains unresolved across three independent paths: (a) duplicated fixed-field/active name-slot selection, (b) pointer/reference selection, and (c) byte-validation/copy behavior. Do not promote one to root cause without evidence.
 
-PCREF1 emitted-IPS verification is not a prerequisite for static counterpart discovery, but must be closed before a new counterpart-derived runtime build result is interpreted causally. Survey and PCREF1 verification may therefore run in parallel, but implementation/runtime validation may not ignore the delivery uncertainty.
+Recommended next stage only after a fresh user execution signal: **Feedback-loop Recovery / Delivery-Control Diagnostic Design**. That stage should define one visible root-cause family, exact intended records, guard/round-trip requirements and runtime observation criteria, then report and STOP. A later separate signal is required to actually modify code/build an IPS.
 
-Next authorized stage only after a fresh user signal: **Switch Functional Counterpart Survey**, following `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`. That survey must report and STOP before any implementation/build stage.
+Static Switch Functional Counterpart Survey may still proceed independently if explicitly authorized, but no new counterpart-derived runtime result may be interpreted causally until the delivery-control gate is restored.
 
-This is the canonical resume point. Before new Switch work, read it with `docs/VALIDATION_LEDGER.md`, `docs/PC_RUNTIME_DLL_SPEC.md`, `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`, `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`, `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/POST_D5519_ANALYSIS.md`.
+This is the canonical resume point. Before new Switch work, read it with `docs/VALIDATION_LEDGER.md`, `docs/PCREF1_DELIVERY_VERIFICATION.md`, `docs/PC_RUNTIME_DLL_SPEC.md`, `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`, `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`, `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/POST_D5519_ANALYSIS.md`.
 
 ## 1. Goal
 
@@ -230,30 +224,31 @@ The per-character JP decode around `0x445C60` accepts `0xA1..0xDF` as single-byt
 
 The full 17,103-record validator remains a release-audit/recovery mechanism, not the primary explanation for the old freeze. It must recover missed repeated/string-pool/fixed-field mappings safely and audit late-game structural risk.
 
-## 14. Priority after Canonical Closure
+## 14. Priority after PCREF1 delivery verification
 
-A fresh execution signal should start **Switch Functional Counterpart Survey**, not a build.
+The historical PCREF1 artifact cannot be reverse-parsed because it is not retained. Its no-change runtime observation therefore cannot serve as a delivery-validating control.
 
-Survey order is functional rather than symptom-local:
+Current priority is to restore a trustworthy feedback loop before using new runtime no-change results to judge counterpart correctness.
 
-1. mapping storage + every table-base/count consumer;
-2. all 56 pointer records and replacement-object ownership;
-3. page-mapper and byte-validation/copy semantic paths;
-4. all 14 descriptor subpatch semantic counterparts;
-5. inline/repeated/fixed-field/data-selection coverage.
+Recommended staged sequence after a fresh signal:
 
-CWTDAT is a separate data-port compatibility track.
+1. **Delivery-control diagnostic design only**: select one visible root-cause family and define exact intended records, original-byte guards, mapped/emitted coordinates, IPS round-trip and observation criteria; report and STOP.
+2. After a separate fresh signal, build exactly that one-family diagnostic and preserve its manifest/SHA/round-trip evidence.
+3. Runtime-test that diagnostic. Only after delivery is demonstrated should later no-change results be used to reject semantic counterpart hypotheses.
+4. Continue Switch Functional Counterpart Survey one root-cause family at a time rather than building a five-axis combined diagnostic.
 
-Rules:
+The repeated/fixed-object family (`はい`, `年/月/日`, `城`, both `清洲`) remains a strong candidate for a later visible delivery-control diagnostic because V024/V025 establish object boundaries/locations and the expected screen change is directly observable. The duplicated `松平元康`/`쓰` symptom remains excluded from the first feedback-loop diagnostic because its data-selection, pointer/reference and byte-validation paths are not yet separated.
+
+Rules that remain mandatory:
 
 - do not use unique match as a Switch coverage gate;
 - PC one-site behavior may fan out to multiple Switch sites;
-- `NATIVE_EQUIVALENT` requires concrete Switch evidence, otherwise keep `UNSURVEYED`/`PARTIAL_EVIDENCE`/`UNRESOLVED`;
-- treat the compact `쓰` symptom as three unresolved paths: data selection, pointer/reference selection, byte-validation/copy;
-- space/capacity must be reported separately for mapping, pointer strings and any helper code need;
-- PCREF1 delivery verification may run in parallel with static survey but must close before a new counterpart-derived runtime build is interpreted.
+- `NATIVE_EQUIVALENT` requires concrete Switch evidence;
+- one root-cause family per diagnostic build;
+- all proven sites of that family are surveyed before the build;
+- every future diagnostic preserves original-byte guard results, mapped->emitted coordinate table, emitted-IPS round-trip, record count and SHA-256.
 
-No implementation/build is authorized by this state update; after survey report, STOP and obtain a fresh user signal.
+No implementation/build is authorized by this state update. A fresh user signal is required for the next design stage, and another fresh signal is required after that analysis before any build/modification.
 
 ## 15. Eden Android / final distribution
 
