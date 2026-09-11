@@ -2,6 +2,17 @@
 
 ## 2026-09-11
 
+### PCREF1 delivery verification — artifact insufficient
+
+- Added `docs/PCREF1_DELIVERY_VERIFICATION.md` and `docs/VALIDATION_LEDGER_PCREF1.md`.
+- Added V062 as `NEEDS-REVERIFY`: historical PCREF1 emitted-delivery integrity is not established because the actual ZIP/IPS, SHA-256, record count, guard report, manifest, round-trip report, EOF handling result, and reproducible builder were not retained.
+- Confirmed the accessible Google Drive `Eden_Builds/` and `Test_Results/` folders are empty; repository/File Library searches did not recover a PCREF1 artifact in the available sources.
+- Preserved V014/V024/V025/V033: the `mapped + 0x100` coordinate rule and repeated/fixed-object locations remain independently established.
+- Downgraded PCREF1's historical no-visible-change runtime result to observation-only. It must not invalidate `はい`, `年/月/日`, `城`, `清洲`, or duplicated `松平元康` object/fixed-field evidence because emitted delivery was never proven.
+- Feedback loop remains un-restored. Before interpreting any new runtime no-change result causally, a fresh reproducible one-family delivery-control diagnostic must preserve manifest, original-byte guards, mapped/emitted coordinates, IPS round-trip, final record count, and SHA-256.
+- Updated `PROJECT_STATE.md` so the recommended next stage after a fresh signal is delivery-control diagnostic design only; implementation/build still requires a later separate signal.
+- No builder logic, Switch binary, ARM64, IPS, build, or runtime test was created or modified in this verification stage.
+
 ### PC Runtime Canonical Closure complete
 
 - Added `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`, `docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md`, and `docs/SWITCH_COUNTERPART_SURVEY_RULES.md`.
@@ -140,7 +151,7 @@
 
 ### P0N2 passed
 
-- `P0N2 v0.2g`: corrected page mapper + 5,519 true no-op records.
+- `P0N2 v0.2g`: corrected mapper + 5,519 true no-op records.
 - Runtime PASS through Korean title, input, and main menu.
 - This disproved the hypothesis that 5,520 classic-IPS records themselves caused the old freeze.
 
