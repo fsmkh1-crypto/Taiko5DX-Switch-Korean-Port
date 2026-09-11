@@ -1,0 +1,133 @@
+{
+  "test_id": "DCTRL5",
+  "builder_source_commit": "bc3db0fd42ebecfd0a6ebc7d61651ea18f738fbf",
+  "records": [
+    {
+      "family": "runtime_page_mapper",
+      "role": "prerequisite",
+      "source_provenance": "V006",
+      "mapped_offset": "0x44650C",
+      "emitted_offset": "0x44660C",
+      "original_hex": "690a4011293d00123ffd2b7168010054093940510ae09b1208010a0b3f01007108b1891a087d0813007d0011",
+      "replacement_hex": "693e08532a8103515f610071680100545f29007168000054407d00110400001440990011020000141f2003d5",
+      "guard_result": "PASS",
+      "payload_length": 44
+    },
+    {
+      "family": "repeated_short_object",
+      "role": "diagnostic",
+      "text": "月",
+      "source_provenance": {
+        "validation": "V024",
+        "pc_t5k_records": [
+          {"record_id": 1201, "pc_rva": "0xB2427C", "length": 2, "original_hex": "8c8e", "replacement_hex": "f2f7"},
+          {"record_id": 1578, "pc_rva": "0xB25F74", "length": 2, "original_hex": "8c8e", "replacement_hex": "f2f7"},
+          {"record_id": 2740, "pc_rva": "0xB29FC8", "length": 2, "original_hex": "8c8e", "replacement_hex": "f2f7"},
+          {"record_id": 16448, "pc_rva": "0xC65A29", "length": 2, "original_hex": "8c8e", "replacement_hex": "f2f7"},
+          {"record_id": 16456, "pc_rva": "0xC65A62", "length": 2, "original_hex": "8c8e", "replacement_hex": "f2f7"}
+        ]
+      },
+      "mapped_offset": "0x68925A",
+      "emitted_offset": "0x68935A",
+      "original_hex": "8c8e",
+      "replacement_hex": "f2f7",
+      "guard_result": "PASS",
+      "payload_length": 2
+    },
+    {
+      "family": "repeated_short_object",
+      "role": "diagnostic",
+      "text": "年",
+      "source_provenance": {
+        "validation": "V024",
+        "pc_t5k_records": [
+          {"record_id": 545, "pc_rva": "0xB20956", "length": 2, "original_hex": "944e", "replacement_hex": "ece0"},
+          {"record_id": 549, "pc_rva": "0xB20994", "length": 2, "original_hex": "944e", "replacement_hex": "ece0"},
+          {"record_id": 2739, "pc_rva": "0xB29FC3", "length": 2, "original_hex": "944e", "replacement_hex": "ece0"},
+          {"record_id": 16447, "pc_rva": "0xC65A25", "length": 2, "original_hex": "944e", "replacement_hex": "ece0"},
+          {"record_id": 16455, "pc_rva": "0xC65A5E", "length": 2, "original_hex": "944e", "replacement_hex": "ece0"}
+        ]
+      },
+      "mapped_offset": "0x69785A",
+      "emitted_offset": "0x69795A",
+      "original_hex": "944e",
+      "replacement_hex": "ece0",
+      "guard_result": "PASS",
+      "payload_length": 2
+    },
+    {
+      "family": "repeated_short_object",
+      "role": "diagnostic",
+      "text": "はい",
+      "source_provenance": {
+        "validation": "V024",
+        "pc_t5k_records": [
+          {"record_id": 2277, "pc_rva": "0xB28B44", "length": 4, "original_hex": "82cd82a2", "replacement_hex": "f2b70000"}
+        ]
+      },
+      "mapped_offset": "0x6A15A5",
+      "emitted_offset": "0x6A16A5",
+      "original_hex": "82cd82a2",
+      "replacement_hex": "f2b70000",
+      "guard_result": "PASS",
+      "payload_length": 4
+    },
+    {
+      "family": "repeated_short_object",
+      "role": "diagnostic",
+      "text": "城",
+      "source_provenance": {
+        "validation": "V024",
+        "pc_t5k_records": [
+          {"record_id": 2425, "pc_rva": "0xB290BC", "length": 2, "original_hex": "8fe9", "replacement_hex": "f159"},
+          {"record_id": 2552, "pc_rva": "0xB296F2", "length": 2, "original_hex": "8fe9", "replacement_hex": "f159"}
+        ]
+      },
+      "mapped_offset": "0x6A15DC",
+      "emitted_offset": "0x6A16DC",
+      "original_hex": "8fe9",
+      "replacement_hex": "f159",
+      "guard_result": "PASS",
+      "payload_length": 2
+    },
+    {
+      "family": "repeated_short_object",
+      "role": "diagnostic",
+      "text": "日",
+      "source_provenance": {
+        "validation": "V024",
+        "pc_t5k_records": [
+          {"record_id": 278, "pc_rva": "0xB1F7D0", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 293, "pc_rva": "0xB1F886", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 1579, "pc_rva": "0xB25F7B", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 2220, "pc_rva": "0xB2878E", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 2221, "pc_rva": "0xB28796", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 2338, "pc_rva": "0xB28D84", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 2741, "pc_rva": "0xB29FCD", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 16449, "pc_rva": "0xC65A2D", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"},
+          {"record_id": 16457, "pc_rva": "0xC65A66", "length": 2, "original_hex": "93fa", "replacement_hex": "f36e"}
+        ]
+      },
+      "mapped_offset": "0x6A3CC6",
+      "emitted_offset": "0x6A3DC6",
+      "original_hex": "93fa",
+      "replacement_hex": "f36e",
+      "guard_result": "PASS",
+      "payload_length": 2
+    }
+  ],
+  "reparsed_records": [
+    {
+      "emitted_offset": "0x44660C",
+      "payload_hex": "693e08532a8103515f610071680100545f29007168000054407d00110400001440990011020000141f2003d5"
+    },
+    {"emitted_offset": "0x68935A", "payload_hex": "f2f7"},
+    {"emitted_offset": "0x69795A", "payload_hex": "ece0"},
+    {"emitted_offset": "0x6A16A5", "payload_hex": "f2b70000"},
+    {"emitted_offset": "0x6A16DC", "payload_hex": "f159"},
+    {"emitted_offset": "0x6A3DC6", "payload_hex": "f36e"}
+  ],
+  "expected_equals_reparsed": true,
+  "ips_sha256": "a199337897c96482fda10d6ec34325d347f977de59fea29c988e1060ebe13304",
+  "package_sha256": "49a314996f2305a952250f23853f483d0f435494167eec87b8c5077bf10f53f5"
+}
