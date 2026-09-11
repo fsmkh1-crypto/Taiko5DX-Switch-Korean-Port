@@ -2,6 +2,17 @@
 
 ## 2026-09-11
 
+### PC DLL PHASE 2 complete — T5K parser grammar and bounds
+
+- Extended `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with an address-grounded reconstruction of parser `0x2640` only; no mapping/pointer/helper/descriptor runtime semantics or Switch counterpart work was performed.
+- Confirmed the exact `0x48` T5K header grammar, including `u64` target EXE size and 32-byte target SHA-256, plus fixed parser denominators for version/counts/prefix/helper lengths.
+- Confirmed top-level exact consumption: prefix `0x9F2A`, helper `0x9E`, 17,103 variable inline records, 56 fixed 16-byte pointer records, 11 variable descriptors, then mandatory zero trailing bytes.
+- Reconstructed inline, pointer, descriptor and subpatch binary layouts and parser-level bounds/payload rules. Pointer `mode` is a single byte with three skipped reserved bytes; subpatch kinds are structurally limited to 0..3.
+- Confirmed parser `0x2640` does not hard-code the target EXE size/hash and does not parse a mapping-count header field; those interpretations are rejected.
+- Audited `builder/t5k.py` as a convenience parser rather than a canonical wire-format implementation: current fixed blob still parses for existing uses, but EXE-size width, pointer grammar, exact prefix/helper denominators and runtime descriptor structure differ from the PC parser. `mapping_lookup_1A/2A` are cross-boundary substring false positives.
+- Added PHASE 2 validation ledger entries and advanced the canonical resume gate to PHASE 3 pending fresh user authorization.
+- Documentation-only change. No builder/source modification, ARM64, IPS, mod build or runtime test was performed.
+
 ### PC DLL PHASE 1 complete — loading, initialization and transaction only
 
 - Added cumulative `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with exact DLL RVA

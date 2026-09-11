@@ -2,21 +2,27 @@
 
 Last updated: 2026-09-11 (KST)
 
-## Active staged analysis — PC DLL PHASE 1 complete / STOP
+## Active staged analysis — PC DLL PHASE 2 complete / STOP
 
-Latest user scope supersedes older next-action lists below. Only PC DLL loading,
-initialization, EXE validation and transaction framework were analyzed in PHASE 1.
-Master: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`. Baseline remote main was
-`06a787a6d4743ed4a64a8672450895c99bc8a0fe`.
+Latest user scope supersedes older next-action lists below. PHASE 1 established DLL loading,
+initialization, EXE validation and transaction framework. PHASE 2 established the exact
+`T5K121R` parser grammar, bounds rules, parsed representation and failure propagation.
+Master: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`.
 
-- Complete: address-grounded proxy/once flow, resource/parser entry, disk identity
-  and memory PE profile gates, staging/preimage guard, commit ordering and rollback limits.
-- Canonical clarification: one contiguous private allocation contains prefix and
-  helper regions; rollback is best-effort, not guaranteed atomic restoration.
-- Pending: subsequent PC parser/mapping/pointer/descriptor/helper phases. Reuse
-  established `docs/PC_RUNTIME_DLL_SPEC.md` facts; do not revalidate them without a trigger.
-- No next phase until a fresh user execution signal. PHASE 1~5 forbid Switch
-  counterpart research, ARM64, IPS and builds. This phase changes documentation only.
+- PHASE 2 parser authority: DLL RVA `0x2640`, exact embedded DLL SHA-256
+  `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7` and
+  RCDATA/101 SHA-256 `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`.
+- Confirmed exact `0x48` header, fixed parser denominators, prefix/helper spans,
+  inline/pointer/descriptor/subpatch wire grammar, bounds/payload rules and trailing-byte rejection.
+- Target EXE size is a `u64` header field and SHA-256 is a raw 32-byte header field;
+  the parser preserves them and the later identity path checks the actual EXE against them.
+- Current `builder/t5k.py` remains useful for existing fixed-blob analysis but is not the
+  canonical descriptor-format parser: it reads EXE size as u32, folds pointer mode/reserved,
+  and uses descriptor substring searches including the false `mapping_lookup_1A/2A` matches.
+  No builder code was modified in PHASE 2.
+- Pending PHASE 3 only after a fresh user execution signal: mapping 10,036 runtime
+  storage/lookup relocation and pointer 56 mode/arg application engine.
+- PHASE 1~5 still forbid Switch counterpart research, ARM64, IPS and builds.
 - At each authorized phase end: accumulate master results, update ledger/state/changelog,
   commit documents, report commit SHA, STOP.
 
