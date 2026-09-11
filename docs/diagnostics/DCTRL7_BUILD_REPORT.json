@@ -2,7 +2,7 @@
   "test_id": "DCTRL7",
   "purpose": "Eden delivery discriminator: V006 mapper + V019 R489 positive control + five V024 repeated short objects.",
   "builder_source_commit": "ccb13b3e85b8a72339b628f57bf12dda789fffe3",
-  "provenance_report_commit": null,
+  "provenance_report_commit": "5a4e9174a1b91ff5193a6d05a4f89f1344b5896b",
   "inputs": {
     "switch": {
       "title_id": "0100346017304000",
@@ -182,5 +182,13 @@
     "package_filename": "DCTRL7_Taiko5DX_KR_EDEN.zip",
     "package_sha256": "c1092c6cb43da985a536c94dd01f132516540af35232f11d634e1afc0341fb33",
     "drive_location": "태합입지전 포팅/Eden_Builds/DCTRL7_Taiko5DX_KR_EDEN.zip"
+  },
+  "provenance_bundle_commit": "4e702fb6cb08010f030cb55bd9f40985b1964791",
+  "drive_retention": {
+    "file_id": "1UTXpiOfju77_9yQT55dkhlTeB59jlwJ4",
+    "folder": "태합입지전 포팅/Eden_Builds",
+    "redownload_sha256": "c1092c6cb43da985a536c94dd01f132516540af35232f11d634e1afc0341fb33",
+    "byte_identity_exact": true,
+    "size_bytes": 2713045
   }
 }
