@@ -2,6 +2,18 @@
 
 ## 2026-09-11
 
+### PC DLL PHASE 3 complete — mapping relocation and pointer engine
+
+- Added `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md` and a PHASE 3 validation-ledger part.
+- Confirmed the `0x9F2A` private runtime prefix contains the 10,036 x 4-byte mapping table (`0x9CD0`) followed by the 602-byte pointer replacement pool (`0x25A`); the mapping table is runtime data, not builder-only metadata.
+- Confirmed two mapping lookup paths collectively relocate three table/address operands and expand two count limits from 7,494 (`0x1D46`) to 10,036 (`0x2734`).
+- Surveyed all 56 pointer records using PHASE-2's canonical `u8 mode + reserved[3] + u32 arg` grammar. Every record stages an 8-byte absolute pointer write.
+- Confirmed mode 0 (5 records) computes `EXE/module base + arg`; the five records converge on two module-resident targets translated by inline patches.
+- Confirmed mode 1 (51 records) computes `private prefix base + arg`; the 51 records reference 47 distinct replacement strings.
+- Confirmed mapping relocation and pointer-record application are separate engines sharing the private prefix allocation; pointer records do not themselves relocate the mapping table.
+- Exact target PC EXE absence leaves complete XREF/table/UI naming unresolved only; helper and runtime-descriptor semantics remain deferred to PHASE 4.
+- No Switch counterpart research, ARM64, IPS, build, or runtime test was performed.
+
 ### PC DLL PHASE 2 complete — T5K parser grammar and bounds
 
 - Extended `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with an address-grounded reconstruction of parser `0x2640` only; no mapping/pointer/helper/descriptor runtime semantics or Switch counterpart work was performed.

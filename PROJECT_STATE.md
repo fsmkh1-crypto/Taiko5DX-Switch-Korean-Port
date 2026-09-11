@@ -2,29 +2,33 @@
 
 Last updated: 2026-09-11 (KST)
 
-## Active staged analysis — PC DLL PHASE 2 complete / STOP
+## Active staged analysis — PC DLL PHASE 3 complete / STOP
 
 Latest user scope supersedes older next-action lists below. PHASE 1 established DLL loading,
 initialization, EXE validation and transaction framework. PHASE 2 established the exact
 `T5K121R` parser grammar, bounds rules, parsed representation and failure propagation.
-Master: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`.
+PHASE 3 established the runtime mapping/pointer data layer. Master:
+`docs/PC_RUNTIME_REVERSE_ENGINEERING.md`.
 
-- PHASE 2 parser authority: DLL RVA `0x2640`, exact embedded DLL SHA-256
-  `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7` and
-  RCDATA/101 SHA-256 `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`.
-- Confirmed exact `0x48` header, fixed parser denominators, prefix/helper spans,
-  inline/pointer/descriptor/subpatch wire grammar, bounds/payload rules and trailing-byte rejection.
-- Target EXE size is a `u64` header field and SHA-256 is a raw 32-byte header field;
-  the parser preserves them and the later identity path checks the actual EXE against them.
-- Current `builder/t5k.py` remains useful for existing fixed-blob analysis but is not the
-  canonical descriptor-format parser: it reads EXE size as u32, folds pointer mode/reserved,
-  and uses descriptor substring searches including the false `mapping_lookup_1A/2A` matches.
-  No builder code was modified in PHASE 2.
-- Pending PHASE 3 only after a fresh user execution signal: mapping 10,036 runtime
-  storage/lookup relocation and pointer 56 mode/arg application engine.
+- The `0x9F2A` runtime prefix is 10,036 x 4-byte mapping entries (`0x9CD0`) plus a
+  602-byte pointer replacement pool (`0x25A`) and is copied into private runtime storage.
+- Two mapping lookup paths collectively redirect three address/table-base operands to the
+  relocated mapping storage and change two limits from 7,494 (`0x1D46`) to 10,036 (`0x2734`).
+- All 56 pointer records were surveyed. They stage 8-byte absolute pointer writes using
+  PHASE-2's canonical `u8 mode + reserved[3] + u32 arg` grammar.
+- Mode 0: 5 records, destination = EXE/module base + `arg`; they converge on two
+  module-resident targets that are translated by the inline layer.
+- Mode 1: 51 records, destination = private prefix base + `arg`; they reference 47
+  distinct replacement strings in private-prefix storage.
+- Pointer application and mapping relocation are separate engines; the pointer records do
+  not themselves relocate the 10,036-entry mapping table.
+- Exact target PC EXE absence leaves whole-program XREF/table/UI naming unresolved, but
+  does not reopen the verified mapping-base/count/pointer-write semantics.
+- Pending PHASE 4 only after a fresh user execution signal: 158-byte helper semantics and
+  runtime descriptor/subpatch application semantics.
 - PHASE 1~5 still forbid Switch counterpart research, ARM64, IPS and builds.
-- At each authorized phase end: accumulate master results, update ledger/state/changelog,
-  commit documents, report commit SHA, STOP.
+- At each authorized phase end: update phase detail, ledger/state/changelog, commit, report,
+  then STOP.
 
 This is the canonical resume point. Before inline/crash/UI work, read it with `docs/VALIDATION_LEDGER.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/PHASE0_FAILURE_MODE_PLAN.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/POST_D5519_ANALYSIS.md`.
 

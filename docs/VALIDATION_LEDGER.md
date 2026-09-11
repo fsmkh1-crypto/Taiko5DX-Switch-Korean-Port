@@ -19,8 +19,9 @@ Status values remain `VERIFIED`, `VERIFIED-RUNTIME`, `VERIFIED-LEGACY`, `NEEDS-R
 
 - V001–V039, including all pre-PC-DLL findings and PC DLL PHASE 1: `docs/VALIDATION_LEDGER_THROUGH_PHASE1.md`
 - V040–V045, PC DLL PHASE 2 parser grammar: `docs/VALIDATION_LEDGER_PHASE2.md`
+- V046–V051, PC DLL PHASE 3 mapping/pointer runtime semantics: `docs/VALIDATION_LEDGER_PHASE3.md`
 
-Both files are part of the canonical ledger. Later phases must append a new phase ledger part and update this index, rather than revalidating established entries.
+All files are part of the canonical ledger. Later phases must append a new phase ledger part and update this index, rather than revalidating established entries.
 
 ## Current precedence
 
