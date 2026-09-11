@@ -2,7 +2,7 @@
   "test_id": "DCTRL5",
   "purpose": "Eden delivery-control diagnostic: V006 mapper + five V024 objects.",
   "builder_source_commit": "bc3db0fd42ebecfd0a6ebc7d61651ea18f738fbf",
-  "provenance_report_commit": null,
+  "provenance_report_commit": "e5c223231bf0dec69dbd45581002a235e5fbd07e",
   "inputs": {
     "switch": {
       "title_id": "0100346017304000",
@@ -155,6 +155,9 @@
     "ips_sha256": "a199337897c96482fda10d6ec34325d347f977de59fea29c988e1060ebe13304",
     "package_filename": "DCTRL5_Taiko5DX_KR_EDEN.zip",
     "package_sha256": "49a314996f2305a952250f23853f483d0f435494167eec87b8c5077bf10f53f5",
-    "drive_location": "태합입지전 포팅/Eden_Builds/DCTRL5_Taiko5DX_KR_EDEN.zip"
+    "drive_location": "태합입지전 포팅/Eden_Builds/DCTRL5_Taiko5DX_KR_EDEN.zip",
+    "drive_file_id": "14zNK28eud_s6aqSRs8Rjuee0UOBBBqBm",
+    "drive_redownload_sha256": "49a314996f2305a952250f23853f483d0f435494167eec87b8c5077bf10f53f5",
+    "drive_redownload_verified": true
   }
 }
