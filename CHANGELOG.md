@@ -2,6 +2,22 @@
 
 ## 2026-09-11
 
+### DCTRL7 runtime + R0 repeated-object normalization complete
+
+- Recorded the fully provenance-bound DCTRL7 artifact: builder commit `ccb13b3e85b8a72339b628f57bf12dda789fffe3`, IPS SHA-256 `2114f14ccc098103524b7cb4afaf416a8bc0185bc607dd198ce4f9511d2d6fab`, package SHA-256 `c1092c6cb43da985a536c94dd01f132516540af35232f11d634e1afc0341fb33`, guards `7/7`, no skips/extras, exact self-reparse/raw serialization/coordinate round-trip.
+- DCTRL7 runtime on Eden v0.2.1 visibly changed scenario `1560年` to `1560년`, proving current ExeFS delivery and Korean rendering for standalone `年 @ 0x69785A` on that route.
+- The same DCTRL7 run left tested `拠点 岡崎城` unchanged despite standalone `城 @ 0x6A15DC -> 성`; therefore the standalone object is insufficient for that screen.
+- Preserved the user-reported in-game HUD `1560年 2月30日` unchanged result as observation-only because no DCTRL7 HUD screenshot was retained in the R0 documentation session.
+- Retained DCTRL7 runtime screenshots in Drive `Test_Results/` with hashes and file IDs; added `docs/diagnostics/DCTRL7_RUNTIME_RESULT.md`.
+- Added V063–V069 and `docs/R0_REPEATED_OBJECT_NORMALIZATION.md`.
+- Confirmed selected repeated/composite strings are materialized through `R_AARCH64_RELATIVE` into `.data` pointer slots; direct string-address XREF absence is no longer rejection evidence.
+- Corrected Japanese place-table base from `0x6ADA11` to `0x6ADA10`; verified stride `0x18` and layout `type +0 / name +1 / yomi +0x0C` across 310 records.
+- Verified 33 duplicated place names / 66 slots, with type-pair distribution `(0,3)=30`, `(0,5)=2`, `(3,0)=1`; all PC T5K replacements agree within each duplicate-name family.
+- Verified PC R2552–R2563 structurally correspond to 12 consecutive Switch RELA-backed `%s...` formatter slots at `.data 0x9C09F0..0x9C0A48`.
+- Kept `%4d年%2d月%2d日 @ 0x68DD49` as a strong HUD-date candidate only; consumer binding is deferred to R1.
+- Updated `PROJECT_STATE.md`, `PATCH_MAP.md`, `docs/RUNTIME_TEST_RESULTS.md`, and the canonical validation index. Current resume point is R0 complete / STOP; next authorized analysis is R1 consumer binding only after a fresh user signal.
+- No code, builder, IPS, ZIP or new runtime artifact was created during the R0 documentation synchronization.
+
 ### PCREF1 delivery verification — artifact insufficient
 
 - Added `docs/PCREF1_DELIVERY_VERIFICATION.md` and `docs/VALIDATION_LEDGER_PCREF1.md`.
@@ -27,7 +43,7 @@
 - Split storage risk by axis: mapping additional capacity, pointer replacement strings, optional helper executable space, and in-place descriptor/inline possibilities.
 - Recorded compact `쓰` as a three-path unresolved problem: data selection, pointer/reference selection, byte-validation/copy.
 - Recorded PCREF1 delivery verification as parallel to static survey but mandatory before interpreting a new counterpart-derived runtime result.
-- No new Switch disassembly, ARM64 edit, IPS, build, or runtime test was performed. Next stage is Switch Functional Counterpart Survey after a fresh user signal.
+- No new Switch disassembly, ARM64, IPS, build, or runtime test was performed. Next stage is Switch Functional Counterpart Survey after a fresh user signal.
 
 ### PC DLL PHASE 4 complete — helper and descriptor runtime semantics
 
