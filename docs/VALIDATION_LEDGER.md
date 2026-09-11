@@ -17,6 +17,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V076–V077: `docs/VALIDATION_LEDGER_R1C.md`
 - V078–V081: `docs/VALIDATION_LEDGER_INVENTORY_STAGE1.md`
 - V082–V086: `docs/VALIDATION_LEDGER_STAGE2.md`
+- V087–V092: `docs/VALIDATION_LEDGER_F1.md`
 
 ## Current precedence
 
@@ -25,7 +26,10 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - accounting/invariants: `docs/PC_TO_SWITCH_ACCOUNTING_INVARIANTS.md`
 - Stage 1: `docs/FULL_PORT_INVENTORY_STAGE1.md`
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
+- F1 localization sequence audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
 - current resume point: `PROJECT_STATE.md`
 
 Later narrower-scope corrections take precedence over older semantic overclaims.
 Historical PCREF1 remains provenance-insufficient under V062 and must not be used as negative evidence against verified object/fixed-field findings.
+
+F1 V088/V092 supersede only the later provisional F1 promotion/accounting that treated all 278 F1 residual rows as accepted. They do not modify Stage-2 V082–V086.
