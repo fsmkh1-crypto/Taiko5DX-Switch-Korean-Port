@@ -22,6 +22,7 @@ Status values remain `VERIFIED`, `VERIFIED-RUNTIME`, `VERIFIED-LEGACY`, `NEEDS-R
 - V046–V051, PC DLL PHASE 3 mapping/pointer runtime semantics: `docs/VALIDATION_LEDGER_PHASE3.md`
 - V052–V061, PC DLL PHASE 4 helper/descriptor runtime semantics: `docs/VALIDATION_LEDGER_PHASE4.md`
 - V062, PCREF1 emitted-delivery provenance gap: `docs/VALIDATION_LEDGER_PCREF1.md`
+- V063–V069, DCTRL7 runtime normalization plus R0 repeated-object RELA/place-table/formatter evidence: `docs/VALIDATION_LEDGER_R0.md`
 
 All files are part of the canonical ledger. Later factual phases must append a new ledger part and update this index rather than revalidating established entries.
 
@@ -51,6 +52,20 @@ Consequences:
 
 Detailed report: `docs/PCREF1_DELIVERY_VERIFICATION.md`.
 
+## DCTRL7 / R0 accounting
+
+V063–V069 record the restored current feedback loop and the first normalized repeated-object structure pass:
+
+- DCTRL7 has a complete pre-runtime provenance chain;
+- `年 @ 0x69785A` visibly changes to `년` on the tested scenario route;
+- standalone `城 @ 0x6A15DC` is insufficient for the tested `岡崎城` screen;
+- selected repeated/composite strings are RELA-materialized into `.data` pointer slots, so direct string-address XREF absence is not rejection evidence;
+- Japanese place-table base/layout is `0x6ADA10`, stride `0x18`, with `type +0 / name +1 / yomi +0x0C`;
+- the place table has 33 duplicated names / 66 slots and source-grounded PC replacements agree within each duplicate family;
+- PC R2552–R2563 correspond structurally to a consecutive 12-slot Switch `%s...` formatter family.
+
+Detailed reports: `docs/diagnostics/DCTRL7_RUNTIME_RESULT.md` and `docs/R0_REPEATED_OBJECT_NORMALIZATION.md`.
+
 ### Narrow precedence correction for V029
 
 V029's directly established byte fact remains valid: the PC descriptor changes a compare immediate `0xFF -> 0xA0`.
@@ -72,6 +87,8 @@ Key closure corrections that must not be reintroduced:
 
 - release inline safety policy: `docs/INLINE_VALIDATION_POLICY.md`
 - validated fact/revalidation authority: this index and its ledger parts, with later narrower-scope corrections taking precedence over older semantic overclaims
+- current repeated-object normalization: `docs/R0_REPEATED_OBJECT_NORMALIZATION.md`
+- DCTRL7 runtime result: `docs/diagnostics/DCTRL7_RUNTIME_RESULT.md`
 - PCREF1 delivery-verification record: `docs/PCREF1_DELIVERY_VERIFICATION.md`
 - closed PC runtime aggregate specification: `docs/PC_RUNTIME_DLL_SPEC.md`
 - PC runtime closure/audit: `docs/PC_RUNTIME_CANONICAL_CLOSURE.md`
