@@ -65,6 +65,33 @@ When revalidation is required, perform it once and record validation ID/date, ex
 | V032 | A seventh text-render/layout decision exists at mapped `0x44D9D0`: codes `<0x100` take a width-8 path immediately before glyph construction/draw; W1 changes only this compare to `cmp w8,#0xA1` on top of W0. | VERIFIED | Disassembly around `0x44D9C4..0x44DA30`: `and w8,w26,#0xffff; cmp w8,#0x100; b.hs 0x44D9E0; mov w19,#8`, followed by the alternate table-width path and `bl 0x44E400`. This static control-flow fact remains valid. The prior causal claim that this gate was the direct cause of the missing compact `쓰` is invalidated by V033. |
 | V033 | W1 v0.2n does **not** restore `마쓰다이라 모토야스` on the tested nameplate; the name still appears without `쓰`. Therefore mapped `0x44D9D0` is not the direct cause established by that symptom, and the W1 causal hypothesis is invalidated. | VERIFIED-RUNTIME | User runtime-tested W1 on 2026-09-11 and observed no restoration of `쓰`. Artifact identity remains `W1_Taiko5DX_KR_DBG_FONTWIDTH_RENDER_v0.2n.zip`, SHA-256 `26fcd1434561b2e02d797079d6d996e5becfe66808e763d0b309ee1db10d44d1`. Static inspection performed before this record also found two corresponding Switch `松平元康` fixed fields at mapped `0x729D4D` and `0x729D5E`; the historical D5519 unique-only selector patched neither because the original pattern is duplicated. Thus the earlier premise that an active compact `BD=쓰` byte was reaching this renderer was not established. Do not repeat W1 as a compact-`쓰` fix without first establishing the actual active name-slot selection/data path. |
 
+## PC DLL PHASE 1 — 2026-09-11
+
+All entries below use the exact embedded DLL SHA-256
+`ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`.
+Method: static PE directory/import/export/unwind inspection and bounded x86-64
+control-flow analysis. Addresses are DLL RVAs, not target EXE RVAs or Switch offsets.
+Reproducible report: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`, PHASE 1.
+Existing T5K counts and input identities were reused, not recounted.
+
+| ID | Claim | Status | Evidence / reuse rule |
+|---|---|---|---|
+| V034 | AMD64 PE32+ DLL, preferred base `0x180000000`, entry `0xF920`; TLS directory absent; six internal-code proxy exports without PE forwarder strings. DllMain stores module state only. | VERIFIED | PE metadata; CRT `0xF958` → `0xF7EC`, call `0xF871` → DllMain `0x8E10`; process-attach store and DisableThreadLibraryCalls `0x8E19/0x8E20`. Master §§2–3. |
+| V035 | DirectInput8Create triggers separate system-proxy and patch once guards; only successful patch flag permits the original function call. Other five exports do not initialize the Korean patch. | VERIFIED | `0x8C11` / `0x8C2F` InitOnceExecuteOnce; globals `0x35C40`, `0x35C68`, success byte `0x35C48`; `0x8710` → `0x86F0` → `0x7870`; original call `0x8C55`. Master §3. |
+| V036 | Resource parsing precedes disk filename/size/SHA validation, then memory PE profile validation. Size comparison occurs after hash calculation; disk hash does not hash the loaded memory image. | VERIFIED | Resource calls `0x7974`, `0x7A08/1B/26`, parser call `0x7A57`; identity `0x3AC0` → `0x34D0`, size/hash comparisons `0x3C51..0x3C72`; memory gate `0x3230`. Header checks: ImageBase `0x140000000`, SizeOfImage `0x2726000`, .text RVA/VirtualSize `0x1000/0xAFF0B1`. These are DLL guard constants, not measurements of an unavailable EXE. Master §§4–5. |
+| V037 | One contiguous RW private allocation is split into page-aligned prefix/helper regions; staging precedes final R/RX protection and EXE commit. Common staging requires exact preimage and equal nonzero write lengths; overlap is rejected. | VERIFIED | `0x6130`, VirtualAlloc `0x6292`, copies `0x6324/0x6335`, staging `0x6490` / `0x49C0`, compare `0x4A2B`, overlap `0x5020`; protections `0x7C49/0x7CC4`; commit call `0x7D30`. Master §§6–7. |
+| V038 | Commit writes inline priority 0, pointer 1, code 2; has reverse rollback, cache flush and protection restoration. It is best-effort, not an atomic or guaranteed restoration mechanism. | VERIFIED | `0x5980`: writable pages `0x5340`; priority ordering `0x5A20..0x5ADD`; copy `0x5B0E` → `0x5320`; flush `0x5B35`; restore `0x5E7A`; rollback `0x5820`, partial-write branch `0x5C72..0x5D5B`, restore-failure branch `0x5F31/0x5F42`. Rollback flush/protect returns are not checked. No commit-time preimage recheck or game-thread suspension in this path. Master §8. |
+| V039 | Normal patch failure does not skip a failed record and continue the game. Failed patch flag causes optional MessageBox then process termination; NOUI only suppresses the dialog. | VERIFIED | Callback logging `0x8A4D`; flag gate `0x8C35`; fatal `0x8B30`, env `0x8B82`, MessageBox `0x8BA8`, TerminateProcess `0x8BBC`, ExitProcess `0x8BC7`, exit code `0xC1`. Other proxy exports have separate nonfatal return behavior. Master §§3,9. |
+
+Rejected interpretations for this phase: patch execution inside DllMain/TLS callback;
+export-forwarder-only DLL; version-string-only EXE approval; skip-on-mismatch;
+guaranteed atomic rollback; NOUI bypassing validation/termination; necessarily separate
+prefix/helper allocations; every export initializing the patch or terminating on error.
+These are rejected by static branches above, not new runtime failure observations.
+Unknown: exact game-side loader/import/caller path, actual addresses/thread state,
+runtime log success and error-injection outcomes. The mismatched EXE remains prohibited.
+PHASE 2+ is pending a fresh user execution signal.
+
 ## Reproducible fixed input identity
 
 - Switch compressed `main` SHA-256: `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`;

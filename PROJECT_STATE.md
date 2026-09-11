@@ -2,6 +2,24 @@
 
 Last updated: 2026-09-11 (KST)
 
+## Active staged analysis — PC DLL PHASE 1 complete / STOP
+
+Latest user scope supersedes older next-action lists below. Only PC DLL loading,
+initialization, EXE validation and transaction framework were analyzed in PHASE 1.
+Master: `docs/PC_RUNTIME_REVERSE_ENGINEERING.md`. Baseline remote main was
+`06a787a6d4743ed4a64a8672450895c99bc8a0fe`.
+
+- Complete: address-grounded proxy/once flow, resource/parser entry, disk identity
+  and memory PE profile gates, staging/preimage guard, commit ordering and rollback limits.
+- Canonical clarification: one contiguous private allocation contains prefix and
+  helper regions; rollback is best-effort, not guaranteed atomic restoration.
+- Pending: subsequent PC parser/mapping/pointer/descriptor/helper phases. Reuse
+  established `docs/PC_RUNTIME_DLL_SPEC.md` facts; do not revalidate them without a trigger.
+- No next phase until a fresh user execution signal. PHASE 1~5 forbid Switch
+  counterpart research, ARM64, IPS and builds. This phase changes documentation only.
+- At each authorized phase end: accumulate master results, update ledger/state/changelog,
+  commit documents, report commit SHA, STOP.
+
 This is the canonical resume point. Before inline/crash/UI work, read it with `docs/VALIDATION_LEDGER.md`, `PATCH_MAP.md`, `docs/INLINE_VALIDATION_POLICY.md`, `docs/PHASE0_FAILURE_MODE_PLAN.md`, `docs/RUNTIME_TEST_RESULTS.md`, and `docs/POST_D5519_ANALYSIS.md`.
 
 ## 1. Goal

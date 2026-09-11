@@ -2,6 +2,19 @@
 
 ## 2026-09-11
 
+### PC DLL PHASE 1 complete — loading, initialization and transaction only
+
+- Added cumulative `docs/PC_RUNTIME_REVERSE_ENGINEERING.md` with exact DLL RVA
+  evidence for PE/proxy/once initialization, resource acquisition, target identity,
+  staging, commit, rollback and fatal errors.
+- Reused fixed input identities and existing PC runtime facts; no mapping/pointer/
+  descriptor/helper semantic reanalysis or Switch counterpart work in this phase.
+- Clarified one contiguous private allocation, inline/pointer/code write priorities,
+  and best-effort rollback limits (unchecked rollback API returns and no atomicity guarantee).
+- Added V034–V039 and an active PHASE 1 complete / STOP resume gate.
+- Documentation-only change. No executable, builder, patch, IPS, build or test automation changed.
+
+
 ### W1 runtime result: direct compact-`쓰` cause hypothesis invalidated
 
 - User runtime-tested `W1 v0.2n`; the tested Matsudaira nameplate still appears without `쓰`.

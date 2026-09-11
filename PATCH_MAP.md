@@ -2,6 +2,16 @@
 
 Canonical mapping of PC Korean-patch behavior to Nintendo Switch v1.1.3.
 
+## PC-side PHASE 1 framework reference
+
+`docs/PC_RUNTIME_REVERSE_ENGINEERING.md` records the PC-only framework with DLL RVAs.
+DllMain `0x8E10` stores module state; DirectInput8Create `0x8BD0` triggers patch once
+`0x8710` → initializer `0x7870`. Resource parse and disk/memory identity gates precede
+private storage preparation `0x6130`, staging `0x6490`, and commit `0x5980`.
+Prefix/helper share one contiguous allocation. Commit uses preimage-guarded staged
+writes and best-effort rollback; complete atomic restoration is not guaranteed.
+No Switch counterpart was investigated or changed for this PHASE 1 record.
+
 Status values:
 - `CONFIRMED`: target/behavior directly established
 - `IMPLEMENTED`: present in the current corrected builder/mod path
