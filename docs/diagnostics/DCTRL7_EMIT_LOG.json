@@ -1,0 +1,22 @@
+{
+  "test_id": "DCTRL7",
+  "builder_source_commit": "ccb13b3e85b8a72339b628f57bf12dda789fffe3",
+  "reparsed_records": [
+    {"emitted_offset": "0x44660C", "payload_hex": "693e08532a8103515f610071680100545f29007168000054407d00110400001440990011020000141f2003d5", "role": "prerequisite"},
+    {"emitted_offset": "0x68935A", "payload_hex": "f2f7", "role": "diagnostic", "text": "月"},
+    {"emitted_offset": "0x69795A", "payload_hex": "ece0", "role": "diagnostic", "text": "年"},
+    {"emitted_offset": "0x69B7A1", "payload_hex": "f1c1eca8ef4df2beef4520f150f5c1f6cdf15bf2e2000000", "role": "positive_control", "source": "V019/R489"},
+    {"emitted_offset": "0x6A16A5", "payload_hex": "f2b70000", "role": "diagnostic", "text": "はい"},
+    {"emitted_offset": "0x6A16DC", "payload_hex": "f159", "role": "diagnostic", "text": "城"},
+    {"emitted_offset": "0x6A3DC6", "payload_hex": "f36e", "role": "diagnostic", "text": "日"}
+  ],
+  "expected_equals_reparsed": true,
+  "independent_raw_serialization_exact": true,
+  "coordinate_roundtrip_exact": true,
+  "record_count": 7,
+  "rle_records": 0,
+  "ips_actual_size": 123,
+  "ips_expected_size": 123,
+  "ips_sha256": "2114f14ccc098103524b7cb4afaf416a8bc0185bc607dd198ce4f9511d2d6fab",
+  "package_sha256": "c1092c6cb43da985a536c94dd01f132516540af35232f11d634e1afc0341fb33"
+}
