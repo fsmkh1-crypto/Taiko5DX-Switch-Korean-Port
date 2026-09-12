@@ -3,13 +3,13 @@
     "binding_path": "data/pilot/f1/action_table_binding.json",
     "current_transport_format": "PLAIN_JSONL_SHARDS",
     "current_transport_index_sha256": "ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4",
-    "expected_materialized_semantic_sha256": null,
+    "expected_materialized_semantic_sha256": "a7c0f3ce3423b2a07797ef18e538c963140303751621a985dc6fe76c52bb8a4f",
     "historical_gzip_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
     "manifest_content_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff",
     "manifest_path": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST"
   },
   "base_claims": {
-    "expected_effective_claims_sha256": null,
+    "expected_effective_claims_sha256": "2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676",
     "logical_content_sha256": "c97ce08aa3d0a2767dd85635f070d6e42f3730c2de0e78e5aa8f5b5ed62077ee",
     "path": "data/pilot/f1/validation_claims"
   },
@@ -45,7 +45,7 @@
   "schema": "MACHINE_ACCOUNTING_V1_CANDIDATE_BINDINGS",
   "semantic_schema_version": "1.0-candidate.1",
   "source_action_edge_seed": {
-    "expected_materialized_semantic_sha256": null,
+    "expected_materialized_semantic_sha256": "1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987a4fe7",
     "logical_content_sha256": "3e7063b577bad521a9cc72550e67e9ae3bf8089ea09675748fe1e03dff67653d",
     "path": "data/pilot/f1/source_action_edges_compact"
   },
@@ -58,7 +58,7 @@
     "path": "data/pilot/f1_v1_candidate/source_anchor_overrides.json"
   },
   "source_state_seed": {
-    "expected_materialized_semantic_sha256": null,
+    "expected_materialized_semantic_sha256": "91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c",
     "logical_content_sha256": "84270e4942de6e6c59bae32936ca7071568441c48544bfa9094c14ff8c15f79e",
     "path": "data/pilot/f1/source_state_compact"
   },
