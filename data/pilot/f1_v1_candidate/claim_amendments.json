@@ -1,0 +1,338 @@
+{
+  "base_claim_dataset": "data/pilot/f1/validation_claims",
+  "policy": "Existing claim IDs are never renumbered or reused. Composite pilot claims listed here become SUPERSEDED in the v1 effective view; replacement claims are issued as new permanent IDs.",
+  "schema": "CLAIM_AMENDMENTS_V1_CANDIDATE",
+  "semantic_schema_version": "1.0-candidate.1",
+  "splits": [
+    {
+      "claim_id": "V088.C03",
+      "new_claims": [
+        {
+          "claim_id": "V088.C08",
+          "predicate": "accepted_segments",
+          "value_key": "accepted_segments"
+        },
+        {
+          "claim_id": "V088.C09",
+          "predicate": "mapped_rows",
+          "value_key": "mapped_rows"
+        },
+        {
+          "claim_id": "V088.C10",
+          "predicate": "accepted_residual_rows",
+          "value_key": "accepted_residual_rows"
+        },
+        {
+          "claim_id": "V088.C11",
+          "predicate": "rejected_residual_rows",
+          "value_key": "rejected_residual_rows"
+        }
+      ]
+    },
+    {
+      "claim_id": "V089.C01",
+      "new_claims": [
+        {
+          "claim_id": "V089.C10",
+          "predicate": "capacity_fail",
+          "value_key": "capacity_fail"
+        },
+        {
+          "claim_id": "V089.C11",
+          "predicate": "padding_reconstruction",
+          "value_key": "padding_reconstruction"
+        },
+        {
+          "claim_id": "V089.C12",
+          "predicate": "rule_rejected",
+          "value_key": "rule_rejected"
+        },
+        {
+          "claim_id": "V089.C13",
+          "predicate": "shared_owner_blocker",
+          "value_key": "shared_owner_blocker"
+        },
+        {
+          "claim_id": "V089.C14",
+          "predicate": "total",
+          "value_key": "total"
+        },
+        {
+          "claim_id": "V089.C15",
+          "predicate": "write_safe_static",
+          "value_key": "write_safe_static"
+        }
+      ]
+    },
+    {
+      "claim_id": "V089.C04",
+      "new_claims": [
+        {
+          "claim_id": "V089.C16",
+          "predicate": "capacity_fail",
+          "value_key": "capacity_fail"
+        },
+        {
+          "claim_id": "V089.C17",
+          "predicate": "safe",
+          "value_key": "safe"
+        },
+        {
+          "claim_id": "V089.C18",
+          "predicate": "shared_owner",
+          "value_key": "shared_owner"
+        },
+        {
+          "claim_id": "V089.C19",
+          "predicate": "short_segment_rejected",
+          "value_key": "short_segment_rejected"
+        },
+        {
+          "claim_id": "V089.C20",
+          "predicate": "total",
+          "value_key": "total"
+        }
+      ]
+    },
+    {
+      "claim_id": "V091.C03",
+      "new_claims": [
+        {
+          "claim_id": "V091.C06",
+          "predicate": "rule_rejected_first",
+          "value_key": "rule_rejected_first"
+        },
+        {
+          "claim_id": "V091.C07",
+          "predicate": "target_resolved_padding_reconstruction",
+          "value_key": "target_resolved_padding_reconstruction"
+        }
+      ]
+    },
+    {
+      "claim_id": "V093.C01",
+      "new_claims": [
+        {
+          "claim_id": "V093.C05",
+          "predicate": "cross_gap_or_delta_reset",
+          "value_key": "cross_gap_or_delta_reset"
+        },
+        {
+          "claim_id": "V093.C06",
+          "predicate": "jp_occurrences",
+          "value_key": "jp_occurrences"
+        },
+        {
+          "claim_id": "V093.C07",
+          "predicate": "mapped_interval",
+          "value_key": "mapped_interval"
+        },
+        {
+          "claim_id": "V093.C08",
+          "predicate": "mapping",
+          "value_key": "mapping"
+        },
+        {
+          "claim_id": "V093.C09",
+          "predicate": "min_anchor_bytes",
+          "value_key": "min_anchor_bytes"
+        },
+        {
+          "claim_id": "V093.C10",
+          "predicate": "min_final_interval",
+          "value_key": "min_final_interval"
+        },
+        {
+          "claim_id": "V093.C11",
+          "predicate": "min_same_delta_anchors",
+          "value_key": "min_same_delta_anchors"
+        },
+        {
+          "claim_id": "V093.C12",
+          "predicate": "min_search_run",
+          "value_key": "min_search_run"
+        },
+        {
+          "claim_id": "V093.C13",
+          "predicate": "pc_occurrences",
+          "value_key": "pc_occurrences"
+        },
+        {
+          "claim_id": "V093.C14",
+          "predicate": "pc_scope",
+          "value_key": "pc_scope"
+        },
+        {
+          "claim_id": "V093.C15",
+          "predicate": "post_first_nul",
+          "value_key": "post_first_nul"
+        }
+      ]
+    },
+    {
+      "claim_id": "V093.C02",
+      "new_claims": [
+        {
+          "claim_id": "V093.C16",
+          "predicate": "accepted_mapped",
+          "value_key": "accepted_mapped"
+        },
+        {
+          "claim_id": "V093.C17",
+          "predicate": "accepted_residual",
+          "value_key": "accepted_residual"
+        },
+        {
+          "claim_id": "V093.C18",
+          "predicate": "accepted_segments",
+          "value_key": "accepted_segments"
+        },
+        {
+          "claim_id": "V093.C19",
+          "predicate": "anchor_bounded_mapped",
+          "value_key": "anchor_bounded_mapped"
+        },
+        {
+          "claim_id": "V093.C20",
+          "predicate": "residual_in_bounds",
+          "value_key": "residual_in_bounds"
+        },
+        {
+          "claim_id": "V093.C21",
+          "predicate": "rule_rejected",
+          "value_key": "rule_rejected"
+        },
+        {
+          "claim_id": "V093.C22",
+          "predicate": "search_segments",
+          "value_key": "search_segments"
+        }
+      ]
+    },
+    {
+      "claim_id": "V094.C02",
+      "new_claims": [
+        {
+          "claim_id": "V094.C07",
+          "predicate": "f1_overlap",
+          "value_key": "f1_overlap"
+        },
+        {
+          "claim_id": "V094.C08",
+          "predicate": "language_domain",
+          "value_key": "language_domain"
+        },
+        {
+          "claim_id": "V094.C09",
+          "predicate": "original_guard",
+          "value_key": "original_guard"
+        },
+        {
+          "claim_id": "V094.C10",
+          "predicate": "owner_count_each",
+          "value_key": "owner_count_each"
+        },
+        {
+          "claim_id": "V094.C11",
+          "predicate": "stage2_overlap",
+          "value_key": "stage2_overlap"
+        },
+        {
+          "claim_id": "V094.C12",
+          "predicate": "storage",
+          "value_key": "storage"
+        },
+        {
+          "claim_id": "V094.C13",
+          "predicate": "terminator_preserved",
+          "value_key": "terminator_preserved"
+        },
+        {
+          "claim_id": "V094.C14",
+          "predicate": "unique_action_ids",
+          "value_key": "unique_action_ids"
+        },
+        {
+          "claim_id": "V094.C15",
+          "predicate": "unique_localization_ids",
+          "value_key": "unique_localization_ids"
+        },
+        {
+          "claim_id": "V094.C16",
+          "predicate": "unique_sources",
+          "value_key": "unique_sources"
+        },
+        {
+          "claim_id": "V094.C17",
+          "predicate": "unique_target_objects",
+          "value_key": "unique_target_objects"
+        },
+        {
+          "claim_id": "V094.C18",
+          "predicate": "window_object_cardinality",
+          "value_key": "window_object_cardinality"
+        }
+      ]
+    },
+    {
+      "claim_id": "V094.C05",
+      "new_claims": [
+        {
+          "claim_id": "V094.C19",
+          "predicate": "capacity",
+          "value_key": "capacity"
+        },
+        {
+          "claim_id": "V094.C20",
+          "predicate": "padding",
+          "value_key": "padding"
+        },
+        {
+          "claim_id": "V094.C21",
+          "predicate": "rule_rejected",
+          "value_key": "rule_rejected"
+        },
+        {
+          "claim_id": "V094.C22",
+          "predicate": "shared_owner",
+          "value_key": "shared_owner"
+        }
+      ]
+    },
+    {
+      "claim_id": "V092.C01",
+      "new_claims": [
+        {
+          "claim_id": "V092.C05",
+          "copy_scalar_value": true,
+          "legacy_supersedes_refs": [
+            "PROVISIONAL_RESIDUAL_781"
+          ],
+          "predicate": "value"
+        }
+      ]
+    }
+  ],
+  "structured_atomic_exceptions": [
+    {
+      "claim_id": "V091.C02",
+      "reason": "One exhaustive histogram measurement; bucket values are interpreted only as one complete distribution and correction supersedes the histogram as a whole."
+    },
+    {
+      "claim_id": "V092.C02",
+      "reason": "One accounting equation; component values jointly define the equation and correction supersedes the equation as a whole."
+    },
+    {
+      "claim_id": "V094.C01",
+      "reason": "One immutable artifact identity tuple tying row count and hashes to the same canonical manifest."
+    },
+    {
+      "claim_id": "V094.C03",
+      "reason": "One exhaustive terminator-mode partition of the same 158-row population."
+    },
+    {
+      "claim_id": "V095.C01",
+      "reason": "One Build-ID representation identity tuple."
+    }
+  ]
+}

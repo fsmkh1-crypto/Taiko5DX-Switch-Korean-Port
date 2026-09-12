@@ -1,0 +1,36 @@
+name: Machine accounting schema v1 candidate
+
+on:
+  push:
+    paths:
+      - 'docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md'
+      - 'docs/CLAIM_EXTRACTION_RULES.md'
+      - 'data/pilot/f1_v1_candidate/**'
+      - 'tools/machine_accounting_v1_candidate_lib.py'
+      - 'tools/validate_machine_accounting_schema_v1_candidate.py'
+      - 'tests/fixtures/machine_accounting_schema_v1.json'
+      - '.github/workflows/machine-accounting-schema-v1-candidate.yml'
+  pull_request:
+    paths:
+      - 'docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md'
+      - 'docs/CLAIM_EXTRACTION_RULES.md'
+      - 'data/pilot/f1_v1_candidate/**'
+      - 'tools/machine_accounting_v1_candidate_lib.py'
+      - 'tools/validate_machine_accounting_schema_v1_candidate.py'
+      - 'tests/fixtures/machine_accounting_schema_v1.json'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m py_compile tools/machine_accounting_v1_candidate_lib.py tools/validate_machine_accounting_schema_v1_candidate.py
+      - run: python tools/validate_machine_accounting_schema_v1_candidate.py --repo-root .

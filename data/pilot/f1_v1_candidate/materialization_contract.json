@@ -1,0 +1,232 @@
+{
+  "accounting_role": "OBLIGATION",
+  "action_materialization": {
+    "changed_by": {
+      "refs": [
+        "MIGRATION-F1-V1-CANDIDATE-2026-09-12"
+      ],
+      "type": "MIGRATION"
+    },
+    "claim_refs": [
+      "V094.C01",
+      "V094.C04",
+      "V094.C07",
+      "V094.C08",
+      "V094.C09",
+      "V094.C10",
+      "V094.C11",
+      "V094.C12",
+      "V094.C13",
+      "V094.C14",
+      "V094.C15",
+      "V094.C16",
+      "V094.C17",
+      "V094.C18"
+    ],
+    "conflict_state": "NONE",
+    "id_field": "authorization_action_id",
+    "legacy_evidence_refs_from": "evidence_ids",
+    "lifecycle_state": "ACTIVE",
+    "revision": 1,
+    "source": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz"
+  },
+  "categories": {
+    "CAPACITY": {
+      "analysis_state": "RESOLVED",
+      "applicability_state": "APPLICABLE",
+      "blocker": "TERMINATOR_CAPACITY_FAIL",
+      "claim_refs": [
+        "V090.C01",
+        "V090.C02",
+        "V090.C03"
+      ],
+      "closure_state": "OPEN",
+      "handoff_family": "F1_STORAGE_RECONSTRUCTION",
+      "language_domain": "JP_ONLY",
+      "legacy_evidence_refs": [
+        "V088",
+        "V090"
+      ],
+      "storage_class": "STATIC_RODATA",
+      "target_status": "RESOLVED",
+      "terminal_disposition": "UNRESOLVED",
+      "window_object_cardinality": "1:1",
+      "write_authority": "NOT_AUTHORIZED",
+      "write_authority_family": "F1_STORAGE_RECONSTRUCTION"
+    },
+    "DIRECT": {
+      "analysis_state": "RESOLVED",
+      "applicability_state": "APPLICABLE",
+      "blocker": null,
+      "claim_refs": [
+        "V094.C01",
+        "V094.C04",
+        "V094.C07",
+        "V094.C08",
+        "V094.C09",
+        "V094.C10",
+        "V094.C11",
+        "V094.C12",
+        "V094.C13",
+        "V094.C14",
+        "V094.C15",
+        "V094.C16",
+        "V094.C17",
+        "V094.C18"
+      ],
+      "closure_state": "CLOSED",
+      "handoff_family": null,
+      "language_domain": "JP_ONLY",
+      "legacy_evidence_refs": [
+        "V088",
+        "V089",
+        "V093",
+        "V094"
+      ],
+      "storage_class": "STATIC_RODATA",
+      "target_status": "RESOLVED",
+      "terminal_disposition": "DIRECT_PORT",
+      "window_object_cardinality": "1:1",
+      "write_authority": "AUTHORIZED",
+      "write_authority_family": "F1_LOCALIZATION_STATIC_DIRECT"
+    },
+    "PADDING": {
+      "analysis_state": "RESOLVED",
+      "applicability_state": "APPLICABLE",
+      "blocker": "PADDING_RECONSTRUCTION_REQUIRED",
+      "claim_refs": [
+        "V091.C01",
+        "V091.C04",
+        "V091.C07"
+      ],
+      "closure_state": "OPEN",
+      "handoff_family": "F1_PADDING_RECONSTRUCTION",
+      "language_domain": "JP_ONLY",
+      "legacy_evidence_refs": [
+        "V088",
+        "V091"
+      ],
+      "storage_class": "STATIC_RODATA",
+      "target_status": "RESOLVED",
+      "terminal_disposition": "UNRESOLVED",
+      "window_object_cardinality": "1:1",
+      "write_authority": "NOT_AUTHORIZED",
+      "write_authority_family": "F1_PADDING_RECONSTRUCTION"
+    },
+    "REJECT": {
+      "analysis_state": "ANALYZED_UNRESOLVED",
+      "applicability_state": "APPLICABLE",
+      "blocker": "F1_RULE_REJECTED_MIN_FINAL_INTERVAL",
+      "claim_refs": [
+        "V088.C04",
+        "V088.C05",
+        "V092.C04"
+      ],
+      "closure_state": "OPEN",
+      "handoff_family": "RESIDUAL_FAMILY_UNASSIGNED",
+      "language_domain": null,
+      "legacy_evidence_refs": [
+        "V088",
+        "V092"
+      ],
+      "storage_class": null,
+      "target_status": "UNRESOLVED",
+      "terminal_disposition": "UNRESOLVED",
+      "unknown": {
+        "blocks": [
+          "WRITE_AUTHORIZATION",
+          "CLOSURE"
+        ],
+        "claim_refs": [
+          "V088.C04",
+          "V088.C05",
+          "V092.C04"
+        ],
+        "field": "target_identity",
+        "legacy_evidence_refs": [
+          "V088",
+          "V092"
+        ],
+        "reason": "F1 candidate relation was not canonically promoted by V088; it is not proven false but remains unresolved.",
+        "resolution_requirement": "Resolve this source under another verified target-resolution family or independently promote the candidate with new evidence."
+      },
+      "window_object_cardinality": null,
+      "write_authority": "NOT_AUTHORIZED",
+      "write_authority_family": null
+    },
+    "SHARED": {
+      "analysis_state": "RESOLVED",
+      "applicability_state": "APPLICABLE",
+      "blocker": "SHARED_OWNER_BINDING_REQUIRED",
+      "claim_refs": [
+        "V089.C07",
+        "V089.C08",
+        "V089.C09"
+      ],
+      "closure_state": "OPEN",
+      "handoff_family": "SHARED_OWNER_BINDING",
+      "language_domain": "JP_ONLY",
+      "legacy_evidence_refs": [
+        "V088",
+        "V089"
+      ],
+      "storage_class": "STATIC_RODATA",
+      "target_status": "RESOLVED",
+      "terminal_disposition": "UNRESOLVED",
+      "unknown": {
+        "blocks": [
+          "WRITE_AUTHORIZATION",
+          "CLOSURE"
+        ],
+        "claim_refs": [
+          "V089.C07",
+          "V089.C08",
+          "V089.C09"
+        ],
+        "field": "owner_binding",
+        "legacy_evidence_refs": [
+          "V089"
+        ],
+        "reason": "Physical target has multiple logical localization owners and not every relevant PC obligation is bound.",
+        "resolution_requirement": "Bind every relevant logical owner to its PC obligation and prove replacement agreement or conflict before choosing I3 shared overwrite or I4 redirection."
+      },
+      "window_object_cardinality": "1:1",
+      "write_authority": "NOT_AUTHORIZED",
+      "write_authority_family": "SHARED_OWNER_BINDING"
+    }
+  },
+  "changed_by": {
+    "refs": [
+      "MIGRATION-F1-V1-CANDIDATE-2026-09-12"
+    ],
+    "type": "MIGRATION"
+  },
+  "edge_materialization": {
+    "claim_refs": [
+      "V094.C04"
+    ],
+    "legacy_evidence_refs": [
+      "V094"
+    ],
+    "range_semantics": "Target write range is owned by the referenced action record; null edge ranges mean the edge covers the whole action.",
+    "role": "PRIMARY",
+    "source_byte_range": null,
+    "target_byte_range": null
+  },
+  "migration_materialization": {
+    "default_source_provenance": "F1_PILOT_V0_1",
+    "legacy_defaults_from_index": true,
+    "legacy_grouped_manifest": "data/pilot/f1/migration_manifest",
+    "status_fields": [
+      "migration_status",
+      "roundtrip_status",
+      "diff_disposition"
+    ],
+    "target_revision_rule": "SOURCE_STATE => 1; ACTION => 1; other stable-ID entities => null"
+  },
+  "revision": 1,
+  "schema": "SOURCE_STATE_MATERIALIZATION_CONTRACT_V1_CANDIDATE",
+  "semantic_schema_version": "1.0-candidate.1",
+  "source_family": "inline",
+  "transport_format_version": "F1_PILOT_TRANSPORT_V0_1"
+}

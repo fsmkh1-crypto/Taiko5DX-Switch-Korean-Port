@@ -1,0 +1,77 @@
+{
+  "coverage_statuses": [
+    {
+      "assertion_bearing": true,
+      "coverage_status": "SUPERSEDED_TEXT",
+      "expected_allowed": true,
+      "supersession_refs": [
+        "V001.C01"
+      ]
+    },
+    {
+      "assertion_bearing": true,
+      "coverage_status": "SUPERSEDED_TEXT",
+      "expected_allowed": false,
+      "supersession_refs": []
+    }
+  ],
+  "invariant_staleness": {
+    "cases": [
+      {
+        "current": {
+          "action_family:F1_LOCALIZATION_STATIC_DIRECT": "f1-v1",
+          "family:mapping": "map-v1"
+        },
+        "expected": "PASS",
+        "name": "unchanged"
+      },
+      {
+        "current": {
+          "action_family:F1_LOCALIZATION_STATIC_DIRECT": "f1-v1",
+          "family:mapping": "map-v2"
+        },
+        "expected": "STALE",
+        "name": "dependency_changed"
+      }
+    ],
+    "definition": {
+      "depends_on_namespaces": [
+        "family:mapping",
+        "action_family:F1_LOCALIZATION_STATIC_DIRECT"
+      ],
+      "invariant_id": "FIXTURE-INV-1"
+    },
+    "last_evaluated_against": {
+      "action_family:F1_LOCALIZATION_STATIC_DIRECT": "f1-v1",
+      "family:mapping": "map-v1"
+    }
+  },
+  "migration_statuses": {
+    "expected": {
+      "BLOCKED": 1,
+      "ROUNDTRIP_EXPLAINED": 1,
+      "ROUNDTRIP_PASS": 1
+    },
+    "rows": [
+      {
+        "diff_disposition": "NONE",
+        "entity_id": "FIXTURE-MIG-1",
+        "migration_status": "ROUNDTRIP_PASS",
+        "roundtrip_status": "ROUNDTRIP_PASS"
+      },
+      {
+        "diff_disposition": "EXPLAINED:fixture",
+        "entity_id": "FIXTURE-MIG-2",
+        "migration_status": "ROUNDTRIP_EXPLAINED",
+        "roundtrip_status": "ROUNDTRIP_EXPLAINED"
+      },
+      {
+        "diff_disposition": "NONE",
+        "entity_id": "FIXTURE-MIG-3",
+        "migration_status": "BLOCKED",
+        "roundtrip_status": "PENDING"
+      }
+    ]
+  },
+  "schema": "MACHINE_ACCOUNTING_V1_CANDIDATE_FIXTURE"
+}

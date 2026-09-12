@@ -1,0 +1,60 @@
+{
+  "action_table": {
+    "binding_path": "data/pilot/f1/action_table_binding.json",
+    "expected_materialized_semantic_sha256": null,
+    "manifest_content_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff",
+    "manifest_file_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
+    "manifest_path": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz"
+  },
+  "base_claims": {
+    "expected_effective_claims_sha256": null,
+    "logical_content_sha256": "c97ce08aa3d0a2767dd85635f070d6e42f3730c2de0e78e5aa8f5b5ed62077ee",
+    "path": "data/pilot/f1/validation_claims"
+  },
+  "base_head": "e2e70298466d44fc28d210e323f91d13e5561a38",
+  "claim_amendments": {
+    "canonical_json_sha256": "1955ce2f558cd034ccf14b3d697c02c4f199ba8f268361dd7c6ef87140706cac",
+    "path": "data/pilot/f1_v1_candidate/claim_amendments.json"
+  },
+  "expected_counts": {
+    "actions": 158,
+    "active_claims": 85,
+    "base_claims": 42,
+    "candidate_migration_entries": 749,
+    "coverage_blocks": 61,
+    "edges": 158,
+    "effective_claims": 94,
+    "legacy_migration_entries": 697,
+    "new_claims": 52,
+    "sources": 278
+  },
+  "legacy_migration_manifest": {
+    "entries": 697,
+    "path": "data/pilot/f1/migration_manifest"
+  },
+  "materialization_contract": {
+    "canonical_json_sha256": "698fd9d576f2d1877b6ce5b0dc65c52cb49463382d4ec9392b2a8aad371ba2ae",
+    "path": "data/pilot/f1_v1_candidate/materialization_contract.json"
+  },
+  "membership_snapshot": {
+    "all_source_ids_sha256": "ace2bc4d27ae97d6583cd5b9293b994cb6ab0faed7551a5f5eb123ed216f3624",
+    "path": "data/pilot/f1/membership_snapshot.json"
+  },
+  "schema": "MACHINE_ACCOUNTING_V1_CANDIDATE_BINDINGS",
+  "semantic_schema_version": "1.0-candidate.1",
+  "source_action_edge_seed": {
+    "expected_materialized_semantic_sha256": null,
+    "logical_content_sha256": "3e7063b577bad521a9cc72550e67e9ae3bf8089ea09675748fe1e03dff67653d",
+    "path": "data/pilot/f1/source_action_edges_compact"
+  },
+  "source_anchor_coverage": {
+    "logical_content_sha256": "14c20fa7089629644a3f7afda45831f1aa1b1c39f558bff5f1acf2b399f91bec",
+    "path": "data/pilot/f1/source_anchor_coverage"
+  },
+  "source_state_seed": {
+    "expected_materialized_semantic_sha256": null,
+    "logical_content_sha256": "84270e4942de6e6c59bae32936ca7071568441c48544bfa9094c14ff8c15f79e",
+    "path": "data/pilot/f1/source_state_compact"
+  },
+  "transport_format_version": "F1_PILOT_TRANSPORT_V0_1"
+}

@@ -1,54 +1,100 @@
-# Claim Extraction Rules — Pilot v0.1
+# Claim Extraction Rules — v1 Candidate
 
-Date: 2026-09-12
-Status: PILOT OUTPUT / NOT FROZEN
+Date: 2026-09-12  
+Status: CANDIDATE / NOT FROZEN
 
-## 1. Atomicity rule
+## 1. Atomicity
 
-A claim is the smallest assertion that can be independently falsified, superseded, invalidated, or depended on.
+A claim is the smallest assertion that can be independently falsified, corrected, superseded, invalidated or depended on.
 
-Multiple values in one sentence become separate claims when they can change independently. Values remain one structured claim only when together they form one inseparable identity or one accounting equation whose meaning would be lost by splitting.
+If values in one statement can change independently, they are separate claims. A structured value may remain one claim only when it is one inseparable identity, one exhaustive set/map, one histogram treated as a single measurement, or one accounting equation whose meaning is defined only as a whole.
 
-Example: `base 0x6ADA10, stride 0x18, 33 duplicates / 66 slots` normally becomes separate atomic claims for base, stride, duplicate count, and slot count because each is independently testable and independently correctable.
+A structured exception must be explicitly declared. It cannot be used merely to avoid issuing atomic IDs.
 
-## 2. Fact plus interpretation
+## 2. Facts and interpretations
 
-`X is observed; therefore Y means ...` becomes at least two claims:
-
-- a `FACT` claim for X;
-- an `INTERPRETATION` or rule/correction claim for Y with `depends_on_claims` pointing to X.
-
-Interpretation never silently inherits the verification status of the underlying byte fact.
+Observed fact and interpretation are separate claims. Interpretations depend explicitly on the fact claims they use and do not silently inherit their verification state.
 
 ## 3. Negative knowledge
 
-Absence of proof is represented explicitly; it is never encoded by omitting a claim.
+Absence of proof is explicit:
 
-- `EVIDENCE_GAP`: a proposition is not proven, provenance is missing, or a consumer/owner relation remains unbound.
-- `FACT` with zero/none value: an explicit exhaustive method proved that no instances exist.
+- `EVIDENCE_GAP` = not proven / provenance missing / ownership unresolved.
+- `FACT` with zero/none = exhaustive method proved zero/none.
 
-Example: `no conflicting replacement is proven for the shared object` is an `EVIDENCE_GAP` unless the method exhaustively proves zero conflicts. `unintended overlaps = 0` after exhaustive interval comparison is a verified `FACT`.
+For the F1 shared-owner population, the canonical meaning is `replacement conflict not proven`, not `absence of conflict proven`.
 
 ## 4. Boundary claims
 
-Statements such as `this is audit evidence, not builder authorization` are `BOUNDARY` claims because they constrain allowed downstream behavior even though they are not byte facts.
+Authorization limits, scope limits and downstream-use prohibitions are `BOUNDARY` claims. They remain machine-visible because violating them changes allowed downstream behavior.
 
-## 5. Supersession
+## 5. Immutable IDs and supersession
 
-Claim IDs are immutable. Narrow corrections supersede only the affected atomic claims. Unaffected sibling claims under the same ledger ID remain active.
+Issued claim IDs are permanent and are never renumbered, reused or deleted.
 
-A later-discovered claim is appended with a new claim ID; existing IDs are never renumbered.
+If an issued pilot claim is too composite:
 
-## 6. Source-anchor rule
+1. retain the original ID;
+2. mark it `SUPERSEDED`;
+3. issue new atomic IDs;
+4. record `superseded_by[]` / `supersedes[]`;
+5. keep unaffected sibling claims ACTIVE.
 
-Every migrated claim carries a stable source anchor. During the pilot, anchors use document path, Git blob SHA where available, heading path, and an exact anchor-text hash. Full-document migration additionally covers every source block with an explicit coverage disposition.
+Claim ID syntax allows variable-width claim numbers: `Vnnn.Cn+`.
 
-## 7. F1 pilot consequences
+`supersedes[]` contains claim IDs only. Pre-claim symbolic history belongs in `legacy_supersedes_refs[]`.
 
-The F1 pilot specifically preserves:
+## 6. Evidence references
 
-- the distinction between promoted `target_identity` and unpromoted `candidate_target_identity`;
-- `not proven false` as explicit epistemic state rather than target promotion;
-- audit-only classifications as boundary claims;
-- verified zero-overlap results as facts rather than evidence gaps;
-- shared-owner uncertainty as structured UNKNOWN debt.
+New machine entities use:
+
+```text
+claim_refs[]
+legacy_evidence_refs[]
+```
+
+Atomic dependency and staleness logic use `claim_refs`. Legacy ledger IDs remain provenance, not a substitute for atomic dependency links.
+
+## 7. Source anchors
+
+Every migrated claim has a source anchor with:
+
+```text
+document_path
+document_git_blob_sha
+heading_path
+anchor_text
+anchor_text_sha256
+```
+
+The validator checks:
+
+- document Git blob identity;
+- anchor-text SHA-256;
+- anchor text occurs in the bound document.
+
+Historical coverage may continue to point to a superseded claim because it records what text was originally extracted. New active decisions must resolve through the supersession graph to active claims.
+
+## 8. v0.1 F1 claim amendment
+
+The v0.1 claim rows remain immutable historical data.
+
+The v1 candidate amendment file:
+
+`data/pilot/f1_v1_candidate/claim_amendments.json`
+
+supersedes the identified composite claims and issues appended atomic IDs. It also replaces the legacy symbolic supersession inside `V092.C01` by a new correction claim whose `legacy_supersedes_refs` carries that historical symbol.
+
+No technical byte fact is revalidated by this claim-shape amendment.
+
+## 9. Structured atomic exceptions in the F1 candidate
+
+Only explicitly declared exceptions may remain structured. Current candidate exceptions cover:
+
+- one exhaustive histogram measurement;
+- one accounting equation;
+- one canonical manifest identity tuple;
+- one exhaustive terminator-mode partition;
+- one Build-ID representation identity tuple.
+
+Any later structured exception requires an explicit reason and review.
