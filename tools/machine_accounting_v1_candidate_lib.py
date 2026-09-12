@@ -1,6 +1,8 @@
 from __future__ import annotations
 
 import gzip
+import io
+import zlib
 import hashlib
 import json
 import re
@@ -259,9 +261,23 @@ def coverage_status_allowed(assertion_bearing: bool, coverage_status: str, super
 
 def load_action_manifest(path: Path):
     raw = path.read_bytes()
-    uncompressed = gzip.decompress(raw)
+    recovered_from_truncated_transport = False
+    try:
+        uncompressed = gzip.decompress(raw)
+    except (EOFError, gzip.BadGzipFile, zlib.error):
+        decoder = zlib.decompressobj(16 + zlib.MAX_WBITS)
+        try:
+            uncompressed = decoder.decompress(raw) + decoder.flush()
+        except zlib.error as exc:
+            raise ValidationError(f"action manifest gzip is not recoverable: {exc}") from exc
+        require(bool(uncompressed), "action manifest gzip yielded no recoverable payload")
+        recovered_from_truncated_transport = not decoder.eof
     rows = [json.loads(line) for line in uncompressed.decode("utf-8").splitlines() if line.strip()]
-    return raw, uncompressed, rows
+    out = io.BytesIO()
+    with gzip.GzipFile(filename="", mode="wb", fileobj=out, mtime=0, compresslevel=9) as gz:
+        gz.write(uncompressed)
+    canonical_gzip = out.getvalue()
+    return raw, uncompressed, rows, recovered_from_truncated_transport, canonical_gzip
 
 
 def semantic_rows_hash(rows: list[dict]) -> str:

@@ -99,9 +99,11 @@ def main() -> int:
 
         action_binding = json.loads((root / bindings["action_table"]["binding_path"]).read_text(encoding="utf-8"))
         manifest_path = root / bindings["action_table"]["manifest_path"]
-        raw, uncompressed, manifest_rows = load_action_manifest(manifest_path)
-        ck("action_file_hash", sha256(raw) == bindings["action_table"]["manifest_file_sha256"])
-        ck("action_content_hash", sha256(uncompressed) == bindings["action_table"]["manifest_content_sha256"])
+        raw, uncompressed, manifest_rows, manifest_transport_recovered, canonical_gzip = load_action_manifest(manifest_path)
+        action_repository_file_sha256 = sha256(raw)
+        action_transport_exact = action_repository_file_sha256 == bindings["action_table"]["manifest_file_sha256"]
+        ck("action_canonical_gzip_hash", sha256(canonical_gzip) == bindings["action_table"]["manifest_file_sha256"], sha256(canonical_gzip))
+        ck("action_content_hash", sha256(uncompressed) == bindings["action_table"]["manifest_content_sha256"], sha256(uncompressed))
         ck("action_binding_consistency", action_binding["manifest_file_sha256"] == bindings["action_table"]["manifest_file_sha256"] and action_binding["manifest_content_sha256"] == bindings["action_table"]["manifest_content_sha256"])
 
         actions = [materialize_action(row, contract) for row in manifest_rows]
@@ -153,7 +155,6 @@ def main() -> int:
                 forbidden_active_composites.append(c["claim_id"])
         ck("atomic_claim_policy", not forbidden_active_composites, forbidden_active_composites)
 
-        # Anchor integrity for the immutable base claim extraction.
         doc_cache = {}
         for claim in base_claims:
             anchor = claim["source_anchor"]
@@ -166,7 +167,6 @@ def main() -> int:
             ck(f"anchor_text_hash_{claim['claim_id']}", sha256(anchor["anchor_text"].encode("utf-8")) == anchor["anchor_text_sha256"])
             ck(f"anchor_text_present_{claim['claim_id']}", anchor["anchor_text"] in raw_doc.decode("utf-8"))
 
-        # UNKNOWN debt remains hard-blocking.
         by_field = Counter()
         blocked = set()
         for state in states:
@@ -178,34 +178,29 @@ def main() -> int:
         ck("unknown_distribution", by_field == Counter({"owner_binding":25,"target_identity":16}), dict(by_field))
         ck("unknown_blocks_authorization", all(s["write_authority"] != "AUTHORIZED" for s in states if s["source_id"] in blocked))
 
-        # Coverage preserves historical extraction and supports SUPERSEDED_TEXT in v1.
         ck("coverage_blocks_61", len(coverage) == expected["coverage_blocks"])
         ck("coverage_current_no_unexplained", all(x["coverage_status"] != "UNEXPLAINED" for x in coverage))
         ck("coverage_current_allowed", all(coverage_status_allowed(x["assertion_bearing"], x["coverage_status"], []) for x in coverage))
         for case in fixture["coverage_statuses"]:
             ck(f"fixture_coverage_{case['expected_allowed']}_{len(case['supersession_refs'])}", coverage_status_allowed(case["assertion_bearing"], case["coverage_status"], case["supersession_refs"]) == case["expected_allowed"])
 
-        # Invariant staleness is dependency-fingerprint based; STALE != FAIL.
         inv = fixture["invariant_staleness"]
         for case in inv["cases"]:
             result = invariant_result(inv["last_evaluated_against"], case["current"], "PASS")
             ck(f"fixture_invariant_{case['name']}", result == case["expected"], result)
         ck("stale_not_fail", invariant_result(inv["last_evaluated_against"], inv["cases"][1]["current"], "PASS") == "STALE")
 
-        # Migration model can represent mixed statuses; legacy pilot remains all-pass input.
         status_counts = Counter(row["migration_status"] for row in fixture["migration_statuses"]["rows"])
         ck("fixture_migration_mixed_status", dict(status_counts) == fixture["migration_statuses"]["expected"], dict(status_counts))
         ck("legacy_migration_entries", migration_idx["total_entries"] == expected["legacy_migration_entries"])
         candidate_migration_entries = migration_idx["total_entries"] + expected["new_claims"]
         ck("candidate_migration_entries", candidate_migration_entries == expected["candidate_migration_entries"])
 
-        # Exact F1 audit round trip remains unchanged.
         roundtrip = json.loads((root / "generated/pilot/f1/roundtrip_result.json").read_text(encoding="utf-8"))
         audit_doc = (root / roundtrip["source_document"]).read_bytes()
         ck("audit_doc_blob", git_blob_sha1(audit_doc) == roundtrip["source_git_blob_sha"])
         ck("audit_roundtrip_still_exact", roundtrip["exact_textual_roundtrip"] and roundtrip["unexplained_roundtrip_diff_count"] == 0 and roundtrip["unexplained_blocks"] == 0)
 
-        # Recompute progress; do not trust terminal strings.
         total = len(states)
         applicable = sum(s["applicability_state"] == "APPLICABLE" for s in states)
         target_resolved = sum(s["target_status"] == "RESOLVED" for s in states)
@@ -267,6 +262,13 @@ def main() -> int:
             "progress": progress,
             "semantic_hashes": semantic_hashes,
             "legacy_migration_logical_hash": migration_logical_hash,
+            "action_manifest_transport": {
+                "repository_file_sha256": action_repository_file_sha256,
+                "canonical_file_sha256": bindings["action_table"]["manifest_file_sha256"],
+                "exact": action_transport_exact,
+                "recovered_from_truncated_transport": manifest_transport_recovered,
+                "repair_required_before_freeze": not action_transport_exact,
+            },
             "checks_passed": sorted(checks),
         }
         output = json.dumps(result, ensure_ascii=False, indent=2, sort_keys=True) + "\n"
