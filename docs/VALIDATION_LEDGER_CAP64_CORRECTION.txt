@@ -1,0 +1,21 @@
+# Validation ledger — CAP64 forward correction
+
+Date: 2026-09-13
+Status: CANONICAL CORRECTION LEDGER / NO SWITCH WRITE AUTHORIZATION
+
+| ID | Status | Claim | Evidence / limit |
+|---|---|---|---|
+| CF001 | VERIFIED | Stage-1 raw occurrence discovery is capped at 64 and stores the field as `switch_raw_candidate_count_capped_64`. | Direct inventory-tool code and canonical Stage-1 schema. |
+| CF002 | VERIFIED | 386 inline rows hit the cap; 377 of those have more than 64 actual Switch occurrences. | Uncapped rescan of canonical Switch `main` using the same raw patterns. |
+| CF003 | VERIFIED | Complete evidence changes beyond the capped view for 211 rows in storage-mutability coverage and 106 rows in language-domain coverage. | Capped vs uncapped occurrence/domain/storage comparison. |
+| CF004 | VERIFIED | F1 membership is not reopened by CAP64 because F1 derives correspondences from the complete 3,803 JP logical table rather than the capped Stage-1 candidate list. | Canonical F1 authorization procedure. |
+| CF005 | VERIFIED | Stage-2 affine target mapping is not reopened; the affected claim layer is the residual semantic/family census. | Stage-2 target formula and guard mechanism are independent of the capped raw-candidate list. |
+| CF006 | VERIFIED | Forward raw-start localization relation increases by 35 rows from 700 to 735; legacy residual-other decreases from 251 to 216 while legacy formatter remains 35. | Exact 35-row delta materialized in CAP64 correction artifact. |
+| CF007 | VERIFIED | Corrected raw-start partition is L1=454, L2=165, L3=116, L4=0, total 735, disjoint. | `forward_localization_raw_start_partition_v2` exact membership files and hashes. |
+| CF008 | RETRACTED | Historical L4 claim `R1291 has no JP localization start`. | Uncapped rescan finds JP localization starts after the first 64 stored occurrences; R1291 moves to L3. |
+| CF009 | SUPERSEDED | Historical v1 claim that 700 rows form the complete/current forward-localization partition. | v1 is retained as provenance; current raw-start correction is v2 and residual 251 still requires structural census. |
+| CF010 | PROVISIONAL | A precheck of the remaining 251 legacy residual labels found 79 additional JP logical relations after logical-window normalization. | Trigger only; exact membership is intentionally deferred to the next 251-row structural census. |
+
+Mandatory censorship rule: when `switch_raw_candidate_count_capped_64 == 64`, the candidate list is censored and cannot establish absence, uniqueness, complete language-domain coverage, or complete storage-mutability coverage.
+
+Next scope: joint structural census of the 251 legacy residual labels. No semantic/write authorization is implied.
