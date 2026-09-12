@@ -7,10 +7,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "FORWARD_986_SEMANTIC_FAMILY_AUDIT",
+  "scope_id": "PC_PATCH_ORACLE_ASSISTED_297_FOLLOWUP",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V107",
+  "last_closed_validation_id": "V118",
   "last_closed_stage_commit": "ef494198345e01ea11c5b287dfb4d6e44081dde5",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
@@ -45,6 +45,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "data/post_freeze/forward_986_stable_structural_partition_v1/INDEX.json",
     "docs/L3_SEMANTIC_PC_MECHANISM_ANALYSIS.md",
     "data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json",
+    "docs/PC_PATCH_ORACLE_RESOLVER_V1.md",
+    "docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_V1.txt",
+    "data/post_freeze/pc_patch_oracle_resolver_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
   ],
   "forbidden_scope_expansion": [
@@ -58,7 +61,7 @@ PROJECT_RESUME_V2 -->
 
 ## 1. Current state
 
-Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
+Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`  
 Branch: `main`
 
 Inherited without revalidation:
@@ -77,7 +80,8 @@ Post-freeze forward work:
 - historical L4=R1291 claim: RETRACTED
 - exact structural census of remaining 251 rows: COMPLETE / MATERIALIZED
 - stable structural synthesis of full forward 986: COMPLETE / MATERIALIZED
-- next scope: semantic-family audit on the stable 986 partition
+- PC Korean Patch Oracle Resolver V1: COMPLETE / MATERIALIZED
+- next scope: read-only follow-up on the remaining 297 oracle-assisted rows
 
 ## 2. Frozen semantic identities
 
@@ -90,7 +94,7 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35
 ```
 
-Forward structural work does not reopen these frozen F1 semantic identities.
+Forward oracle work does not reopen these frozen F1 semantic identities.
 
 ## 3. Canonical target and stable accounting
 
@@ -131,28 +135,17 @@ CAP64 correction:
 Residual structural census:
 - `data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json`
 - exact population count: 251
-- 13 exact structural families within that historical population
 - corrected provisional logical-relation observation: 79 -> 78
 
-The historical `735 / 251` split is not a stable data-structure boundary.
+The historical `735 / 251` split is provenance, not a stable data-structure boundary.
 
 ## 5. Current structural authority — forward 986
 
-Canonical document:
+Canonical structural artifacts:
 - `docs/FORWARD_986_STABLE_STRUCTURAL_PARTITION.md`
-- SHA-256 `c4c59977ae8072162009c637f6e35716dfbce7e4926587be4dab0147ec5939b3`
-
-Validation ledger:
 - `docs/VALIDATION_LEDGER_FORWARD_986_STRUCTURAL.txt`
-- SHA-256 `13cbfa16e31ebc553bc720fcc3e3f2dc8017a7599b309d639ed65d029a5171f9`
-
-Machine-readable index:
 - `data/post_freeze/forward_986_stable_structural_partition_v1/INDEX.json`
-- SHA-256 `1aaa6355f5f7618f883eca217282dbae960fb6ef02e55c2d1e5be728b47bffe0`
-
-Machine-readable membership:
 - `data/post_freeze/forward_986_stable_structural_partition_v1/MEMBERSHIP.json`
-- SHA-256 `487b287b6d2a0cb0ea23aa2ab66ab5189418c08ab916d0b8c539fca4a75a8e4c`
 
 Stable partition:
 
@@ -176,10 +169,10 @@ intersection                                          0
 unclassified                                          0
 ```
 
-Population ordered source-ID SHA-256: `52d71e85ff11b7327a563623ba00ea99dd7e7fdb733724b17b0a598e2579b370`
+Population ordered source-ID SHA-256: `52d71e85ff11b7327a563623ba00ea99dd7e7fdb733724b17b0a598e2579b370`  
 Population ordered R-ID SHA-256: `76ec677dd6cc9b97f82828925f32296328cef6d7a3140b0d75a2a1c60f0af776`
 
-Structural precedence:
+Structural precedence remains:
 1. coherent table/storage/encoding family;
 2. NUL-aware logical full match;
 3. shared-owner cardinality;
@@ -187,17 +180,104 @@ Structural precedence:
 5. embedded containment;
 6. opaque/unknown structure.
 
-Legacy formatter 35 remains an overlay: S1=1 / S4B=1 / S5=33.
+## 6. Current semantic/target-routing authority — PC Patch Oracle V1
 
-## 6. Historical semantic overlay scope
+Canonical report:
+- `docs/PC_PATCH_ORACLE_RESOLVER_V1.md`
+- semantic SHA-256 `74a7b4a28266cc2cb7ae396d81d5815e0b4ee9fb7e80e719f1a93cde71df91d9`
 
-- Historical L1 semantic overlays remain evidence for their original reviewed membership only; stable S1 is broader.
-- Historical L3 88-row semantic/context review remains evidence for its original rows, but table-family rows now have stronger stable structural parents.
-- The existing unresolved five `R651, R1062, R1277, R1283, R1284` remain in stable S3.
-- `R2300` remains in S3 and retains its expanded-candidate-set re-review trigger.
-- No row is newly Switch-write authorized by the stable structural synthesis.
+Validation ledger:
+- `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_V1.txt`
+- semantic SHA-256 `f0bdc90e68c4466ce62038053e1eb0a069f6ade2072ef6abed55d613e90cce8f`
 
-## 7. Repository operating state
+Machine-readable artifacts:
+- `data/post_freeze/pc_patch_oracle_resolver_v1/INDEX.json`
+- semantic SHA-256 `076aeaaf3fb5db065d5ec6d68961324b02669fee4863d67405b9d70be65cb7c3`
+- `data/post_freeze/pc_patch_oracle_resolver_v1/MEMBERSHIP.json`
+- semantic SHA-256 `4fc30336e34962439f2228442ee4d5331065fbe639141b17c550720acc412822`
+
+Exact routing:
+
+```text
+ORACLE_RESOLVED      656
+ORACLE_REROUTED        7
+ORACLE_ASSISTED       297
+ASTRA_REQUIRED         10
+TRACE_REQUIRED         16
+                    ----
+TOTAL                 986
+intersection            0
+unclassified            0
+```
+
+`ORACLE_RESOLVED` family distribution:
+
+```text
+S1 443
+S2 122
+S3  41
+S4A 16
+S4B  5
+S5  18
+T4  10
+T5   1
+TOTAL 656
+```
+
+`ORACLE_ASSISTED` remainder:
+
+```text
+S5  82
+S1  73
+S3  66
+S2  45
+T2  19
+T3   7
+S4B  3
+S4A  2
+TOTAL 297
+```
+
+Current Astra queue:
+- historical semantic holdouts: `R651, R1062, R1277, R1283, R1284, R2572`
+- no-useful-oracle-signal S5: `R75, R1583, R1591, R1631`
+
+Current trace queue:
+- `R16458-R16465`
+- `R1690`
+- `R3244-R3250`
+
+T1 reroute:
+- broad-region source rows `R14542, R14544, R14545, R14546, R14547, R14548, R14550`
+- Switch expanded 19-entry region table uses PC patch detailed-region oracle rows `R16428-R16446`
+
+Important boundary:
+- `ORACLE_RESOLVED` means deterministic counterpart/target routing only.
+- `ORACLE_REROUTED` means the old source obligation is superseded by a stronger Switch structure and a different PC-patch occurrence family supplies the translation oracle.
+- neither disposition implies `WRITE_SAFE`;
+- Switch write-authorized rows created by this oracle stage = 0.
+
+## 7. Preserved semantic overlays and rejected shortcuts
+
+Historical semantic overlays remain evidence and are not recomputed merely because the stable family name changed.
+
+Preserved unresolved five from historical L3:
+`R651, R1062, R1277, R1283, R1284`.
+
+`R2300` remains in S3 with its expanded-candidate re-review trigger.
+
+Rejected oracle shortcuts:
+- unique physical target + replacement agreement alone;
+- full Switch object appearing elsewhere in PC patch alone;
+- loose reverse-context matching;
+- two-byte Korean replacement containment as hard evidence;
+- sparse adjacency alone;
+- direct one-to-one forcing of T1 broad-region labels;
+- structural family identity as a substitute for actual counterpart resolution;
+- sending all 986 or all 297 rows directly to Astra;
+- consumer tracing before exhausting PC-patch oracle evidence.
+
+## 8. Repository operating state
 
 Permitted remote write actions are exactly:
 
@@ -212,23 +292,30 @@ Forbidden write actions include `update_file`, `create_file`, `delete_file`, `cr
 
 Historical write-rule violations from the prior 251 canonicalization attempt remain provenance only. The temporary files created by those noncanonical Contents-API commits were removed by canonical recovery commit `60ee3d8c9a63ae817a93e1996d0077e53c742e80`. They must not be repeated or used as precedent.
 
-## 8. Authority and boundaries
+## 9. Authority and boundaries
 
 - `PROJECT_STATE.md` is the sole resume authority.
-- Verified F1 and Stage-2 affine facts are not reopened by forward structural synthesis.
-- Historical artifacts remain provenance; supersession does not delete history.
-- Stable structural family identity is distinct from semantic target disposition.
+- Verified F1 and Stage-2 affine facts are not reopened.
+- Stable 986 structural membership is not reopened by the oracle overlay.
+- PC Korean patch behavior is the reference before inventing Switch-specific mechanisms.
 - `TARGET_RESOLVED` remains distinct from `WRITE_SAFE`.
-- PC Korean patch behavior remains the reference before inventing Switch-specific mechanisms.
-- No full migration, builder, IPS, runtime implementation, game-file modification, or new Switch write authorization is currently authorized.
+- Framework is unchanged.
+- No builder, IPS, runtime implementation, game-file modification, or new Switch write authorization is authorized.
+- The exact target PC EXE remains unavailable; no new target-build PC XREF/preimage ownership claim is made.
 
-## 9. Awaiting fresh signal
+## 10. Awaiting fresh signal
 
 STOPPED_AWAITING_USER_SIGNAL.
 
-Next recommended scope: `FORWARD_986_SEMANTIC_FAMILY_AUDIT`.
+Next recommended scope: `PC_PATCH_ORACLE_ASSISTED_297_FOLLOWUP` (READ_ONLY).
 
-Recommended analysis order:
-T1-T5 -> S1 additional/unreviewed scope -> S2 -> S3 -> S4A/S4B -> S5 -> S6/S7.
+Recommended order:
+1. S1/S2 remaining reverse-oracle closure;
+2. S3 existing semantic-overlay reuse + full-object/composite evidence;
+3. S5 replacement/full-object/composite narrowing;
+4. T2/T3 storage/consumer ownership;
+5. S4A/S4B remainder;
+6. Astra only for genuinely semantic residuals;
+7. consumer tracing only for structural/encoding blockers.
 
-Do not begin semantic review, framework modification, builder/runtime work, or further repository writes without a fresh explicit signal.
+Do not begin the 297 follow-up, Astra work, consumer tracing, framework modification, builder/runtime work, or further repository writes without a fresh explicit signal.

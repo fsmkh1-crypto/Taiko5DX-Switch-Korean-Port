@@ -1,0 +1,27 @@
+PC PATCH ORACLE RESOLVER V1 — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL READ-ONLY ANALYSIS / NO SWITCH WRITE AUTHORIZATION
+Parent HEAD: 8e053b4c7caf1eba2e12e2fcee0314c9c99de038
+
+ID | Status | Claim | Evidence / method | Limit
+V108 | VERIFIED | Stable forward population consumed unchanged: 986. | Canonical forward_986 stable membership as input; no repartition. | Structural authority unchanged.
+V109 | VERIFIED | First deterministic PC-patch oracle pass resolves 540 rows: 474 exact-sequence + 29 composite-pair + 26 replacement/full-object + 10 T4 formatter-template + R16466 cross-encoding. | Read-only PC T5K/source ledger + canonical Switch main. Exact memberships in oracle MEMBERSHIP.json. | Target/counterpart only; not write safety.
+V110 | VERIFIED | Second reverse-oracle pass resolves 116 additional rows. | 85 strict reverse-context, 6 pair-lock, 9 S3 partial-composite, 11 S3 formatter-composite, 5 S4B composite. Calibration against preserved counterexample sets. | Does not authorize a Switch action.
+V111 | VERIFIED | Final ORACLE_RESOLVED count is 656. | V109 and V110 sets are disjoint; machine artifact records exact R membership and hash. | No builder/runtime implication.
+V112 | VERIFIED | T1 seven broad-region rows are rerouted to the expanded 19-entry Switch region table; PC patch detailed-region rows R16428-R16446 supply the direct translation oracle. | Switch raw table 0x77FF71..0x780037 plus PC patch occurrence inventory. | Reroute is not yet a write plan.
+V113 | VERIFIED | Final routing is exact/disjoint/complete: 656 resolved + 7 rerouted + 297 assisted + 10 Astra + 16 trace = 986, intersection 0, unclassified 0. | Machine membership partition and deterministic set arithmetic. | Routing categories are analysis dispositions.
+V114 | REJECTED | Loose full-object reverse-context matching is sufficient as a hard resolver. | It re-captures preserved counterexamples R19, R64, R666, R1634, R2157. | Do not reintroduce.
+V115 | REJECTED | Two-byte Korean replacement containment is sufficient hard evidence. | Collision/weak-evidence calibration. Accepted rule uses meaningful replacement length >=4 bytes. | Short fragments remain assistance only.
+V116 | REJECTED | T1 broad-region rows require direct one-to-one Switch matches. | Switch expanded 19-entry region table plus matching PC detailed-region occurrences. | Use reroute/supersession model.
+V117 | VERIFIED | Astra is not the default path. Current semantic queue is 10 rows; trace queue is 16 structural/encoding rows. | Final oracle routing artifact. | Queues may shrink after future deterministic evidence; no work started.
+V118 | VERIFIED | Framework, FZ001, F1, Stage-2 mappings, builder/runtime, and game files are unchanged. | Read-only analysis; documentation materialization only. | Future changes require fresh explicit signal.
+
+Artifacts:
+- docs/PC_PATCH_ORACLE_RESOLVER_V1.md
+- data/post_freeze/pc_patch_oracle_resolver_v1/INDEX.json
+- data/post_freeze/pc_patch_oracle_resolver_v1/MEMBERSHIP.json
+
+Semantic hashes before Git transport:
+- report SHA-256: 74a7b4a28266cc2cb7ae396d81d5815e0b4ee9fb7e80e719f1a93cde71df91d9
+- INDEX SHA-256: 076aeaaf3fb5db065d5ec6d68961324b02669fee4863d67405b9d70be65cb7c3
+- MEMBERSHIP SHA-256: 4fc30336e34962439f2228442ee4d5331065fbe639141b17c550720acc412822
