@@ -1,48 +1,67 @@
 # Validation ledger — post-freeze residual working analysis
 
-Date: 2026-09-12  
-Status: CURRENT WORKING LEDGER / NO SWITCH WRITE AUTHORIZATION
+Date: 2026-09-13  
+Status: CURRENT WORKING LEDGER / CANONICAL MECHANICAL MEMBERSHIP / NO SWITCH WRITE AUTHORIZATION
 
 ## 1. Status meanings
 
-This ledger deliberately separates reproducible mechanical facts from occurrence-level PC mechanism observations and semantic review.
-
-- `VERIFIED` — reproducible from fixed canonical evidence/selector or already closed canonical evidence; count/membership claims require the provenance appropriate to that claim.
-- `MECHANISM_OBSERVED` — direct inspection of PC patch records/runtime relationship; re-queryable observation, not a semantic or Switch authorization.
-- `SEMANTIC_REVIEWED` — explicit human/model semantic-context judgment after evidence review.
-- `PROVISIONAL` — useful observation or reviewed count not yet promoted to a canonical artifact/membership.
+- `VERIFIED` — reproducible mechanical fact from fixed canonical evidence; membership-bearing claims have materialized membership/hash or already closed canonical provenance.
+- `MECHANISM_OBSERVED` — direct PC patch record/runtime relationship; not Switch authorization.
+- `SEMANTIC_REVIEWED` — explicit semantic/context judgment after evidence review.
+- `PROVISIONAL` — useful reviewed conclusion not promoted to deterministic Switch authority.
 - `SUPERSEDED` — retained historical claim replaced by a later claim.
 - `RETRACTED` — retained historical claim found unsound.
 
-`MECHANISM_OBSERVED` does not imply that the same mechanism must be used on Switch. `PROVISIONAL` may not authorize a write.
+Materializing the exact membership of a PROVISIONAL semantic set does not change its semantic status to VERIFIED.
 
 ## 2. Fixed evidence boundary
 
-Canonical PC runtime evidence used by this ledger:
+Canonical evidence used here includes:
 
 - embedded `dinput8.dll` SHA-256 `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`
 - `T5K121R` SHA-256 `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`
-- exact PC target identity: Steam 1.2.1.0 build 9163702, 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
-- canonical PC runtime reference: `docs/PC_RUNTIME_DLL_SPEC.md`
-- mapping/pointer semantics: `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md`
+- PC target identity: Steam 1.2.1.0 build 9163702, 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
+- Switch `main` SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
+- Stage-2 reproduced membership SHA-256 `96ec32961bcfc5cd169a0a3355334438969d23b2f1a2d3b4d5943137742e552c`
+- canonical membership artifact `data/post_freeze/forward_localization_family_partition_v1/INDEX.json`
 
-The available Drive EXE is a different 18,479,304-byte file. Exact target-build preimage/XREF validation is therefore outside the present evidence.
+The available Drive EXE is not the exact target build, so target-PC preimage/XREF/call-site claims remain outside current evidence.
 
 ## 3. Claims
 
 | ID | Status | Claim | Evidence / method | Limit |
 |---|---|---|---|---|
-| PF001 | MECHANISM_OBSERVED | The actual PC patch uses occurrence-specific replacement behavior for same-original strings; the current conflict analysis spans 26 logical values and 74 PC inline occurrences with nonuniform replacement bytes. | Direct read-only inspection of T5K inline records grouped by logical original and occurrence RVA. Inline wire format and staging semantics are already closed in PC runtime docs. | Exact 26/74 census membership is not materialized in this documentation-only stage; do not treat the counts as selector-verified membership. |
-| PF002 | VERIFIED | The canonical PC pointer population is exhaustive at 56 records: mode 0 = 5, mode 1 = 51; mode 1 redirects an 8-byte pointer to `private prefix base + arg`. | `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md` and closed PC runtime validation. | This verifies the PC engine only; it does not identify a Switch counterpart. |
-| PF003 | MECHANISM_OBSERVED | `R3047 流言` and `R3099 宣戦` are observed as inline-zero occurrences combined with mode-1 pointer redirection into the PC private prefix replacement pool. | Direct occurrence-level cross-check between the PC inline records and pointer records, interpreted under the canonical mode-1 semantics from PF002. | PC precedent only. It does not authorize Switch `REDIRECT_PORT`. |
-| PF004 | PROVISIONAL | Among the 49 raw replacement-conflict L1 rows, a read-only cross-check suggested 2 pointer-linked rows and 47 without pointer records. | Ad-hoc intersection during the current analysis against the known pointer mechanism. | Must be promoted only after an explicit exhaustive 56-record intersection artifact/query is preserved; negative evidence is not yet canonical. |
-| PF005 | PROVISIONAL | Semantic/context review of the 49 raw replacement-conflict L1 rows produced 30 context-aligned, 16 context-divergent, and 3 formatter-shared unresolved rows. | Switch JP neighborhood + PC neighboring originals + actual Korean replacement + linguistic role. Exact row lists are recorded in `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`. | No canonical semantic-review manifest/membership yet. No write authorization. |
-| PF006 | PROVISIONAL | Semantic/context review of the 399 raw replacement-agreement L1 candidates produced 395 general localization binding candidates, 3 formatter reroutes, and 1 semantic-role unresolved row (`R2572 国`). | Same method as PF005, with counterexample search across context and role. | No canonical 395-row membership artifact. This is not `VERIFIED` target membership. |
-| PF007 | MECHANISM_OBSERVED | PC context handling includes occurrence-specific spacing, suppression, composite-window behavior, and pointer redirection rather than one global same-original replacement rule. | Direct examples from the inspected PC records; strongest pointer-layer examples are PF003. | Mechanism family observation only; individual Switch obligations remain independently gated. |
+| PF001 | MECHANISM_OBSERVED | The actual PC patch uses occurrence-specific replacement behavior for same-original strings; the current L1 conflict analysis spans 26 logical values and 74 PC inline occurrences with nonuniform replacement bytes. | Direct T5K inline-record grouping by logical original and occurrence RVA. | Mechanism evidence only. |
+| PF002 | VERIFIED | The canonical PC pointer population is exhaustive at 56 records: mode 0 = 5, mode 1 = 51; mode 1 points to `private prefix base + arg`. | Closed PC runtime specification/validation. | PC engine only; no automatic Switch counterpart. |
+| PF003 | MECHANISM_OBSERVED | `R3047 流言` and `R3099 宣戦` are inline-zero occurrences combined with mode-1 pointer redirection. | Occurrence-level cross-check between inline and pointer records. | PC precedent only; no Switch `REDIRECT_PORT` authorization. |
+| PF004 | PROVISIONAL | Earlier review found 2 pointer-linked and 47 pointer-unlinked rows inside the 49 L1 replacement-conflict rows. | Cross-check against pointer records. | Keep semantic/action implications conservative. |
+| PF005 | PROVISIONAL | The 49 L1 replacement-conflict rows were reviewed as 30 context-aligned, 16 context-divergent, 3 formatter-shared unresolved. | Switch JP neighborhood + PC context/replacement + linguistic role. | Exact membership is now preserved, but semantic judgment remains provisional. |
+| PF006 | PROVISIONAL | The 399 L1 replacement-agreement rows were reviewed as 395 general-localization candidates, 3 formatter reroutes, 1 semantic-role unresolved (`R2572 国`). | Same methodology as PF005. | Exact membership is now preserved, but semantic judgment remains provisional. |
+| PF007 | MECHANISM_OBSERVED | PC context handling includes occurrence-specific spacing, suppression, composite-window behavior and pointer redirection rather than one value-global replacement rule. | Direct inspected examples; PF003 is the strongest pointer-layer example. | Mechanism family observation only. |
+| PF008 | VERIFIED | Forward localization 700 is an exact, disjoint and complete partition: L1=448, L2=163, L3=88, L4=1. | `data/post_freeze/forward_localization_family_partition_v1/INDEX.json` plus SHA-pinned exact family membership files and ordered hashes. | Mechanical/structural classification only; no Switch write authorization. |
+| PF009 | VERIFIED | L1 448 mechanically subpartitions into replacement-agreement 399 and replacement-conflict 49 with exact memberships. | Canonical membership artifact. | Replacement relation is not semantic authorization. |
+| PF010 | PROVISIONAL | The exact memberships of the previously reviewed L1 semantic sets are now materialized: 395/3/1 over agreement and 30/16/3 over conflict. | Canonical membership artifact overlays. | Membership provenance is fixed; semantic judgments remain PROVISIONAL. |
+| PF011 | VERIFIED | L2 consists of 163 rows with `full_jp_candidate_count >= 2` but exactly one physical JP object per row; physical multi-target cases = 0. | Canonical membership artifact plus reproduced structural census used to materialize the selector. | Semantic owner/alias role remains future work. |
+| PF012 | VERIFIED | L3 exact membership is 88 rows selected by zero full-JP match + JP object-start candidate(s) + strict-prefix relation. Ordered source-ID SHA-256 `b4c9af9ba3640634121c757c5585ece80d4e230533b24f6b2d81f4aebff714b2`. | Canonical membership artifact. | L3 semantic/context/PC-mechanism analysis has NOT started. |
+| PF013 | VERIFIED | L4 is exactly one row, `R1291`, with no full-JP match and no JP object-start candidate. | Canonical membership artifact. | No semantic/write authorization implied. |
 
-## 4. Methodology boundary
+## 4. Canonical partition identities
 
-The current working evidence order is:
+```text
+population rows     700
+INDEX SHA-256       6d79c648b4ee671aa4c0592467b89101de76456a5493ffaadb743014a74fdc76
+
+L1 448 source-ID SHA  181e4fe2ea296510e68cfd4a2119f7b6b755f08dabc32aacbce456543e5a6b20
+L2 163 source-ID SHA  b421ac64c0385a6b9ea27ef0dd6a6e7e0f77ea8490d9e4c3ace9e4bb0eb6524a
+L3  88 source-ID SHA  b4c9af9ba3640634121c757c5585ece80d4e230533b24f6b2d81f4aebff714b2
+L4   1 source-ID SHA  b737b1c34402655ab64cc8f79b2b77dd343cb803555a074045c13f0544823b21
+```
+
+Partition checks: family sum 700, intersection 0, unclassified 0, duplicate source ID 0, duplicate R-number 0.
+
+## 5. Methodology boundary
+
+Current evidence order:
 
 ```text
 Switch structure
@@ -59,13 +78,13 @@ Safety rules:
 - PC mechanism match alone cannot authorize a Switch action;
 - same JP text is not one semantic object by default;
 - replacement agreement is not sufficient;
-- target resolution and write safety remain separate.
+- target resolution and write safety remain separate;
+- canonical family membership is inherited across chats/models unless a legitimate revalidation trigger appears.
 
-The method is recorded in `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`. It is not yet promoted into `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
+## 6. Open evidence gaps / next scope
 
-## 5. Open evidence gaps
-
-1. Exact PC target EXE build 9163702 is not currently available; the Drive EXE is a different size/build.
-2. PF004 requires a preserved exhaustive pointer-set intersection before promotion.
-3. PF005/PF006 require a canonical semantic-review artifact before any membership/count can become machine-verifiable.
-4. The working methodology should pass at least one additional residual family before framework promotion.
+1. Exact PC target EXE build 9163702 is still unavailable locally; target-build preimage/XREF evidence remains blocked.
+2. L1 semantic judgments remain provisional despite exact membership provenance now being fixed.
+3. L2 semantic owner/alias analysis remains future work; its structural one-physical-object result is inherited.
+4. L3 semantic/context/PC-mechanism analysis has not started. This exact 88-row family is the next recommended read-only scope after a fresh user signal.
+5. Do not promote the working methodology into `PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` until another family validates it.

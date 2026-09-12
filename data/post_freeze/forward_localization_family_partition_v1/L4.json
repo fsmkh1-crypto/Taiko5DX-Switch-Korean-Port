@@ -1,0 +1,1 @@
+{"schema":"FORWARD_LOCALIZATION_FAMILY_MEMBERSHIP_V1","family":"L4_NON_JP_LOCALIZATION_START","count":1,"selector":"full_jp_candidate_count == 0 and jp_start_candidate_count == 0","ordered_membership_sha256":"b737b1c34402655ab64cc8f79b2b77dd343cb803555a074045c13f0544823b21","ordered_r_id_sha256":"b9e1ea674ef0f0d87180fa50fff6f4701c6f7f68e9ed61aa171199dfacd05afa","rnums":[1291]}

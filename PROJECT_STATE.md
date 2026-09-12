@@ -1,13 +1,13 @@
 # PROJECT_STATE
 
-Last updated: 2026-09-12 (KST)
+Last updated: 2026-09-13 (KST)
 
 This file is the **sole project-resume authority**. Historical documents and ledgers preserve detailed provenance but do not override this file.
 
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS",
+  "scope_id": "POST_FREEZE_L3_SEMANTIC_PC_MECHANISM_ANALYSIS",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V107",
@@ -47,6 +47,7 @@ This file is the **sole project-resume authority**. Historical documents and led
     "docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md",
     "docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt",
     "docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt",
+    "data/post_freeze/forward_localization_family_partition_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
   ],
   "forbidden_scope_expansion": [
@@ -75,6 +76,7 @@ Completed and inherited without revalidation:
 - V106 pre-freeze governance cleanup: COMPLETE
 - corrected V107 four-pin semantic hash pinning: PASS
 - schema-v1 freeze declaration: **FROZEN — FZ001**
+- forward localization 700 exact family partition: **MATERIALIZED** (`L1=448 / L2=163 / L3=88 / L4=1`)
 
 `FZ001` freezes the exact semantic snapshot that passed corrected V107. It is an authority-state transition only: it does not rename historical `*_candidate` paths, does not change semantic rows, and does not freeze transport evolution.
 
@@ -148,14 +150,40 @@ current INDEX SHA-256      ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c
 
 The historical 20-shard transport is provenance, not a future sharding precedent.
 
-## Post-freeze forward residual working records
+## Post-freeze forward residual records
 
-Current working methodology and findings are recorded separately from machine-accounting/membership work:
+Working method and evidence status:
 
-- `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt` — working evidence order, linguistic/semantic-role method, PC-patch-first occurrence analysis, counterexamples, rejected hypotheses, and evidence limits.
-- `docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt` — status-separated working claims (`VERIFIED`, `MECHANISM_OBSERVED`, `PROVISIONAL`, etc.).
+- `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`
+- `docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt`
 
-These records do not reconstruct historical 467/451/797 membership, do not create new Switch write authorization, and do not modify `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`. Semantic-review results such as 395 and 30/16/3 remain provisional until separately materialized and validated.
+Canonical forward-localization family membership is one hash-pinned directory artifact:
+
+- index: `data/post_freeze/forward_localization_family_partition_v1/INDEX.json`
+- index SHA-256: `6d79c648b4ee671aa4c0592467b89101de76456a5493ffaadb743014a74fdc76`
+- family membership files: `L1.json`, `L2.json`, `L3.json`, `L4.json`
+- inherited L1 subpartition/semantic overlay memberships: `L1_OVERLAYS.json`
+
+Exact partition:
+
+```text
+L1 UNIQUE_FULL_JP_SINGLE_OWNER       448
+L2 SHARED_PHYSICAL_JP_ALIAS          163
+L3 JP_PREFIX_OF_LONGER_OBJECT         88
+L4 NON_JP_LOCALIZATION_START           1
+                                      ---
+                                      700
+intersection                           0
+unclassified                           0
+duplicate R-number                     0
+duplicate source ID                    0
+```
+
+L1 and L2 structural results are inherited and must not be reopened merely because work moves to a new chat/model. L1 exact 399/49 mechanical subpartition and exact memberships of the previously reviewed 395/3/1 and 30/16/3 overlays are now preserved in the canonical partition artifact; those semantic judgments remain PROVISIONAL and are not write authorization.
+
+L3 exact membership is complete. L3 semantic/context/PC-mechanism analysis has **not started** and is the next recommended read-only family scope.
+
+These records do not reconstruct historical 467/451/797 membership and do not modify `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
 
 ## Repository operating state
 
@@ -170,12 +198,12 @@ update_ref(main, force=false)
 
 Text blobs (`.md`, `.json`, `.jsonl`, `.yml`, `.yaml`, `.txt`, source code) are passed as original UTF-8 text. The agent must not manually generate, split, or reassemble Base64 for text. Binary payloads such as gzip require STOP and explicit route approval before any manual Base64 handling.
 
-Recent operating-policy recovery head `3d0c02ce59cf6412085c7188df78008ba96a2442` removed the accidental `__SHOULD_NOT_USE__` file and passed document-governance run `34693640232`. Earlier accidental writes/branches remain historical or non-authoritative provenance only; no force-push or history rewrite was used.
+The accidental/non-canonical commits `84b1f6740132d0288549815c9cc1bf1769595ff0` (`__INVALID_SHOULD_NOT_USE__`), `0f2873539e54035ae45a2c5ea769de657cf56c65` (`__SHOULD_NOT_USE_AGAIN__`), and `33f4199c46917bd871baee8b1929add22f07e2fd` (`foo`) remain historical provenance only. The canonical tree after this forward recovery is based on the last clean tree `30265b89b05678b0f6bee0034444cff3cbd5ede3` and contains none of those files. No force-push or history rewrite is used.
 
 ## Authority and boundaries
 
 - `PROJECT_STATE.md` is the sole project-resume authority.
-- Detailed validation provenance remains in the canonical validation ledgers; VERIFIED facts are not reopened without a legitimate revalidation trigger.
+- Detailed validation provenance remains in canonical validation ledgers; VERIFIED facts are not reopened without a legitimate revalidation trigger.
 - Frozen schema authority does not authorize full migration, builder/IPS/runtime work, mapping, or game-file modification.
 - Transport remains independently versioned and may change only while preserving frozen semantic identities.
 - No silent UNKNOWN authorization, source omission, or synthetic reconstruction of missing canonical rows is allowed.
@@ -184,6 +212,6 @@ Recent operating-policy recovery head `3d0c02ce59cf6412085c7188df78008ba96a2442`
 
 ## Awaiting fresh signal
 
-The next authorized scope is **`POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS`**, read-only analysis under `FZ001` using the two working records above.
+The next authorized scope is **`POST_FREEZE_L3_SEMANTIC_PC_MECHANISM_ANALYSIS`**, read-only analysis of the exact canonical L3 88-row population under `FZ001`.
 
-A fresh explicit user signal is required before starting that scope. Full migration, builder, IPS, runtime implementation, and game-file modification remain outside it.
+A fresh explicit user signal is required before starting that scope. L1/L2 structural classification and family membership are inherited. Full migration, builder, IPS, runtime implementation, and game-file modification remain outside the next scope.
