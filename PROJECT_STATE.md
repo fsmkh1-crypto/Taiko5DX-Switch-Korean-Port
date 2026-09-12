@@ -7,7 +7,7 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS",
+  "scope_id": "FORWARD_986_SEMANTIC_FAMILY_AUDIT",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V107",
@@ -40,6 +40,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/FORWARD_RESIDUAL_STRUCTURAL_CENSUS_251.md",
     "docs/VALIDATION_LEDGER_FORWARD_STRUCTURAL_CENSUS_251.txt",
     "data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json",
+    "docs/FORWARD_986_STABLE_STRUCTURAL_PARTITION.md",
+    "docs/VALIDATION_LEDGER_FORWARD_986_STRUCTURAL.txt",
+    "data/post_freeze/forward_986_stable_structural_partition_v1/INDEX.json",
     "docs/L3_SEMANTIC_PC_MECHANISM_ANALYSIS.md",
     "data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
@@ -55,11 +58,10 @@ PROJECT_RESUME_V2 -->
 
 ## 1. Current state
 
-Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`  
+Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
 Inherited without revalidation:
-
 - Stage 1 canonical inventory: COMPLETE
 - Stage 2 affine structural targeting: COMPLETE
 - F1 localization-sequence audit: COMPLETE
@@ -69,13 +71,13 @@ Inherited without revalidation:
 - PC DLL/runtime mechanics: inherited from canonical runtime documents
 
 Post-freeze forward work:
-
 - CAP64 root-cause audit: COMPLETE
 - corrected raw-start partition v2: MATERIALIZED (`454 / 165 / 116 / 0 = 735`)
 - historical 700-row v1 completeness claim: SUPERSEDED
 - historical L4=R1291 claim: RETRACTED
-- exact structural census of remaining legacy 251 rows: COMPLETE / MATERIALIZED
-- next scope: stable structural synthesis across the full forward 986
+- exact structural census of remaining 251 rows: COMPLETE / MATERIALIZED
+- stable structural synthesis of full forward 986: COMPLETE / MATERIALIZED
+- next scope: semantic-family audit on the stable 986 partition
 
 ## 2. Frozen semantic identities
 
@@ -88,12 +90,11 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35
 ```
 
-CAP64 correction and the 251 census do not reopen these frozen F1 semantic identities.
+Forward structural work does not reopen these frozen F1 semantic identities.
 
 ## 3. Canonical target and stable accounting
 
 Target:
-
 - Title ID `0100346017304000`
 - Switch v1.1.3
 - Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`
@@ -120,114 +121,83 @@ F1_RULE_REJECTED                      16
 TOTAL                                278
 ```
 
-## 4. CAP64 corrected raw-start authority
+## 4. Historical forward artifacts retained as provenance
 
-Canonical corrected raw-start artifact:
-
+CAP64 correction:
 - `data/post_freeze/forward_localization_raw_start_partition_v2/INDEX.json`
-- SHA-256 `7134f9df08d6541d099bf0bf6dd305fc6232967910ef5ecb2818923da46ae4fc`
+- raw-start relation count: 735
+- L1/L2/L3/L4 = 454 / 165 / 116 / 0
 
-Current raw-start relation:
+Residual structural census:
+- `data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json`
+- exact population count: 251
+- 13 exact structural families within that historical population
+- corrected provisional logical-relation observation: 79 -> 78
 
-```text
-L1 UNIQUE_FULL_JP_SINGLE_OWNER       454
-L2 SHARED_PHYSICAL_JP_ALIAS          165
-L3 JP_PREFIX_OF_LONGER_OBJECT        116
-L4 NON_JP_LOCALIZATION_START           0
-                                      ---
-                                      735
-```
+The historical `735 / 251` split is not a stable data-structure boundary.
 
-The historical `forward_localization_family_partition_v1/` remains provenance only for its old 700-row completeness claim.
+## 5. Current structural authority — forward 986
 
-CAP rule remains:
-
-- a stored raw candidate count of 64 is censored and means actual count `>= 64`;
-- capped lists cannot prove absence, uniqueness/cardinality, complete language domain, or complete storage mutability.
-
-Existing L1 semantic overlays remain scoped to their original 448 rows.
-Existing L3 semantic overlay remains scoped to its original 88 rows.
-R2300 retains an expanded-candidate re-review trigger.
-No CAP64 correction row is Switch-write authorized by this correction.
-
-## 5. Exact structural census of the remaining 251
-
-Canonical report:
-
-- `docs/FORWARD_RESIDUAL_STRUCTURAL_CENSUS_251.md`
-- SHA-256 `e4c860cb3dbd38bce6d7881aafca73688cb10f042ef441f1072cb372a45da483`
+Canonical document:
+- `docs/FORWARD_986_STABLE_STRUCTURAL_PARTITION.md`
+- SHA-256 `c4c59977ae8072162009c637f6e35716dfbce7e4926587be4dab0147ec5939b3`
 
 Validation ledger:
+- `docs/VALIDATION_LEDGER_FORWARD_986_STRUCTURAL.txt`
+- SHA-256 `13cbfa16e31ebc553bc720fcc3e3f2dc8017a7599b309d639ed65d029a5171f9`
 
-- `docs/VALIDATION_LEDGER_FORWARD_STRUCTURAL_CENSUS_251.txt`
-- SHA-256 `23b1b72270c06d7b65a5d2b066cd32eda630c7372929d1f2f0492d50abf5c2b9`
+Machine-readable index:
+- `data/post_freeze/forward_986_stable_structural_partition_v1/INDEX.json`
+- SHA-256 `1aaa6355f5f7618f883eca217282dbae960fb6ef02e55c2d1e5be728b47bffe0`
 
-Machine-readable artifacts:
+Machine-readable membership:
+- `data/post_freeze/forward_986_stable_structural_partition_v1/MEMBERSHIP.json`
+- SHA-256 `487b287b6d2a0cb0ea23aa2ab66ab5189418c08ab916d0b8c539fca4a75a8e4c`
 
-- `data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json`
-  - SHA-256 `7091621b3a5e5eb3028907df182036780f28fcba34e51d7ecc2bf1578b26766a`
-- `data/post_freeze/forward_residual_structural_census_251_v1/MEMBERSHIP.json`
-  - SHA-256 `c84f4fde42721c698ef1227836b67fb0eaaf005ee52a4ffbf46fcbbb98f480d9`
-
-Exact structural partition:
-
-```text
-E1 TERMINATED_LOGICAL_FULL_SINGLE              67
-E2 TERMINATED_LOGICAL_FULL_SHARED               6
-E3 TERMINATED_LOGICAL_PREFIX                    4
-E4A EMBEDDED_SINGLE_NO_RAW_OCCURRENCE          18
-E4B EMBEDDED_SINGLE_RAW_MULTI_OCCURRENCE        8
-E5 EMBEDDED_MULTI_PHYSICAL                    104
-E6 EMPTY_LOGICAL_WINDOW                         1
-E7 OPAQUE_FIXED_BLOCK_3244_3250                 7
-G1 AFFINE_GAP_REGION_TABLE                      7
-G2 AFFINE_GAP_ROLE_TABLE                       13
-G3 AFFINE_GAP_ITEM_TABLE                        7
-G4 AFFINE_GAP_UI_HEADER_COMPOSITE               1
-G5 AFFINE_GAP_UTF16_MIXED_BLOCK                 8
-                                                ---
-                                                251
-```
-
-Integrity:
+Stable partition:
 
 ```text
-family sum            251
-intersection            0
-unclassified            0
-duplicate R-number      0
-ordered source-ID SHA  2158d76714750ef9dd3661e9fba5ac6e14ab65d327e70dcdd567eac16c2ae80f
-ordered R-ID SHA       891bda7b16bc8b3d59725c8a03f28ce3d04b9838b41611a1f7793c7e8a8090b4
+S1 LOGICAL_FULL_SINGLE_PHYSICAL_SINGLE_OWNER      517
+S2 LOGICAL_FULL_SINGLE_PHYSICAL_SHARED_OWNER      167
+S3 LOGICAL_PREFIX_OF_LONGER_JP_OBJECT             112
+S4A EMBEDDED_SINGLE_PHYSICAL_NO_RAW_OCCURRENCE     18
+S4B EMBEDDED_SINGLE_PHYSICAL_RAW_MULTI_OCCURRENCE   8
+S5 EMBEDDED_MULTI_PHYSICAL                         104
+S6 EMPTY_LOGICAL_WINDOW                              1
+S7 OPAQUE_FIXED_BLOCK_3244_3250                     7
+T1 REGION_TABLE                                      7
+T2 ROLE_STATUS_PROFESSION_TABLE                     19
+T3 ITEM_CATEGORY_TABLE                               7
+T4 CP932_UI_LABEL_BLOCK                             10
+T5 UTF16_MIXED_UI_BLOCK                              9
+                                                    ---
+                                                    986
+intersection                                          0
+unclassified                                          0
 ```
 
-The earlier provisional count of 79 additional JP logical relations is superseded by 78. `R1690` normalizes to an empty logical string and is isolated as E6; empty-string prefix matching is invalid evidence.
+Population ordered source-ID SHA-256: `52d71e85ff11b7327a563623ba00ea99dd7e7fdb733724b17b0a598e2579b370`
+Population ordered R-ID SHA-256: `76ec677dd6cc9b97f82828925f32296328cef6d7a3140b0d75a2a1c60f0af776`
 
-The legacy 35 formatter rows are not a top-level structural family. They distribute as E1=1, E4B=1, E5=33 and remain an overlay.
+Structural precedence:
+1. coherent table/storage/encoding family;
+2. NUL-aware logical full match;
+3. shared-owner cardinality;
+4. logical prefix;
+5. embedded containment;
+6. opaque/unknown structure.
 
-## 6. Current structural boundary
+Legacy formatter 35 remains an overlay: S1=1 / S4B=1 / S5=33.
 
-The 735 raw-start relation and the exact 251 census are both valid within their historical parent populations, but the boundary between them is not guaranteed to be a true data-structure boundary.
+## 6. Historical semantic overlay scope
 
-Coherent table/object structures cross the historical split. Therefore the next task is not semantic review of one family in isolation.
-
-Next required analytical scope:
-
-`FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS`
-
-Goals:
-
-1. combine all 986 forward rows;
-2. preserve exact membership/provenance from both current artifacts;
-3. merge or split families only when physical object, table, storage, encoding, or occurrence structure justifies it;
-4. produce one stable 986-row structural taxonomy;
-5. defer semantic target approval until that taxonomy is stable;
-6. keep consumer tracing as last resort.
-
-This does not reopen F1 accepted 262 or Stage-2 affine target mappings.
+- Historical L1 semantic overlays remain evidence for their original reviewed membership only; stable S1 is broader.
+- Historical L3 88-row semantic/context review remains evidence for its original rows, but table-family rows now have stronger stable structural parents.
+- The existing unresolved five `R651, R1062, R1277, R1283, R1284` remain in stable S3.
+- `R2300` remains in S3 and retains its expanded-candidate-set re-review trigger.
+- No row is newly Switch-write authorized by the stable structural synthesis.
 
 ## 7. Repository operating state
-
-Repository writes use `GIT_OBJECT_ONLY_WRITE_MODE`.
 
 Permitted remote write actions are exactly:
 
@@ -240,22 +210,25 @@ update_ref(main, force=false)
 
 Forbidden write actions include `update_file`, `create_file`, `delete_file`, `create_branch`, force-push, and history rewrite.
 
+Historical write-rule violations from the prior 251 canonicalization attempt remain provenance only. The temporary files created by those noncanonical Contents-API commits were removed by canonical recovery commit `60ee3d8c9a63ae817a93e1996d0077e53c742e80`. They must not be repeated or used as precedent.
+
 ## 8. Authority and boundaries
 
 - `PROJECT_STATE.md` is the sole resume authority.
-- Historical documents remain provenance and are not silently deleted.
-- Verified F1 and Stage-2 affine facts are not reopened without a legitimate trigger.
-- Structural membership is not semantic target approval.
+- Verified F1 and Stage-2 affine facts are not reopened by forward structural synthesis.
+- Historical artifacts remain provenance; supersession does not delete history.
+- Stable structural family identity is distinct from semantic target disposition.
 - `TARGET_RESOLVED` remains distinct from `WRITE_SAFE`.
 - PC Korean patch behavior remains the reference before inventing Switch-specific mechanisms.
-- Accidental noncanonical commits `6aabde5e77a58e51fbe125101ae1b3f1309b4887`, `0c99cec726b7b1d0a0acefafb7d9ee30ebab6fdd`, `e19810b00258f726feb4edb0b398bc2f70b0127c`, `f3534d8d8b25c0dacd74e60652fa74bb148eb819` (temporary test files created by forbidden Contents-API writes) are historical provenance only. The canonical recovery commit removes all temporary files through Git-tree construction; no force-push/history rewrite is used.
-- `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` is unchanged.
-- No builder/IPS/runtime implementation, game-file modification, full migration, or Switch write authorization is currently authorized.
+- No full migration, builder, IPS, runtime implementation, game-file modification, or new Switch write authorization is currently authorized.
 
 ## 9. Awaiting fresh signal
 
 STOPPED_AWAITING_USER_SIGNAL.
 
-Next recommended scope: read-only `FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS`.
+Next recommended scope: `FORWARD_986_SEMANTIC_FAMILY_AUDIT`.
 
-Do not begin semantic family audit, framework modification, builder/runtime work, or repository writes without a fresh explicit signal.
+Recommended analysis order:
+T1-T5 -> S1 additional/unreviewed scope -> S2 -> S3 -> S4A/S4B -> S5 -> S6/S7.
+
+Do not begin semantic review, framework modification, builder/runtime work, or further repository writes without a fresh explicit signal.

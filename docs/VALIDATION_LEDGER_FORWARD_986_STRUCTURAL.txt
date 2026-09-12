@@ -1,0 +1,19 @@
+# Validation ledger — forward 986 stable structural synthesis
+
+Date: 2026-09-13
+Status: CURRENT STRUCTURAL AUTHORITY / NO SWITCH WRITE AUTHORIZATION
+
+| ID | Status | Claim | Evidence / limit |
+|---|---|---|---|
+| FS001 | VERIFIED | Forward-analysis parent population remains 986 = Stage-2 residual 1,248 - F1 accepted 262. | Existing canonical accounting; not reopened. |
+| FS002 | VERIFIED | Historical 735 raw-start and 251 residual-census populations are exact, disjoint provenance inputs whose union is 986. | Canonical v2 raw-start INDEX + canonical 251 INDEX. |
+| FS003 | VERIFIED | The stable structural partition contains 13 families totaling 986 with intersection 0 and unclassified 0. | `forward_986_stable_structural_partition_v1/MEMBERSHIP.json`. |
+| FS004 | VERIFIED | S1=517 and S2=167 unify raw-start and NUL-terminated logical full-match structures after stronger table overrides. | Exact membership synthesis. |
+| FS005 | VERIFIED | S3=112 unifies logical-prefix structures after removing stronger T2/T4/T5 table/storage rows. | Exact membership synthesis. |
+| FS006 | VERIFIED | T2=19 absorbs six raw-start role/status/profession rows; T4=10 crosses prior L1/L2/L3/G4 boundaries; T5=9 absorbs R16461 into UTF-16/mixed storage context. | Coherent table/storage sequence evidence. |
+| FS007 | VERIFIED | Legacy formatter 35 is an overlay distributed 1/1/33 across S1/S4B/S5 and is not a top-level structural family. | Historical formatter membership crossed with stable partition. |
+| FS008 | VERIFIED | Ordered population source-ID SHA-256 is `52d71e85ff11b7327a563623ba00ea99dd7e7fdb733724b17b0a598e2579b370` and ordered R-ID SHA-256 is `76ec677dd6cc9b97f82828925f32296328cef6d7a3140b0d75a2a1c60f0af776`. | Deterministic ascending-R hash rule. |
+| FS009 | VERIFIED | Stable structural synthesis does not reopen F1 262, Stage-2 affine mappings, FZ001, or PC DLL/runtime conclusions. | Scope boundary. |
+| FS010 | PROVISIONAL | Semantic review should proceed table families first, then S1/S2/S3/S4/S5/S6/S7. | Efficiency recommendation only; not semantic authority. |
+
+No semantic target approval, consumer-tracing resolution, framework promotion, builder/runtime action, or Switch write authorization is recorded here.
