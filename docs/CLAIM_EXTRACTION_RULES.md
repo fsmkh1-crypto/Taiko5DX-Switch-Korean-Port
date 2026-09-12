@@ -9,7 +9,9 @@ Status: CANDIDATE / NOT FROZEN
   "facts": {
     "source_anchor_gate_registry": [
       "anchor_blob_",
+      "anchor_document_",
       "anchor_heading_",
+      "anchor_present_",
       "anchor_text_hash_",
       "anchor_text_in_heading_"
     ],
@@ -95,14 +97,16 @@ anchor_text
 anchor_text_sha256
 ```
 
-The current validator checks all effective claims for four independent properties:
+The current validator exposes six independent source-anchor gate families:
 
-- bound document Git blob identity;
-- anchor-text SHA-256;
-- unique `heading_path` resolution in the bound Markdown document;
-- anchor occurrence inside the resolved heading section.
+- `anchor_present_` — the source-anchor object exists;
+- `anchor_document_` — the bound document path exists;
+- `anchor_blob_` — the bound document Git blob identity matches;
+- `anchor_text_hash_` — the anchor-text SHA-256 matches;
+- `anchor_heading_` — `heading_path` resolves uniquely in the bound Markdown document;
+- `anchor_text_in_heading_` — the anchor occurs inside the resolved heading section.
 
-A heading that resolves to zero or multiple sections fails. Merely finding the anchor text somewhere else in the same document is insufficient.
+A missing source-anchor object or bound document fails before the later identity/section checks can succeed. A heading that resolves to zero or multiple sections fails. Merely finding the anchor text somewhere else in the same document is insufficient.
 
 Historical coverage may continue to point to a superseded claim because it records what text was originally extracted. New active decisions must resolve through the supersession graph to active claims.
 
