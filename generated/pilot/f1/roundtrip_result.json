@@ -1,0 +1,15 @@
+{
+  "assertion_bearing_blocks":47,
+  "coverage_blocks":61,
+  "exact_textual_roundtrip":true,
+  "extracted_blocks":47,
+  "metadata_blocks":12,
+  "narrative_only_blocks":2,
+  "reconstructed_sha256":"e0087ccbb3460df384469b8a91ab4b412dce3e8d4ebd5a5833aa25dc7e74e667",
+  "schema":"ROUNDTRIP_RESULT_V0_1_PILOT",
+  "source_document":"docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+  "source_git_blob_sha":"ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+  "source_sha256":"e0087ccbb3460df384469b8a91ab4b412dce3e8d4ebd5a5833aa25dc7e74e667",
+  "unexplained_blocks":0,
+  "unexplained_roundtrip_diff_count":0
+}

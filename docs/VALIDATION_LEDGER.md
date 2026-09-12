@@ -19,6 +19,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V082–V086: `docs/VALIDATION_LEDGER_STAGE2.md`
 - V087–V092: `docs/VALIDATION_LEDGER_F1.md`
 - V093–V095: `docs/VALIDATION_LEDGER_F1_AUTH.md`
+- V096–V098: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
 
 ## Current precedence
 
@@ -29,6 +30,9 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
 - F1 localization sequence audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
 - F1 row-level static authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
+- machine-accounting pilot schema: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
+- pilot claim extraction rules: `docs/CLAIM_EXTRACTION_RULES.md`
+- machine-accounting F1 pilot: `docs/F1_MACHINE_ACCOUNTING_PILOT.md`
 - current resume point: `PROJECT_STATE.md`
 
 Later narrower-scope corrections take precedence over older semantic overclaims.
@@ -36,4 +40,6 @@ Historical PCREF1 remains provenance-insufficient under V062 and must not be use
 
 F1 V088/V092 supersede only the later provisional F1 promotion/accounting that treated all 278 F1 residual rows as accepted. They do not modify Stage-2 V082–V086.
 
-F1 V093/V094 close the missing row-level provenance for the exact 158 V089 static-safe rows and authorize only those manifest actions as `DIRECT_PORT` static writes. V095 is metadata-only cleanup: it distinguishes the canonical 20-byte project Build ID from the padded 32-byte NSO header field and records that duplicate local replay outputs were not duplicate canonical repository artifacts. These entries do not authorize the 25 shared-owner, 4 capacity-fail, 75 padding-reconstruction, or 16 F1-rejected rows, and they do not constitute builder/IPS/runtime implementation.
+F1 V093/V094 close the missing row-level provenance for the exact 158 V089 static-safe rows and authorize only those manifest actions as `DIRECT_PORT` static writes. V095 is metadata-only cleanup: it distinguishes the canonical 20-byte project Build ID from the padded 32-byte NSO header field and records that duplicate local replay outputs were not duplicate canonical repository artifacts.
+
+V096–V098 validate a machine-readable schema **pilot**, not a schema freeze or full migration. During the pilot existing canonical Markdown remains authoritative. Pilot data must not be used to infer that V001–V095 or the full 27,430 mixed-granularity inventory has been migrated.

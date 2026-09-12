@@ -1,0 +1,15 @@
+{
+  "default_diff_disposition": "NONE",
+  "default_migration_status": "ROUNDTRIP_PASS",
+  "default_roundtrip_status": "ROUNDTRIP_PASS",
+  "migration_id": "MIGRATION-F1-PILOT-2026-09-12",
+  "parts": [
+    {"entity_type":"SOURCE_STATE","file":"source_state.json","rows":278,"sha256":"9a2d40ad61a748be57c9a9c1556eef25cab36311f3bf5d21c920062f776783c5"},
+    {"entity_type":"ACTION","file":"action.json","rows":158,"sha256":"f55deece6e24763cab4ea70d1054988aadb627dac5bd1f762989fde2ac417120"},
+    {"entity_type":"SOURCE_ACTION_EDGE","file":"source_action_edge.json","rows":158,"sha256":"b584bedd084cf6da31d9d701e6677d03ec3191b457488217f87d4090bc623eb8"},
+    {"entity_type":"VALIDATION_CLAIM","file":"validation_claim.json","rows":42,"sha256":"d81f6a2c63dabcbe0125cbf6eb79997b2132dfa95e3e9e5be31e71caf09dd46e"},
+    {"entity_type":"SOURCE_ANCHOR_BLOCK","file":"source_anchor_block.json","rows":61,"sha256":"b32ce089cd262fee81ab020e1f27cb17afe44044e1e0e4c6c348ad8378dd39ba"}
+  ],
+  "schema": "MIGRATION_MANIFEST_COMPACT_INDEX_V0_1_PILOT",
+  "total_entries": 697
+}

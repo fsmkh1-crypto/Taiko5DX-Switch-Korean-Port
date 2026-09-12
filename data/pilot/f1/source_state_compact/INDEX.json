@@ -1,0 +1,15 @@
+{
+  "logical_content_sha256": "84270e4942de6e6c59bae32936ca7071568441c48544bfa9094c14ff8c15f79e",
+  "logical_name": "source_state_compact",
+  "parts": [
+    {"file":"part-01.jsonl","rows":40,"sha256":"2ea562edb827568ef48f65a9be0c5f43ad08b3f7007716c22601b1818ad3a24e"},
+    {"file":"part-02.jsonl","rows":40,"sha256":"7f941df67bc8da38acbe3cc5664b09fa3fc9f6a4daab0a77151920abb3577fcd"},
+    {"file":"part-03.jsonl","rows":40,"sha256":"de36cf4c9c0cc21f07ae6182f3a28006f3ca145394e57f84c375af73ff32ca70"},
+    {"file":"part-04.jsonl","rows":40,"sha256":"edf9110c89dff4bddda1933cc3e8258ee1f5d76dbb22628f93bb56b9d4336ca1"},
+    {"file":"part-05.jsonl","rows":40,"sha256":"e773598dcfbd3d70cc3d726b18e4f9be3774d55cdacc4544e3d23d6bc4d9e82e"},
+    {"file":"part-06.jsonl","rows":40,"sha256":"31374718938a7c1cb604a9c99e7b12e01e03add9c6093b4a1759994fa6981ad7"},
+    {"file":"part-07.jsonl","rows":38,"sha256":"13bf37fbc6c66c6f3238a0e94de2bf77afee6d31abd2c587d596f0490975d772"}
+  ],
+  "schema": "COMPACT_SHARDED_JSONL_INDEX_V0_1_PILOT",
+  "total_rows": 278
+}

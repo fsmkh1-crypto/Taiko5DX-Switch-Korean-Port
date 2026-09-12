@@ -1,0 +1,38 @@
+{
+  "logical_content_sha256": "14c20fa7089629644a3f7afda45831f1aa1b1c39f558bff5f1acf2b399f91bec",
+  "logical_name": "source_anchor_coverage",
+  "parts": [
+    {
+      "file": "part-01.jsonl",
+      "rows": 12,
+      "sha256": "9a4c856081caa5e17a62664fc66b10b6c17f51604fd5c8064eed6ff9d9f8910d"
+    },
+    {
+      "file": "part-02.jsonl",
+      "rows": 12,
+      "sha256": "676078c209f22a48aae879bccab4193fe72917b1abf4a1da6bdca9cea3b663fa"
+    },
+    {
+      "file": "part-03.jsonl",
+      "rows": 12,
+      "sha256": "dbf892393e91e075d44e6ac543dafe1bed4926c436208ccb5baecc3851155171"
+    },
+    {
+      "file": "part-04.jsonl",
+      "rows": 12,
+      "sha256": "e8600b27e0f4f0636da498ed7ad5f2142cf6c5873eebd51d2c56cca37f726b6d"
+    },
+    {
+      "file": "part-05.jsonl",
+      "rows": 12,
+      "sha256": "a6670838ca6d6560639040cee594f0ece33cbcea0a9b518e3980d2fb00d39fa4"
+    },
+    {
+      "file": "part-06.jsonl",
+      "rows": 1,
+      "sha256": "3dae24a21765f6d7b6432cd7867ff23f8b7344f2b69b20a5019e8878caff5eed"
+    }
+  ],
+  "schema": "COMPACT_SHARDED_JSONL_INDEX_V0_1_PILOT",
+  "total_rows": 61
+}

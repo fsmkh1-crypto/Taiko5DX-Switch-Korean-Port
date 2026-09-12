@@ -1,0 +1,16 @@
+{
+  "actions": ["FIXTURE-A1","FIXTURE-A2","FIXTURE-A3","FIXTURE-A4","FIXTURE-A5"],
+  "edges": [
+    {"action_id":"FIXTURE-A1","source_id":"FIXTURE-S1"},
+    {"action_id":"FIXTURE-A2","source_id":"FIXTURE-S1"},
+    {"action_id":"FIXTURE-A3","source_id":"FIXTURE-S2"},
+    {"action_id":"FIXTURE-A3","source_id":"FIXTURE-S3"},
+    {"action_id":"FIXTURE-A4","source_id":"FIXTURE-S4"},
+    {"action_id":"FIXTURE-A5","source_id":"FIXTURE-S4"},
+    {"action_id":"FIXTURE-A4","source_id":"FIXTURE-S5"},
+    {"action_id":"FIXTURE-A5","source_id":"FIXTURE-S5"}
+  ],
+  "expected": {"FIXTURE-S1":"1:N","FIXTURE-S2":"N:1","FIXTURE-S3":"N:1","FIXTURE-S4":"N:M","FIXTURE-S5":"N:M"},
+  "schema":"CARDINALITY_FIXTURE_V0_1",
+  "sources":["FIXTURE-S1","FIXTURE-S2","FIXTURE-S3","FIXTURE-S4","FIXTURE-S5"]
+}

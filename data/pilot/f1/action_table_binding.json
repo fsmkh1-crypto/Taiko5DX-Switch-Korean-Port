@@ -1,0 +1,8 @@
+{
+  "canonical_action_manifest": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz",
+  "expected_actions": 158,
+  "expected_edges": 158,
+  "manifest_content_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff",
+  "manifest_file_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
+  "schema": "ACTION_TABLE_BINDING_V0_1_PILOT"
+}

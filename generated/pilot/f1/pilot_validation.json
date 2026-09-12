@@ -1,0 +1,15 @@
+{
+  "schema":"MACHINE_ACCOUNTING_PILOT_VALIDATION_V0_1",
+  "result":"PASS",
+  "counts":{"sources":278,"actions":158,"edges":158,"claims":42,"coverage_blocks":61,"migration_entries":697},
+  "seven_gates":{
+    "membership_preservation":true,
+    "provenance_preservation":true,
+    "blocker_meaning_preservation":true,
+    "source_action_cardinality_preservation":true,
+    "no_silent_unknown_pass":true,
+    "unexplained_roundtrip_diff_zero":true,
+    "source_anchor_unexplained_zero":true
+  },
+  "note":"Canonical compact result. Run tools/validate_machine_accounting_pilot.py to reproduce detailed checks."
+}

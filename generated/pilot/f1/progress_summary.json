@@ -1,0 +1,19 @@
+{
+  "absolute": {"closed_over_total": [158,278],"excluded_over_total": [0,278],"target_resolved_over_total": [262,278]},
+  "analysis_state": {"ANALYZED_UNRESOLVED":16,"RESOLVED":262},
+  "applicable_denominator":278,
+  "blockers": {"F1_RULE_REJECTED_MIN_FINAL_INTERVAL":16,"NONE":158,"PADDING_RECONSTRUCTION_REQUIRED":75,"SHARED_OWNER_BINDING_REQUIRED":25,"TERMINATOR_CAPACITY_FAIL":4},
+  "closure_state": {"CLOSED":158,"OPEN":120},
+  "handoff_family": {"F1_PADDING_RECONSTRUCTION":75,"F1_STORAGE_RECONSTRUCTION":4,"NONE":158,"RESIDUAL_FAMILY_UNASSIGNED":16,"SHARED_OWNER_BINDING":25},
+  "pilot_scope":"F1_RESIDUAL_278",
+  "schema":"PROGRESS_SUMMARY_V0_1_PILOT",
+  "target_status":{"RESOLVED":262,"UNRESOLVED":16},
+  "total_denominator":278,
+  "verified_exclusions":0,
+  "write_authority_by_responsible_family": {
+    "F1_LOCALIZATION_STATIC_DIRECT":{"authorized":158,"blocked_or_open":0,"responsibility_denominator":158},
+    "F1_PADDING_RECONSTRUCTION":{"authorized":0,"blocked_or_open":75,"responsibility_denominator":75},
+    "F1_STORAGE_RECONSTRUCTION":{"authorized":0,"blocked_or_open":4,"responsibility_denominator":4},
+    "SHARED_OWNER_BINDING":{"authorized":0,"blocked_or_open":25,"responsibility_denominator":25}
+  }
+}

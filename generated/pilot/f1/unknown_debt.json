@@ -1,0 +1,10 @@
+{
+  "affected_sources":41,
+  "by_field":{"owner_binding":25,"target_identity":16},
+  "by_resolution_requirement":{
+    "Bind every relevant logical owner to its PC obligation and prove replacement agreement or conflict before choosing I3 shared overwrite or I4 redirection.":25,
+    "Resolve this source under another verified target-resolution family or independently promote the candidate with new evidence.":16
+  },
+  "schema":"UNKNOWN_DEBT_V0_1_PILOT",
+  "total_unknown_items":41
+}

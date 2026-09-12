@@ -11,8 +11,9 @@ Stage 1 canonical inventory: COMPLETE.
 Stage 2 affine structural targeting: COMPLETE.
 F1 unique-anchor bounded localization sequence audit: COMPLETE.
 F1 158-row static write authorization/provenance closure: COMPLETE.
+Machine-readable accounting schema + F1 278-row pilot: COMPLETE / PASS / NOT FROZEN.
 
-The exact 158 F1 actions are now row-level `DIRECT_PORT` authorized for future static builder consumption, subject to their manifest guards. No builder, IPS, ZIP, runtime artifact, or game-file modification was performed in this authorization stage.
+The exact 158 F1 actions remain row-level `DIRECT_PORT` authorized for future static builder consumption, subject to their existing V094 manifest guards. The machine-accounting pilot does not reauthorize them and does not modify builder/IPS/runtime/game data.
 
 Canonical target:
 - Title ID `0100346017304000`
@@ -23,82 +24,88 @@ Canonical target:
 ## Accounting snapshot
 
 ```text
-source-ledger rows                         27,430
-inline rows                                17,103
-Stage-1 raw exceptions                     11,050
-Stage-2 affine target-resolved             13,771
-Stage-1 exceptions target-resolved          9,802
-Stage-2 residual                            1,248
-post-Stage2 provisional target-resolved       467
-F1 rows returned by stricter gate              16
-conservative later target-resolved             451
-conservative target-unresolved residual        797
+historical mixed-granularity inventory records  27,430
+leaf-obligation records after descriptor groups 27,419
+inline rows                                      17,103
+Stage-1 raw exceptions                           11,050
+Stage-2 affine target-resolved                   13,771
+Stage-1 exceptions target-resolved                9,802
+Stage-2 residual                                  1,248
+post-Stage2 provisional target-resolved             467
+F1 rows returned by stricter gate                    16
+conservative later target-resolved                   451
+conservative target-unresolved residual              797
 ```
 
-The `797` target-unresolved working count is unchanged by static authorization of already target-resolved rows.
+`27,430` and `27,419` are not universal progress percentages. Progress is tracked by family/axis with fixed denominators.
 
-## F1 authorization snapshot
-
-Historical F1 residual population: 278.
+## F1 machine-accounting pilot snapshot
 
 ```text
-F1_STATIC_WRITE_AUTHORIZED                    158
-TARGET_RESOLVED_CAPACITY_FAIL                   4
-TARGET_RESOLVED_PADDING_RECONSTRUCTION_REQUIRED 75
-TARGET_RESOLVED_OTHER_BLOCKER                  25
-F1_RULE_REJECTED                               16
-TOTAL                                          278
+pilot sources                     278
+analysis RESOLVED                 262
+analysis ANALYZED_UNRESOLVED       16
+target RESOLVED                   262
+closure CLOSED                    158
+closure OPEN                      120
+verified exclusions                0
+actions                           158
+source/action edges               158
+atomic validation claims           42
+source-coverage blocks              61
+unexplained coverage blocks          0
+migration-manifest entities        697
 ```
 
-Deterministic selector replay reproduced exactly:
+Blocker split remains canonical:
 
 ```text
-search segments            142
-anchor-bounded mapped    1,402
-residual in bounds          278
-accepted segments           112
-accepted mapped           1,311
-accepted residual           262
-rejected residual            16
+DIRECT_PORT authorized                    158
+PADDING_RECONSTRUCTION_REQUIRED            75
+SHARED_OWNER_BINDING_REQUIRED              25
+TERMINATOR_CAPACITY_FAIL                    4
+F1_RULE_REJECTED                           16
+TOTAL                                     278
 ```
 
-Row-level artifacts:
+Write-authority responsibility is family-scoped:
 
-- `tools/f1_static_authorization.py`
-- `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
-- `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz`
-- `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json`
+```text
+F1_LOCALIZATION_STATIC_DIRECT  158 / 158
+F1_PADDING_RECONSTRUCTION        0 / 75
+F1_STORAGE_RECONSTRUCTION        0 / 4
+SHARED_OWNER_BINDING             0 / 25
+```
 
-Manifest content SHA-256: `c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`; canonical compressed file SHA-256: `8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`. The summary V1 legacy key `canonical_build_id` stores the full 32-byte NSO header field; the project Build ID above remains the 20-byte identity.
+UNKNOWN debt in the pilot is explicit:
 
-Important boundaries:
+```text
+target_identity   16
+owner_binding     25
+```
 
-- the 158 authorized rows are 158 unique PC source rows -> 158 unique localization IDs -> 158 unique physical JP-only objects;
-- every authorized action has an exact original-byte guard, 1:1 object cardinality, terminating-NUL proof, single logical owner, and zero overlap with the F1 full-window set and Stage-2 targets;
-- 4 capacity failures, 75 padding-reconstruction rows, 25 shared-owner rows, and 16 F1-rule rejects remain excluded;
-- no builder/IPS/runtime work is implied by authorization alone.
+All seven pilot gates pass, including exact F1 audit textual round trip and source-anchor `UNEXPLAINED=0`.
 
-## Canonical safety rules added by F1
+## Pilot artifacts
 
-- full original-byte guard plus same replacement length is not sufficient for a string write;
-- capacity includes the terminating NUL and is bounded by actual Switch storage;
-- PC NUL padding must not be assumed available on Switch;
-- raw PC-length writes are forbidden for the F1 padding-mismatch family;
-- shared physical object overwrite requires source obligation closure for all relevant logical owners;
-- an F1 final anchor-bounded segment itself must satisfy the minimum five-row promotion gate;
-- the canonical F1 selector is now reproducible and must not be replaced by raw uniqueness or aggregate-count fitting.
+- schema: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
+- claim rules: `docs/CLAIM_EXTRACTION_RULES.md`
+- report: `docs/F1_MACHINE_ACCOUNTING_PILOT.md`
+- validation ledger: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
+- machine pilot data: `data/pilot/f1/`
+- generated pilot summaries: `generated/pilot/f1/`
+- isolated cardinality fixture: `tests/fixtures/machine_accounting_cardinality.json`
+- validator: `tools/validate_machine_accounting_pilot.py`
 
-## Canonical documents
+Large JSONL tables are deterministically sharded and indexed. `FIXTURE-*` IDs are forbidden from project state and contribute zero project facts/progress.
 
-- rules: `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`
-- invariants: `docs/PC_TO_SWITCH_ACCOUNTING_INVARIANTS.md`
-- Stage 1: `docs/FULL_PORT_INVENTORY_STAGE1.md`
-- Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
-- F1 audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
-- F1 static authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
-- validation index: `docs/VALIDATION_LEDGER.md`
+## Authority boundary
 
-R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, F1 authorization, and V095 metadata-cleanup ledger facts remain canonical; do not revalidate them merely because a new chat/model is used.
+The schema is **not frozen**. Existing canonical Markdown remains authoritative during the pilot. The machine layer is a validated candidate representation, not yet a replacement for V001–V095 Markdown ledgers.
+
+No full V001–V095 migration, no full 27,430/27,419 source migration, no new 797 residual-family analysis, and no builder/IPS/runtime work was performed.
+
+R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, F1 authorization, V095 cleanup, and V096–V098 pilot facts remain canonical; do not revalidate them merely because a new chat/model is used.
 
 ## Mandatory boundaries
 
@@ -109,9 +116,12 @@ R0/R1/R1B/R1C, Stage 1, Stage 2, F1 audit, F1 authorization, and V095 metadata-c
 - consumer tracing is an exception/family tool, not the default for structurally resolved rows.
 - one diagnostic build = one root-cause family.
 - no force-push and no silent source omission.
+- no silent UNKNOWN authorization.
+- no denominator exclusion without a verified exclusion claim.
+- machine claim IDs are immutable after issuance.
 
 ## Next stage
 
 Fresh execution signal required.
 
-If the next scope is implementation, consume exactly the 158 manifest actions as one F1 static-direct family with fail-closed canonical-input and per-row original-byte guards. Do not mix the 25 shared-owner rows, 4 capacity failures, 75 padding-reconstruction rows, yomi, F2-F5, bounded-gap candidates, CN sequence, UTF-16, or unrelated runtime work into that implementation step.
+Recommended next step is **schema-freeze review only**: inspect V096–V098 pilot outputs, decide whether any schema amendment is required, then freeze v1 if accepted. Do not combine schema freeze with the full corpus migration, 797 analysis, builder implementation, mapping/runtime work, or game-file modifications.

@@ -1,0 +1,10 @@
+{
+  "logical_content_sha256": "3e7063b577bad521a9cc72550e67e9ae3bf8089ea09675748fe1e03dff67653d",
+  "logical_name": "source_action_edges_compact",
+  "parts": [
+    {"file":"part-01.jsonl","rows":80,"sha256":"8af1216c591a5f56423766c2fa28ee46e28ba74fd0fffe8c7de9479a7dc77709"},
+    {"file":"part-02.jsonl","rows":78,"sha256":"d1b3c53d57e48b7ecb1b63a3c03b8150e5f0cca92c4486a129ad34e64e16f381"}
+  ],
+  "schema": "COMPACT_SHARDED_JSONL_INDEX_V0_1_PILOT",
+  "total_rows": 158
+}
