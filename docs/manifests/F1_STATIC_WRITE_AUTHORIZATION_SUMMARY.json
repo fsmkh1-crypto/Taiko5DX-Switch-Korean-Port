@@ -6,6 +6,7 @@
     "pc_scope_occurrences": 1,
     "post_first_nul": "zero-only"
   },
+  "artifact_role": "HISTORICAL_REPORTING_VIEW_NOT_CANONICAL_ACTION_AUTHORITY",
   "authorized_source_ids_sha256": "87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e",
   "canonical_build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9000000000000000000000000",
   "canonical_main_sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
@@ -34,7 +35,12 @@
   "exceptions_sha256": "10b13fe7156225109d86f8d0707dd385d3c24c66dcbe590ae56425e1dc936257",
   "localization_inventory_sha256": "d7b90f7f7f1e43c54b87d97524b14b1582f390aa8a4672e25c2c48d2f9fac550",
   "manifest_content_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff",
-  "manifest_file_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
+  "manifest_content_sha256_semantics": "SEMANTIC_LOGICAL_JSONL_SHA256",
+  "manifest_transport": {
+    "format": "DETERMINISTIC_GZIP_JSONL",
+    "sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
+    "status": "HISTORICAL_CANONICAL_TRANSPORT_PROVENANCE"
+  },
   "rejected_residual_rows": [
     "R284",
     "R286",
@@ -53,7 +59,7 @@
     "R3181",
     "R3182"
   ],
-  "schema": "F1_STATIC_WRITE_AUTHORIZATION_SUMMARY_V1",
+  "schema": "F1_STATIC_WRITE_AUTHORIZATION_SUMMARY_V2",
   "segment_rule": {
     "gap_or_delta_reset_crossing": false,
     "mapped_interval": "first accepted anchor through last accepted anchor",

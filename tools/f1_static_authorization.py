@@ -481,11 +481,16 @@ def main() -> None:
         with args.manifest.open("wb") as raw:
             with gzip.GzipFile(filename="", mode="wb", fileobj=raw, mtime=0, compresslevel=9) as gz:
                 gz.write(manifest_bytes)
+        manifest_transport_format = "DETERMINISTIC_GZIP_JSONL"
+        manifest_transport_status = "HISTORICAL_CANONICAL_TRANSPORT_PROVENANCE"
     else:
         args.manifest.write_bytes(manifest_bytes)
+        manifest_transport_format = "PLAIN_JSONL"
+        manifest_transport_status = "GENERATED_OUTPUT_TRANSPORT"
 
     summary = {
-        "schema": "F1_STATIC_WRITE_AUTHORIZATION_SUMMARY_V1",
+        "schema": "F1_STATIC_WRITE_AUTHORIZATION_SUMMARY_V2",
+        "artifact_role": "HISTORICAL_REPORTING_VIEW_NOT_CANONICAL_ACTION_AUTHORITY",
         "canonical_main_sha256": CANONICAL_MAIN_SHA256,
         "canonical_build_id": build_id.hex().upper(),
         "source_ledger_sha256": CANONICAL_SOURCE_LEDGER_SHA256,
@@ -527,9 +532,13 @@ def main() -> None:
         "rejected_residual_rows": [f"R{x}" for x in sorted(rejected_residual)],
         "authorized_source_ids_sha256": hashlib.sha256("\n".join(row["source_id"] for row in manifest_rows).encode()).hexdigest(),
         "manifest_content_sha256": manifest_content_sha256,
-        "manifest_file_sha256": None,
+        "manifest_content_sha256_semantics": "SEMANTIC_LOGICAL_JSONL_SHA256",
+        "manifest_transport": {
+            "format": manifest_transport_format,
+            "sha256": sha256_file(args.manifest),
+            "status": manifest_transport_status,
+        },
     }
-    summary["manifest_file_sha256"] = sha256_file(args.manifest)
     args.summary.write_text(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True) + "\n", encoding="utf-8")
     print(json.dumps(summary, ensure_ascii=False, indent=2, sort_keys=True))
 

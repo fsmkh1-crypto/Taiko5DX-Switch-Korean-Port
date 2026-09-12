@@ -1,11 +1,13 @@
 # Project Operating Rules — v3
 
 Date: 2026-09-12  
-Status: CANONICAL OPERATING POLICY
+Status: CONSOLIDATED REFERENCE / NOT CURRENT AUTHORITY
 
 ## 1. Purpose and authority
 
-This document contains project-wide operating rules that are too detailed for `AGENTS.md`.
+This document is retained as a consolidated reference from the 2026-09-12 rules rebase. It is not a current operating authority and must not be added to `PROJECT_STATE.required_reads` merely to recover rules that are already canonical elsewhere.
+
+Current operating authority resides in `AGENTS.md` and the narrower policy documents that the active `PROJECT_STATE.required_reads` selects for the current scope, including `docs/VALIDATION_POLICY.md`, `docs/GITHUB_AND_CI_POLICY.md`, and `docs/ARTIFACT_AND_PROVENANCE_RULES.md` when applicable.
 
 Authority chain:
 

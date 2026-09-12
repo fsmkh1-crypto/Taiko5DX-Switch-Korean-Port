@@ -191,6 +191,16 @@ def check_generated_boundary(root: Path, entries: list[dict], resume_obj: dict) 
             fail(f"INV-DOC-07 generated artifact carries authority/next-step keys: {rel} {bad}")
 
 
+def check_scope_read_policy(resume_obj: dict) -> None:
+    scope_kind = resume_obj.get("scope_kind")
+    if scope_kind not in {"READ_ONLY", "REPOSITORY_WRITE"}:
+        fail(f"INV-DOC-09 invalid scope_kind: {scope_kind!r}")
+    if scope_kind == "REPOSITORY_WRITE":
+        required = set(resume_obj.get("required_reads", []))
+        if "docs/GITHUB_AND_CI_POLICY.md" not in required:
+            fail("INV-DOC-09 repository-writing scope must require docs/GITHUB_AND_CI_POLICY.md")
+
+
 def check_closure_identity(root: Path, resume_obj: dict) -> None:
     declared = resume_obj.get("last_closed_validation_id")
     ledger_path = root / "docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md"
@@ -296,6 +306,7 @@ def main() -> int:
 
     check_machine_facts(root, entries)
     check_generated_boundary(root, entries, resume_obj)
+    check_scope_read_policy(resume_obj)
     check_closure_identity(root, resume_obj)
 
     output = {
@@ -310,6 +321,7 @@ def main() -> int:
             "INV-DOC-06",
             "INV-DOC-07",
             "INV-DOC-08",
+            "INV-DOC-09",
         ],
         "registered_documents": len(entries),
         "registered_markdown": len(indexed_md),

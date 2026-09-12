@@ -298,8 +298,86 @@ It does not:
 
 `PREPIN_PASS` remains the correct candidate state: no known current machine-gate blocker under the present candidate inputs and validator semantics, without claiming permanent proof against future evidence/rule changes.
 
+## V106 — pre-freeze governance cleanup closes audit gaps without pinning or freezing
+
+**Status:** `VERIFIED TARGETED CLEANUP / PREPIN STATE PRESERVED / SCHEMA STILL NOT FROZEN`
+
+Scope is limited to the governance issues found by the independent rules/Markdown/workflow audit and the root-cause survey that followed it. No historical F1 technical conclusion is reopened.
+
+### A. Semantic/transport identity cleanup
+
+The V094 semantic payload and transport generations are explicitly separated throughout active candidate validation:
+
+- candidate action binding consumes `current_transport_index_sha256` for the current plain-shard INDEX;
+- historical deterministic gzip SHA-256 remains separate provenance;
+- the misleading `action_canonical_gzip_hash` gate name is replaced by `action_current_transport_index_hash`;
+- the legacy generic `manifest_file_sha256` alias is removed from `data/pilot/f1_v1_candidate/bindings.json`;
+- the historical F1 SUMMARY is a reporting view rather than action authority and uses explicit semantic/transport identity fields;
+- `tools/f1_static_authorization.py` emits the same explicit V2 reporting semantics so regeneration cannot silently restore the ambiguous V1 field;
+- the existing pilot `action_table_binding.json` compatibility field is retained with its already-declared `CURRENT_TRANSPORT_ROOT_INDEX_SHA256_COMPATIBILITY_FIELD` semantics rather than rewriting historical pilot structure.
+
+The historical V094 semantic identity, historical gzip identity, current INDEX identity, row count, and ordered source-ID hash are unchanged.
+
+### B. Read-chain, authority, telemetry and candidate-state cleanup
+
+`PROJECT_RESUME_V2.scope_kind` distinguishes `READ_ONLY` from `REPOSITORY_WRITE`. Documentation governance now rejects a repository-writing scope whose `required_reads` omits `docs/GITHUB_AND_CI_POLICY.md`.
+
+`docs/PROJECT_OPERATING_RULES.md` is retained as consolidated reference but is no longer an orphan current authority. Current operating authority remains `AGENTS.md` plus the narrower policies selected by the fixed `PROJECT_STATE.required_reads` chain.
+
+REMOTE_IO performance data is defined as non-authoritative external telemetry. Final ref/CI values are recorded outside Git so measurement does not require a second repository mutation. `PROJECT_STATE.md` stores only the telemetry-location pointer.
+
+The historical V094 20-shard layout is explicitly **not** a future sharding precedent. Future transport must minimize deterministic parts under the route actually proven safe for that stage.
+
+Candidate-state language is explicit:
+
+- `PREPIN_PASS` = current candidate gates pass while required semantic hashes remain unpinned;
+- candidate `PASS` = current gates pass and all four required semantic pins match;
+- candidate `PASS` is still not schema freeze;
+- `FROZEN` requires a separate explicitly authorized schema-freeze declaration.
+
+### C. Roundtrip root-cause cleanup
+
+The candidate validator no longer trusts `generated/pilot/f1/roundtrip_result.json` as a gate input. It reconstructs the canonical F1 audit directly from `source_anchor_coverage` plus the bound source document and verifies:
+
+- block ordinals are complete and ordered;
+- line ranges begin at line 1 and are gap-free;
+- every range is within document bounds;
+- every block SHA-256 matches;
+- all coverage rows bind one document blob/SHA identity;
+- the final block reaches document EOF;
+- reassembled bytes equal the canonical source document exactly;
+- assertion coverage retains `UNEXPLAINED = 0`.
+
+The 61 existing coverage blocks span lines `1..187` of the canonical F1 audit and satisfy the EOF boundary. Generated roundtrip output remains a derived view and is not promoted to authority.
+
+The machine-accounting workflow change-detection paths now include the three canonical evidence documents consumed by current source-anchor gates:
+
+```text
+docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md
+docs/VALIDATION_LEDGER_F1.md
+docs/VALIDATION_LEDGER_F1_AUTH.md
+```
+
+`generated/**` is intentionally **not** added as a machine-accounting trigger because doing so would preserve the rejected generated-input dependency rather than remove it.
+
+### Rejected or corrected approaches retained
+
+The following audit prescriptions were rejected or corrected after root-cause survey:
+
+- adding `generated/**` to the machine-accounting trigger — rejected because roundtrip output is derived, not gate authority;
+- accumulating remote-I/O history inside `PROJECT_RESUME_V2` — rejected because final ref/CI facts are known only after canonical mutation and would force extra repository writes;
+- treating the V094 20-shard transport as a future sizing precedent — rejected;
+- fixing the SUMMARY hash key without fixing its regeneration path — rejected as symptom-only;
+- grouping unrelated fixes merely because each is small — rejected; A/B/C were reviewed and targeted independently before integration.
+
+### Closure boundary
+
+The four observed materialized semantic hashes remain **null/unpinned in candidate bindings**. This stage does not declare schema freeze and does not perform full migration, 797 residual analysis, builder, IPS, runtime, mapping, or game-file work.
+
+The next separately authorized scope remains `PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`.
+
 ## Stopping point
 
-The V105 validation-pipeline cause family is closed and recorded. The candidate remains `PREPIN_PASS`, schema v1 remains **NOT FROZEN**, and the observed semantic hashes remain unpinned.
+V106 closes the pre-freeze governance-cleanup cause families. The candidate remains in the pre-pin state, schema v1 remains **NOT FROZEN**, and the observed semantic hashes remain unpinned.
 
-The next separately authorized stage is the operating-rules rebase identified by `PROJECT_STATE.md`. Authority-freshness cleanup, CI-trigger/generated-status cleanup, semantic-hash pinning, schema-freeze judgment, full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work remain outside this closure stage.
+The next stage requires a fresh user signal. It may pin only the four already-observed semantic hashes and run the final current machine-gate release/collect-all validation. It must STOP before any schema-freeze declaration.

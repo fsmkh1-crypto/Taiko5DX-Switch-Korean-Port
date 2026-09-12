@@ -185,3 +185,7 @@ current repository transport:
 ```
 
 The current transport preserves the same V094 semantic identity and historical gzip provenance.
+
+The 20-shard layout is a historical implementation produced under the transport constraints proven at that time. It is **not** a future sharding precedent, default shard count, safe-size threshold, or recommendation for larger migrations. Future sharding must follow §8 and §9 and use the fewest deterministic parts compatible with the transport route actually proven safe for that stage.
+
+`docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json` is a historical/reporting view, not canonical action authority. Its semantic payload identity and transport identity must be explicitly named and must not reuse a generic hash field for different transport generations. The canonical current action authority remains the indexed shard transport above; the historical deterministic gzip identity remains provenance only.

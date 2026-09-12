@@ -43,7 +43,7 @@ GROUP_NAMESPACE_DEPENDENCIES = {
     "unknowns": {"source_seed", "claim_amendments", "materialization_contract"},
     "coverage": {"coverage_seed", "fixtures"},
     "migration": {"migration_seed", "claim_amendments", "bindings", "fixtures"},
-    "roundtrip": {"roundtrip_result", "canonical_evidence_docs"},
+    "roundtrip": {"coverage_seed", "canonical_evidence_docs"},
     "progress": {"source_seed", "materialization_contract"},
     "semantic_hashes": {"source_seed", "edge_seed", "action_transport", "claims_seed", "claim_amendments", "source_anchor_overrides", "materialization_contract"},
 }
@@ -59,7 +59,7 @@ GROUP_DEPENDENCIES = {
     "unknowns": {"source_materialization", "action_materialization", "edge_materialization", "claims"},
     "coverage": {"configuration"},
     "migration": {"configuration", "claims"},
-    "roundtrip": {"configuration"},
+    "roundtrip": {"coverage"},
     "progress": {"source_materialization"},
     "semantic_hashes": {"source_materialization", "action_materialization", "edge_materialization", "claims"},
 }
@@ -386,13 +386,21 @@ def validate_candidate(root: Path, mode: str = "fail_fast") -> tuple[dict, int]:
         manifest_path = root / bindings["action_table"]["manifest_path"]
         raw, uncompressed, manifest_rows, recovered, canonical_transport = load_action_manifest_current(manifest_path)
         repository_sha = sha256(raw)
-        transport_exact = repository_sha == bindings["action_table"]["manifest_file_sha256"]
-        gates.check("action_canonical_gzip_hash", sha256(canonical_transport) == bindings["action_table"]["manifest_file_sha256"], sha256(canonical_transport))
+        transport_exact = repository_sha == bindings["action_table"]["current_transport_index_sha256"]
+        gates.check(
+            "action_current_transport_index_hash",
+            sha256(canonical_transport) == bindings["action_table"]["current_transport_index_sha256"],
+            sha256(canonical_transport),
+        )
         gates.check("action_content_hash", sha256(uncompressed) == bindings["action_table"]["manifest_content_sha256"], sha256(uncompressed))
         gates.check(
             "action_binding_consistency",
-            action_binding["manifest_file_sha256"] == bindings["action_table"]["manifest_file_sha256"]
-            and action_binding["manifest_content_sha256"] == bindings["action_table"]["manifest_content_sha256"],
+            action_binding["current_transport"]["index_sha256"] == bindings["action_table"]["current_transport_index_sha256"]
+            and action_binding["current_transport"]["format"] == bindings["action_table"]["current_transport_format"]
+            and action_binding["manifest_file_sha256"] == action_binding["current_transport"]["index_sha256"]
+            and action_binding["manifest_file_sha256_semantics"] == "CURRENT_TRANSPORT_ROOT_INDEX_SHA256_COMPATIBILITY_FIELD"
+            and action_binding["manifest_content_sha256"] == bindings["action_table"]["manifest_content_sha256"]
+            and action_binding["historical_transport"]["gzip_sha256"] == bindings["action_table"]["historical_gzip_sha256"],
         )
         actions = [materialize_action(row, contract) for row in manifest_rows]
         gates.check("actions_158", len(actions) == expected["actions"] == len({item["action_id"] for item in actions}))
@@ -578,11 +586,82 @@ def validate_candidate(root: Path, mode: str = "fail_fast") -> tuple[dict, int]:
     _run_group(gates, "migration", migration_group)
 
     def roundtrip_group() -> None:
-        roundtrip = json.loads((root / "generated/pilot/f1/roundtrip_result.json").read_text(encoding="utf-8"))
-        audit_doc = (root / roundtrip["source_document"]).read_bytes()
-        gates.check("audit_doc_blob", git_blob_sha1(audit_doc) == roundtrip["source_git_blob_sha"])
-        gates.check("audit_roundtrip_still_exact", roundtrip["exact_textual_roundtrip"] and roundtrip["unexplained_roundtrip_diff_count"] == 0 and roundtrip["unexplained_blocks"] == 0)
-        ctx["roundtrip"] = roundtrip
+        coverage = sorted(ctx["coverage"], key=lambda item: item["block_ordinal"])
+        ordinals = [item["block_ordinal"] for item in coverage]
+        gates.check("roundtrip_block_ordinals", ordinals == list(range(1, len(coverage) + 1)), ordinals)
+
+        document_paths = {item["document_path"] for item in coverage}
+        if len(document_paths) != 1:
+            raise ValidationError(f"roundtrip must bind exactly one source document: {sorted(document_paths)}")
+        document_path = next(iter(document_paths))
+        audit_doc = (root / document_path).read_bytes()
+        lines = audit_doc.decode("utf-8").splitlines(keepends=True)
+
+        expected_blob_ids = {item["document_git_blob_sha"] for item in coverage}
+        expected_doc_hashes = {item["document_sha256"] for item in coverage}
+        gates.check("roundtrip_single_blob_identity", len(expected_blob_ids) == 1, sorted(expected_blob_ids))
+        gates.check("roundtrip_single_document_sha", len(expected_doc_hashes) == 1, sorted(expected_doc_hashes))
+        gates.check(
+            "roundtrip_document_blob",
+            len(expected_blob_ids) == 1 and git_blob_sha1(audit_doc) == next(iter(expected_blob_ids)),
+            git_blob_sha1(audit_doc),
+        )
+        gates.check(
+            "roundtrip_document_sha",
+            len(expected_doc_hashes) == 1 and sha256(audit_doc) == next(iter(expected_doc_hashes)),
+            sha256(audit_doc),
+        )
+
+        rebuilt = bytearray()
+        next_line = 1
+        for item in coverage:
+            start = item["line_start"]
+            end = item["line_end"]
+            gates.check(
+                f"roundtrip_contiguous_{item['coverage_id']}",
+                start == next_line,
+                {"expected": next_line, "actual": start},
+            )
+            if not (1 <= start <= end <= len(lines)):
+                gates.check(
+                    f"roundtrip_bounds_{item['coverage_id']}",
+                    False,
+                    {"start": start, "end": end, "line_count": len(lines)},
+                )
+                next_line = end + 1
+                continue
+            gates.check(
+                f"roundtrip_bounds_{item['coverage_id']}",
+                True,
+                {"start": start, "end": end, "line_count": len(lines)},
+            )
+            block_bytes = "".join(lines[start - 1:end]).encode("utf-8")
+            gates.check(
+                f"roundtrip_block_hash_{item['coverage_id']}",
+                sha256(block_bytes) == item["block_sha256"],
+                sha256(block_bytes),
+            )
+            rebuilt.extend(block_bytes)
+            next_line = end + 1
+
+        gates.check(
+            "roundtrip_eof_coverage",
+            next_line == len(lines) + 1,
+            {"next_line": next_line, "line_count": len(lines)},
+        )
+        rebuilt_bytes = bytes(rebuilt)
+        gates.check("roundtrip_exact_bytes", rebuilt_bytes == audit_doc)
+        gates.check("roundtrip_rebuilt_sha", sha256(rebuilt_bytes) == sha256(audit_doc), sha256(rebuilt_bytes))
+        gates.check("roundtrip_unexplained_zero", all(item["coverage_status"] != "UNEXPLAINED" for item in coverage))
+        ctx["roundtrip"] = {
+            "source_document": document_path,
+            "document_git_blob_sha": git_blob_sha1(audit_doc),
+            "document_sha256": sha256(audit_doc),
+            "coverage_blocks": len(coverage),
+            "line_count": len(lines),
+            "exact_textual_roundtrip": rebuilt_bytes == audit_doc,
+            "unexplained_blocks": sum(item["coverage_status"] == "UNEXPLAINED" for item in coverage),
+        }
 
     _run_group(gates, "roundtrip", roundtrip_group)
 
@@ -693,7 +772,7 @@ def validate_candidate(root: Path, mode: str = "fail_fast") -> tuple[dict, int]:
     if "action_repository_file_sha256" in ctx:
         result["action_manifest_transport"] = {
             "repository_file_sha256": ctx["action_repository_file_sha256"],
-            "canonical_file_sha256": bindings["action_table"]["manifest_file_sha256"],
+            "current_transport_index_sha256": bindings["action_table"]["current_transport_index_sha256"],
             "exact": ctx["action_transport_exact"],
             "recovered_from_truncated_transport": ctx["manifest_transport_recovered"],
             "repair_required_before_freeze": not ctx["action_transport_exact"],

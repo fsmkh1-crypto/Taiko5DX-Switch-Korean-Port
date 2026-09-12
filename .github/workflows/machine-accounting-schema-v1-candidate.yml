@@ -5,6 +5,9 @@ on:
     paths:
       - 'docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md'
       - 'docs/CLAIM_EXTRACTION_RULES.md'
+      - 'docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md'
+      - 'docs/VALIDATION_LEDGER_F1.md'
+      - 'docs/VALIDATION_LEDGER_F1_AUTH.md'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
       - 'data/pilot/f1/**'
@@ -19,6 +22,9 @@ on:
     paths:
       - 'docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md'
       - 'docs/CLAIM_EXTRACTION_RULES.md'
+      - 'docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md'
+      - 'docs/VALIDATION_LEDGER_F1.md'
+      - 'docs/VALIDATION_LEDGER_F1_AUTH.md'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
       - 'data/pilot/f1/**'

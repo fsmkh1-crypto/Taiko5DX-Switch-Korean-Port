@@ -103,7 +103,7 @@ Rejected or weakened hypotheses remain documented. Do not remove them merely bec
 
 ## 11. Candidate-state language
 
-`PREPIN_PASS` means no known blocker remains under the current candidate inputs and validator definition.
+`PREPIN_PASS` means no known blocker remains under the current candidate inputs and validator definition while one or more required materialized semantic hashes remain unpinned.
 
 It does not mean:
 
@@ -111,6 +111,20 @@ It does not mean:
 - schema is frozen;
 - future evidence cannot invalidate a dependency;
 - all unresolved technical work is solved.
+
+For the schema-v1 candidate, top-level validator `PASS` means:
+
+```text
+all current reachable candidate gates pass
+AND
+all four required materialized semantic hashes are pinned
+AND
+each pinned hash matches current materialization
+```
+
+Candidate `PASS` still does **not** mean the schema is frozen and does not authorize migration, residual-family analysis, builder/runtime work, or game-file modification.
+
+`FROZEN` may be used only after a separately authorized schema-freeze declaration is completed and recorded. No validator transition from `PREPIN_PASS` to `PASS` may implicitly create `FROZEN` state.
 
 ## 12. Documentation governance
 

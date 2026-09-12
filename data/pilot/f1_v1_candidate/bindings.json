@@ -6,7 +6,6 @@
     "expected_materialized_semantic_sha256": null,
     "historical_gzip_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
     "manifest_content_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff",
-    "manifest_file_sha256": "ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4",
     "manifest_path": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST"
   },
   "base_claims": {

@@ -34,6 +34,8 @@ resolve scope and required reads
 
 The purpose is to reduce both latency and tool-selection risk by finishing decisions before remote writes begin.
 
+When a stage needs a second commit solely because the final state document must name the preceding implementation commit identity, both commits may be prepared before a **single** branch-ref move. This is still one logical canonical mutation and one automatic CI cycle; it must not be used to hide unrelated cause families.
+
 ## 3. Same-HEAD read cache
 
 For the same canonical HEAD, do not refetch the same path unless:
@@ -143,20 +145,46 @@ Do not re-prove the same identity through several remote APIs.
 
 CI is for independent regression, release/merge gates, full-corpus validation, and builds that require CI infrastructure.
 
-A completed logical change should normally trigger one automatic final CI run. If that run succeeds, do not manually dispatch, rerun, or create a second equivalent CI check.
+A completed logical change should normally trigger one automatic final CI cycle. If that cycle succeeds, do not manually dispatch, rerun, or create a second equivalent CI check.
 
 If a workflow did not trigger because its path filters are incomplete, treat that as a change-detection defect to fix; do not normalize manual dispatch as the permanent solution.
 
 ## 11. Metrics
 
-When repository I/O performance matters, record only measured values:
+Repository-I/O metrics are **operational telemetry, not project authority**. They are stored outside the Git repository so final ref-update and CI measurements can be recorded without creating a second repository mutation merely to log the first one.
 
-- read calls;
-- blob/tree/commit/ref writes;
-- CI runs;
-- measured call/run durations when available.
+`PROJECT_STATE.md` stores only the telemetry location pointer. The current default location is:
 
-Do not invent timings. Separate Git object latency from orchestration, schema discovery, repeated reads, and failure-recovery overhead.
+```text
+Google Drive / GPT / 태합입지전 프로젝트 / REMOTE_IO_METRICS.jsonl
+```
+
+Each appended record uses schema `REMOTE_IO_METRICS_V1` and may contain:
+
+```text
+schema
+recorded_at
+stage_id
+base_head
+final_head
+read_calls
+create_blob_calls
+create_tree_calls
+create_commit_calls
+update_ref_calls
+ci_runs
+measured_durations
+notes
+```
+
+Rules:
+
+- record only measured values;
+- use `null` rather than inventing a value that was not instrumented;
+- record final-head/ref/CI fields only after those events actually occur;
+- separate Git-object latency from orchestration, schema discovery, repeated reads, and failure-recovery overhead;
+- never create an extra Git commit/ref move solely to persist telemetry;
+- telemetry does not replace validation ledger or `PROJECT_STATE.md` authority.
 
 ## 12. Stop condition
 
