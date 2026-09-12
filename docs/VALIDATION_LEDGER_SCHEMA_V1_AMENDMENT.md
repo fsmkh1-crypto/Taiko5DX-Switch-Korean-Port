@@ -27,7 +27,7 @@ The v1 candidate adds or makes normative:
 - materialization-contract binding and future materialized semantic-hash pinning;
 - explicit fail-closed validation without relying on Python `assert`.
 
-The original 42 pilot claims remain immutable historical rows. The candidate amendment declares 52 appended atomic claims, yielding 94 effective rows / 85 ACTIVE claims if the regression reaches full materialization.
+The original 42 pilot claims remain immutable historical rows. The candidate amendment initially declared 52 appended atomic claims, yielding 94 effective rows / 85 ACTIVE claims before the later V103 structured-claim closure.
 
 V099 does not itself make machine data authoritative over canonical Markdown and does not freeze the schema.
 
@@ -49,7 +49,7 @@ It also passed exact DIRECT/PADDING/SHARED/CAPACITY/REJECT membership and the fu
 
 `ace2bc4d27ae97d6583cd5b9293b994cb6ab0faed7551a5f5eb123ed216f3624`
 
-The bound repository artifact `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz` fails the V094 identity gate.
+The bound repository artifact `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz` failed the V094 identity gate.
 
 Canonical V094 identity:
 
@@ -71,19 +71,11 @@ complete JSON rows          55 / 158
 first malformed line        56
 ```
 
-Therefore the stored file is not merely missing a gzip footer; its semantic JSONL payload is truncated.
+Therefore the stored file was not merely missing a gzip footer; its semantic JSONL payload was truncated.
 
-Git history attributes the path introduction to commit `c6c7800177c46d320f3281ddd9fd9bf03b137726`; the same Git blob persists in later commits. The v1 amendment did not cause the corruption.
+Git history attributes the path introduction to commit `c6c7800177c46d320f3281ddd9fd9bf03b137726`; the v1 amendment did not cause the corruption.
 
-**Boundary:** this repository-artifact defect does not automatically invalidate the historical V094 authorization conclusion, whose original replay recorded 158 rows and pinned both hashes. It does make the current committed artifact unusable as the sole machine-consumable action payload until exact provenance restoration.
-
-Consequences:
-
-- do not infer or synthesize the missing 103 action rows;
-- do not pin v1 action semantic hashes from partial data;
-- do not freeze schema v1;
-- do not re-run the whole F1 analysis merely because of this transport/provenance defect;
-- repair/restore the exact V094 manifest in a separate stage under a fresh user signal, then rerun the candidate regression.
+**Boundary:** this repository-artifact defect did not invalidate the historical V094 authorization conclusion. It blocked current machine consumption until exact provenance restoration.
 
 ## V102 — V094 transport repair v2 restores complete machine-consumable action authority and exposes a separate atomic-claim blocker
 
@@ -93,7 +85,7 @@ Repair commit:
 
 `d25fd5be5c15aabd1483c0e8bf0ad4873974bb1b` — `repair: replace V094 failed transport with deterministic JSONL shards`
 
-The failed binary/gzip repository transport was replaced by a deterministic plain-JSONL shard transport at:
+The failed binary/gzip repository transport was replaced by deterministic plain-JSONL shards at:
 
 `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/`
 
@@ -109,8 +101,6 @@ logical content SHA-256   c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c4651
 ordered source IDs SHA    87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e
 ```
 
-All 20 shard uploads used small UTF-8 Git blobs and each GitHub-returned blob SHA matched the locally expected Git blob SHA before the repair tree was committed.
-
 Historical transport provenance remains separate and unchanged:
 
 ```text
@@ -118,38 +108,92 @@ format                    deterministic gzip JSONL
 historical gzip SHA-256   8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68
 ```
 
-The new transport diagnostic reconstructs the historical deterministic gzip from the shard-concatenated semantic byte stream and obtains the exact historical `8bbb...` hash. Both prior failed transports remain recorded in `INDEX.json` as `FAILED_TRANSPORT_NOT_CANONICAL` provenance rather than being erased.
-
-GitHub Actions run `34677635822` independently checked the repair and passed the V094 transport gate:
-
-```text
-transport index SHA-256        ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4
-shards                         20
-rows                           158
-logical content SHA-256        c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff
-ordered source IDs SHA-256     87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e
-reconstructed gzip SHA-256     8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68
-failed transports recorded     2
-```
-
-The candidate validator then advanced beyond the former V094 blocker and passed action-table semantics, 158 actions, source/action edge agreement, exact F1 membership, and the pre-action source gates. It subsequently failed at:
+GitHub Actions run `34677635822` independently passed the V094 transport gate and reconstructed the exact historical gzip identity. The candidate then advanced beyond the V094 blocker and first failed at:
 
 `atomic_claim_policy: ['V089.C03']`
 
-This is a separate schema-v1 claim-shape cause family, not a V094 transport failure. It was not modified in the V094 repair stage.
+This was classified as a separate schema-v1 claim-shape cause family.
+
+## V103 — structured atomic-claim cause family is closed and the regression advances to V092.C04 anchor provenance
+
+**Status:** `VERIFIED ATOMIC-CLAIM CLOSURE / REGRESSION ADVANCED / SCHEMA STILL NOT FROZEN`
+
+Fix commit:
+
+`9df784890b9f21f79187ed67825919fedf4d77f7` — `fix: close structured atomic-claim classification gaps`
+
+The cause-family audit classified every ACTIVE structured claim value instead of relying only on predicate-name heuristics.
+
+`V089.C03` remains ACTIVE as an explicit structured-atomic exception because it is one exhaustive historical storage partition of the same 278 F1 residual population:
+
+```text
+full-window       197
+padding-mismatch   81
+TOTAL             278
+```
+
+V093 deterministic replay independently reproduces that same historical split.
+
+`V094.C04` is not treated as an inseparable tuple. It is retained historically as SUPERSEDED and replaced by three appended atomic claims:
+
+```text
+V094.C23  terminal_disposition_overlay = DIRECT_PORT
+V094.C24  action_family                = F1_LOCALIZATION_STATIC_DIRECT
+V094.C25  action_status                = STATIC_WRITE_AUTHORIZED_NOT_IMPLEMENTED
+```
+
+The materialization contract was rebound accordingly:
+
+- DIRECT source-state provenance references C23/C24/C25;
+- normalized action provenance references C24/C25;
+- source/action edge provenance uses `V094.C14` for the unique-action-ID assertion;
+- the action materialization source path now points to the current plain-shard V094 transport.
+
+The candidate counts are now:
+
+```text
+base claims                 42
+new appended claims         55
+effective claims            97
+ACTIVE claims               87
+candidate migration entries 752
+```
+
+The transport-aware validator additionally requires the explicit structured-claim registry to equal the set of all ACTIVE dict/list-valued claims exactly. It rejects:
+
+- an ACTIVE structured claim omitted from the registry;
+- a registry entry that is no longer ACTIVE or structured;
+- duplicate registry IDs;
+- a claim classified as both split and structured-atomic.
+
+GitHub Actions run `34679464287` passed:
+
+- V094 transport identity;
+- amendment and contract hashes;
+- exact F1 source/category membership;
+- 158 actions and 158 source/action edges;
+- action/source/edge active-claim referential integrity;
+- split-source supersession;
+- effective/ACTIVE claim counts;
+- `atomic_claim_policy`;
+- the new structured-claim registry preflight.
+
+The first subsequent failure is:
+
+`anchor_text_present_V092.C04: None`
+
+Therefore the V089.C03/structured-atomic cause family is closed. The new failure is a separate source-anchor/provenance cause family and is not evidence against V092, F1, or V094 technical facts.
 
 Consequences:
 
-- the V094 repository transport blocker recorded by V100 is closed;
-- V094 semantic identity and historical gzip provenance are unchanged;
-- the current plain-shard transport is the machine-consumable V094 action authority;
-- the schema-v1 candidate regression is still incomplete because of the separate `V089.C03` atomic-claim-policy blocker;
+- do not reopen the V103 atomic-claim classification without a legitimate revalidation trigger;
+- do not alter V092 technical semantics merely to satisfy the anchor gate;
 - materialized semantic hashes remain unpinned;
 - schema v1 remains **NOT FROZEN**;
 - no 797 residual, builder, IPS, runtime, mapping, or game-file work was performed.
 
 ## Stopping point
 
-V094 transport repair v2 is complete.
+The next separately authorized stage is analysis of the schema-v1 candidate `V092.C04` source-anchor text-presence blocker only.
 
-The next separately authorized stage is analysis of the schema-v1 candidate `V089.C03` atomic-claim-policy blocker only. Do not treat that stage as schema-freeze authorization, and do not expand it into full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+Do not treat that stage as schema-freeze authorization and do not expand it into full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
