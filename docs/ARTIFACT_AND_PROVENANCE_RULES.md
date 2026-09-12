@@ -5,13 +5,13 @@ Status: CANONICAL MACHINE-ARTIFACT POLICY
 
 ## 1. Scope
 
-This policy governs canonical machine artifacts, generated state, storage format, sharding, hashes, and connector/repository transport.
+This policy governs canonical machine artifacts, generated state, JSON/JSONL storage direction, serialization, sharding, hashes, and repository transport.
 
 Build/runtime artifact provenance remains separately governed by `docs/PROVENANCE_POLICY.md`.
 
 ## 2. Semantic identity and transport identity are separate
 
-Every canonical machine artifact should distinguish the logical content from the bytes used to transport/store it.
+Every canonical machine artifact distinguishes logical content from the bytes used to store or transport it.
 
 Semantic identity contains, as applicable:
 
@@ -34,23 +34,39 @@ per-shard sha256
 optional whole-transport sha256
 ```
 
-Changing transport must not silently change semantic rows.
+Changing transport must not silently change semantic rows. Changing semantic content requires a semantic revision/version even if transport bytes happen to remain unchanged.
 
-Changing semantic content requires a semantic revision/version even if transport bytes happen to remain unchanged.
+## 3. Structured canonical-state direction
 
-## 3. Historical transport provenance
+The machine-accounting model keeps entity classes separate because their cardinality and lifecycle differ.
+
+The target canonical structure after an explicitly authorized schema freeze/migration is conceptually:
+
+```text
+validation claims
+append-only source-state history
+actions
+source/action edges
+migration manifest
+```
+
+Current snapshots, progress summaries, unknown-debt summaries, and invariant-status summaries are derived views unless explicitly promoted with provenance and identity.
+
+Do not collapse these entity classes into one generic facts file merely for storage convenience.
+
+Until the explicit freeze/migration stage occurs, existing canonical Markdown evidence and the current F1 candidate bindings retain their present authority. This section states direction; it does not perform migration or authority transfer.
+
+## 4. Historical transport provenance
 
 If a transport hash has already been used as validation provenance, changing storage format does not erase it.
 
-Retain it as `historical_transport` with its format, identity, and provenance reference.
+Retain historical transport identity with its format and provenance reference. A new transport is additional provenance, not a rewrite of history.
 
-A new transport is additional provenance, not a rewrite of history.
+## 5. Failed transport is first-class provenance
 
-## 4. Failed transport is a first-class state
+A failed/truncated repository object is not canonical merely because it exists or once existed on `main`.
 
-A repository object produced by a failed or truncated upload is not canonical merely because it exists on `main`.
-
-Record it explicitly as a failed transport with enough identity to prevent later rediscovery/re-investigation:
+Record enough identity to prevent rediscovery:
 
 ```text
 commit/ref
@@ -61,25 +77,27 @@ failure mode
 canonical semantic identity it failed to carry
 ```
 
-Failed transport must never be consumed as the semantic action/state authority.
+Failed transport must never be consumed as semantic action/state authority.
 
-## 5. Canonical vs generated
+## 6. Canonical vs generated
 
 Use this decision rule:
 
-> Has another canonical decision, validation, migration, or release gate cited this artifact?
+> Has another canonical decision, validation, migration, or release gate cited this artifact as an authority dependency?
 
-If yes, preserve it as canonical evidence.
+If yes, preserve it as canonical evidence/authority under its declared schema.
 
-If no, and the artifact is deterministically reproducible from stronger canonical sources, it may remain generated.
+If no, and it is deterministically reproducible from stronger canonical sources, it remains generated.
 
-Promotion from generated to canonical requires provenance and identity binding.
+Generated output is not a second truth source. Promotion to canonical requires explicit provenance, source identities, and identity binding.
 
-## 6. Serialization rules
+Human-readable Markdown may be generated from stronger machine state in later migration stages, but historical/anchor-protected Markdown evidence remains evidence and is not retroactively rewritten.
+
+## 7. Serialization rules
 
 Every logical dataset defines a deterministic serialization contract.
 
-For JSONL-like datasets the contract must state:
+For JSONL-like datasets the contract states:
 
 - UTF-8 encoding;
 - exact row order;
@@ -87,63 +105,63 @@ For JSONL-like datasets the contract must state:
 - line ending;
 - whether the final row ends with LF.
 
-Existing canonical semantic hashes retain the serialization contract under which they were issued. Do not “normalize” an old canonical payload into a new byte representation and then call the new hash the same semantic identity.
+Existing canonical semantic hashes retain the serialization contract under which they were issued. Do not normalize old canonical bytes and silently reuse the old semantic identity.
 
-## 7. Sharding rules
+## 8. Sharding rules
 
-Sharding is transport only.
+Sharding is transport only. Shard boundaries do not define semantic families.
 
 For an existing ordered canonical payload:
 
 ```text
 preserve canonical row order
-split only into deterministic contiguous groups
+split only by a deterministic boundary rule
+minimize shard count within the proven-safe transport route
 ```
-
-Shard boundaries do not define semantic families.
 
 The dataset index records:
 
 - shard rule;
 - authoritative shard order;
-- rows per shard or deterministic boundary rule;
+- row/range boundary metadata;
 - per-shard row counts and hashes;
 - total rows;
-- logical-content hash of raw shard concatenation.
+- logical-content hash;
+- exact concatenation/line-ending normalization contract.
 
-Reassembling shards in index order under the declared serialization contract must reproduce the logical semantic byte stream exactly.
+Reassembly in index order must reproduce the declared logical byte stream exactly.
 
-## 8. Connector transport rule
+A historical 32 KiB probe is not a minimum legitimate file or shard size. Do not pad/combine ordinary files to satisfy it.
 
-Do not make long manual binary/base64 strings a normal connector write path.
+## 9. Connector transport rule
 
-Do not respond to a truncation by repeatedly slicing the same payload into progressively smaller Git blobs and manually assembling trees.
+Do not use long manual binary/base64 arguments as the normal connector write path.
 
-After one credible transport-integrity failure, change the transport route/design.
+Do not answer truncation by repeatedly slicing the same payload into progressively smaller Git blobs and manually assembling more fragments.
+
+After a credible transport-integrity failure, change route/design. After the same route fails twice for the same cause, STOP rather than making a third attempt.
 
 Preferred order:
 
-1. small ordinary UTF-8 repository files;
-2. deterministic text shards when semantically appropriate;
-3. native file-reference transfer or repository-native generation;
-4. a different supported transport path.
+1. ordinary UTF-8 repository files preserving natural boundaries;
+2. deterministic text shards when actually required;
+3. native file-reference/repository-native generation;
+4. another explicitly supported exact-byte route.
 
-If no safe exact-byte path exists, STOP and report the transport blocker instead of manufacturing a complicated partial repository state.
+## 10. Verification split
 
-## 9. Verification split
-
-Use each mechanism for its proper role:
+Use each mechanism for its role:
 
 - row count: omission/truncation;
 - SHA-256: exact identity;
 - validator: structural/semantic invariants;
-- Git diff: review of intentional semantic change.
+- Git diff: intentional semantic review.
 
-Once the canonical identity required by the current stage matches, stop re-proving the same fact through unrelated tools.
+Once the identity required by the stage matches, stop re-proving it through unrelated tools.
 
-## 10. V094 precedent
+## 11. V094 precedent
 
-V094 currently demonstrates the required separation:
+V094 demonstrates the separation:
 
 ```text
 semantic identity:
@@ -154,11 +172,16 @@ historical canonical transport:
   format  = deterministic gzip JSONL
   sha256  = 8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68
 
-failed current transport on main b58402a...:
-  path     = docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz
-  bytes    = 12071
-  git_blob = 9a3bc50b18a51582b2031611a2f46fe1c069a862
-  status   = FAILED_TRANSPORT_NOT_CANONICAL
+failed transports:
+  21,288-byte object = FAILED_TRANSPORT_NOT_CANONICAL
+  12,071-byte object = FAILED_TRANSPORT_NOT_CANONICAL
+
+current repository transport:
+  path      = docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/
+  format    = PLAIN_JSONL_SHARDS
+  shards    = 20
+  rows      = 158
+  INDEX SHA = ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4
 ```
 
-This policy does not itself repair V094 or choose its replacement current transport.
+The current transport preserves the same V094 semantic identity and historical gzip provenance.

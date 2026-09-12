@@ -5,44 +5,29 @@ Status: CANONICAL VALIDATION OPERATING POLICY
 
 ## 1. Reuse verified facts
 
-A VERIFIED or VERIFIED-RUNTIME fact is reused unless one of these triggers exists:
+A VERIFIED or VERIFIED-RUNTIME fact is reused unless a legitimate trigger exists:
 
-- input identity/version/hash changed;
+- canonical input identity/version/hash changed;
 - new evidence directly contradicts it;
 - provenance is insufficient for the present decision;
 - the prior method is demonstrated unsound.
 
 A new chat, model, tool, or agent is never a revalidation trigger.
 
-## 2. Minimal proof path
+## 2. Dependency-scoped revalidation
 
-Use the shortest evidence path that is sufficient for the current decision.
+A new hypothesis or code change does not automatically require broad revalidation.
 
-Do not prove the same identity independently through GitHub, Drive, CI, and local tooling unless the current gate actually requires independent paths.
+Revalidation follows dependency impact:
 
-When a canonical hash/count/membership gate matches, stop checking that same fact and move to the next gate.
+- no relevant dependency identity change -> no revalidation;
+- one dependency namespace changes -> only gates depending on that namespace become `STALE`;
+- validator semantics change -> reevaluate the gate family owned by that validator rule;
+- canonical input identity changes -> stale only the downstream dependencies that consume it.
 
-## 3. Revalidation record
+Do not replay historical technical byte analysis when a current machine gate can be reevaluated from already-verified canonical evidence.
 
-When revalidation is legitimately required, record:
-
-- validation ID/date;
-- exact claim;
-- input identity/hash/version;
-- method/script/parameters;
-- offsets/ranges/count units;
-- result/status;
-- reproducible report/artifact/commit.
-
-## 4. Failure of provenance is not automatic failure of semantics
-
-A corrupt, missing, or failed transport can block downstream machine consumption without disproving the historical semantic conclusion.
-
-Do not reopen technical byte analysis merely because a transport artifact is unavailable if deterministic provenance already establishes the semantic result.
-
-Conversely, do not fabricate missing payload rows from counts, IDs, summaries, or edges.
-
-## 5. Status meanings
+## 3. Status meanings
 
 Keep these states distinct:
 
@@ -50,34 +35,85 @@ Keep these states distinct:
 PASS      condition evaluated and satisfied
 FAIL      condition evaluated and violated
 STALE     prior result no longer matches dependency identity
-BLOCKED   evaluation/consumption cannot complete because required evidence/input is unavailable
+BLOCKED   evaluation cannot complete because required evidence/input is unavailable
 UNKNOWN   unresolved semantic/evidence state
 ```
 
-STALE is not FAIL. BLOCKED is not technical disproof.
+`STALE != FAIL`. `BLOCKED` is not technical disproof. `UNKNOWN` may not silently authorize a write or remove a source from accounting.
 
-## 6. Local-first validation
+## 4. Fail-fast vs collect-all
 
-Prefer local deterministic validation before CI when the environment has the complete inputs.
+Release validation remains fail-fast.
 
-CI is used as an independent/final gate, not as a repeated exploratory debugger.
+`COLLECT_ALL` is a non-release diagnostic mode that evaluates all currently reachable machine gates and reports `PASS / FAIL / BLOCKED / STALE` without weakening release semantics.
 
-If the current environment cannot safely materialize the exact repository/input tree, record that limitation and use one final repository CI gate rather than many speculative runs.
+`COLLECT_ALL` is **not**:
 
-## 7. Cause-family validation
+- a replay of all historical reverse engineering;
+- a reason to re-prove VERIFIED byte facts;
+- permission to synthesize missing evidence.
+
+Immediately before an explicitly authorized schema freeze, run one full current machine-gate collect-all after all intended candidate identities are fixed. This is gate reevaluation, not historical technical reanalysis.
+
+## 5. Minimal proof path
+
+Use the shortest evidence path sufficient for the current decision.
+
+Do not prove the same identity independently through GitHub, Drive, CI, and local tooling unless the gate requires independent paths.
+
+When the canonical hash/count/membership gate matches, stop checking that same fact and move to the next gate.
+
+## 6. Revalidation record
+
+When revalidation is legitimately required, record:
+
+- validation ID/date;
+- exact claim;
+- dependency/input identity, hash, or version;
+- method/script/parameters;
+- offsets/ranges/count units when applicable;
+- result/status;
+- reproducible report/artifact/commit.
+
+## 7. Provenance failure vs semantic failure
+
+A corrupt, missing, or failed transport may block downstream machine consumption without disproving the historical semantic conclusion.
+
+Do not reopen technical byte analysis merely because transport failed when deterministic provenance already establishes the semantic result.
+
+Conversely, do not fabricate missing payload rows from counts, IDs, summaries, edges, or downstream materialization.
+
+## 8. Local-first validation
+
+Prefer deterministic local validation when complete inputs are available.
+
+CI is an independent/final gate, not a repeated exploratory debugger. A logical change should normally produce one automatic final CI run. Do not manually rerun a successful final gate merely for reassurance.
+
+## 9. Cause-family validation
 
 One diagnostic build tests one root-cause family.
 
 All confirmed same-mechanism sites may be tested together. Different hypotheses must not be mixed merely to save runs.
 
-A passing split is not proof that every member is safe.
+A passing subset is not proof that every member is safe.
 
-## 8. Rejected hypotheses
+## 10. Rejected hypotheses
 
 Rejected or weakened hypotheses remain documented. Do not remove them merely because a later explanation supersedes them.
 
-## 9. Documentation governance
+## 11. Candidate-state language
+
+`PREPIN_PASS` means no known blocker remains under the current candidate inputs and validator definition.
+
+It does not mean:
+
+- semantic hashes are pinned;
+- schema is frozen;
+- future evidence cannot invalidate a dependency;
+- all unresolved technical work is solved.
+
+## 12. Documentation governance
 
 `tools/validate_document_governance.py` enforces the document authority invariants defined by `docs/DOCUMENT_AUTHORITY_INDEX.json`.
 
-Governance validation must not mutate anchor-protected canonical evidence just to add role metadata.
+Governance validation must not mutate anchor-protected canonical evidence merely to make metadata easier to validate.

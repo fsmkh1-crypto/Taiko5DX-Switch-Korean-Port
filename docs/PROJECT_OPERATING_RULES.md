@@ -1,17 +1,13 @@
-# Project Operating Rules — v2
+# Project Operating Rules — v3
 
 Date: 2026-09-12  
 Status: CANONICAL OPERATING POLICY
 
-## 1. Purpose
+## 1. Purpose and authority
 
-This document contains project-wide operating rules that are too detailed for `AGENTS.md` but apply across analysis, documentation, implementation, diagnostics, and migration work.
+This document contains project-wide operating rules that are too detailed for `AGENTS.md`.
 
-`AGENTS.md` is the entry point. `PROJECT_STATE.md` is the sole project-resume authority.
-
-## 2. Mandatory read chain
-
-The default read chain is exactly:
+Authority chain:
 
 ```text
 AGENTS.md
@@ -19,38 +15,32 @@ AGENTS.md
   -> PROJECT_STATE.required_reads
 ```
 
-Stop pre-reading once `PROJECT_STATE.md` supplies the current scope and required reads.
+`PROJECT_STATE.md` is the sole project-resume authority. Domain specifications, machine bindings and canonical evidence retain only their narrower registered authority.
 
-Do not use an open-ended “as applicable” judgment to read every historical document. Historical/detail documents are read only when a specific claim, provenance edge, or contradiction requires them.
+## 2. Execution and scope gates
 
-## 3. Execution and scope gates
-
-- No actual analysis/tool work, modification, build, migration, or commit before a clear user execution signal.
+- No analysis/tool work, modification, build, migration, or commit before an explicit user signal such as `시작`, `해`, `진행`, or `ㄱㄱ`.
 - One signal applies only to the scope agreed at that moment.
-- A completed scope returns to STOP.
+- Analysis and modification are separate stages.
+- After analysis, report `확정된 사실 / 유력한 가설 / 미확정 사항 / 기각된 가설 / 관련 영향 범위 / 수정 제안` and STOP.
 - A result report never authorizes the next stage.
-- A direct documentation request authorizes only that documentation action unless the user explicitly broadens scope.
+- Scope discipline outranks remote-I/O convenience. Do not combine separately forbidden cause families merely to save a ref update or CI run.
+
+## 3. Read discipline
+
+Stop broad discovery once `PROJECT_STATE.md` supplies the current scope and required reads.
+
+Under the same canonical HEAD:
+
+- do not fetch the same path twice unless a specific new need exists;
+- reuse already-read canonical content;
+- read historical/detail documents only for a concrete provenance claim, contradiction, or dependency.
+
+A new chat, model, tool, or agent is never by itself a reason to reread or revalidate canonical material.
 
 ## 4. Analysis before modification
 
-Analysis and implementation are separate stages.
-
-At the end of analysis, report:
-
-1. 확정된 사실
-2. 유력한 가설
-3. 미확정 사항
-4. 기각된 가설
-5. 관련 영향 범위
-6. 수정 제안
-
-Then STOP.
-
-## 5. Root-cause-family handling
-
-Do not repair one visible symptom as soon as one cause is found.
-
-First establish the reasonable impact surface of the same mechanism across:
+Once a common mechanism is identified, survey its reasonable impact surface before proposing a fix:
 
 - data classes;
 - code paths;
@@ -59,9 +49,9 @@ First establish the reasonable impact surface of the same mechanism across:
 - storage/ownership layers;
 - analogous symptoms.
 
-One diagnostic build tests one cause family. Proven same-family sites may be tested together.
+One diagnostic build tests one cause family. Proven same-mechanism sites may be tested together; unrelated hypotheses must not be mixed.
 
-## 6. PC Korean patch precedence
+## 5. PC Korean patch precedence
 
 If the PC Korean patch implements the same semantic feature, it is the first reference for:
 
@@ -75,36 +65,39 @@ If the PC Korean patch implements the same semantic feature, it is the first ref
 
 Port actual PC behavior when Switch structure permits it. Diverge only for a concrete Switch architectural or UX reason.
 
-## 7. Evidence and failed hypotheses
+## 6. Evidence and failed hypotheses
 
-Already VERIFIED facts are inherited. Do not repeat them because of a new session/model.
+Already VERIFIED facts are inherited according to `docs/VALIDATION_POLICY.md`.
 
 Failed, falsified, or materially weakened hypotheses remain recorded so later work does not repeat them under a new name.
 
-If source data and runtime display disagree, treat that disagreement as a port/rendering/data-selection clue. Do not silently rewrite the intended translation.
+If source data and runtime display disagree, treat the disagreement as a port/rendering/data-selection clue. Do not silently rewrite intended translations or proper names.
 
-## 8. Document authority model
+## 7. Document and machine-state roles
 
-Document roles and authority scopes are machine-readable in `docs/DOCUMENT_AUTHORITY_INDEX.json`.
+`docs/DOCUMENT_AUTHORITY_INDEX.json` classifies document authority.
 
-Important distinction:
+Keep these roles distinct:
 
 ```text
-evidence_still_valid = true
-current_authority     = false
+PROJECT_STATE         current resume authority
+operating/domain MD   current policy/specification
+historical MD         evidence/provenance, not current plan
+canonical machine data structured state/evidence under its declared schema
+generated outputs     reproducible views/status, not authority unless explicitly promoted
 ```
 
-means the document remains valid provenance/evidence but its historical planning language is not a current instruction.
+The project direction is to move mutable accounting state into structured JSON/JSONL canonical stores after an explicit schema freeze and migration stage. Markdown does not become obsolete: anchor-protected and historical Markdown remains canonical evidence, while human-readable current summaries may later be generated from stronger machine state.
 
-`PROJECT_STATE.md` is the only `PROJECT_RESUME` document with `current_authority=true`.
+Do not silently promote generated output into authority.
 
-## 9. Anchor-protected evidence
+## 8. Anchor-protected evidence
 
 If a machine claim/source anchor binds a document Git blob identity, governance cleanup must not edit or move that document without an explicitly authorized anchor migration.
 
-Authority metadata belongs in the central registry rather than being inserted as front matter into anchor-protected evidence.
+Authority metadata belongs in the central registry rather than being inserted into anchor-protected evidence.
 
-## 10. Storage and repository boundaries
+## 9. Repository and artifact boundaries
 
 Do not commit commercial game files, Switch/PC executables, patch archives/payloads, fonts, keys, dumps, or generated full mod packages.
 
@@ -112,13 +105,18 @@ Hashes, offsets, Build IDs, patch bytes, scripts, manifests, analysis, and repro
 
 Large generated artifacts belong in Google Drive and are bound to Git records by stable identity and hash.
 
-## 11. Stage close
+Repository execution follows `docs/GITHUB_AND_CI_POLICY.md`; artifact identity and transport follow `docs/ARTIFACT_AND_PROVENANCE_RULES.md`.
+
+## 10. Stage close
 
 Meaningful work closes by:
 
 - updating `PROJECT_STATE.md`;
-- updating the relevant validation ledger/index;
+- updating the relevant ledger/index when the stage creates or changes validation/provenance facts;
 - recording rejected/failed approaches where relevant;
-- verifying repository state;
+- verifying the remote repository state;
+- observing only the required final CI;
 - reporting the authorized scope;
 - STOP.
+
+A later stage requires a fresh user signal.

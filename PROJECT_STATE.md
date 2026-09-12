@@ -7,21 +7,25 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "RULESET_REBASE",
+  "scope_id": "AUTHORITY_FRESHNESS_AND_CHANGE_DETECTION",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V105",
   "last_closed_stage_commit": "3d7e640af4528b674229dddb707eea2a89b8c952",
   "last_closed_ci_run_id": 34685595581,
   "last_closed_ci_conclusion": "success",
+  "ruleset_rebase_status": "COMPLETE",
+  "ruleset_rebase_base_commit": "d272bb1a8feef2a53144c5a04489b4b080d0179f",
   "required_reads": [
-    "docs/PROJECT_OPERATING_RULES.md",
-    "docs/VALIDATION_POLICY.md",
-    "docs/GITHUB_AND_CI_POLICY.md",
-    "docs/ARTIFACT_AND_PROVENANCE_RULES.md"
+    "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
+    "docs/CLAIM_EXTRACTION_RULES.md",
+    "docs/DOCUMENT_AUTHORITY_INDEX.json",
+    "tools/validate_document_governance.py",
+    ".github/workflows/document-governance.yml",
+    ".github/workflows/machine-accounting-schema-v1-candidate.yml",
+    "data/pilot/f1_v1_candidate/bindings.json",
+    "generated/pilot/f1_v1_candidate/validation_status.json"
   ],
   "forbidden_scope_expansion": [
-    "AUTHORITY_FRESHNESS_CLEANUP",
-    "CI_TRIGGER_GENERATED_STATUS_CLEANUP",
     "SEMANTIC_HASH_PINNING",
     "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
@@ -42,6 +46,7 @@ V094 transport repair v2: **COMPLETE** after V102.
 Structured atomic-claim cause family: **COMPLETE** after V103.  
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
 Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
+Ruleset rebase: **COMPLETE** after the current policy-only stage.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
 Candidate regression status: **PREPIN_PASS**.
 
@@ -215,16 +220,22 @@ V105 does **not** pin the four semantic hashes and does **not** freeze schema v1
 - no governance edit to anchor-protected evidence without explicit anchor migration;
 - do not reopen V094, V103, V104, or V105 without a legitimate revalidation trigger.
 
+## Ruleset rebase
+
+The operating policies now define, without changing any technical fact:
+
+- verified-fact reuse and dependency-scoped revalidation;
+- `COLLECT_ALL` as current machine-gate evaluation rather than historical technical replay;
+- `REMOTE_IO_FAST_PATH` as the default repository execution path;
+- semantic identity as separate from transport identity;
+- structured JSON/JSONL machine-state direction, with generated current views separated from canonical evidence/authority.
+
+This policy stage does not pin hashes, freeze the schema, migrate the full corpus, modify machine-accounting artifacts, or change game data.
+
 ## Next authorized scope after a fresh signal
 
-**Rebase the project operating rules only (`RULESET_REBASE`).**
+**Close authority freshness and change-detection gaps only (`AUTHORITY_FRESHNESS_AND_CHANGE_DETECTION`).**
 
-The next stage may update the current operating-policy documents so the already-agreed execution model is stated once, consistently, and without duplicating detailed rules into `AGENTS.md`:
+That stage may synchronize the current machine-accounting authority documents with already-canonical machine artifacts and add mechanical checks that prevent the same drift from recurring. It may also close workflow trigger gaps required for those checks and remove stale generated status authority.
 
-- verified-fact reuse and dependency-based revalidation;
-- `COLLECT_ALL` as current machine-gate evaluation, not historical technical reanalysis;
-- `REMOTE_IO_FAST_PATH` and local-first repository work;
-- semantic identity vs transport identity and the JSON/JSONL canonical-state direction;
-- generated state vs authority boundaries at policy level.
-
-Do not combine that stage with authority-freshness implementation, CI-trigger/generated-status cleanup, semantic-hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+Do not combine that stage with semantic-hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
