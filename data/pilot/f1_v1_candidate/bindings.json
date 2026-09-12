@@ -9,7 +9,7 @@
     "manifest_path": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST"
   },
   "base_claims": {
-    "expected_effective_claims_sha256": "2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676",
+    "expected_effective_claims_sha256": "c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35",
     "logical_content_sha256": "c97ce08aa3d0a2767dd85635f070d6e42f3730c2de0e78e5aa8f5b5ed62077ee",
     "path": "data/pilot/f1/validation_claims"
   },
