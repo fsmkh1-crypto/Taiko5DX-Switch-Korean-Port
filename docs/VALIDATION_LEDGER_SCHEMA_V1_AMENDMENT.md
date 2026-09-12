@@ -192,8 +192,58 @@ Consequences:
 - schema v1 remains **NOT FROZEN**;
 - no 797 residual, builder, IPS, runtime, mapping, or game-file work was performed.
 
+## V104 — source-anchor provenance closure reaches PREPIN_PASS
+
+**Status:** `VERIFIED PROVENANCE CLOSURE / PREPIN_PASS / SCHEMA STILL NOT FROZEN`
+
+Fix commit:
+
+`cb21ce200a89457b77072b56f2f48a5d43d1bac0` — `fix: close source-anchor provenance gaps`
+
+The pilot base-claim dataset remains byte-immutable. A candidate overlay now carries explicit source-anchor corrections instead of rewriting historical claim rows:
+
+`data/pilot/f1_v1_candidate/source_anchor_overrides.json`
+
+Seven weak or malformed locators were corrected as one provenance cause family:
+
+- `V088.C06` — direct `JP_ONLY` statement;
+- `V088.C07` — direct R549 -> localization ID1706 statement;
+- `V089.C01` — complete 278-row disposition partition;
+- `V089.C03` — complete 197/81 historical storage partition;
+- `V091.C02` — exact padding histogram;
+- `V091.C05` — exact nine overlap pairs;
+- `V092.C04` — direct evidence-gap statement that the 16 candidate mappings remain useful but are not promoted.
+
+All seven bind to the already-canonical `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md` Git blob `ba9c660cf6f229ec2b19f024b9bc2cef94d26a44`. No anchor-protected canonical evidence document was edited.
+
+The validator now audits **all 97 effective claims**, including appended split claims, and requires for each claim:
+
+- the bound document Git blob identity matches;
+- `anchor_text_sha256` matches the stored text;
+- `heading_path` resolves to exactly one Markdown section;
+- the anchor text occurs inside that claimed heading section rather than merely somewhere in the document.
+
+Source-anchor override IDs are unique, bound by canonical JSON hash, must resolve to an effective claim ID, and may be used for future appended claims when inherited provenance is too coarse.
+
+GitHub Actions run `34680748843` completed successfully and returned:
+
+`PREPIN_PASS`
+
+No further candidate validation blocker was exposed. The materialized semantic hashes produced by that run are:
+
+```text
+source_state         91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c
+actions              a7c0f3ce3423b2a07797ef18e538c963140303751621a985dc6fe76c52bb8a4f
+source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987a4fe7
+effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676
+```
+
+These hashes are **observed candidate outputs only**. They are not yet pinned in bindings and V104 does not authorize schema freeze.
+
 ## Stopping point
 
-The next separately authorized stage is analysis of the schema-v1 candidate `V092.C04` source-anchor text-presence blocker only.
+The source-anchor/provenance cause family is closed. The candidate currently reaches `PREPIN_PASS` with no later blocker exposed by the existing fail-fast pipeline.
 
-Do not treat that stage as schema-freeze authorization and do not expand it into full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+The next separately authorized stage should address the validation-pipeline cause family identified during the V104 audit: diagnostic collect-all visibility and consolidation of the transport/provenance compatibility wrapper into the candidate validation path. Authority-freshness cleanup, CI-trigger/generated-status cleanup, semantic-hash pinning, and schema-freeze judgment remain separate later scopes.
+
+No full migration, 797 residual analysis, builder, IPS, runtime, mapping, or game-file work is authorized by V104.
