@@ -7,7 +7,7 @@ This file is the **sole project-resume authority**. Historical documents and led
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "POST_FREEZE_797_RESIDUAL_ANALYSIS",
+  "scope_id": "POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V107",
@@ -45,6 +45,8 @@ This file is the **sole project-resume authority**. Historical documents and led
     "docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md",
     "docs/PC_TO_SWITCH_ACCOUNTING_INVARIANTS.md",
     "docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md",
+    "docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt",
+    "docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt",
     "data/pilot/f1_v1_candidate/bindings.json"
   ],
   "forbidden_scope_expansion": [
@@ -146,6 +148,15 @@ current INDEX SHA-256      ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c
 
 The historical 20-shard transport is provenance, not a future sharding precedent.
 
+## Post-freeze forward residual working records
+
+Current working methodology and findings are recorded separately from machine-accounting/membership work:
+
+- `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt` — working evidence order, linguistic/semantic-role method, PC-patch-first occurrence analysis, counterexamples, rejected hypotheses, and evidence limits.
+- `docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt` — status-separated working claims (`VERIFIED`, `MECHANISM_OBSERVED`, `PROVISIONAL`, etc.).
+
+These records do not reconstruct historical 467/451/797 membership, do not create new Switch write authorization, and do not modify `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`. Semantic-review results such as 395 and 30/16/3 remain provisional until separately materialized and validated.
+
 ## Repository operating state
 
 Repository writes default to `GIT_OBJECT_ONLY_WRITE_MODE`. Permitted remote write actions are exactly:
@@ -173,6 +184,6 @@ Recent operating-policy recovery head `3d0c02ce59cf6412085c7188df78008ba96a2442`
 
 ## Awaiting fresh signal
 
-The next authorized scope is **`POST_FREEZE_797_RESIDUAL_ANALYSIS`**, read-only analysis under `FZ001`.
+The next authorized scope is **`POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS`**, read-only analysis under `FZ001` using the two working records above.
 
 A fresh explicit user signal is required before starting that scope. Full migration, builder, IPS, runtime implementation, and game-file modification remain outside it.

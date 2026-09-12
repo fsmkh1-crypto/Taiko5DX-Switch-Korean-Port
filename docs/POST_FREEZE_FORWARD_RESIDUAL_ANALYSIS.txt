@@ -1,0 +1,229 @@
+# Post-freeze forward residual analysis — working methodology and findings
+
+Date: 2026-09-12  
+Status: CURRENT WORKING ANALYSIS / NO SWITCH WRITE AUTHORIZATION
+
+## 1. Purpose and boundary
+
+This document records the post-freeze residual-analysis method that emerged after FZ001 and the findings obtained with that method. It is not a builder/runtime specification and does not authorize a Switch write.
+
+The historical V092 count-level accounting remains valid, but exact historical 467/451/797 membership is not reconstructed here. Forward work starts from the canonical Stage-2 residual and exact F1 evidence already preserved elsewhere.
+
+This document intentionally separates three evidence classes:
+
+1. structural/mechanical evidence;
+2. observed PC Korean-patch mechanisms;
+3. semantic/context review.
+
+A result may be useful without being strong enough to authorize a Switch target or write.
+
+## 2. Working analysis method
+
+For residual localization/text obligations, use this order:
+
+1. **Switch structural evidence**
+   - physical object identity;
+   - logical JP entry identity;
+   - owner/cardinality;
+   - storage/language domain;
+   - table/sequence relation.
+
+2. **Actual PC Korean-patch mechanism for that occurrence**
+   - inline replacement;
+   - suppression/zero replacement;
+   - pointer redirection;
+   - formatter/composite treatment;
+   - other runtime layer when applicable.
+
+3. **Actual PC Korean replacement evidence**
+   - exact replacement bytes;
+   - same-original variants at other PC RVAs;
+   - neighboring PC source sequence.
+
+4. **Switch logical-entry neighborhood**
+   - neighboring JP entries;
+   - table role;
+   - sequence correspondence.
+
+5. **Linguistic/semantic role**
+   - standalone noun/label;
+   - counter/unit;
+   - formatter component;
+   - name/yomi element;
+   - UI command/category;
+   - fragment of a larger expression.
+
+6. **Consumer tracing only when ambiguity remains**
+   - per-consumer tracing is a last resort, not the default first step.
+
+The intent is to use language as corroborating evidence for structure, not as a substitute for structure.
+
+## 3. Mandatory safety rules
+
+The following shortcuts are forbidden:
+
+- linguistic meaning alone does not select a Switch target;
+- PC mechanism correspondence alone does not authorize a Switch target or action;
+- identical Japanese text does not imply identical semantic object/use;
+- replacement agreement alone does not prove target binding;
+- unique full-JP value match alone does not prove final DIRECT_PORT;
+- `TARGET_RESOLVED` does not imply `WRITE_SAFE`.
+
+PC and Switch can express the same semantic obligation with different physical mechanisms. PC behavior is reference evidence and a source of hypotheses; Switch authorization still requires Switch-side ownership/context evidence.
+
+## 4. Provisional semantic/context findings
+
+These findings were obtained by applying the working method to the L1 unique-JP family. They are recorded as **PROVISIONAL** until a canonical semantic-review artifact/membership is materialized.
+
+### 4.1 Raw replacement-conflict L1 rows
+
+The 49 raw replacement-conflict rows were reviewed with Switch JP neighborhood, PC neighboring source rows, actual Korean replacement bytes, and linguistic role.
+
+Provisional disposition:
+
+```text
+SEMANTIC_CONTEXT_ALIGNED          30
+CONTEXT_DIVERGENT_USE             16
+FORMATTER_SHARED_USE_UNRESOLVED    3
+TOTAL                              49
+```
+
+Provisional aligned rows:
+
+`R90, R467, R468, R1344, R1347, R1348, R1580, R1582, R2195, R2311, R2312, R2313, R2318, R2319, R2323, R2324, R2325, R2326, R2487, R2489, R2609, R2705, R2913, R3047, R3099, R3100, R3117, R3119, R3181, R3182`
+
+Provisional context-divergent rows:
+
+`R19, R64, R69, R70, R213, R277, R777, R1490, R2182, R2183, R2255, R2284, R2380, R2447, R2557, R3065`
+
+Formatter-shared unresolved rows:
+
+`R1097, R1148, R1195` — original `（%s）`.
+
+These counts and lists are not write authorization.
+
+### 4.2 Raw replacement-agreement L1 rows
+
+A subsequent semantic/context consistency review of the 399 raw replacement-agreement candidates produced the following provisional split:
+
+```text
+general localization semantic binding candidates   395
+formatter reroute candidates                         3
+semantic-role unresolved                              1
+TOTAL                                                399
+```
+
+The unresolved row is `R2572 国`. Its PC source neighborhood (`石山町衆 / 国 / のくに / 軍備`) indicates a name/reading role distinct from the strong category/table context associated with the unique Switch JP `国` entry.
+
+The three formatter candidates are occurrences of `・%s`; they remain formatter-family work rather than ordinary localization promotion.
+
+No canonical 395-row membership artifact is created by this document.
+
+## 5. Semantic-role counterexamples
+
+The following examples are important because they disprove value-only binding.
+
+### `名`
+
+A Switch JP neighborhood equivalent to `姓 / 名 / 姓の読み / 名の読み` strongly matches the character-name field role. Other PC occurrences of `名` participate in different phrases/counting fragments. In particular, one PC patch window splits `名前 -> 이름` across smaller source windows. Therefore `名` is not one universal semantic object.
+
+### `止`
+
+A Switch `止` entry occurs in an independent state/control neighborhood, while one PC occurrence is the second half of `中止 -> 취소`. The byte value is the same; the semantic window is not.
+
+### `頭` and `石`
+
+Switch neighborhoods identify quantity/unit roles. Other PC occurrences use the same kanji in name/reading contexts. Counter/unit translation and reading/transliteration must not be merged.
+
+### `寺`, `山城`, `本`, `組`, `滝`
+
+Each has at least one context where the same Japanese text is a standalone facility/type/unit/category and another where it is part of a name/reading expression. These are concrete counterexamples to `same JP text == same semantic object`.
+
+### `国`
+
+The strong category/table use and the `国 / のくに` name-reading context are distinct. `R2572` is therefore a deliberate holdout.
+
+## 6. PC Korean-patch mechanism observations
+
+The PC patch's inline wire format is already canonically specified as:
+
+```text
+u32 pc_rva
+u32 length
+u8 original[length]
+u8 replacement[length]
+```
+
+That format establishes occurrence-addressed patching as a capability/definition. The new observation is that the actual patch corpus uses that capability to distinguish contexts.
+
+### 6.1 Same-original occurrence divergence
+
+Direct inspection found that the 49 conflict-row analysis touches 26 logical Japanese values which expand to 74 PC inline occurrences, with actual nonuniform replacement bytes across occurrences.
+
+Status: **MECHANISM_OBSERVED**.
+
+This is evidence that context-sensitive replacement is present in the actual PC patch, not merely allowed by the file format. Exact 26/74 census membership is not materialized in this documentation-only stage.
+
+### 6.2 Inline suppression plus pointer redirection
+
+For `R3047 流言` and `R3099 宣戦`, direct PC-patch inspection found an inline replacement consisting of zero bytes together with mode-1 pointer redirection to the private prefix replacement pool.
+
+Status: **MECHANISM_OBSERVED**.
+
+The canonical PC runtime reference already establishes the complete pointer engine population as 56 records: 5 mode-0 and 51 mode-1, with mode-1 destinations computed from the private prefix base. The row-specific R3047/R3099 combination is the new occurrence-level observation.
+
+This is a PC precedent for solving a semantic obligation with more than a same-length inline replacement. It does **not** by itself authorize `REDIRECT_PORT` on Switch.
+
+### 6.3 Negative pointer observation boundary
+
+A read-only cross-check suggested that only two of the 49 conflict rows are tied to the PC pointer layer and the remaining 47 are not.
+
+Status: **PROVISIONAL** until an explicit intersection against the exhaustive 56-record pointer population is materialized. Negative evidence must not be promoted merely from an ad-hoc search.
+
+## 7. Rejected hypotheses and evidence
+
+### Rejected: PC translation is value-global
+
+Evidence: the actual corpus contains same-original occurrences with different replacement bytes, and semantic-role counterexamples such as `名`, `止`, `頭`, `石`, `寺`, and `山城`.
+
+### Rejected: same Japanese text implies one Switch semantic object
+
+Evidence: the same text appears in counter/unit, name/yomi, facility/type, and composite-fragment roles. Switch JP neighborhoods and PC source neighborhoods separate these uses.
+
+### Rejected: pointer/runtime string handling is only mapping/font infrastructure
+
+Evidence: `R3047` and `R3099` show string-occurrence obligations using inline-zero plus mode-1 pointer redirection.
+
+### Rejected: every replacement conflict is translation-data error
+
+Evidence: many differences are context-sensitive translation, spacing/layout, suppression, or composite-window behavior. Conflict is evidence requiring classification, not proof of bad data.
+
+### Rejected: replacement agreement is sufficient for target resolution
+
+Evidence: `R2572 国` survived raw replacement agreement but diverged by semantic role from the unique JP table context.
+
+## 8. Pre-emptive non-authorization rule
+
+**PC mechanism correspondence alone != Switch target/action authorization.**
+
+Even when PC uses inline suppression, pointer redirection, or a context-specific replacement, Switch must independently establish the owning object/use and a safe equivalent representation. PC mechanics may be portable, partly portable, or merely explanatory.
+
+## 9. Evidence limits
+
+The exact PC patch target is Steam 1.2.1.0 build 9163702, size 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`.
+
+The currently available Drive `Taiko5DX.exe` is 18,479,304 bytes and is not that target build. Therefore current occurrence-level PC findings rely on DLL/T5K record-table internal evidence and previously closed runtime semantics. They do not establish that the mismatched Drive EXE contains the expected preimages at those RVAs, nor do they supply complete target-build XREF/UI naming.
+
+Acquiring the exact PC target build remains an evidence target for stronger RVA/context validation.
+
+## 10. Promotion boundary
+
+This methodology is a **working rule**, not yet a modification of `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
+
+Promote it into the framework only after at least one additional residual family is analyzed successfully with the same evidence order and the method survives counterexample review.
+
+Until then:
+
+- keep semantic review results provisional;
+- preserve mechanism observations separately from Switch authorization;
+- use consumer tracing only for the ambiguity that remains after structural, PC-patch, context, and linguistic evidence are exhausted.

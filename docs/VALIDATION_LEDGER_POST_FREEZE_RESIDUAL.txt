@@ -1,0 +1,71 @@
+# Validation ledger — post-freeze residual working analysis
+
+Date: 2026-09-12  
+Status: CURRENT WORKING LEDGER / NO SWITCH WRITE AUTHORIZATION
+
+## 1. Status meanings
+
+This ledger deliberately separates reproducible mechanical facts from occurrence-level PC mechanism observations and semantic review.
+
+- `VERIFIED` — reproducible from fixed canonical evidence/selector or already closed canonical evidence; count/membership claims require the provenance appropriate to that claim.
+- `MECHANISM_OBSERVED` — direct inspection of PC patch records/runtime relationship; re-queryable observation, not a semantic or Switch authorization.
+- `SEMANTIC_REVIEWED` — explicit human/model semantic-context judgment after evidence review.
+- `PROVISIONAL` — useful observation or reviewed count not yet promoted to a canonical artifact/membership.
+- `SUPERSEDED` — retained historical claim replaced by a later claim.
+- `RETRACTED` — retained historical claim found unsound.
+
+`MECHANISM_OBSERVED` does not imply that the same mechanism must be used on Switch. `PROVISIONAL` may not authorize a write.
+
+## 2. Fixed evidence boundary
+
+Canonical PC runtime evidence used by this ledger:
+
+- embedded `dinput8.dll` SHA-256 `ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7`
+- `T5K121R` SHA-256 `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`
+- exact PC target identity: Steam 1.2.1.0 build 9163702, 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
+- canonical PC runtime reference: `docs/PC_RUNTIME_DLL_SPEC.md`
+- mapping/pointer semantics: `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md`
+
+The available Drive EXE is a different 18,479,304-byte file. Exact target-build preimage/XREF validation is therefore outside the present evidence.
+
+## 3. Claims
+
+| ID | Status | Claim | Evidence / method | Limit |
+|---|---|---|---|---|
+| PF001 | MECHANISM_OBSERVED | The actual PC patch uses occurrence-specific replacement behavior for same-original strings; the current conflict analysis spans 26 logical values and 74 PC inline occurrences with nonuniform replacement bytes. | Direct read-only inspection of T5K inline records grouped by logical original and occurrence RVA. Inline wire format and staging semantics are already closed in PC runtime docs. | Exact 26/74 census membership is not materialized in this documentation-only stage; do not treat the counts as selector-verified membership. |
+| PF002 | VERIFIED | The canonical PC pointer population is exhaustive at 56 records: mode 0 = 5, mode 1 = 51; mode 1 redirects an 8-byte pointer to `private prefix base + arg`. | `docs/PC_RUNTIME_PHASE3_MAPPING_POINTER_SPEC.md` and closed PC runtime validation. | This verifies the PC engine only; it does not identify a Switch counterpart. |
+| PF003 | MECHANISM_OBSERVED | `R3047 流言` and `R3099 宣戦` are observed as inline-zero occurrences combined with mode-1 pointer redirection into the PC private prefix replacement pool. | Direct occurrence-level cross-check between the PC inline records and pointer records, interpreted under the canonical mode-1 semantics from PF002. | PC precedent only. It does not authorize Switch `REDIRECT_PORT`. |
+| PF004 | PROVISIONAL | Among the 49 raw replacement-conflict L1 rows, a read-only cross-check suggested 2 pointer-linked rows and 47 without pointer records. | Ad-hoc intersection during the current analysis against the known pointer mechanism. | Must be promoted only after an explicit exhaustive 56-record intersection artifact/query is preserved; negative evidence is not yet canonical. |
+| PF005 | PROVISIONAL | Semantic/context review of the 49 raw replacement-conflict L1 rows produced 30 context-aligned, 16 context-divergent, and 3 formatter-shared unresolved rows. | Switch JP neighborhood + PC neighboring originals + actual Korean replacement + linguistic role. Exact row lists are recorded in `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`. | No canonical semantic-review manifest/membership yet. No write authorization. |
+| PF006 | PROVISIONAL | Semantic/context review of the 399 raw replacement-agreement L1 candidates produced 395 general localization binding candidates, 3 formatter reroutes, and 1 semantic-role unresolved row (`R2572 国`). | Same method as PF005, with counterexample search across context and role. | No canonical 395-row membership artifact. This is not `VERIFIED` target membership. |
+| PF007 | MECHANISM_OBSERVED | PC context handling includes occurrence-specific spacing, suppression, composite-window behavior, and pointer redirection rather than one global same-original replacement rule. | Direct examples from the inspected PC records; strongest pointer-layer examples are PF003. | Mechanism family observation only; individual Switch obligations remain independently gated. |
+
+## 4. Methodology boundary
+
+The current working evidence order is:
+
+```text
+Switch structure
+-> PC occurrence mechanism
+-> PC replacement/context
+-> Switch JP neighborhood
+-> linguistic role
+-> consumer tracing only if ambiguity remains
+```
+
+Safety rules:
+
+- language alone cannot select a target;
+- PC mechanism match alone cannot authorize a Switch action;
+- same JP text is not one semantic object by default;
+- replacement agreement is not sufficient;
+- target resolution and write safety remain separate.
+
+The method is recorded in `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`. It is not yet promoted into `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
+
+## 5. Open evidence gaps
+
+1. Exact PC target EXE build 9163702 is not currently available; the Drive EXE is a different size/build.
+2. PF004 requires a preserved exhaustive pointer-set intersection before promotion.
+3. PF005/PF006 require a canonical semantic-review artifact before any membership/count can become machine-verifiable.
+4. The working methodology should pass at least one additional residual family before framework promotion.
