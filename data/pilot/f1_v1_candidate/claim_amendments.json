@@ -311,16 +311,56 @@
           "predicate": "value"
         }
       ]
+    },
+    {
+      "claim_id": "V094.C04",
+      "new_claims": [
+        {
+          "claim_id": "V094.C23",
+          "predicate": "terminal_disposition_overlay",
+          "value_key": "terminal_disposition"
+        },
+        {
+          "claim_id": "V094.C24",
+          "predicate": "action_family",
+          "value_key": "action_family"
+        },
+        {
+          "claim_id": "V094.C25",
+          "predicate": "action_status",
+          "value_key": "action_status"
+        }
+      ]
     }
   ],
   "structured_atomic_exceptions": [
+    {
+      "claim_id": "V088.C04",
+      "reason": "One exhaustive set of the 16 F1 residual source rows rejected by the canonical V088 family gate."
+    },
+    {
+      "claim_id": "V089.C03",
+      "reason": "One exhaustive historical storage partition of the same 278 F1 residual population: 197 full-window plus 81 padding-mismatch rows; V093 exact replay reproduces the same split."
+    },
+    {
+      "claim_id": "V090.C01",
+      "reason": "One exhaustive identity map for the four terminator-capacity failures, binding each source row to its JP localization ID."
+    },
     {
       "claim_id": "V091.C02",
       "reason": "One exhaustive histogram measurement; bucket values are interpreted only as one complete distribution and correction supersedes the histogram as a whole."
     },
     {
+      "claim_id": "V091.C05",
+      "reason": "One exhaustive set of the nine hypothetical padding-window cross-object overlap pairs recorded by the audit."
+    },
+    {
       "claim_id": "V092.C02",
       "reason": "One accounting equation; component values jointly define the equation and correction supersedes the equation as a whole."
+    },
+    {
+      "claim_id": "V093.C03",
+      "reason": "One exhaustive set of the exact 16 V088-rejected residual source rows reproduced by the deterministic selector replay."
     },
     {
       "claim_id": "V094.C01",

@@ -16,19 +16,19 @@
   },
   "base_head": "e2e70298466d44fc28d210e323f91d13e5561a38",
   "claim_amendments": {
-    "canonical_json_sha256": "1955ce2f558cd034ccf14b3d697c02c4f199ba8f268361dd7c6ef87140706cac",
+    "canonical_json_sha256": "c147de78a41ca418c941cc402d833069a7cc4c0a2a91600ad1ac3b7af9f1dcd1",
     "path": "data/pilot/f1_v1_candidate/claim_amendments.json"
   },
   "expected_counts": {
     "actions": 158,
-    "active_claims": 85,
+    "active_claims": 87,
     "base_claims": 42,
-    "candidate_migration_entries": 749,
+    "candidate_migration_entries": 752,
     "coverage_blocks": 61,
     "edges": 158,
-    "effective_claims": 94,
+    "effective_claims": 97,
     "legacy_migration_entries": 697,
-    "new_claims": 52,
+    "new_claims": 55,
     "sources": 278
   },
   "legacy_migration_manifest": {
@@ -36,7 +36,7 @@
     "path": "data/pilot/f1/migration_manifest"
   },
   "materialization_contract": {
-    "canonical_json_sha256": "698fd9d576f2d1877b6ce5b0dc65c52cb49463382d4ec9392b2a8aad371ba2ae",
+    "canonical_json_sha256": "00d1570af9c1703b277678dc0ba8f21210ed714fdaab62feb6ffa5fbd6a60787",
     "path": "data/pilot/f1_v1_candidate/materialization_contract.json"
   },
   "membership_snapshot": {

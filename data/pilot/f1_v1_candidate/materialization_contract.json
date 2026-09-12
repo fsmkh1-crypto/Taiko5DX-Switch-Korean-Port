@@ -9,7 +9,8 @@
     },
     "claim_refs": [
       "V094.C01",
-      "V094.C04",
+      "V094.C24",
+      "V094.C25",
       "V094.C07",
       "V094.C08",
       "V094.C09",
@@ -28,7 +29,7 @@
     "legacy_evidence_refs_from": "evidence_ids",
     "lifecycle_state": "ACTIVE",
     "revision": 1,
-    "source": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz"
+    "source": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST"
   },
   "categories": {
     "CAPACITY": {
@@ -60,7 +61,9 @@
       "blocker": null,
       "claim_refs": [
         "V094.C01",
-        "V094.C04",
+        "V094.C23",
+        "V094.C24",
+        "V094.C25",
         "V094.C07",
         "V094.C08",
         "V094.C09",
@@ -203,7 +206,7 @@
   },
   "edge_materialization": {
     "claim_refs": [
-      "V094.C04"
+      "V094.C14"
     ],
     "legacy_evidence_refs": [
       "V094"

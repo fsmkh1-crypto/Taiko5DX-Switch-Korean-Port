@@ -6,6 +6,7 @@ import hashlib
 import io
 import json
 import re
+import sys
 from pathlib import Path
 
 import validate_machine_accounting_schema_v1_candidate as base
@@ -82,7 +83,52 @@ def load_action_manifest_v2(path: Path):
     return index_raw, logical_bytes, rows, False, index_raw
 
 
+def _repo_root_from_argv(argv: list[str]) -> Path:
+    root = Path(".")
+    for idx, arg in enumerate(argv):
+        if arg == "--repo-root" and idx + 1 < len(argv):
+            root = Path(argv[idx + 1])
+        elif arg.startswith("--repo-root="):
+            root = Path(arg.split("=", 1)[1])
+    return root.resolve()
+
+
+def validate_structured_claim_registry(root: Path) -> None:
+    candidate = root / "data/pilot/f1_v1_candidate"
+    bindings = json.loads((candidate / "bindings.json").read_text(encoding="utf-8"))
+    amendments = json.loads((candidate / "claim_amendments.json").read_text(encoding="utf-8"))
+
+    base_claims, _ = base.load_sharded_jsonl(root / bindings["base_claims"]["path"])
+    claims = base.materialize_effective_claims(base_claims, amendments)
+
+    entries = amendments.get("structured_atomic_exceptions", [])
+    registry_ids = [entry["claim_id"] for entry in entries]
+    require(len(registry_ids) == len(set(registry_ids)), "duplicate structured-claim registry IDs")
+    require(all(isinstance(entry.get("reason"), str) and entry["reason"].strip() for entry in entries),
+            "structured-claim registry entry missing reason")
+
+    active_structured = {
+        claim["claim_id"]
+        for claim in claims
+        if claim["lifecycle_state"] == "ACTIVE"
+        and isinstance(claim.get("value"), (dict, list))
+    }
+    registry = set(registry_ids)
+
+    require(
+        active_structured == registry,
+        "structured-claim registry mismatch: "
+        f"unclassified={sorted(active_structured - registry)} "
+        f"non_active_or_scalar={sorted(registry - active_structured)}"
+    )
+
+    split_sources = {split["claim_id"] for split in amendments["splits"]}
+    require(not (split_sources & registry),
+            f"claim cannot be both split and ATOMIC_STRUCTURED: {sorted(split_sources & registry)}")
+
+
 base.load_action_manifest = load_action_manifest_v2
 
 if __name__ == "__main__":
+    validate_structured_claim_registry(_repo_root_from_argv(sys.argv[1:]))
     raise SystemExit(base.main())
