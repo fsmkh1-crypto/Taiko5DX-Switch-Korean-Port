@@ -1,0 +1,45 @@
+# Validation ledger — forward structural census 251
+
+Date: 2026-09-13 (KST)
+Status: CURRENT / STRUCTURAL CENSUS COMPLETE / NO SWITCH WRITE AUTHORIZATION
+
+## Status meanings
+
+- VERIFIED: reproducible mechanical fact from fixed canonical evidence.
+- STRUCTURAL_REVIEWED: family-level structural interpretation supported by membership and object/table evidence, but not semantic target approval.
+- SUPERSEDED: historical working claim retained for provenance but replaced for current use.
+- PROVISIONAL: useful working conclusion not promoted to deterministic authority.
+
+## Claims
+
+| ID | Status | Claim | Evidence / limit |
+|---|---|---|---|
+| FS251-001 | VERIFIED | The exact census population contains 251 forward rows and has ordered source-ID SHA-256 `2158d76714750ef9dd3661e9fba5ac6e14ab65d327e70dcdd567eac16c2ae80f` and ordered R-ID SHA-256 `891bda7b16bc8b3d59725c8a03f28ce3d04b9838b41611a1f7793c7e8a8090b4`. | `MEMBERSHIP.json`; population is the historical post-CAP64 `216+35` remainder only. |
+| FS251-002 | VERIFIED | The 251 rows partition exactly into 13 disjoint structural families with sum 251, intersection 0, unclassified 0. | `INDEX.json` + `MEMBERSHIP.json`. |
+| FS251-003 | SUPERSEDED | The prior precheck count of 79 additional JP logical relations is replaced by 78. | R1690 normalizes to an empty logical string; empty-string prefix is invalid evidence. |
+| FS251-004 | STRUCTURAL_REVIEWED | E1/E2/E3 contain 67/6/4 NUL-normalized logical full/shared/prefix relations. | Structural relation only; no semantic/write authorization. |
+| FS251-005 | STRUCTURAL_REVIEWED | E4A/E4B/E5 contain 18/8/104 embedded-fragment relations with increasing physical-target ambiguity. | Containment alone does not prove semantic correspondence. |
+| FS251-006 | VERIFIED | E6 is exactly R1690, an empty logical window. | Prevents empty-string prefix false positives. |
+| FS251-007 | STRUCTURAL_REVIEWED | E7 is exactly R3244-R3250, an opaque fixed block that should be analyzed as encoding/data structure, not ordinary CP932 text. | No target selected. |
+| FS251-008 | STRUCTURAL_REVIEWED | G1/G2/G3/G4/G5 contain 7/13/7/1/8 affine-gap rows forming region, role, item, UI-header, and UTF-16/mixed block structures. | Family identity only; neighboring affine deltas fail exact guard and are not extended. |
+| FS251-009 | VERIFIED | The 35 legacy FORMATTER_CANDIDATE rows distribute as E1=1, E4B=1, E5=33. | Formatter is an overlay rather than a top-level structural family. |
+| FS251-010 | SEMANTIC_BOUNDARY | This census authorizes 0 Switch writes and starts no consumer tracing. | Target resolution, semantic review, and write safety remain separate stages. |
+| FS251-011 | STRUCTURAL_REVIEWED | The historical 735/251 boundary is not guaranteed to be a true data-structure boundary; coherent tables/objects cross it. | Requires full forward-986 structural synthesis next. |
+| FS251-012 | VERIFIED | F1 accepted 262 and Stage-2 affine target mappings are not reopened by this census. | This scope only refines the forward residual structural taxonomy. |
+
+## Canonical artifacts
+
+- report: `docs/FORWARD_RESIDUAL_STRUCTURAL_CENSUS_251.md`
+  - SHA-256 `e4c860cb3dbd38bce6d7881aafca73688cb10f042ef441f1072cb372a45da483`
+- index: `data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json`
+  - SHA-256 `7091621b3a5e5eb3028907df182036780f28fcba34e51d7ecc2bf1578b26766a`
+- membership: `data/post_freeze/forward_residual_structural_census_251_v1/MEMBERSHIP.json`
+  - SHA-256 `c84f4fde42721c698ef1227836b67fb0eaaf005ee52a4ffbf46fcbbb98f480d9`
+
+## Next scope
+
+After a fresh signal only:
+
+`FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS`
+
+No framework modification, builder/IPS/runtime implementation, game-file modification, or Switch write authorization is included.

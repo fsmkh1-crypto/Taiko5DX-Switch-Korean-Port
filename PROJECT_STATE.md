@@ -2,12 +2,12 @@
 
 Last updated: 2026-09-13 (KST)
 
-This file is the sole project-resume authority. Historical documents/ledgers preserve provenance but do not override this file.
+This file is the sole project-resume authority. Historical documents and ledgers preserve provenance but do not override this file.
 
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "POST_FREEZE_FORWARD_STRUCTURAL_CENSUS_251",
+  "scope_id": "FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V107",
@@ -34,11 +34,12 @@ This file is the sole project-resume authority. Historical documents/ledgers pre
     "docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md",
     "docs/PC_TO_SWITCH_ACCOUNTING_INVARIANTS.md",
     "docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md",
-    "docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt",
-    "docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt",
     "docs/CAP64_FORWARD_CORRECTION.md",
     "docs/VALIDATION_LEDGER_CAP64_CORRECTION.txt",
     "data/post_freeze/forward_localization_raw_start_partition_v2/INDEX.json",
+    "docs/FORWARD_RESIDUAL_STRUCTURAL_CENSUS_251.md",
+    "docs/VALIDATION_LEDGER_FORWARD_STRUCTURAL_CENSUS_251.txt",
+    "data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json",
     "docs/L3_SEMANTIC_PC_MECHANISM_ANALYSIS.md",
     "data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
@@ -65,16 +66,16 @@ Inherited without revalidation:
 - F1 accepted residual membership: 262
 - F1 action split: 158 / 75 / 25 / 4, with 16 F1-rule rejects
 - schema-v1 freeze declaration: FROZEN — FZ001
-- PC DLL/runtime mechanics already closed in canonical runtime documents
-- historical forward-localization partition v1 and L3 88-row review remain provenance
+- PC DLL/runtime mechanics: inherited from canonical runtime documents
 
-Current correction:
+Post-freeze forward work:
 
 - CAP64 root-cause audit: COMPLETE
-- corrected raw-start partition v2: MATERIALIZED
-- historical v1 completeness claim: SUPERSEDED
+- corrected raw-start partition v2: MATERIALIZED (`454 / 165 / 116 / 0 = 735`)
+- historical 700-row v1 completeness claim: SUPERSEDED
 - historical L4=R1291 claim: RETRACTED
-- next scope: joint structural census of the remaining 251 legacy residual labels
+- exact structural census of remaining legacy 251 rows: COMPLETE / MATERIALIZED
+- next scope: stable structural synthesis across the full forward 986
 
 ## 2. Frozen semantic identities
 
@@ -87,9 +88,9 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35
 ```
 
-CAP64 correction does not reopen these frozen F1 semantic identities.
+CAP64 correction and the 251 census do not reopen these frozen F1 semantic identities.
 
-## 3. Canonical target and accounting
+## 3. Canonical target and stable accounting
 
 Target:
 
@@ -119,39 +120,14 @@ F1_RULE_REJECTED                      16
 TOTAL                                278
 ```
 
-## 4. CAP64 correction — current authority
+## 4. CAP64 corrected raw-start authority
 
-Canonical correction document:
-
-- `docs/CAP64_FORWARD_CORRECTION.md`
-- SHA-256 `71b122a2f9b3ca83c76a1f8e7a3eaf59e60234a10d14e4b1d6a1c272641d2c0d`
-
-Correction ledger:
-
-- `docs/VALIDATION_LEDGER_CAP64_CORRECTION.txt`
-- SHA-256 `053b6d3405d8cd89649ea9b8fde10ec26b41e60536bca99892886350cc609147`
-
-Machine-readable corrected raw-start artifact:
+Canonical corrected raw-start artifact:
 
 - `data/post_freeze/forward_localization_raw_start_partition_v2/INDEX.json`
 - SHA-256 `7134f9df08d6541d099bf0bf6dd305fc6232967910ef5ecb2818923da46ae4fc`
 
-The historical artifact `data/post_freeze/forward_localization_family_partition_v1/` is retained unchanged for provenance, but its claim of complete/current 700-row coverage is superseded.
-
-### 4.1 Censorship rule
-
-`switch_raw_candidate_count_capped_64 == 64` means `actual candidate count >= 64`; it is not an exact count.
-
-A capped candidate list must not be used to prove:
-
-- absence beyond the stored candidates;
-- uniqueness/cardinality;
-- complete language-domain coverage;
-- complete storage-mutability coverage.
-
-### 4.2 Corrected raw-start census
-
-The corrected raw-start relation is:
+Current raw-start relation:
 
 ```text
 L1 UNIQUE_FULL_JP_SINGLE_OWNER       454
@@ -162,49 +138,94 @@ L4 NON_JP_LOCALIZATION_START           0
                                       735
 ```
 
-Legacy forward labels after this one root-cause correction:
+The historical `forward_localization_family_partition_v1/` remains provenance only for its old 700-row completeness claim.
+
+CAP rule remains:
+
+- a stored raw candidate count of 64 is censored and means actual count `>= 64`;
+- capped lists cannot prove absence, uniqueness/cardinality, complete language domain, or complete storage mutability.
+
+Existing L1 semantic overlays remain scoped to their original 448 rows.
+Existing L3 semantic overlay remains scoped to its original 88 rows.
+R2300 retains an expanded-candidate re-review trigger.
+No CAP64 correction row is Switch-write authorized by this correction.
+
+## 5. Exact structural census of the remaining 251
+
+Canonical report:
+
+- `docs/FORWARD_RESIDUAL_STRUCTURAL_CENSUS_251.md`
+- SHA-256 `e4c860cb3dbd38bce6d7881aafca73688cb10f042ef441f1072cb372a45da483`
+
+Validation ledger:
+
+- `docs/VALIDATION_LEDGER_FORWARD_STRUCTURAL_CENSUS_251.txt`
+- SHA-256 `23b1b72270c06d7b65a5d2b066cd32eda630c7372929d1f2f0492d50abf5c2b9`
+
+Machine-readable artifacts:
+
+- `data/post_freeze/forward_residual_structural_census_251_v1/INDEX.json`
+  - SHA-256 `7091621b3a5e5eb3028907df182036780f28fcba34e51d7ecc2bf1578b26766a`
+- `data/post_freeze/forward_residual_structural_census_251_v1/MEMBERSHIP.json`
+  - SHA-256 `c84f4fde42721c698ef1227836b67fb0eaaf005ee52a4ffbf46fcbbb98f480d9`
+
+Exact structural partition:
 
 ```text
-raw-start localization relation      735
-legacy residual-other                216
-legacy formatter                      35
-                                      ---
-                                      986
+E1 TERMINATED_LOGICAL_FULL_SINGLE              67
+E2 TERMINATED_LOGICAL_FULL_SHARED               6
+E3 TERMINATED_LOGICAL_PREFIX                    4
+E4A EMBEDDED_SINGLE_NO_RAW_OCCURRENCE          18
+E4B EMBEDDED_SINGLE_RAW_MULTI_OCCURRENCE        8
+E5 EMBEDDED_MULTI_PHYSICAL                    104
+E6 EMPTY_LOGICAL_WINDOW                         1
+E7 OPAQUE_FIXED_BLOCK_3244_3250                 7
+G1 AFFINE_GAP_REGION_TABLE                      7
+G2 AFFINE_GAP_ROLE_TABLE                       13
+G3 AFFINE_GAP_ITEM_TABLE                        7
+G4 AFFINE_GAP_UI_HEADER_COMPOSITE               1
+G5 AFFINE_GAP_UTF16_MIXED_BLOCK                 8
+                                                ---
+                                                251
 ```
 
-The 216 and 35 are NOT final structural families. The next analysis population is their joint 251 rows.
+Integrity:
 
-Thirty-five exact forward rows move from the legacy unclassified bucket into the corrected raw-start relation. R1291 moves from historical L4 into corrected L3.
+```text
+family sum            251
+intersection            0
+unclassified            0
+duplicate R-number      0
+ordered source-ID SHA  2158d76714750ef9dd3661e9fba5ac6e14ab65d327e70dcdd567eac16c2ae80f
+ordered R-ID SHA       891bda7b16bc8b3d59725c8a03f28ce3d04b9838b41611a1f7793c7e8a8090b4
+```
 
-### 4.3 Historical semantic overlays after correction
+The earlier provisional count of 79 additional JP logical relations is superseded by 78. `R1690` normalizes to an empty logical string and is isolated as E6; empty-string prefix matching is invalid evidence.
 
-- Existing L1 overlays remain scoped to the original L1 448 only. The six added L1 rows have not received semantic/context review.
-- `data/post_freeze/l3_semantic_pc_mechanism_v1/` remains a valid review of its original 88-row parent only.
-- Corrected L3 parent count is 116, so the old 88-row review is incomplete for the current parent.
-- R2300 has a legitimate re-review trigger because its uncapped JP-prefix candidate set expanded.
-- The prior five L3 unresolved rows remain unresolved within the original 88-row review.
-- No CAP64 correction row is Switch-write authorized by this correction.
+The legacy 35 formatter rows are not a top-level structural family. They distribute as E1=1, E4B=1, E5=33 and remain an overlay.
 
-## 5. Next-scope trigger: residual 251
+## 6. Current structural boundary
 
-A read-only precheck observed 79 additional JP logical relations inside the remaining 251 legacy residual labels after logical-window normalization, all involving PC originals with NUL + zero padding.
+The 735 raw-start relation and the exact 251 census are both valid within their historical parent populations, but the boundary between them is not guaranteed to be a true data-structure boundary.
 
-This 79-row observation is PROVISIONAL only. Its exact membership is intentionally not canonicalized yet.
+Coherent table/object structures cross the historical split. Therefore the next task is not semantic review of one family in isolation.
 
-Therefore the next authorized analytical scope is:
+Next required analytical scope:
 
-**`POST_FREEZE_FORWARD_STRUCTURAL_CENSUS_251`**
+`FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS`
 
-Required order:
+Goals:
 
-1. treat all 251 rows as one census population;
-2. do not preserve `216 unclassified` and `35 formatter` as final families;
-3. test logical full match, shared owner, prefix/composite, padding/boundary, containment/adjacency, table/storage structure;
-4. form stable structural families first;
-5. perform semantic/context auditing only after the population is structurally stable;
-6. consumer tracing remains last resort.
+1. combine all 986 forward rows;
+2. preserve exact membership/provenance from both current artifacts;
+3. merge or split families only when physical object, table, storage, encoding, or occurrence structure justifies it;
+4. produce one stable 986-row structural taxonomy;
+5. defer semantic target approval until that taxonomy is stable;
+6. keep consumer tracing as last resort.
 
-## 6. Repository operating state
+This does not reopen F1 accepted 262 or Stage-2 affine target mappings.
+
+## 7. Repository operating state
 
 Repository writes use `GIT_OBJECT_ONLY_WRITE_MODE`.
 
@@ -219,21 +240,22 @@ update_ref(main, force=false)
 
 Forbidden write actions include `update_file`, `create_file`, `delete_file`, `create_branch`, force-push, and history rewrite.
 
-## 7. Authority and boundaries
+## 8. Authority and boundaries
 
 - `PROJECT_STATE.md` is the sole resume authority.
-- Verified F1 and Stage-2 affine facts are not reopened by CAP64 correction.
-- Historical artifacts remain provenance; supersession does not delete history.
-- The corrected 735 is a raw-start relation partition, not the final forward localization taxonomy.
-- The 251 residual rows must be structurally censused before further deep semantic auditing.
+- Historical documents remain provenance and are not silently deleted.
+- Verified F1 and Stage-2 affine facts are not reopened without a legitimate trigger.
+- Structural membership is not semantic target approval.
 - `TARGET_RESOLVED` remains distinct from `WRITE_SAFE`.
 - PC Korean patch behavior remains the reference before inventing Switch-specific mechanisms.
-- No full migration, builder, IPS, runtime implementation, game-file modification, or Switch write authorization is currently authorized.
+- Accidental noncanonical commits `6aabde5e77a58e51fbe125101ae1b3f1309b4887`, `0c99cec726b7b1d0a0acefafb7d9ee30ebab6fdd`, `e19810b00258f726feb4edb0b398bc2f70b0127c`, `f3534d8d8b25c0dacd74e60652fa74bb148eb819` (temporary test files created by forbidden Contents-API writes) are historical provenance only. The canonical recovery commit removes all temporary files through Git-tree construction; no force-push/history rewrite is used.
+- `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` is unchanged.
+- No builder/IPS/runtime implementation, game-file modification, full migration, or Switch write authorization is currently authorized.
 
-## 8. Awaiting fresh signal
+## 9. Awaiting fresh signal
 
 STOPPED_AWAITING_USER_SIGNAL.
 
-Next recommended scope: read-only structural census of the exact 251-row legacy residual-label population.
+Next recommended scope: read-only `FORWARD_986_STABLE_STRUCTURAL_PARTITION_SYNTHESIS`.
 
-Do not begin semantic review, framework modification, builder/runtime work, or repository writes without a fresh explicit signal.
+Do not begin semantic family audit, framework modification, builder/runtime work, or repository writes without a fresh explicit signal.
