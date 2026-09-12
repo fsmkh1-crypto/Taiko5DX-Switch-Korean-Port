@@ -8,6 +8,7 @@ on:
       - 'data/pilot/f1_v1_candidate/**'
       - 'tools/machine_accounting_v1_candidate_lib.py'
       - 'tools/validate_machine_accounting_schema_v1_candidate.py'
+      - 'tools/diagnose_f1_manifest_transport.py'
       - 'tests/fixtures/machine_accounting_schema_v1.json'
       - '.github/workflows/machine-accounting-schema-v1-candidate.yml'
   pull_request:
@@ -17,6 +18,7 @@ on:
       - 'data/pilot/f1_v1_candidate/**'
       - 'tools/machine_accounting_v1_candidate_lib.py'
       - 'tools/validate_machine_accounting_schema_v1_candidate.py'
+      - 'tools/diagnose_f1_manifest_transport.py'
       - 'tests/fixtures/machine_accounting_schema_v1.json'
   workflow_dispatch:
 
@@ -32,5 +34,7 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m py_compile tools/machine_accounting_v1_candidate_lib.py tools/validate_machine_accounting_schema_v1_candidate.py
+      - run: python -m py_compile tools/machine_accounting_v1_candidate_lib.py tools/validate_machine_accounting_schema_v1_candidate.py tools/diagnose_f1_manifest_transport.py
+      - name: Diagnose bound V094 transport
+        run: python tools/diagnose_f1_manifest_transport.py || true
       - run: python tools/validate_machine_accounting_schema_v1_candidate.py --repo-root .
