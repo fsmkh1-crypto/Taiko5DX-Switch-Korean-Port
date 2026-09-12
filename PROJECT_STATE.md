@@ -8,11 +8,14 @@ This file is the **sole project-resume authority**. Historical documents may con
 {
   "schema": "PROJECT_RESUME_V2",
   "scope_id": "PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL",
+  "scope_kind": "REPOSITORY_WRITE",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V105",
-  "last_closed_stage_commit": "3d7e640af4528b674229dddb707eea2a89b8c952",
+  "last_closed_validation_id": "V106",
+  "last_closed_stage_commit": "50d41c1e036fa336d7605cfd0ae7f317e1b1422b",
   "last_closed_ci_run_id": 34685595581,
+  "last_closed_ci_validation_id": "V105",
   "last_closed_ci_conclusion": "success",
+  "remote_io_metrics_location": "Google Drive / GPT / 태합입지전 프로젝트 / REMOTE_IO_METRICS.jsonl",
   "ruleset_rebase_status": "COMPLETE",
   "repository_write_mode": "GIT_OBJECT_ONLY_WRITE_MODE",
   "repository_write_allowed_actions": [
@@ -23,10 +26,13 @@ This file is the **sole project-resume authority**. Historical documents may con
   ],
   "authority_freshness_status": "COMPLETE",
   "rules_workflow_cleanup_status": "COMPLETE",
+  "pre_freeze_governance_cleanup_status": "COMPLETE_V106",
   "machine_fact_binding": "data/pilot/f1_v1_candidate/bindings.json",
   "required_reads": [
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/VALIDATION_POLICY.md",
+    "docs/GITHUB_AND_CI_POLICY.md",
+    "docs/ARTIFACT_AND_PROVENANCE_RULES.md",
     "data/pilot/f1_v1_candidate/bindings.json",
     "tools/validate_machine_accounting_schema_v1_candidate.py",
     ".github/workflows/machine-accounting-schema-v1-candidate.yml"
@@ -51,11 +57,12 @@ V094 transport repair v2: **COMPLETE** after V102.
 Structured atomic-claim cause family: **COMPLETE** after V103.  
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
 Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
+Pre-freeze governance cleanup: **COMPLETE** after V106.  
 Ruleset rebase: **COMPLETE**.  
 Repository write mode: **GIT_OBJECT_ONLY_WRITE_MODE**.  
 Authority-freshness/change-detection cleanup: **COMPLETE**.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
-Candidate machine-accounting regression status: **PREPIN_PASS**.
+Candidate machine-accounting state: **PREPIN_PASS / FOUR SEMANTIC HASHES STILL UNPINNED**.
 
 Canonical target:
 
@@ -72,14 +79,13 @@ Canonical target:
 - F1 historical V094 static-write authorization: COMPLETE as semantic/provenance evidence
 - V094 machine-consumable repository transport: COMPLETE as deterministic plain JSONL shards
 - machine-readable accounting v0.1 F1 pilot: PASS
-- schema-v1 candidate regression: PREPIN_PASS after V104; semantic hashes observed but not pinned
-- schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all machine-gate diagnostic both PASS
-- current operating rules: rebased around verified-fact reuse, dependency-scoped revalidation, REMOTE_IO_FAST_PATH, semantic/transport separation, and JSON/JSONL machine-state direction
+- schema-v1 candidate regression: PREPIN_PASS; semantic hashes observed but not pinned
+- schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all share one current validator path
+- pre-freeze governance cleanup: V106 closes ambiguous transport hash naming, orphan operating authority, write-scope read-chain enforcement, external remote-I/O telemetry design, candidate PASS/FROZEN language, generated-roundtrip trust, and anchor-workflow change detection
 - repository-writing stages: `GIT_OBJECT_ONLY_WRITE_MODE` is the default; allowed remote write actions are exactly `create_blob`, `create_tree`, `create_commit`, and `update_ref(main, force=false)` unless a fresh explicit scope authorizes another route
 - current machine-accounting authority documents: mechanically bound to actual repository artifacts/implementation by document-governance checks
-- machine-accounting and governance workflows: change-detection triggers cover the current bound pilot inputs and authority-fact dependencies
-- stale generated candidate `validation_status.json`: removed as shadow authority
-- source-anchor gate registry documentation: synchronized with all six validator gate families
+- generated artifacts remain derived views and are not candidate gate authority
+- source-anchor gate registry documentation: synchronized with all six source-anchor gate families
 
 Current accounting facts remain:
 
@@ -128,6 +134,10 @@ rows       158
 INDEX SHA  ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4
 repair     d25fd5be5c15aabd1483c0e8bf0ad4873974bb1b
 ```
+
+The 20-shard layout is historical transport provenance, **not** a future sharding precedent or safe-size threshold.
+
+`docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_SUMMARY.json` is a historical/reporting view, not canonical action authority. Current action transport identity and historical gzip provenance are explicitly separated.
 
 ## V103 atomic-claim closure
 
@@ -199,7 +209,7 @@ Canonical tree:
 
 `baa95192cdc3401a0c7cda63c9b336b467b789ba`
 
-The current candidate pipeline has two explicit roles:
+The candidate pipeline has two explicit roles:
 
 - release validation remains fail-fast;
 - non-release diagnostics run current machine gates in collect-all mode without replaying historical technical byte analysis.
@@ -213,6 +223,34 @@ Two accidental commits remain in main history as provenance and were corrected b
 
 They do not change current technical conclusions.
 
+## V106 pre-freeze governance cleanup
+
+Implementation commit:
+
+`50d41c1e036fa336d7605cfd0ae7f317e1b1422b` — `fix: close pre-freeze governance audit gaps`
+
+V106 changes governance and machine-gate plumbing only. It does not change historical F1 technical facts or populate any semantic pin.
+
+### Transport identity
+
+- candidate binding uses explicit `current_transport_index_sha256` rather than a generic file-hash alias;
+- current INDEX, semantic logical-content SHA, and historical gzip provenance remain separate identities;
+- `action_canonical_gzip_hash` is renamed to `action_current_transport_index_hash`;
+- the historical SUMMARY and its regeneration path use explicit reporting/transport semantics and cannot silently recreate the ambiguous generic field.
+
+### Read chain and authority
+
+- `PROJECT_RESUME_V2.scope_kind` is now explicit;
+- a `REPOSITORY_WRITE` scope must include `docs/GITHUB_AND_CI_POLICY.md` in `required_reads` or documentation governance fails;
+- `docs/PROJECT_OPERATING_RULES.md` is retained only as a consolidated reference, not a current orphan authority;
+- remote-I/O metrics are non-authoritative external telemetry at the location declared in `remote_io_metrics_location`, avoiding a second Git mutation after final CI values become known.
+
+### Roundtrip root cause
+
+The candidate validator no longer trusts `generated/pilot/f1/roundtrip_result.json`. It reconstructs the source document directly from canonical coverage and verifies block order, gap-free line coverage from line 1, bounds, every block SHA, document blob/SHA, EOF coverage, exact rebuilt bytes, and `UNEXPLAINED=0`.
+
+The 61 canonical coverage blocks span the complete 187-line F1 audit. The machine-accounting workflow now triggers on the three canonical source-anchor evidence documents used by current gates. `generated/**` is intentionally not added to that workflow because generated roundtrip status is not authority.
+
 ## Authority freshness and change detection
 
 Current authority is protected by mechanical checks rather than generation labels alone:
@@ -221,13 +259,12 @@ Current authority is protected by mechanical checks rather than generation label
 - `CLAIM_EXTRACTION_RULES.md` declares a machine-readable fact block bound to the actual structured-exception registry and all six source-anchor gate families exposed by the validator implementation;
 - document governance checks those current-authority facts against repository artifacts/implementation;
 - document governance verifies `last_closed_validation_id` against the schema-v1 amendment ledger and verifies `last_closed_stage_commit` is an ancestor of current HEAD;
+- document governance enforces `scope_kind` and the write-scope GitHub-policy required-read invariant;
 - `generated/` artifacts cannot become `PROJECT_STATE.required_reads` or current document authority, and generated JSON carrying next-stage/resume authority keys is rejected;
-- governance workflow triggers include the machine artifacts used by these checks;
-- machine-accounting workflow triggers cover all `data/pilot/f1/**` base inputs and candidate inputs.
+- machine-accounting roundtrip is recalculated from canonical source coverage, not generated status;
+- machine-accounting workflow triggers include the canonical evidence documents consumed by source-anchor gates.
 
-Implementation commit `fe9eca65f0c26e1716719b7460df5d025df92960` introduced the authority-freshness/change-detection checks. Its first document-governance run `34687959282` failed because `CLAIM_EXTRACTION_RULES.md` declared four source-anchor gate prefixes while the validator exposed six. That failed run remains provenance of the defect. The current closure repairs exactly that declaration drift; no historical technical F1 fact is reopened by this documentation repair.
-
-This closes the known rules/Markdown/workflow cleanup scope once the automatic workflows for the current HEAD pass. Do not reopen document cleanup as a standalone project unless a new concrete consistency failure is observed.
+Anchor-protected evidence remains unchanged by V106.
 
 ## Repository write mode
 
@@ -252,7 +289,9 @@ This is an operator-enforced mode, not a connector-level capability sandbox; oth
 
 - schema v1 remains NOT FROZEN;
 - materialized semantic hashes remain unpinned;
-- `PREPIN_PASS` means no known current machine-gate blocker under the present candidate inputs/validator definition, not permanent proof against later evidence or rule changes;
+- `PREPIN_PASS` means no known current machine-gate blocker under the present candidate inputs/validator definition while required semantic pins are absent;
+- candidate `PASS` means current candidate gates pass and all four required semantic pins match; it still does not mean schema freeze;
+- `FROZEN` requires a separate explicitly authorized schema-freeze declaration;
 - `COLLECT_ALL` means current machine-gate evaluation, not replay of historical technical analysis;
 - PC patch remains semantic authority for equivalent functionality;
 - raw uniqueness is not a safety rule;
@@ -261,7 +300,7 @@ This is an operator-enforced mode, not a connector-level capability sandbox; oth
 - no force-push;
 - no synthesis of canonical rows from counts/IDs/edges;
 - no governance edit to anchor-protected evidence without explicit anchor migration;
-- do not reopen V094, V103, V104, or V105 without a legitimate revalidation trigger.
+- do not reopen V094, V103, V104, V105, or V106 without a legitimate revalidation trigger.
 
 ## Next authorized scope after a fresh signal
 
