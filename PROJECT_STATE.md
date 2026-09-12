@@ -7,11 +7,11 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL",
+  "scope_id": "SCHEMA_FREEZE_DECLARATION",
   "scope_kind": "REPOSITORY_WRITE",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V106",
-  "last_closed_stage_commit": "50d41c1e036fa336d7605cfd0ae7f317e1b1422b",
+  "last_closed_validation_id": "V107",
+  "last_closed_stage_commit": "1a4e2e39d5ce179724d32f465ee6ee2ecfef9dbb",
   "last_closed_ci_run_id": 34685595581,
   "last_closed_ci_validation_id": "V105",
   "last_closed_ci_conclusion": "success",
@@ -27,6 +27,7 @@ This file is the **sole project-resume authority**. Historical documents may con
   "authority_freshness_status": "COMPLETE",
   "rules_workflow_cleanup_status": "COMPLETE",
   "pre_freeze_governance_cleanup_status": "COMPLETE_V106",
+  "pre_freeze_hash_pin_status": "COMPLETE_V107",
   "machine_fact_binding": "data/pilot/f1_v1_candidate/bindings.json",
   "required_reads": [
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
@@ -38,7 +39,6 @@ This file is the **sole project-resume authority**. Historical documents may con
     ".github/workflows/machine-accounting-schema-v1-candidate.yml"
   ],
   "forbidden_scope_expansion": [
-    "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
     "797_RESIDUAL_ANALYSIS",
     "BUILDER_IPS_RUNTIME",
@@ -58,11 +58,12 @@ Structured atomic-claim cause family: **COMPLETE** after V103.
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
 Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
 Pre-freeze governance cleanup: **COMPLETE** after V106.  
+Pre-freeze semantic-hash pinning: **COMPLETE** after V107.  
 Ruleset rebase: **COMPLETE**.  
 Repository write mode: **GIT_OBJECT_ONLY_WRITE_MODE**.  
 Authority-freshness/change-detection cleanup: **COMPLETE**.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
-Candidate machine-accounting state: **PREPIN_PASS / FOUR SEMANTIC HASHES STILL UNPINNED**.
+Candidate machine-accounting state: **PASS / FOUR SEMANTIC HASHES PINNED / NOT FROZEN**.
 
 Canonical target:
 
@@ -79,9 +80,10 @@ Canonical target:
 - F1 historical V094 static-write authorization: COMPLETE as semantic/provenance evidence
 - V094 machine-consumable repository transport: COMPLETE as deterministic plain JSONL shards
 - machine-readable accounting v0.1 F1 pilot: PASS
-- schema-v1 candidate regression: PREPIN_PASS; semantic hashes observed but not pinned
+- schema-v1 candidate regression: PASS; four materialized semantic hashes pinned by V107
 - schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all share one current validator path
 - pre-freeze governance cleanup: V106 closes ambiguous transport hash naming, orphan operating authority, write-scope read-chain enforcement, external remote-I/O telemetry design, candidate PASS/FROZEN language, generated-roundtrip trust, and anchor-workflow change detection
+- pre-freeze semantic hash pinning: V107 binds the four already-observed V104 semantic hashes without re-deriving historical technical facts
 - repository-writing stages: `GIT_OBJECT_ONLY_WRITE_MODE` is the default; allowed remote write actions are exactly `create_blob`, `create_tree`, `create_commit`, and `update_ref(main, force=false)` unless a fresh explicit scope authorizes another route
 - current machine-accounting authority documents: mechanically bound to actual repository artifacts/implementation by document-governance checks
 - generated artifacts remain derived views and are not candidate gate authority
@@ -188,7 +190,7 @@ The current candidate validator exposes six source-anchor gate families:
 5. `anchor_heading_` — Markdown `heading_path` resolves uniquely;
 6. `anchor_text_in_heading_` — anchor occurs inside the resolved heading section.
 
-Observed materialized semantic hashes remain:
+The materialized semantic hashes first observed by V104 are now pinned exactly by V107:
 
 ```text
 source_state         91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c
@@ -197,7 +199,7 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676
 ```
 
-These hashes are not pinned and do not authorize schema freeze.
+Pinning these values does not itself authorize schema freeze.
 
 ## V105 schema-v1 validation-pipeline closure
 
@@ -240,7 +242,7 @@ V106 changes governance and machine-gate plumbing only. It does not change histo
 
 ### Read chain and authority
 
-- `PROJECT_RESUME_V2.scope_kind` is now explicit;
+- `PROJECT_RESUME_V2.scope_kind` is explicit;
 - a `REPOSITORY_WRITE` scope must include `docs/GITHUB_AND_CI_POLICY.md` in `required_reads` or documentation governance fails;
 - `docs/PROJECT_OPERATING_RULES.md` is retained only as a consolidated reference, not a current orphan authority;
 - remote-I/O metrics are non-authoritative external telemetry at the location declared in `remote_io_metrics_location`, avoiding a second Git mutation after final CI values become known.
@@ -250,6 +252,23 @@ V106 changes governance and machine-gate plumbing only. It does not change histo
 The candidate validator no longer trusts `generated/pilot/f1/roundtrip_result.json`. It reconstructs the source document directly from canonical coverage and verifies block order, gap-free line coverage from line 1, bounds, every block SHA, document blob/SHA, EOF coverage, exact rebuilt bytes, and `UNEXPLAINED=0`.
 
 The 61 canonical coverage blocks span the complete 187-line F1 audit. The machine-accounting workflow now triggers on the three canonical source-anchor evidence documents used by current gates. `generated/**` is intentionally not added to that workflow because generated roundtrip status is not authority.
+
+## V107 pre-freeze semantic hash pinning
+
+Implementation commit:
+
+`1a4e2e39d5ce179724d32f465ee6ee2ecfef9dbb` — `chore: pin schema-v1 candidate semantic hashes`
+
+V107 does not re-run historical reverse engineering or change any semantic row. It binds the four semantic hashes already observed by V104 into the candidate equality gates:
+
+```text
+source_state         91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c
+actions              a7c0f3ce3423b2a07797ef18e538c963140303751621a985dc6fe76c52bb8a4f
+source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987a4fe7
+effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676
+```
+
+The current candidate validator must recompute and match all four pins in addition to every other machine gate. The final current release fail-fast and `COLLECT_ALL` validation are the completion gate for V107. Successful validation yields candidate `PASS`, not `FROZEN`.
 
 ## Authority freshness and change detection
 
@@ -264,7 +283,7 @@ Current authority is protected by mechanical checks rather than generation label
 - machine-accounting roundtrip is recalculated from canonical source coverage, not generated status;
 - machine-accounting workflow triggers include the canonical evidence documents consumed by source-anchor gates.
 
-Anchor-protected evidence remains unchanged by V106.
+Anchor-protected evidence remains unchanged by V107.
 
 ## Repository write mode
 
@@ -288,8 +307,7 @@ This is an operator-enforced mode, not a connector-level capability sandbox; oth
 ## Current boundaries
 
 - schema v1 remains NOT FROZEN;
-- materialized semantic hashes remain unpinned;
-- `PREPIN_PASS` means no known current machine-gate blocker under the present candidate inputs/validator definition while required semantic pins are absent;
+- all four materialized semantic hashes are pinned in the candidate bindings;
 - candidate `PASS` means current candidate gates pass and all four required semantic pins match; it still does not mean schema freeze;
 - `FROZEN` requires a separate explicitly authorized schema-freeze declaration;
 - `COLLECT_ALL` means current machine-gate evaluation, not replay of historical technical analysis;
@@ -300,12 +318,12 @@ This is an operator-enforced mode, not a connector-level capability sandbox; oth
 - no force-push;
 - no synthesis of canonical rows from counts/IDs/edges;
 - no governance edit to anchor-protected evidence without explicit anchor migration;
-- do not reopen V094, V103, V104, V105, or V106 without a legitimate revalidation trigger.
+- do not reopen V094, V103, V104, V105, V106, or V107 without a legitimate revalidation trigger.
 
 ## Next authorized scope after a fresh signal
 
-**Pin the four already-observed candidate semantic hashes and run the final current machine-gate collect-all (`PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`).**
+**`SCHEMA_FREEZE_DECLARATION`**
 
-That stage may update the existing candidate bindings with the four already-observed semantic hashes and run the current release/collect-all validation gates. It must not replay historical technical byte analysis.
+A fresh explicit user signal is required before any schema-freeze declaration or authority transition. Candidate `PASS` is a prerequisite, not permission to freeze automatically.
 
-The stage must STOP and report before any explicit schema-freeze declaration. Schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work remain outside that authorization.
+That future stage must remain separate from full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work.

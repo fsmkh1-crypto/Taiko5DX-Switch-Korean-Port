@@ -376,8 +376,42 @@ The four observed materialized semantic hashes remain **null/unpinned in candida
 
 The next separately authorized scope remains `PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`.
 
+## V107 — observed candidate semantic hashes pinned; final current gates required before freeze
+
+**Status:** `SEMANTIC HASH PINS COMMITTED / CANDIDATE PASS EXPECTED / SCHEMA STILL NOT FROZEN`
+
+Implementation commit:
+
+`1a4e2e39d5ce179724d32f465ee6ee2ecfef9dbb` — `chore: pin schema-v1 candidate semantic hashes`
+
+No historical technical fact is re-derived in V107. The four semantic identities already observed and recorded by V104 are pinned into `data/pilot/f1_v1_candidate/bindings.json` exactly as previously observed:
+
+```text
+source_state         91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c
+actions              a7c0f3ce3423b2a07797ef18e538c963140303751621a985dc6fe76c52bb8a4f
+source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987a4fe7
+effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676
+```
+
+Binding targets are:
+
+```text
+source_state_seed.expected_materialized_semantic_sha256
+action_table.expected_materialized_semantic_sha256
+source_action_edge_seed.expected_materialized_semantic_sha256
+base_claims.expected_effective_claims_sha256
+```
+
+This stage does not change the semantic rows, transport identities, source/action membership, claim set, coverage, counts, or any historical provenance. It converts four previously observed candidate outputs into required equality gates.
+
+The current validator must therefore report candidate `PASS` only if all four recomputed semantic hashes equal the pinned values and every other current machine gate passes. The final current `COLLECT_ALL` remains part of V107 execution and must report no `FAIL`, `BLOCKED`, or `STALE` gate before this stage is treated as complete.
+
+### Closure boundary
+
+Candidate `PASS` after pinning is **not** schema freeze. V107 does not declare `FROZEN`, transfer authority through full migration, analyze the 797 residual, or authorize builder/IPS/runtime/game-file work.
+
+The next separately authorized scope after successful final current release/collect-all validation is `SCHEMA_FREEZE_DECLARATION`.
+
 ## Stopping point
 
-V106 closes the pre-freeze governance-cleanup cause families. The candidate remains in the pre-pin state, schema v1 remains **NOT FROZEN**, and the observed semantic hashes remain unpinned.
-
-The next stage requires a fresh user signal. It may pin only the four already-observed semantic hashes and run the final current machine-gate release/collect-all validation. It must STOP before any schema-freeze declaration.
+V107 pins only the four already-observed semantic hashes and requires the final current release/collect-all validation. After those current gates succeed, the candidate is `PASS / NOT FROZEN` and this stage stops. Schema freeze remains a separate user-authorized stage.
