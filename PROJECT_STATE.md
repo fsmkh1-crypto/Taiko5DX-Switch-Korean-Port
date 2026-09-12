@@ -7,8 +7,8 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "SCHEMA_V1_V092_C04_SOURCE_ANCHOR_BLOCKER",
-  "status": "STOPPED_AWAITING_USER_SIGNAL",
+  "scope_id": "SOURCE_ANCHOR_PROVENANCE_CLOSURE",
+  "status": "IN_PROGRESS",
   "required_reads": [
     "docs/VALIDATION_POLICY.md",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
@@ -34,7 +34,7 @@ Documentation Governance v2: **COMPLETE** after V101.
 V094 transport repair v2: **COMPLETE** after V102.  
 Structured atomic-claim cause family: **COMPLETE** after V103.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
-Current schema-v1 regression blocker: **`V092.C04` source-anchor text presence**.
+Current authorized work: **source-anchor/provenance closure only**.
 
 Canonical target:
 
@@ -51,7 +51,7 @@ Canonical target:
 - F1 historical V094 static-write authorization: COMPLETE as semantic/provenance evidence
 - V094 machine-consumable repository transport: COMPLETE as deterministic plain JSONL shards
 - machine-readable accounting v0.1 F1 pilot: PASS
-- schema-v1 amendment: candidate only; regression now passes the structured atomic-claim gate and is blocked by `V092.C04` anchor provenance
+- schema-v1 amendment: candidate only; regression passed V094 transport and V103 structured-claim gates and is now in source-anchor/provenance closure
 
 Current accounting facts remain:
 
@@ -116,7 +116,7 @@ effective claims  97
 ACTIVE claims     87
 ```
 
-All ACTIVE structured claim values must be explicitly registered as `structured_atomic_exceptions`; the V094 transport-aware validator now hard-fails on any unregistered structured ACTIVE claim, any registry entry that is no longer ACTIVE/structured, duplicate registry IDs, or a claim classified as both split and structured-atomic.
+All ACTIVE structured claim values must be explicitly registered as `structured_atomic_exceptions`; the V094 transport-aware validator hard-fails on any unregistered structured ACTIVE claim, any registry entry that is no longer ACTIVE/structured, duplicate registry IDs, or a claim classified as both split and structured-atomic.
 
 `V089.C03` is retained as one exhaustive historical 278-row storage partition (`197 full-window + 81 padding-mismatch`) because V093 exact replay reproduces that same split.
 
@@ -128,11 +128,15 @@ All ACTIVE structured claim values must be explicitly registered as `structured_
 
 Materialization claim references were updated accordingly; edge provenance now uses `V094.C14` for the unique action-ID assertion.
 
-GitHub Actions run `34679464287` passed the structured-claim gate and then first failed at:
+## Current source-anchor/provenance closure
+
+Known current blocker before this stage:
 
 `anchor_text_present_V092.C04: None`
 
-This is a separate source-anchor/provenance cause family. It is not an atomic-claim failure and is not evidence against V094/F1 technical facts.
+Diagnosis established that V092.C04 stores an anchor phrase from `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md` while binding it to `docs/VALIDATION_LEDGER_F1.md`. Existing source coverage already binds the same V092 assertion family to the audit document's `8. Accounting correction` section.
+
+This stage may correct claim source-anchor metadata and strengthen anchor validation. It must not edit anchor-protected canonical evidence documents or change underlying V092/F1 technical semantics.
 
 ## Current boundaries
 
@@ -147,12 +151,14 @@ This is a separate source-anchor/provenance cause family. It is not an atomic-cl
 - no governance edit to anchor-protected evidence without explicit anchor migration;
 - do not reopen V094 transport or the V103 atomic cause family without a legitimate revalidation trigger.
 
-## Next authorized scope after a fresh signal
+## Current authorized scope
 
-**Analyze the schema-v1 candidate `V092.C04` source-anchor text-presence blocker only.**
+**Close the source-anchor/provenance cause family only.**
 
-Determine whether the stored `anchor_text`, bound document identity, coverage extraction, or supersession/migration metadata is stale or malformed. Do not alter the underlying V092/F1 technical fact merely to satisfy the anchor gate.
+- correct V092.C04 source binding without changing canonical evidence text;
+- audit base and appended claim provenance locators;
+- verify `heading_path` exists and `anchor_text` occurs within the claimed heading section, not merely somewhere in the document;
+- support explicit source-anchor overrides for appended claims when inherited provenance would be too coarse;
+- run one candidate regression and record the next first blocker, if any.
 
-After that analysis, report and STOP. Any fix and any schema-freeze decision require separate fresh execution signals.
-
-Do not combine this analysis with full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+Do not combine this with authority-freshness cleanup, CI trigger cleanup, generated-status cleanup, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
