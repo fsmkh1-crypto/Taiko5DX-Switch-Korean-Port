@@ -16,4 +16,4 @@ This repository contains only porting code, patch metadata, hashes, offsets, ana
 
 The current development assumption is that the developer has a complete extracted **Switch 1.1.3 dump** available locally, including ExeFS `main` and RomFS. The builder may use that dump directly instead of asking end users to manually supply individual files one by one.
 
-Read `PROJECT_STATE.md` and `PATCH_MAP.md` before continuing any porting work.
+Before continuing project work, read `AGENTS.md` and then `PROJECT_STATE.md`. Follow only the documents listed in the current `PROJECT_STATE.required_reads`; `PATCH_MAP.md` is a technical map, not a resume authority.
