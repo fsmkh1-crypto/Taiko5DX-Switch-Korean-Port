@@ -1,7 +1,7 @@
-# Claim Extraction Rules — v1 Candidate
+# Claim Extraction Rules — v1 Frozen
 
 Date: 2026-09-12  
-Status: CANDIDATE / NOT FROZEN
+Status: FROZEN — `FZ001`
 
 <!-- MACHINE_FACTS_V1
 {
@@ -39,7 +39,7 @@ A claim is the smallest assertion that can be independently falsified, corrected
 
 If values in one statement can change independently, they are separate claims. A structured value may remain one claim only when it is one inseparable identity, one exhaustive set/map, one histogram treated as a single measurement, or one accounting equation whose meaning is defined only as a whole.
 
-A structured exception must be explicitly declared in the candidate machine registry. It cannot be used merely to avoid issuing atomic IDs.
+A structured exception must be explicitly declared in the frozen machine registry. The historical `f1_v1_candidate` path name is retained as a stable provenance identifier after freeze. A structured exception cannot be used merely to avoid issuing atomic IDs.
 
 ## 2. Facts and interpretations
 
@@ -114,7 +114,7 @@ Historical coverage may continue to point to a superseded claim because it recor
 
 The v0.1 claim rows remain immutable historical data.
 
-The v1 candidate amendment file:
+The historically named v1 candidate amendment file, now part of the frozen `FZ001` snapshot, is:
 
 `data/pilot/f1_v1_candidate/claim_amendments.json`
 
@@ -122,9 +122,9 @@ supersedes the identified composite claims and issues appended atomic IDs. It al
 
 No technical byte fact is revalidated by this claim-shape amendment.
 
-## 9. Structured atomic exceptions in the F1 candidate
+## 9. Structured atomic exceptions in the frozen F1 v1 snapshot
 
-`data/pilot/f1_v1_candidate/claim_amendments.json` is the current structured-atomic exception registry for the candidate. The current registry contains exactly ten ACTIVE structured exceptions:
+`data/pilot/f1_v1_candidate/claim_amendments.json` is the frozen structured-atomic exception registry for schema v1. The path name is retained for provenance stability. The registry contains exactly ten ACTIVE structured exceptions:
 
 ```text
 V088.C04

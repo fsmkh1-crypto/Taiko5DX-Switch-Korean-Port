@@ -1,8 +1,8 @@
-# Machine-Readable Accounting Schema — v1 Candidate
+# Machine-Readable Accounting Schema — v1 Frozen
 
 Date: 2026-09-12  
-Status: CANDIDATE / NOT FROZEN  
-Supersedes for review purposes: Pilot v0.1 schema design. The v0.1 F1 pilot artifacts remain immutable historical evidence.
+Status: FROZEN — `FZ001`  
+Supersedes for review purposes: Pilot v0.1 schema design. The v0.1 F1 pilot artifacts remain immutable historical evidence. The v0.1 F1 pilot artifacts remain immutable historical evidence.
 
 <!-- MACHINE_FACTS_V1
 {
@@ -21,7 +21,7 @@ MACHINE_FACTS_V1 -->
 
 This schema defines the machine-accounting semantic model only. It does not authorize full-corpus migration, residual-family analysis, builder/IPS/runtime work, or game-file modification.
 
-Until an explicit later freeze step, the schema remains a candidate. Canonical historical Markdown remains evidence authority for already-verified technical facts, while the current candidate machine artifacts and their bindings are the machine-accounting state used by the validator. A Markdown authority statement that conflicts with bound machine artifacts is a governance failure, not permission to reinterpret the artifacts.
+Schema v1 is frozen by declaration `FZ001` at `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`. The frozen snapshot intentionally retains `semantic_schema_version = 1.0-candidate.1` and the historical `*_candidate` paths as stable provenance identifiers; freeze is an authority-state transition, not a semantic rewrite or path rename. Canonical historical Markdown remains evidence authority for already-verified technical facts, while the frozen machine artifacts and bindings are the machine-accounting semantic baseline. A Markdown authority statement that conflicts with bound machine artifacts is a governance failure, not permission to reinterpret the artifacts.
 
 Semantic schema and transport format are independent:
 
@@ -221,7 +221,7 @@ supersedes_revision
 
 Action history is append-only. A material semantic change creates a new revision under the same action identity only when the logical action identity remains the same; otherwise a new action ID is issued and linkage/supersession is explicit.
 
-For the F1 candidate, the current V094 action payload authority is the deterministic plain-JSONL shard set rooted at:
+For the frozen F1 v1 snapshot, the current V094 action payload authority is the deterministic plain-JSONL shard set rooted at:
 
 `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/`
 
@@ -409,9 +409,9 @@ Fixtures validate:
 
 Fixtures contribute zero project facts or progress.
 
-## 14. F1 v1-candidate migration rule
+## 14. F1 v1 frozen-snapshot migration rule
 
-The v1 candidate reuses, without technical revalidation:
+The frozen v1 snapshot reuses, without technical revalidation:
 
 - 278 F1 source seeds;
 - V094 158-action manifest;
@@ -422,7 +422,7 @@ The v1 candidate reuses, without technical revalidation:
 
 Composite v0.1 claims identified by the schema-freeze review are superseded through `data/pilot/f1_v1_candidate/claim_amendments.json`. New claim IDs are appended; no existing claim ID is renumbered or deleted.
 
-The candidate must preserve:
+The frozen snapshot must preserve:
 
 ```text
 sources                     278
@@ -435,9 +435,9 @@ edges                       158
 verified exclusions           0
 ```
 
-The candidate does not authorize builder/runtime work and is not itself a schema freeze.
+The frozen schema does not authorize builder/runtime work, full migration, residual-family analysis, or game-file modification. Those remain separately authorized stages.
 
-## 15. Candidate freeze gates
+## 15. Freeze gates and declaration
 
 Before explicit v1 freeze authorization, all must pass:
 
@@ -455,4 +455,4 @@ Before explicit v1 freeze authorization, all must pass:
 12. explicit target-resolution progress triplet;
 13. semantic hashes emitted and pinned.
 
-Passing this candidate review still does not freeze v1. Freeze remains a separately authorized step.
+The corrected V107 release fail-fast and `COLLECT_ALL` run satisfied the current gates with all four semantic hashes pinned. `FZ001` is the separately authorized declaration that freezes this exact semantic snapshot. Freeze does not freeze transport format evolution: transport remains independently versioned and may change later only if the frozen semantic identities remain intact.

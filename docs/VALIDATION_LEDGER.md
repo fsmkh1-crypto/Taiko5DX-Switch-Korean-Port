@@ -20,14 +20,14 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V087–V092: `docs/VALIDATION_LEDGER_F1.md`
 - V093–V095: `docs/VALIDATION_LEDGER_F1_AUTH.md`
 - V096–V098: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
-- V099–V100, V102–V105: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
+- V099–V100, V102–V107: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
 - V101: `docs/VALIDATION_LEDGER_DOCUMENT_GOVERNANCE.md`
 
 ## Current precedence
 
 - project resume authority: `PROJECT_STATE.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
-- project operating rules: `AGENTS.md`, `docs/PROJECT_OPERATING_RULES.md`
+- project operating rules: `AGENTS.md` (with stage-specific policies selected by `PROJECT_STATE.required_reads`)
 - artifact/machine provenance rules: `docs/ARTIFACT_AND_PROVENANCE_RULES.md`
 - validation policy: `docs/VALIDATION_POLICY.md`
 - GitHub/CI policy: `docs/GITHUB_AND_CI_POLICY.md`
@@ -39,12 +39,13 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
 - F1 audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
 - F1 authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
-- machine-accounting schema candidate: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
-- claim extraction candidate: `docs/CLAIM_EXTRACTION_RULES.md`
+- frozen machine-accounting schema v1: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
+- frozen claim-extraction rules v1: `docs/CLAIM_EXTRACTION_RULES.md`
+- schema-freeze declaration `FZ001`: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - schema-v1 amendment report: `docs/SCHEMA_V1_AMENDMENT.md`
 
 Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`.
 
-V094 historical authorization remains canonical semantic evidence. V100 records the original repository-artifact truncation. V101 classifies the later 12,071-byte upload as `FAILED_TRANSPORT_NOT_CANONICAL`. V102 closes the V094 transport blocker with deterministic plain JSONL shards while preserving the historical gzip identity. V103 closes the structured atomic-claim cause family. V104 closes the source-anchor/provenance cause family and advances the candidate to `PREPIN_PASS`. V105 consolidates the current candidate validation pipeline, preserves release fail-fast behavior, adds a shared-semantics collect-all diagnostic path, and independently passes both paths in one automatic CI run.
+V094 historical authorization remains canonical semantic evidence. V100 records the original repository-artifact truncation. V101 classifies the later 12,071-byte upload as `FAILED_TRANSPORT_NOT_CANONICAL`. V102 closes the V094 transport blocker with deterministic plain JSONL shards while preserving the historical gzip identity. V103 closes the structured atomic-claim cause family. V104 closes the source-anchor/provenance cause family and reaches `PREPIN_PASS`. V105 consolidates the current validation pipeline. V106 closes the pre-freeze governance gaps. Corrected V107 pins the four current semantic identities and passes release fail-fast plus `COLLECT_ALL`.
 
-V096–V105 do not freeze schema v1. Documentation governance, V094 transport repair, atomic-claim closure, provenance closure, and validation-pipeline closure do not authorize wider migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+`FZ001` is the separately authorized schema-freeze declaration, not a replacement V-validation ID. It freezes the exact V107-passing semantic snapshot while preserving the historical `*_candidate` path names and registry scope labels as stable identifiers. Freeze does not authorize full migration, the 797 residual analysis, builder, IPS, runtime, mapping, or game-file modification; each remains a later separately authorized scope.

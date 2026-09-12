@@ -1,0 +1,68 @@
+{
+  "authority_documents": {
+    "claim_extraction_rules": {
+      "git_blob_sha": "beeeae9646ba80ba058202177a214426200931c4",
+      "path": "docs/CLAIM_EXTRACTION_RULES.md"
+    },
+    "machine_accounting_schema": {
+      "git_blob_sha": "1c3392313ce3c7a2063a8cb38d7c51562016d01d",
+      "path": "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md"
+    }
+  },
+  "authorization_boundary": {
+    "builder_ips_runtime_authorized": false,
+    "full_migration_authorized": false,
+    "game_file_modification_authorized": false,
+    "residual_797_analysis_authorized": false
+  },
+  "basis": {
+    "document_governance": {
+      "head": "3d0c02ce59cf6412085c7188df78008ba96a2442",
+      "result": "PASS",
+      "run_id": 34693640232
+    },
+    "machine_validation": {
+      "collect_all": "PASS",
+      "head": "ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea",
+      "release_fail_fast": "PASS",
+      "run_id": 34691523117,
+      "validation_id": "V107"
+    },
+    "pre_freeze_head": "3d0c02ce59cf6412085c7188df78008ba96a2442"
+  },
+  "bindings": {
+    "claim_amendments_canonical_json_sha256": "c147de78a41ca418c941cc402d833069a7cc4c0a2a91600ad1ac3b7af9f1dcd1",
+    "git_blob_sha": "20c38cbe29b5ec77848b8257ee0f4e9ae7ea5dd5",
+    "materialization_contract_canonical_json_sha256": "00d1570af9c1703b277678dc0ba8f21210ed714fdaab62feb6ffa5fbd6a60787",
+    "path": "data/pilot/f1_v1_candidate/bindings.json",
+    "semantic_pins": {
+      "actions": "a7c0f3ce3423b2a07797ef18e538c963140303751621a985dc6fe76c52bb8a4f",
+      "effective_claims": "c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35",
+      "source_action_edges": "1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987a4fe7",
+      "source_state": "91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c"
+    },
+    "source_anchor_overrides_canonical_json_sha256": "d2f3dd1a320abc20689a80a673fe182f00359c336873225117960cab7cdee9ed"
+  },
+  "declared_date": "2026-09-12",
+  "freeze_id": "FZ001",
+  "freeze_scope": "SEMANTIC_SCHEMA_AND_BOUND_MACHINE_ACCOUNTING_SNAPSHOT",
+  "schema": "MACHINE_ACCOUNTING_SCHEMA_V1_FREEZE_DECLARATION",
+  "semantic_schema_version": "1.0-candidate.1",
+  "stable_identifier_policy": {
+    "reason": "Freeze is an authority-state transition; renaming stable paths or registry keys would create transport/governance churn without changing semantics.",
+    "retain_candidate_path_names": true,
+    "retain_candidate_registry_scope_label": "MACHINE_ACCOUNTING_CANDIDATE"
+  },
+  "state": "FROZEN",
+  "transport_policy": {
+    "rule": "Transport remains independently versioned; later transport changes must preserve the frozen semantic identities.",
+    "transport_format_version": "F1_PILOT_TRANSPORT_V0_1",
+    "transport_frozen": false
+  },
+  "v094_authority": {
+    "current_transport_index_sha256": "ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4",
+    "historical_gzip_sha256": "8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68",
+    "semantic_rows": 158,
+    "semantic_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff"
+  }
+}

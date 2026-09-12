@@ -40,7 +40,7 @@ Changing transport must not silently change semantic rows. Changing semantic con
 
 The machine-accounting model keeps entity classes separate because their cardinality and lifecycle differ.
 
-The target canonical structure after an explicitly authorized schema freeze/migration is conceptually:
+The frozen v1 semantic structure, and the target canonical structure used by later migration, is conceptually:
 
 ```text
 validation claims
@@ -54,7 +54,7 @@ Current snapshots, progress summaries, unknown-debt summaries, and invariant-sta
 
 Do not collapse these entity classes into one generic facts file merely for storage convenience.
 
-Until the explicit freeze/migration stage occurs, existing canonical Markdown evidence and the current F1 candidate bindings retain their present authority. This section states direction; it does not perform migration or authority transfer.
+Schema v1 is frozen by `FZ001`. Existing canonical Markdown remains historical evidence, while the frozen F1 bindings and machine-accounting rules are the semantic baseline for later migration. Freeze does not itself perform full-corpus authority transfer, residual analysis, builder/runtime work, or game-file modification.
 
 ## 4. Historical transport provenance
 

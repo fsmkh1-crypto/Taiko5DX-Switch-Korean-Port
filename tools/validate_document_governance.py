@@ -201,6 +201,112 @@ def check_scope_read_policy(resume_obj: dict) -> None:
             fail("INV-DOC-09 repository-writing scope must require docs/GITHUB_AND_CI_POLICY.md")
 
 
+def check_schema_freeze(root: Path, resume_obj: dict) -> None:
+    status = resume_obj.get("schema_freeze_status")
+    if status is None:
+        return
+    if status != "FROZEN_FZ001":
+        fail(f"INV-DOC-10 unexpected schema_freeze_status: {status!r}")
+
+    rel = resume_obj.get("schema_freeze_declaration")
+    if rel != "data/pilot/f1_v1_candidate/schema_freeze_declaration.json":
+        fail(f"INV-DOC-10 unexpected freeze declaration path: {rel!r}")
+    path = root / rel
+    if not path.is_file():
+        fail(f"INV-DOC-10 freeze declaration missing: {rel}")
+
+    raw = path.read_bytes()
+    declared_blob = resume_obj.get("schema_freeze_declaration_git_blob_sha")
+    if declared_blob != git_blob_sha1(raw):
+        fail(
+            "INV-DOC-10 freeze declaration blob drift "
+            f"declared={declared_blob!r} actual={git_blob_sha1(raw)!r}"
+        )
+
+    obj = json.loads(raw)
+    if obj.get("schema") != "MACHINE_ACCOUNTING_SCHEMA_V1_FREEZE_DECLARATION":
+        fail("INV-DOC-10 unexpected freeze declaration schema")
+    if obj.get("freeze_id") != "FZ001" or obj.get("state") != "FROZEN":
+        fail("INV-DOC-10 freeze declaration identity/state mismatch")
+
+    basis = obj.get("basis", {})
+    machine = basis.get("machine_validation", {})
+    if machine.get("validation_id") != resume_obj.get("schema_freeze_basis_validation_id"):
+        fail("INV-DOC-10 freeze validation-id provenance mismatch")
+    if machine.get("run_id") != resume_obj.get("schema_freeze_basis_ci_run_id"):
+        fail("INV-DOC-10 freeze CI-run provenance mismatch")
+    if machine.get("head") != resume_obj.get("schema_freeze_basis_head"):
+        fail("INV-DOC-10 freeze basis-head provenance mismatch")
+    if machine.get("release_fail_fast") != "PASS" or machine.get("collect_all") != "PASS":
+        fail("INV-DOC-10 freeze basis is not PASS/PASS")
+
+    pre_head = basis.get("pre_freeze_head")
+    if not isinstance(pre_head, str) or not re.fullmatch(r"[0-9a-f]{40}", pre_head):
+        fail("INV-DOC-10 invalid pre-freeze head")
+    result = subprocess.run(
+        ["git", "-C", str(root), "merge-base", "--is-ancestor", pre_head, "HEAD"],
+        stdout=subprocess.DEVNULL,
+        stderr=subprocess.DEVNULL,
+        check=False,
+    )
+    if result.returncode != 0:
+        fail(f"INV-DOC-10 pre-freeze head is not an ancestor of HEAD: {pre_head}")
+
+    authority = obj.get("authority_documents", {})
+    expected_docs = {
+        "machine_accounting_schema": "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
+        "claim_extraction_rules": "docs/CLAIM_EXTRACTION_RULES.md",
+    }
+    for key, expected_path in expected_docs.items():
+        entry = authority.get(key, {})
+        if entry.get("path") != expected_path:
+            fail(f"INV-DOC-10 freeze authority path mismatch: {key}")
+        actual_blob = git_blob_sha1((root / expected_path).read_bytes())
+        if entry.get("git_blob_sha") != actual_blob:
+            fail(
+                f"INV-DOC-10 frozen authority blob drift: {expected_path} "
+                f"declared={entry.get('git_blob_sha')!r} actual={actual_blob!r}"
+            )
+
+    bindings_path = root / "data/pilot/f1_v1_candidate/bindings.json"
+    bindings_raw = bindings_path.read_bytes()
+    bindings = json.loads(bindings_raw)
+    frozen_bindings = obj.get("bindings", {})
+    if frozen_bindings.get("path") != "data/pilot/f1_v1_candidate/bindings.json":
+        fail("INV-DOC-10 freeze bindings path mismatch")
+    if frozen_bindings.get("git_blob_sha") != git_blob_sha1(bindings_raw):
+        fail("INV-DOC-10 freeze bindings blob drift")
+    if obj.get("semantic_schema_version") != bindings.get("semantic_schema_version"):
+        fail("INV-DOC-10 frozen semantic schema version drift")
+
+    expected_pins = {
+        "source_state": bindings["source_state_seed"]["expected_materialized_semantic_sha256"],
+        "actions": bindings["action_table"]["expected_materialized_semantic_sha256"],
+        "source_action_edges": bindings["source_action_edge_seed"]["expected_materialized_semantic_sha256"],
+        "effective_claims": bindings["base_claims"]["expected_effective_claims_sha256"],
+    }
+    if frozen_bindings.get("semantic_pins") != expected_pins:
+        fail("INV-DOC-10 frozen semantic pins drift")
+
+    expected_hash_bindings = {
+        "materialization_contract_canonical_json_sha256": bindings["materialization_contract"]["canonical_json_sha256"],
+        "claim_amendments_canonical_json_sha256": bindings["claim_amendments"]["canonical_json_sha256"],
+        "source_anchor_overrides_canonical_json_sha256": bindings["source_anchor_overrides"]["canonical_json_sha256"],
+    }
+    for key, expected in expected_hash_bindings.items():
+        if frozen_bindings.get(key) != expected:
+            fail(f"INV-DOC-10 frozen binding identity drift: {key}")
+
+    boundary = obj.get("authorization_boundary", {})
+    if any(boundary.get(key) is not False for key in (
+        "full_migration_authorized",
+        "residual_797_analysis_authorized",
+        "builder_ips_runtime_authorized",
+        "game_file_modification_authorized",
+    )):
+        fail("INV-DOC-10 freeze declaration silently authorizes a later scope")
+
+
 def check_closure_identity(root: Path, resume_obj: dict) -> None:
     declared = resume_obj.get("last_closed_validation_id")
     ledger_path = root / "docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md"
@@ -307,6 +413,7 @@ def main() -> int:
     check_machine_facts(root, entries)
     check_generated_boundary(root, entries, resume_obj)
     check_scope_read_policy(resume_obj)
+    check_schema_freeze(root, resume_obj)
     check_closure_identity(root, resume_obj)
 
     output = {
@@ -322,6 +429,7 @@ def main() -> int:
             "INV-DOC-07",
             "INV-DOC-08",
             "INV-DOC-09",
+            "INV-DOC-10",
         ],
         "registered_documents": len(entries),
         "registered_markdown": len(indexed_md),
