@@ -42,7 +42,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m py_compile tools/machine_accounting_v1_candidate_lib.py tools/validate_machine_accounting_schema_v1_candidate.py tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py tools/diagnose_f1_manifest_transport.py
+      - name: Compile validators
+        run: >-
+          python -m py_compile
+          tools/machine_accounting_v1_candidate_lib.py
+          tools/validate_machine_accounting_schema_v1_candidate.py
+          tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py
+          tools/diagnose_f1_manifest_transport.py
       - name: Diagnose bound V094 transport
         run: python tools/diagnose_f1_manifest_transport.py
-      - run: python tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py --repo-root .
+      - name: Release fail-fast validation
+        run: python tools/validate_machine_accounting_schema_v1_candidate.py --repo-root .
+      - name: Collect-all machine-gate diagnostic
+        run: python tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py --repo-root .
