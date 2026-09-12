@@ -99,13 +99,13 @@ This mode is an operator-enforced execution discipline, not a repository capabil
 
 If a different write route is genuinely required, STOP and authorize that route as a new explicit scope/transport decision before any such write occurs.
 
-### Text blob encoding
+### Text and binary blob handling
 
-For repository text, call `create_blob(content=<exact text>, encoding="utf-8")` directly.
+Repository text blobs (`.md`, `.json`, `.jsonl`, `.yml`, `.yaml`, `.txt`, and source code) are passed as original UTF-8 text to `create_blob`.
 
-Do not manually Base64-encode, split, or reassemble text before `create_blob`. Base64 is reserved for genuine binary payloads that cannot be represented as exact UTF-8 text.
+The agent must not manually generate Base64 strings for text, or manually split or reassemble text for Base64 transport.
 
-The connector/API argument encoding is an operational transport detail; it must not be confused with repository artifact transport identity. Preserve the intended text bytes exactly, including line endings, BOM state, and final-LF state.
+Binary payloads such as gzip are the only exception. Before any manual Base64 handling of a binary payload, STOP and obtain explicit approval for the transport route.
 
 ## 5. Canonical mutation boundary
 
