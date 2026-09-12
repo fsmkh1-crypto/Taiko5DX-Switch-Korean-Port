@@ -7,7 +7,7 @@ on:
       - 'docs/CLAIM_EXTRACTION_RULES.md'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
-      - 'data/pilot/f1/action_table_binding.json'
+      - 'data/pilot/f1/**'
       - 'data/pilot/f1_v1_candidate/**'
       - 'tools/machine_accounting_v1_candidate_lib.py'
       - 'tools/validate_machine_accounting_schema_v1_candidate.py'
@@ -21,13 +21,14 @@ on:
       - 'docs/CLAIM_EXTRACTION_RULES.md'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz'
       - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
-      - 'data/pilot/f1/action_table_binding.json'
+      - 'data/pilot/f1/**'
       - 'data/pilot/f1_v1_candidate/**'
       - 'tools/machine_accounting_v1_candidate_lib.py'
       - 'tools/validate_machine_accounting_schema_v1_candidate.py'
       - 'tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py'
       - 'tools/diagnose_f1_manifest_transport.py'
       - 'tests/fixtures/machine_accounting_schema_v1.json'
+      - '.github/workflows/machine-accounting-schema-v1-candidate.yml'
   workflow_dispatch:
 
 permissions:

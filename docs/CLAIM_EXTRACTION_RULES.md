@@ -3,13 +3,41 @@
 Date: 2026-09-12  
 Status: CANDIDATE / NOT FROZEN
 
+<!-- MACHINE_FACTS_V1
+{
+  "schema": "MACHINE_FACTS_V1",
+  "facts": {
+    "source_anchor_gate_registry": [
+      "anchor_blob_",
+      "anchor_heading_",
+      "anchor_text_hash_",
+      "anchor_text_in_heading_"
+    ],
+    "structured_atomic_exception_count": 10,
+    "structured_atomic_exception_ids": [
+      "V088.C04",
+      "V089.C03",
+      "V090.C01",
+      "V091.C02",
+      "V091.C05",
+      "V092.C02",
+      "V093.C03",
+      "V094.C01",
+      "V094.C03",
+      "V095.C01"
+    ],
+    "structured_atomic_registry_path": "data/pilot/f1_v1_candidate/claim_amendments.json"
+  }
+}
+MACHINE_FACTS_V1 -->
+
 ## 1. Atomicity
 
 A claim is the smallest assertion that can be independently falsified, corrected, superseded, invalidated or depended on.
 
 If values in one statement can change independently, they are separate claims. A structured value may remain one claim only when it is one inseparable identity, one exhaustive set/map, one histogram treated as a single measurement, or one accounting equation whose meaning is defined only as a whole.
 
-A structured exception must be explicitly declared. It cannot be used merely to avoid issuing atomic IDs.
+A structured exception must be explicitly declared in the candidate machine registry. It cannot be used merely to avoid issuing atomic IDs.
 
 ## 2. Facts and interpretations
 
@@ -67,11 +95,14 @@ anchor_text
 anchor_text_sha256
 ```
 
-The validator checks:
+The current validator checks all effective claims for four independent properties:
 
-- document Git blob identity;
+- bound document Git blob identity;
 - anchor-text SHA-256;
-- anchor text occurs in the bound document.
+- unique `heading_path` resolution in the bound Markdown document;
+- anchor occurrence inside the resolved heading section.
+
+A heading that resolves to zero or multiple sections fails. Merely finding the anchor text somewhere else in the same document is insufficient.
 
 Historical coverage may continue to point to a superseded claim because it records what text was originally extracted. New active decisions must resolve through the supersession graph to active claims.
 
@@ -89,12 +120,21 @@ No technical byte fact is revalidated by this claim-shape amendment.
 
 ## 9. Structured atomic exceptions in the F1 candidate
 
-Only explicitly declared exceptions may remain structured. Current candidate exceptions cover:
+`data/pilot/f1_v1_candidate/claim_amendments.json` is the current structured-atomic exception registry for the candidate. The current registry contains exactly ten ACTIVE structured exceptions:
 
-- one exhaustive histogram measurement;
-- one accounting equation;
-- one canonical manifest identity tuple;
-- one exhaustive terminator-mode partition;
-- one Build-ID representation identity tuple.
+```text
+V088.C04
+V089.C03
+V090.C01
+V091.C02
+V091.C05
+V092.C02
+V093.C03
+V094.C01
+V094.C03
+V095.C01
+```
 
-Any later structured exception requires an explicit reason and review.
+These cover only reviewed inseparable/exhaustive structured claims such as exhaustive sets or maps, histogram/accounting structures, manifest identity, terminator partition and Build-ID identity. The registry entry's reason is authoritative for why a specific claim may remain structured.
+
+Any later structured exception requires an explicit registry entry and review. Adding prose here without changing the machine registry does not authorize a new exception.

@@ -5,13 +5,23 @@ on:
     paths:
       - '**/*.md'
       - 'docs/DOCUMENT_AUTHORITY_INDEX.json'
+      - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
+      - 'data/pilot/f1/**'
+      - 'data/pilot/f1_v1_candidate/**'
+      - 'generated/**'
       - 'tools/validate_document_governance.py'
+      - 'tools/validate_machine_accounting_schema_v1_candidate.py'
       - '.github/workflows/document-governance.yml'
   pull_request:
     paths:
       - '**/*.md'
       - 'docs/DOCUMENT_AUTHORITY_INDEX.json'
+      - 'docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/**'
+      - 'data/pilot/f1/**'
+      - 'data/pilot/f1_v1_candidate/**'
+      - 'generated/**'
       - 'tools/validate_document_governance.py'
+      - 'tools/validate_machine_accounting_schema_v1_candidate.py'
       - '.github/workflows/document-governance.yml'
   workflow_dispatch:
 
@@ -24,6 +34,8 @@ jobs:
     timeout-minutes: 5
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'

@@ -7,26 +7,24 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "AUTHORITY_FRESHNESS_AND_CHANGE_DETECTION",
+  "scope_id": "PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V105",
   "last_closed_stage_commit": "3d7e640af4528b674229dddb707eea2a89b8c952",
   "last_closed_ci_run_id": 34685595581,
   "last_closed_ci_conclusion": "success",
   "ruleset_rebase_status": "COMPLETE",
-  "ruleset_rebase_base_commit": "d272bb1a8feef2a53144c5a04489b4b080d0179f",
+  "authority_freshness_status": "COMPLETE",
+  "rules_workflow_cleanup_status": "COMPLETE",
+  "machine_fact_binding": "data/pilot/f1_v1_candidate/bindings.json",
   "required_reads": [
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
-    "docs/CLAIM_EXTRACTION_RULES.md",
-    "docs/DOCUMENT_AUTHORITY_INDEX.json",
-    "tools/validate_document_governance.py",
-    ".github/workflows/document-governance.yml",
-    ".github/workflows/machine-accounting-schema-v1-candidate.yml",
+    "docs/VALIDATION_POLICY.md",
     "data/pilot/f1_v1_candidate/bindings.json",
-    "generated/pilot/f1_v1_candidate/validation_status.json"
+    "tools/validate_machine_accounting_schema_v1_candidate.py",
+    ".github/workflows/machine-accounting-schema-v1-candidate.yml"
   ],
   "forbidden_scope_expansion": [
-    "SEMANTIC_HASH_PINNING",
     "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
     "797_RESIDUAL_ANALYSIS",
@@ -46,7 +44,8 @@ V094 transport repair v2: **COMPLETE** after V102.
 Structured atomic-claim cause family: **COMPLETE** after V103.  
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
 Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
-Ruleset rebase: **COMPLETE** after the current policy-only stage.  
+Ruleset rebase: **COMPLETE**.  
+Authority-freshness/change-detection cleanup: **COMPLETE**.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
 Candidate regression status: **PREPIN_PASS**.
 
@@ -67,6 +66,10 @@ Canonical target:
 - machine-readable accounting v0.1 F1 pilot: PASS
 - schema-v1 candidate regression: PREPIN_PASS after V104; semantic hashes observed but not pinned
 - schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all machine-gate diagnostic both PASS
+- current operating rules: rebased around verified-fact reuse, dependency-scoped revalidation, REMOTE_IO_FAST_PATH, semantic/transport separation, and JSON/JSONL machine-state direction
+- current machine-accounting authority documents: mechanically bound to current artifacts/implementation by document-governance checks
+- machine-accounting and governance workflows: change-detection triggers cover current bound pilot inputs and authority-fact dependencies
+- stale generated candidate `validation_status.json`: removed as shadow authority
 
 Current accounting facts remain:
 
@@ -132,7 +135,7 @@ ACTIVE claims               87
 candidate migration entries 752
 ```
 
-`V089.C03` remains one explicit exhaustive structured partition (`197 + 81 = 278`). `V094.C04` is SUPERSEDED and replaced by `V094.C23`, `V094.C24`, and `V094.C25`.
+The current structured-atomic exception registry is `data/pilot/f1_v1_candidate/claim_amendments.json` and contains 10 reviewed entries. `V089.C03` remains one explicit exhaustive structured partition (`197 + 81 = 278`). `V094.C04` is SUPERSEDED and replaced by `V094.C23`, `V094.C24`, and `V094.C25`.
 
 ## V104 source-anchor/provenance closure
 
@@ -156,9 +159,12 @@ All bind to canonical `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md` blob:
 
 `ba9c660cf6f229ec2b19f024b9bc2cef94d26a44`
 
-The candidate validator checks all 97 effective claims for bound document Git blob identity, anchor-text SHA-256, unique Markdown `heading_path` resolution, and anchor occurrence inside the claimed heading section.
+The candidate validator checks all 97 effective claims for:
 
-GitHub Actions run `34680748843` completed successfully with `PREPIN_PASS`.
+1. bound document Git blob identity;
+2. anchor-text SHA-256;
+3. unique Markdown `heading_path` resolution;
+4. anchor occurrence inside the resolved heading section.
 
 Observed materialized semantic hashes remain:
 
@@ -181,37 +187,41 @@ Canonical tree:
 
 `baa95192cdc3401a0c7cda63c9b336b467b789ba`
 
-The current candidate pipeline now has two explicit roles:
+The current candidate pipeline has two explicit roles:
 
 - release validation remains fail-fast;
-- non-release diagnostics run the current machine gates in collect-all mode without replaying historical technical byte analysis.
+- non-release diagnostics run current machine gates in collect-all mode without replaying historical technical byte analysis.
 
-The former compatibility behavior is consolidated into the canonical candidate validation path. The collect-all entry point delegates to the same validator semantics rather than maintaining a second patched truth path.
+Automatic GitHub Actions run `34685595581` (`push`, attempt 1) completed successfully for head `3d7e640af4528b674229dddb707eea2a89b8c952`.
 
-Automatic GitHub Actions run `34685595581` (`push`, attempt 1) completed successfully for head `3d7e640af4528b674229dddb707eea2a89b8c952`. The `validate` job passed all four relevant steps:
-
-1. Compile validators
-2. Diagnose bound V094 transport
-3. Release fail-fast validation
-4. Collect-all machine-gate diagnostic
-
-No manual rerun or second CI validation was used.
-
-Two accidental commits remain in main history as provenance and were corrected by the forward recovery commit; no force-push or history rewrite occurred:
+Two accidental commits remain in main history as provenance and were corrected by forward recovery; no force-push or history rewrite occurred:
 
 - `8665bb191d81853400cb93c437fcabbb300d2b68` — accidental `noop`, introduced empty `NONEXISTENT` in its tree;
 - `5de2805df71090e879a979b044f2bda4d43e0afb` — second `noop`, tree-wise no-op relative to its parent.
 
-The final V105 tree removes the accidental file and contains the intended validation-pipeline files. These historical commits do not change current technical conclusions.
+They do not change current technical conclusions.
 
-V105 does **not** pin the four semantic hashes and does **not** freeze schema v1.
+## Authority freshness and change detection
+
+Current authority is now protected by mechanical checks rather than generation labels alone:
+
+- `MACHINE_READABLE_ACCOUNTING_SCHEMA.md` declares a machine-readable fact block bound to the actual V094 `INDEX.json` and action binding;
+- `CLAIM_EXTRACTION_RULES.md` declares a machine-readable fact block bound to the actual structured-exception registry and source-anchor gate implementation;
+- document governance checks those current-authority facts against repository artifacts/implementation;
+- document governance also verifies `last_closed_validation_id` against the schema-v1 amendment ledger and verifies `last_closed_stage_commit` is an ancestor of current HEAD;
+- `generated/` artifacts cannot become `PROJECT_STATE.required_reads` or current document authority, and generated JSON carrying next-stage/resume authority keys is rejected;
+- governance workflow triggers include the machine artifacts used by these checks;
+- machine-accounting workflow triggers cover all `data/pilot/f1/**` base inputs and candidate inputs.
+
+This closes the previously known rules/Markdown/workflow cleanup scope. Do not reopen document cleanup as a standalone project unless a new concrete consistency failure is observed.
 
 ## Current boundaries
 
 - schema v1 remains NOT FROZEN;
 - materialized semantic hashes remain unpinned;
 - `PREPIN_PASS` means no known current machine-gate blocker under the present candidate inputs/validator definition, not permanent proof against later evidence or rule changes;
-- PC patch remains semantic authority;
+- `COLLECT_ALL` means current machine-gate evaluation, not replay of historical technical analysis;
+- PC patch remains semantic authority for equivalent functionality;
 - raw uniqueness is not a safety rule;
 - target resolution is not write authorization;
 - no silent UNKNOWN authorization or source omission;
@@ -220,22 +230,10 @@ V105 does **not** pin the four semantic hashes and does **not** freeze schema v1
 - no governance edit to anchor-protected evidence without explicit anchor migration;
 - do not reopen V094, V103, V104, or V105 without a legitimate revalidation trigger.
 
-## Ruleset rebase
-
-The operating policies now define, without changing any technical fact:
-
-- verified-fact reuse and dependency-scoped revalidation;
-- `COLLECT_ALL` as current machine-gate evaluation rather than historical technical replay;
-- `REMOTE_IO_FAST_PATH` as the default repository execution path;
-- semantic identity as separate from transport identity;
-- structured JSON/JSONL machine-state direction, with generated current views separated from canonical evidence/authority.
-
-This policy stage does not pin hashes, freeze the schema, migrate the full corpus, modify machine-accounting artifacts, or change game data.
-
 ## Next authorized scope after a fresh signal
 
-**Close authority freshness and change-detection gaps only (`AUTHORITY_FRESHNESS_AND_CHANGE_DETECTION`).**
+**Pin the four already-observed candidate semantic hashes and run the final current machine-gate collect-all (`PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`).**
 
-That stage may synchronize the current machine-accounting authority documents with already-canonical machine artifacts and add mechanical checks that prevent the same drift from recurring. It may also close workflow trigger gaps required for those checks and remove stale generated status authority.
+That stage may update the existing candidate bindings with the four already-observed semantic hashes and run the current release/collect-all validation gates. It must not replay historical technical byte analysis.
 
-Do not combine that stage with semantic-hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+The stage must STOP and report before any explicit schema-freeze declaration. Schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work remain outside that authorization.

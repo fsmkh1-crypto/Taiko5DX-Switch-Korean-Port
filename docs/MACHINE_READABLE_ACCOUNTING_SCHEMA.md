@@ -4,11 +4,24 @@ Date: 2026-09-12
 Status: CANDIDATE / NOT FROZEN  
 Supersedes for review purposes: Pilot v0.1 schema design. The v0.1 F1 pilot artifacts remain immutable historical evidence.
 
+<!-- MACHINE_FACTS_V1
+{
+  "schema": "MACHINE_FACTS_V1",
+  "facts": {
+    "v094_current_transport_format": "PLAIN_JSONL_SHARDS",
+    "v094_current_transport_path": "docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST",
+    "v094_current_transport_index_sha256": "ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4",
+    "v094_semantic_rows": 158,
+    "v094_semantic_sha256": "c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff"
+  }
+}
+MACHINE_FACTS_V1 -->
+
 ## 1. Scope and authority
 
 This schema defines the machine-accounting semantic model only. It does not authorize full-corpus migration, residual-family analysis, builder/IPS/runtime work, or game-file modification.
 
-Until an explicit later freeze step, canonical Markdown remains authoritative. The v1 candidate must reproduce the already-verified F1 population and V094 action authority without revalidating the underlying byte analysis.
+Until an explicit later freeze step, the schema remains a candidate. Canonical historical Markdown remains evidence authority for already-verified technical facts, while the current candidate machine artifacts and their bindings are the machine-accounting state used by the validator. A Markdown authority statement that conflicts with bound machine artifacts is a governance failure, not permission to reinterpret the artifacts.
 
 Semantic schema and transport format are independent:
 
@@ -208,7 +221,21 @@ supersedes_revision
 
 Action history is append-only. A material semantic change creates a new revision under the same action identity only when the logical action identity remains the same; otherwise a new action ID is issued and linkage/supersession is explicit.
 
-For the F1 candidate, `docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz` remains the only V094 action payload authority. No second action truth source is created. The v1 validator normalizes each manifest row into the action shape above and binds both compressed-file and uncompressed-content hashes.
+For the F1 candidate, the current V094 action payload authority is the deterministic plain-JSONL shard set rooted at:
+
+`docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/`
+
+`INDEX.json` defines shard order, per-shard identity, current transport format and semantic identity. Reassembly in index order must reproduce 158 rows and logical-content SHA-256:
+
+`c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff`
+
+The historical deterministic gzip SHA-256:
+
+`8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68`
+
+remains provenance only. Failed/truncated `.jsonl.gz` repository objects are not current action authority.
+
+No second action truth source is created. The v1 validator normalizes each current manifest row into the action shape above and separately verifies historical gzip provenance.
 
 ## 7. Source/action edges
 
@@ -419,7 +446,7 @@ Before explicit v1 freeze authorization, all must pass:
 3. full edge materialization and cardinality integrity;
 4. atomic-claim amendment and supersession referential integrity;
 5. source/action/UNKNOWN claim refs resolve to ACTIVE claims;
-6. claim source-anchor blob/hash/text integrity;
+6. claim source-anchor blob/hash/text/heading-section integrity;
 7. no silent UNKNOWN authorization;
 8. exact F1 source-document round trip and coverage closure;
 9. invariant staleness fixture;
