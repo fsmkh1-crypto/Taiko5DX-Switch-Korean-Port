@@ -1,7 +1,7 @@
 # VALIDATION LEDGER — Schema v1 amendment
 
 Date: 2026-09-12  
-Scope: machine-accounting schema v1 candidate amendment and F1 regression attempt only. No schema freeze, full-corpus migration, residual-family analysis, builder, IPS, runtime, or game-file work.
+Scope: machine-accounting schema v1 candidate amendment and F1 regression/closure only. No schema freeze, full-corpus migration, residual-family analysis, builder, IPS, runtime, or game-file work.
 
 Detailed report: `docs/SCHEMA_V1_AMENDMENT.md`
 
@@ -240,10 +240,66 @@ effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c
 
 These hashes are **observed candidate outputs only**. They are not yet pinned in bindings and V104 does not authorize schema freeze.
 
+## V105 — validation-pipeline consolidation closes the cause family without freezing schema v1
+
+**Status:** `VERIFIED PIPELINE CLOSURE / RELEASE FAIL-FAST PASS / COLLECT-ALL PASS / SCHEMA STILL NOT FROZEN`
+
+Final implementation commit:
+
+`3d7e640af4528b674229dddb707eea2a89b8c952` — `fix: recover noop history and consolidate schema validation pipeline`
+
+Canonical tree:
+
+`baa95192cdc3401a0c7cda63c9b336b467b789ba`
+
+The final changed validation-pipeline files are:
+
+```text
+tools/validate_machine_accounting_schema_v1_candidate.py
+tools/validate_machine_accounting_schema_v1_candidate_v094_transport.py
+.github/workflows/machine-accounting-schema-v1-candidate.yml
+```
+
+The canonical candidate validator now owns the current V094 plain-shard loader, source-anchor overrides, structured-claim registry semantics, source-anchor validation, gate collection, dependency namespaces, and dependency-based gate grouping. The diagnostic entry point delegates to the same validator in collect-all mode rather than monkey-patching a second validation truth path.
+
+`COLLECT_ALL` in V105 means reevaluation of the current reachable machine gates. It does **not** mean replaying historical technical byte analysis that already has sufficient VERIFIED provenance.
+
+Automatic GitHub Actions run `34685595581` was caused by the non-force main ref update for head `3d7e640af4528b674229dddb707eea2a89b8c952` and completed successfully on attempt 1. The `validate` job passed:
+
+1. Compile validators
+2. Diagnose bound V094 transport
+3. Release fail-fast validation
+4. Collect-all machine-gate diagnostic
+
+No workflow dispatch, rerun, or second CI validation was used.
+
+### Recovery provenance
+
+Two accidental `noop` commits remain in main history and are preserved rather than rewritten:
+
+- `8665bb191d81853400cb93c437fcabbb300d2b68` — parent `dbfba8421ab71a00a566b791c6229fcfe4f1ace8`; introduced an empty `NONEXISTENT` file in tree `61104c5d593e9cdca0683fa439f903db43184132`;
+- `5de2805df71090e879a979b044f2bda4d43e0afb` — parent `8665bb191d81853400cb93c437fcabbb300d2b68`; retained the same tree and is a pure tree-wise no-op.
+
+The final forward recovery commit `3d7e640a...` uses the intended tree `baa95192...`, removes the accidental file from the canonical tree, preserves history, and uses no force-push.
+
+A previous recovery sibling commit `a8cfe77f18d1f202d3acc9fd33a30786cb971f93` points to the intended tree but is non-authoritative/dangling and is not project state.
+
+### Closure boundary
+
+V105 closes only the validation-pipeline cause family.
+
+It does not:
+
+- pin the observed semantic hashes;
+- declare schema v1 frozen;
+- authorize authority-freshness cleanup;
+- authorize CI-trigger/generated-status cleanup;
+- authorize full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file modification.
+
+`PREPIN_PASS` remains the correct candidate state: no known current machine-gate blocker under the present candidate inputs and validator semantics, without claiming permanent proof against future evidence/rule changes.
+
 ## Stopping point
 
-The source-anchor/provenance cause family is closed. The candidate currently reaches `PREPIN_PASS` with no later blocker exposed by the existing fail-fast pipeline.
+The V105 validation-pipeline cause family is closed and recorded. The candidate remains `PREPIN_PASS`, schema v1 remains **NOT FROZEN**, and the observed semantic hashes remain unpinned.
 
-The next separately authorized stage should address the validation-pipeline cause family identified during the V104 audit: diagnostic collect-all visibility and consolidation of the transport/provenance compatibility wrapper into the candidate validation path. Authority-freshness cleanup, CI-trigger/generated-status cleanup, semantic-hash pinning, and schema-freeze judgment remain separate later scopes.
-
-No full migration, 797 residual analysis, builder, IPS, runtime, mapping, or game-file work is authorized by V104.
+The next separately authorized stage is the operating-rules rebase identified by `PROJECT_STATE.md`. Authority-freshness cleanup, CI-trigger/generated-status cleanup, semantic-hash pinning, schema-freeze judgment, full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work remain outside this closure stage.

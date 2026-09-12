@@ -7,19 +7,23 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "SCHEMA_V1_VALIDATION_PIPELINE_CLOSURE",
+  "scope_id": "RULESET_REBASE",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
+  "last_closed_validation_id": "V105",
+  "last_closed_stage_commit": "3d7e640af4528b674229dddb707eea2a89b8c952",
+  "last_closed_ci_run_id": 34685595581,
+  "last_closed_ci_conclusion": "success",
   "required_reads": [
+    "docs/PROJECT_OPERATING_RULES.md",
     "docs/VALIDATION_POLICY.md",
     "docs/GITHUB_AND_CI_POLICY.md",
-    "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
-    "docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md"
+    "docs/ARTIFACT_AND_PROVENANCE_RULES.md"
   ],
   "forbidden_scope_expansion": [
-    "SCHEMA_FREEZE_DECLARATION",
-    "SEMANTIC_HASH_PINNING",
     "AUTHORITY_FRESHNESS_CLEANUP",
     "CI_TRIGGER_GENERATED_STATUS_CLEANUP",
+    "SEMANTIC_HASH_PINNING",
+    "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
     "797_RESIDUAL_ANALYSIS",
     "BUILDER_IPS_RUNTIME",
@@ -37,6 +41,7 @@ Documentation Governance v2: **COMPLETE** after V101.
 V094 transport repair v2: **COMPLETE** after V102.  
 Structured atomic-claim cause family: **COMPLETE** after V103.  
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
+Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
 Candidate regression status: **PREPIN_PASS**.
 
@@ -56,6 +61,7 @@ Canonical target:
 - V094 machine-consumable repository transport: COMPLETE as deterministic plain JSONL shards
 - machine-readable accounting v0.1 F1 pilot: PASS
 - schema-v1 candidate regression: PREPIN_PASS after V104; semantic hashes observed but not pinned
+- schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all machine-gate diagnostic both PASS
 
 Current accounting facts remain:
 
@@ -129,7 +135,7 @@ Fix commit:
 
 `cb21ce200a89457b77072b56f2f48a5d43d1bac0` — `fix: close source-anchor provenance gaps`
 
-Seven weak/malformed source locators are now corrected through candidate overlay metadata without modifying the immutable v0.1 claim rows or anchor-protected canonical evidence:
+Seven weak/malformed source locators are corrected through candidate overlay metadata without modifying immutable v0.1 claim rows or anchor-protected canonical evidence:
 
 ```text
 V088.C06
@@ -145,18 +151,11 @@ All bind to canonical `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md` blob:
 
 `ba9c660cf6f229ec2b19f024b9bc2cef94d26a44`
 
-The candidate validator now checks all 97 effective claims for:
+The candidate validator checks all 97 effective claims for bound document Git blob identity, anchor-text SHA-256, unique Markdown `heading_path` resolution, and anchor occurrence inside the claimed heading section.
 
-- bound document Git blob identity;
-- anchor-text SHA-256;
-- unique Markdown `heading_path` resolution;
-- anchor occurrence inside the claimed heading section.
+GitHub Actions run `34680748843` completed successfully with `PREPIN_PASS`.
 
-GitHub Actions run `34680748843` completed successfully with:
-
-`PREPIN_PASS`
-
-Observed materialized semantic hashes:
+Observed materialized semantic hashes remain:
 
 ```text
 source_state         91a54c8760f84f0e5b48e25dfda8adb9ae16ff32a83a4af86275fbc0c762322c
@@ -165,12 +164,48 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     2cb8459c95ec53e0f61fd72dd80de45148a1091b637bebaa50ef4d3607c50676
 ```
 
-These hashes are not yet pinned and do not authorize schema freeze.
+These hashes are not pinned and do not authorize schema freeze.
+
+## V105 schema-v1 validation-pipeline closure
+
+Implementation commit:
+
+`3d7e640af4528b674229dddb707eea2a89b8c952` — `fix: recover noop history and consolidate schema validation pipeline`
+
+Canonical tree:
+
+`baa95192cdc3401a0c7cda63c9b336b467b789ba`
+
+The current candidate pipeline now has two explicit roles:
+
+- release validation remains fail-fast;
+- non-release diagnostics run the current machine gates in collect-all mode without replaying historical technical byte analysis.
+
+The former compatibility behavior is consolidated into the canonical candidate validation path. The collect-all entry point delegates to the same validator semantics rather than maintaining a second patched truth path.
+
+Automatic GitHub Actions run `34685595581` (`push`, attempt 1) completed successfully for head `3d7e640af4528b674229dddb707eea2a89b8c952`. The `validate` job passed all four relevant steps:
+
+1. Compile validators
+2. Diagnose bound V094 transport
+3. Release fail-fast validation
+4. Collect-all machine-gate diagnostic
+
+No manual rerun or second CI validation was used.
+
+Two accidental commits remain in main history as provenance and were corrected by the forward recovery commit; no force-push or history rewrite occurred:
+
+- `8665bb191d81853400cb93c437fcabbb300d2b68` — accidental `noop`, introduced empty `NONEXISTENT` in its tree;
+- `5de2805df71090e879a979b044f2bda4d43e0afb` — second `noop`, tree-wise no-op relative to its parent.
+
+The final V105 tree removes the accidental file and contains the intended validation-pipeline files. These historical commits do not change current technical conclusions.
+
+V105 does **not** pin the four semantic hashes and does **not** freeze schema v1.
 
 ## Current boundaries
 
 - schema v1 remains NOT FROZEN;
 - materialized semantic hashes remain unpinned;
+- `PREPIN_PASS` means no known current machine-gate blocker under the present candidate inputs/validator definition, not permanent proof against later evidence or rule changes;
 - PC patch remains semantic authority;
 - raw uniqueness is not a safety rule;
 - target resolution is not write authorization;
@@ -178,16 +213,18 @@ These hashes are not yet pinned and do not authorize schema freeze.
 - no force-push;
 - no synthesis of canonical rows from counts/IDs/edges;
 - no governance edit to anchor-protected evidence without explicit anchor migration;
-- do not reopen V094, V103, or V104 without a legitimate revalidation trigger.
+- do not reopen V094, V103, V104, or V105 without a legitimate revalidation trigger.
 
 ## Next authorized scope after a fresh signal
 
-**Close the schema-v1 validation-pipeline cause family only.**
+**Rebase the project operating rules only (`RULESET_REBASE`).**
 
-The current release validator remains fail-fast and the active candidate path still uses a compatibility wrapper around the older base validator. The next stage should:
+The next stage may update the current operating-policy documents so the already-agreed execution model is stated once, consistently, and without duplicating detailed rules into `AGENTS.md`:
 
-- add a non-release `COLLECT_ALL_FAILURES` diagnostic mode that reports all reachable gates as PASS/FAIL/BLOCKED/STALE without weakening the fail-fast release gate;
-- consolidate the current transport, structured-claim, and source-anchor provenance checks into the canonical candidate validation path so temporary monkey-patch compatibility behavior is no longer the long-term authority;
-- preserve the current `PREPIN_PASS` semantic results and stop if consolidation changes them or exposes a new blocker.
+- verified-fact reuse and dependency-based revalidation;
+- `COLLECT_ALL` as current machine-gate evaluation, not historical technical reanalysis;
+- `REMOTE_IO_FAST_PATH` and local-first repository work;
+- semantic identity vs transport identity and the JSON/JSONL canonical-state direction;
+- generated state vs authority boundaries at policy level.
 
-Do not combine that stage with authority-freshness cleanup, CI-trigger/generated-status cleanup, semantic-hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
+Do not combine that stage with authority-freshness implementation, CI-trigger/generated-status cleanup, semantic-hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
