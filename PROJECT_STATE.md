@@ -7,24 +7,31 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL",
+  "scope_id": "AUTHORITY_FRESHNESS_6_GATE_REPAIR",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V105",
   "last_closed_stage_commit": "3d7e640af4528b674229dddb707eea2a89b8c952",
   "last_closed_ci_run_id": 34685595581,
   "last_closed_ci_conclusion": "success",
   "ruleset_rebase_status": "COMPLETE",
-  "authority_freshness_status": "COMPLETE",
-  "rules_workflow_cleanup_status": "COMPLETE",
+  "repository_write_mode": "GIT_OBJECT_ONLY_WRITE_MODE",
+  "repository_write_allowed_actions": [
+    "create_blob",
+    "create_tree",
+    "create_commit",
+    "update_ref"
+  ],
+  "authority_freshness_status": "BLOCKED_BY_DOCUMENT_GOVERNANCE_6_GATE_DRIFT",
+  "rules_workflow_cleanup_status": "INCOMPLETE",
   "machine_fact_binding": "data/pilot/f1_v1_candidate/bindings.json",
   "required_reads": [
-    "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
-    "docs/VALIDATION_POLICY.md",
-    "data/pilot/f1_v1_candidate/bindings.json",
-    "tools/validate_machine_accounting_schema_v1_candidate.py",
-    ".github/workflows/machine-accounting-schema-v1-candidate.yml"
+    "docs/GITHUB_AND_CI_POLICY.md",
+    "docs/CLAIM_EXTRACTION_RULES.md",
+    "tools/validate_document_governance.py",
+    ".github/workflows/document-governance.yml"
   ],
   "forbidden_scope_expansion": [
+    "SEMANTIC_HASH_PIN",
     "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
     "797_RESIDUAL_ANALYSIS",
@@ -45,9 +52,10 @@ Structured atomic-claim cause family: **COMPLETE** after V103.
 Source-anchor/provenance cause family: **COMPLETE** after V104.  
 Schema-v1 validation-pipeline cause family: **COMPLETE** after V105.  
 Ruleset rebase: **COMPLETE**.  
-Authority-freshness/change-detection cleanup: **COMPLETE**.  
+Repository write mode: **GIT_OBJECT_ONLY_WRITE_MODE**.  
+Authority-freshness/change-detection cleanup: **IMPLEMENTED BUT NOT CLOSED**; document-governance validation is blocked by one known six-gate declaration drift.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
-Candidate regression status: **PREPIN_PASS**.
+Candidate machine-accounting regression status: **PREPIN_PASS**.
 
 Canonical target:
 
@@ -67,9 +75,8 @@ Canonical target:
 - schema-v1 candidate regression: PREPIN_PASS after V104; semantic hashes observed but not pinned
 - schema-v1 validation pipeline: consolidated and verified after V105; release fail-fast and collect-all machine-gate diagnostic both PASS
 - current operating rules: rebased around verified-fact reuse, dependency-scoped revalidation, REMOTE_IO_FAST_PATH, semantic/transport separation, and JSON/JSONL machine-state direction
-- current machine-accounting authority documents: mechanically bound to current artifacts/implementation by document-governance checks
-- machine-accounting and governance workflows: change-detection triggers cover current bound pilot inputs and authority-fact dependencies
-- stale generated candidate `validation_status.json`: removed as shadow authority
+- repository-writing stages: `GIT_OBJECT_ONLY_WRITE_MODE` is the default; allowed remote write actions are exactly `create_blob`, `create_tree`, `create_commit`, and `update_ref(main, force=false)` unless a fresh explicit scope authorizes another route
+- machine-accounting/change-detection improvements from the current authority-freshness stage are present in `main`, including expanded workflow triggers and removal of stale generated `validation_status.json`, but document-governance closure is not yet complete because of the known source-anchor gate-registry declaration drift described below
 
 Current accounting facts remain:
 
@@ -159,12 +166,14 @@ All bind to canonical `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md` blob:
 
 `ba9c660cf6f229ec2b19f024b9bc2cef94d26a44`
 
-The candidate validator checks all 97 effective claims for:
+The current candidate validator exposes six source-anchor gate families:
 
-1. bound document Git blob identity;
-2. anchor-text SHA-256;
-3. unique Markdown `heading_path` resolution;
-4. anchor occurrence inside the resolved heading section.
+1. `anchor_present_` — source-anchor object exists;
+2. `anchor_document_` — bound document path exists;
+3. `anchor_blob_` — bound document Git blob identity matches;
+4. `anchor_text_hash_` — anchor-text SHA-256 matches;
+5. `anchor_heading_` — Markdown `heading_path` resolves uniquely;
+6. `anchor_text_in_heading_` — anchor occurs inside the resolved heading section.
 
 Observed materialized semantic hashes remain:
 
@@ -201,19 +210,53 @@ Two accidental commits remain in main history as provenance and were corrected b
 
 They do not change current technical conclusions.
 
-## Authority freshness and change detection
+## Current authority-freshness/change-detection stage
 
-Current authority is now protected by mechanical checks rather than generation labels alone:
+Implementation commit currently on `main`:
 
-- `MACHINE_READABLE_ACCOUNTING_SCHEMA.md` declares a machine-readable fact block bound to the actual V094 `INDEX.json` and action binding;
-- `CLAIM_EXTRACTION_RULES.md` declares a machine-readable fact block bound to the actual structured-exception registry and source-anchor gate implementation;
-- document governance checks those current-authority facts against repository artifacts/implementation;
-- document governance also verifies `last_closed_validation_id` against the schema-v1 amendment ledger and verifies `last_closed_stage_commit` is an ancestor of current HEAD;
-- `generated/` artifacts cannot become `PROJECT_STATE.required_reads` or current document authority, and generated JSON carrying next-stage/resume authority keys is rejected;
-- governance workflow triggers include the machine artifacts used by these checks;
-- machine-accounting workflow triggers cover all `data/pilot/f1/**` base inputs and candidate inputs.
+`fe9eca65f0c26e1716719b7460df5d025df92960` — `docs: close authority freshness and change detection gaps`
 
-This closes the previously known rules/Markdown/workflow cleanup scope. Do not reopen document cleanup as a standalone project unless a new concrete consistency failure is observed.
+The machine-accounting workflow for that commit passed:
+
+- run `34687959348`: **SUCCESS**
+
+The document-governance workflow for that commit failed:
+
+- run `34687959282`: **FAILURE**
+
+The failure is one known current-authority declaration mismatch, not a newly discovered technical F1 failure. `CLAIM_EXTRACTION_RULES.md` declares four source-anchor gate prefixes, while the validator implementation exposes six:
+
+```text
+anchor_present_
+anchor_document_
+anchor_blob_
+anchor_text_hash_
+anchor_heading_
+anchor_text_in_heading_
+```
+
+The two omitted declarations are `anchor_present_` and `anchor_document_`. This exact mismatch must be repaired and the automatic governance workflow must pass before authority-freshness/change-detection cleanup is declared closed.
+
+No semantic hash pin, schema freeze, 797 analysis, builder/runtime work, or game-file modification is authorized by this state.
+
+## Repository write mode
+
+All repository-writing stages now default to `GIT_OBJECT_ONLY_WRITE_MODE`.
+
+Before the first remote write, freeze the base HEAD/tree, changed paths, deleted paths, no-op decisions, expected blob/tree/commit/ref counts, and CI expectation. After the first remote write, do not rediscover write schemas or switch routes.
+
+Permitted remote write actions are exactly:
+
+```text
+create_blob
+create_tree
+create_commit
+update_ref(main, force=false)
+```
+
+Any invocation of another remote write action is a stage failure even if it produces no canonical mutation. STOP and require a fresh explicit signal. Repository deletions are expressed through the intended tree rather than Contents-API deletion.
+
+This is an operator-enforced mode, not a connector-level capability sandbox; other tools may remain visible but must not be used.
 
 ## Current boundaries
 
@@ -232,8 +275,8 @@ This closes the previously known rules/Markdown/workflow cleanup scope. Do not r
 
 ## Next authorized scope after a fresh signal
 
-**Pin the four already-observed candidate semantic hashes and run the final current machine-gate collect-all (`PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`).**
+**Repair only the known six-gate source-anchor declaration drift and close the current document-governance failure (`AUTHORITY_FRESHNESS_6_GATE_REPAIR`).**
 
-That stage may update the existing candidate bindings with the four already-observed semantic hashes and run the current release/collect-all validation gates. It must not replay historical technical byte analysis.
+That stage may update `docs/CLAIM_EXTRACTION_RULES.md` and the minimal `PROJECT_STATE.md` closure metadata needed to reflect the resulting automatic CI status. It must use `GIT_OBJECT_ONLY_WRITE_MODE` and must not expand into semantic hash pinning, schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.
 
-The stage must STOP and report before any explicit schema-freeze declaration. Schema freeze, full migration, the 797 residual, builder, IPS, runtime, mapping, and game-file work remain outside that authorization.
+After the governance and machine-accounting workflows both pass, STOP and report. A new explicit signal is required before `PRE_FREEZE_HASH_PIN_AND_FINAL_COLLECT_ALL`.

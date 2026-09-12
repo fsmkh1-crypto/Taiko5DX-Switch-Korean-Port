@@ -50,6 +50,7 @@ Before the first remote write, determine:
 
 - base HEAD/tree;
 - exact changed-file set;
+- deleted paths, if any;
 - which files are true no-ops;
 - required new blob identities;
 - expected tree/commit/ref operations;
@@ -57,7 +58,11 @@ Before the first remote write, determine:
 
 Do not discover new unrelated changes during the write phase.
 
-For a planned Git-object stage, the operational write checklist is:
+### GIT_OBJECT_ONLY_WRITE_MODE
+
+Repository-writing stages use `GIT_OBJECT_ONLY_WRITE_MODE` by default unless a fresh explicit scope authorizes a different transport route.
+
+The only permitted remote write actions in this mode are:
 
 ```text
 create_blob
@@ -66,7 +71,31 @@ create_commit
 update_ref(main, force=false)
 ```
 
-This checklist is an operator discipline, not a repository-enforced sandbox. If a different write route is intentionally required, authorize it as a new scope/transport decision first.
+All other remote write actions are forbidden in this mode, including but not limited to:
+
+```text
+create_file
+update_file
+delete_file
+create_branch
+```
+
+Read actions remain allowed for the minimum required HEAD-drift, remote-state, and CI checks.
+
+Before the first remote write, load/confirm the schemas needed for the four permitted actions. After the first remote write:
+
+- do not rediscover write schemas;
+- do not switch write routes;
+- do not call any write action outside the four-action set;
+- do not add newly discovered changed paths.
+
+A disallowed write-action invocation is a stage failure even when the call itself returns `404`, creates no object, or leaves `main` unchanged. STOP immediately and require a fresh explicit execution signal before retrying.
+
+File removal in this mode is represented through the intended `create_tree` result rather than through `delete_file` or another Contents-API mutation.
+
+This mode is an operator-enforced execution discipline, not a repository capability sandbox: the connector may still expose other write tools. The safety property comes from refusing to use them and from treating `update_ref(main, force=false)` as the only canonical mutation point.
+
+If a different write route is genuinely required, STOP and authorize that route as a new explicit scope/transport decision before any such write occurs.
 
 ## 5. Canonical mutation boundary
 
@@ -74,7 +103,7 @@ Dangling blobs, trees, and commits are not project authority.
 
 For the Git-object route, canonical state changes only when the intended branch ref is moved. Before `update_ref(main)`, temporary objects may physically exist but do not change the project resume authority.
 
-Contents-API writes are different because they directly mutate a branch; do not mix them into an allowlisted Git-object closure stage.
+Contents-API writes are different because they directly mutate a branch; do not mix them into a `GIT_OBJECT_ONLY_WRITE_MODE` stage.
 
 ## 6. No-op and original-boundary rules
 
