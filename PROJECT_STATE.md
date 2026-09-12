@@ -7,7 +7,7 @@ This file is the **sole project-resume authority**. Historical documents and led
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "POST_FREEZE_L3_SEMANTIC_PC_MECHANISM_ANALYSIS",
+  "scope_id": "POST_FREEZE_L3_UNRESOLVED_CONSUMER_TRACING",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "last_closed_validation_id": "V107",
@@ -48,6 +48,8 @@ This file is the **sole project-resume authority**. Historical documents and led
     "docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt",
     "docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt",
     "data/post_freeze/forward_localization_family_partition_v1/INDEX.json",
+    "docs/L3_SEMANTIC_PC_MECHANISM_ANALYSIS.md",
+    "data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
   ],
   "forbidden_scope_expansion": [
@@ -77,6 +79,7 @@ Completed and inherited without revalidation:
 - corrected V107 four-pin semantic hash pinning: PASS
 - schema-v1 freeze declaration: **FROZEN — FZ001**
 - forward localization 700 exact family partition: **MATERIALIZED** (`L1=448 / L2=163 / L3=88 / L4=1`)
+- L3 88 semantic/context + PC-mechanism review: **COMPLETE / MATERIALIZED** (`31 / 22 / 17 / 13 / 5`)
 
 `FZ001` freezes the exact semantic snapshot that passed corrected V107. It is an authority-state transition only: it does not rename historical `*_candidate` paths, does not change semantic rows, and does not freeze transport evolution.
 
@@ -152,12 +155,12 @@ The historical 20-shard transport is provenance, not a future sharding precedent
 
 ## Post-freeze forward residual records
 
-Working method and evidence status:
+Method baseline and status-separated claims:
 
 - `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt`
 - `docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt`
 
-Canonical forward-localization family membership is one hash-pinned directory artifact:
+Canonical forward-localization family membership:
 
 - index: `data/post_freeze/forward_localization_family_partition_v1/INDEX.json`
 - index SHA-256: `6d79c648b4ee671aa4c0592467b89101de76456a5493ffaadb743014a74fdc76`
@@ -179,11 +182,55 @@ duplicate R-number                     0
 duplicate source ID                    0
 ```
 
-L1 and L2 structural results are inherited and must not be reopened merely because work moves to a new chat/model. L1 exact 399/49 mechanical subpartition and exact memberships of the previously reviewed 395/3/1 and 30/16/3 overlays are now preserved in the canonical partition artifact; those semantic judgments remain PROVISIONAL and are not write authorization.
+L1 and L2 structural results are inherited and must not be reopened merely because work moves to a new chat/model. L1 exact 399/49 mechanical subpartition and exact memberships of the reviewed 395/3/1 and 30/16/3 overlays are preserved; those semantic judgments remain PROVISIONAL and are not write authorization.
 
-L3 exact membership is complete. L3 semantic/context/PC-mechanism analysis has **not started** and is the next recommended read-only family scope.
+The older `docs/POST_FREEZE_FORWARD_RESIDUAL_ANALYSIS.txt` is the pre-L3 methodology/family baseline. Any statement there that L3 analysis has not started is superseded by the dedicated L3 record below and by this file.
 
-These records do not reconstruct historical 467/451/797 membership and do not modify `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
+## L3 semantic/context + PC-mechanism review
+
+Dedicated analysis:
+
+- `docs/L3_SEMANTIC_PC_MECHANISM_ANALYSIS.md`
+- analysis document SHA-256: `59a394c6fb790d7f2a62b8e78b5fa3b30d9ea04188baff2f532667de3f0f2428`
+
+Machine-readable overlay:
+
+- `data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json`
+- INDEX SHA-256: `dd2ad754732d16dc05263a674c8b76d494f98baf09d71dd3c1ae2f3b1d56a33e`
+- `DISPOSITIONS.json` SHA-256: `432f80f1134b24ae72df580e727acbd9c739832f9285687582f20f7af745fcbf`
+- `MECHANISMS.json` SHA-256: `d35e9e4dcdf4f459bf2d9ecedabf0a4c32a95d8ee437ccee79162ed100e2e7dd`
+
+Exact L3 review partition:
+
+```text
+PARTIAL_COMPOSITE_WINDOW          31
+FORMATTER_CONTROL_PREFIX          22
+CONTEXT_DIVERGENT_FALSE_PREFIX    17
+STANDALONE_MEANINGFUL_PREFIX      13
+UNRESOLVED                         5
+                                  --
+                                  88
+intersection                       0
+unclassified                       0
+Switch write-authorized rows       0
+```
+
+Mechanism observations:
+
+```text
+PC inline L3 rows                         88
+pointer-linked L3 rows                     0
+multibyte-boundary split rows              7
+full-zero suppression rows                 2
+translated-prefix + trailing-zero rows     3
+same-original/nonuniform replacement rows  4 (2 Japanese values)
+```
+
+Only `R651, R1062, R1277, R1283, R1284` remain targeted consumer/XREF tracing candidates. The other 83 have coarse semantic/context review dispositions only; they are not Switch-write authorized.
+
+The working evidence order has now survived L1 and an independent L3 family. This supports a future framework-promotion review, but `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` has not been modified.
+
+These records do not reconstruct historical 467/451/797 membership.
 
 ## Repository operating state
 
@@ -198,7 +245,7 @@ update_ref(main, force=false)
 
 Text blobs (`.md`, `.json`, `.jsonl`, `.yml`, `.yaml`, `.txt`, source code) are passed as original UTF-8 text. The agent must not manually generate, split, or reassemble Base64 for text. Binary payloads such as gzip require STOP and explicit route approval before any manual Base64 handling.
 
-The accidental/non-canonical commits `84b1f6740132d0288549815c9cc1bf1769595ff0` (`__INVALID_SHOULD_NOT_USE__`), `0f2873539e54035ae45a2c5ea769de657cf56c65` (`__SHOULD_NOT_USE_AGAIN__`), and `33f4199c46917bd871baee8b1929add22f07e2fd` (`foo`) remain historical provenance only. The canonical tree after this forward recovery is based on the last clean tree `30265b89b05678b0f6bee0034444cff3cbd5ede3` and contains none of those files. No force-push or history rewrite is used.
+The accidental/non-canonical commits `84b1f6740132d0288549815c9cc1bf1769595ff0` (`__INVALID_SHOULD_NOT_USE__`), `0f2873539e54035ae45a2c5ea769de657cf56c65` (`__SHOULD_NOT_USE_AGAIN__`), and `33f4199c46917bd871baee8b1929add22f07e2fd` (`foo`) remain historical provenance only. The canonical recovery path contains none of those files. No force-push or history rewrite is used.
 
 ## Authority and boundaries
 
@@ -212,6 +259,12 @@ The accidental/non-canonical commits `84b1f6740132d0288549815c9cc1bf1769595ff0` 
 
 ## Awaiting fresh signal
 
-The next authorized scope is **`POST_FREEZE_L3_SEMANTIC_PC_MECHANISM_ANALYSIS`**, read-only analysis of the exact canonical L3 88-row population under `FZ001`.
+The next recommended read-only scope is **`POST_FREEZE_L3_UNRESOLVED_CONSUMER_TRACING`**, limited to the five exact rows:
 
-A fresh explicit user signal is required before starting that scope. L1/L2 structural classification and family membership are inherited. Full migration, builder, IPS, runtime implementation, and game-file modification remain outside the next scope.
+```text
+R651, R1062, R1277, R1283, R1284
+```
+
+A fresh explicit user signal is required before starting that scope. Alternatively, a separately authorized framework-promotion review may evaluate whether the L1+L3 evidence order should be promoted into `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md`.
+
+Full migration, builder, IPS, runtime implementation, game-file modification, and Switch write authorization remain outside the next scope.

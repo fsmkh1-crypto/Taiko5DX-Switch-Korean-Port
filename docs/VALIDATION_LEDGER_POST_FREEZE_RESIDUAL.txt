@@ -1,7 +1,7 @@
 # Validation ledger — post-freeze residual working analysis
 
 Date: 2026-09-13  
-Status: CURRENT WORKING LEDGER / CANONICAL MECHANICAL MEMBERSHIP / NO SWITCH WRITE AUTHORIZATION
+Status: CURRENT WORKING LEDGER / CANONICAL MEMBERSHIP + L3 REVIEW OVERLAY / NO SWITCH WRITE AUTHORIZATION
 
 ## 1. Status meanings
 
@@ -22,8 +22,11 @@ Canonical evidence used here includes:
 - `T5K121R` SHA-256 `5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29`
 - PC target identity: Steam 1.2.1.0 build 9163702, 18,685,960 bytes, SHA-256 `10c69bab50d29baf6311360cafbf7383716a126a6484d209f5e299e12ab565a2`
 - Switch `main` SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
+- Stage-1 report ZIP SHA-256 `0643bf1aed4cc014c980255caa58535ef5f06ecb4979549fdd6d77f40a84c463`
+- Stage-1 source ledger SHA-256 `0ef81c629adb2e348a72922efcb030908c76fb3cff964804948bf84cd7fd1570`
 - Stage-2 reproduced membership SHA-256 `96ec32961bcfc5cd169a0a3355334438969d23b2f1a2d3b4d5943137742e552c`
-- canonical membership artifact `data/post_freeze/forward_localization_family_partition_v1/INDEX.json`
+- canonical family partition `data/post_freeze/forward_localization_family_partition_v1/INDEX.json`
+- canonical L3 review overlay `data/post_freeze/l3_semantic_pc_mechanism_v1/INDEX.json`
 
 The available Drive EXE is not the exact target build, so target-PC preimage/XREF/call-site claims remain outside current evidence.
 
@@ -35,21 +38,29 @@ The available Drive EXE is not the exact target build, so target-PC preimage/XRE
 | PF002 | VERIFIED | The canonical PC pointer population is exhaustive at 56 records: mode 0 = 5, mode 1 = 51; mode 1 points to `private prefix base + arg`. | Closed PC runtime specification/validation. | PC engine only; no automatic Switch counterpart. |
 | PF003 | MECHANISM_OBSERVED | `R3047 流言` and `R3099 宣戦` are inline-zero occurrences combined with mode-1 pointer redirection. | Occurrence-level cross-check between inline and pointer records. | PC precedent only; no Switch `REDIRECT_PORT` authorization. |
 | PF004 | PROVISIONAL | Earlier review found 2 pointer-linked and 47 pointer-unlinked rows inside the 49 L1 replacement-conflict rows. | Cross-check against pointer records. | Keep semantic/action implications conservative. |
-| PF005 | PROVISIONAL | The 49 L1 replacement-conflict rows were reviewed as 30 context-aligned, 16 context-divergent, 3 formatter-shared unresolved. | Switch JP neighborhood + PC context/replacement + linguistic role. | Exact membership is now preserved, but semantic judgment remains provisional. |
-| PF006 | PROVISIONAL | The 399 L1 replacement-agreement rows were reviewed as 395 general-localization candidates, 3 formatter reroutes, 1 semantic-role unresolved (`R2572 国`). | Same methodology as PF005. | Exact membership is now preserved, but semantic judgment remains provisional. |
+| PF005 | PROVISIONAL | The 49 L1 replacement-conflict rows were reviewed as 30 context-aligned, 16 context-divergent, 3 formatter-shared unresolved. | Switch JP neighborhood + PC context/replacement + linguistic role. | Exact membership is preserved, but semantic judgment remains provisional. |
+| PF006 | PROVISIONAL | The 399 L1 replacement-agreement rows were reviewed as 395 general-localization candidates, 3 formatter reroutes, 1 semantic-role unresolved (`R2572 国`). | Same methodology as PF005. | Exact membership is preserved, but semantic judgment remains provisional. |
 | PF007 | MECHANISM_OBSERVED | PC context handling includes occurrence-specific spacing, suppression, composite-window behavior and pointer redirection rather than one value-global replacement rule. | Direct inspected examples; PF003 is the strongest pointer-layer example. | Mechanism family observation only. |
 | PF008 | VERIFIED | Forward localization 700 is an exact, disjoint and complete partition: L1=448, L2=163, L3=88, L4=1. | `data/post_freeze/forward_localization_family_partition_v1/INDEX.json` plus SHA-pinned exact family membership files and ordered hashes. | Mechanical/structural classification only; no Switch write authorization. |
 | PF009 | VERIFIED | L1 448 mechanically subpartitions into replacement-agreement 399 and replacement-conflict 49 with exact memberships. | Canonical membership artifact. | Replacement relation is not semantic authorization. |
-| PF010 | PROVISIONAL | The exact memberships of the previously reviewed L1 semantic sets are now materialized: 395/3/1 over agreement and 30/16/3 over conflict. | Canonical membership artifact overlays. | Membership provenance is fixed; semantic judgments remain PROVISIONAL. |
+| PF010 | PROVISIONAL | The exact memberships of the previously reviewed L1 semantic sets are materialized: 395/3/1 over agreement and 30/16/3 over conflict. | Canonical membership artifact overlays. | Membership provenance is fixed; semantic judgments remain PROVISIONAL. |
 | PF011 | VERIFIED | L2 consists of 163 rows with `full_jp_candidate_count >= 2` but exactly one physical JP object per row; physical multi-target cases = 0. | Canonical membership artifact plus reproduced structural census used to materialize the selector. | Semantic owner/alias role remains future work. |
-| PF012 | VERIFIED | L3 exact membership is 88 rows selected by zero full-JP match + JP object-start candidate(s) + strict-prefix relation. Ordered source-ID SHA-256 `b4c9af9ba3640634121c757c5585ece80d4e230533b24f6b2d81f4aebff714b2`. | Canonical membership artifact. | L3 semantic/context/PC-mechanism analysis has NOT started. |
+| PF012 | VERIFIED | L3 exact membership is 88 rows selected by zero full-JP match + JP object-start candidate(s) + strict-prefix relation. Ordered source-ID SHA-256 `b4c9af9ba3640634121c757c5585ece80d4e230533b24f6b2d81f4aebff714b2`. | Canonical family membership artifact. | Membership claim only; later semantic/mechanism review is recorded by PF014-PF020. |
 | PF013 | VERIFIED | L4 is exactly one row, `R1291`, with no full-JP match and no JP object-start candidate. | Canonical membership artifact. | No semantic/write authorization implied. |
+| PF014 | PROVISIONAL | L3 88 closes into five exact semantic/context review sets: 31 `PARTIAL_COMPOSITE_WINDOW`, 22 `FORMATTER_CONTROL_PREFIX`, 17 `CONTEXT_DIVERGENT_FALSE_PREFIX`, 13 `STANDALONE_MEANINGFUL_PREFIX`, 5 `UNRESOLVED`. | `data/post_freeze/l3_semantic_pc_mechanism_v1/DISPOSITIONS.json`; exact R membership + ordered source/R hashes. | Membership is exact; semantic disposition remains review-level and does not authorize Switch writes. |
+| PF015 | MECHANISM_OBSERVED | All 88 L3 rows are represented by the PC inline layer; cross-check against all 56 canonical pointer records yields 0 pointer-linked L3 rows. | Stage-1 source ledger + canonical pointer population. | PC occurrence mechanism only. |
+| PF016 | MECHANISM_OBSERVED | Seven L3 PC inline originals terminate inside a CP932 multibyte character: R472, R1156, R1383, R1744, R1861, R2745, R3101. | Direct original-byte inspection from canonical source ledger/T5K. | Establishes window-boundary behavior, not Switch target/action. |
+| PF017 | MECHANISM_OBSERVED | L3 contains two full-zero replacements (R486, R643) and three translated-prefix + trailing-zero replacements (R1277, R1284, R2558). | Direct replacement bytes from canonical source ledger/T5K. | Suppression/padding semantics remain occurrence-specific. |
+| PF018 | MECHANISM_OBSERVED | Four L3 rows form two same-original/nonuniform-replacement groups: `登録武将` R802/R2087 and `発生条件` R1283/R1284. | T5K occurrence grouping + replacement comparison. | Same value is not a global translation/owner key. |
+| PF019 | SEMANTIC_REVIEWED | Strict-prefix identity is not semantic-owner identity. Counterexamples include composite `前`, zero-suppressed `さい`, repeated `文/分/色`, and standalone meaningful prefixes whose Switch objects are longer different roles. | PC occurrence neighborhood + Switch JP neighborhood + linguistic role after structural gates. | Semantic review, not deterministic write authority. |
+| PF020 | PROVISIONAL | The working evidence order resolves 83/88 L3 rows to coarse semantic/context disposition before consumer tracing; targeted tracing is narrowed to R651, R1062, R1277, R1283, R1284. | L3 exact review overlay and counterexample audit. | The five rows remain genuinely unresolved; 83 reviewed rows are not write-authorized. |
+| PF021 | SEMANTIC_REVIEWED | The working order `Switch structure -> PC occurrence mechanism -> PC replacement/context -> Switch JP neighborhood -> semantic role -> consumer tracing if needed` survived an independent L3 family after L1. | L1 inherited review + L3 analysis. | Supports a future framework-promotion review only; framework is unchanged. |
 
 ## 4. Canonical partition identities
 
 ```text
 population rows     700
-INDEX SHA-256       6d79c648b4ee671aa4c0592467b89101de76456a5493ffaadb743014a74fdc76
+partition INDEX SHA-256  6d79c648b4ee671aa4c0592467b89101de76456a5493ffaadb743014a74fdc76
 
 L1 448 source-ID SHA  181e4fe2ea296510e68cfd4a2119f7b6b755f08dabc32aacbce456543e5a6b20
 L2 163 source-ID SHA  b421ac64c0385a6b9ea27ef0dd6a6e7e0f77ea8490d9e4c3ace9e4bb0eb6524a
@@ -59,7 +70,25 @@ L4   1 source-ID SHA  b737b1c34402655ab64cc8f79b2b77dd343cb803555a074045c13f0544
 
 Partition checks: family sum 700, intersection 0, unclassified 0, duplicate source ID 0, duplicate R-number 0.
 
-## 5. Methodology boundary
+## 5. Canonical L3 review-overlay identities
+
+```text
+L3 review INDEX SHA-256        dd2ad754732d16dc05263a674c8b76d494f98baf09d71dd3c1ae2f3b1d56a33e
+DISPOSITIONS.json SHA-256       432f80f1134b24ae72df580e727acbd9c739832f9285687582f20f7af745fcbf
+MECHANISMS.json SHA-256         d35e9e4dcdf4f459bf2d9ecedabf0a4c32a95d8ee437ccee79162ed100e2e7dd
+analysis document SHA-256       59a394c6fb790d7f2a62b8e78b5fa3b30d9ea04188baff2f532667de3f0f2428
+```
+
+Disposition integrity:
+
+```text
+31 + 22 + 17 + 13 + 5 = 88
+intersection count            = 0
+unclassified count            = 0
+Switch write-authorized rows  = 0
+```
+
+## 6. Methodology boundary
 
 Current evidence order:
 
@@ -68,7 +97,7 @@ Switch structure
 -> PC occurrence mechanism
 -> PC replacement/context
 -> Switch JP neighborhood
--> linguistic role
+-> linguistic/semantic role
 -> consumer tracing only if ambiguity remains
 ```
 
@@ -78,13 +107,15 @@ Safety rules:
 - PC mechanism match alone cannot authorize a Switch action;
 - same JP text is not one semantic object by default;
 - replacement agreement is not sufficient;
+- strict-prefix identity is not semantic-owner identity;
 - target resolution and write safety remain separate;
 - canonical family membership is inherited across chats/models unless a legitimate revalidation trigger appears.
 
-## 6. Open evidence gaps / next scope
+## 7. Open evidence gaps / next scope
 
 1. Exact PC target EXE build 9163702 is still unavailable locally; target-build preimage/XREF evidence remains blocked.
-2. L1 semantic judgments remain provisional despite exact membership provenance now being fixed.
+2. L1 semantic judgments remain provisional despite exact membership provenance being fixed.
 3. L2 semantic owner/alias analysis remains future work; its structural one-physical-object result is inherited.
-4. L3 semantic/context/PC-mechanism analysis has not started. This exact 88-row family is the next recommended read-only scope after a fresh user signal.
-5. Do not promote the working methodology into `PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` until another family validates it.
+4. L3 semantic/context/PC-mechanism review is complete and materialized. Only R651, R1062, R1277, R1283, R1284 remain targeted tracing candidates.
+5. The working methodology has now survived L1 and independent L3 review. A framework-promotion review is reasonable after a fresh signal, but `docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md` remains unchanged.
+6. No builder/IPS/runtime/game-file modification or Switch write authorization is implied by PF014-PF021.
