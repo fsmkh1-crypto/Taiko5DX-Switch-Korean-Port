@@ -1,4 +1,4 @@
-# VALIDATION_LEDGER — index
+# VALIDATION LEDGER — index
 
 Canonical validation authority. Do not repeat a well-recorded validation solely because a new chat/model/agent is used.
 
@@ -20,6 +20,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V087–V092: `docs/VALIDATION_LEDGER_F1.md`
 - V093–V095: `docs/VALIDATION_LEDGER_F1_AUTH.md`
 - V096–V098: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
+- V099–V100: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
 
 ## Current precedence
 
@@ -30,9 +31,10 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
 - F1 localization sequence audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
 - F1 row-level static authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
-- machine-accounting pilot schema: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
-- pilot claim extraction rules: `docs/CLAIM_EXTRACTION_RULES.md`
+- machine-accounting schema candidate: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
+- claim extraction rules candidate: `docs/CLAIM_EXTRACTION_RULES.md`
 - machine-accounting F1 pilot: `docs/F1_MACHINE_ACCOUNTING_PILOT.md`
+- schema-v1 amendment report: `docs/SCHEMA_V1_AMENDMENT.md`
 - current resume point: `PROJECT_STATE.md`
 
 Later narrower-scope corrections take precedence over older semantic overclaims.
@@ -42,4 +44,6 @@ F1 V088/V092 supersede only the later provisional F1 promotion/accounting that t
 
 F1 V093/V094 close the missing row-level provenance for the exact 158 V089 static-safe rows and authorize only those manifest actions as `DIRECT_PORT` static writes. V095 is metadata-only cleanup: it distinguishes the canonical 20-byte project Build ID from the padded 32-byte NSO header field and records that duplicate local replay outputs were not duplicate canonical repository artifacts.
 
-V096–V098 validate a machine-readable schema **pilot**, not a schema freeze or full migration. During the pilot existing canonical Markdown remains authoritative. Pilot data must not be used to infer that V001–V095 or the full 27,430 mixed-granularity inventory has been migrated.
+V096–V098 validate a machine-readable schema pilot, not a schema freeze or full migration. V099 defines the v1 candidate amendment. V100 records that exact F1 source membership passes but the full v1 regression is blocked by a pre-existing truncated repository copy of the V094 action manifest. This artifact defect does not by itself erase the historical V094 authorization conclusion, but the committed manifest must not be consumed as a complete 158-action table until its canonical bytes are provenance-restored.
+
+Existing canonical Markdown remains authoritative. Neither V099 nor V100 freezes schema v1 or authorizes wider migration, the 797 residual, builder, IPS, runtime, or game-file work.
