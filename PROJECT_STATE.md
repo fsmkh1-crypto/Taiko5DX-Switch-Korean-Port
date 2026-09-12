@@ -7,16 +7,16 @@ This file is the **sole project-resume authority**. Historical documents may con
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "V094_TRANSPORT_REPAIR_V2",
+  "scope_id": "SCHEMA_V1_V089_C03_ATOMIC_CLAIM_BLOCKER",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
   "required_reads": [
-    "docs/ARTIFACT_AND_PROVENANCE_RULES.md",
-    "docs/GITHUB_AND_CI_POLICY.md",
-    "docs/SCHEMA_V1_AMENDMENT.md",
-    "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md"
+    "docs/VALIDATION_POLICY.md",
+    "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
+    "docs/CLAIM_EXTRACTION_RULES.md",
+    "docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md"
   ],
   "forbidden_scope_expansion": [
-    "SCHEMA_FREEZE",
+    "SCHEMA_FREEZE_DECLARATION",
     "FULL_MIGRATION",
     "797_RESIDUAL_ANALYSIS",
     "BUILDER_IPS_RUNTIME",
@@ -31,15 +31,16 @@ Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
 Documentation Governance v2: **COMPLETE** after V101.  
+V094 transport repair v2: **COMPLETE** after V102.  
 Schema v1: **CANDIDATE / NOT FROZEN**.  
-V094 repair: **NOT COMPLETE**.
+Current schema-v1 regression blocker: **`V089.C03` atomic-claim policy**.
 
 Canonical target:
 
 - Title ID `0100346017304000`
 - Switch v1.1.3
 - Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`
-- canonical `main` SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
+- canonical game `main` SHA-256 `b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b`
 
 ## Canonical completed work
 
@@ -47,8 +48,9 @@ Canonical target:
 - Stage 2 affine structural targeting: COMPLETE
 - F1 unique-anchor bounded localization sequence audit: COMPLETE
 - F1 historical V094 static-write authorization: COMPLETE as semantic/provenance evidence
+- V094 machine-consumable repository transport: COMPLETE as deterministic plain JSONL shards
 - machine-readable accounting v0.1 F1 pilot: PASS
-- schema-v1 amendment: implemented as candidate; regression blocked by V094 transport
+- schema-v1 amendment: implemented as candidate; regression advanced past V094 and is now blocked by `V089.C03`
 
 Current accounting facts remain:
 
@@ -77,7 +79,7 @@ The 25 shared-owner rows remain `SHARED_OWNER_BINDING`; replacement conflict is 
 
 ## V094 semantic and transport state
 
-Semantic identity is unchanged:
+Semantic identity remains unchanged:
 
 ```text
 rows                    158
@@ -85,33 +87,52 @@ logical content SHA-256 c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512f
 ordered source IDs SHA  87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e
 ```
 
-Historical canonical transport provenance remains:
+Historical canonical transport provenance remains unchanged:
 
 ```text
 format      deterministic gzip JSONL
 gzip SHA    8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68
 ```
 
-V100 also records the original committed truncation discovered by schema-v1 review:
+Current repository transport:
 
 ```text
-bytes          21,288
-file SHA256    826c73a0f80ae645420a189a4dd7b1e3637afd0e514fbc4f00d84189595daf37
-complete rows  55 / 158
+path       docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST/
+format     PLAIN_JSONL_SHARDS
+rule       preserve canonical V094 order; contiguous groups of 8 rows
+shards     20
+rows       158
+INDEX SHA  ce241ab9a3257e0cf858d4b016eebdcd3c564958e95cdaf23035c0f4dfdfd6d4
+repair     d25fd5be5c15aabd1483c0e8bf0ad4873974bb1b
 ```
 
-The current `main` at base commit `b58402a6713800ea32f6151ca26ab0e84c6ad568` contains a later **failed transport artifact**, not a canonical replacement:
+The old 21,288-byte and 12,071-byte gzip repository objects remain historical failed transports only. They are recorded in the current transport `INDEX.json` as `FAILED_TRANSPORT_NOT_CANONICAL`; neither is current action authority.
+
+GitHub Actions run `34677635822` independently verified:
 
 ```text
-path      docs/manifests/F1_STATIC_WRITE_AUTHORIZATION_MANIFEST.jsonl.gz
-bytes     12,071
-Git blob  9a3bc50b18a51582b2031611a2f46fe1c069a862
-status    FAILED_TRANSPORT_NOT_CANONICAL
+shards                         20
+rows                           158
+logical content SHA-256        c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff
+ordered source IDs SHA-256     87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e
+reconstructed gzip SHA-256     8bbbeb03695b4bd06f028b9c9cfe0d367af170a012af56803f3a8553356a0b68
 ```
 
-Do not consume that 12,071-byte file as the V094 action table.
+Therefore the V100 transport blocker is closed.
 
-A later attempted manual fragmented Git-object route is also rejected as the normal repair method. Do not resume the old “upload progressively smaller blobs and assemble trees” approach merely because partial staging objects exist.
+## Current schema-v1 blocker
+
+The same CI run advanced through the repaired V094 action-table gate and passed the 158-action/action-edge consistency checks. It then failed at:
+
+`atomic_claim_policy: ['V089.C03']`
+
+This is a separate schema-v1 claim-shape cause family. It is not evidence against V094, and it was not modified during the transport repair.
+
+Until that blocker is analyzed and resolved under a fresh execution signal:
+
+- schema v1 remains NOT FROZEN;
+- materialized semantic hashes remain unpinned;
+- schema-freeze declaration is not authorized.
 
 ## Document authority
 
@@ -136,15 +157,18 @@ Technical maps, stage reports, handoffs, and historical plans may remain valid e
 - target resolution is not write authorization.
 - no silent UNKNOWN authorization or source omission.
 - no force-push.
-- no synthesis of missing V094 actions from counts/IDs/edges.
+- no synthesis of missing canonical payload rows from counts/IDs/edges.
 - no governance edit to anchor-protected evidence without explicit anchor migration.
 - semantic identity and transport identity are separate.
-- one credible connector transport failure means change the route, not progressively fragment the same payload.
+- V094 failed binary/base64 transport routes remain rejected; do not resurrect them.
+- do not fix a different schema blocker under the completed V094 repair scope.
 
 ## Next authorized scope after a fresh signal
 
-**V094 transport repair v2 only.**
+**Analyze the schema-v1 candidate `V089.C03` atomic-claim-policy blocker only.**
 
-The next repair must choose a safe exact-byte transport path under the new artifact/GitHub policies, preserve V094 semantic identity and historical gzip provenance, validate the resulting current transport, update bindings/validator only as required by that transport, run the candidate regression, record the result, and STOP.
+Determine whether `V089.C03` should be an explicitly allowed structured atomic exception, superseded/split into appended atomic claims, or whether the current atomicity validator is over-broad. Use the existing immutable-claim/supersession rules and do not change the underlying F1 byte-analysis facts.
 
-Schema freeze remains a later separately authorized stage.
+After that analysis, report and STOP. A subsequent modification/fix and any schema-freeze decision require separate fresh execution signals.
+
+Do not combine this analysis with full migration, the 797 residual, builder, IPS, runtime, mapping, or game-file work.

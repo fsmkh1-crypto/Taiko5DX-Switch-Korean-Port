@@ -20,7 +20,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V087–V092: `docs/VALIDATION_LEDGER_F1.md`
 - V093–V095: `docs/VALIDATION_LEDGER_F1_AUTH.md`
 - V096–V098: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
-- V099–V100: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
+- V099–V100, V102: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
 - V101: `docs/VALIDATION_LEDGER_DOCUMENT_GOVERNANCE.md`
 
 ## Current precedence
@@ -45,6 +45,6 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 
 Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`.
 
-V094 historical authorization remains canonical semantic evidence. V100 records the original repository-artifact truncation. V101 additionally classifies the 12,071-byte manifest at base HEAD `b58402a...` as `FAILED_TRANSPORT_NOT_CANONICAL`; this is a current transport failure, not technical disproof of V094.
+V094 historical authorization remains canonical semantic evidence. V100 records the original repository-artifact truncation. V101 classifies the later 12,071-byte upload as `FAILED_TRANSPORT_NOT_CANONICAL`. V102 closes the V094 transport blocker with deterministic plain JSONL shards while preserving the historical gzip identity; the candidate regression then advances to a separate `V089.C03` atomic-claim-policy blocker.
 
-V096–V100 do not freeze schema v1. V101 is documentation governance only and does not authorize V094 repair, schema freeze, wider migration, the 797 residual, builder, IPS, runtime, or game-file work.
+V096–V102 do not freeze schema v1. Documentation governance and V094 transport repair do not authorize wider migration, the 797 residual, builder, IPS, runtime, or game-file work.
