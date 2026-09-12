@@ -1,0 +1,83 @@
+{
+  "overrides": [
+    {
+      "claim_id": "V088.C06",
+      "reason": "The JP_ONLY value is stated directly in the detailed F1 rule-correction section; the pilot anchor pointed only to the ledger reuse rule.",
+      "source_anchor": {
+        "anchor_text": "All accepted F1 targets remain `JP_ONLY`.",
+        "anchor_text_sha256": "e64a1554a2f32e1a7484138bba2957b7e98f6bd4be7cc2bfddec0e1a10ef03c7",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "3. F1 rule correction"
+      }
+    },
+    {
+      "claim_id": "V088.C07",
+      "reason": "The exact R549 localization-ID assertion is stated directly in the detailed F1 rule-correction section.",
+      "source_anchor": {
+        "anchor_text": "R549 remains bound by F1 context to localization ID1706; pooled `年` physical identity does not rebind it to ID2630.",
+        "anchor_text_sha256": "99476c17cf265d15cd504b6b2fea4d9aa0350906dd0afc0d639bcf2a46e1d66a",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "3. F1 rule correction"
+      }
+    },
+    {
+      "claim_id": "V089.C01",
+      "reason": "The complete 278-row disposition partition is stated in the detailed audit summary; the ledger anchor exposed only the 158-row member.",
+      "source_anchor": {
+        "anchor_text": "| TARGET_RESOLVED_WRITE_SAFE_STATIC | 158 |\n| TARGET_RESOLVED_CAPACITY_FAIL | 4 |\n| TARGET_RESOLVED_PADDING_RECONSTRUCTION_REQUIRED | 75 |\n| TARGET_RESOLVED_OTHER_BLOCKER | 25 |\n| F1_RULE_REJECTED | 16 |\n| total | 278 |",
+        "anchor_text_sha256": "d7413db9d127ad243adcd01dd9927df3689e42ffa3e3ec0e1d05d0bbb6a82ad5",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "1. Summary"
+      }
+    },
+    {
+      "claim_id": "V089.C03",
+      "reason": "The full 197/81 historical storage partition is stated together only in the detailed full-window audit section.",
+      "source_anchor": {
+        "anchor_text": "The earlier F1 residual split was:\n\n- 197 full PC original-window matches;\n- 81 logical-object matches with full-window mismatch caused by PC padding.",
+        "anchor_text_sha256": "938fc98dad5799c01f8058612ba18ee4827ba54ed8123fc8637785dce8009a9b",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "4. Full-window PASS audit"
+      }
+    },
+    {
+      "claim_id": "V091.C02",
+      "reason": "The exhaustive padding histogram is recorded in the detailed padding root-cause section, as the pilot claim notes already state.",
+      "source_anchor": {
+        "anchor_text": "Additional space required for replacement payload plus terminating NUL:\n\n```text\n+2 bytes: 23\n+3 bytes: 33\n+4 bytes:  8\n+5 bytes: 11\n+6 bytes:  3\n+7 bytes:  2\n+9 bytes:  1\nTOTAL:    81\n```",
+        "anchor_text_sha256": "f38d24fa30987bec87a63c1270d38e5e67395c67c1f3d3ab23e6e195f7e5a19c",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "5. Padding mismatch root cause"
+      }
+    },
+    {
+      "claim_id": "V091.C05",
+      "reason": "The exact nine overlap pairs are recorded in the detailed overlap subsection, as the pilot claim notes already state.",
+      "source_anchor": {
+        "anchor_text": "Padding-mismatch rows must not be written as PC-length windows. Doing so creates nine cross-object overlap pairs:\n\n`R555/R567`, `R884/R908`, `R885/R891`, `R893/R902`, `R913/R946`, `R1986/R1987`, `R2722/R2725`, `R2933/R2941`, `R3072/R3078`.",
+        "anchor_text_sha256": "29142e5d495ed537e7636f2a14d1673c8277cf05549490c5cc466450278555e9",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "4.2 Overlap"
+      }
+    },
+    {
+      "claim_id": "V092.C04",
+      "reason": "This sentence directly supports the evidence-gap claim that rejected candidate mappings are retained as useful evidence without promotion.",
+      "source_anchor": {
+        "anchor_text": "The 16 rows retain useful candidate mappings but are not promoted under the canonical F1 family rule.",
+        "anchor_text_sha256": "cda3766b734a8c2e1bddb6a8f8d863385a336931543d68128fc8e244a6a07105",
+        "document_git_blob_sha": "ba9c660cf6f229ec2b19f024b9bc2cef94d26a44",
+        "document_path": "docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md",
+        "heading_path": "8. Accounting correction"
+      }
+    }
+  ],
+  "schema": "SOURCE_ANCHOR_OVERRIDES_V1_CANDIDATE",
+  "semantic_schema_version": "1.0-candidate.1"
+}
