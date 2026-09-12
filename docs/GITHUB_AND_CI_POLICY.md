@@ -99,6 +99,14 @@ This mode is an operator-enforced execution discipline, not a repository capabil
 
 If a different write route is genuinely required, STOP and authorize that route as a new explicit scope/transport decision before any such write occurs.
 
+### Text blob encoding
+
+For repository text, call `create_blob(content=<exact text>, encoding="utf-8")` directly.
+
+Do not manually Base64-encode, split, or reassemble text before `create_blob`. Base64 is reserved for genuine binary payloads that cannot be represented as exact UTF-8 text.
+
+The connector/API argument encoding is an operational transport detail; it must not be confused with repository artifact transport identity. Preserve the intended text bytes exactly, including line endings, BOM state, and final-LF state.
+
 ## 5. Canonical mutation boundary
 
 Dangling blobs, trees, and commits are not project authority.
