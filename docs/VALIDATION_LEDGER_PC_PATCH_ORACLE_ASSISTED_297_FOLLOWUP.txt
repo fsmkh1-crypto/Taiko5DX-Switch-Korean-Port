@@ -1,0 +1,24 @@
+PC PATCH ORACLE ASSISTED 297 FOLLOW-UP V1 — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL READ-ONLY FOLLOW-UP / NO SWITCH WRITE AUTHORIZATION
+Parent HEAD: 8999a65ec97b4a81391f7030d76d9d175aa5b816
+
+ID | Status | Claim | Evidence / method | Limit
+V119 | VERIFIED | Canonical Oracle V1 ORACLE_ASSISTED membership was consumed unchanged: 297 rows. | Exact union of three 99-row batches equals canonical assisted membership; intersection 0; missing 0; extra 0. | Oracle V1 remains provenance and is not overwritten.
+V120 | VERIFIED | Batch 1 remains 6 TARGET_RESOLVED + 92 COMPOSITE_OR_FORMATTER_RESOLVED + R19 NEED_TRACE = 99. | Preserved Batch-1 read-only report and exact membership. | Counterpart routing only; not write safety.
+V121 | VERIFIED | Batch 2 recheck under Batch-1 taxonomy remains 13 TARGET_RESOLVED + 86 COMPOSITE_OR_FORMATTER_RESOLVED = 99, with zero label changes. | PC occurrence/replacement/sequence and Switch object context recheck. | No new consumer/write claim.
+V122 | VERIFIED | Batch 3 normalizes to 46 TARGET_RESOLVED + 53 COMPOSITE_OR_FORMATTER_RESOLVED = 99; T2/T3 are layout/ownership migrations rather than unresolved translation tables. | PC occurrence sequence + Switch JP objects/raw string pools; exact normalized membership. | T2/T3 consumer/write path still not authorized.
+V123 | VERIFIED | Normalized 297 partition is exact/disjoint/complete: 65 TARGET_RESOLVED + 231 COMPOSITE_OR_FORMATTER_RESOLVED + 1 NEED_TRACE = 297. | Machine MEMBERSHIP.json and deterministic set arithmetic. | Dispositions do not imply WRITE_SAFE.
+V124 | REJECTED | Prior noncanonical count-only 93 TARGET / 203 COMPOSITE / 1 TRACE summary is a valid canonical taxonomy. | It applies a different TARGET-vs-COMPOSITE boundary than Batch 1; normalized recheck yields 65/231/1. | Do not reuse 93/203/1 as canonical evidence.
+V125 | VERIFIED | Effective forward routing after overlay is 656 base resolved + 7 base rerouted + 65 follow-up target + 231 follow-up composite + 10 Astra + 17 trace = 986, with ORACLE_ASSISTED remainder 0. | Oracle V1 routing plus normalized follow-up overlay; R19 added to trace. | Oracle V1 historical artifact itself is unchanged.
+V126 | VERIFIED | Framework, FZ001, F1, Stage-2 mappings, builder/runtime, game files, and Switch write authorizations are unchanged. | Documentation-only materialization using read-only analysis results. | Future analysis/implementation requires fresh explicit signal.
+
+Artifacts:
+- docs/PC_PATCH_ORACLE_ASSISTED_297_FOLLOWUP.md
+- data/post_freeze/pc_patch_oracle_assisted_297_followup_v1/INDEX.json
+- data/post_freeze/pc_patch_oracle_assisted_297_followup_v1/MEMBERSHIP.json
+
+Semantic hashes before Git transport:
+- report SHA-256: 9cd19de89cfbd08e2492c1a97a5b388cbbabf6be54174bbc1d805f3d2c07f898
+- INDEX SHA-256: 2746d7b89f1c829855ba714a332f50b543f6956685d35b5a228bd1e76c9b9679
+- MEMBERSHIP SHA-256: 506b10ce073ce0d87feabe4c031f1b16b6ea0267d177c99090d921b1a47f0848
