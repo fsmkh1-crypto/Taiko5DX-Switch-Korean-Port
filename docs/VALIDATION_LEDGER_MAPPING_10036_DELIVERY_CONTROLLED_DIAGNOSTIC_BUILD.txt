@@ -1,0 +1,8 @@
+VALIDATION LEDGER — MAPPING 10,036 DELIVERY-CONTROLLED DIAGNOSTIC BUILD
+
+V252 — VERIFIED: canonical Switch main identity and Build ID passed before any diagnostic emission; effective action set was fixed to exactly four Mapping actions with HELPER_TEXT_V2 replacing historical V1.
+V253 — VERIFIED: all four canonical preimage guards and pinned payload identities passed; intended action count = 4, emitted count = 4, extra actions = 0.
+V254 — VERIFIED: every mapped action used the canonical Eden/classic-IPS +0x100 coordinate convention; no RLE records were emitted.
+V255 — VERIFIED: emitted IPS reparsed exactly to the intended four records and an independent raw reserialization produced identical IPS bytes.
+V256 — VERIFIED: IPS size/hash and package hash are pinned; the exact package was uploaded to Google Drive Eden_Builds. No GitHub binary/Base64 transport occurred.
+V257 — VERIFIED: terminal build verdict = DIAGNOSTIC_ARTIFACT_BUILT_RUNTIME_PENDING. Hardware forward/reverse observation remains required and no unrelated family was mixed.

@@ -1,0 +1,52 @@
+MAPPING 10,036 DELIVERY-CONTROLLED DIAGNOSTIC BUILD
+
+Date: 2026-09-14 (KST)
+Status: DIAGNOSTIC ARTIFACT BUILT / RUNTIME VALIDATION PENDING
+Scope: MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD
+Builder source commit: 27d851713c5ee21f6b34a67c503b9195b15cf712
+Semantic realization family: MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1
+
+요약
+
+A single-cause-family diagnostic artifact was generated using exactly four effective Mapping 10,036 actions: forward hook V1, reverse hook V1, reproducible helper V2 and delta V1. No font, yomi, pointer, descriptor, translation or unrelated runtime family was mixed into the artifact. All input, preimage, payload, coordinate and IPS round-trip checks passed. The binary package was delivered to Google Drive rather than GitHub; no Base64 transport was used. Runtime hardware observation remains pending.
+
+확정된 사실
+
+- Canonical compressed Switch main SHA-256 matched b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b and the Build ID matched D9120950C258610A746F4A31CE3A3B376DE393D9.
+- Effective action set is exactly four: MAP10036_FWD_MISS_HOOK_V1, MAP10036_REV_MISS_HOOK_V1, MAP10036_HELPER_TEXT_V2, MAP10036_DELTA_RODATA_V1.
+- All four exact preimage guards passed and all four generated payload identities matched their pinned SHA-256 values.
+- Intended action count = 4, emitted IPS record count = 4, extra record count = 0 and RLE record count = 0.
+- The canonical mapped-to-IPS coordinate convention is +0x100 and was applied to every record.
+- IPS self-reparse was exact and an independent reserialization produced identical IPS bytes.
+- IPS size is 2,693 bytes and SHA-256 is 6ff4b07db9b83b22197009206e21b5023ad02e62458e8597bac219a3c0faa120.
+- Diagnostic package SHA-256 is e4810b8186bab484fc076419c1a882b7deb9031b09560d47a8eace00b5f49cca.
+- Package is stored in Google Drive Eden_Builds with file ID 1HYtLZOmONs82AXeD_NQAF4jKP-_37rej.
+- GitHub received only UTF-8 source, linker, builder, manifests and reports; binary helper/delta/IPS/ZIP payloads were not transported through GitHub.
+- No Base64 generation, splitting or reassembly was used.
+- Runtime validation status remains PENDING_HARDWARE_OBSERVATION.
+
+유력한 가설
+
+If the four-action mapping realization is correct in the target runtime, the next hardware test should observe Korean forward and reverse mapping without requiring any additional mapping action. A runtime failure would falsify this realization cause family and must be analyzed before mixing another family.
+
+미확정 사항
+
+- Actual target-hardware execution of the forward miss path.
+- Actual target-hardware execution of the reverse miss path.
+- Visible/runtime round-trip confirmation in the game.
+- Release integration with unrelated font/descriptor/yomi/pointer families.
+
+기각된 가설
+
+- Silently omitting one of the four mapping actions.
+- Mixing an existing font or DCTRL action into this diagnostic IPS.
+- Using historical HELPER_TEXT_V1 bytes despite unavailable materialized provenance.
+- Sending binary payloads through GitHub Base64/Contents transport.
+
+관련 영향 범위
+
+Only the Mapping 10,036 realization family is implemented in this diagnostic artifact. Existing FZ001, Stage1, Stage2, F1, forward-986, pointer-56, translations, other descriptor families and F1 WRITE_SAFE 158 remain unchanged. The explicit independent static WRITE_SAFE total remains 162.
+
+수정 제안
+
+Next bounded scope is MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION. Use this exact artifact identity for hardware observation. Do not rebuild with additional families before the mapping diagnostic result is recorded.
