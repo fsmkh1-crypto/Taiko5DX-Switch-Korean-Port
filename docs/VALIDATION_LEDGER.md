@@ -27,6 +27,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V127–V133: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_ASTRA_10_FOLLOWUP.txt`
 - V134–V143: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_TRACE_19_CLOSURE.txt`
 - V144–V151: `docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt`
+- V152–V158: `docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -39,6 +40,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 
 - project resume authority: `PROJECT_STATE.md`
 - master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
+- current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
 - artifact/machine provenance rules: `docs/ARTIFACT_AND_PROVENANCE_RULES.md`
@@ -55,4 +57,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure never implies `WRITE_SAFE`.
+Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure never implies `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.

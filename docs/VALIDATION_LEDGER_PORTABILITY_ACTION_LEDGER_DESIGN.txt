@@ -1,0 +1,27 @@
+PORTABILITY MATRIX / ACTION LEDGER DESIGN — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL DESIGN MATERIALIZATION / NO IMPLEMENTATION
+Basis HEAD: 3994f5b5d3aa3b508b8d7941312b4199d47f6374
+
+ID | Status | Claim | Evidence / limit
+V152 | VERIFIED | The design scope preserves FZ001, forward-986 membership, TRACE closure, and the existing F1 158 static-write authorizations; no builder/runtime/game-file work is authorized. | PROJECT_STATE.md; FZ001; F1 authorization; Oracle/TRACE closure.
+V153 | VERIFIED | Post-freeze compatibility audit found no requirement to redesign FZ001. FZ001 remains an immutable historical baseline while later canonical overlays refine current effective state by exact membership and proven axis only. | MACHINE_READABLE_ACCOUNTING_SCHEMA.md append-only revision model; Oracle V1, Assisted, Astra, TRACE overlay semantics.
+V154 | VERIFIED | The historical 16 F1-rule-rejected rows are all target/counterpart resolved by post-freeze evidence: 14 in deterministic Oracle V1 and R3181/R3182 in the Assisted follow-up. Current effective F1 target resolution is therefore 278/278, while static-write authorization remains 158. | F1 rejected set; pc_patch_oracle_resolver_v1/MEMBERSHIP.json; pc_patch_oracle_assisted_297_followup_v1/MEMBERSHIP.json. This is not a WRITE_SAFE promotion.
+V155 | VERIFIED | Portability P1-P4 and terminal disposition are independent axes. NATIVE_EQUIVALENT_VERIFIED has no forced portability class; SUBSUMED has no independent class and links directly to a final non-SUBSUMED action; PROVEN_IRRELEVANT is the only normal P4 terminal. | Design synthesis plus existing accounting-axis and no-edit evidence rules.
+V156 | VERIFIED | Existing frozen source/action/edge/claim schema is sufficient for this design; no new mandatory FZ001 semantic field is required. Portability Matrix is a derived planning view. | MACHINE_READABLE_ACCOUNTING_SCHEMA.md; source/action edge roles; materialization contract.
+V157 | VERIFIED | Capacity/storage blockers remain write-safety/storage problems, not automatic translation-change authority. Resolution order is storage/owner -> reconstruction -> redirect -> Switch-native runtime equivalent -> explicit human semantic review only if all evidence-backed paths fail. | PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md; Master Rule Registry write-safety rules; final design synthesis.
+V158 | VERIFIED | Builder contract is semantic-free and fail-closed: semantic target, Korean wording, portability, reroute/subsumption/native-equivalence, and fallback decisions must already be resolved in the Action Ledger. This design is materialized only; next scope is read-only Portability Matrix / Action Ledger population under a fresh explicit user signal. | docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md. No implementation performed.
+
+Artifacts:
+- docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md
+- docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt
+- docs/VALIDATION_LEDGER.md
+- PROJECT_STATE.md
+
+Repository mutation boundary for this materialization:
+- create_blob
+- create_tree
+- create_commit
+- update_ref(main, force=false)
+
+Forbidden write paths remain excluded.
