@@ -7,11 +7,11 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "PC_PATCH_ORACLE_TRACE_19_ANALYSIS",
+  "scope_id": "PC_PATCH_ORACLE_TRACE_19_CLOSURE_MATERIALIZED",
   "scope_kind": "READ_ONLY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V133",
-  "last_closed_stage_commit": "16729c4a1fc5afd9c01f6cf9ef52ab7f6e0469d5",
+  "last_closed_validation_id": "V143",
+  "last_closed_stage_commit": "0710e36077dd5184974701da67c4b019fa751851",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
   "last_closed_ci_conclusion": "success",
@@ -54,6 +54,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/PC_PATCH_ORACLE_ASTRA_10_FOLLOWUP.md",
     "docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_ASTRA_10_FOLLOWUP.txt",
     "data/post_freeze/pc_patch_oracle_astra_10_followup_v1/INDEX.json",
+    "docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md",
+    "docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_TRACE_19_CLOSURE.txt",
+    "data/post_freeze/pc_patch_oracle_trace_19_closure_v1/INDEX.json",
     "data/pilot/f1_v1_candidate/bindings.json"
   ],
   "forbidden_scope_expansion": [
@@ -85,10 +88,12 @@ Post-freeze forward work:
 - PC Korean Patch Oracle Resolver V1: COMPLETE / MATERIALIZED
 - Oracle-assisted 297 follow-up: COMPLETE / MATERIALIZED
 - Astra-required 10 follow-up: COMPLETE / MATERIALIZED
+- TRACE 19 cause-group closure: COMPLETE / MATERIALIZED
 - ORACLE_ASSISTED remainder: 0
 - ASTRA_REQUIRED remainder: 0
-- current unresolved structural/owner queue: TRACE 19
-- next scope: exact 19-row trace analysis only
+- TRACE remainder: 0
+- current unresolved counterpart-routing queue: 0
+- next scope requires a fresh explicit user signal
 
 ## 2. Frozen semantic identities
 
@@ -259,14 +264,53 @@ ASTRA_REQUIRED_REMAINDER                 0
 Resolved composite:
 `R75, R651, R1062, R1277, R1583, R1591, R1631, R2572`
 
-New trace:
+Historical Astra trace:
 `R1283, R1284`
 
-Historical L3 unresolved membership remains provenance only. Current status of `R651, R1062, R1277, R1283, R1284` is governed by this overlay.
+The TRACE-closure overlay below supersedes only the current effective disposition of those two rows; the Astra artifact remains provenance.
 
-## 8. Effective forward routing
+## 8. Current authority — TRACE 19 closure
 
-After Oracle V1 + assisted-297 follow-up + Astra-10 follow-up:
+Canonical report:
+- `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
+- semantic SHA-256 `bd3ded42d5b6c9fe8475811983bddeef1850f1fd9a4e636d8bc7b2d16353a23d`
+
+Validation ledger:
+- `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_TRACE_19_CLOSURE.txt`
+- semantic SHA-256 `32a2141d1d7a4fa0f608a638091c5ad89b8500911bd3808902919b1d37becc7b`
+
+Machine-readable:
+- `data/post_freeze/pc_patch_oracle_trace_19_closure_v1/INDEX.json`
+- semantic SHA-256 `606d5c198bab86e4763481d945eef6e532898b463f9c95dc0cf74ef447692bbd`
+- `data/post_freeze/pc_patch_oracle_trace_19_closure_v1/MEMBERSHIP.json`
+- semantic SHA-256 `080cbddce6c01793d158660eb2fd9bec365cd6801fcf6858eaa812211228e3f5`
+
+Exact TRACE-closure partition:
+
+```text
+TARGET_RESOLVED                          8
+COMPOSITE_OR_FORMATTER_RESOLVED          3
+ORACLE_REROUTED                          8
+NEED_TRACE                               0
+TOTAL                                   19
+intersection                             0
+unclassified                             0
+TRACE_REMAINDER                          0
+```
+
+Cause groups and final routing:
+- `R19`: target resolved / owner bound / JP ID 1088; merged-consumer presentation conflict remains an implementation policy issue.
+- `R1283`: composite/formatter resolved / opening owner JP ID 2795.
+- `R1284`: composite/formatter resolved / closing owner JP ID 2796.
+- `R1690`: composite/formatter resolved / padding-extension component owned by `R1689 -> JP ID 3245`.
+- `R3244-R3250`: target resolved / GBK CN exact counterparts at localization IDs 1099-1105; language-table routing/presentation remains separate.
+- `R16458-R16465`: rerouted / one PC UTF-16 display-resolution warning subsumed by Switch JP localization ID 1480.
+
+No row remains in TRACE.
+
+## 9. Effective forward routing
+
+After Oracle V1 + assisted-297 + Astra-10 + TRACE-19 closure:
 
 ```text
 BASE_ORACLE_RESOLVED                         656
@@ -274,33 +318,28 @@ BASE_ORACLE_REROUTED                           7
 ASSISTED_FOLLOWUP_TARGET_RESOLVED             65
 ASSISTED_FOLLOWUP_COMPOSITE_RESOLVED         231
 ASTRA_FOLLOWUP_COMPOSITE_RESOLVED              8
-TRACE_REQUIRED                                19
+TRACE_CLOSURE_TARGET_RESOLVED                   8
+TRACE_CLOSURE_COMPOSITE_RESOLVED                3
+TRACE_CLOSURE_REROUTED                          8
+TRACE_REQUIRED                                  0
                                              ---
 TOTAL                                        986
 ORACLE_ASSISTED_REMAINDER                      0
 ASTRA_REQUIRED_REMAINDER                       0
+TRACE_REMAINDER                                0
 ```
 
 Consolidated current counterpart classes:
-- target resolved: 65
-- composite/formatter resolved: 239
-- rerouted: 7
 - base deterministic Oracle resolved: 656
-- trace: 19
+- target resolved: 73
+- composite/formatter resolved: 242
+- rerouted: 15
+- trace: 0
+- total: 986
 
-Current exact trace queue:
+This is counterpart/routing closure only. It creates no new `WRITE_SAFE` authorization.
 
-`R19, R1283, R1284, R1690, R3244, R3245, R3246, R3247, R3248, R3249, R3250, R16458, R16459, R16460, R16461, R16462, R16463, R16464, R16465`
-
-Trace cause groups:
-- owner/consumer binding: `R19, R1283, R1284`
-- empty logical window: `R1690`
-- opaque fixed block: `R3244-R3250`
-- T5 mixed/UTF16: `R16458-R16465`
-
-Do not mix these cause groups in one diagnostic build.
-
-## 9. Preserved rejected shortcuts
+## 10. Preserved rejected shortcuts
 
 Do not reintroduce:
 - unique physical target + replacement agreement alone;
@@ -311,10 +350,15 @@ Do not reintroduce:
 - structural family as semantic target;
 - same Korean replacement as proof of same target;
 - occurrence order/NUL padding alone to bind R1283/R1284;
-- target/counterpart resolution = WRITE_SAFE;
-- consumer trace before exhausting PC patch oracle evidence.
+- empty-string prefix matching as positive evidence;
+- CP932 decode failure as proof of non-text;
+- CN exact counterpart as automatic CN write authorization;
+- absent exact PC-specific object as permission for silent omission;
+- target/counterpart/routing resolution = WRITE_SAFE;
+- consumer trace before exhausting PC patch oracle evidence;
+- nonmatching PC EXE as global canonical target-build XREF proof.
 
-## 10. Repository operating state
+## 11. Repository operating state
 
 Permitted remote write actions are exactly:
 
@@ -333,20 +377,22 @@ Forbidden:
 - force-push
 - history rewrite
 
-## 11. Authority and boundaries
+## 12. Authority and boundaries
 
 - `PROJECT_STATE.md` is the sole resume authority.
 - FZ001, F1, Stage-2, and stable 986 structural membership are not reopened.
 - Oracle V1 and earlier overlays remain provenance where superseded.
 - PC Korean patch behavior remains the reference before inventing Switch-specific mechanisms.
-- counterpart resolution remains distinct from `WRITE_SAFE`.
+- counterpart/routing closure remains distinct from `WRITE_SAFE`.
 - no builder/IPS/runtime implementation, game-file modification, or new Switch write authorization is created.
-- exact target PC EXE remains unavailable; no new target-build XREF/preimage ownership claim is made.
+- exact target PC EXE remains unavailable; no new global target-build XREF/preimage ownership claim is made.
 
-## 12. Awaiting fresh signal
+## 13. Awaiting fresh signal
 
 STOPPED_AWAITING_USER_SIGNAL.
 
-Next recommended scope: `PC_PATCH_ORACLE_TRACE_19_ANALYSIS` (READ_ONLY).
+The forward-986 counterpart/routing problem is now closed with TRACE remainder `0`.
 
-Analyze only the exact 19-row trace queue and keep the four cause groups separate. Do not begin trace analysis, framework modification, builder/runtime work, game-file modification, or further repository writes without a fresh explicit signal.
+Next recommended scope: write-safety/action-ledger planning for the resolved/rerouted forward obligations, still separated from builder/runtime implementation.
+
+Do not begin action-ledger redesign, write-safety implementation, builder/runtime work, game-file modification, or further repository writes without a fresh explicit signal.
