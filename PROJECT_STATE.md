@@ -5,7 +5,7 @@ Last updated: 2026-09-14 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY_MATERIALIZED","scope_kind":"READ_ONLY","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V233","last_closed_stage_commit":"5057a1821109f88a43b8653c5aceb892eaddd4f9","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_survey":"docs/MAPPING_10036_SWITCH_COUNTERPART_SURVEY.txt","mapping_10036_realization_design":"docs/MAPPING_10036_REALIZATION_DESIGN.txt","mapping_10036_alignment_padding_validity":"docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","mapping_10036_alignment_padding_index":"data/post_freeze/mapping_10036_alignment_padding_runtime_validity_v1/INDEX.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/POINTER_56_COMPANION_TERMINAL_DISPOSITION.txt","docs/MAPPING_10036_SWITCH_COUNTERPART_SURVEY.txt","docs/MAPPING_10036_REALIZATION_DESIGN.txt","docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","data/post_freeze/mapping_10036_alignment_padding_runtime_validity_v1/MEMBERSHIP.json","docs/VALIDATION_LEDGER_MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","docs/WRITE_TRANSPORT_INCIDENT_20260914.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"MAPPING_10036_HELPER_HOOK_CONTRACT_MATERIALIZED","scope_kind":"READ_ONLY","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V239","last_closed_stage_commit":"15795a7952d703c17fac294e90a9a8124c330b04","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_survey":"docs/MAPPING_10036_SWITCH_COUNTERPART_SURVEY.txt","mapping_10036_realization_design":"docs/MAPPING_10036_REALIZATION_DESIGN.txt","mapping_10036_alignment_padding_validity":"docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","mapping_10036_helper_hook_contract":"docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt","mapping_10036_helper_hook_index":"data/post_freeze/mapping_10036_helper_hook_contract_v1/INDEX.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/MAPPING_10036_SWITCH_COUNTERPART_SURVEY.txt","docs/MAPPING_10036_REALIZATION_DESIGN.txt","docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt","data/post_freeze/mapping_10036_helper_hook_contract_v1/MEMBERSHIP.json","docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_HOOK_CONTRACT.txt","docs/WRITE_TRANSPORT_INCIDENT_20260914.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md"]}
 PROJECT_RESUME_V2 -->
 
 ## Current canonical state
@@ -13,91 +13,59 @@ PROJECT_RESUME_V2 -->
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
-Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, and mapping-10,036 survey/design closure through V224.
+Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, and mapping-10,036 survey/design/storage-class closure through V233.
 
-Canonical source accounting remains:
+Canonical inline source accounting remains 17,103: Stage2 13,771 + F1 1,311 + forward 986 + gap 1,035. Existing F1 static WRITE_SAFE authority remains 158. No new WRITE_SAFE is granted here.
 
-```text
-Stage2 13,771
-F1 1,311
-forward 986
-gap 1,035
-TOTAL 17,103
-```
+## Mapping 10,036 realization state
 
-Existing F1 static WRITE_SAFE authority remains 158. No new WRITE_SAFE is granted here.
+Preferred family remains `MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1`.
 
-## Pointer-56 terminal state
+Closed before this scope:
+- preserve original 7,494-entry table, four table references, two count literals and both six-entry loops;
+- Korean addition = exact 2,542-pair semantic suffix;
+- TEXT alignment storage 0x58CE60..0x58D000 is runtime/delivery-valid RX storage;
+- RODATA alignment storage 0x9BF018..0x9C0000 is runtime/delivery-valid read-only storage.
 
-The exact 43 mode-1 inline-zero companion sources remain terminally `SUBSUMED` through 43 direct `SUBSUMED_BY` edges. Mode-1 physical storage/write safety and mode-0 final physical owners remain separate open items.
-
-## Mapping 10,036 canonical design
-
-Preferred realization family remains `MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1`:
-
-- preserve original Switch 7,494 mapping table;
-- preserve four table-address references and two count literals;
-- preserve both six-entry equality-terminated loops;
-- invoke Korean fallback only after a genuine original-table miss;
-- preserve the original non-Korean miss fallbacks.
-
-Count-only 7,494 -> 10,036 remains rejected.
-
-## Alignment-padding runtime/delivery validity — V225–V229
+## Helper / hook contract — V234–V239
 
 Canonical evidence:
-- `docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt`
-- `data/post_freeze/mapping_10036_alignment_padding_runtime_validity_v1/MEMBERSHIP.json`
-- `data/post_freeze/mapping_10036_alignment_padding_runtime_validity_v1/INDEX.json`
-- `docs/VALIDATION_LEDGER_MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt`
+- `docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
+- `data/post_freeze/mapping_10036_helper_hook_contract_v1/MEMBERSHIP.json`
+- `data/post_freeze/mapping_10036_helper_hook_contract_v1/INDEX.json`
+- `docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
 
 Closed facts:
+- forward miss hook owner: 0x4304E0 -> helper 0x58CE60;
+- reverse miss hook owner: 0x430798 -> helper 0x58CF00;
+- each hook is one direct 4-byte AArch64 branch and is within direct branch range;
+- forward hit re-entry: 0x430568; forward fallback re-entry: 0x43056C;
+- reverse re-entry: 0x430820;
+- helper scratch is caller-saved x8-x15 only; x19-x28/x30 remain preserved;
+- exact helper text size = 308 bytes / 77 instructions; TEXT slack = 108 bytes;
+- helper payload SHA-256 = 60b1fd4b8231dca9f11e5e46007bddef97f55434f1e46df1445be2fb361e6cad;
+- delta payload = 2,349 bytes; SHA-256 = ddedc507fa892a5b5be6f35ab24f0a0e5fac0d71e633134712b33bd4c6a2088f;
+- exhaustive forward/reverse 16-bit-domain verification: exactly 2,542 hits in each direction, zero extra hits, exact 2,542/2,542 round-trip;
+- original-byte/zero-preimage guards are fixed for all four physical write sites;
+- proposed physical Action Ledger IDs: `MAP10036_FWD_MISS_HOOK_V1`, `MAP10036_REV_MISS_HOOK_V1`, `MAP10036_HELPER_TEXT_V1`, `MAP10036_DELTA_RODATA_V1`;
+- new WRITE_SAFE = 0.
 
-```text
-TEXT alignment region      0x58CE60..0x58D000
-TEXT region size                         416 B
-runtime role             executable helper storage
-helper prototype                         324 B
-prototype slack                            92 B
-
-RODATA alignment region    0x9BF018..0x9C0000
-RODATA region size                     4,072 B
-runtime role               read-only delta storage
-delta payload                          2,349 B
-delta slack                            1,723 B
-
-runtime/delivery-valid regions             2
-unresolved region validity                 0
-new WRITE_SAFE                              0
-```
-
-Both regions are structural loader-created alignment padding, zero-filled before patch application and included in the patchable mapped NSO image. Page-rounded permissions place the text region in executable text space and the rodata region in read-only rodata space. Current Eden loader behavior independently confirms the same storage classes and whole-image patch path.
-
-The already-canonical DCTRL7 runtime result remains the delivery-control anchor for this exact title/build and the mapped +0x100 IPS coordinate convention. This scope did not create a diagnostic build.
-
-Storage-class/runtime-delivery validity is closed. Write authorization is not.
+No Astra escalation was required because no semantic/context ambiguity remained after deterministic control-flow, ABI and exhaustive mapping verification.
 
 ## Remaining mapping open items
 
-- exact helper instruction bytes and exact final helper size;
-- two miss-hook contracts, branch reach/return and register/ABI preservation;
-- original-byte guards for all hook/code sites;
-- final Action Ledger identities and write-safety authorization;
-- runtime Korean forward/reverse round-trip validation;
-- final delivery-controlled diagnostic build after separate authorization.
+- static WRITE_SAFE authorization for the four independently guardable physical writes;
+- delivery-controlled diagnostic build only after a fresh execution signal authorizes an implementation/build scope;
+- runtime Korean forward/reverse round-trip observation.
 
-If final helper bytes exceed 416 bytes, the text-gap realization fails closed. Translation/semantic truncation is not permitted.
+## Write boundary
 
-## Write boundary and incident provenance
-
-Allowed remote writes are only `create_blob`, `create_tree`, `create_commit`, `update_ref(force=false)`.
-
-During this scope, eight forbidden Contents API `create_file` calls created transient root files `TEMP_SHOULD_NOT_EXIST`, `X`, `Y`, `Z`, `W`, `Q`, `R`, `S` across commits ending at `23b94214ee73055e8e41341b89ecad1935974c42`. Three subsequent forbidden `update_file` calls created transient commits `9d2e8d817553ae660448e0a88e19496aa71b3540`, `4e740b7fa8a63cedc37853c26c7e2114edf7e2a6`, and `d3fe720c845de39401114d569a97ce7856429b6f`, temporarily replacing README.md, CHANGELOG.md and PATCH_MAP.md respectively. Canonical repair commit `5057a1821109f88a43b8653c5aceb892eaddd4f9` restored all three originals, excluded every transient root file, retained V225–V232 evidence, and recorded V233, all without force/history rewrite. Provenance: `docs/WRITE_TRANSPORT_INCIDENT_20260914.txt` and V230–V233 incident ledgers.
+Remote GitHub writes are restricted to `create_blob -> create_tree -> create_commit -> update_ref(force=false)`. All file add/modify/delete/recovery operations use Git object writes only. `create_file`, `update_file`, `delete_file`, `create_branch` and every other write action remain excluded even if surfaced by tools.
 
 ## STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Next recommended scope: **`MAPPING_10036_HELPER_HOOK_CONTRACT_READ_ONLY`**.
+Next recommended scope: **`MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION_READ_ONLY`**.
 
-That scope is limited to the two mapping miss-hook contracts, exact branch/return and register/ABI requirements, final helper byte budget/bytes, original-byte guards and Action Ledger identity proposal. It must not yet build or emit a runtime patch, expand WRITE_SAFE, alter Korean semantics, or combine unrelated descriptor families.
+That scope may adjudicate WRITE_SAFE for the exact four mapping physical actions using the now-closed owner, storage, helper, hook, guard and delivery evidence. It must not emit IPS/build/runtime/game-file changes or combine unrelated descriptor families.
