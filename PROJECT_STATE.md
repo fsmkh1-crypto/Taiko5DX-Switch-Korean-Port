@@ -7,11 +7,11 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema":"PROJECT_RESUME_V2",
-  "scope_id":"STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE_MATERIALIZED",
-  "scope_kind":"READ_ONLY_STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE",
+  "scope_id":"DOCUMENT_GOVERNANCE_DRIFT_REPAIR_MATERIALIZED",
+  "scope_kind":"READ_ONLY",
   "status":"STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id":"V208",
-  "last_closed_stage_commit":"130d44e12fa2b97e101271d0f9930545e156f6eb",
+  "last_closed_validation_id":"V209",
+  "last_closed_stage_commit":"1a8d4a9f0321fc815c2f23787ebd098364fb4e3e",
   "last_closed_ci_run_id":34691523117,
   "last_closed_ci_validation_id":"V107",
   "last_closed_ci_conclusion":"success",
@@ -104,7 +104,8 @@ Completed and inherited without revalidation:
 - F1 cross-boundary action-collapse closure: COMPLETE / MATERIALIZED
 - pre-Stage2 <-> Stage2 cross-boundary adjudication closure: COMPLETE / MATERIALIZED
 - Stage2 internal action-collapse closure: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V208
+- document-governance drift repair: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V209
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
 
@@ -199,7 +200,7 @@ Target resolution, semantic-owner closure, action collapse, write safety, implem
 
 ## 10. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V208.
+- `docs/VALIDATION_LEDGER.md` is current through V209.
 - corrected Stage2 378-unit closure supersedes the preliminary 358-unit queue only on Stage2-internal candidate membership/action-collapse.
 - exact gap-internal 24-edge recovery remains authoritative on its exact 24 pairs.
 - gap/forward, F1-boundary, and pre-Stage2/Stage2 closures remain authoritative on their exact scopes.
