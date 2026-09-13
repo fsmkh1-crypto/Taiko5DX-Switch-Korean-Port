@@ -1,0 +1,59 @@
+POINTER 56 NON-RELA CONSUMER CENSUS
+
+Date: 2026-09-14 (KST)
+Status: CANONICAL POST-FREEZE READ-ONLY CENSUS / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: ab6db420d09916d6ae1f6d99cd668c2fd782b3fb
+Scope: POINTER_56_NON_RELA_CONSUMER_CENSUS_READ_ONLY
+
+요약
+
+The exact 43 mode-1 inline-zero companion original Switch objects from the canonical pointer-56 membership were surveyed only for surviving static consumers outside the already identified pointer-family RELA references.
+
+Result:
+- companion objects: 43 / 43 closed
+- known pointer-family RELA references: 46
+- additional RELA references: 0
+- direct ARM64 object-address materializations: 0
+- exact non-RELA module-relative pointer references: 0
+- unresolved objects: 0
+- new WRITE_SAFE: 0
+
+확정된 사실
+
+1. All 43 objects are exactly the canonical companion-source population inherited from the pointer-56 counterpart membership.
+2. Forty objects have one known pointer-family RELA reference; R2587, R2791, and R3154 each have two, for 46 known references total.
+3. No additional RELA consumer outside the pointer family was found for any of the 43 objects.
+4. No direct ARM64 materialization of the 43 object addresses was found.
+5. No exact non-RELA module-relative pointer representation to the 43 objects was found.
+6. The bounded static-consumer prerequisite established by the prior cross-axis integration is therefore closed for all 43 objects.
+7. This result does not itself assign final Action Ledger SUBSUMED_BY action IDs and grants no new Switch write authorization.
+
+유력한 가설
+
+The 43 companion inline obligations can be terminally assigned SUBSUMED_BY the corresponding final pointer redirect actions once the Action Ledger terminal-disposition scope performs the explicit direct-link assignment required by the design contract. The PC-side zero-fill is therefore strongly supported as a PC implementation detail rather than an independently required Switch mutation.
+
+미확정 사항
+
+- Exact final Action Ledger action IDs / direct SUBSUMED_BY links for the 43 companion sources.
+- Safe mapped storage for the exact 602-byte replacement pool.
+- Final physical target owners for R2411 / R2412.
+- Write safety, implementation, runtime verification, and delivery.
+
+기각된 가설
+
+- A surviving additional RELA consumer exists among the 43 objects.
+- A direct-code object-address consumer exists among the 43 objects.
+- A separate exact static module-relative pointer still requires the original object.
+- The PC zero-fill alone proves that Switch must independently zero the same source object.
+
+관련 영향 범위
+
+Unchanged: FZ001; canonical 17,103 source denominator; Stage1/Stage2/F1/forward/gap membership; prior action-collapse cardinalities; existing F1 158 static-write authority; builder/IPS/runtime/game files.
+
+수정 제안
+
+Next bounded scope: POINTER_56_COMPANION_TERMINAL_DISPOSITION_READ_ONLY.
+
+That scope should do only the explicit Action Ledger terminal assignment for the exact 43 companion sources, preserving their source identities and linking each SUBSUMED_BY directly to its final pointer redirect action. It must not select storage, expand WRITE_SAFE, or implement a patch.
+
+STOP.

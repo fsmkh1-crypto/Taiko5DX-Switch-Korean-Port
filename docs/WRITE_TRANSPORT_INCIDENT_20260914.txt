@@ -1,0 +1,9 @@
+WRITE TRANSPORT INCIDENT — 2026-09-14
+
+During POINTER_56_NON_RELA_CONSUMER_CENSUS materialization, one forbidden GitHub Contents API update_file call accidentally replaced README.md with a one-character payload in transient commit f497ad24972c430ef90c48b280ca26dec9258fbd.
+
+The call violated the repository write allowlist. No semantic analysis, builder, runtime, IPS, game-file, or FZ001 content was changed by intent.
+
+Recovery policy: preserve history, do not force-push, and restore the intended tree by creating a normal child commit using only create_blob/create_tree/create_commit/update_ref(force=false). The canonical repaired tree must contain the original README blob plus the V219 census materialization files.
+
+This incident is provenance only and must not be repeated. Forbidden write actions remain update_file/create_file/delete_file/create_branch and Contents API/Base64 write transport.
