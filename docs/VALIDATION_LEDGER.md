@@ -28,6 +28,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V134–V143: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_TRACE_19_CLOSURE.txt`
 - V144–V151: `docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt`
 - V152–V158: `docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt`
+- V159–V166: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -40,6 +41,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 
 - project resume authority: `PROJECT_STATE.md`
 - master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
+- current full-corpus inline coverage overlay: `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`

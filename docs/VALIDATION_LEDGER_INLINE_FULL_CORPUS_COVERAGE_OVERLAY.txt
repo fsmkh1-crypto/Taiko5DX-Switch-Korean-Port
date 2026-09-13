@@ -1,0 +1,30 @@
+INLINE FULL-CORPUS COVERAGE OVERLAY — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL POST-FREEZE READ-ONLY COVERAGE MATERIALIZATION / NO IMPLEMENTATION
+Basis HEAD: fabac86f8f4c442b8436f8f2feee99e1819c572f
+
+ID | Status | Claim | Evidence / limit
+V159 | VERIFIED | Deterministic replay of the already-canonical F1 selector reproduces 142 search segments, 112 accepted final segments, 1,311 accepted mapped rows, 262 accepted Stage-2 residual rows, and the exact historical 16 rejected residual rows. | Canonical Stage-1 report bundle hashes, canonical Switch main identity, existing f1_static_authorization selector. Replay is membership/provenance recovery only, not semantic re-adjudication.
+V160 | VERIFIED | The full 17,103 inline population partitions exactly and disjointly into Stage-2 affine 13,771 + F1 accepted mapped 1,311 + forward 986 + unique-only coverage gap 1,035. | Set composition over canonical Stage-1, Stage-2, F1 and forward populations; intersection count 0; union 17,103.
+V161 | VERIFIED | The exact 1,035 coverage gap equals the Stage-1 unique raw-candidate population after subtracting Stage-2 affine coverage and accepted F1 sequence coverage; split is early R1-R3250 = 1,009 and late = 26. | Canonical Stage-1 source ledger plus exact F1 replay membership. Raw uniqueness remains discovery evidence only.
+V162 | VERIFIED | Early 1,009 structural census is 622 JP full/single-owner, 31 JP full/shared-owner, 224 JP prefix/single-owner, 1 JP prefix/shared-owner, 45 formatter-interior fragments, 85 other longer-object interior fragments, and 1 independent raw-object start. | Canonical Switch main object boundaries, JP localization owner inventory, Stage-1 exact unique candidate offsets. Structural census creates no write authority.
+V163 | VERIFIED | Late 26 rows are holes within source-complete T1/T2/T3/T4 regions: T1=2, T2=14, T3=9, T4=1. | Exact machine membership plus canonical forward family ranges and PC source ordering. Stable forward-986 partition is not modified.
+V164 | VERIFIED | Same-physical-target collision census between the 1,035 gap and already promoted Stage-2/F1 targets contains exactly three pairs: 北陸 R14543/R16430 DIFFERENT replacement; 四国 R14549/R16440 agreement; 真備 R2047/R15678 agreement. | Canonical PC source original/replacement bytes and canonical Switch target/object identity.
+V165 | BOUNDARY | The root cause of the 北陸 differing-replacement collision is unresolved. Semantic-role/consumer separation is a hypothesis, not a verified fact; neither replacement may be arbitrarily selected or discarded. | Requires PC occurrence/context and Switch semantic owner/consumer binding. No translation decision authorized.
+V166 | VERIFIED | This overlay changes no FZ001 hash, Stage-2/F1/forward membership, existing write authorization, builder/runtime/IPS/game file, or invariant definition. It adds source-complete planning provenance only. | Overlay-only materialization contract.
+
+Artifacts:
+- docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md
+- data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json
+- data/post_freeze/inline_full_corpus_coverage_overlay_v1/MEMBERSHIP.json
+- docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt
+- docs/VALIDATION_LEDGER.md
+- PROJECT_STATE.md
+
+Repository mutation boundary for this materialization:
+- create_blob
+- create_tree
+- create_commit
+- update_ref(main, force=false)
+
+Forbidden write paths and Base64/Contents-API writes remain excluded.

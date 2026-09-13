@@ -7,10 +7,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "PORTABILITY_MATRIX_ACTION_LEDGER_DESIGN_MATERIALIZED",
-  "scope_kind": "READ_ONLY_DESIGN",
+  "scope_id": "INLINE_FULL_CORPUS_COVERAGE_OVERLAY_MATERIALIZED",
+  "scope_kind": "READ_ONLY_COVERAGE_OVERLAY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V158",
+  "last_closed_validation_id": "V166",
   "last_closed_stage_commit": "813441d170929717b4f4ea75a515b4a1fc3086e9",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
@@ -33,6 +33,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "master_rule_registry": "docs/MASTER_RULE_REGISTRY.md",
   "master_rule_registry_index": "data/post_freeze/master_rule_registry_v1/INDEX.json",
   "portability_action_ledger_design": "docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md",
+  "inline_full_corpus_coverage_overlay": "docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md",
+  "inline_full_corpus_coverage_index": "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
   "required_reads": [
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
@@ -41,6 +43,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt",
     "docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md",
     "docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt",
+    "docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md",
+    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt",
+    "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
@@ -78,8 +83,9 @@ Completed and inherited without revalidation:
 - master rule integration audit and registry materialization: COMPLETE
 - FZ001 post-freeze rule compatibility audit: COMPLETE / NO SCHEMA REDESIGN REQUIRED
 - Portability Matrix / Action Ledger design: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V158
-- unresolved counterpart-routing queue: 0
+- inline full-corpus coverage overlay: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V166
+- unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
@@ -168,7 +174,55 @@ Remainders:
 
 This is counterpart/routing closure only. It creates no new `WRITE_SAFE` authorization.
 
-## 6. Portability / Action Ledger design authority
+## 6. Inline full-corpus coverage overlay
+
+Current canonical overlay:
+- `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
+- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json`
+- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/MEMBERSHIP.json`
+- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt`
+
+The complete inline denominator is now accounted for as a disjoint planning partition:
+
+```text
+Stage-2 affine verified        13,771
+F1 accepted mapped              1,311
+forward-986                       986
+unique-only coverage gap        1,035
+TOTAL                           17,103
+```
+
+The 1,035 gap is exact machine-readable membership, not an inferred count.
+
+Gap split:
+- early R1-R3250: 1,009
+- late family holes: 26
+
+The early structural census is:
+
+```text
+JP full / single owner                     622
+JP full / shared owner                      31
+JP prefix / single owner                   224
+JP prefix / shared owner                     1
+formatter interior fragment                 45
+other longer-object interior fragment       85
+independent raw object start                 1
+TOTAL                                     1,009
+```
+
+Late 26 are source-complete holes in existing T1/T2/T3/T4 regions and do not modify the stable forward-986 partition.
+
+Promoted-target collision census:
+- `R14543` / `R16430` `北陸`: same logical text, same Switch physical target, PC replacements differ — root cause unresolved;
+- `R14549` / `R16440` `四国`: replacement agreement;
+- `R2047` / `R15678` `真備`: replacement agreement.
+
+The `北陸` semantic-role/consumer distinction is a hypothesis only. No replacement is selected, discarded, or rewritten by this state.
+
+Stage-1 raw uniqueness remains discovery evidence only and does not itself populate verified target identity, terminal disposition, portability, or write authority.
+
+## 7. Portability / Action Ledger design authority
 
 Current design contract:
 - `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
@@ -187,7 +241,7 @@ Fixed design decisions:
 - capacity/storage blockers do not authorize automatic translation changes.
 - future builder must be a semantic-free, fail-closed executor of a fully resolved Action Ledger.
 
-## 7. Master rule authority
+## 8. Master rule authority
 
 Central rule-discovery/precedence overlay:
 - `docs/MASTER_RULE_REGISTRY.md`
@@ -197,14 +251,15 @@ Central rule-discovery/precedence overlay:
 
 Source canonical documents remain the technical evidence authority. The registry remains an overlay only and does not mutate FZ001.
 
-## 8. Validation and governance
+## 9. Validation and governance
 
-- `docs/VALIDATION_LEDGER.md` is the central validation index through V158 and also indexes post-freeze namespaced ledgers.
-- existing document-governance and machine-accounting validation through V107 remain provenance; this design materialization does not alter FZ001 semantic pins.
+- `docs/VALIDATION_LEDGER.md` is the central validation index through V166 and also indexes post-freeze namespaced ledgers.
+- existing document-governance and machine-accounting validation through V107 remain provenance; this overlay does not alter FZ001 semantic pins.
 - later narrow canonical corrections/overlays take precedence only within their proven scope.
 - target/counterpart closure never implies write authorization.
+- structural-family membership for the forward-986 denominator must not be treated as a source-complete full-inline Action Ledger family.
 
-## 9. Repository operating boundary
+## 10. Repository operating boundary
 
 Permitted remote write actions remain exactly:
 
@@ -222,13 +277,14 @@ Forbidden:
 - `create_branch`
 - force push
 - history rewrite
+- Base64/Contents-API write transport
 
-## 10. Current STOP boundary
+## 11. Current STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
+Do not begin builder/IPS/runtime implementation, game-file modification, schema redesign, diagnostic build, or semantic-owner/action population without a fresh explicit user execution signal.
 
-Next recommended scope: **`PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_READ_ONLY`**.
+Next recommended scope: **`INLINE_FULL_CORPUS_SEMANTIC_OWNER_ACTION_POPULATION_READ_ONLY`**.
 
-That scope may materialize a read-only current effective source-state input view, Portability Matrix proposal, Action Ledger proposal, and unresolved/conflict/write-safety queues. It must not implement the builder/runtime, emit IPS, or modify game files.
+That scope may consume the exact 17,103 source-complete coverage partition, bind semantic owners for the 1,035 gap, resolve source-complete family/action relations, and investigate the `北陸` owner/consumer cause group. It must not implement builder/runtime, emit IPS, or modify game files.
