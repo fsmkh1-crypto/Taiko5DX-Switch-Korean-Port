@@ -1,0 +1,23 @@
+PC PATCH ORACLE ASTRA 10 FOLLOW-UP V1 — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL READ-ONLY FOLLOW-UP / NO SWITCH WRITE AUTHORIZATION
+Parent HEAD: 16729c4a1fc5afd9c01f6cf9ef52ab7f6e0469d5
+
+ID | Status | Claim | Evidence / method | Limit
+V127 | VERIFIED | Canonical ASTRA_REQUIRED queue was consumed unchanged: 10 rows. | Exact queue R75,R651,R1062,R1277,R1283,R1284,R1583,R1591,R1631,R2572; no extra/missing rows. | Semantic/context adjudication only.
+V128 | VERIFIED | Eight rows resolve as COMPOSITE_OR_FORMATTER_RESOLVED: R75,R651,R1062,R1277,R1583,R1591,R1631,R2572. | PC occurrence/replacement, adjacent PC sequence, Switch full-object and neighborhood correspondence. | Counterpart only; not WRITE_SAFE.
+V129 | VERIFIED | R1283 and R1284 remain NEED_TRACE. | Same source text 発生条件 has distinct occurrence replacements; opening/closing candidates are both compatible with recorded source windows. | Requires owner/consumer binding.
+V130 | REJECTED | Occurrence order and NUL padding alone are sufficient to bind R1283/R1284 to opening/closing owners. | Current source windows omit the decisive opening/closing syntax. | Do not force semantic closure.
+V131 | VERIFIED | Astra follow-up partition is exact/disjoint/complete: 8 composite + 2 trace = 10; ASTRA_REQUIRED remainder 0. | Machine MEMBERSHIP.json and deterministic set arithmetic. | No implementation authorization.
+V132 | VERIFIED | Effective forward routing is 656 base resolved + 7 rerouted + 65 assisted-target + 231 assisted-composite + 8 Astra-composite + 19 trace = 986. | Prior canonical overlays plus this Astra overlay; trace adds R1283/R1284. | Historical artifacts remain provenance.
+V133 | VERIFIED | Framework, FZ001, F1, Stage-2 mappings, builder/runtime, game files, and Switch write authorizations are unchanged. | Documentation-only materialization of completed read-only analysis. | Further trace analysis requires fresh explicit signal.
+
+Artifacts:
+- docs/PC_PATCH_ORACLE_ASTRA_10_FOLLOWUP.md
+- data/post_freeze/pc_patch_oracle_astra_10_followup_v1/INDEX.json
+- data/post_freeze/pc_patch_oracle_astra_10_followup_v1/MEMBERSHIP.json
+
+Semantic hashes before Git transport:
+- report SHA-256: c0ba5ca6ba229bdfe4bca20053e8ace32767fc132afc6bc4039becc18c6036f7
+- MEMBERSHIP SHA-256: a5d86347752d2dee56490d7d6c7716af3e79a6daa3cb787c2b32bb177a543cb1
+- INDEX SHA-256: e4f563ad35f16cbac77704227af44496e680f342c1f337b2eebc7dbc270a728c
