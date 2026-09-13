@@ -48,3 +48,36 @@ The attempted connector route of progressively shrinking binary/base64 fragments
 V101 changes documentation governance only. It does not repair V094, pin schema-v1 semantic hashes, freeze schema v1, migrate the full corpus, analyze the 797 residual, or authorize builder/runtime/game changes.
 
 Next stage remains **V094 transport repair v2 only**, and requires a fresh user execution signal.
+
+## V209 — Documentation-governance drift repair
+
+Date: 2026-09-13  
+Base HEAD: `51247b28ed77a7e8a39e33953cc78f66ff45159e`  
+Status: **VERIFIED**
+
+### Claim
+
+The post-V101 governance drift is limited to metadata synchronization. Eight later canonical Markdown documents were materialized without corresponding entries in `docs/DOCUMENT_AUTHORITY_INDEX.json`, and `PROJECT_RESUME_V2.scope_kind` drifted from the canonical enum to a stage-specific label.
+
+The affected canonical semantic documents themselves are not reopened or modified.
+
+### Verified repair scope
+
+- register exactly the eight Markdown paths reported by the failing `INV-DOC-05` machine gate;
+- classify them as retained canonical evidence with `PROJECT_STATE.md` as plan/resume supersession authority;
+- restore `PROJECT_RESUME_V2.scope_kind` to canonical `READ_ONLY`;
+- keep `scope_id` as the descriptive stage identity;
+- leave FZ001, Stage 1, Stage 2, F1, forward-986, Oracle/Assisted/Astra/TRACE, semantic-owner, action-collapse, write-authority, builder/runtime, and game-file state unchanged.
+
+### Rejected repair paths
+
+- weakening `INV-DOC-05` to ignore the missing documents;
+- narrowing `markdown_scope` to hide materialized canonical documents;
+- expanding the accepted `scope_kind` enum with stage-specific values;
+- rewriting any of the eight semantic evidence documents merely to satisfy governance metadata.
+
+### Boundary
+
+V209 is a governance-only repair. It creates no new semantic conclusion, no new Switch write authorization, no builder/IPS/runtime work, and no game-file modification.
+
+The final repository state must pass the existing unmodified `tools/validate_document_governance.py` machine gate.
