@@ -33,6 +33,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V174–V181: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt`
 - V182–V189: `docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt`
 - V190–V196: `docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt`
+- V197–V201: `docs/VALIDATION_LEDGER_INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -48,6 +49,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - current full-corpus inline coverage overlay: `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
 - current full-corpus semantic-owner overlay: `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
 - current partial gap/forward action-collapse overlay: `docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md`
+- exact gap-internal 24-edge provenance recovery: `docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md`
 - current F1 cross-boundary action-collapse closure: `docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md`
 - current pre-Stage2 <-> Stage2 cross-boundary adjudication closure: `docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
@@ -67,4 +69,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure, semantic-owner closure, and action-cardinality closure never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. The exact gap-internal 24-edge recovery supersedes only the older provenance limitation that those exact memberships were unavailable; it preserves the canonical `1,035 -> 1,011` count. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure, semantic-owner closure, and action-cardinality closure never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.

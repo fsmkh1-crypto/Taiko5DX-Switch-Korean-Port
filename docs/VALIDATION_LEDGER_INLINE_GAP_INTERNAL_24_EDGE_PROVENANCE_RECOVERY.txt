@@ -1,0 +1,63 @@
+# VALIDATION LEDGER — INLINE GAP INTERNAL 24-EDGE PROVENANCE RECOVERY
+
+Status: CANONICAL READ-ONLY VALIDATION / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: `9eeff6fbc819a868e065d08b26fea3e7816b2604`
+
+## V197 — Basis identity and inherited canonical state
+
+PASS.
+
+The canonical gap remains exactly 1,035 source rows and the prior canonical count-level action-collapse result remains `1,035 -> 1,011`, reduction `24`. No earlier canonical stage is revalidated or reopened.
+
+## V198 — Exact 24-pair provenance recovery
+
+PASS.
+
+Exact recovery over the canonical gap membership produces:
+
+- physical-owner buckets = 1,011
+- singleton buckets = 987
+- multi-row buckets = 24
+- every multi-row bucket contains exactly two gap sources
+- recovered reduction = 24
+
+The exact 24 pair memberships are materialized in the accompanying `MEMBERSHIP.json`.
+
+Pair-list SHA-256: `133173ac874c64c9fda0fc40d020363e9fe2214ecba258e9602100f9432c3a5d`.
+
+## V199 — Existing exact-graph overlap audit
+
+PASS.
+
+Exactly one recovered pair overlaps an already-materialized cross-boundary unit:
+
+- recovered `R1264 + R1266`
+- existing strong-core `R1264 + R1265 + R1266`
+
+The other 23 recovered pairs are independent of the existing exact cross-boundary graph. Therefore the recovered internal set contributes 23 additional reduction when composed with that graph, while preserving the historical internal reduction count of 24.
+
+## V200 — Precedence and provenance closure
+
+PASS.
+
+This artifact supersedes only the prior provenance limitation stating that the exact 24 gap-internal edge memberships were not materialized. It does not supersede or alter:
+
+- the gap source denominator;
+- the prior `1,035 -> 1,011` count-level result;
+- any existing gap/forward exact unit;
+- F1 or Stage2 membership;
+- terminal dispositions or write authority.
+
+## V201 — Safety and scope boundary
+
+PASS.
+
+- new `WRITE_SAFE` = 0
+- FZ001 unchanged
+- Stage2 membership unchanged
+- F1 membership unchanged
+- forward-986 unchanged
+- gap-1,035 unchanged
+- builder/runtime/IPS/game-file work not started
+
+Next separate scope: materialize the already-completed Stage2-internal action-collapse analysis. A fresh explicit user signal is required.

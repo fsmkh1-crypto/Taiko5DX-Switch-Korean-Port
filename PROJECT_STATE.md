@@ -7,21 +7,16 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_MATERIALIZED",
-  "scope_kind": "READ_ONLY_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION",
+  "scope_id": "GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY_MATERIALIZED",
+  "scope_kind": "READ_ONLY_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V196",
-  "last_closed_stage_commit": "d865d85579f7ff2f1bd409aa3908aade5086e812",
+  "last_closed_validation_id": "V201",
+  "last_closed_stage_commit": "9eeff6fbc819a868e065d08b26fea3e7816b2604",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
   "last_closed_ci_conclusion": "success",
   "repository_write_mode": "GIT_OBJECT_ONLY_WRITE_MODE",
-  "repository_write_allowed_actions": [
-    "create_blob",
-    "create_tree",
-    "create_commit",
-    "update_ref"
-  ],
+  "repository_write_allowed_actions": ["create_blob","create_tree","create_commit","update_ref"],
   "schema_freeze_status": "FROZEN_FZ001",
   "schema_freeze_declaration_id": "FZ001",
   "schema_freeze_declaration": "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
@@ -39,6 +34,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "inline_full_corpus_semantic_owner_index": "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
   "inline_full_corpus_action_collapse_overlay": "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
   "inline_full_corpus_action_collapse_index": "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
+  "inline_gap_internal_24_edge_recovery": "docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md",
+  "inline_gap_internal_24_edge_recovery_index": "data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/INDEX.json",
   "inline_f1_cross_boundary_action_collapse": "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
   "inline_f1_cross_boundary_action_collapse_index": "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
   "inline_pre_stage2_to_stage2_cross_boundary_adjudication": "docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md",
@@ -56,6 +53,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
     "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt",
     "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
+    "docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md",
+    "docs/VALIDATION_LEDGER_INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.txt",
+    "data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/INDEX.json",
     "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
     "docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt",
     "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
@@ -71,12 +71,7 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/F1_STATIC_WRITE_AUTHORIZATION.md",
     "docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md"
   ],
-  "forbidden_scope_expansion": [
-    "FULL_MIGRATION",
-    "BUILDER_IPS_RUNTIME",
-    "GAME_FILE_MODIFICATION",
-    "SCHEMA_REDESIGN"
-  ]
+  "forbidden_scope_expansion": ["FULL_MIGRATION","BUILDER_IPS_RUNTIME","GAME_FILE_MODIFICATION","SCHEMA_REDESIGN"]
 }
 PROJECT_RESUME_V2 -->
 
@@ -100,9 +95,10 @@ Completed and inherited without revalidation:
 - inline full-corpus coverage overlay: COMPLETE / MATERIALIZED
 - inline full-corpus semantic-owner overlay: COMPLETE / MATERIALIZED
 - partial gap/forward action-collapse overlay: COMPLETE / MATERIALIZED
+- exact gap-internal 24-edge provenance recovery: COMPLETE / MATERIALIZED
 - F1 cross-boundary action-collapse closure: COMPLETE / MATERIALIZED
 - pre-Stage2 <-> Stage2 cross-boundary adjudication closure: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V196
+- central validation index: CURRENT THROUGH V201
 - unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
 - semantic-owner remainder inside exact unique-only gap 1,035: 0
@@ -126,7 +122,7 @@ effective_claims     c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798
 
 FZ001 is an immutable historical baseline. Later canonical overlays refine current effective state only on their exact proven axes/membership and do not mutate these hashes.
 
-## 3. Canonical target and population
+## 3. Canonical target and source populations
 
 Target:
 - Title ID `0100346017304000`
@@ -143,6 +139,18 @@ Stage-2 residual                     1,248
 F1 accepted excluded                   262
 forward-analysis population            986
 ```
+
+Full inline planning partition:
+
+```text
+Stage-2 affine verified        13,771
+F1 accepted mapped              1,311
+forward-986                       986
+unique-only coverage gap        1,035
+TOTAL                           17,103
+```
+
+The four full-inline coverage sets remain pairwise disjoint and source-complete.
 
 ## 4. F1 write-safety authority
 
@@ -161,8 +169,6 @@ Post-freeze evidence resolves all 278 on the target/counterpart axis, but static
 
 ## 5. Effective forward-986 routing closure
 
-Current consolidated counterpart/routing classes remain:
-
 ```text
 base deterministic Oracle resolved      656
 target resolved                           73
@@ -179,28 +185,13 @@ Remainders:
 
 Counterpart/routing closure does not imply WRITE_SAFE.
 
-## 6. Inline full-corpus coverage
+## 6. Gap semantic-owner closure
 
-Canonical source-complete planning partition:
-
-```text
-Stage-2 affine verified        13,771
-F1 accepted mapped              1,311
-forward-986                       986
-unique-only coverage gap        1,035
-TOTAL                           17,103
-```
-
-The 1,035 gap remains exact membership inherited from:
-- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/MEMBERSHIP.json#gap_ranges`
-
-Gap split remains:
+The exact unique-only gap remains 1,035 rows:
 - early R1-R3250: 1,009
 - late family holes: 26
 
-## 7. Semantic-owner overlay for gap 1,035
-
-Canonical owner-axis accounting remains:
+Owner-axis accounting:
 
 ```text
 OWNER_BOUND        1,035
@@ -208,30 +199,34 @@ OWNER_UNRESOLVED       0
 TOTAL              1,035
 ```
 
-Important owner conclusions remain:
+Important retained conclusions:
 - all 225 logical-prefix rows are owner-bound only after deterministic complete-object/composite evidence;
 - all 130 formatter/longer-object interior fragments are owner-bound as components of larger Switch semantic objects;
-- `R14708 旅人` has an independent T2 role/status/profession semantic owner and is not subsumed into `漂泊の旅人`;
-- broad-region `R14543 北陸` and `R14549 四国` bind to the expanded Switch region semantic-owner family;
-- `R2047 真備` remains an N:1 agreement relation with its promoted owner.
+- `R14708 旅人` is an independent T2 owner and is not subsumed into `漂泊の旅人`;
+- broad `R14543 北陸` and `R14549 四国` bind to the expanded Switch region family;
+- `R2047 真備` remains an N:1 agreement relation with promoted Stage2 owner `R15678`.
 
-No new Switch write authorization is created by semantic-owner closure.
+## 7. Action-collapse overlays
 
-## 8. Action-collapse overlays
+### 7.1 Gap-internal exact provenance recovery
 
-### 8.1 Gap-internal count-level result
-
-Verified planning count:
+Canonical count and exact membership are now both closed:
 
 ```text
 gap source rows          1,035
 gap owner-action units   1,011
 reduction                   24
+exact 2:1 pair units         24
 ```
 
-Provenance limit: the exact 24 internal source/action edge memberships were not preserved in a machine-readable analysis artifact. The count is canonical planning state, but those edges must not be guessed or instantiated until exact membership is separately recovered/proven.
+Exact membership is materialized at:
+- `data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/MEMBERSHIP.json`
 
-### 8.2 Exact gap <-> forward adjudication
+Pair-list SHA-256: `133173ac874c64c9fda0fc40d020363e9fe2214ecba258e9602100f9432c3a5d`.
+
+Exactly one recovered pair, `R1264 + R1266`, is already contained in the existing gap/forward strong-core unit `R1264 + R1265 + R1266`. Therefore only 23 recovered pairs are independent when composing with that already-materialized exact graph. This overlap accounting does not alter the canonical internal reduction of 24.
+
+### 7.2 Exact gap <-> forward adjudication
 
 Exact review units = 37:
 
@@ -243,25 +238,9 @@ false-positive units                      0
 TOTAL                                    37
 ```
 
-Direct-merge accounting:
+Direct merge: 82 source rows -> 36 action units, reduction 46. The T1 broad-region unit remains a reroute to the detailed Stage2 expanded-region family and is not counted as one physical direct-merge action.
 
-```text
-source rows       82
-action units      36
-direct reduction  46
-```
-
-The T1 region unit is not included in the direct reduction. The nine broad-region source obligations reroute to the detailed 19-entry expanded region owner family; final region action identities/cardinality remain deferred to Stage2 region-owner integration.
-
-### 8.3 Exact gap+forward <-> F1 closure
-
-Canonical closure:
-- `docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md`
-- `data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json`
-- `data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/MEMBERSHIP.json`
-- validation: `docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt`
-
-Exact F1-boundary accounting:
+### 7.3 Exact gap+forward <-> F1 closure
 
 ```text
 review units        11
@@ -272,25 +251,9 @@ unresolved            0
 conflict              0
 ```
 
-Subtotals:
-- 6 complete-object/component units: 18 source -> 6 units, reduction 12;
-- 5 language-owner units: 10 source -> 5 units, reduction 5.
+Formal terminal `SUBSUMED` rows remain deferred until final Action Ledger IDs exist. No new WRITE_SAFE authorization is created.
 
-For the five JP/CN language-owner units, Switch JP localization IDs 1101-1105 use the PC JP-domain Korean Oracle. The corresponding CN-domain source obligations remain in source accounting and collapse to the same final JP owner/action; no separate CN/TW Switch mutation is authorized.
-
-Formal terminal `SUBSUMED` rows are not instantiated until final Action Ledger IDs exist. This closure proves owner/action relation and cardinality only.
-
-No new `WRITE_SAFE` authorization is created by any action-collapse overlay.
-
-### 8.4 Exact pre-Stage2 <-> Stage2 boundary adjudication
-
-Canonical closure:
-- `docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md`
-- `data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json`
-- `data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/MEMBERSHIP.json`
-- validation: `docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt`
-
-Exact boundary result:
+### 7.4 Exact pre-Stage2 <-> Stage2 boundary closure
 
 ```text
 candidate review units          3
@@ -301,17 +264,15 @@ conflict                        0
 new WRITE_SAFE                  0
 ```
 
-Closed units:
-- `S2X-C01`: `R2047 真備` -> Stage2 owner `R15678 真備`; no second independent action.
-- `S2X-C02`: `R2553 館` <-> `R3283 角館` rejected; `R2553` is owned by the `%s館` formatter family, not the place-name field.
-- `S2X-C03`: broad-region `R14542-R14550` -> Stage2 expanded-region family `R16428-R16446`; the nine broad obligations link to 15 domestic detailed Stage2 owner sources, while `R16443-R16446` are family-context entries without a legacy-nine broad counterpart.
+- `R2047 真備` -> Stage2 owner `R15678 真備`; no second independent action.
+- `R2553 館` <-> `R3283 角館` is rejected as different semantic owners.
+- broad `R14542-R14550` reroutes to Stage2 expanded-region family `R16428-R16446`.
 
-This closes the exact Stage2-boundary candidate queue but does not establish Stage2-internal action cardinality or final full-inline action cardinality.
+Stage2-internal action cardinality is still not canonicalized by this repository state.
 
-## 9. Portability / Action Ledger design authority
+## 8. Portability / Action Ledger authority
 
-Current design contract remains:
-- `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
+Current design contract: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`.
 
 Fixed boundaries:
 - PC Korean semantic result remains the default Oracle.
@@ -320,17 +281,17 @@ Fixed boundaries:
 - capacity/storage blockers do not authorize translation shortening.
 - future builder must be semantic-free and fail-closed.
 
-## 10. Validation and precedence
+## 9. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V196.
-- latest pre-Stage2 <-> Stage2 adjudication closure takes precedence only on the exact three candidate units and owner/action relations it adjudicates.
-- latest F1 cross-boundary action-collapse closure remains authoritative on its exact 11 units and action-cardinality relations.
-- prior gap/forward action-collapse remains authoritative on its exact 37 review units and count-level gap-internal result.
-- the count-level gap-internal result does not silently manufacture row-level edges.
+- `docs/VALIDATION_LEDGER.md` is current through V201.
+- exact gap-internal 24-edge recovery supersedes only the earlier provenance limitation that the 24 exact pairs were unavailable; the historical `1,035 -> 1,011` result is preserved.
+- pre-Stage2 <-> Stage2 closure remains authoritative on its exact three units.
+- F1 cross-boundary closure remains authoritative on its exact 11 units.
+- gap/forward action-collapse remains authoritative on its exact 37 review units.
 - historical coverage, routing and owner memberships remain unchanged.
 - no canonical fact is revalidated solely because chat/model changes.
 
-## 11. Repository operating boundary
+## 10. Repository operating boundary
 
 Permitted remote write actions remain exactly:
 
@@ -350,12 +311,12 @@ Forbidden:
 - history rewrite
 - Base64/Contents-API write transport
 
-## 12. Current STOP boundary
+## 11. Current STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin Stage2-internal action-collapse candidate generation, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
+No builder/IPS/runtime implementation, game-file modification, schema redesign, write-safety expansion, or diagnostic build is authorized.
 
-Next recommended scope: **`STAGE2_INTERNAL_ACTION_COLLAPSE_CANDIDATE_GENERATION_READ_ONLY`**.
+Next recommended scope: **`STAGE2_INTERNAL_ACTION_COLLAPSE_RESULT_MATERIALIZATION`**.
 
-That scope may inspect the already-verified Stage2 13,771 population for strong same-owner/action candidates using inherited affine/structural facts. It must not revalidate Stage2 affine mapping, admit same-text/prefix/substring-only matches, adjudicate candidates, expand write safety, or calculate final full-corpus cardinality prematurely.
+That scope may materialize the already-completed Stage2-internal candidate/adjudication analysis, but must not silently redo prior verified analysis, expand WRITE_SAFE, or begin builder/runtime work. A fresh explicit user signal is required.
