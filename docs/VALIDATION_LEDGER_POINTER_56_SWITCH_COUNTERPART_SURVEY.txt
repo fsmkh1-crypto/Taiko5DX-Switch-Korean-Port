@@ -1,0 +1,17 @@
+POINTER 56 SWITCH COUNTERPART SURVEY — VALIDATION LEDGER
+
+V210 | VERIFIED | The PC pointer population remains exactly 56 records = mode-0 5 + mode-1 51, and this survey found 56/56 exact Switch counterpart reference owners. | Canonical PC PHASE 3 semantics plus exact Switch structural counterpart survey. | No PC semantic revalidation performed.
+
+V211 | VERIFIED | All 56 Switch persistent counterpart owners are R_AARCH64_RELATIVE RELA addends; the 56 loader-populated runtime DATA cells are unique but are not offline persistent write owners. | Switch relocation/reference ownership census. | Runtime cells must not be patched as if they were static storage.
+
+V212 | VERIFIED | Mode-1 closes as 51 references -> 47 original objects -> 47 replacement owners; 46 references correspond to 43 unique inline-zero companion sources and 5 references correspond to 4 pointer-only objects. | Exact 56-record membership matrix and PC pointer-pool semantics. | Cross-axis terminal disposition remains open.
+
+V213 | VERIFIED | All 47 distinct mode-1 Korean replacement strings are absent from the original Switch main; the PC pointer pool footprint is 602 bytes. | Exact pool/replacement census against fixed Switch main identity. | Safe storage selection is deferred.
+
+V214 | VERIFIED | Mode-0 closes as 5 references -> 2 existing inline semantic destination owners, R2411 and R2412. | Exact reference-specific counterpart matrix. | Final physical destination binding waits for final inline Action Ledger owners.
+
+V215 | VERIFIED | Pointer-axis structural cardinality is 56 reference obligations -> 49 destination-owner groups, reduction 7, unresolved counterpart count 0. | Exact membership grouping. | This is not the final full-port Action Ledger cardinality.
+
+V216 | VERIFIED | This survey grants no new Switch write authorization, changes no FZ001/inline/F1/Stage2/forward membership, and starts no builder/IPS/runtime work. Next required closure is POINTER_56_CROSS_AXIS_ACTION_INTEGRATION_READ_ONLY. | Scope boundary review. | STOP after materialization.
+
+V217 | VERIFIED | During materialization multiple unauthorized Contents-API create_file calls created transient root files in commits after `cce73360ac53d5afbf0c1aaba67a325678841963`. The final canonical tree removes all transient files by rebuilding from the last clean tree through the permitted Git-object path; no force/history rewrite is used, so the transport-error commits remain in history only. | Git history and final-tree comparison. | Provenance only; semantic survey results are unchanged.

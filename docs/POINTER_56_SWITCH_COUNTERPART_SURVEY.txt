@@ -1,0 +1,84 @@
+# Pointer 56 Switch Counterpart Survey
+
+Date: 2026-09-13 (KST)  
+Status: CANONICAL POST-FREEZE READ-ONLY POINTER COUNTERPART SURVEY / NO SWITCH WRITE AUTHORIZATION  
+Basis HEAD: `cce73360ac53d5afbf0c1aaba67a325678841963`
+
+## 요약
+
+The PC pointer family is now closed on the Switch counterpart-location/ownership axis.
+
+```text
+PC pointer records                    56
+mode 0                                 5
+mode 1                                51
+Switch RELA counterparts              56 / 56
+unresolved counterparts                0
+mode-1 replacement owners             47
+mode-1 inline-zero companion sources  43
+mode-1 pointer-only objects            4
+mode-0 destination inline owners       2
+pointer-axis destination-owner groups 49
+pointer-axis reduction                 7
+new WRITE_SAFE                         0
+```
+
+Exact machine-readable membership:
+`data/post_freeze/pointer_56_switch_counterpart_survey_v1/MEMBERSHIP.json`.
+
+## 1. 확정된 사실
+
+All 56 Switch counterparts are owned by `R_AARCH64_RELATIVE` RELA addends. The corresponding loader-populated runtime DATA cells are not persistent offline write owners.
+
+Mode 1 closes as 51 reference records -> 47 original objects -> 47 replacement-string owners. Four destination owners are each shared by two references. Forty-six mode-1 references correspond to 43 unique inline source rows whose PC inline replacements are zero-filled; the remaining five references represent four pointer-only source objects.
+
+All 47 distinct Korean mode-1 replacement byte strings are absent from the original Switch main. The PC pointer replacement pool footprint is exactly 602 bytes. The safe planning baseline is to preserve the exact pool bytes rather than independently re-encode compact-glyph bytes.
+
+Mode 0 closes as five reference records targeting two existing inline semantic owners: `R2411 忍者衆` and `R2412 海賊衆`. These references select specific pointer owners; they do not imply global replacement of every duplicate raw occurrence.
+
+The pointer-axis structural cardinality is 56 reference obligations -> 49 destination-owner groups, reduction 7. This is not the final full-port Action Ledger cardinality.
+
+## 2. 유력한 가설
+
+The lowest-risk realization is likely to keep pointer semantics at the static reference-owner layer:
+
+- mode 1: place the exact 602-byte PC pool in a separately proven readable storage owner, then retarget the 51 RELA addends to the corresponding 47 pool strings;
+- mode 0: retarget the five RELA addends to the final canonical Switch action owners for R2411/R2412;
+- do not patch loader-populated runtime cells as persistent storage.
+
+This is an implementation candidate only. It grants no write authority.
+
+## 3. 미확정 사항
+
+Open items are limited to later scopes:
+
+- proven-safe mapped storage for the 602-byte pool;
+- final physical Switch destinations for mode-0 R2411/R2412;
+- terminal cross-axis disposition of the 43 inline-zero companion sources;
+- whether any non-RELA direct consumer of the 47 mode-1 original objects changes that disposition;
+- runtime/delivery verification.
+
+## 4. 기각된 가설
+
+Rejected:
+
+1. treating the 56 PC pointer records as 56 arbitrary raw-string searches on Switch;
+2. patching loader-populated DATA cells directly as persistent owners;
+3. choosing arbitrary duplicate raw-string occurrences as destinations;
+4. copying PC inline zeroing to Switch as an automatic terminal rule;
+5. claiming native equivalence merely because the Japanese source strings exist;
+6. allocating 51 independent replacement strings when the PC evidence proves 47 shared owners.
+
+## 5. 관련 영향 범위
+
+Unchanged: FZ001, Stage1, Stage2, F1, forward-986, gap/cross-boundary closures, current static-write authority, builder/runtime/IPS/game files.
+
+This closure adds exact counterpart ownership for the pointer family only. It does not change inline membership or authorize any Switch write.
+
+## 6. 수정 제안
+
+Next scope: `POINTER_56_CROSS_AXIS_ACTION_INTEGRATION_READ_ONLY`.
+
+That scope should compose the 43 mode-1 inline-zero companion sources with the 47 pointer replacement owners and the two mode-0 inline destinations, then determine dependency/SUBSUMED/independent terminal relations before implementation.
+
+STOP.
