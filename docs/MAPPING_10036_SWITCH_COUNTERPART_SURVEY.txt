@@ -1,0 +1,49 @@
+MAPPING 10,036 SWITCH COUNTERPART SURVEY
+
+Date: 2026-09-14 (KST)
+Status: CANONICALIZED PRIOR READ-ONLY EVIDENCE / NO WRITE AUTHORIZATION
+Original analysis scope: MAPPING_10036_SWITCH_COUNTERPART_SURVEY_READ_ONLY
+Canonicalization basis HEAD: f91bbc8308fb6aab912ae0e19e73e56a46773b94
+
+확정된 사실
+
+- Switch main SHA-256: b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b.
+- Build ID: d9120950c258610a746f4a31ce3a3b376de393d9.
+- PC mapping semantic requirement: original 7,494 + Korean 2,542 = 10,036 entries, 4 bytes per entry.
+- Switch contains exactly one byte-identical original 7,494-entry prefix at mapped 0x799E4E..0x7A1365, size 29,976 bytes.
+- Entry layout: first halfword game code, second halfword Unicode.
+- UTF-16 -> game-code path owner: function 0x430350; semantic count site 0x4303AC; two direct table-address constructions 0x430480/0x430484 and 0x430550/0x430554.
+- game-code -> UTF-16 path owner: function 0x4305D0; semantic count site 0x430624; two direct table-address constructions 0x43061C/0x430620 and 0x430810/0x430814.
+- Whole-text census: exactly four direct mapping-table address constructions and two semantic count sites.
+- Literal 7,494 at 0x1EC524 is unrelated to the mapping family.
+- No complete 10,036 table, no contiguous Korean suffix, and none of the 2,542 exact Korean 4-byte mapping pairs exists in original Switch main.
+- Korean suffix raw size is 10,168 bytes; full contiguous table size is 40,144 bytes.
+- Current Switch table cannot be extended in place, and no obvious RODATA zero run >= 10,168 bytes exists.
+- Both lookup loops are six-entry unrolled and terminate only when index equals limit.
+- 7,494 is divisible by 6; 10,036 leaves remainder 4. Count-only 7,494 -> 10,036 would not terminate correctly and is rejected.
+
+유력한 가설
+
+- The safe realization should preserve exact PC 10,036 mapping semantics while avoiding any count-only extension of the existing six-entry loops.
+
+미확정 사항
+
+- Final authorized storage owner/location.
+- Write safety and Action Ledger action identity.
+- Runtime delivery and semantic validation.
+
+기각된 가설
+
+- Count-only 7,494 -> 10,036.
+- Literal one-to-one copying of PC three-address-operand mechanics.
+- Existing native full 10,036 Switch table in the same representation.
+- 0x1EC524 as a third mapping count site.
+- Adjacent in-place RODATA extension.
+
+관련 영향 범위
+
+Mapping family only. FZ001, inline 17,103 accounting, Stage1/Stage2/F1/forward/gap/action-collapse, pointer closure, builder/runtime/game files and existing WRITE_SAFE authority are unchanged.
+
+수정 제안
+
+Use the separately canonicalized realization design as the planning authority. No implementation is authorized by this survey alone.

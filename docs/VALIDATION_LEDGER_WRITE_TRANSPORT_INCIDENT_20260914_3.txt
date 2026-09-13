@@ -1,0 +1,5 @@
+VALIDATION LEDGER — WRITE TRANSPORT INCIDENT 2026-09-14 #3
+
+V224 — Forbidden create_file transport incident recorded and repaired forward
+Result: INCIDENT RECORDED / FORWARD REPAIR REQUIRED.
+Transient commit 4de32ce893568ab95c570c4fc697783d6910afa6 created root file NOPE2 through forbidden Contents API create_file. The safety-blocked NOPE attempt made no repository change. Canonical recovery removes NOPE2 in a normal child tree, preserves history, forbids force update, and keeps mapping semantic evidence unchanged. The four-action write allowlist remains unchanged.

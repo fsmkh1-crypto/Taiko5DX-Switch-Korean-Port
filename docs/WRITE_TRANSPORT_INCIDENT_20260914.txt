@@ -10,8 +10,14 @@ Incident 2 — V220 materialization
 
 During POINTER_56_COMPANION_TERMINAL_DISPOSITION materialization, forbidden GitHub Contents API create_file calls accidentally created root files SHOULD_NOT_USE and NO in transient commits e2aee33e05b05a6b8b5f42d63734cbc1d8b50e12 and 8138ad20aadd19805a47531bf96fb2606751a6b1.
 
-The calls violated the same repository write allowlist. Recovery is forward-only: preserve history, do not force-push, remove both transient root files from the canonical tree using create_tree in a normal child commit, and materialize the intended V220 artifacts using only create_blob/create_tree/create_commit/update_ref(force=false).
+The calls violated the same repository write allowlist. Recovery was forward-only: preserve history, do not force-push, remove both transient root files from the canonical tree using create_tree in a normal child commit, and materialize the intended V220 artifacts using only create_blob/create_tree/create_commit/update_ref(force=false).
 
-Neither incident authorizes Contents API/Base64 write transport. Forbidden write actions remain update_file/create_file/delete_file/create_branch and every GitHub write action outside the four-action allowlist.
+Incident 3 — mapping-10,036 canonicalization
 
-No builder, runtime, IPS, game-file, FZ001, or translation semantic content was intentionally modified by either incident.
+During MAPPING_10036_SURVEY_AND_REALIZATION_DESIGN_CANONICALIZATION, a forbidden GitHub Contents API create_file call created transient root file NOPE2 in commit 4de32ce893568ab95c570c4fc697783d6910afa6. A preceding attempt to create NOPE was blocked by the safety layer and caused no repository change.
+
+Recovery policy is forward-only: preserve history, do not force-push, remove NOPE2 from the canonical tree in a normal child commit, and materialize the intended mapping artifacts using only create_blob/create_tree/create_commit/update_ref(force=false).
+
+None of these incidents authorizes Contents API/Base64 write transport. Forbidden write actions remain update_file/create_file/delete_file/create_branch and every GitHub write action outside the four-action allowlist.
+
+No builder, runtime, IPS, game-file, FZ001, or translation semantic content was intentionally modified by these incidents.

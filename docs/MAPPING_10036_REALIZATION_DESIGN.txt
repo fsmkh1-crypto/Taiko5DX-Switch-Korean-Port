@@ -1,0 +1,54 @@
+MAPPING 10,036 REALIZATION DESIGN
+
+Date: 2026-09-14 (KST)
+Status: CANONICALIZED PRIOR READ-ONLY DESIGN / NO IMPLEMENTATION AUTHORIZATION
+Original analysis scope: MAPPING_10036_REALIZATION_DESIGN_READ_ONLY
+Canonicalization basis HEAD: f91bbc8308fb6aab912ae0e19e73e56a46773b94
+Preferred realization family: MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1
+
+요약
+
+Preserve the original Switch 7,494-entry table and both existing six-entry lookup loops. On a genuine original-table miss, invoke a Korean-only fallback in each conversion direction. This avoids the 10,036 mod 6 tail hazard entirely.
+
+확정된 사실
+
+- Korean 2,542 game-code keys overlap original 7,494 game-code keys: 0.
+- Korean 2,542 Unicode keys overlap original 7,494 Unicode keys: 0.
+- Therefore original-first lookup followed by Korean fallback is semantically equivalent to a combined table for all Korean-added keys.
+- Korean game-code keys form the exact valid sequence 0xEB40..0xF8A2 with 0x7F skipped in each lead-byte page; arithmetic index conversion reproduces 2,542/2,542 keys.
+- Korean Unicode values are 2,350 strictly increasing Hangul syllables followed by 192 contiguous PUA values U+E500..U+E5BF.
+- The first 2,350 Unicode values are exactly reconstructible from a 2,349-byte one-byte delta stream; all deltas are 1..91.
+- Delta-stream SHA-256: ddedc507fa892a5b5be6f35ab24f0a0e5fac0d71e633134712b33bd4c6a2088f.
+- PC Korean suffix raw-pair SHA-256: fe5d09fc38c4992a4fe7507664d3425d53c3465741c980a2462c1a9c9afb186a.
+- UTF-16 -> game-code can hook only the original miss path, returning the Korean game code on hit and preserving 0x81A1 on non-Korean miss.
+- game-code -> UTF-16 can hook only the original miss path, returning the Korean Unicode value on hit and preserving U+25A0 on non-Korean miss.
+- Original 7,494 data, four table-address constructions, two count literals, and both six-entry loops remain unchanged under this design.
+- Segment alignment gaps observed: TEXT tail 416 bytes; RODATA tail 4,072 bytes.
+- A private sizing prototype for both fallback directions is 324 bytes; the compact delta data is 2,349 bytes. These fit numerically in the observed alignment gaps.
+- Numerical fit is not storage authorization: the runtime/delivery validity of those padding bytes remains unproven.
+
+유력한 가설
+
+MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1 is the lowest-disturbance candidate because it preserves all existing original mapping behavior and only handles genuine misses.
+
+미확정 사항
+
+- Whether TEXT/RODATA alignment padding is writable by the current patch delivery path and retains required execute/read permissions after load.
+- Final helper bytes and original-byte guards.
+- Final Action Ledger IDs, write-safety authority, runtime conversion result, and delivery-control validation.
+
+기각된 가설
+
+- Full contiguous 10,036 relocation as preferred solution.
+- Full-table padding merely to make the count divisible by six.
+- Raw 10,168-byte Korean suffix as preferred split representation.
+- Count-only 7,494 -> 10,036.
+- Reuse of live DATA zero runs based only on zero content.
+
+관련 영향 범위
+
+Mapping semantic family only. FZ001, inline accounting, pointer closure, other helper/descriptor/font/width/RomFS families, builder/runtime/game files and existing WRITE_SAFE remain unchanged.
+
+수정 제안
+
+Before any implementation, validate the runtime/delivery status of the proposed TEXT/RODATA alignment padding as one bounded cause family. Do not select or write storage merely because the bytes fit numerically.

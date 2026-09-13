@@ -1,0 +1,9 @@
+VALIDATION LEDGER — MAPPING 10,036 CANONICALIZATION
+
+V222 — Mapping 10,036 Switch counterpart survey canonicalized
+Result: VERIFIED / MATERIALIZED.
+The prior read-only survey is recorded without reanalysis. Switch original mapping prefix is 7,494 entries; exactly four direct table-address constructions and two semantic count sites are in scope. Count-only 10,036 is rejected because the six-entry equality-terminated loops cannot terminate at a limit with remainder 4. No new WRITE_SAFE.
+
+V223 — Mapping Korean miss-fallback realization design canonicalized
+Result: VERIFIED DESIGN / MATERIALIZED / NOT WRITE AUTHORIZED.
+MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1 preserves the original 7,494 mapping path and adds Korean handling only after an original miss. Original/Korean lookup domains are disjoint. The 2,542 Korean suffix is exactly representable by arithmetic game-code mapping plus a 2,349-byte Unicode delta stream. TEXT/RODATA alignment gaps fit numerically, but runtime/delivery validity is unproven and storage is not authorized. No builder, IPS, runtime or game-file implementation.
