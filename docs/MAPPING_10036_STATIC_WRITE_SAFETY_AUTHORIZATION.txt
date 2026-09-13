@@ -1,0 +1,65 @@
+MAPPING 10,036 STATIC WRITE SAFETY AUTHORIZATION
+
+Date: 2026-09-14 (KST)
+Status: CANONICAL STATIC WRITE AUTHORIZATION / NOT IMPLEMENTED
+Scope: MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION_READ_ONLY
+Basis HEAD: d32c73cbcd1b12e8b4570a443cf0343b81724389
+Semantic realization family: MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1
+
+요약
+
+The exact four physical actions previously fixed by the helper/hook contract are statically WRITE_SAFE for the canonical Switch main/build, subject to their exact preimage guards and pinned payload identities. This authorization does not implement the writes, emit IPS, or replace runtime validation.
+
+확정된 사실
+
+- Canonical Switch main identity remains SHA-256 b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b and Build ID D9120950C258610A746F4A31CE3A3B376DE393D9.
+- The four authorized physical actions are:
+  1. MAP10036_FWD_MISS_HOOK_V1: mapped 0x4304E0..0x4304E4, 4-byte TEXT code-site replacement.
+  2. MAP10036_REV_MISS_HOOK_V1: mapped 0x430798..0x43079C, 4-byte TEXT code-site replacement.
+  3. MAP10036_HELPER_TEXT_V1: mapped 0x58CE60..0x58CF94, 308-byte executable helper payload.
+  4. MAP10036_DELTA_RODATA_V1: mapped 0x9BF018..0x9BF945, 2,349-byte read-only delta payload.
+- The four write intervals are pairwise disjoint.
+- Both hook sites have exact canonical original-byte guards and exact 4-byte replacement identities.
+- Helper storage is structurally owned loader-created TEXT alignment padding, runtime/delivery-valid as RX storage, and the 308-byte helper remains within the 416-byte owner with 108 bytes slack.
+- Delta storage is structurally owned loader-created RODATA alignment padding, runtime/delivery-valid as read-only storage, and the 2,349-byte payload remains within the 4,072-byte owner with 1,723 bytes slack.
+- Helper/delta preimages are exact structural-zero guards, not arbitrary zero-run assumptions.
+- Both direct branch contracts are in range; no veneer, BL/LR mutation, or callee-saved-register scratch is required.
+- Exact helper payload identity is SHA-256 60b1fd4b8231dca9f11e5e46007bddef97f55434f1e46df1445be2fb361e6cad.
+- Exact delta payload identity is SHA-256 ddedc507fa892a5b5be6f35ab24f0a0e5fac0d71e633134712b33bd4c6a2088f.
+- Exhaustive 16-bit-domain verification already closed the semantic mapping behavior: exactly 2,542 forward hits, 2,542 reverse hits, zero extra hits, zero missing hits and exact 2,542/2,542 round-trip.
+- No current canonical dependency used by this decision changed after V239.
+- Therefore all four action IDs receive:
+  write_authority = WRITE_SAFE
+  action_status = STATIC_WRITE_AUTHORIZED_NOT_IMPLEMENTED
+  runtime_validation_required = true
+- New mapping WRITE_SAFE actions = 4.
+- Existing F1 static WRITE_SAFE remains 158; total currently explicit static WRITE_SAFE actions across those two independently authorized families = 162. This is not the final full-port Action Ledger count.
+
+유력한 가설
+
+A delivery-controlled diagnostic build containing exactly these four actions as one mapping cause family should be sufficient to test the remaining runtime mapping hypothesis. No additional mapping mechanism is presently indicated.
+
+미확정 사항
+
+- Actual runtime execution/result after the four writes are implemented in a separately authorized diagnostic build.
+- Visible forward/reverse Korean mapping round-trip on the target runtime route.
+- Release-level integration with other non-inline runtime descriptor families.
+- Whether exact binary payloads will be regenerated deterministically at implementation time or separately materialized through an explicitly authorized binary transport route.
+
+기각된 가설
+
+- Storage validity alone was sufficient for authorization: rejected; hook/ABI/guard closure was also required.
+- Helper byte identity alone was sufficient: rejected; owner, guard, capacity, branch, ABI and semantic verification were also required.
+- Runtime test must occur before any static write authorization can exist: rejected. Static authorization and runtime validation are distinct axes; runtime validation remains mandatory before release/integration closure.
+- Any of the four actions may be silently omitted: rejected. The semantic realization requires all four independently guarded physical actions.
+- Hook writes may ignore their canonical preimage guards: rejected.
+- Binary payload transport through a forbidden or unapproved repository route is implied by this authorization: rejected.
+
+관련 영향 범위
+
+This authorization applies only to the four exact mapping actions above and only when all canonical input/guard identities match. It does not alter FZ001, inline 17,103 accounting, pointer-56 state, other descriptor families, translations, builder code, IPS, runtime artifacts or game files.
+
+수정 제안
+
+Next bounded scope: MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.
+That scope may implement exactly these four authorized mapping actions as one cause family, enforce every guard, emit one delivery-controlled diagnostic artifact, and validate runtime forward/reverse mapping behavior. It must not mix unrelated descriptor families.

@@ -1,0 +1,24 @@
+VALIDATION LEDGER — MAPPING 10,036 STATIC WRITE SAFETY AUTHORIZATION
+
+Date: 2026-09-14 (KST)
+Basis HEAD: d32c73cbcd1b12e8b4570a443cf0343b81724389
+
+V240 — INPUT / DEPENDENCY IDENTITY
+PASS. Canonical main/build and V225–V239 mapping owner/storage/hook/helper dependencies are unchanged and sufficient for this decision.
+
+V241 — GUARD / OWNER / CAPACITY CLOSURE
+PASS. All four physical actions have exact preimage guards, fixed owner/storage classes and sufficient capacity. Helper and delta writes remain entirely inside their validated alignment owners.
+
+V242 — CODE-SITE / ABI / OVERLAP CLOSURE
+PASS. Both hook writes are direct in-range AArch64 branches under the closed register/return contract. All four physical write intervals are pairwise disjoint.
+
+V243 — SEMANTIC PAYLOAD IDENTITY
+PASS. Helper and delta payload identities are pinned by exact SHA-256 values; exhaustive mapping verification remains 2,542/2,542 in each direction with zero extra/missing hits.
+
+V244 — STATIC WRITE AUTHORIZATION
+PASS. MAP10036_FWD_MISS_HOOK_V1, MAP10036_REV_MISS_HOOK_V1, MAP10036_HELPER_TEXT_V1 and MAP10036_DELTA_RODATA_V1 are promoted to WRITE_SAFE / STATIC_WRITE_AUTHORIZED_NOT_IMPLEMENTED. Runtime validation remains mandatory and no implementation is performed.
+
+V245 — MACHINE-READABLE AUTHORIZATION CLOSURE
+PASS. Exact authorization manifest rows = 4, unresolved = 0, new WRITE_SAFE = 4. Manifest SHA-256 = c7f1a4238789c57d0f74e5096da5abdffcb55cb074fcd2166c2ab867ea0ecc74. Index SHA-256 = 77681bb2d986e2f758a8558826926d439961a5d53a15927198faf0a65a71b84d.
+
+No builder, IPS, runtime artifact, game-file mutation, binary-payload repository transport or unrelated descriptor-family work occurred in this scope.

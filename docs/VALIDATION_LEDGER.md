@@ -49,6 +49,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V232: `docs/VALIDATION_LEDGER_WRITE_TRANSPORT_INCIDENT_20260914_6.txt`
 - V233: `docs/VALIDATION_LEDGER_WRITE_TRANSPORT_INCIDENT_20260914_7.txt`
 - V234–V239: `docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
+- V240–V245: `docs/VALIDATION_LEDGER_MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -76,6 +77,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - current mapping-10,036 realization design: `docs/MAPPING_10036_REALIZATION_DESIGN.txt`
 - current mapping-10,036 alignment-padding runtime validity: `docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt`
 - current mapping-10,036 helper/hook contract: `docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
+- current mapping-10,036 static write authorization: `docs/MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
@@ -93,4 +95,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. Counterpart/routing closure, semantic-owner closure, action-cardinality closure, consumer-census closure, terminal-disposition closure, mapping design closure, runtime-storage-class closure, helper/hook contract closure, or action identity issuance never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 grants static write authority only to its exact four guarded actions; runtime validation and implementation remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
