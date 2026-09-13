@@ -258,14 +258,14 @@ def check_schema_freeze(root: Path, resume_obj: dict) -> None:
         "claim_extraction_rules": "docs/CLAIM_EXTRACTION_RULES.md",
     }
     for key, expected_path in expected_docs.items():
-        entry = authority.get(key, {})
-        if entry.get("path") != expected_path:
+        item = authority.get(key, {})
+        if item.get("path") != expected_path:
             fail(f"INV-DOC-10 freeze authority path mismatch: {key}")
         actual_blob = git_blob_sha1((root / expected_path).read_bytes())
-        if entry.get("git_blob_sha") != actual_blob:
+        if item.get("git_blob_sha") != actual_blob:
             fail(
                 f"INV-DOC-10 frozen authority blob drift: {expected_path} "
-                f"declared={entry.get('git_blob_sha')!r} actual={actual_blob!r}"
+                f"declared={item.get('git_blob_sha')!r} actual={actual_blob!r}"
             )
 
     bindings_path = root / "data/pilot/f1_v1_candidate/bindings.json"
@@ -307,16 +307,75 @@ def check_schema_freeze(root: Path, resume_obj: dict) -> None:
         fail("INV-DOC-10 freeze declaration silently authorizes a later scope")
 
 
+def check_master_rule_registry(root: Path, entries: list[dict]) -> None:
+    authority = [
+        item["path"] for item in entries
+        if item.get("current_authority") and item.get("authority_scope") == "RULE_DISCOVERY_INDEX"
+    ]
+    if authority != ["docs/MASTER_RULE_REGISTRY.md"]:
+        fail(f"INV-DOC-11 master rule authority mismatch: {authority}")
+
+    index_path = root / "data/post_freeze/master_rule_registry_v1/INDEX.json"
+    rules_path = root / "data/post_freeze/master_rule_registry_v1/RULES.json"
+    ledger_path = root / "docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt"
+    for path in (index_path, rules_path, ledger_path):
+        if not path.is_file():
+            fail(f"INV-DOC-11 master rule artifact missing: {path.relative_to(root)}")
+
+    index_raw = index_path.read_bytes()
+    rules_raw = rules_path.read_bytes()
+    index = json.loads(index_raw)
+    rules_obj = json.loads(rules_raw)
+    if index.get("schema") != "MASTER_RULE_REGISTRY_INDEX_V1":
+        fail("INV-DOC-11 unexpected master rule index schema")
+    if rules_obj.get("schema") != "MASTER_RULE_REGISTRY_V1":
+        fail("INV-DOC-11 unexpected master rule registry schema")
+    rules = rules_obj.get("rules")
+    if not isinstance(rules, list) or not rules:
+        fail("INV-DOC-11 master rule registry is empty")
+    ids = [item.get("rule_id") for item in rules]
+    if any(not isinstance(value, str) or not value for value in ids):
+        fail("INV-DOC-11 malformed master rule ID")
+    if len(ids) != len(set(ids)):
+        fail("INV-DOC-11 duplicate master rule ID")
+    if index.get("rule_count") != len(rules):
+        fail("INV-DOC-11 master rule count mismatch")
+    if index.get("rules_sha256") != sha256(rules_raw):
+        fail("INV-DOC-11 master rule hash mismatch")
+    if index.get("human_report") != "docs/MASTER_RULE_REGISTRY.md":
+        fail("INV-DOC-11 master rule human-report path mismatch")
+    if index.get("validation_ledger") != "docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt":
+        fail("INV-DOC-11 master rule validation-ledger path mismatch")
+    if index.get("boundaries", {}).get("new_switch_write_authorizations") != 0:
+        fail("INV-DOC-11 master rule registry silently authorizes Switch writes")
+
+    allowed_status = {
+        "NORMATIVE", "VERIFIED", "PROMOTED_RULE", "BOUNDARY",
+        "REJECTED", "SUPERSEDED", "HISTORICAL_PROVENANCE",
+    }
+    for item in rules:
+        if item.get("status") not in allowed_status:
+            fail(f"INV-DOC-11 invalid master rule status: {item.get('rule_id')}")
+        if not isinstance(item.get("rule_class"), str) or not item["rule_class"]:
+            fail(f"INV-DOC-11 invalid master rule class: {item.get('rule_id')}")
+        sources = item.get("source_documents")
+        if not isinstance(sources, list) or not sources:
+            fail(f"INV-DOC-11 missing rule source documents: {item.get('rule_id')}")
+        missing = [path for path in sources if not (root / path).is_file()]
+        if missing:
+            fail(f"INV-DOC-11 rule source missing: {item.get('rule_id')} {missing}")
+
+
 def check_closure_identity(root: Path, resume_obj: dict) -> None:
     declared = resume_obj.get("last_closed_validation_id")
-    ledger_path = root / "docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md"
-    ledger = ledger_path.read_text(encoding="utf-8")
-    nums = [int(value) for value in re.findall(r"^#{2,6}\s+V(\d{3})\b", ledger, re.M)]
+    index_path = root / "docs/VALIDATION_LEDGER.md"
+    ledger_index = index_path.read_text(encoding="utf-8")
+    nums = [int(value) for value in re.findall(r"\bV(\d{3})\b", ledger_index)]
     if not nums:
-        fail("INV-DOC-08 schema-v1 amendment ledger has no Vnnn entries")
+        fail("INV-DOC-08 central validation index has no Vnnn entries")
     actual = f"V{max(nums):03d}"
     if declared != actual:
-        fail(f"INV-DOC-08 PROJECT_RESUME/ledger closure mismatch: declared={declared} actual={actual}")
+        fail(f"INV-DOC-08 PROJECT_RESUME/validation-index closure mismatch: declared={declared} actual={actual}")
 
     commit = resume_obj.get("last_closed_stage_commit")
     if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
@@ -380,23 +439,23 @@ def main() -> int:
     if resume != ["PROJECT_STATE.md"]:
         fail(f"INV-DOC-01 project resume authority: {resume}")
 
-    for entry in entries:
-        path = entry["path"]
-        if not path.endswith(".md") or entry["current_authority"]:
+    for item in entries:
+        path = item["path"]
+        if not path.endswith(".md") or item["current_authority"]:
             continue
         text = (root / path).read_text(encoding="utf-8", errors="replace").lower()
         if any(term in text for term in PLAN_TERMS):
-            superseding = entry.get("superseded_as_plan_by")
+            superseding = item.get("superseded_as_plan_by")
             if not superseding or not (root / superseding).is_file():
                 fail(f"INV-DOC-02 stale plan language lacks supersession metadata: {path}")
 
-    for entry in entries:
-        if not entry.get("anchor_protected"):
+    for item in entries:
+        if not item.get("anchor_protected"):
             continue
-        data = (root / entry["path"]).read_bytes()
+        data = (root / item["path"]).read_bytes()
         got = git_blob_sha1(data)
-        if got != entry.get("registered_blob_sha"):
-            fail(f"INV-DOC-03 anchor-protected blob changed: {entry['path']} {got}")
+        if got != item.get("registered_blob_sha"):
+            fail(f"INV-DOC-03 anchor-protected blob changed: {item['path']} {got}")
 
     agents = (root / "AGENTS.md").read_text(encoding="utf-8")
     if "AGENTS.md -> PROJECT_STATE.md -> PROJECT_STATE.required_reads" not in agents:
@@ -414,6 +473,7 @@ def main() -> int:
     check_generated_boundary(root, entries, resume_obj)
     check_scope_read_policy(resume_obj)
     check_schema_freeze(root, resume_obj)
+    check_master_rule_registry(root, entries)
     check_closure_identity(root, resume_obj)
 
     output = {
@@ -430,6 +490,7 @@ def main() -> int:
             "INV-DOC-08",
             "INV-DOC-09",
             "INV-DOC-10",
+            "INV-DOC-11",
         ],
         "registered_documents": len(entries),
         "registered_markdown": len(indexed_md),

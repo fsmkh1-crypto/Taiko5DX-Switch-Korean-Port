@@ -4,7 +4,7 @@ Canonical validation authority. Do not repeat a well-recorded validation solely 
 
 Revalidation is allowed only when input identity changes, new evidence contradicts the record, provenance is insufficient for the decision, or the prior method is shown unsound.
 
-## Canonical ledger parts
+## Canonical V-ledger parts
 
 - V001–V039: `docs/VALIDATION_LEDGER_THROUGH_PHASE1.md`
 - V040–V045: `docs/VALIDATION_LEDGER_PHASE2.md`
@@ -22,12 +22,25 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V096–V098: `docs/VALIDATION_LEDGER_MACHINE_ACCOUNTING_PILOT.md`
 - V099–V100, V102–V107: `docs/VALIDATION_LEDGER_SCHEMA_V1_AMENDMENT.md`
 - V101: `docs/VALIDATION_LEDGER_DOCUMENT_GOVERNANCE.md`
+- V108–V118: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_V1.txt`
+- V119–V126: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_ASSISTED_297_FOLLOWUP.txt`
+- V127–V133: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_ASTRA_10_FOLLOWUP.txt`
+- V134–V143: `docs/VALIDATION_LEDGER_PC_PATCH_ORACLE_TRACE_19_CLOSURE.txt`
+- V144–V151: `docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt`
+
+## Post-freeze namespaced ledgers
+
+- CF001–CF010: `docs/VALIDATION_LEDGER_CAP64_CORRECTION.txt`
+- PF001–PF021: `docs/VALIDATION_LEDGER_POST_FREEZE_RESIDUAL.txt`
+- FS251-001–FS251-012: `docs/VALIDATION_LEDGER_FORWARD_STRUCTURAL_CENSUS_251.txt`
+- FS001–FS010: `docs/VALIDATION_LEDGER_FORWARD_986_STRUCTURAL.txt`
 
 ## Current precedence
 
 - project resume authority: `PROJECT_STATE.md`
+- master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
-- project operating rules: `AGENTS.md` (with stage-specific policies selected by `PROJECT_STATE.required_reads`)
+- project operating rules: `AGENTS.md`
 - artifact/machine provenance rules: `docs/ARTIFACT_AND_PROVENANCE_RULES.md`
 - validation policy: `docs/VALIDATION_POLICY.md`
 - GitHub/CI policy: `docs/GITHUB_AND_CI_POLICY.md`
@@ -37,15 +50,9 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - PC runtime specification: `docs/PC_RUNTIME_DLL_SPEC.md`
 - Stage 1: `docs/FULL_PORT_INVENTORY_STAGE1.md`
 - Stage 2: `docs/STAGE2_AFFINE_STRUCTURAL_TARGETING.md`
-- F1 audit: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`
-- F1 authorization: `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
-- frozen machine-accounting schema v1: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`
-- frozen claim-extraction rules v1: `docs/CLAIM_EXTRACTION_RULES.md`
-- schema-freeze declaration `FZ001`: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
-- schema-v1 amendment report: `docs/SCHEMA_V1_AMENDMENT.md`
+- F1 audit/authorization: `docs/F1_LOCALIZATION_SEQUENCE_AUDIT.md`, `docs/F1_STATIC_WRITE_AUTHORIZATION.md`
+- frozen machine-accounting schema/claims: `docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md`, `docs/CLAIM_EXTRACTION_RULES.md`
+- schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
+- post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`.
-
-V094 historical authorization remains canonical semantic evidence. V100 records the original repository-artifact truncation. V101 classifies the later 12,071-byte upload as `FAILED_TRANSPORT_NOT_CANONICAL`. V102 closes the V094 transport blocker with deterministic plain JSONL shards while preserving the historical gzip identity. V103 closes the structured atomic-claim cause family. V104 closes the source-anchor/provenance cause family and reaches `PREPIN_PASS`. V105 consolidates the current validation pipeline. V106 closes the pre-freeze governance gaps. Corrected V107 pins the four current semantic identities and passes release fail-fast plus `COLLECT_ALL`.
-
-`FZ001` is the separately authorized schema-freeze declaration, not a replacement V-validation ID. It freezes the exact V107-passing semantic snapshot while preserving the historical `*_candidate` path names and registry scope labels as stable identifiers. Freeze does not authorize full migration, the 797 residual analysis, builder, IPS, runtime, mapping, or game-file modification; each remains a later separately authorized scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure never implies `WRITE_SAFE`.

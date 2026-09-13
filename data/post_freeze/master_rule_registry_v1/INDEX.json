@@ -1,0 +1,37 @@
+{
+  "schema": "MASTER_RULE_REGISTRY_INDEX_V1",
+  "registry_id": "MRR001",
+  "date": "2026-09-13",
+  "basis_head": "2ceda9cd6f917f6cf6d61eb78a4c3c9f8a7914d0",
+  "rules_path": "data/post_freeze/master_rule_registry_v1/RULES.json",
+  "rules_sha256": "aabc2b27a8e2760ef1451c08fb6f4d9e05230a884a4e38f13c2f9511a1515c9b",
+  "rule_count": 78,
+  "class_counts": {
+    "ACCOUNTING_SCHEMA": 4,
+    "AUTHORITY_PROVENANCE": 3,
+    "OPERATING": 10,
+    "PC_RUNTIME_REFERENCE": 5,
+    "REJECTED_SUPERSEDED": 9,
+    "REROUTE_SUBSUME": 4,
+    "SEMANTIC_ORACLE": 20,
+    "STRUCTURAL_TARGETING": 12,
+    "WRITE_SAFETY": 11
+  },
+  "status_counts": {
+    "BOUNDARY": 8,
+    "NORMATIVE": 22,
+    "PROMOTED_RULE": 24,
+    "REJECTED": 8,
+    "SUPERSEDED": 1,
+    "VERIFIED": 15
+  },
+  "human_report": "docs/MASTER_RULE_REGISTRY.md",
+  "validation_ledger": "docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt",
+  "authority": "overlay_only",
+  "boundaries": {
+    "frozen_FZ001_unchanged": true,
+    "builder_ips_runtime_unchanged": true,
+    "game_files_unchanged": true,
+    "new_switch_write_authorizations": 0
+  }
+}

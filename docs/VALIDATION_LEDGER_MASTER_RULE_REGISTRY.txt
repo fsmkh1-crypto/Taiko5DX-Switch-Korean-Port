@@ -1,0 +1,30 @@
+MASTER RULE REGISTRY V1 — VALIDATION LEDGER
+Date: 2026-09-13 KST
+Status: CANONICAL GOVERNANCE MATERIALIZATION / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: 2ceda9cd6f917f6cf6d61eb78a4c3c9f8a7914d0
+
+ID | Status | Claim | Evidence / limit
+V144 | VERIFIED | Full-rule integration audit found the operative rule set distributed across canonical governance, schema, runtime, Stage1/Stage2/F1, CAP64, forward structure, Oracle, assisted/Astra, and TRACE layers. | Source documents remain technical authority; registry is an overlay.
+V145 | VERIFIED | No currently relied-upon operative rule was identified as existing only in chat history; the defect was central discoverability/index staleness. | Audit conclusion, not a claim that every historical prose sentence is registry-worthy.
+V146 | VERIFIED | MASTER_RULE_REGISTRY_V1 contains 78 unique rule IDs with explicit class/status/scope/source metadata, and document-governance validation checks registry identity, count, hash, source existence, and zero-write boundary. | RULES.json / INDEX.json / INV-DOC-11.
+V147 | VERIFIED | Central document authority coverage is updated through 2026-09-13 and includes all current Markdown plus the master registry. | DOCUMENT_AUTHORITY_INDEX.json markdown-coverage invariant.
+V148 | VERIFIED | Central validation index now includes V108-V151 plus post-freeze namespaced ledgers CF, PF, FS251, and FS. | docs/VALIDATION_LEDGER.md.
+V149 | VERIFIED | Document-governance closure validation now derives the latest V-ID from the central validation index rather than the historical schema-amendment ledger. | Validator governance fix; does not alter technical evidence.
+V150 | VERIFIED | FZ001, F1/Stage2 memberships, runtime evidence, builder/IPS/runtime implementation, and game files are unchanged; zero new Switch write authorizations are created. | Scope boundary.
+V151 | VERIFIED | Master-registry materialization and central-governance repair are complete; later write-safety/action-ledger work requires a fresh explicit user signal. | Stage closure.
+
+Artifacts:
+- docs/MASTER_RULE_REGISTRY.md
+- data/post_freeze/master_rule_registry_v1/RULES.json
+- data/post_freeze/master_rule_registry_v1/INDEX.json
+- docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt
+- docs/DOCUMENT_AUTHORITY_INDEX.json
+- docs/VALIDATION_LEDGER.md
+- tools/validate_document_governance.py
+- .github/workflows/document-governance.yml
+- PROJECT_STATE.md
+
+Pre-write semantic hashes:
+- MASTER_RULE_REGISTRY.md SHA-256: b0a8f74647ef225e1e9f7352d994180f711e00dd8175fcceae3ae9ffb8c266f4
+- RULES.json SHA-256: aabc2b27a8e2760ef1451c08fb6f4d9e05230a884a4e38f13c2f9511a1515c9b
+- INDEX.json SHA-256: 52ab43e1959013fa2b30629402471c011151f4cf3a410b3af5ab5abb57f51af6
