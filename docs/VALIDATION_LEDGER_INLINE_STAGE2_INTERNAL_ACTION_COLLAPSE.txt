@@ -1,0 +1,60 @@
+# VALIDATION LEDGER — INLINE STAGE2 INTERNAL ACTION-COLLAPSE CLOSURE
+
+Status: CANONICAL READ-ONLY VALIDATION / NO SWITCH WRITE AUTHORIZATION
+Analysis basis: `894934811189c5004893c8b301dba993ac817b37`
+Materialization parent: `130d44e12fa2b97e101271d0f9930545e156f6eb`
+
+## V202 — Basis identity and inherited state
+
+PASS.
+
+Inherited without revalidation: Stage2 affine source population 13,771; FZ001; F1; forward-986; gap-1,035; Oracle/Assisted/Astra/TRACE; prior cross-boundary action-collapse closures; exact gap-internal 24-edge recovery.
+
+Write-transport provenance note: during this materialization attempt, forbidden Contents-API write actions were accidentally invoked and created transient one-file commits. The repository content was then restored with an allowed Git-object commit before this materialization. The final canonical tree contains none of those transient files; no semantic project artifact or analysis result depends on them.
+
+## V203 — Corrected candidate population
+
+PASS.
+
+The preliminary 358-unit queue is superseded on the Stage2-internal candidate-membership axis by the corrected complete queue: 378 units, 792 source rows, reduction 414, cross-block additions 0. The root cause was incomplete Block-14 whole-owner reconstruction, not Stage2 affine targeting.
+
+## V204 — Exact owner reconstruction and guards
+
+PASS.
+
+PC original guards 792/792 PASS; Switch target guards 792/792 PASS; complete original owner/field identity 378/378 PASS; cross-unit owner duplication 0; missing/extra multi-source owner units 0.
+
+## V205 — Structural owner cardinality
+
+PASS.
+
+```text
+Stage2 source rows              13,771
+singleton owner units           12,979
+multi-source owner units           378
+multi-source source rows            792
+multi-source reduction              414
+Stage2 structural owner units   13,357
+```
+
+This is structural-owner cardinality, not final Action Ledger cardinality.
+
+## V206 — Adjudication classes
+
+PASS.
+
+335 complete-object fragment units; 40 padding-component units; 3 yomi owner units; rejected false positives 0; conflicts 0. Padding components are absorbed into the owner reconstruction unit and are not independent actions.
+
+## V207 — Yomi policy and runtime handoff
+
+PASS.
+
+The three yomi units have confirmed N:1 physical ownership. Static yomi mutation is rejected; original Japanese yomi is preserved internally. Any remaining visible auxiliary-yomi obligation remains a separate runtime/render-owner handoff. Astra required = 0.
+
+## V208 — Safety and scope closure
+
+PASS.
+
+New WRITE_SAFE = 0. Stage2 affine mapping, FZ001, F1/forward/gap memberships and prior cross-boundary closures are unchanged. Builder/runtime/IPS/game-file implementation did not start. Final full-inline Action Ledger cardinality is not claimed.
+
+Next recommended scope: `FULL_INLINE_ACTION_CARDINALITY_GRAPH_COMPOSITION_READ_ONLY`.

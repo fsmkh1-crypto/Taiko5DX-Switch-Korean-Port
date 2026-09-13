@@ -34,6 +34,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V182–V189: `docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt`
 - V190–V196: `docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt`
 - V197–V201: `docs/VALIDATION_LEDGER_INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.txt`
+- V202–V208: `docs/VALIDATION_LEDGER_INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -52,6 +53,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - exact gap-internal 24-edge provenance recovery: `docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md`
 - current F1 cross-boundary action-collapse closure: `docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md`
 - current pre-Stage2 <-> Stage2 cross-boundary adjudication closure: `docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md`
+- current Stage2 internal action-collapse closure: `docs/INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
@@ -69,4 +71,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. The exact gap-internal 24-edge recovery supersedes only the older provenance limitation that those exact memberships were unavailable; it preserves the canonical `1,035 -> 1,011` count. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure, semantic-owner closure, and action-cardinality closure never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. The corrected Stage2-internal 378-unit closure supersedes the preliminary 358-unit analysis only on its exact candidate-membership/action-collapse axis. Counterpart/routing closure, semantic-owner closure, and action-cardinality closure never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
