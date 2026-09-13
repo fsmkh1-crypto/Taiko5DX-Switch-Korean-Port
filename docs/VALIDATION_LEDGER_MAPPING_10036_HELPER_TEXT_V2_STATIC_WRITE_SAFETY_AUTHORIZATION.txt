@@ -1,0 +1,10 @@
+VALIDATION LEDGER — MAPPING 10,036 HELPER TEXT V2 STATIC WRITE SAFETY AUTHORIZATION
+
+V246 — VERIFIED: historical HELPER_TEXT_V1 remains preserved as evidence, while exact payload provenance is unavailable for implementation; V1 is not rewritten.
+V247 — VERIFIED: HELPER_TEXT_V2 deterministic 308-byte payload identity, source/linker identities and exact clang/LLD toolchain revision are pinned and byte-for-byte reproducible.
+V248 — VERIFIED: V2 retains the exact validated TEXT_ALIGNMENT_RX owner, capacity, structural-zero preimage guard and disjoint write interval.
+V249 — VERIFIED: V2 preserves the closed entry/re-entry, LR/live-register ABI contract and exhaustive 2,542/2,542 forward/reverse semantic result with zero extra/missing hits and exact round-trip.
+V250 — VERIFIED: the other three mapping actions remain unchanged; effective mapping action cardinality remains four and explicit independent WRITE_SAFE total remains 162.
+V251 — VERIFIED: MAP10036_HELPER_TEXT_V2 = WRITE_SAFE / STATIC_WRITE_AUTHORIZED_NOT_IMPLEMENTED / runtime validation required. Binary GitHub transport remains unauthorized; deterministic regeneration is the implementation route.
+
+No IPS, runtime/game-file mutation or unrelated-family change is authorized by V246-V251 itself.
