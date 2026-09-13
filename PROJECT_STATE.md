@@ -7,11 +7,11 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema":"PROJECT_RESUME_V2",
-  "scope_id":"DOCUMENT_GOVERNANCE_DRIFT_REPAIR_MATERIALIZED",
+  "scope_id":"POINTER_56_SWITCH_COUNTERPART_SURVEY_MATERIALIZED",
   "scope_kind":"READ_ONLY",
   "status":"STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id":"V209",
-  "last_closed_stage_commit":"1a8d4a9f0321fc815c2f23787ebd098364fb4e3e",
+  "last_closed_validation_id":"V217",
+  "last_closed_stage_commit":"08ac22df65966297a4b2c61917bd718f275b1813",
   "last_closed_ci_run_id":34691523117,
   "last_closed_ci_validation_id":"V107",
   "last_closed_ci_conclusion":"success",
@@ -42,6 +42,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "inline_pre_stage2_to_stage2_cross_boundary_adjudication_index":"data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json",
   "inline_stage2_internal_action_collapse":"docs/INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE.md",
   "inline_stage2_internal_action_collapse_index":"data/post_freeze/inline_stage2_internal_action_collapse_v1/INDEX.json",
+  "pointer_56_switch_counterpart_survey":"docs/POINTER_56_SWITCH_COUNTERPART_SURVEY.txt",
+  "pointer_56_switch_counterpart_index":"data/post_freeze/pointer_56_switch_counterpart_survey_v1/INDEX.json",
   "required_reads":[
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
@@ -53,20 +55,18 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md",
     "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
     "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
-    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt",
     "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
     "docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md",
-    "docs/VALIDATION_LEDGER_INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.txt",
     "data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/INDEX.json",
     "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
-    "docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt",
     "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
     "docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md",
-    "docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt",
     "data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json",
     "docs/INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE.md",
-    "docs/VALIDATION_LEDGER_INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE.txt",
     "data/post_freeze/inline_stage2_internal_action_collapse_v1/INDEX.json",
+    "docs/POINTER_56_SWITCH_COUNTERPART_SURVEY.txt",
+    "docs/VALIDATION_LEDGER_POINTER_56_SWITCH_COUNTERPART_SURVEY.txt",
+    "data/post_freeze/pointer_56_switch_counterpart_survey_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
@@ -105,7 +105,8 @@ Completed and inherited without revalidation:
 - pre-Stage2 <-> Stage2 cross-boundary adjudication closure: COMPLETE / MATERIALIZED
 - Stage2 internal action-collapse closure: COMPLETE / MATERIALIZED
 - document-governance drift repair: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V209
+- pointer-56 Switch counterpart survey: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V217
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
 
@@ -192,21 +193,48 @@ Yomi policy: physical owner collapse confirmed; no static mutation of the three 
 
 This structural-owner cardinality is not the final Action Ledger action cardinality.
 
-## 9. Portability / Action Ledger authority
+## 9. Pointer-56 Switch counterpart closure
+
+```text
+PC pointer records                    56
+mode 0                                  5
+mode 1                                 51
+Switch RELA counterpart owners         56
+unresolved counterparts                 0
+mode-1 original/replacement owners     47
+mode-1 inline-zero companion sources   43
+mode-1 pointer-only objects             4
+mode-0 destination inline owners        2
+pointer-axis owner groups              49
+pointer-axis structural reduction       7
+```
+
+All 56 persistent Switch reference owners are `R_AARCH64_RELATIVE` RELA addends. Loader-populated DATA cells are not persistent offline write owners.
+
+Mode-1: 51 references resolve to 47 replacement owners. Forty-three unique source objects are also inline-zero companions on PC; four source objects are pointer-only. All 47 Korean replacement strings are absent from the original Switch main. The exact PC replacement-pool footprint is 602 bytes. Safe Switch storage selection is not yet authorized or closed.
+
+Mode-0: five references resolve to two existing inline semantic owners, `R2411` and `R2412`; final physical destination binding waits for their final Action Ledger owners.
+
+The 43 inline-zero companions must not be independently zeroed on Switch merely because PC does so. Their terminal disposition is deferred to cross-axis integration.
+
+No new Switch write authorization is granted by this closure.
+
+## 10. Portability / Action Ledger authority
 
 Current design contract: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`.
 
 Target resolution, semantic-owner closure, action collapse, write safety, implementation, and release closure remain separate axes.
 
-## 10. Validation and precedence
+## 11. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V209.
+- `docs/VALIDATION_LEDGER.md` is current through V217.
 - corrected Stage2 378-unit closure supersedes the preliminary 358-unit queue only on Stage2-internal candidate membership/action-collapse.
 - exact gap-internal 24-edge recovery remains authoritative on its exact 24 pairs.
 - gap/forward, F1-boundary, and pre-Stage2/Stage2 closures remain authoritative on their exact scopes.
-- no action-collapse closure implies WRITE_SAFE.
+- pointer-56 counterpart closure is authoritative only on pointer/reference counterpart ownership; cross-axis terminal disposition and write safety remain open.
+- no action-collapse or counterpart closure implies WRITE_SAFE.
 
-## 11. Repository operating boundary
+## 12. Repository operating boundary
 
 Permitted remote write actions remain exactly:
 
@@ -219,12 +247,14 @@ update_ref(main, force=false)
 
 Forbidden: `update_file`, `create_file`, `delete_file`, `create_branch`, force push, history rewrite, Base64/Contents-API write transport.
 
-## 12. Current STOP boundary
+Materialization provenance note: unauthorized Contents-API `create_file` calls created transient root files in intermediate commits after clean HEAD `cce73360ac53d5afbf0c1aaba67a325678841963`. The pointer-56 materialization tree was rebuilt from the last clean tree through the permitted Git-object path, so those transient files are absent from the current canonical tree. Their commits remain in history because force/history rewrite is prohibited. Validation record: V217.
+
+## 13. Current STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
 No builder/IPS/runtime implementation, game-file modification, schema redesign, write-safety expansion, or diagnostic build is authorized.
 
-Next recommended scope: **`FULL_INLINE_ACTION_CARDINALITY_GRAPH_COMPOSITION_READ_ONLY`**.
+Next recommended scope: **`POINTER_56_CROSS_AXIS_ACTION_INTEGRATION_READ_ONLY`**.
 
-That scope may compose canonical structural/action-collapse relations and report the exact current graph baseline, but must not call it the final Action Ledger cardinality while terminal/runtime/write-safety closures remain open.
+That scope may compose the 43 mode-1 inline-zero companion sources, four pointer-only objects, and the mode-0 dependency on `R2411/R2412` into Action Ledger relations. It must not select storage, grant write authority, or implement any pointer/runtime patch.
