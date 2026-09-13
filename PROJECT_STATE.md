@@ -7,10 +7,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "INLINE_FULL_CORPUS_COVERAGE_OVERLAY_MATERIALIZED",
-  "scope_kind": "READ_ONLY_COVERAGE_OVERLAY",
+  "scope_id": "INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY_MATERIALIZED",
+  "scope_kind": "READ_ONLY_SEMANTIC_OWNER_OVERLAY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V166",
+  "last_closed_validation_id": "V173",
   "last_closed_stage_commit": "813441d170929717b4f4ea75a515b4a1fc3086e9",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
@@ -35,27 +35,27 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "portability_action_ledger_design": "docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md",
   "inline_full_corpus_coverage_overlay": "docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md",
   "inline_full_corpus_coverage_index": "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
+  "inline_full_corpus_semantic_owner_overlay": "docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md",
+  "inline_full_corpus_semantic_owner_index": "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
   "required_reads": [
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
     "docs/MASTER_RULE_REGISTRY.md",
     "data/post_freeze/master_rule_registry_v1/INDEX.json",
-    "docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt",
     "docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md",
-    "docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt",
     "docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md",
-    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt",
     "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
+    "docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md",
+    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt",
+    "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
     "docs/GITHUB_AND_CI_POLICY.md",
-    "docs/INLINE_VALIDATION_POLICY.md",
     "docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md",
     "docs/PC_TO_SWITCH_ACCOUNTING_INVARIANTS.md",
     "docs/F1_STATIC_WRITE_AUTHORIZATION.md",
-    "docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md",
-    "data/post_freeze/pc_patch_oracle_trace_19_closure_v1/INDEX.json"
+    "docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md"
   ],
   "forbidden_scope_expansion": [
     "FULL_MIGRATION",
@@ -84,9 +84,11 @@ Completed and inherited without revalidation:
 - FZ001 post-freeze rule compatibility audit: COMPLETE / NO SCHEMA REDESIGN REQUIRED
 - Portability Matrix / Action Ledger design: COMPLETE / MATERIALIZED
 - inline full-corpus coverage overlay: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V166
+- inline full-corpus semantic-owner overlay: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V173
 - unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
+- semantic-owner remainder inside exact unique-only gap 1,035: 0
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
 
@@ -101,7 +103,7 @@ source_action_edges  1399fa309889399854d68f5d89f202df0f22f7be58ec2c85e3a02342987
 effective_claims     c29751ecca3233516fd9effc850e6e961d4418e3784266175df2af59798b6d35
 ```
 
-FZ001 is an immutable historical baseline. Later canonical overlays do not mutate these hashes; they refine current effective state only on the exact membership/axis proven by each overlay.
+FZ001 is an immutable historical baseline. Later canonical overlays refine current effective state only on their exact proven axes/membership and do not mutate these hashes.
 
 ## 3. Canonical target and population
 
@@ -123,7 +125,7 @@ forward-analysis population            986
 
 ## 4. F1 write-safety authority
 
-F1 write-safety authority remains unchanged:
+Historical F1 authorization partition remains unchanged:
 
 ```text
 DIRECT_PORT static-write-authorized 158
@@ -134,29 +136,11 @@ F1_RULE_REJECTED                     16
 TOTAL                               278
 ```
 
-The labels above preserve the historical F1 authorization partition. The 158 authorized rows are not implemented merely because they are authorized. No other F1 population is silently promoted.
-
-### 4.1 Current effective F1 target-resolution overlay
-
-The frozen FZ001 snapshot recorded 262 target-resolved and 16 F1-rule-rejected/analyzed-unresolved rows. Post-freeze target/counterpart evidence later resolved all 16 without changing their write authorization:
-
-- 14 rows: deterministic Oracle V1 `ORACLE_RESOLVED`;
-- `R3181`, `R3182`: Assisted follow-up `TARGET_RESOLVED`.
-
-Current effective target-resolution accounting is therefore:
-
-```text
-F1 source population                278
-current effective target resolved   278
-static-write authorized             158
-write/action closure still open     120
-```
-
-This is a target-resolution overlay only. It does not alter the FZ001 frozen hashes, the F1 historical partition, or the 158-row write-authorization boundary.
+Post-freeze evidence resolves all 278 on the target/counterpart axis, but static-write authorization remains 158. Current effective F1 write/action closure still open: 120.
 
 ## 5. Effective forward-986 routing closure
 
-Current consolidated counterpart/routing classes:
+Current consolidated counterpart/routing classes remain:
 
 ```text
 base deterministic Oracle resolved      656
@@ -172,17 +156,11 @@ Remainders:
 - ASTRA_REQUIRED: 0
 - TRACE: 0
 
-This is counterpart/routing closure only. It creates no new `WRITE_SAFE` authorization.
+Counterpart/routing closure does not imply WRITE_SAFE.
 
-## 6. Inline full-corpus coverage overlay
+## 6. Inline full-corpus coverage
 
-Current canonical overlay:
-- `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
-- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json`
-- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/MEMBERSHIP.json`
-- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt`
-
-The complete inline denominator is now accounted for as a disjoint planning partition:
+Canonical source-complete planning partition:
 
 ```text
 Stage-2 affine verified        13,771
@@ -192,72 +170,67 @@ unique-only coverage gap        1,035
 TOTAL                           17,103
 ```
 
-The 1,035 gap is exact machine-readable membership, not an inferred count.
+The 1,035 gap remains exact membership inherited from:
+- `data/post_freeze/inline_full_corpus_coverage_overlay_v1/MEMBERSHIP.json#gap_ranges`
 
-Gap split:
+Gap split remains:
 - early R1-R3250: 1,009
 - late family holes: 26
 
-The early structural census is:
+## 7. Semantic-owner overlay for gap 1,035
+
+Canonical overlay:
+- `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
+- `data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json`
+- `data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/MEMBERSHIP.json`
+- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt`
+
+Current owner-axis accounting:
 
 ```text
-JP full / single owner                     622
-JP full / shared owner                      31
-JP prefix / single owner                   224
-JP prefix / shared owner                     1
-formatter interior fragment                 45
-other longer-object interior fragment       85
-independent raw object start                 1
-TOTAL                                     1,009
+OWNER_BOUND        1,035
+OWNER_UNRESOLVED       0
+TOTAL              1,035
 ```
 
-Late 26 are source-complete holes in existing T1/T2/T3/T4 regions and do not modify the stable forward-986 partition.
+Binding provenance:
 
-Promoted-target collision census:
-- `R14543` / `R16430` `北陸`: same logical text, same Switch physical target, PC replacements differ — root cause unresolved;
-- `R14549` / `R16440` `四国`: replacement agreement;
-- `R2047` / `R15678` `真備`: replacement agreement.
+```text
+initial deterministic owner binding      679
+composite/full-object reconstruction      355
+final R14708 traveler closure               1
+TOTAL                                    1,035
+```
 
-The `北陸` semantic-role/consumer distinction is a hypothesis only. No replacement is selected, discarded, or rewritten by this state.
+Important owner conclusions:
+- all 225 logical-prefix rows are owner-bound only after deterministic complete-object/composite evidence; prefix alone is not ownership proof;
+- all 130 formatter/longer-object interior fragments are owner-bound as components of larger Switch semantic objects;
+- `R14708 旅人` has an independent T2 role/status/profession semantic owner and is not subsumed into `漂泊の旅人`;
+- broad-region `R14543 北陸` and `R14549 四国` bind to the expanded Switch region semantic-owner family established by prior Oracle reroute evidence;
+- `R2047 真備` remains an N:1 agreement relation with its promoted owner.
 
-Stage-1 raw uniqueness remains discovery evidence only and does not itself populate verified target identity, terminal disposition, portability, or write authority.
+The earlier coverage-overlay `北陸` root-cause uncertainty is therefore superseded only on the semantic-owner axis: it is not a competing-payload owner conflict. Payload/action selection remains a later Action Ledger question.
 
-## 7. Portability / Action Ledger design authority
+No new Switch write authorization is created by semantic-owner closure.
 
-Current design contract:
+## 8. Portability / Action Ledger design authority
+
+Current design contract remains:
 - `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
-- validation: `docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt`
 
-Fixed design decisions:
-
+Fixed boundaries:
 - PC Korean semantic result remains the default Oracle.
-- current planning input is the effective source-state view: frozen baseline + exact later canonical overlays, composed field-by-field within proven scope.
-- portability P1-P4 and terminal disposition are independent axes.
-- `NATIVE_EQUIVALENT_VERIFIED` has no forced portability class.
-- `SUBSUMED` has no independent portability class and must reference a final non-SUBSUMED action.
-- `PROVEN_IRRELEVANT` is the normal P4 terminal and requires verified exclusion evidence.
-- Portability Matrix is a derived planning view; no new mandatory FZ001 semantic field is created.
-- existing source/action/edge/claim schema is sufficient for this planning stage.
-- capacity/storage blockers do not authorize automatic translation changes.
-- future builder must be a semantic-free, fail-closed executor of a fully resolved Action Ledger.
+- source -> PC semantic obligation -> Switch semantic owner -> Switch action remain separate layers.
+- target resolution, semantic-owner closure, action closure, write safety, implementation, and release closure are separate axes.
+- capacity/storage blockers do not authorize translation shortening.
+- future builder must be semantic-free and fail-closed.
 
-## 8. Master rule authority
+## 9. Validation and precedence
 
-Central rule-discovery/precedence overlay:
-- `docs/MASTER_RULE_REGISTRY.md`
-- `data/post_freeze/master_rule_registry_v1/INDEX.json`
-- `data/post_freeze/master_rule_registry_v1/RULES.json`
-- validation: `docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt`
-
-Source canonical documents remain the technical evidence authority. The registry remains an overlay only and does not mutate FZ001.
-
-## 9. Validation and governance
-
-- `docs/VALIDATION_LEDGER.md` is the central validation index through V166 and also indexes post-freeze namespaced ledgers.
-- existing document-governance and machine-accounting validation through V107 remain provenance; this overlay does not alter FZ001 semantic pins.
-- later narrow canonical corrections/overlays take precedence only within their proven scope.
-- target/counterpart closure never implies write authorization.
-- structural-family membership for the forward-986 denominator must not be treated as a source-complete full-inline Action Ledger family.
+- `docs/VALIDATION_LEDGER.md` is current through V173.
+- latest semantic-owner overlay takes precedence over older coverage-stage owner hypotheses only within the owner axis.
+- historical coverage membership remains unchanged.
+- no canonical fact is revalidated solely because chat/model changes.
 
 ## 10. Repository operating boundary
 
@@ -283,8 +256,8 @@ Forbidden:
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin builder/IPS/runtime implementation, game-file modification, schema redesign, diagnostic build, or semantic-owner/action population without a fresh explicit user execution signal.
+Do not begin Action Ledger collapse, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
 
-Next recommended scope: **`INLINE_FULL_CORPUS_SEMANTIC_OWNER_ACTION_POPULATION_READ_ONLY`**.
+Next recommended scope: **`INLINE_FULL_CORPUS_ACTION_COLLAPSE_READ_ONLY`**.
 
-That scope may consume the exact 17,103 source-complete coverage partition, bind semantic owners for the 1,035 gap, resolve source-complete family/action relations, and investigate the `北陸` owner/consumer cause group. It must not implement builder/runtime, emit IPS, or modify game files.
+That scope may consume the complete owner-bound 1,035-gap view and derive source-to-action collapse relations. It must not grant WRITE_SAFE or implement game/runtime changes.

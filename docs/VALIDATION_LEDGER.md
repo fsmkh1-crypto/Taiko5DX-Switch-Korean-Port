@@ -29,6 +29,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V144–V151: `docs/VALIDATION_LEDGER_MASTER_RULE_REGISTRY.txt`
 - V152–V158: `docs/VALIDATION_LEDGER_PORTABILITY_ACTION_LEDGER_DESIGN.txt`
 - V159–V166: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt`
+- V167–V173: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -42,6 +43,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - project resume authority: `PROJECT_STATE.md`
 - master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
 - current full-corpus inline coverage overlay: `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
+- current full-corpus semantic-owner overlay: `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
@@ -59,4 +61,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure never implies `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. Historical plans and handoffs never override `PROJECT_STATE.md`. Counterpart/routing closure and semantic-owner closure never imply `WRITE_SAFE`. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.

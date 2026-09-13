@@ -1,0 +1,45 @@
+# VALIDATION LEDGER — INLINE FULL-CORPUS SEMANTIC OWNER OVERLAY
+
+Date: 2026-09-13 (KST)
+
+V167 PASS — Exact source population inheritance
+- Input population is exactly the prior canonical `gap_ranges` membership.
+- Count = 1,035.
+- No source row added or removed.
+
+V168 PASS — Initial deterministic owner binding
+- JP full/single = 622.
+- JP full/shared = 31.
+- independent N:1 agreement = 1.
+- late-family deterministic = 25.
+- subtotal = 679.
+
+V169 PASS — Composite reconstruction closure
+- JP logical prefix = 225.
+- interior fragment = 130.
+- subtotal = 355.
+- strict prefix/substring alone was not used as ownership proof.
+
+V170 PASS — Region owner relation
+- Broad-region source obligations bind to the expanded Switch region owner family.
+- `北陸` and `四国` broad rows are not treated as competing physical payloads at owner-binding time.
+- No translation payload selected or rewritten here.
+
+V171 PASS — Final traveler closure
+- `R14708 旅人` has an independent T2 semantic owner.
+- It is not subsumed into `漂泊の旅人`.
+- Final owner remainder becomes 0.
+
+V172 PASS — Owner-axis accounting
+- OWNER_BOUND = 1,035.
+- OWNER_UNRESOLVED = 0.
+- Sum = 1,035.
+
+V173 PASS — Safety and governance boundary
+- FZ001 unchanged.
+- forward-986 membership unchanged.
+- F1 158 write-authorization boundary unchanged.
+- new Switch write authorization = 0.
+- action collapse not performed.
+- builder/runtime/IPS/game-file implementation not started.
+- next recommended scope: `INLINE_FULL_CORPUS_ACTION_COLLAPSE_READ_ONLY`.
