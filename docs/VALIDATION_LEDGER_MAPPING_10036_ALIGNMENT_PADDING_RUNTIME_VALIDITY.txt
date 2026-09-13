@@ -1,0 +1,11 @@
+VALIDATION LEDGER — MAPPING 10,036 ALIGNMENT PADDING RUNTIME VALIDITY
+
+V225 — VERIFIED — Switch main identity and alignment geometry. Against main SHA-256 b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b / Build ID d9120950c258610a746f4a31ce3a3b376de393d9, text-end 0x58CE60 -> rodata-start 0x58D000 yields an exact 416-byte alignment gap, and rodata-end 0x9BF018 -> data-start 0x9C0000 yields an exact 4,072-byte alignment gap.
+
+V226 — VERIFIED — Loader ownership, zero-fill and patchability. Pinned Atmosphere loader commit 6e6af694244002fd6799703a54a5e24f0a0b9ac1 explicitly zero-fills inter-segment gaps, checks segment hashes before embedded/IPS patching, and applies IPS to the mapped NSO image. Pinned Eden commit 5d150cac5c6624fa6a0e94266846b75d91a6a5d0 constructs the full decompressed program image including the gaps and applies NSO IPS to NSO-header + whole patchable image. The two regions are structural alignment padding, not arbitrary live zero runs.
+
+V227 — VERIFIED — Runtime permission classes. Page-rounded text permissions include the 416-byte text gap in an executable page; page-rounded rodata permissions include the 4,072-byte rodata gap in a read-only page. Current Eden source assigns RX to the code page range and R to rodata. Thus TEXT_ALIGNMENT_GAP is valid executable-storage class and RODATA_ALIGNMENT_GAP is valid read-only-data storage class.
+
+V228 — VERIFIED — Delivery linkage for this title/build. Canonical DCTRL7 runtime evidence already proves the exact-game Eden ExeFS IPS path and mapped+0x100 coordinate convention reach runtime. Current Eden source establishes that the two gap coordinates are within the same patchable program image. The global delivery-chain hypothesis is not reopened.
+
+V229 — VERIFIED — Terminal scope verdict. TEXT_ALIGNMENT_GAP 416 B accepts the current 324 B helper prototype with 92 B slack, subject to exact final helper-byte closure. RODATA_ALIGNMENT_GAP 4,072 B accepts the fixed 2,349 B delta stream with 1,723 B slack. Storage-class/runtime-delivery validity is closed for the proposed roles. No helper bytes, hooks, Action Ledger write authority, builder, IPS, runtime patch or game file were created. New WRITE_SAFE = 0.

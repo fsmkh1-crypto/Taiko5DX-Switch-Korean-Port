@@ -1,0 +1,53 @@
+MAPPING 10,036 ALIGNMENT PADDING RUNTIME VALIDITY
+
+Date: 2026-09-14 (KST)
+Status: CANONICAL READ-ONLY VALIDATION / STORAGE-CLASS AND DELIVERY VALIDITY ONLY / NO WRITE AUTHORIZATION
+Scope: MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY_READ_ONLY
+Basis project HEAD before scope: 63740cc2111998f0342a1930717d278dc2fe44ca
+Switch main SHA-256: b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b
+Switch Build ID: d9120950c258610a746f4a31ce3a3b376de393d9
+Atmosphere source commit: 6e6af694244002fd6799703a54a5e24f0a0b9ac1
+Eden mirror source commit: 5d150cac5c6624fa6a0e94266846b75d91a6a5d0
+
+확정된 사실
+
+- The decompressed Switch NSO text segment ends at mapped 0x58CE60 and rodata starts at 0x58D000. The intervening alignment region is exactly 0x1A0 = 416 bytes.
+- The rodata segment ends at mapped 0x9BF018 and data starts at 0x9C0000. The intervening alignment region is exactly 0xFE8 = 4,072 bytes.
+- Both regions are structural NSO segment-alignment gaps, not discovered live semantic data objects.
+- Atmosphere loader source explicitly zero-fills text-end -> rodata-start and rodata-end -> data-start before patch application. Segment hashes are checked before embedded/IPS patch application.
+- Atmosphere applies IPS patches to the mapped module image and then assigns page-rounded segment permissions. The text-alignment gap is inside the page-rounded executable text range; the rodata-alignment gap is inside the page-rounded read-only rodata range.
+- Eden constructs a full decompressed program image covering the segment gaps, leaves the gaps zero-initialized, page-aligns segment sizes, applies NSO IPS patches to NSO-header + whole patchable program image, then loads the whole image into the process.
+- Eden assigns the page-rounded code segment Read+Execute and the page-rounded rodata segment Read. Therefore the exact 416-byte text gap is executable storage and the exact 4,072-byte rodata gap is readable non-executable storage in the current Eden path.
+- The project's already-canonical DCTRL7 result proves that the exact-game Eden ExeFS IPS path, Build ID matching, mapped +0x100 coordinate convention, and runtime delivery chain are active for this title/build. The present scope adds structural proof that the two alignment-gap coordinates are part of the same patchable program image.
+- The current mapping helper sizing prototype is 324 bytes. It fits in the 416-byte executable text gap with 92 bytes of numerical slack.
+- The compact Korean Hangul delta stream is fixed at 2,349 bytes. It fits in the 4,072-byte read-only rodata gap with 1,723 bytes of slack.
+- Storage-class/runtime-delivery validity is therefore closed for the proposed roles: TEXT_ALIGNMENT_GAP as executable helper-storage candidate and RODATA_ALIGNMENT_GAP as read-only delta-storage candidate.
+- This validation does not authorize any write. New WRITE_SAFE = 0.
+
+유력한 가설
+
+- MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1 remains the lowest-disturbance realization design: helper code can reside in the verified executable text-alignment region and the fixed delta stream can reside in the verified read-only rodata-alignment region, provided the final helper contract stays within capacity and all hook/action guards close.
+
+미확정 사항
+
+- Final helper instruction bytes and exact final helper size.
+- Exact miss-hook branch/return ABI, register preservation and branch reachability.
+- Original-byte guards for every hook/code site.
+- Final Action Ledger action IDs and write-safety authorization.
+- Runtime Korean round-trip verification and final delivery-control diagnostic result.
+
+기각된 가설
+
+- The two alignment gaps are unmapped at runtime: rejected.
+- The two alignment gaps are outside the IPS-patchable program image: rejected.
+- The rodata gap can be used as executable helper storage: rejected; its intended and verified role is read-only data storage.
+- These specific gaps must be rejected merely because their current bytes are zero: rejected. Their ownership is established structurally as loader-created segment-alignment padding, unlike arbitrary live DATA zero runs.
+- Numerical fit alone grants WRITE_SAFE: rejected.
+
+관련 영향 범위
+
+Mapping-10,036 realization family only. FZ001, the 17,103 inline source denominator, Stage1/Stage2/F1/forward/gap accounting, pointer-56 closure, existing F1 static WRITE_SAFE=158, builder/runtime/game files and translation semantics are unchanged.
+
+수정 제안
+
+Next bounded scope: MAPPING_10036_HELPER_HOOK_CONTRACT_READ_ONLY. Close the two miss-hook contracts, branch/return and register/ABI requirements, final helper byte budget, exact original-byte guards and Action Ledger identity proposal. Do not build or emit a runtime patch until that scope is separately authorized and closed.
