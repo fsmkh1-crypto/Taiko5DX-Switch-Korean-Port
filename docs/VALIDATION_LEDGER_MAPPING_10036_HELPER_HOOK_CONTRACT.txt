@@ -1,0 +1,10 @@
+VALIDATION LEDGER — MAPPING 10,036 HELPER / HOOK CONTRACT
+
+V234 — VERIFIED: forward miss owner/hook point, direct branch reach and original re-entry contract are closed.
+V235 — VERIFIED: reverse miss owner/hook point, direct branch reach and original re-entry contract are closed.
+V236 — VERIFIED: helper register/ABI contract preserves all live callee-saved state and uses no LR-changing call path.
+V237 — VERIFIED: exact 308-byte helper identity and 2,349-byte delta identity reproduce exactly 2,542/2,542 Korean pairs with exhaustive zero-extra-hit and round-trip closure.
+V238 — VERIFIED: original-byte / structural-zero preimage guards are fixed for both hook sites, helper storage and delta storage.
+V239 — VERIFIED: stable Action Ledger identity proposal contains four independently guardable physical writes under one semantic realization family. New WRITE_SAFE = 0.
+
+No builder, IPS, runtime or game-file patch was emitted. No unrelated descriptor family was analyzed.

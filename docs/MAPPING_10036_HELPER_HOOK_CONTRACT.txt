@@ -1,0 +1,66 @@
+MAPPING 10,036 HELPER / HOOK CONTRACT
+
+Date: 2026-09-14 (KST)
+Status: READ-ONLY CONTRACT CLOSED / NO RUNTIME PATCH AUTHORIZATION
+Scope: MAPPING_10036_HELPER_HOOK_CONTRACT_READ_ONLY
+Basis HEAD: 9f683e99f39d40a71b2d88579c5858f25deb4ad5
+Preferred realization: MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1
+
+요약
+
+The two original Switch 7,494-entry lookup loops remain unchanged. Each genuine original-table miss is redirected by one fixed-width AArch64 branch to a compact helper in the already-validated TEXT alignment region. The helper resolves only the 2,542 Korean-added keys and otherwise restores the original miss fallback. The forward and reverse paths then re-enter the original function at existing post-miss output points.
+
+확정된 사실
+
+- Forward semantic owner is the existing UTF-16 -> game-code function at 0x430350. The canonical table miss point is 0x4304E0.
+- Reverse semantic owner is the existing game-code -> UTF-16 function at 0x4305D0. The canonical table miss point is 0x430798.
+- Both hook sites require exactly one 4-byte AArch64 unconditional branch. Branch distances to the helper region are within direct B reach; no veneer, literal trampoline, or LR mutation is required.
+- Forward helper entry is fixed at 0x58CE60. Reverse helper entry is fixed at 0x58CF00.
+- Forward hit returns to 0x430568 so the existing code derives the high byte and writes the two-byte game code. Forward non-Korean miss returns to 0x43056C after restoring the original 0x81A1 fallback semantics.
+- Reverse hit and non-Korean miss both return to 0x430820 with w25 containing either the Korean Unicode result or the original U+25A0 fallback.
+- Helper live-state contract: x19-x28 and x30 are preserved; helper scratch is restricted to caller-saved x8-x15. Forward w25 is read-only. Reverse w25 is the intentional result register. NZCV preservation is unnecessary because each re-entry path overwrites flags before any flag-dependent branch.
+- RODATA delta base remains 0x9BF018. The exact 2,349-byte Hangul delta stream SHA-256 remains ddedc507fa892a5b5be6f35ab24f0a0e5fac0d71e633134712b33bd4c6a2088f.
+- The Korean mapping was independently reconstructed as the 2,350 KS X 1001 Hangul syllables in increasing Unicode order followed by U+E500..U+E5BF; the reconstructed 10,168-byte raw suffix SHA-256 exactly matches fe5d09fc38c4992a4fe7507664d3425d53c3465741c980a2462c1a9c9afb186a.
+- Exhaustive 16-bit-domain verification produced exactly 2,542 forward hits and exactly 2,542 reverse hits, with zero extra hits, zero missing hits, and exact forward/reverse round-trip for all 2,542 Korean-added pairs.
+- Final linked helper text size is 308 bytes, 77 AArch64 instructions, occupying 0x58CE60..0x58CF94. This leaves 108 bytes unused in the validated 416-byte TEXT alignment region.
+- Exact helper machine-byte identity SHA-256 is 60b1fd4b8231dca9f11e5e46007bddef97f55434f1e46df1445be2fb361e6cad.
+- Forward original 4-byte hook preimage SHA-256 is 98813cf6edbe59d962385f8bf0f1badd2557cf12ef0c35bc588aa9104f21d45b.
+- Reverse original 4-byte hook preimage SHA-256 is 196b4f3803e4f689fd5a889e142a35311b7bc5fcccabc1b700c39ebf406a1561.
+- Forward branch replacement 4-byte identity SHA-256 is 2df5115d570e7775ce72bee4b267ffdc1f771f4e4feafcee253c72745f997d2d.
+- Reverse branch replacement 4-byte identity SHA-256 is c92c275afc2d98a43dc2a0f7008bcd62bd4dda07fe4e540e45d33b5c7a80df7d.
+- Helper storage preimage is structural zero padding. The 308-byte zero-preimage guard SHA-256 is 9575b2125169377b2ade7b401ea36c81228331d971f49664d9648d4f255d4868.
+- Delta storage preimage is structural zero padding. The 2,349-byte zero-preimage guard SHA-256 is 9bff4e0fc43a214b9efe2fddbcd29b1d1d61d2d278f89d34f9cd8b9c0f11516a.
+- Deterministic toolchain identity for the final helper byte image: clang/LLD 17.0.0, revision 10999b6d034fe318f3d56c83bddb6572593a8bb0.
+
+유력한 가설
+
+No semantic ambiguity remains in the two hook contracts. The remaining risk is write authorization / delivery-controlled runtime confirmation, not helper ownership or mapping semantics.
+
+미확정 사항
+
+- Final WRITE_SAFE authorization for the four physical writes.
+- Runtime execution result on the target environment after a separately authorized diagnostic build.
+- Delivery-controlled forward/reverse Korean round-trip observation in the game.
+
+기각된 가설
+
+- Replacing either six-entry lookup loop or either count literal.
+- Using BL/call semantics that would alter LR or require a full ABI call frame.
+- Using callee-saved registers as helper scratch.
+- Returning through a new synthetic output path instead of existing post-miss output points.
+- Enlarging the helper beyond the validated TEXT alignment owner.
+- Treating storage fit or exact helper bytes as WRITE_SAFE by itself.
+
+관련 영향 범위
+
+Mapping 10,036 only. FZ001, inline 17,103 accounting, Stage1/Stage2/F1/forward/gap, pointer-56 closure, other descriptor families, builder/runtime/game files and existing F1 WRITE_SAFE 158 remain unchanged.
+
+수정 제안
+
+Proposed stable Action Ledger identities:
+- MAP10036_FWD_MISS_HOOK_V1
+- MAP10036_REV_MISS_HOOK_V1
+- MAP10036_HELPER_TEXT_V1
+- MAP10036_DELTA_RODATA_V1
+
+Treat the four physical writes as one semantic realization family, MAPPING_KOREAN_MISS_FALLBACK_COMPACT_V1, but keep each write independently guardable and falsifiable. Next scope should perform static write-safety authorization only; no build or runtime patch is authorized here.
