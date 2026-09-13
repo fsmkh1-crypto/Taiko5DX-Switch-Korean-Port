@@ -31,6 +31,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V159–V166: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_COVERAGE_OVERLAY.txt`
 - V167–V173: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt`
 - V174–V181: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt`
+- V182–V189: `docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -45,7 +46,8 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
 - current full-corpus inline coverage overlay: `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
 - current full-corpus semantic-owner overlay: `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
-- current partial action-collapse overlay: `docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md`
+- current partial gap/forward action-collapse overlay: `docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md`
+- current F1 cross-boundary action-collapse closure: `docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`

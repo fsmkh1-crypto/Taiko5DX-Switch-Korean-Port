@@ -7,10 +7,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY_MATERIALIZED",
-  "scope_kind": "READ_ONLY_ACTION_COLLAPSE_OVERLAY",
+  "scope_id": "INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_MATERIALIZED",
+  "scope_kind": "READ_ONLY_F1_CROSS_BOUNDARY_ACTION_COLLAPSE",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V181",
+  "last_closed_validation_id": "V189",
   "last_closed_stage_commit": "813441d170929717b4f4ea75a515b4a1fc3086e9",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
@@ -39,6 +39,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "inline_full_corpus_semantic_owner_index": "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
   "inline_full_corpus_action_collapse_overlay": "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
   "inline_full_corpus_action_collapse_index": "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
+  "inline_f1_cross_boundary_action_collapse": "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
+  "inline_f1_cross_boundary_action_collapse_index": "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
   "required_reads": [
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
@@ -52,6 +54,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
     "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt",
     "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
+    "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
+    "docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt",
+    "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
@@ -89,11 +94,14 @@ Completed and inherited without revalidation:
 - Portability Matrix / Action Ledger design: COMPLETE / MATERIALIZED
 - inline full-corpus coverage overlay: COMPLETE / MATERIALIZED
 - inline full-corpus semantic-owner overlay: COMPLETE / MATERIALIZED
-- partial inline action-collapse overlay: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V181
+- partial gap/forward action-collapse overlay: COMPLETE / MATERIALIZED
+- F1 cross-boundary action-collapse closure: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V189
 - unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
 - semantic-owner remainder inside exact unique-only gap 1,035: 0
+- F1 cross-boundary unresolved units: 0
+- F1 cross-boundary conflict units: 0
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
 
@@ -201,13 +209,7 @@ Important owner conclusions remain:
 
 No new Switch write authorization is created by semantic-owner closure.
 
-## 8. Partial action-collapse overlay
-
-Canonical overlay:
-- `docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md`
-- `data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json`
-- `data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/MEMBERSHIP.json`
-- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt`
+## 8. Action-collapse overlays
 
 ### 8.1 Gap-internal count-level result
 
@@ -243,7 +245,34 @@ direct reduction  46
 
 The T1 region unit is not included in the direct reduction. The nine broad-region source obligations reroute to the detailed 19-entry expanded region owner family; final region action identities/cardinality remain deferred to Stage2 region-owner integration.
 
-This action-cardinality closure creates no new `WRITE_SAFE` authorization.
+### 8.3 Exact gap+forward <-> F1 closure
+
+Canonical closure:
+- `docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md`
+- `data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json`
+- `data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/MEMBERSHIP.json`
+- validation: `docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt`
+
+Exact F1-boundary accounting:
+
+```text
+review units        11
+source rows          28
+owner/action units   11
+reduction            17
+unresolved            0
+conflict              0
+```
+
+Subtotals:
+- 6 complete-object/component units: 18 source -> 6 units, reduction 12;
+- 5 language-owner units: 10 source -> 5 units, reduction 5.
+
+For the five JP/CN language-owner units, Switch JP localization IDs 1101-1105 use the PC JP-domain Korean Oracle. The corresponding CN-domain source obligations remain in source accounting and collapse to the same final JP owner/action; no separate CN/TW Switch mutation is authorized.
+
+Formal terminal `SUBSUMED` rows are not instantiated until final Action Ledger IDs exist. This closure proves owner/action relation and cardinality only.
+
+No new `WRITE_SAFE` authorization is created by any action-collapse overlay.
 
 ## 9. Portability / Action Ledger design authority
 
@@ -259,10 +288,11 @@ Fixed boundaries:
 
 ## 10. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V181.
-- latest action-collapse overlay takes precedence only on the exact action-cardinality relations it proves.
+- `docs/VALIDATION_LEDGER.md` is current through V189.
+- latest F1 cross-boundary action-collapse closure takes precedence only on the exact 11 units and action-cardinality relations it proves.
+- prior gap/forward action-collapse remains authoritative on its exact 37 review units and count-level gap-internal result.
 - the count-level gap-internal result does not silently manufacture row-level edges.
-- historical coverage and owner memberships remain unchanged.
+- historical coverage, routing and owner memberships remain unchanged.
 - no canonical fact is revalidated solely because chat/model changes.
 
 ## 11. Repository operating boundary
@@ -289,8 +319,8 @@ Forbidden:
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin F1-boundary adjudication, Stage2-boundary integration, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
+Do not begin Stage2-boundary adjudication, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
 
-Next recommended scope: **`GAP_FORWARD_TO_F1_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`**.
+Next recommended scope: **`PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`**.
 
-That scope may generate the exact candidate list between the current gap+forward action view and F1 1,311 only. It must STOP before candidate adjudication and must not touch Stage2 or write safety.
+That scope may use the closed gap, forward and F1 owner/action relations as inherited facts and generate the exact candidate list against Stage2 13,771 only. It must STOP before candidate adjudication and must not expand write safety.

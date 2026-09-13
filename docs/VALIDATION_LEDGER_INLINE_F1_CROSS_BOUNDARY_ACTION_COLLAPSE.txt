@@ -1,0 +1,113 @@
+# VALIDATION LEDGER — INLINE F1 CROSS-BOUNDARY ACTION-COLLAPSE CLOSURE
+
+Status: CANONICAL READ-ONLY VALIDATION / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: `c27a374fe98c318a6d1dd4430920c23a80733b14`
+
+## V182 — Basis identity and inherited canonical state
+
+PASS.
+
+The closure consumes the existing canonical state without revalidating FZ001, Stage1, Stage2, F1, forward-986, Oracle/Assisted/Astra/TRACE, gap semantic-owner closure, or the 37-unit gap/forward action-collapse overlay.
+
+## V183 — Exact F1-boundary candidate population
+
+PASS.
+
+Exact candidate review population = 11 units.
+
+- forward source rows involved = 17
+- F1 source rows involved = 11
+- total source rows involved = 28
+- gap additional candidates = 0
+
+The final 11-unit membership is materialized in `data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/MEMBERSHIP.json`.
+
+## V184 — Provenance recovery and false-positive exclusion
+
+PASS.
+
+Detailed prior owner evidence was reused where available and missing row-level owner provenance was recovered only as needed for the F1 boundary. Existing canonical routing dispositions were not reopened or contradicted.
+
+Three preliminary same-text/containment candidates were excluded after provenance recovery. Same text, prefix, substring, replacement equality, or incidental containment alone are not accepted as collapse evidence.
+
+## V185 — Complete-object/component closure
+
+PASS.
+
+F1X006-F1X011 are confirmed complete-object/component N:1 owner relations.
+
+- source rows = 18
+- final owner/action units = 6
+- reduction = 12
+
+The forward component obligations are already represented inside the corresponding F1 complete-object Korean replacement and share the same Switch semantic owner.
+
+Formal terminal `SUBSUMED` instantiation remains deferred until final Action Ledger IDs exist; no chained or placeholder subsumption is created here.
+
+## V186 — Five language-owner conflict units
+
+PASS.
+
+F1X001-F1X005 each bind a PC CN-domain source occurrence and an F1 JP-domain source occurrence to one Switch JP localization owner, IDs 1101-1105 respectively.
+
+The owner identity is resolved; the only remaining issue before this validation was differing Korean presentation between PC JP-domain and CN-domain occurrences.
+
+## V187 — Presentation conflict resolution
+
+PASS.
+
+The five presentation conflicts are resolved under the canonical language-domain invariant.
+
+- Switch owner domain = JP
+- selected Korean semantic Oracle = PC JP-domain replacement
+- CN-domain source obligation = linked to the same final JP owner/action
+- separate CN/TW Switch mutation = not authorized
+
+Selected Korean presentations:
+
+- ID 1101: 판로 중단
+- ID 1102: 전황 확인
+- ID 1103: 전 거점 물자분배
+- ID 1104: 물자 모으기
+- ID 1105: 최전선 수송
+
+This is source-grounded Oracle selection, not new translation authoring.
+
+## V188 — Exact action-cardinality arithmetic
+
+PASS.
+
+Final F1 cross-boundary accounting:
+
+- review units = 11
+- source rows = 28
+- final owner/action units = 11
+- action-cardinality reduction = 17
+- unresolved units = 0
+- conflict units = 0
+
+Subtotals:
+
+- complete-object/component: 18 -> 6, reduction 12
+- language-owner collapse: 10 -> 5, reduction 5
+
+## V189 — Safety and scope boundary
+
+PASS.
+
+This closure changes no write authority and performs no implementation.
+
+- new `WRITE_SAFE` = 0
+- F1 static-write authorization remains 158
+- FZ001 unchanged
+- Stage2 unchanged
+- F1 membership unchanged
+- forward-986 unchanged
+- gap-1,035 unchanged
+- builder/runtime/IPS/game-file work not started
+
+Next recommended scope:
+
+`PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`
+
+That scope may generate the exact Stage2 boundary candidate queue only and must STOP before adjudication.
