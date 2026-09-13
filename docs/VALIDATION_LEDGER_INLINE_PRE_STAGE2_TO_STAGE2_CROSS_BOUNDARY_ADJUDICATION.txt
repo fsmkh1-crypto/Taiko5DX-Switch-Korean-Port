@@ -1,0 +1,114 @@
+# VALIDATION LEDGER — PRE-STAGE2 TO STAGE2 CROSS-BOUNDARY ADJUDICATION CLOSURE
+
+Status: CANONICAL READ-ONLY VALIDATION / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: `d865d85579f7ff2f1bd409aa3908aade5086e812`
+
+## V190 — Basis identity and inherited canonical state
+
+PASS.
+
+This closure consumes the existing canonical state without revalidating FZ001, Stage1, Stage2 affine targeting, F1, forward-986, Oracle/Assisted/Astra/TRACE, the 1,035-gap semantic-owner overlay, the gap/forward action-collapse overlay, or the F1 cross-boundary closure.
+
+## V191 — Exact candidate queue and strong-evidence gate
+
+PASS.
+
+The bounded candidate-generation result entering adjudication is exactly three review units:
+
+- `S2X-C01`: `R2047` <-> `R15678`
+- `S2X-C02`: `R2553` <-> `R3283`
+- `S2X-C03`: `R14542-R14550` <-> `R16428-R16446`
+
+Candidate accounting:
+
+- pre-Stage2 source rows = 11
+- Stage2 source rows = 21
+- total candidate source rows = 32
+
+No candidate is admitted from same Japanese text, prefix, substring, replacement equality, or incidental containment alone.
+
+## V192 — S2X-C01 N:1 Stage2-owner closure
+
+PASS.
+
+`R2047 真備` and Stage2 `R15678 真備` share the same physical Switch target/window, their PC Korean replacements agree, and the semantic-owner overlay already classifies `R2047` as an N:1 agreement relation with its promoted owner.
+
+The promoted owner is `R15678`. Therefore `R2047` does not require a second independent Switch action.
+
+Formal terminal `SUBSUMED` instantiation remains deferred until a final Action Ledger action ID exists.
+
+## V193 — S2X-C02 false-positive rejection
+
+PASS.
+
+`R2553 館` is canonically owned by the `%s館` place-suffix formatter family established in `docs/R0_REPEATED_OBJECT_NORMALIZATION.md`.
+
+`R3283 角館` is a complete place-name fixed-field object. Character containment of `館` inside `角館` is not semantic-owner identity.
+
+Verdict:
+
+`S2X-C02 = REJECTED_FALSE_POSITIVE / DIFFERENT_SEMANTIC_OWNERS`
+
+No prior canonical owner/action relation is invalidated because this candidate existed only in the preliminary non-canonical queue.
+
+## V194 — S2X-C03 expanded-region owner integration
+
+PASS.
+
+The nine broad-region obligations are bound to the canonical Stage2 expanded-region family and are not independent competing writes.
+
+Exact broad-source -> Stage2 detailed-owner linkage:
+
+- `R14542 東北` -> `R16428 北奥羽`, `R16429 南奥羽`
+- `R14543 北陸` -> `R16430 北陸`
+- `R14544 甲信` -> `R16433 甲信`
+- `R14545 関東` -> `R16431 北関東`, `R16432 南関東`
+- `R14546 東海` -> `R16434 駿遠三`, `R16435 濃尾勢`
+- `R14547 近畿` -> `R16436 北近畿`, `R16437 南近畿`
+- `R14548 中国` -> `R16438 山陰`, `R16439 山陽`
+- `R14549 四国` -> `R16440 四国`
+- `R14550 九州` -> `R16441 北九州`, `R16442 南九州`
+
+`R16443-R16446` remain additional members of the same expanded Stage2 region family without a legacy-nine broad-source counterpart.
+
+The prior raw replacement-byte disagreement for `R14543/R16430` is preserved as source provenance and is not treated as a competing final owner/action conflict. The detailed `R16428-R16446` PC patch rows remain the canonical Korean Oracle source for the expanded Switch region table.
+
+## V195 — Exact adjudication closure accounting
+
+PASS.
+
+Final Stage2-boundary adjudication:
+
+- review units = 3
+- confirmed units = 2
+- rejected false-positive units = 1
+- unresolved units = 0
+- conflict units = 0
+
+Candidate provenance membership remains 32 source rows:
+
+- confirmed-unit source rows = 30
+- rejected-unit source rows = 2
+
+No final Stage2-internal or full-inline action cardinality is calculated in this scope.
+
+## V196 — Safety and scope boundary
+
+PASS.
+
+This closure changes no write authority and performs no implementation.
+
+- new `WRITE_SAFE` = 0
+- F1 static-write authorization remains 158
+- FZ001 unchanged
+- Stage2 membership unchanged
+- F1 membership unchanged
+- forward-986 unchanged
+- gap-1,035 unchanged
+- builder/runtime/IPS/game-file work not started
+
+Next recommended scope:
+
+`STAGE2_INTERNAL_ACTION_COLLAPSE_CANDIDATE_GENERATION_READ_ONLY`
+
+That scope may generate only strong internal Stage2 owner/action candidates and must STOP before adjudication.

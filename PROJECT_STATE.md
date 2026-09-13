@@ -7,11 +7,11 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_MATERIALIZED",
-  "scope_kind": "READ_ONLY_F1_CROSS_BOUNDARY_ACTION_COLLAPSE",
+  "scope_id": "PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_MATERIALIZED",
+  "scope_kind": "READ_ONLY_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V189",
-  "last_closed_stage_commit": "813441d170929717b4f4ea75a515b4a1fc3086e9",
+  "last_closed_validation_id": "V196",
+  "last_closed_stage_commit": "d865d85579f7ff2f1bd409aa3908aade5086e812",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
   "last_closed_ci_conclusion": "success",
@@ -41,6 +41,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "inline_full_corpus_action_collapse_index": "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
   "inline_f1_cross_boundary_action_collapse": "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
   "inline_f1_cross_boundary_action_collapse_index": "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
+  "inline_pre_stage2_to_stage2_cross_boundary_adjudication": "docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md",
+  "inline_pre_stage2_to_stage2_cross_boundary_adjudication_index": "data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json",
   "required_reads": [
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
@@ -57,6 +59,9 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE_CLOSURE.md",
     "docs/VALIDATION_LEDGER_INLINE_F1_CROSS_BOUNDARY_ACTION_COLLAPSE.txt",
     "data/post_freeze/inline_f1_cross_boundary_action_collapse_v1/INDEX.json",
+    "docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md",
+    "docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt",
+    "data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
@@ -96,12 +101,15 @@ Completed and inherited without revalidation:
 - inline full-corpus semantic-owner overlay: COMPLETE / MATERIALIZED
 - partial gap/forward action-collapse overlay: COMPLETE / MATERIALIZED
 - F1 cross-boundary action-collapse closure: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V189
+- pre-Stage2 <-> Stage2 cross-boundary adjudication closure: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V196
 - unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
 - semantic-owner remainder inside exact unique-only gap 1,035: 0
 - F1 cross-boundary unresolved units: 0
 - F1 cross-boundary conflict units: 0
+- pre-Stage2 <-> Stage2 boundary unresolved units: 0
+- pre-Stage2 <-> Stage2 boundary conflict units: 0
 
 No builder, IPS, runtime, or game-file implementation is authorized by this state.
 
@@ -274,6 +282,32 @@ Formal terminal `SUBSUMED` rows are not instantiated until final Action Ledger I
 
 No new `WRITE_SAFE` authorization is created by any action-collapse overlay.
 
+### 8.4 Exact pre-Stage2 <-> Stage2 boundary adjudication
+
+Canonical closure:
+- `docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md`
+- `data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/INDEX.json`
+- `data/post_freeze/inline_pre_stage2_to_stage2_cross_boundary_adjudication_v1/MEMBERSHIP.json`
+- validation: `docs/VALIDATION_LEDGER_INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION.txt`
+
+Exact boundary result:
+
+```text
+candidate review units          3
+confirmed units                 2
+rejected false positives        1
+unresolved                      0
+conflict                        0
+new WRITE_SAFE                  0
+```
+
+Closed units:
+- `S2X-C01`: `R2047 真備` -> Stage2 owner `R15678 真備`; no second independent action.
+- `S2X-C02`: `R2553 館` <-> `R3283 角館` rejected; `R2553` is owned by the `%s館` formatter family, not the place-name field.
+- `S2X-C03`: broad-region `R14542-R14550` -> Stage2 expanded-region family `R16428-R16446`; the nine broad obligations link to 15 domestic detailed Stage2 owner sources, while `R16443-R16446` are family-context entries without a legacy-nine broad counterpart.
+
+This closes the exact Stage2-boundary candidate queue but does not establish Stage2-internal action cardinality or final full-inline action cardinality.
+
 ## 9. Portability / Action Ledger design authority
 
 Current design contract remains:
@@ -288,8 +322,9 @@ Fixed boundaries:
 
 ## 10. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V189.
-- latest F1 cross-boundary action-collapse closure takes precedence only on the exact 11 units and action-cardinality relations it proves.
+- `docs/VALIDATION_LEDGER.md` is current through V196.
+- latest pre-Stage2 <-> Stage2 adjudication closure takes precedence only on the exact three candidate units and owner/action relations it adjudicates.
+- latest F1 cross-boundary action-collapse closure remains authoritative on its exact 11 units and action-cardinality relations.
 - prior gap/forward action-collapse remains authoritative on its exact 37 review units and count-level gap-internal result.
 - the count-level gap-internal result does not silently manufacture row-level edges.
 - historical coverage, routing and owner memberships remain unchanged.
@@ -319,8 +354,8 @@ Forbidden:
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin Stage2-boundary adjudication, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
+Do not begin Stage2-internal action-collapse candidate generation, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
 
-Next recommended scope: **`PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`**.
+Next recommended scope: **`STAGE2_INTERNAL_ACTION_COLLAPSE_CANDIDATE_GENERATION_READ_ONLY`**.
 
-That scope may use the closed gap, forward and F1 owner/action relations as inherited facts and generate the exact candidate list against Stage2 13,771 only. It must STOP before candidate adjudication and must not expand write safety.
+That scope may inspect the already-verified Stage2 13,771 population for strong same-owner/action candidates using inherited affine/structural facts. It must not revalidate Stage2 affine mapping, admit same-text/prefix/substring-only matches, adjudicate candidates, expand write safety, or calculate final full-corpus cardinality prematurely.
