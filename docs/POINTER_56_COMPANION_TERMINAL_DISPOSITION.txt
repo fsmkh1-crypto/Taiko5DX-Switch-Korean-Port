@@ -1,0 +1,63 @@
+POINTER 56 COMPANION TERMINAL DISPOSITION
+
+Date: 2026-09-14 (KST)
+Status: CANONICAL POST-FREEZE READ-ONLY TERMINAL-DISPOSITION CLOSURE / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: 57585cf487c75b77c1ab81bfa3dbda2ec95c3f9c
+Scope: POINTER_56_COMPANION_TERMINAL_DISPOSITION_READ_ONLY
+
+요약
+
+V219 consumer census closed the only remaining prerequisite for the exact 43 mode-1 inline-zero companion sources. This scope assigns their terminal Action Ledger relation without selecting replacement-pool storage or granting write authority.
+
+companion sources                     43
+terminal SUBSUMED                     43
+direct SUBSUMED_BY edges              43
+final pointer redirect action IDs     43
+known RELA references                 46
+unresolved terminal relations          0
+new WRITE_SAFE                         0
+
+확정된 사실
+
+1. The exact 43-source membership is inherited from the canonical pointer-56 counterpart survey and V219 consumer census; it is not reselected here.
+2. V219 proves no surviving static consumer outside the known pointer family for any of the 43 original Switch objects.
+3. Each of the 43 inline companion obligations therefore terminates as SUBSUMED and links directly by SUBSUMED_BY to one non-SUBSUMED mode-1 pointer redirect action.
+4. Stable logical action IDs are issued as PTR56M1:R####, keyed to each companion source. R2587, R2791, and R3154 each own two known RELA references under one action; the other 40 actions own one reference each.
+5. The linked pointer action is REDIRECT_PORT in terminal-action semantics, but its physical replacement-pool storage remains unresolved and it receives no write authorization in this scope.
+6. PC-side zero-fill is not an independent Switch mutation. The inline source is satisfied through the linked pointer redirect action.
+7. The 43 source identities remain in the canonical 17,103 source denominator. SUBSUMED changes source-to-action responsibility, not source accounting.
+8. FZ001 is not mutated.
+
+유력한 가설
+
+The eventual executable pointer implementation can preserve these 43 logical action identities while later binding all mode-1 targets to a verified physical owner for the exact PC replacement pool. Storage placement can change without changing the terminal source relation established here.
+
+미확정 사항
+
+- verified physical storage/owner for the exact 602-byte mode-1 replacement pool;
+- write-safety of the 43 pointer redirect actions;
+- final physical owners for mode-0 R2411/R2412 destinations;
+- builder/IPS/runtime implementation and runtime validation;
+- final global Action Ledger cardinality.
+
+기각된 가설
+
+1. The 43 inline sources require independent Switch zero-fill actions.
+2. SUBSUMED may point to a placeholder or chained SUBSUMED action.
+3. The three double-reference objects require two semantic actions each.
+4. Terminal disposition closure itself expands WRITE_SAFE.
+5. Removing the 43 source identities from the 17,103 denominator.
+
+관련 영향 범위
+
+Unchanged: FZ001, Stage1, Stage2, F1, forward-986, gap membership, existing F1 static WRITE_SAFE 158, builder, IPS, runtime, and game files.
+
+This overlay supersedes only the previously open terminal relation for the exact 43 pointer companion sources. It does not rewrite earlier structural/counterpart evidence.
+
+수정 제안
+
+Next scope should canonicalize the already-completed mapping-10,036 Switch counterpart survey and realization design before additional runtime/helper work, so the sole resume authority no longer omits that high-risk mapping evidence.
+
+Recommended next scope: MAPPING_10036_SURVEY_AND_REALIZATION_DESIGN_CANONICALIZATION
+
+STOP.

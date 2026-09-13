@@ -1,9 +1,17 @@
 WRITE TRANSPORT INCIDENT — 2026-09-14
 
+Incident 1 — V219 materialization
+
 During POINTER_56_NON_RELA_CONSUMER_CENSUS materialization, one forbidden GitHub Contents API update_file call accidentally replaced README.md with a one-character payload in transient commit f497ad24972c430ef90c48b280ca26dec9258fbd.
 
-The call violated the repository write allowlist. No semantic analysis, builder, runtime, IPS, game-file, or FZ001 content was changed by intent.
+The call violated the repository write allowlist. Recovery preserved history, did not force-push, and restored the intended tree by a normal child commit using only create_blob/create_tree/create_commit/update_ref(force=false). The canonical repaired tree restored the original README and preserved the V219 census artifacts.
 
-Recovery policy: preserve history, do not force-push, and restore the intended tree by creating a normal child commit using only create_blob/create_tree/create_commit/update_ref(force=false). The canonical repaired tree must contain the original README blob plus the V219 census materialization files.
+Incident 2 — V220 materialization
 
-This incident is provenance only and must not be repeated. Forbidden write actions remain update_file/create_file/delete_file/create_branch and Contents API/Base64 write transport.
+During POINTER_56_COMPANION_TERMINAL_DISPOSITION materialization, forbidden GitHub Contents API create_file calls accidentally created root files SHOULD_NOT_USE and NO in transient commits e2aee33e05b05a6b8b5f42d63734cbc1d8b50e12 and 8138ad20aadd19805a47531bf96fb2606751a6b1.
+
+The calls violated the same repository write allowlist. Recovery is forward-only: preserve history, do not force-push, remove both transient root files from the canonical tree using create_tree in a normal child commit, and materialize the intended V220 artifacts using only create_blob/create_tree/create_commit/update_ref(force=false).
+
+Neither incident authorizes Contents API/Base64 write transport. Forbidden write actions remain update_file/create_file/delete_file/create_branch and every GitHub write action outside the four-action allowlist.
+
+No builder, runtime, IPS, game-file, FZ001, or translation semantic content was intentionally modified by either incident.
