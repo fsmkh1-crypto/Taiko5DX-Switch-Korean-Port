@@ -37,6 +37,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V202–V208: `docs/VALIDATION_LEDGER_INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE.txt`
 - V209: `docs/VALIDATION_LEDGER_DOCUMENT_GOVERNANCE.md`
 - V210–V217: `docs/VALIDATION_LEDGER_POINTER_56_SWITCH_COUNTERPART_SURVEY.txt`
+- V218: `docs/VALIDATION_LEDGER_POINTER_56_CROSS_AXIS_ACTION_INTEGRATION.md`
 
 ## Post-freeze namespaced ledgers
 
@@ -57,6 +58,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - current pre-Stage2 <-> Stage2 cross-boundary adjudication closure: `docs/INLINE_PRE_STAGE2_TO_STAGE2_CROSS_BOUNDARY_ADJUDICATION_CLOSURE.md`
 - current Stage2 internal action-collapse closure: `docs/INLINE_STAGE2_INTERNAL_ACTION_COLLAPSE_CLOSURE.md`
 - current pointer-56 Switch counterpart closure: `docs/POINTER_56_SWITCH_COUNTERPART_SURVEY.txt`
+- current pointer-56 cross-axis integration: `docs/POINTER_56_CROSS_AXIS_ACTION_INTEGRATION.md`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
