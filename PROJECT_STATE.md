@@ -7,10 +7,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
 <!-- PROJECT_RESUME_V2
 {
   "schema": "PROJECT_RESUME_V2",
-  "scope_id": "INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY_MATERIALIZED",
-  "scope_kind": "READ_ONLY_SEMANTIC_OWNER_OVERLAY",
+  "scope_id": "INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY_MATERIALIZED",
+  "scope_kind": "READ_ONLY_ACTION_COLLAPSE_OVERLAY",
   "status": "STOPPED_AWAITING_USER_SIGNAL",
-  "last_closed_validation_id": "V173",
+  "last_closed_validation_id": "V181",
   "last_closed_stage_commit": "813441d170929717b4f4ea75a515b4a1fc3086e9",
   "last_closed_ci_run_id": 34691523117,
   "last_closed_ci_validation_id": "V107",
@@ -37,6 +37,8 @@ This file is the sole project-resume authority. Historical documents and ledgers
   "inline_full_corpus_coverage_index": "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
   "inline_full_corpus_semantic_owner_overlay": "docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md",
   "inline_full_corpus_semantic_owner_index": "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
+  "inline_full_corpus_action_collapse_overlay": "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
+  "inline_full_corpus_action_collapse_index": "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
   "required_reads": [
     "data/pilot/f1_v1_candidate/schema_freeze_declaration.json",
     "data/pilot/f1_v1_candidate/bindings.json",
@@ -46,8 +48,10 @@ This file is the sole project-resume authority. Historical documents and ledgers
     "docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md",
     "data/post_freeze/inline_full_corpus_coverage_overlay_v1/INDEX.json",
     "docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md",
-    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt",
     "data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json",
+    "docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md",
+    "docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt",
+    "data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json",
     "docs/MACHINE_READABLE_ACCOUNTING_SCHEMA.md",
     "docs/CLAIM_EXTRACTION_RULES.md",
     "docs/VALIDATION_POLICY.md",
@@ -85,7 +89,8 @@ Completed and inherited without revalidation:
 - Portability Matrix / Action Ledger design: COMPLETE / MATERIALIZED
 - inline full-corpus coverage overlay: COMPLETE / MATERIALIZED
 - inline full-corpus semantic-owner overlay: COMPLETE / MATERIALIZED
-- central validation index: CURRENT THROUGH V173
+- partial inline action-collapse overlay: COMPLETE / MATERIALIZED
+- central validation index: CURRENT THROUGH V181
 - unresolved counterpart-routing queue inside forward-986: 0
 - TRACE remainder: 0
 - semantic-owner remainder inside exact unique-only gap 1,035: 0
@@ -179,13 +184,7 @@ Gap split remains:
 
 ## 7. Semantic-owner overlay for gap 1,035
 
-Canonical overlay:
-- `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
-- `data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/INDEX.json`
-- `data/post_freeze/inline_full_corpus_semantic_owner_overlay_v1/MEMBERSHIP.json`
-- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.txt`
-
-Current owner-axis accounting:
+Canonical owner-axis accounting remains:
 
 ```text
 OWNER_BOUND        1,035
@@ -193,27 +192,60 @@ OWNER_UNRESOLVED       0
 TOTAL              1,035
 ```
 
-Binding provenance:
-
-```text
-initial deterministic owner binding      679
-composite/full-object reconstruction      355
-final R14708 traveler closure               1
-TOTAL                                    1,035
-```
-
-Important owner conclusions:
-- all 225 logical-prefix rows are owner-bound only after deterministic complete-object/composite evidence; prefix alone is not ownership proof;
+Important owner conclusions remain:
+- all 225 logical-prefix rows are owner-bound only after deterministic complete-object/composite evidence;
 - all 130 formatter/longer-object interior fragments are owner-bound as components of larger Switch semantic objects;
 - `R14708 旅人` has an independent T2 role/status/profession semantic owner and is not subsumed into `漂泊の旅人`;
-- broad-region `R14543 北陸` and `R14549 四国` bind to the expanded Switch region semantic-owner family established by prior Oracle reroute evidence;
+- broad-region `R14543 北陸` and `R14549 四国` bind to the expanded Switch region semantic-owner family;
 - `R2047 真備` remains an N:1 agreement relation with its promoted owner.
-
-The earlier coverage-overlay `北陸` root-cause uncertainty is therefore superseded only on the semantic-owner axis: it is not a competing-payload owner conflict. Payload/action selection remains a later Action Ledger question.
 
 No new Switch write authorization is created by semantic-owner closure.
 
-## 8. Portability / Action Ledger design authority
+## 8. Partial action-collapse overlay
+
+Canonical overlay:
+- `docs/INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.md`
+- `data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/INDEX.json`
+- `data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/MEMBERSHIP.json`
+- validation: `docs/VALIDATION_LEDGER_INLINE_FULL_CORPUS_ACTION_COLLAPSE_OVERLAY.txt`
+
+### 8.1 Gap-internal count-level result
+
+Verified planning count:
+
+```text
+gap source rows          1,035
+gap owner-action units   1,011
+reduction                   24
+```
+
+Provenance limit: the exact 24 internal source/action edge memberships were not preserved in a machine-readable analysis artifact. The count is canonical planning state, but those edges must not be guessed or instantiated until exact membership is separately recovered/proven.
+
+### 8.2 Exact gap <-> forward adjudication
+
+Exact review units = 37:
+
+```text
+confirmed strong-core composite units   35
+confirmed T4 formatter units              1
+confirmed T1 region reroute units         1
+false-positive units                      0
+TOTAL                                    37
+```
+
+Direct-merge accounting:
+
+```text
+source rows       82
+action units      36
+direct reduction  46
+```
+
+The T1 region unit is not included in the direct reduction. The nine broad-region source obligations reroute to the detailed 19-entry expanded region owner family; final region action identities/cardinality remain deferred to Stage2 region-owner integration.
+
+This action-cardinality closure creates no new `WRITE_SAFE` authorization.
+
+## 9. Portability / Action Ledger design authority
 
 Current design contract remains:
 - `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
@@ -225,14 +257,15 @@ Fixed boundaries:
 - capacity/storage blockers do not authorize translation shortening.
 - future builder must be semantic-free and fail-closed.
 
-## 9. Validation and precedence
+## 10. Validation and precedence
 
-- `docs/VALIDATION_LEDGER.md` is current through V173.
-- latest semantic-owner overlay takes precedence over older coverage-stage owner hypotheses only within the owner axis.
-- historical coverage membership remains unchanged.
+- `docs/VALIDATION_LEDGER.md` is current through V181.
+- latest action-collapse overlay takes precedence only on the exact action-cardinality relations it proves.
+- the count-level gap-internal result does not silently manufacture row-level edges.
+- historical coverage and owner memberships remain unchanged.
 - no canonical fact is revalidated solely because chat/model changes.
 
-## 10. Repository operating boundary
+## 11. Repository operating boundary
 
 Permitted remote write actions remain exactly:
 
@@ -252,12 +285,12 @@ Forbidden:
 - history rewrite
 - Base64/Contents-API write transport
 
-## 11. Current STOP boundary
+## 12. Current STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Do not begin Action Ledger collapse, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
+Do not begin F1-boundary adjudication, Stage2-boundary integration, write-safety expansion, builder/IPS/runtime implementation, game-file modification, schema redesign, or diagnostic build without a fresh explicit user execution signal.
 
-Next recommended scope: **`INLINE_FULL_CORPUS_ACTION_COLLAPSE_READ_ONLY`**.
+Next recommended scope: **`GAP_FORWARD_TO_F1_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`**.
 
-That scope may consume the complete owner-bound 1,035-gap view and derive source-to-action collapse relations. It must not grant WRITE_SAFE or implement game/runtime changes.
+That scope may generate the exact candidate list between the current gap+forward action view and F1 1,311 only. It must STOP before candidate adjudication and must not touch Stage2 or write safety.

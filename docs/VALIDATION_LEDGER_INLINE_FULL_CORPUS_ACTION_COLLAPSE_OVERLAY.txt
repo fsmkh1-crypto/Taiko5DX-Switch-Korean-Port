@@ -1,0 +1,94 @@
+# VALIDATION LEDGER — INLINE FULL-CORPUS ACTION-COLLAPSE OVERLAY
+
+Status: CANONICAL READ-ONLY VALIDATION / NO SWITCH WRITE AUTHORIZATION
+Basis HEAD: `9b85bde1e0d6952611f2dc69d9459683529e7844`
+
+## V174 — Basis identity preserved
+
+PASS.
+
+The materialization basis is the canonical semantic-owner overlay HEAD `9b85bde1e0d6952611f2dc69d9459683529e7844`. No Stage2/F1/forward membership is revalidated or changed.
+
+## V175 — Gap-internal count-level collapse
+
+PASS WITH PROVENANCE LIMIT.
+
+Verified planning count:
+
+- gap source rows = 1,035
+- gap owner-action units = 1,011
+- reduction = 24
+
+The exact 24 internal source/action edge memberships were not preserved in a machine-readable analysis artifact. This validation therefore records the count-level result only and explicitly forbids reconstructing/guessing those edges during materialization.
+
+## V176 — Exact gap/forward review population
+
+PASS.
+
+Exact review units = 37:
+
+- strong-core same-object units = 35
+- T4 formatter unit = 1
+- T1 region reroute unit = 1
+
+The exact membership is materialized in `data/post_freeze/inline_full_corpus_action_collapse_overlay_v1/MEMBERSHIP.json`.
+
+## V177 — Strong-core adjudication
+
+PASS.
+
+All 35 strong-core units are `CONFIRMED_COMPOSITE_N1`.
+
+- 34 units are 2 source -> 1 action
+- 1 unit is 3 source -> 1 action
+- source rows = 71
+- action units = 35
+- reduction = 36
+- false positives = 0
+
+## V178 — T4 formatter collapse
+
+PASS.
+
+`R16447-R16457` are one source-complete formatter/template action family.
+
+- source rows = 11
+- action units = 1
+- reduction = 10
+
+## V179 — T1 broad-region reroute
+
+PASS.
+
+`R14542-R14550` are not collapsed into one physical action. The nine source obligations reroute to the expanded 19-entry region semantic-owner family already established by prior Oracle evidence. Final action identities/cardinality are deferred to Stage2 detailed-region owner integration.
+
+## V180 — Direct cross-boundary arithmetic
+
+PASS.
+
+Strong-core plus T4 direct merges:
+
+- source rows = 82
+- action units = 36
+- direct action reduction = 46
+
+The region reroute unit is excluded from this arithmetic.
+
+## V181 — Safety and scope boundary
+
+PASS.
+
+This overlay changes no write authority and performs no implementation.
+
+- new `WRITE_SAFE` = 0
+- F1 static-write authorization remains 158
+- FZ001 unchanged
+- forward-986 membership unchanged
+- semantic-owner 1,035/1,035 unchanged
+- builder/runtime/IPS/game-file work not started
+
+Next recommended scope:
+
+`GAP_FORWARD_TO_F1_CROSS_BOUNDARY_CANDIDATE_GENERATION_READ_ONLY`
+
+That scope must generate the exact F1-boundary candidate list only and STOP.
