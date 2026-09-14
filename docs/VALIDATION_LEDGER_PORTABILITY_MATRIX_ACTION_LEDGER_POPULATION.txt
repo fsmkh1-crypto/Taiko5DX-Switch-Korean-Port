@@ -1,0 +1,40 @@
+VALIDATION LEDGER — PORTABILITY MATRIX / ACTION LEDGER POPULATION
+
+Date: 2026-09-14 (KST)
+Scope: PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZATION
+Basis HEAD: 44b9ce49d462b37544b6711c897f9506928d1185
+Result: PASS / READ-ONLY PLANNING MATERIALIZATION / NO NEW WRITE AUTHORIZATION
+
+V261 — Effective-state composition authority
+PASS.
+The population uses PROJECT_STATE.md as resume authority, FZ001 as immutable frozen baseline, and only later exact canonical overlays on their proven axes. Stage1, Stage2, F1, forward-986, Oracle/Assisted/Astra/TRACE, pointer-56 and Mapping V260 are inherited without semantic revalidation.
+
+V262 — Inline structural graph composition
+PASS.
+Canonical inline source denominator remains 17,103. Exact already-canonical reductions compose as:
+- Stage2 internal reduction 414;
+- gap-internal + gap/forward net reduction 69 after accounting for the one exact overlap;
+- F1 cross-boundary reduction 17;
+- pre-Stage2 <-> Stage2 reduction 10.
+Total composed reduction = 510. Current structural owner/action nodes = 16,593.
+This is a planning structural graph, not final global Action Ledger cardinality.
+
+V263 — Cross-family population and portability planning
+PASS.
+- F1 DIRECT_PORT/P1/WRITE_SAFE remains 158; no excluded F1 population is promoted.
+- Pointer 56 remains 49 destination-owner groups; 43 companion inline sources remain terminal SUBSUMED_BY their non-SUBSUMED pointer redirect logical actions; pointer storage/write safety remains open.
+- Mapping 10,036 remains one semantic family realized by four physical WRITE_SAFE actions, with Eden forward/reverse runtime PASS. Derived planning portability is P3 because Switch uses a different mechanism from the PC relocated-table implementation while preserving the semantic obligation.
+- PC mapping_lookup_1 + mapping_lookup_2 represent five descriptor subpatch semantics already covered by the Mapping family and are recorded only as SUBSUMED candidates pending a final logical Mapping action identity/direct link.
+- Remaining descriptor population is 9 containers / 9 subpatches grouped into five semantic families: ui_width, description_font, runtime_byte_validation/copy, font_page_limit/raw threshold, runtime_page_mapper.
+- PC helper entries +0x00/+0x20 feed the last and third families above and are not independently double-counted.
+- RomFS remains 208 planning items under the current 207 direct-path + 1 CWTDAT reconstruction model; no item-level terminal promotion is made here.
+
+V264 — Authorization and STOP boundary
+PASS.
+New WRITE_SAFE = 0. Explicit static WRITE_SAFE remains 162 = F1 158 + Mapping 4.
+No builder, IPS, diagnostic build, game-file mutation, Drive mutation, pointer-pool storage selection, renderer implementation, RomFS implementation, final global Action Ledger cardinality, or new terminal action IDs are authorized by this materialization.
+
+Next recommended scope:
+RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY
+
+That scope must remain read-only, survey only the five remaining descriptor/helper semantic families, and STOP before write-safety authorization or implementation.

@@ -1,0 +1,114 @@
+{
+  "schema": "PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_V1",
+  "scope_id": "PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZATION",
+  "date_kst": "2026-09-14",
+  "basis_head": "44b9ce49d462b37544b6711c897f9506928d1185",
+  "status": "CANONICAL_READ_ONLY_POPULATION_NO_NEW_WRITE_AUTHORIZATION",
+  "report": {
+    "path": "docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt",
+    "git_blob_sha": "793ace51008e2685c1b319505932ac33aec61862"
+  },
+  "validation_ledger": {
+    "path": "docs/VALIDATION_LEDGER_PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt",
+    "git_blob_sha": "c83e5a2716b1a90ddb3e8353e1beae3250b83612",
+    "validation_ids": ["V261", "V262", "V263", "V264"]
+  },
+  "inline": {
+    "source_rows": 17103,
+    "coverage": {
+      "stage2_affine_verified": 13771,
+      "f1_accepted_mapped": 1311,
+      "forward": 986,
+      "unique_only_gap": 1035
+    },
+    "composed_reductions": {
+      "stage2_internal": 414,
+      "gap_internal_plus_gap_forward_net": 69,
+      "f1_cross_boundary": 17,
+      "pre_stage2_to_stage2": 10,
+      "total": 510
+    },
+    "current_structural_owner_action_nodes": 16593,
+    "cardinality_semantics": "STRUCTURAL_PLANNING_GRAPH_NOT_FINAL_GLOBAL_ACTION_LEDGER"
+  },
+  "f1": {
+    "direct_port_p1_write_safe": 158,
+    "padding_reconstruction_open": 75,
+    "shared_owner_open": 25,
+    "capacity_nul_open": 4,
+    "new_write_safe": 0
+  },
+  "pointer56": {
+    "source_records": 56,
+    "destination_owner_groups": 49,
+    "mode1_references": 51,
+    "mode1_replacement_owner_groups": 47,
+    "mode1_inline_companion_groups": 43,
+    "mode1_pointer_only_groups": 4,
+    "mode0_destination_groups": 2,
+    "terminal_companion_subsumed": 43,
+    "planning_terminal": "REDIRECT_PORT",
+    "planning_portability": "P1_DATA_PORTABLE_STATIC_REFERENCE_REDIRECTION",
+    "replacement_pool_bytes": 602,
+    "replacement_pool_storage_status": "UNRESOLVED",
+    "new_write_safe": 0
+  },
+  "mapping10036": {
+    "semantic_entries": 10036,
+    "physical_actions": 4,
+    "action_ids": [
+      "MAP10036_FWD_MISS_HOOK_V1",
+      "MAP10036_REV_MISS_HOOK_V1",
+      "MAP10036_HELPER_TEXT_V2",
+      "MAP10036_DELTA_RODATA_V1"
+    ],
+    "write_safe_actions": 4,
+    "eden_forward_reverse_runtime": "PASS",
+    "planning_portability": "P3_SEMANTIC_PORTABLE_MECHANIC_NOT_PORTABLE"
+  },
+  "descriptor_helper": {
+    "pc_descriptor_containers_total": 11,
+    "pc_descriptor_subpatches_total": 14,
+    "mapping_descriptor_containers": 2,
+    "mapping_descriptor_subpatches": 5,
+    "mapping_descriptor_relation": "SUBSUMED_CANDIDATE_PENDING_FINAL_LOGICAL_MAPPING_ACTION_ID",
+    "remaining_descriptor_containers": 9,
+    "remaining_descriptor_subpatches": 9,
+    "remaining_semantic_families": [
+      {"family": "ui_width", "subpatches": 4, "status": "COUNTERPART_SURVEY_REQUIRED"},
+      {"family": "description_font", "subpatches": 2, "status": "COUNTERPART_SURVEY_REQUIRED"},
+      {"family": "runtime_byte_validation_copy", "subpatches": 1, "status": "COUNTERPART_SURVEY_REQUIRED"},
+      {"family": "font_page_limit_raw_threshold", "subpatches": 1, "status": "COUNTERPART_SURVEY_REQUIRED"},
+      {"family": "runtime_page_mapper", "subpatches": 1, "status": "COUNTERPART_SURVEY_REQUIRED"}
+    ],
+    "pc_helper_semantic_entries": 2,
+    "helper_double_count_rule": "HELPER_ENTRIES_FEED_RUNTIME_BYTE_VALIDATION_COPY_AND_RUNTIME_PAGE_MAPPER_FAMILIES"
+  },
+  "romfs": {
+    "source_items": 208,
+    "planning_direct_replacement_path_items": 207,
+    "planning_cwtdat_switch_native_reconstruction_items": 1,
+    "terminal_item_level_dispositions_closed": false,
+    "new_write_safe": 0
+  },
+  "write_authority": {
+    "f1": 158,
+    "mapping": 4,
+    "pointer_new": 0,
+    "descriptor_helper_new": 0,
+    "romfs_new": 0,
+    "explicit_static_write_safe_total": 162,
+    "new_write_safe_from_this_scope": 0
+  },
+  "boundaries": {
+    "final_global_action_ledger_cardinality_claimed": false,
+    "new_final_action_ids_issued": false,
+    "builder_modified": false,
+    "ips_emitted": false,
+    "runtime_modified": false,
+    "game_file_modified": false,
+    "drive_modified": false,
+    "astra_required": false
+  },
+  "next_scope": "RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY"
+}

@@ -1,0 +1,15 @@
+{
+  "schema": "PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_INDEX_V1",
+  "scope_id": "PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZATION",
+  "status": "MATERIALIZED_READ_ONLY_POPULATION",
+  "basis_head": "44b9ce49d462b37544b6711c897f9506928d1185",
+  "manifest": {
+    "path": "data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json",
+    "git_blob_sha": "84b1826de43850decdfa839e57ce8e80bf818041"
+  },
+  "human_report": "docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt",
+  "validation_ledger": "docs/VALIDATION_LEDGER_PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt",
+  "validation_range": "V261-V264",
+  "new_switch_write_authorization": 0,
+  "next_scope": "RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY"
+}

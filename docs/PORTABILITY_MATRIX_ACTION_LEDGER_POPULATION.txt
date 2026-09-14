@@ -1,0 +1,152 @@
+PORTABILITY MATRIX / ACTION LEDGER POPULATION
+
+Date: 2026-09-14 (KST)
+Status: CANONICAL READ-ONLY POPULATION MATERIALIZATION / NO NEW SWITCH WRITE AUTHORIZATION
+Basis HEAD: 44b9ce49d462b37544b6711c897f9506928d1185
+Scope: PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZATION
+
+요약
+
+This materialization composes the current effective source state and the already-canonical action-collapse/counterpart closures into a source-complete planning view. It does not create the final Action Ledger, does not assign unresolved final action IDs, does not expand WRITE_SAFE, and does not modify builder/runtime/game files.
+
+Current explicit static WRITE_SAFE remains 162 = F1 158 + Mapping 4.
+
+Inline structural graph composition:
+
+inline source rows                                      17,103
+Stage2-internal reduction                                  414
+gap-internal + gap/forward net reduction                    69
+F1 cross-boundary reduction                                 17
+pre-Stage2 <-> Stage2 reduction                             10
+                                                      --------
+current inline structural owner/action nodes             16,593
+
+The 16,593 figure is a structural planning graph before unresolved terminal/action-ID, pointer cross-axis, visible-yomi, write-safety and implementation closures. It is not final global Action Ledger cardinality.
+
+1. 확정된 사실
+
+A. Effective inline source coverage remains complete and disjoint:
+- Stage2 affine verified: 13,771
+- F1 accepted mapped: 1,311
+- forward: 986
+- unique-only gap: 1,035
+- total: 17,103
+
+B. Existing exact structural reductions compose without reopening their underlying evidence:
+- Stage2 internal: 13,771 -> 13,357, reduction 414.
+- Gap internal historical reduction 24 plus gap<->forward direct reduction 46 have one exact overlapping reduction relation, so their composed net reduction is 69.
+- F1 boundary: 28 source rows -> 11 owner/action units, reduction 17.
+- Pre-Stage2<->Stage2: R2047 is absorbed by its Stage2 owner and the nine broad-region obligations reroute to the already-existing Stage2 expanded-region owner family, giving a planning reduction of 10.
+- Total composed reduction from 17,103 is therefore 510, leaving 16,593 current structural owner/action nodes.
+
+C. F1 write/action state remains separated from target resolution:
+- 158 F1 actions are DIRECT_PORT / P1 / WRITE_SAFE.
+- 75 padding-reconstruction rows are P1 candidates only after storage/object reconstruction safety closes.
+- 25 shared-owner blockers have resolved target ownership but portability remains P1/P3 pending final shared-owner action closure.
+- 4 capacity/NUL failures remain unresolved on realization; translation shortening is not authorized.
+- The remaining accepted F1 mapped rows have no implied WRITE_SAFE merely from sequence/target closure.
+
+D. Pointer 56 planning state is closed on counterpart and terminal-companion axes:
+- 56 PC pointer records -> 49 Switch destination-owner groups.
+- Mode 1: 51 references -> 47 replacement-owner groups.
+- Of those 47, 43 have inline-zero companion sources and 4 are pointer-only groups.
+- All exact 43 companion sources terminate as SUBSUMED_BY their corresponding non-SUBSUMED pointer redirect logical action.
+- Mode 0 remains 5 references -> 2 semantic destination groups depending on final physical owners for R2411/R2412.
+- Pointer realization is REDIRECT_PORT and derived planning portability is P1 because the persistent responsibility remains static RELA/reference ownership; exact 602-byte replacement-pool storage is still unresolved.
+- Pointer WRITE_SAFE remains 0.
+
+E. Mapping 10,036 is represented as one semantic family by four physical actions:
+- MAP10036_FWD_MISS_HOOK_V1
+- MAP10036_REV_MISS_HOOK_V1
+- MAP10036_HELPER_TEXT_V2
+- MAP10036_DELTA_RODATA_V1
+
+All four remain WRITE_SAFE and the tested Eden forward/reverse runtime route is PASS. The preferred Switch realization differs from the PC relocated-table mechanism while preserving the same semantic obligation; derived planning portability is P3 (SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE).
+
+F. Descriptor/helper population is now separated from Mapping:
+- PC mapping_lookup_1 and mapping_lookup_2 contain 5 descriptor subpatches total.
+- Their table-address/count semantics are fully represented by the closed Mapping 10,036 family, so they are SUBSUMED candidates at the planning level.
+- Final terminal SUBSUMED_BY links are not issued here because a single final non-SUBSUMED logical Mapping action identity has not yet been materialized above the four physical actions.
+- The remaining descriptor population is 9 containers / 9 subpatches grouped into five semantic families:
+  1) ui_width family: 4 subpatches
+  2) description_font family: 2 subpatches
+  3) runtime_byte_validation/copy: 1 subpatch
+  4) font_page_limit/raw threshold: 1 subpatch
+  5) runtime_page_mapper: 1 subpatch
+- The two PC helper semantic entries are not counted as two additional independent action families; they feed the runtime_page_mapper and runtime_byte_validation/copy families above.
+- These five remaining semantic families require Switch counterpart completeness before P2/P3 or native-equivalent terminal classification can be finalized.
+
+G. RomFS remains a separate 208-item planning axis:
+- current framework model: 207 direct-replacement-path items + 1 CWTDAT_JP.TR5 Switch-native reconstruction item.
+- This scope does not promote those 208 items to final dispositions because item-level format/path compatibility closure is not materialized here.
+
+H. Current explicit static WRITE_SAFE accounting is unchanged:
+- F1: 158
+- Mapping: 4
+- Pointer: 0 new
+- remaining descriptor/helper: 0 new
+- RomFS: 0 new
+- total explicit static WRITE_SAFE: 162
+
+2. 유력한 가설
+
+The next practical blocker is no longer Mapping. The highest-value next read-only cause family is the five remaining runtime descriptor/helper semantic families because they sit directly between already-working Korean mapping values and correct Korean rendering/layout behavior.
+
+Pointer pool storage and broad inline write-safety remain later independent cause families. RomFS compatibility remains a separate data-port axis.
+
+No Astra escalation is indicated for this planning population; current blockers are deterministic counterpart completeness, ownership, capacity/storage and write safety rather than semantic ambiguity.
+
+3. 미확정 사항
+
+This materialization does not close:
+- final global Action Ledger cardinality;
+- final action IDs for all 16,593 inline structural nodes;
+- final terminal relation for every inline source;
+- the three visible-yomi runtime/render owner obligations left by Stage2 internal closure;
+- F1 open write-safety populations beyond the 158 authorized direct actions;
+- forward/gap corpus-wide write-safety realization;
+- physical 602-byte pointer replacement-pool storage;
+- final physical mode-0 R2411/R2412 owners;
+- final terminal mapping-descriptor SUBSUMED_BY links to a logical Mapping family action ID;
+- complete Switch counterpart census for the five remaining descriptor/helper semantic families;
+- item-level RomFS 208 compatibility/disposition;
+- final integration/release builder and runtime validation.
+
+4. 기각된 가설
+
+Rejected or not permitted by the current evidence:
+- 17,103 inline sources require 17,103 independent writes.
+- 16,593 is the final global Action Ledger cardinality.
+- the 43 pointer companion sources require independent Switch zero-fill actions.
+- the five PC mapping descriptor subpatches require separate Switch count/address edits in addition to the closed Mapping family.
+- PC x86 descriptor-search machinery itself is a Switch portability obligation.
+- Mapping Eden runtime PASS automatically authorizes renderer/font/width/helper families.
+- capacity failure authorizes shortening or translation changes.
+
+5. 관련 영향 범위
+
+Unchanged and inherited without revalidation:
+- FZ001;
+- Stage1, Stage2, F1;
+- forward-986 and Oracle/Assisted/Astra/TRACE closure;
+- full-corpus coverage/owner/action-collapse overlays;
+- pointer-56 counterpart, consumer and terminal-companion closures;
+- Mapping 10,036 through Eden runtime V260;
+- canonical input identities;
+- builder/runtime/game files.
+
+This materialization creates no new Switch write authorization and no implementation artifact.
+
+6. 수정 제안
+
+Next recommended scope:
+RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY
+
+That scope should consume the PC descriptor/helper raw semantic oracle and existing Switch W0/W1/runtime evidence, then enumerate the complete Switch counterpart set separately for:
+- ui_width;
+- description_font;
+- runtime_byte_validation/copy;
+- font_page_limit/raw threshold;
+- runtime_page_mapper.
+
+It must not mix pointer-pool storage, RomFS, broad inline write-safety or new implementation into that survey. It must report final counterpart status / portability candidate / unresolved queue and STOP before any write-safety authorization or diagnostic build.

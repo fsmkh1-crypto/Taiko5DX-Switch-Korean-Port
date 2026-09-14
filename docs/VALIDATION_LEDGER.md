@@ -53,6 +53,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V246–V251: `docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_TEXT_V2_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
 - V252–V257: `docs/VALIDATION_LEDGER_MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt`
 - V258–V260: `docs/VALIDATION_LEDGER_MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt`
+- V261–V264: `docs/VALIDATION_LEDGER_PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -85,6 +86,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - current mapping-10,036 controlled diagnostic build: `docs/MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt`
 - current mapping-10,036 Eden runtime forward/reverse closure: `docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
+- current portability/action-ledger population planning view: `docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
 - artifact/machine provenance rules: `docs/ARTIFACT_AND_PROVENANCE_RULES.md`
@@ -101,4 +103,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 granted static write authority to the exact four guarded actions; V246–V251 recanonicalized the helper implementation as reproducible HELPER_TEXT_V2 without changing action cardinality; V252–V257 materialized the exact four-action diagnostic; V258–V260 closes that realization's tested forward/reverse runtime route on Eden Android. Physical Nintendo Switch validation and unrelated renderer/font integration remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 granted static write authority to the exact four guarded actions; V246–V251 recanonicalized the helper implementation as reproducible HELPER_TEXT_V2 without changing action cardinality; V252–V257 materialized the exact four-action diagnostic; V258–V260 closes that realization's tested forward/reverse runtime route on Eden Android. V261–V264 materializes the current source-complete portability/action planning population without declaring a final global Action Ledger cardinality or adding write authority. Physical Nintendo Switch validation and unrelated renderer/font integration remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
