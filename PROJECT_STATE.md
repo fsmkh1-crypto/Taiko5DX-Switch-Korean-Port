@@ -1,19 +1,30 @@
 # PROJECT_STATE
 
-Last updated: 2026-09-14 (KST)
+Last updated: 2026-09-15 (KST)
 
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V270","last_closed_stage_commit":"c49b3410c32ab5428c494a6841dcf7c3c825eb9f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","runtime_byte_copy_manifest":"data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"POST_V270_RUNTIME_ROUTE_CHECKPOINTS_C_PRIORITY","scope_kind":"CANONICAL_STATE_OVERLAY","status":"C_READ_ONLY_CLOSURE_PRIORITY","last_closed_validation_id":"V270","last_closed_stage_commit":"c49b3410c32ab5428c494a6841dcf7c3c825eb9f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"runtime_byte_route_latest_commit":"39e5999d5bc24173b39521acec459a205ae42540","priority_next_scope":"DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_READ_ONLY","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
-## Current canonical state
+## 1. Current canonical state
 
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
-Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, Mapping 10,036 through Eden forward/reverse runtime V260, and portability/action population V261-V264.
+Inherited without revalidation:
+
+- Stage1, Stage2, F1, FZ001;
+- forward-986 and Oracle/Assisted/Astra/TRACE closure;
+- full-corpus coverage / semantic-owner / action-collapse overlays;
+- pointer-56 closure;
+- Mapping 10,036 through Eden forward/reverse runtime V260;
+- portability/action population V261-V264;
+- runtime-byte validation/copy census V265-V270;
+- post-V270 runtime-byte route-binding checkpoints listed below.
+
+A new chat/model/automation run is not a reason to reopen VERIFIED facts.
 
 Canonical inline source accounting remains exactly:
 
@@ -33,43 +44,41 @@ Mapping 10,036               4
 TOTAL                       162
 ```
 
-This is not final full-port Action Ledger cardinality.
+No post-V270 checkpoint adds WRITE_SAFE, implementation authorization, or a new validation ID.
 
-## Mandatory PC patch oracle entry gate
+## 2. Mandatory PC patch oracle entry gate
 
 Status: `MANDATORY`.
 
-For every new or resumed problem family, PC-patch applicability is resolved before Switch-side root-cause hypotheses, Switch-specific tracing, or Switch-specific solution design begins.
-
-Allowed gate results:
+Allowed continuation states only:
 
 ```text
 PC_PATCH_ORACLE_GATE=PASS
 PC_PATCH_ORACLE_GATE=NOT_APPLICABLE
 ```
 
-Rules:
-
-- `PASS`: the exact problem family is covered by sufficient PC Korean-patch evidence. Use the applicable actual replacement bytes, data structure, font/mapping strategy, pointer handling, runtime/helper descriptors, encoding, and output semantics as the oracle before Switch analysis.
-- `NOT_APPLICABLE`: allowed only with an explicit evidence-backed reason that the problem family has no corresponding PC Korean-patch behavior/data obligation.
-- `UNKNOWN`: not an allowed continuation state. It blocks Switch-specific root-cause analysis until PC applicability/evidence is resolved.
-- Existing VERIFIED PC evidence for the exact family may satisfy the gate without revalidation. A new chat/model/agent is not a reason to reopen it.
-- After `PASS`, reproduce the PC semantic obligation on Switch; do not mechanically transplant Windows implementation details when Switch structure differs.
-- If PC patch data/behavior and Switch runtime output differ, treat the mismatch as evidence of a porting, runtime, composition, normalization, or rendering problem. Do not rewrite or guess the Korean source data merely to fit the Switch symptom.
-- Every analysis report must state the gate result and identify the PC evidence used before presenting Switch-side hypotheses.
+`UNKNOWN` blocks Switch-side root-cause analysis and design.
 
 Mandatory order:
 
 ```text
 PC counterpart/applicability
--> PC evidence/oracle
--> Switch counterpart/root-cause analysis
+-> actual PC Korean-patch evidence / semantic obligation
+-> Switch native counterpart / root-cause analysis
 -> Switch realization/design
 ```
 
-## Mapping 10,036 current state — through V260
+Rules:
 
-Effective Mapping realization remains four physical actions:
+- Existing VERIFIED exact-family PC evidence may satisfy the gate without revalidation.
+- Inspect actual replacement data, runtime/helper descriptors, mapping, pointer behavior, encoding and output semantics before Switch-specific hypotheses.
+- Reproduce PC semantic obligations, not Windows/x86 mechanics.
+- If PC patch data and Switch runtime output differ, treat the mismatch as port/runtime/composition/normalization/rendering evidence rather than rewriting Korean source text.
+- Korean names, place names, readings, glyph codes and translations available from the PC patch are never guessed.
+
+## 3. Mapping 10,036 — closed realization through V260
+
+Effective physical actions remain:
 
 ```text
 MAP10036_FWD_MISS_HOOK_V1
@@ -78,7 +87,9 @@ MAP10036_HELPER_TEXT_V2
 MAP10036_DELTA_RODATA_V1
 ```
 
-All four remain WRITE_SAFE. The exact controlled diagnostic package passed delivery validation, and Eden Android v0.2.1 runtime observation closed the tested Korean forward/reverse route:
+All four remain WRITE_SAFE.
+
+Eden Android runtime observation closed the tested mapping route:
 
 ```text
 forward mapping      PASS
@@ -88,37 +99,21 @@ renderer/font        NOT VALIDATED BY MAPPING-ONLY BUILD
 physical Switch      NOT TESTED
 ```
 
-Do not reopen Mapping because the Mapping-only diagnostic renders Korean game-field glyphs incorrectly. The same committed `가사힝` value was restored exactly when the surname software keyboard was reopened, separating Mapping conversion/storage from renderer/font work.
+Do not reopen Mapping because of unrelated renderer/font symptoms.
 
-Helper coordinate provenance is closed: `0x58CE60` equals decimal `5820000`. Earlier handoff decimal `5811808` was an arithmetic transcription error and must not be reused.
+## 4. Portability / Action Ledger planning state — V261-V264
 
-## Portability Matrix / Action Ledger population — V261–V264
+Current inline structural owner/action nodes: `16,593` from the canonical 17,103 inline source rows after verified structural reductions. This remains a planning graph, not final global Action Ledger cardinality.
 
-The current effective source state and already-canonical structural/counterpart closures remain materialized as a source-complete planning population.
+F1:
 
-### Inline structural graph
+- 158 `DIRECT_PORT / P1 / WRITE_SAFE`;
+- 75 padding-reconstruction rows remain non-authorized;
+- 25 shared-owner rows remain realization/write-safety open;
+- 4 capacity/NUL failures remain realization open;
+- target resolution alone does not create WRITE_SAFE.
 
-```text
-inline source rows                                      17,103
-Stage2-internal reduction                                  414
-gap-internal + gap/forward net reduction                    69
-F1 cross-boundary reduction                                 17
-pre-Stage2 <-> Stage2 reduction                             10
-                                                      --------
-current inline structural owner/action nodes             16,593
-```
-
-The 16,593 figure is a structural planning graph only. It is before unresolved terminal/action-ID, pointer cross-axis, visible-yomi, write-safety and implementation closures. It must not be described as final global Action Ledger cardinality.
-
-### F1 planning state
-
-- 158 actions: `DIRECT_PORT / P1 / WRITE_SAFE`.
-- 75 padding-reconstruction rows: P1 candidate only after reconstruction safety closes.
-- 25 shared-owner rows: target/owner known; final P1/P3 realization and write safety open.
-- 4 capacity/NUL failures: realization open; translation shortening is not authorized.
-- No other F1 row receives implied WRITE_SAFE from target/sequence closure alone.
-
-### Pointer 56 planning state
+Pointer 56:
 
 ```text
 source pointer records             56
@@ -129,66 +124,22 @@ mode-1 replacement owners          47
 mode-0 destination groups           2
 ```
 
-All exact 43 mode-1 inline companion sources remain terminal `SUBSUMED_BY` their corresponding non-SUBSUMED pointer redirect logical action. Pointer planning realization is `REDIRECT_PORT / P1` at the static RELA/reference-owner layer.
+Open pointer items remain 602-byte replacement-pool physical storage, final mode-0 destinations for R2411/R2412, and pointer write safety/runtime/delivery. Pointer new WRITE_SAFE = 0.
 
-Still open:
-- verified physical storage for the exact 602-byte replacement pool;
-- final physical mode-0 destinations for R2411/R2412;
-- pointer write safety/runtime/delivery.
+## 5. Runtime byte-validation/copy — V265-V270 baseline
 
-Pointer new WRITE_SAFE remains 0.
+Downstream Switch per-character decoder family around `0x445C60` accepts the relevant compact Korean one-byte values and ordinary two-byte lead ranges when bytes reach it.
 
-### Mapping portability state
-
-The closed Switch miss-fallback realization preserves the PC 10,036-entry semantic obligation through a structurally different mechanism. Derived planning portability remains:
-
-`P3 — SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE`
-
-The four physical Mapping actions remain the implementation realization. No additional mapping count/address action is implied.
-
-## Runtime byte-validation/copy counterpart census — V265–V270
-
-This family is now canonically separated into downstream renderer/decode compatibility and upstream normalization/copy behavior.
-
-### Downstream renderer/decode layer
-
-Surveyed Switch per-character decode family around mapped `0x445C60`:
-
-```text
-direct callers                  6
-A1..DF one-byte handling        preserved
-81..9F / E0..FC two-byte leads  supported
-EB..F8 Korean lead subset       included
-```
-
-A compact Korean byte that reaches this layer is not rejected by the renderer/decode logic itself.
-
-### Upstream normalization/copy layer
-
-A distinct generic parsing/normalization path exists before rendering. Default Japanese halfwidth handling can transform the `0xA6..0xDF` range rather than raw-preserve it. That range overlaps compact Korean single-byte values used by the PC patch.
-
-The representative generic parser/wrapper family has:
-
-```text
-direct call sites  1,078
-```
-
-Separate text-object paths expose per-slot conversion controls, with observed OFF/ON patterns consistent with main-text versus auxiliary/yomi separation. Therefore Japanese halfwidth normalization must not be globally disabled.
-
-### PC compact-byte source exposure
-
-Within the canonical 17,103 PC inline replacements:
+PC compact-byte exposure within the 17,103 inline source rows:
 
 ```text
 records containing A1..DF compact byte   2,474
 records containing A6..DF susceptible    2,057
 ```
 
-These values are source-risk upper bounds, not action counts. They do not imply that all 2,057 rows traverse the generic normalizer.
+The 2,057 figure is a source-risk upper bound, not an action count.
 
-### Family disposition
-
-Current canonical planning result:
+V270 family disposition remains:
 
 ```text
 COUNTERPART_FOUND
@@ -197,28 +148,169 @@ RUNTIME_PORT_REQUIRED_CANDIDATE
 P3 candidate — SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE
 ```
 
-Reason: downstream decode is compatible, but upstream Switch-native Japanese halfwidth normalization can alter overlapping compact Korean values before rendering. The likely solution must preserve Korean compact semantics inside the existing Switch parser/normalization ownership model rather than mechanically transplant the PC x86 helper.
+Global Japanese halfwidth disable and mechanical PC x86-helper transplant remain rejected.
 
-This is not yet a final terminal action. Exact source-family -> route -> minimum runtime-owner binding remains open.
+## 6. Post-V270 runtime-byte route-binding checkpoints — canonical analysis evidence
 
-Rejected hypotheses preserved canonically:
-- decoder acceptance alone proves family-level native equivalence;
-- all compact Korean bytes fail on all Switch paths;
-- the cause is limited to one previously observed glyph;
-- Japanese halfwidth normalization may be globally disabled;
-- the PC x86 helper should be mechanically transplanted.
+Canonical commits:
 
-New WRITE_SAFE authority from V265-V270: 0.
+```text
+d448be60739c5e3b81ddaf4f1d4b4652bc2669a9  route-binding progress
+00c83f1972f67eb05cd57515304ec563d8fc32c5  low-level halfwidth owner binding
+a5ba9b35f6c5c301bc6536763f15b05cf3aca2c8  dominant C2 table consumer closure
+39e5999d5bc24173b39521acec459a205ae42540  generic parser owner closure
+```
 
-## Descriptor/helper scope boundary
+These are read-only analysis checkpoints layered on V270. They do not alter frozen accounting or authorize a build.
 
-The broader five-family survey was not promoted by V265-V270. This stage only canonicalizes `runtime_byte_validation/copy`.
+### 6.1 Risk-row partition
 
-Therefore `ui_width`, `description_font`, `font_page_limit/raw threshold`, and `runtime_page_mapper` retain their prior canonical status unless and until separately materialized. Do not infer new terminal disposition or WRITE_SAFE for those four families from this state.
+Exact denominator remains 2,057:
 
-## RomFS planning state
+```text
+Stage2 affine target-resolved   1,993
+non-Stage2                         64
+TOTAL                           2,057
 
-RomFS denominator remains 208. Current framework planning model remains:
+Stage2 RODATA                   1,953
+Stage2 DATA                        40
+```
+
+Major Stage2 families:
+
+- `0x711DA0 / stride 0xC2` structured RODATA family: 1,686 risk rows;
+- place-table: 32 = 17 display-name starts + 15 yomi starts;
+- remaining Stage2 RODATA/DATA grouped families remain open.
+
+### 6.2 Concrete Switch normalization owners
+
+Behaviorally verified:
+
+```text
+ordinary halfwidth-kana mapper        0x43497C
+unique direct mapper call             0x156F30
+generic parser body                   0x156D80
+generic parser external wrapper       0x157C30
+wrapper direct callers                9
+C2 auxiliary conversion boundary      0x43FD20
+canonical per-character decoder       0x445C60
+```
+
+`0x43497C` maps ordinary Japanese halfwidth `0xA6..0xDD` through RODATA `0x6A856A`; `0xDE/0xDF` belong to an adjacent modifier/composition family.
+
+`0x263C5C` is explicitly rejected as normalizer owner; its earlier 1,078-caller count was numerical coincidence.
+
+### 6.3 Dominant C2 route separation
+
+The same `0xC2` record family has distinct semantics:
+
+```text
+primary/display record uses         direct text/render-decode consumers
+eight display slots +0x28..+0x9F   direct text/render-decode consumers
++0x11 auxiliary field               explicit conversion via 0x43FD20
+```
+
+Observed display routes reach `0x445C60` without the `0x43FD20` auxiliary conversion boundary. A table-wide/global normalization override is therefore rejected.
+
+### 6.4 Generic parser owner closure
+
+The halfwidth mapper call is inside parser body `0x156D80`; wrapper `0x157C30` has exactly nine direct callers. Wrapper integer arguments are not a simple halfwidth ON/OFF flag; that hypothesis is rejected.
+
+The C2 `+0x11 -> 0x43FD20` conversion route is separate from the generic parser halfwidth route.
+
+### 6.5 Remaining runtime-byte work
+
+After C is closed, resume this family by:
+
+- classifying the nine `0x157C30` caller contexts by canonical source/storage owner;
+- materializing exact route membership/cardinality for all 2,057 risk rows;
+- binding remaining Stage2 block families;
+- reusing existing F1/forward/gap provenance for the 64 non-Stage2 rows;
+- identifying a safe Korean compact-data/context discriminant before any parser patch design.
+
+No implementation or diagnostic build is authorized yet.
+
+## 7. Dialogue malformed-ending issue C — CURRENT TOP PRIORITY
+
+Status: `READ_ONLY_CLOSURE_PRIORITY`.
+
+Representative real-device symptoms:
+
+- `야규님입니다인가`
+- `조금 과음한 모양이오군`
+- normal and malformed lines can coexist within one event.
+
+### 7.1 PC_PATCH_ORACLE_GATE
+
+`PASS`.
+
+Actual PC Korean-patch evidence already established for this exact family:
+
+- canonical v1.02 patched `TAI5MSG_JP.DAT` is the primary speech-style grammar source;
+- block 0 contains centralized Korean address/honorific/copula/verb/interrogative formatter graphs;
+- the graph uses conditions, runtime state references, nested calls and empty-output branches to select mutually exclusive Korean speech fragments;
+- PC runtime descriptor census contains no separate dialogue-formatter VM hook, so the semantic obligation is in TAI5MSG plus the game's existing VM/state behavior;
+- PC original and Switch original TAI5MSG baseline identity/structure was already verified and is not reopened absent contradiction.
+
+Examples from PC Korean block 0 include families for `입니다/이오/이다/이네`, negative copula, verb register, past/negative/imperative forms, `네/군`, and interrogative forms.
+
+### 7.2 Confirmed C facts
+
+- Not a font/glyph cause.
+- Not a Mapping 10,036 cause.
+- Do not repair individual translated sentences.
+- The current Switch TAI5MSG reconstruction does not intentionally redesign formatter meaning; it preserves compact-byte/control structure.
+- Problematic dialogue can be `body -> common formatter call -> following suffix`; `조금 과음한 모양이` has such a PC Korean composition path.
+- Switch contains native condition/state families referenced by the formatter; absence of the basic fields is not established as the cause.
+- No separate PC runtime formatter hook has been found in the canonical descriptor/helper census.
+
+### 7.3 Rejected/superseded C hypotheses
+
+- `0x01 prefix unsupported` as a proven cause — REJECTED.
+- local sentence-by-sentence translation correction — REJECTED.
+- global runtime-state normalization — REJECTED.
+- font/mapping as primary cause — REJECTED.
+- Stage1 `storage_mutability=CODE` count as formatter-code-patch count — REJECTED.
+
+### 7.4 Exact next closure question
+
+Before Switch-specific repair design, compare relevant PC original formatter graph with PC Korean-patched formatter graph, separating:
+
+1. condition/predicate expressions;
+2. lower-message call IDs / graph edges;
+3. branch/default/empty-output structure;
+4. Korean output fragments.
+
+Scope name:
+
+`DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_READ_ONLY`
+
+Decision rule:
+
+- if PC original -> PC Korean preserves graph/conditions and changes only output fragments, next root-cause layer is PC-vs-Switch runtime state/predicate semantic parity;
+- if PC Korean changes the graph, port that semantic transformation against the Switch-native counterpart before considering runtime-state modification.
+
+C must be closed before CWTDAT implementation work or unrelated realization work resumes.
+
+## 8. CWTDAT / issue A hold
+
+Status: `HOLD_FOR_CWTDAT`.
+
+Reference: `docs/CWTDAT_AUXILIARY_NAME_ROW_HOLD.md`.
+
+The auxiliary protagonist-selection/dialogue name-row issue is parked under future CWTDAT work. Existing comparison indicates a parallel 1,244-person Japanese reading table aligned by person index; exact PC final-draw XREF remains open.
+
+When CWTDAT work resumes after C:
+
+1. decompose actual PC patched CWTDAT by semantic/function family;
+2. find each Switch native counterpart/owner;
+3. classify native equivalent / data reconstruction / runtime port / unresolved;
+4. include the 1,244-person reading table and both affected UI rows as mandatory validation items;
+5. do not overwrite the Switch file wholesale with the PC file.
+
+## 9. RomFS / remaining project queues
+
+RomFS denominator remains 208:
 
 ```text
 207 direct-replacement-path items
@@ -226,49 +318,35 @@ RomFS denominator remains 208. Current framework planning model remains:
 208 total
 ```
 
-No item-level terminal disposition is added here.
+Other open axes, after C and according to canonical priority:
 
-## Current open queues
-
-Keep these axes separate:
-
-- compact Korean source/storage -> normalization/renderer route binding for the 2,057 risk-bearing upper-bound rows;
-- the four other remaining descriptor/helper families unless separately canonicalized;
-- broad inline terminal/action-ID and write-safety closure beyond current exact authorizations;
-- pointer 602-byte replacement-pool storage and pointer write safety;
+- remaining runtime-byte route membership;
+- four other descriptor/helper families unless separately materialized;
+- broad inline terminal/action-ID and write-safety closure beyond exact authorizations;
+- pointer replacement-pool storage and pointer write safety;
 - Stage2 visible-yomi runtime/render owner closure;
-- RomFS 208 item-level compatibility/disposition;
+- RomFS item-level compatibility/disposition;
 - final global Action Ledger cardinality;
-- final release integration and physical-Switch validation.
+- release integration and physical-Switch validation.
 
-## Astra escalation rule
+## 10. Write boundary
 
-No Astra escalation is indicated for the next scope. The remaining byte-copy work is deterministic storage/consumer/control-flow route binding. Use Astra only if deterministic evidence is exhausted and a genuine semantic/context ambiguity remains.
-
-## Write boundary
-
-Remote GitHub writes remain restricted to:
+Remote GitHub writes remain restricted to exactly:
 
 `create_blob -> create_tree -> create_commit -> update_ref(force=false)`
 
-`create_file`, `update_file`, `delete_file`, `create_branch`, force push, manual text Base64 generation and alternate write routes remain excluded unless a fresh explicit scope changes the transport policy.
+Never use `create_file`, `update_file`, `delete_file`, `create_branch`, force push, or alternate write routes.
 
-## STOP boundary
+## 11. Current STOP / priority boundary
 
-Status: `STOPPED_AWAITING_USER_SIGNAL`.
+Current priority scope is:
 
-Next recommended scope: **`RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY`**.
+**`DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_READ_ONLY`**
 
-Before entering that or any later analysis scope, resolve the mandatory `PC_PATCH_ORACLE_GATE` for the exact problem family. Existing VERIFIED PC runtime evidence may be reused when it covers the exact family; missing PC evidence must be inspected before Switch-specific route binding begins.
+C root-cause family must be closed and reported under:
 
-That scope must group the 2,057 risk-bearing source rows by storage/consumer family rather than inspect isolated records, bind each family to direct-renderer/generic-normalizer/explicit-yomi or any other proven route, determine the active normalization mode/context and output-preservation behavior, and STOP before any implementation, write-safety authorization, diagnostic build, pointer storage work, RomFS work, or unrelated descriptor-family implementation.
+`확정된 사실 / 유력한 가설 / 미확정 사항 / 기각된 가설 / 관련 영향 범위 / 수정 제안`
 
-## A auxiliary name-row hold — 2026-09-14
+The report must explicitly state `PC_PATCH_ORACLE_GATE` and the actual PC evidence used.
 
-Status: `HOLD_FOR_CWTDAT`.
-
-Reference: `docs/CWTDAT_AUXILIARY_NAME_ROW_HOLD.md`.
-
-Current read-only work narrowed the observed garbled protagonist-selection/dialogue auxiliary name rows away from the previously tested shared-yomi/Y0 route and toward the person-reading data relationship between SNR display names and `CWTDAT_JP.TR5`. The PC data comparison indicates a parallel 1,244-person Japanese reading table in CWTDAT aligned by person index; exact PC final-draw XREF remains open, so this is retained as a strong working conclusion rather than final runtime proof.
-
-Do not create a standalone A fix before CWTDAT work. When Switch-native `CWTDAT_JP.TR5` reconstruction is explicitly started, the 1,244-person reading-table counterpart and both affected UI rows are mandatory validation items. Reopen A as an independent runtime binding family only if a structurally correct CWTDAT reconstruction leaves the rows broken.
+After C analysis closure, STOP. Implementation/write/build of the C fix requires a fresh explicit user execution signal.
