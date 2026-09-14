@@ -1,0 +1,22 @@
+{
+  "schema": "RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_INDEX_V1",
+  "scope_id": "RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS",
+  "base_head": "d6d45f7367c1a33ba85cc9e6ba5ae32f46841f5a",
+  "validation_range": "V265-V270",
+  "files": [
+    "docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt",
+    "docs/VALIDATION_LEDGER_RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt",
+    "data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json",
+    "data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/INDEX.json"
+  ],
+  "canonical_claims": [
+    "renderer decode family around mapped 0x445C60 has 6 direct callers and accepts compact one-byte / Korean two-byte classes",
+    "an upstream generic normalization/copy family exists and has 1078 direct call sites",
+    "2474 of 17103 PC inline replacements contain A1..DF compact bytes",
+    "2057 contain A6..DF values susceptible to the surveyed default Japanese halfwidth normalization",
+    "family-level native equivalence is rejected",
+    "counterpart is found; P3 runtime-port realization remains a planning candidate pending route binding",
+    "new WRITE_SAFE authority is zero"
+  ],
+  "next_scope": "RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY"
+}

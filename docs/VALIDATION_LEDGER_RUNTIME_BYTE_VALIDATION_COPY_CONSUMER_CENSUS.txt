@@ -1,0 +1,46 @@
+VALIDATION LEDGER — RUNTIME BYTE VALIDATION / COPY CONSUMER CENSUS
+
+Date: 2026-09-14 KST
+Scope: RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS
+Base canonical HEAD: d6d45f7367c1a33ba85cc9e6ba5ae32f46841f5a
+Status: CLOSED READ-ONLY ANALYSIS / NO WRITE AUTHORITY
+
+V265 — INPUT / SCOPE IDENTITY — VERIFIED
+- The stage inherits FZ001, Stage1, Stage2, F1, forward-986, pointer-56 closure, Mapping 10,036 through V260, and portability population V261-V264 without revalidation.
+- Scope is restricted to the PC runtime_byte_validation/copy semantic family and its Switch counterpart routes.
+- No ui_width, description_font, font_page_limit, runtime_page_mapper, pointer, RomFS, or broad-inline implementation is promoted by this stage.
+
+V266 — SWITCH RENDERER/DECODE FAMILY — VERIFIED
+- The per-character decode family around mapped 0x445C60 has six direct callers in the surveyed Switch v1.1.3 main.
+- 0xA1..0xDF is preserved as one-byte data at this layer.
+- 0x81..0x9F and 0xE0..0xFC are handled as two-byte lead ranges, including Korean 0xEB..0xF8.
+- Length/pointer-advance behavior is consistent with those one-byte/two-byte classifications.
+- Result: a compact Korean byte that reaches this decode family is not rejected by this layer.
+
+V267 — UPSTREAM NORMALIZATION / COPY PATH — VERIFIED
+- A distinct upstream generic parsing/normalization path exists before rendering.
+- Default Japanese halfwidth handling can normalize bytes in the halfwidth-kana domain rather than raw-preserve them; the 0xA6..0xDF subset overlaps compact Korean single-byte values used by the PC patch.
+- The representative generic parser/wrapper family has 1,078 direct call sites.
+- Separate text-object paths expose per-slot conversion controls with observed OFF/ON patterns, supporting a real distinction between main text and auxiliary/yomi normalization.
+- Result: renderer compatibility alone is insufficient to establish family-level native equivalence, and global halfwidth-normalization disablement is not justified.
+
+V268 — PC COMPACT-BYTE SOURCE EXPOSURE CENSUS — VERIFIED
+- Canonical PC inline denominator remains 17,103 records.
+- 2,474 replacement records contain at least one standalone compact byte in 0xA1..0xDF.
+- 2,057 replacement records contain at least one byte in 0xA6..0xDF, the subset susceptible to the surveyed default Japanese halfwidth normalization behavior.
+- These counts are source-risk upper bounds only. They are not action cardinalities and do not prove all rows traverse the generic parser.
+
+V269 — FAMILY DISPOSITION — VERIFIED WITH PLANNING CANDIDATE
+- `NATIVE_EQUIVALENT_VERIFIED` is rejected for the complete runtime_byte_validation/copy family.
+- Switch counterpart status is `COUNTERPART_FOUND` because an upstream normalization/copy owner exists whose behavior can conflict with compact Korean raw preservation.
+- Planning status is `RUNTIME_PORT_REQUIRED_CANDIDATE`.
+- Portability candidate is P3 (`SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE`): likely preserve Korean compact semantics through the existing Switch ARM64 parser/normalization ownership model rather than transplant the PC x86 helper mechanism.
+- P3 is not yet a final terminal disposition or action authorization because exact source-family -> route -> minimum runtime-owner binding remains open.
+
+V270 — WRITE / NEXT-SCOPE BOUNDARY — VERIFIED
+- New WRITE_SAFE authority: 0.
+- Existing explicit WRITE_SAFE authority remains F1 158 + Mapping 4 = 162.
+- No code edit, replacement payload, diagnostic build, Action Ledger ID, or runtime patch is authorized.
+- Rejected hypotheses are preserved: decoder-only native-equivalent closure; global compact-byte failure; one-glyph-only cause; global halfwidth-normalization disable; mechanical PC-helper transplantation.
+- Next recommended scope is `RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY`.
+- That scope must group the 2,057 risk-bearing source rows by storage/consumer family, bind each family to direct-renderer/generic-normalizer/explicit-yomi or other proven routes, determine context/mode and preservation behavior, and STOP before implementation/write-safety.

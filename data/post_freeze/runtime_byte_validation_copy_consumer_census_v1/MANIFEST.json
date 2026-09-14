@@ -1,0 +1,58 @@
+{
+  "schema": "RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_V1",
+  "date_kst": "2026-09-14",
+  "scope_id": "RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS",
+  "base_head": "d6d45f7367c1a33ba85cc9e6ba5ae32f46841f5a",
+  "status": "CLOSED_READ_ONLY_ANALYSIS_NO_WRITE_AUTHORITY",
+  "validation_range": ["V265", "V270"],
+  "pc_semantic_family": "runtime_byte_validation/copy",
+  "switch_findings": {
+    "renderer_decode_family": {
+      "mapped_anchor": "0x445C60",
+      "direct_callers": 6,
+      "single_byte_range_preserved": "0xA1..0xDF",
+      "two_byte_lead_ranges": ["0x81..0x9F", "0xE0..0xFC"],
+      "korean_lead_range_included": "0xEB..0xF8",
+      "status": "RENDERER_LAYER_COMPATIBLE"
+    },
+    "upstream_normalization_copy": {
+      "exists": true,
+      "representative_direct_call_sites": 1078,
+      "susceptible_halfwidth_overlap": "0xA6..0xDF",
+      "per_slot_conversion_controls_observed": true,
+      "global_disable_safe": false
+    }
+  },
+  "pc_inline_exposure": {
+    "denominator": 17103,
+    "records_with_A1_DF_compact_byte": 2474,
+    "records_with_A6_DF_susceptible_byte": 2057,
+    "interpretation": "SOURCE_RISK_UPPER_BOUND_NOT_ACTION_COUNT"
+  },
+  "family_disposition": {
+    "counterpart_status": "COUNTERPART_FOUND",
+    "native_equivalent": "REJECTED",
+    "runtime_port": "REQUIRED_CANDIDATE",
+    "portability_candidate": "P3_SEMANTIC_PORTABLE_MECHANIC_NOT_PORTABLE",
+    "terminal_action_authorized": false
+  },
+  "write_authority": {
+    "new_write_safe": 0,
+    "existing_f1_write_safe": 158,
+    "existing_mapping_write_safe": 4,
+    "existing_total_write_safe": 162
+  },
+  "rejected_hypotheses": [
+    "decoder acceptance alone proves family-level native equivalence",
+    "all compact Korean bytes fail on all Switch paths",
+    "the cause is limited to a single previously observed glyph",
+    "Japanese halfwidth normalization may be disabled globally",
+    "the PC x86 helper should be transplanted mechanically"
+  ],
+  "next_recommended_scope": "RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY",
+  "artifacts": {
+    "report": "docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt",
+    "validation_ledger": "docs/VALIDATION_LEDGER_RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt",
+    "index": "data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/INDEX.json"
+  }
+}

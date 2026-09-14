@@ -1,0 +1,106 @@
+RUNTIME BYTE VALIDATION / COPY CONSUMER CENSUS
+
+Date: 2026-09-14 KST
+Status: CANONICAL READ-ONLY ANALYSIS MATERIALIZATION / NO WRITE AUTHORITY
+Scope: runtime_byte_validation/copy semantic family only
+Base canonical HEAD: d6d45f7367c1a33ba85cc9e6ba5ae32f46841f5a
+
+1. Scope boundary
+
+This artifact materializes only the Switch counterpart census for the PC runtime_byte_validation helper family. It does not authorize code edits, IPS generation, diagnostic builds, write safety, or release integration. It does not promote provisional findings for ui_width, description_font, font_page_limit, or runtime_page_mapper.
+
+Mapping 10,036 through Eden forward/reverse runtime V260 and portability population V261-V264 are inherited without revalidation.
+
+2. PC semantic obligation
+
+The canonical PC helper +0x20 is a copy-and-control-flow hook, not a Boolean validator. It directly handles accepted one-byte and two-byte forms and otherwise falls back to the displaced original PC path.
+
+Relevant accepted forms include:
+- single-byte 0xA1..0xDF;
+- two-byte leads 0x81..0x9F and 0xE0..0xFC;
+- trails 0x40..0x7E and 0x80..0xFC.
+
+The semantic obligation for Switch is therefore not merely range acceptance. Accepted compact single-byte and normal two-byte game-code data must survive all relevant upstream copy/normalization paths and reach downstream rendering/consumers without unintended Japanese halfwidth transformation.
+
+3. Switch renderer/decode evidence
+
+The existing Switch per-character decode family around mapped 0x445C60 was surveyed through its direct caller set.
+
+Confirmed within this layer:
+- direct caller count: 6;
+- 0xA1..0xDF is accepted as one-byte data;
+- 0x81..0x9F and 0xE0..0xFC are handled as two-byte lead ranges, which includes Korean lead bytes 0xEB..0xF8;
+- character-length / pointer-advance behavior is consistent with one-byte versus two-byte classification;
+- once a compact Korean byte reaches this renderer/decode family, this layer does not itself reject it as invalid.
+
+This confirms the previously known decoder fact but does not establish family-level native equivalence.
+
+4. Upstream copy/normalization evidence
+
+A distinct upstream generic text parsing / normalization path exists before rendering. In its default Japanese halfwidth handling, bytes in the halfwidth-kana domain are normalized rather than guaranteed raw preservation. In particular, the 0xA6..0xDF subset overlaps compact Korean single-byte values used by the PC Korean patch.
+
+The representative generic parser/wrapper family is broad rather than a narrow special-case path:
+- direct call-site census: 1,078.
+
+Separate UI/text-object paths also expose per-slot conversion controls. Observed slot patterns include main-string conversion OFF with auxiliary-string conversion ON, and alternating OFF/ON slot pairs. This is structural evidence that legitimate Japanese auxiliary/yomi normalization must remain distinguishable from Korean main-text raw preservation.
+
+Therefore a global disable of halfwidth normalization is not an acceptable solution.
+
+5. PC inline compact-byte exposure census
+
+The canonical 17,103 PC inline replacements were examined as semantic source data.
+
+Counts:
+- records containing at least one standalone compact byte in 0xA1..0xDF: 2,474;
+- records containing at least one byte in 0xA6..0xDF, the subset susceptible to the observed default Japanese halfwidth normalization: 2,057.
+
+These are source-risk upper bounds, not action counts and not proof that all 2,057 records traverse the generic normalization path. Final impact must be determined by storage/consumer route binding.
+
+6. Counterpart disposition
+
+Family-level conclusion:
+
+COUNTERPART_FOUND
+NATIVE_EQUIVALENT_REJECTED
+RUNTIME_PORT_REQUIRED_CANDIDATE
+PORTABILITY_CANDIDATE = P3 (SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE)
+
+Reason:
+- the renderer/decode layer is already compatible with compact Korean data;
+- however, an upstream Switch-native Japanese halfwidth normalization/copy layer can transform overlapping compact-byte values before they reach the renderer;
+- therefore the complete PC helper semantic obligation is not natively satisfied across the surveyed Switch family;
+- the likely Switch realization is to preserve Korean compact data within the existing ARM64 parsing/normalization ownership model rather than transplant the PC x86 helper mechanism.
+
+This P3 classification remains a planning candidate until route binding identifies the minimum exact Switch runtime owner/action set.
+
+7. Rejected hypotheses
+
+Rejected:
+- "0x445C60 accepts 0xA1..0xDF, therefore the whole byte-validation/copy family is NATIVE_EQUIVALENT_VERIFIED."
+- "All compact Korean bytes are broken everywhere on Switch." Direct renderer paths preserve the relevant classes.
+- "The compact-byte issue is only the previously observed one-glyph symptom." The PC corpus exposure is much broader.
+- "Disable Japanese halfwidth normalization globally." Legitimate auxiliary/yomi conversion paths use that behavior and must remain intact.
+- "One PC helper implies one mechanically identical Switch helper." Switch-native ownership is structurally different.
+
+8. Remaining unresolved work
+
+The next analysis must bind compact-bearing source/storage families to one of the actual Switch route families:
+- direct renderer path;
+- generic normalization/parser path;
+- explicit auxiliary/yomi normalizer path;
+- any additional proven path discovered during binding.
+
+For each family it must establish the normalization mode/context and output preservation behavior. The objective is to identify the minimum Switch runtime owner that preserves Korean compact data without disabling legitimate Japanese yomi normalization.
+
+9. Write-safety and implementation boundary
+
+New WRITE_SAFE actions: 0.
+Existing project WRITE_SAFE authority remains unchanged at 162 total (F1 158 + Mapping 4).
+
+No code site, replacement bytes, diagnostic build, or final Action Ledger ID is authorized by this artifact.
+
+10. Next recommended scope
+
+RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY
+
+That scope must remain read-only, group the 2,057 risk-bearing source rows by storage/consumer family rather than inspect them as isolated patches, bind each family to its actual Switch parser/renderer route, and STOP before implementation or write-safety authorization.
