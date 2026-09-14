@@ -228,3 +228,13 @@ Status: `STOPPED_AWAITING_USER_SIGNAL`.
 Next recommended scope: **`RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY`**.
 
 That scope must group the 2,057 risk-bearing source rows by storage/consumer family rather than inspect isolated records, bind each family to direct-renderer/generic-normalizer/explicit-yomi or any other proven route, determine the active normalization mode/context and output-preservation behavior, and STOP before any implementation, write-safety authorization, diagnostic build, pointer storage work, RomFS work, or unrelated descriptor-family implementation.
+
+## A auxiliary name-row hold — 2026-09-14
+
+Status: `HOLD_FOR_CWTDAT`.
+
+Reference: `docs/CWTDAT_AUXILIARY_NAME_ROW_HOLD.md`.
+
+Current read-only work narrowed the observed garbled protagonist-selection/dialogue auxiliary name rows away from the previously tested shared-yomi/Y0 route and toward the person-reading data relationship between SNR display names and `CWTDAT_JP.TR5`. The PC data comparison indicates a parallel 1,244-person Japanese reading table in CWTDAT aligned by person index; exact PC final-draw XREF remains open, so this is retained as a strong working conclusion rather than final runtime proof.
+
+Do not create a standalone A fix before CWTDAT work. When Switch-native `CWTDAT_JP.TR5` reconstruction is explicitly started, the 1,244-person reading-table counterpart and both affected UI rows are mandatory validation items. Reopen A as an independent runtime binding family only if a structurally correct CWTDAT reconstruction leaves the rows broken.
