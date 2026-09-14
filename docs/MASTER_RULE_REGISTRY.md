@@ -1,6 +1,6 @@
 # MASTER RULE REGISTRY
 
-Date: 2026-09-13 (KST)  
+Date: 2026-09-14 (KST)  
 Status: CANONICAL RULE-DISCOVERY / PRECEDENCE OVERLAY
 
 ## 1. Authority boundary
@@ -31,7 +31,7 @@ Machine registry: `data/post_freeze/master_rule_registry_v1/RULES.json` (78 rule
 - **MR-OP-002 — One signal one scope** [NORMATIVE]: One execution signal authorizes only the currently agreed scope. After a report/STOP boundary, a fresh signal is required for the next stage.
 - **MR-OP-003 — Separate analysis and modification** [NORMATIVE]: Analysis and modification are distinct stages; an analysis report is not write authorization.
 - **MR-OP-004 — Root-cause family before patch** [NORMATIVE]: Before patching a symptom, inspect the full same-root-cause impact across data, code paths, consumers, runtime handling, related functions, and similar symptoms.
-- **MR-OP-005 — PC patch oracle first** [NORMATIVE]: When the PC Korean patch implements the relevant behavior, inspect its actual replacement, data structure, runtime ownership, pointer behavior, and encoding before inventing a Switch-specific mechanism.
+- **MR-OP-005 — PC patch oracle first** [NORMATIVE]: For every new or resumed problem family, PC-patch applicability is a mandatory analysis-entry gate, not a later design reference. Before forming Switch-side root-cause hypotheses, beginning Switch-specific tracing, or designing a Switch mechanism, determine whether the PC Korean patch implements or contains the corresponding behavior/data. If yes, or if PC relevance is reasonably expected, inspect the applicable actual replacement bytes, data structures, font/mapping strategy, pointer handling, runtime/helper descriptors, encoding, and output semantics first. Record `PC_PATCH_ORACLE_GATE=PASS` when sufficient exact-family PC evidence is identified; `NOT_APPLICABLE` requires an explicit evidence-backed reason; `UNKNOWN` blocks Switch-specific analysis. Existing VERIFIED exact-family PC evidence may satisfy the gate without revalidation. If PC patch data/behavior and Switch runtime output differ, treat the mismatch as evidence of a porting/runtime/composition/rendering problem rather than rewriting or guessing Korean source data.
 - **MR-OP-006 — Source-grounded Korean data** [NORMATIVE]: Names, place names, Korean spellings, special glyph codes, and translations available from the PC patch must be taken from actual patch data rather than guessed.
 - **MR-OP-007 — One cause family per diagnostic build** [NORMATIVE]: A diagnostic build tests one root-cause family; confirmed same-mechanism sites may be tested together, unrelated hypotheses may not.
 - **MR-OP-008 — Preserve rejected hypotheses** [NORMATIVE]: Rejected, weakened, or superseded hypotheses remain recorded so later chats/models do not repeat them.

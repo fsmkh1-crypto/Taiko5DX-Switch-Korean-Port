@@ -5,7 +5,7 @@ Last updated: 2026-09-14 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V270","last_closed_stage_commit":"c49b3410c32ab5428c494a6841dcf7c3c825eb9f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","runtime_byte_copy_manifest":"data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V270","last_closed_stage_commit":"c49b3410c32ab5428c494a6841dcf7c3c825eb9f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","runtime_byte_copy_manifest":"data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
 ## Current canonical state
@@ -34,6 +34,38 @@ TOTAL                       162
 ```
 
 This is not final full-port Action Ledger cardinality.
+
+## Mandatory PC patch oracle entry gate
+
+Status: `MANDATORY`.
+
+For every new or resumed problem family, PC-patch applicability is resolved before Switch-side root-cause hypotheses, Switch-specific tracing, or Switch-specific solution design begins.
+
+Allowed gate results:
+
+```text
+PC_PATCH_ORACLE_GATE=PASS
+PC_PATCH_ORACLE_GATE=NOT_APPLICABLE
+```
+
+Rules:
+
+- `PASS`: the exact problem family is covered by sufficient PC Korean-patch evidence. Use the applicable actual replacement bytes, data structure, font/mapping strategy, pointer handling, runtime/helper descriptors, encoding, and output semantics as the oracle before Switch analysis.
+- `NOT_APPLICABLE`: allowed only with an explicit evidence-backed reason that the problem family has no corresponding PC Korean-patch behavior/data obligation.
+- `UNKNOWN`: not an allowed continuation state. It blocks Switch-specific root-cause analysis until PC applicability/evidence is resolved.
+- Existing VERIFIED PC evidence for the exact family may satisfy the gate without revalidation. A new chat/model/agent is not a reason to reopen it.
+- After `PASS`, reproduce the PC semantic obligation on Switch; do not mechanically transplant Windows implementation details when Switch structure differs.
+- If PC patch data/behavior and Switch runtime output differ, treat the mismatch as evidence of a porting, runtime, composition, normalization, or rendering problem. Do not rewrite or guess the Korean source data merely to fit the Switch symptom.
+- Every analysis report must state the gate result and identify the PC evidence used before presenting Switch-side hypotheses.
+
+Mandatory order:
+
+```text
+PC counterpart/applicability
+-> PC evidence/oracle
+-> Switch counterpart/root-cause analysis
+-> Switch realization/design
+```
 
 ## Mapping 10,036 current state — through V260
 
@@ -226,6 +258,8 @@ Remote GitHub writes remain restricted to:
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
 Next recommended scope: **`RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY`**.
+
+Before entering that or any later analysis scope, resolve the mandatory `PC_PATCH_ORACLE_GATE` for the exact problem family. Existing VERIFIED PC runtime evidence may be reused when it covers the exact family; missing PC evidence must be inspected before Switch-specific route binding begins.
 
 That scope must group the 2,057 risk-bearing source rows by storage/consumer family rather than inspect isolated records, bind each family to direct-renderer/generic-normalizer/explicit-yomi or any other proven route, determine the active normalization mode/context and output-preservation behavior, and STOP before any implementation, write-safety authorization, diagnostic build, pointer storage work, RomFS work, or unrelated descriptor-family implementation.
 
