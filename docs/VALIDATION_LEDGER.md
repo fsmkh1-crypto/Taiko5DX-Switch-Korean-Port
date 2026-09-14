@@ -50,6 +50,9 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V233: `docs/VALIDATION_LEDGER_WRITE_TRANSPORT_INCIDENT_20260914_7.txt`
 - V234–V239: `docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
 - V240–V245: `docs/VALIDATION_LEDGER_MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
+- V246–V251: `docs/VALIDATION_LEDGER_MAPPING_10036_HELPER_TEXT_V2_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
+- V252–V257: `docs/VALIDATION_LEDGER_MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt`
+- V258–V260: `docs/VALIDATION_LEDGER_MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -78,6 +81,9 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - current mapping-10,036 alignment-padding runtime validity: `docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt`
 - current mapping-10,036 helper/hook contract: `docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt`
 - current mapping-10,036 static write authorization: `docs/MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
+- current mapping-10,036 helper V2 authorization: `docs/MAPPING_10036_HELPER_TEXT_V2_STATIC_WRITE_SAFETY_AUTHORIZATION.txt`
+- current mapping-10,036 controlled diagnostic build: `docs/MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt`
+- current mapping-10,036 Eden runtime forward/reverse closure: `docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt`
 - current portability/action-ledger design: `docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md`
 - document authority registry: `docs/DOCUMENT_AUTHORITY_INDEX.json`
 - project operating rules: `AGENTS.md`
@@ -95,4 +101,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 grants static write authority only to its exact four guarded actions; runtime validation and implementation remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 granted static write authority to the exact four guarded actions; V246–V251 recanonicalized the helper implementation as reproducible HELPER_TEXT_V2 without changing action cardinality; V252–V257 materialized the exact four-action diagnostic; V258–V260 closes that realization's tested forward/reverse runtime route on Eden Android. Physical Nintendo Switch validation and unrelated renderer/font integration remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.

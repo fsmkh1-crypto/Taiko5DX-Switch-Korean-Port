@@ -1,0 +1,5 @@
+VALIDATION LEDGER — MAPPING 10,036 RUNTIME FORWARD/REVERSE HARDWARE VALIDATION
+
+V258 — VERIFIED: exact Mapping-only diagnostic identity remained pinned; retained screenshots were hashed and stored in Drive Test_Results, and the user explicitly confirmed the second screenshot was the same surname field reopened after commit.
+V259 — VERIFIED: on Eden Android v0.2.1 the test string `가사힝` was accepted, committed, and restored exactly as software-keyboard initial text when the same field was reopened; tested forward path PASS, reverse path PASS, runtime round-trip PASS.
+V260 — VERIFIED: terminal Mapping 10,036 verdict = PASS_ON_EDEN_ANDROID_TARGET_RUNTIME for the exact four-action realization. Garbled game-field glyphs under the Mapping-only build do not reopen Mapping; renderer/font and physical-Switch validation remain separate scopes. `0x58CE60 == 5820000`; prior `5811808` handoff value is rejected as an arithmetic transcription error.

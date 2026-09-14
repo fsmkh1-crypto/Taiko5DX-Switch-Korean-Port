@@ -1,0 +1,55 @@
+MAPPING 10,036 RUNTIME FORWARD/REVERSE HARDWARE VALIDATION
+
+Date: 2026-09-14 (KST)
+Status: VERIFIED / PASS_ON_EDEN_ANDROID_TARGET_RUNTIME
+Scope: MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION
+Basis HEAD: e83643b49a29c13e6270f4dc4d60b3270d089fb4
+Diagnostic package: MAPPING10036_Taiko5DX_KR_EDEN.zip
+Package SHA-256: e4810b8186bab484fc076419c1a882b7deb9031b09560d47a8eace00b5f49cca
+Drive file ID: 1HYtLZOmONs82AXeD_NQAF4jKP-_37rej
+
+요약
+
+The exact Mapping 10,036 diagnostic route was exercised on Eden Android v0.2.1 through the new-officer surname input flow. The test string `가사힝` was entered through the software keyboard, committed back to the game, and the same surname field was then reopened. On reopen, the software keyboard initial text was exactly `가사힝`. The diagnostic artifact contains only the four Mapping 10,036 actions and intentionally contains no Korean font/render prerequisite. The observed commit-and-reopen round-trip therefore closes the tested forward and reverse mapping runtime route on Eden Android. This is not a physical-Switch validation and does not validate the renderer/font family.
+
+확정된 사실
+
+- Effective diagnostic action set remained exactly four: MAP10036_FWD_MISS_HOOK_V1, MAP10036_REV_MISS_HOOK_V1, MAP10036_HELPER_TEXT_V2, MAP10036_DELTA_RODATA_V1.
+- Test string was `가사힝`.
+- The string was accepted by the software keyboard and committed into the surname field.
+- After commit, the in-game surname field rendered as non-Korean/garbled glyphs. Because this diagnostic intentionally contains no Korean font/page-render family, that display alone is not a Mapping failure.
+- The same surname field was reopened after commit. The user explicitly confirmed that the second screenshot is the reopened field, not the initial input screen.
+- On reopen, the software keyboard initial text was exactly `가사힝`.
+- This observed sequence is consistent with UTF-16 Korean input -> forward Mapping -> internal game-code storage -> reverse Mapping -> UTF-16 Korean restoration on the tested route.
+- Retained evidence 1: `MAPPING10036_01_committed_game_field_garbled.jpg`, Drive ID `1lPIAfVsVrNUed12dbQEhR1jPzKB-tQbh`, SHA-256 `fcc34d2c31d2264769eab9962c5b2c886402cc1eaac9800cb95b38e82bc72e5c`.
+- Retained evidence 2: `MAPPING10036_02_reopen_keyboard_gasahing_restored.jpg`, Drive ID `1DNwL_hAUzJ5BEZJEFO6pPIyFCk_jQCyK`, SHA-256 `dbbbdc24c0a035fd2ecb448405404509d787dc9548bd1be359c3261b809edaec`.
+- New-officer access was obtained through a separate card-possession diagnostic aid. That aid is not part of the Mapping diagnostic artifact and is not used as evidence for the conversion result itself.
+- Helper coordinate provenance is internally consistent: `0x58CE60` equals decimal `5820000`. Builder source, embedded build-info and emitted IPS all use the same coordinate. The earlier handoff value `5811808` is rejected as an arithmetic transcription error, not a binary or manifest defect.
+- Runtime verdict for the tested Eden route: forward PASS, reverse PASS, round-trip PASS.
+
+유력한 가설
+
+The garbled game-field rendering is caused by the intentionally absent Korean font/render prerequisites rather than Mapping corruption. The exact Korean string reappearing after reopen strongly separates conversion/storage success from visible renderer/font behavior.
+
+미확정 사항
+
+- Physical Nintendo Switch / Atmosphere execution has not been tested by this observation.
+- Korean font/page/render integration is not validated by this Mapping-only artifact.
+- Runtime observation sampled the three-character string `가사힝`; exhaustive 2,542-entry correctness remains grounded in the prior deterministic/static verification, not in exhaustive hardware entry of every character.
+- Release integration with other descriptor, yomi, pointer, width and translation families remains separate.
+
+기각된 가설
+
+- The garbled in-game surname display proves Mapping failure: rejected; the same committed value reopened as exact Korean Unicode under a Mapping-only build.
+- Forward Mapping failed completely: rejected for the tested route because the committed Korean value survived into a later reopen path.
+- Reverse Mapping failed completely: rejected because the reopened software keyboard restored `가사힝` exactly.
+- The helper was emitted at a conflicting decimal coordinate: rejected; `0x58CE60 == 5820000` and builder/build-info/IPS agree.
+- Mapping 10,036 requires redesign before continuing the project: rejected for the tested Eden runtime route.
+
+관련 영향 범위
+
+This runtime closure applies only to the exact four-action Mapping 10,036 realization on the tested Eden Android route. It does not promote unrelated font, renderer, byte-validation, width, yomi, pointer, descriptor, translation or inline families. Existing F1 WRITE_SAFE 158 and the explicit static WRITE_SAFE total 162 remain unchanged.
+
+수정 제안
+
+Mapping 10,036 no longer remains an Eden-runtime blocker for the tested forward/reverse route. Return to the canonical Action Ledger workflow and carry this runtime closure as verified evidence. Next bounded scope: `PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_READ_ONLY`. Do not fold renderer/font symptoms into the Mapping action family merely because the Mapping-only diagnostic displays garbled glyphs.
