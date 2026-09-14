@@ -5,7 +5,7 @@ Last updated: 2026-09-14 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V264","last_closed_stage_commit":"ffa4adc9c83923267c4372feeeccfe0c1786b890","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V270","last_closed_stage_commit":"c49b3410c32ab5428c494a6841dcf7c3c825eb9f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","runtime_byte_copy_manifest":"data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","data/post_freeze/runtime_byte_validation_copy_consumer_census_v1/MANIFEST.json","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
 ## Current canonical state
@@ -13,7 +13,7 @@ PROJECT_RESUME_V2 -->
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
-Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, and Mapping 10,036 through Eden forward/reverse runtime V260.
+Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, Mapping 10,036 through Eden forward/reverse runtime V260, and portability/action population V261-V264.
 
 Canonical inline source accounting remains exactly:
 
@@ -62,7 +62,7 @@ Helper coordinate provenance is closed: `0x58CE60` equals decimal `5820000`. Ear
 
 ## Portability Matrix / Action Ledger population — V261–V264
 
-The current effective source state and already-canonical structural/counterpart closures are now materialized as a source-complete planning population.
+The current effective source state and already-canonical structural/counterpart closures remain materialized as a source-complete planning population.
 
 ### Inline structural graph
 
@@ -108,38 +108,83 @@ Pointer new WRITE_SAFE remains 0.
 
 ### Mapping portability state
 
-The closed Switch miss-fallback realization preserves the PC 10,036-entry semantic obligation through a structurally different mechanism. Derived planning portability is:
+The closed Switch miss-fallback realization preserves the PC 10,036-entry semantic obligation through a structurally different mechanism. Derived planning portability remains:
 
 `P3 — SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE`
 
 The four physical Mapping actions remain the implementation realization. No additional mapping count/address action is implied.
 
-### Descriptor/helper population after Mapping closure
+## Runtime byte-validation/copy counterpart census — V265–V270
 
-PC `mapping_lookup_1` + `mapping_lookup_2` comprise 2 descriptor containers / 5 subpatches. Their table-address/count semantics are represented by the closed Mapping family and are now planning-level `SUBSUMED` candidates.
+This family is now canonically separated into downstream renderer/decode compatibility and upstream normalization/copy behavior.
 
-A final terminal `SUBSUMED_BY` link is not issued yet because a single final non-SUBSUMED logical Mapping action identity above the four physical actions has not been materialized.
+### Downstream renderer/decode layer
 
-Remaining descriptor population:
+Surveyed Switch per-character decode family around mapped `0x445C60`:
 
 ```text
-containers      9
-subpatches      9
-semantic families 5
+direct callers                  6
+A1..DF one-byte handling        preserved
+81..9F / E0..FC two-byte leads  supported
+EB..F8 Korean lead subset       included
 ```
 
-The five families are:
-1. `ui_width` — 4 subpatches;
-2. `description_font` — 2 subpatches;
-3. `runtime_byte_validation/copy` — 1 subpatch;
-4. `font_page_limit/raw threshold` — 1 subpatch;
-5. `runtime_page_mapper` — 1 subpatch.
+A compact Korean byte that reaches this layer is not rejected by the renderer/decode logic itself.
 
-The PC helper's two semantic entries feed `runtime_byte_validation/copy` and `runtime_page_mapper`; they are not counted as two additional independent action families.
+### Upstream normalization/copy layer
 
-These five families remain pending complete Switch counterpart survey and therefore have no final P2/P3/native-equivalent disposition or WRITE_SAFE expansion yet.
+A distinct generic parsing/normalization path exists before rendering. Default Japanese halfwidth handling can transform the `0xA6..0xDF` range rather than raw-preserve it. That range overlaps compact Korean single-byte values used by the PC patch.
 
-### RomFS planning state
+The representative generic parser/wrapper family has:
+
+```text
+direct call sites  1,078
+```
+
+Separate text-object paths expose per-slot conversion controls, with observed OFF/ON patterns consistent with main-text versus auxiliary/yomi separation. Therefore Japanese halfwidth normalization must not be globally disabled.
+
+### PC compact-byte source exposure
+
+Within the canonical 17,103 PC inline replacements:
+
+```text
+records containing A1..DF compact byte   2,474
+records containing A6..DF susceptible    2,057
+```
+
+These values are source-risk upper bounds, not action counts. They do not imply that all 2,057 rows traverse the generic normalizer.
+
+### Family disposition
+
+Current canonical planning result:
+
+```text
+COUNTERPART_FOUND
+NATIVE_EQUIVALENT_REJECTED
+RUNTIME_PORT_REQUIRED_CANDIDATE
+P3 candidate — SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE
+```
+
+Reason: downstream decode is compatible, but upstream Switch-native Japanese halfwidth normalization can alter overlapping compact Korean values before rendering. The likely solution must preserve Korean compact semantics inside the existing Switch parser/normalization ownership model rather than mechanically transplant the PC x86 helper.
+
+This is not yet a final terminal action. Exact source-family -> route -> minimum runtime-owner binding remains open.
+
+Rejected hypotheses preserved canonically:
+- decoder acceptance alone proves family-level native equivalence;
+- all compact Korean bytes fail on all Switch paths;
+- the cause is limited to one previously observed glyph;
+- Japanese halfwidth normalization may be globally disabled;
+- the PC x86 helper should be mechanically transplanted.
+
+New WRITE_SAFE authority from V265-V270: 0.
+
+## Descriptor/helper scope boundary
+
+The broader five-family survey was not promoted by V265-V270. This stage only canonicalizes `runtime_byte_validation/copy`.
+
+Therefore `ui_width`, `description_font`, `font_page_limit/raw threshold`, and `runtime_page_mapper` retain their prior canonical status unless and until separately materialized. Do not infer new terminal disposition or WRITE_SAFE for those four families from this state.
+
+## RomFS planning state
 
 RomFS denominator remains 208. Current framework planning model remains:
 
@@ -149,13 +194,14 @@ RomFS denominator remains 208. Current framework planning model remains:
 208 total
 ```
 
-This materialization does not promote the 208 items to item-level terminal dispositions; compatibility/path/format closure remains separate.
+No item-level terminal disposition is added here.
 
 ## Current open queues
 
-The project must not collapse these independent axes:
+Keep these axes separate:
 
-- remaining descriptor/helper five-family counterpart completeness;
+- compact Korean source/storage -> normalization/renderer route binding for the 2,057 risk-bearing upper-bound rows;
+- the four other remaining descriptor/helper families unless separately canonicalized;
 - broad inline terminal/action-ID and write-safety closure beyond current exact authorizations;
 - pointer 602-byte replacement-pool storage and pointer write safety;
 - Stage2 visible-yomi runtime/render owner closure;
@@ -163,11 +209,9 @@ The project must not collapse these independent axes:
 - final global Action Ledger cardinality;
 - final release integration and physical-Switch validation.
 
-Mapping 10,036 is no longer the next Eden-runtime blocker.
-
 ## Astra escalation rule
 
-No Astra escalation is indicated for the next scope. Current open work is deterministic counterpart, ownership, capacity/storage and write-safety analysis. Use Astra only if deterministic evidence is exhausted and a genuine semantic/context ambiguity remains.
+No Astra escalation is indicated for the next scope. The remaining byte-copy work is deterministic storage/consumer/control-flow route binding. Use Astra only if deterministic evidence is exhausted and a genuine semantic/context ambiguity remains.
 
 ## Write boundary
 
@@ -181,6 +225,6 @@ Remote GitHub writes remain restricted to:
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Next recommended scope: **`RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY`**.
+Next recommended scope: **`RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_READ_ONLY`**.
 
-That scope must survey only the remaining `ui_width`, `description_font`, `runtime_byte_validation/copy`, `font_page_limit/raw threshold`, and `runtime_page_mapper` semantic families. It should inherit Mapping V260 and this V261–V264 population without revalidation, enumerate all Switch counterparts or native-equivalent evidence, derive portability candidates, report unresolved queues, and STOP before any write-safety authorization, diagnostic build, pointer storage work, RomFS work, or broad inline implementation.
+That scope must group the 2,057 risk-bearing source rows by storage/consumer family rather than inspect isolated records, bind each family to direct-renderer/generic-normalizer/explicit-yomi or any other proven route, determine the active normalization mode/context and output-preservation behavior, and STOP before any implementation, write-safety authorization, diagnostic build, pointer storage work, RomFS work, or unrelated descriptor-family implementation.
