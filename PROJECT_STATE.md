@@ -5,7 +5,7 @@ Last updated: 2026-09-14 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V260","last_closed_stage_commit":"559fc548afda7034568e81ec1d6af0f69ab2a2c2","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_helper_v2_authorization":"docs/MAPPING_10036_HELPER_TEXT_V2_STATIC_WRITE_SAFETY_AUTHORIZATION.txt","mapping_10036_helper_v2_manifest":"data/post_freeze/mapping_10036_helper_text_v2_static_write_safety_authorization_v1/MANIFEST.json","mapping_10036_diagnostic_build":"docs/MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt","mapping_10036_diagnostic_manifest":"data/post_freeze/mapping_10036_delivery_controlled_diagnostic_build_v1/MANIFEST.json","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/MAPPING_10036_SWITCH_COUNTERPART_SURVEY.txt","docs/MAPPING_10036_REALIZATION_DESIGN.txt","docs/MAPPING_10036_ALIGNMENT_PADDING_RUNTIME_VALIDITY.txt","docs/MAPPING_10036_HELPER_HOOK_CONTRACT.txt","docs/MAPPING_10036_STATIC_WRITE_SAFETY_AUTHORIZATION.txt","docs/MAPPING_10036_HELPER_TEXT_V2_STATIC_WRITE_SAFETY_AUTHORIZATION.txt","data/post_freeze/mapping_10036_helper_text_v2_static_write_safety_authorization_v1/MANIFEST.json","docs/MAPPING_10036_DELIVERY_CONTROLLED_DIAGNOSTIC_BUILD.txt","data/post_freeze/mapping_10036_delivery_controlled_diagnostic_build_v1/MANIFEST.json","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/GITHUB_AND_CI_POLICY.md","docs/F1_STATIC_WRITE_AUTHORIZATION.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_MATERIALIZED","scope_kind":"REPOSITORY_WRITE","status":"STOPPED_AWAITING_USER_SIGNAL","last_closed_validation_id":"V264","last_closed_stage_commit":"ffa4adc9c83923267c4372feeeccfe0c1786b890","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","mapping_10036_runtime_manifest":"data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","portability_action_population_manifest":"data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","data/post_freeze/portability_matrix_action_ledger_population_v1/MANIFEST.json","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/PC_RUNTIME_SWITCH_COUNTERPART_MATRIX.md","docs/SWITCH_COUNTERPART_SURVEY_RULES.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","data/post_freeze/mapping_10036_runtime_forward_reverse_hardware_validation_v1/MANIFEST.json","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
 ## Current canonical state
@@ -13,39 +13,31 @@ PROJECT_RESUME_V2 -->
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 
-Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, and Mapping 10,036 survey/design/storage/helper-hook/static-write closure.
+Inherited without revalidation: Stage1, Stage2, F1, FZ001, forward-986, Oracle/Assisted/Astra/TRACE closure, full-corpus coverage/semantic-owner/action-collapse overlays, pointer-56 closure, and Mapping 10,036 through Eden forward/reverse runtime V260.
 
-Canonical inline source accounting remains 17,103: Stage2 13,771 + F1 1,311 + forward 986 + gap 1,035.
-
-Existing F1 static WRITE_SAFE authority remains 158. Effective Mapping 10,036 WRITE_SAFE authority remains four. Explicit independently authorized static actions remain 162; this is not final full-port Action Ledger cardinality.
-
-## Mapping 10,036 helper V2 — V246–V251
-
-Historical `MAP10036_HELPER_TEXT_V1` remains preserved as VERIFIED evidence but is not the implementation target because its exact payload was not materialized with recoverable source/generator provenance.
-
-Effective helper action:
+Canonical inline source accounting remains exactly:
 
 ```text
-MAP10036_HELPER_TEXT_V2    WRITE_SAFE / DIAGNOSTIC_IMPLEMENTED / EDEN_RUNTIME_VALIDATED
+Stage2 affine verified    13,771
+F1 accepted mapped         1,311
+forward                       986
+unique-only gap             1,035
+TOTAL                       17,103
 ```
 
-V2 retains the validated 308-byte TEXT_ALIGNMENT_RX interval, structural-zero preimage guard, entry/re-entry contract and ABI constraints. Exact payload SHA-256 is `f472326cab461ac8258282d5795031c33bcc52c9d2f1cd821b8eb6c94352f493` and deterministic source/linker/toolchain provenance is materialized.
-
-Helper coordinate provenance is closed: `0x58CE60` equals decimal `5820000`. Builder source, embedded diagnostic build-info and emitted IPS agree on that coordinate. Earlier handoff decimal `5811808` is an arithmetic transcription error and must not be reused.
-
-The other three Mapping actions remain unchanged:
+Existing explicit static WRITE_SAFE authority remains:
 
 ```text
-MAP10036_FWD_MISS_HOOK_V1
-MAP10036_REV_MISS_HOOK_V1
-MAP10036_DELTA_RODATA_V1
+F1                         158
+Mapping 10,036               4
+TOTAL                       162
 ```
 
-## Mapping 10,036 diagnostic delivery — V252–V257
+This is not final full-port Action Ledger cardinality.
 
-Builder source commit: `27d851713c5ee21f6b34a67c503b9195b15cf712`.
+## Mapping 10,036 current state — through V260
 
-Effective diagnostic action set is exactly four:
+Effective Mapping realization remains four physical actions:
 
 ```text
 MAP10036_FWD_MISS_HOOK_V1
@@ -54,62 +46,141 @@ MAP10036_HELPER_TEXT_V2
 MAP10036_DELTA_RODATA_V1
 ```
 
-Delivery validation remains:
-- exact input identity: PASS;
-- Build ID: PASS;
-- preimage guards: 4/4 PASS;
-- intended actions = 4; emitted actions = 4; extra = 0;
-- mapped-to-IPS shift = +0x100;
-- IPS self-reparse = PASS;
-- independent reserialization = PASS;
-- RLE records = 0;
-- IPS SHA-256 = `6ff4b07db9b83b22197009206e21b5023ad02e62458e8597bac219a3c0faa120`;
-- package SHA-256 = `e4810b8186bab484fc076419c1a882b7deb9031b09560d47a8eace00b5f49cca`.
-
-Diagnostic package:
-`Google Drive / 태합입지전 프로젝트 / Eden_Builds / MAPPING10036_Taiko5DX_KR_EDEN.zip`
-Drive file ID: `1HYtLZOmONs82AXeD_NQAF4jKP-_37rej`.
-
-No font, yomi, pointer, descriptor, translation or unrelated runtime action is present in this diagnostic artifact.
-
-## Mapping 10,036 Eden runtime closure — V258–V260
-
-Runtime environment: Eden Android v0.2.1.
-
-Test route: new-officer surname software keyboard. The test value `가사힝` was entered and committed. The game-field display then showed non-Korean/garbled glyphs, which is outside Mapping adjudication because the Mapping-only diagnostic intentionally contains no Korean font/render family. The same surname input field was reopened and the software keyboard initial text was exactly `가사힝`; the user explicitly confirmed the second retained screenshot is the post-commit reopen.
-
-Tested route verdict:
+All four remain WRITE_SAFE. The exact controlled diagnostic package passed delivery validation, and Eden Android v0.2.1 runtime observation closed the tested Korean forward/reverse route:
 
 ```text
 forward mapping      PASS
 reverse mapping      PASS
 runtime round-trip   PASS
-renderer/font        NOT VALIDATED BY THIS BUILD
+renderer/font        NOT VALIDATED BY MAPPING-ONLY BUILD
 physical Switch      NOT TESTED
 ```
 
-Retained runtime evidence in Google Drive `Test_Results`:
-- `MAPPING10036_01_committed_game_field_garbled.jpg`, Drive ID `1lPIAfVsVrNUed12dbQEhR1jPzKB-tQbh`, SHA-256 `fcc34d2c31d2264769eab9962c5b2c886402cc1eaac9800cb95b38e82bc72e5c`;
-- `MAPPING10036_02_reopen_keyboard_gasahing_restored.jpg`, Drive ID `1DNwL_hAUzJ5BEZJEFO6pPIyFCk_jQCyK`, SHA-256 `dbbbdc24c0a035fd2ecb448405404509d787dc9548bd1be359c3261b809edaec`.
+Do not reopen Mapping because the Mapping-only diagnostic renders Korean game-field glyphs incorrectly. The same committed `가사힝` value was restored exactly when the surname software keyboard was reopened, separating Mapping conversion/storage from renderer/font work.
 
-The card-possession cheat used only to expose the new-officer menu is a separate diagnostic aid and is not part of the Mapping artifact or Mapping conversion evidence.
+Helper coordinate provenance is closed: `0x58CE60` equals decimal `5820000`. Earlier handoff decimal `5811808` was an arithmetic transcription error and must not be reused.
 
-Runtime observation sampled `가사힝`; exhaustive 2,542-entry correctness remains grounded in the prior deterministic/static verification rather than exhaustive runtime entry of every character.
+## Portability Matrix / Action Ledger population — V261–V264
 
-## Current interpretation
+The current effective source state and already-canonical structural/counterpart closures are now materialized as a source-complete planning population.
 
-Mapping 10,036 is no longer an Eden-runtime blocker for the tested forward/reverse route. Do not reopen this family merely because Korean glyphs render incorrectly when the deliberately Mapping-only artifact is used. Font/page/renderer integration, physical-Switch execution and unrelated descriptor families remain separate validation scopes.
+### Inline structural graph
 
-No Astra escalation is indicated for this closure.
+```text
+inline source rows                                      17,103
+Stage2-internal reduction                                  414
+gap-internal + gap/forward net reduction                    69
+F1 cross-boundary reduction                                 17
+pre-Stage2 <-> Stage2 reduction                             10
+                                                      --------
+current inline structural owner/action nodes             16,593
+```
+
+The 16,593 figure is a structural planning graph only. It is before unresolved terminal/action-ID, pointer cross-axis, visible-yomi, write-safety and implementation closures. It must not be described as final global Action Ledger cardinality.
+
+### F1 planning state
+
+- 158 actions: `DIRECT_PORT / P1 / WRITE_SAFE`.
+- 75 padding-reconstruction rows: P1 candidate only after reconstruction safety closes.
+- 25 shared-owner rows: target/owner known; final P1/P3 realization and write safety open.
+- 4 capacity/NUL failures: realization open; translation shortening is not authorized.
+- No other F1 row receives implied WRITE_SAFE from target/sequence closure alone.
+
+### Pointer 56 planning state
+
+```text
+source pointer records             56
+Switch destination-owner groups    49
+mode-1 replacement owners          47
+  inline companion groups          43
+  pointer-only groups               4
+mode-0 destination groups           2
+```
+
+All exact 43 mode-1 inline companion sources remain terminal `SUBSUMED_BY` their corresponding non-SUBSUMED pointer redirect logical action. Pointer planning realization is `REDIRECT_PORT / P1` at the static RELA/reference-owner layer.
+
+Still open:
+- verified physical storage for the exact 602-byte replacement pool;
+- final physical mode-0 destinations for R2411/R2412;
+- pointer write safety/runtime/delivery.
+
+Pointer new WRITE_SAFE remains 0.
+
+### Mapping portability state
+
+The closed Switch miss-fallback realization preserves the PC 10,036-entry semantic obligation through a structurally different mechanism. Derived planning portability is:
+
+`P3 — SEMANTIC_PORTABLE / MECHANIC_NOT_PORTABLE`
+
+The four physical Mapping actions remain the implementation realization. No additional mapping count/address action is implied.
+
+### Descriptor/helper population after Mapping closure
+
+PC `mapping_lookup_1` + `mapping_lookup_2` comprise 2 descriptor containers / 5 subpatches. Their table-address/count semantics are represented by the closed Mapping family and are now planning-level `SUBSUMED` candidates.
+
+A final terminal `SUBSUMED_BY` link is not issued yet because a single final non-SUBSUMED logical Mapping action identity above the four physical actions has not been materialized.
+
+Remaining descriptor population:
+
+```text
+containers      9
+subpatches      9
+semantic families 5
+```
+
+The five families are:
+1. `ui_width` — 4 subpatches;
+2. `description_font` — 2 subpatches;
+3. `runtime_byte_validation/copy` — 1 subpatch;
+4. `font_page_limit/raw threshold` — 1 subpatch;
+5. `runtime_page_mapper` — 1 subpatch.
+
+The PC helper's two semantic entries feed `runtime_byte_validation/copy` and `runtime_page_mapper`; they are not counted as two additional independent action families.
+
+These five families remain pending complete Switch counterpart survey and therefore have no final P2/P3/native-equivalent disposition or WRITE_SAFE expansion yet.
+
+### RomFS planning state
+
+RomFS denominator remains 208. Current framework planning model remains:
+
+```text
+207 direct-replacement-path items
+  1 CWTDAT_JP.TR5 Switch-native reconstruction item
+208 total
+```
+
+This materialization does not promote the 208 items to item-level terminal dispositions; compatibility/path/format closure remains separate.
+
+## Current open queues
+
+The project must not collapse these independent axes:
+
+- remaining descriptor/helper five-family counterpart completeness;
+- broad inline terminal/action-ID and write-safety closure beyond current exact authorizations;
+- pointer 602-byte replacement-pool storage and pointer write safety;
+- Stage2 visible-yomi runtime/render owner closure;
+- RomFS 208 item-level compatibility/disposition;
+- final global Action Ledger cardinality;
+- final release integration and physical-Switch validation.
+
+Mapping 10,036 is no longer the next Eden-runtime blocker.
+
+## Astra escalation rule
+
+No Astra escalation is indicated for the next scope. Current open work is deterministic counterpart, ownership, capacity/storage and write-safety analysis. Use Astra only if deterministic evidence is exhausted and a genuine semantic/context ambiguity remains.
 
 ## Write boundary
 
-Remote GitHub writes remain restricted to `create_blob -> create_tree -> create_commit -> update_ref(force=false)`. `create_file`, `update_file`, `delete_file`, `create_branch` and all other write actions remain excluded.
+Remote GitHub writes remain restricted to:
+
+`create_blob -> create_tree -> create_commit -> update_ref(force=false)`
+
+`create_file`, `update_file`, `delete_file`, `create_branch`, force push, manual text Base64 generation and alternate write routes remain excluded unless a fresh explicit scope changes the transport policy.
 
 ## STOP boundary
 
 Status: `STOPPED_AWAITING_USER_SIGNAL`.
 
-Next recommended scope: **`PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION_READ_ONLY`**.
+Next recommended scope: **`RUNTIME_DESCRIPTOR_HELPER_5_FAMILY_COUNTERPART_SURVEY_READ_ONLY`**.
 
-Use the Mapping 10,036 Eden runtime closure as inherited VERIFIED evidence. Do not revalidate FZ001, Stage1, Stage2, F1, forward-986, Oracle/Assisted/Astra/TRACE, pointer-56, or the closed Mapping 10,036 route merely because the chat/model changes. Physical-Switch and renderer/font validation remain separate and are not prerequisites for beginning the read-only Action Ledger population scope.
+That scope must survey only the remaining `ui_width`, `description_font`, `runtime_byte_validation/copy`, `font_page_limit/raw threshold`, and `runtime_page_mapper` semantic families. It should inherit Mapping V260 and this V261–V264 population without revalidation, enumerate all Switch counterparts or native-equivalent evidence, derive portability candidates, report unresolved queues, and STOP before any write-safety authorization, diagnostic build, pointer storage work, RomFS work, or broad inline implementation.
