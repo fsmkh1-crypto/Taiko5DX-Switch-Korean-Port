@@ -13,6 +13,7 @@ import zipfile
 from pathlib import Path
 
 from t5k import extract_t5k_rcdata, parse_t5k_resource, select_safe_inline_patches
+from tai5msg import reconstruct_tai5msg_switch_native
 
 TITLE_ID = "0100346017304000"
 BUILD_ID_FULL = bytes.fromhex(
@@ -51,6 +52,7 @@ REQUIRED_PAYLOAD = {
     "dinput8.dll",
     "data/FONT/FONT_JPN.G1T",
     "data/EVENT/EC500000.TS5",
+    "data/TAI5MSG_JP.DAT",
 }
 
 
@@ -262,6 +264,7 @@ def build(args: argparse.Namespace) -> None:
 
     copied = 0
     skipped = []
+    tai5msg_report = None
     for name in names:
         if not name.startswith("data/") or name.endswith("/"):
             continue
@@ -270,10 +273,15 @@ def build(args: argparse.Namespace) -> None:
             skipped.append(rel.as_posix())
             continue
         data = payload.read(name)
+        if rel.as_posix() == "TAI5MSG_JP.DAT":
+            data, tai5msg_report = reconstruct_tai5msg_switch_native(data)
         dst = romfs_out / rel
         dst.parent.mkdir(parents=True, exist_ok=True)
         dst.write_bytes(data)
         copied += 1
+
+    if tai5msg_report is None:
+        raise RuntimeError("PC payload TAI5MSG_JP.DAT was not reconstructed")
 
     patched_font = romfs_out / "FONT" / "FONT_JPN.G1T"
     if sha256_file(patched_font) != PATCHED_FONT_SHA256:
@@ -293,11 +301,16 @@ def build(args: argparse.Namespace) -> None:
         "page_mapper_emitted_ips_offset": mapped_to_ips_offset(GETFONT_OFFSET),
         "romfs_payload_files_copied": copied,
         "romfs_payload_files_skipped": skipped,
+        "romfs_payload_files_reconstructed": ["TAI5MSG_JP.DAT"],
+        "tai5msg_switch_native_reconstruction": tai5msg_report.to_dict(),
         "ips_record_count": len(plan.records),
         "ips_payload_bytes": sum(len(r[2]) for r in plan.records),
         "implemented_code_modules": [
             "runtime_page_mapper",
             "inline_text_unique_rodata",
+        ],
+        "implemented_romfs_modules": [
+            "tai5msg_switch_native_reconstruction",
         ],
         "t5k_resource": {
             "mapping_entries": len(t5k.mapping_entries),
@@ -322,6 +335,7 @@ def build(args: argparse.Namespace) -> None:
         "notes": [
             "PatchPlan addresses are mapped flat NSO offsets; emitted Eden/Yuzu classic-IPS offsets add 0x100 for NSOHeader.",
             "The historical exact-unique selector is retained only for regression/diagnostic use and is not a release-safety proof.",
+            "TAI5MSG_JP.DAT is rebuilt deterministically with Switch-native compact-byte preservation controls.",
             "CWTDAT_JP.TR5 is excluded until reconstructed on the Switch-native structure.",
         ],
     }
