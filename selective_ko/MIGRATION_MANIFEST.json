@@ -1,0 +1,117 @@
+{
+  "schema": "SELECTIVE_KO_MIGRATION_MANIFEST_V1",
+  "created_at_kst": "2026-09-15",
+  "project": "Taiko5DX Switch Selective Koreanization",
+  "initialization_base_head": "f652333af41271b32bafb2054a1a1c3c853f1105",
+  "target": {
+    "title_id": "0100346017304000",
+    "version": "1.1.3",
+    "switch_build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9"
+  },
+  "drive_workspace": {
+    "root_id": "1xI9dJZ626LAZbmRSL-sZu7pXVJxuc2lj",
+    "design_folder_id": "1_hIM5yYheiXJFuuKyYJM6BuGCX71VBQ1",
+    "reference_folder_id": "1z7aDEb2TC9em6TqFrwpQQFxoNiVNrwza",
+    "reusable_assets_folder_id": "1tv6CWmzW-DPnONEzUcUx2CUrEmXhu98O",
+    "dialogue_event_classification_folder_id": "1DT5GjRKI_v4r-pFTNrjrPsVrsMoHpQ9g",
+    "hold_excluded_folder_id": "1Rfq_eLx-oeqnlN0bHbcrgFcIGh4ZghEA"
+  },
+  "drive_reference_copies": [
+    {
+      "role": "canonical_switch_main_copy",
+      "source_drive_id": "1rj18c0Py5jp1zCj4x78m7guGc10EUzUh",
+      "new_drive_id": "12XcieW6WrTpLXeYeMW1lGiJObPJ-GTPq",
+      "name": "Switch_v1.1.3_main",
+      "size": 5287359,
+      "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+    },
+    {
+      "role": "switch_original_font_copy",
+      "source_drive_id": "1wLbhV7xnZ7tHXeOOJjQnEQbLqbFkRANR",
+      "new_drive_id": "1pRr2JBiTvhvv4qWq8CzJiELf3TOntEWL",
+      "name": "Switch_v1.1.3_FONT_JPN.G1T",
+      "size": 13108628,
+      "sha256": null
+    },
+    {
+      "role": "pc_original_tai5msg_copy",
+      "source_drive_id": "1E6Rq2P4E3DSL9Uk-t1FvoOh6Jx-oFTSJ",
+      "new_drive_id": "1EU9EogMNhuAReuxI60ZOhqMeSEbsBXBn",
+      "name": "PC_ORIGINAL_TAI5MSG_JP.DAT",
+      "size": 1810889,
+      "sha256": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
+    }
+  ],
+  "large_canonical_references_not_duplicated": [
+    {
+      "role": "pc_korean_patch_v1_02",
+      "drive_id": "1eOr589sGRCjYvLNW1rB5hjgF04yP8dvF",
+      "name": "Taiko5DX_Korean_Patcher_v1.02.zip",
+      "size": 170498865,
+      "sha256": "df1b62de95e992369e9686c9731d814e7a7e4634888f610430635429e24f7cec"
+    },
+    {
+      "role": "mapping10036_runtime_validation_artifact",
+      "drive_id": "1HYtLZOmONs82AXeD_NQAF4jKP-_37rej",
+      "name": "MAPPING10036_Taiko5DX_KR_EDEN.zip",
+      "sha256": "e4810b8186bab484fc076419c1a882b7deb9031b09560d47a8eace00b5f49cca"
+    }
+  ],
+  "repository_reuse": [
+    {
+      "source_path": "builder/build_mapping10036_diag.py",
+      "destination_path": "selective_ko/reuse/mapping10036/build_mapping10036_diag.py",
+      "blob_sha": "e4b69953d7c6271bd2e72e8685f6ec7a69fd23a4",
+      "mode": "VERBATIM_REUSE",
+      "reason": "verified Switch-native Mapping 10,036 realization and diagnostic builder"
+    },
+    {
+      "source_path": "builder/mapping10036_helper_v2.s",
+      "destination_path": "selective_ko/reuse/mapping10036/mapping10036_helper_v2.s",
+      "blob_sha": "be3a20cfff749324dfe6dfe4d268c19e0005c451",
+      "mode": "VERBATIM_REUSE",
+      "reason": "verified Mapping 10,036 ARM64 helper source"
+    },
+    {
+      "source_path": "builder/mapping10036_helper_v2.ld",
+      "destination_path": "selective_ko/reuse/mapping10036/mapping10036_helper_v2.ld",
+      "blob_sha": "fa87d590af4dd11c55a0c17a896fda4a2a01bc1e",
+      "mode": "VERBATIM_REUSE",
+      "reason": "verified Mapping 10,036 linker layout"
+    },
+    {
+      "source_path": "builder/tai5msg.py",
+      "destination_path": "selective_ko/reference/tai5msg_legacy_reconstruction.py",
+      "blob_sha": "e2ab20c5dba0c164e67ea24b03374bf815f0c993",
+      "mode": "REFERENCE_ONLY",
+      "reason": "TAI5MSG parser/container/control knowledge is reusable; full-file Korean reconstruction policy is not"
+    },
+    {
+      "source_path": "builder/t5k.py",
+      "destination_path": "selective_ko/reference/t5k_pc_patch_parser.py",
+      "blob_sha": "fb0c2966bc61ecaa1dfcbb0447341f53dd923ac5",
+      "mode": "REFERENCE_ONLY",
+      "reason": "PC patch resource extraction and source-corpus parsing reference"
+    }
+  ],
+  "inherited_evidence_references": [
+    "docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt",
+    "docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt",
+    "docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md",
+    "docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md",
+    "docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md",
+    "docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md",
+    "docs/F1_STATIC_WRITE_AUTHORIZATION.md",
+    "docs/PC_RUNTIME_DLL_SPEC.md"
+  ],
+  "initial_product_exclusions": [
+    "person_name_koreanization",
+    "place_name_koreanization",
+    "calendar_date_koreanization",
+    "yomi_reading_koreanization",
+    "surname_given_name_composition",
+    "korean_name_entry",
+    "unresolved_dynamic_dialogue_grammar"
+  ],
+  "next_scope": "SELECTIVE_KO_SOURCE_CLASSIFICATION_READ_ONLY"
+}
