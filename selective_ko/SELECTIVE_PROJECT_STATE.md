@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
+Status: SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Base identity
@@ -19,7 +19,7 @@ This file is the resume authority for the `selective_ko/` subtree only. The repo
 
 The selective product target is not a complete clone of the PC Korean patch.
 
-Required/priority Korean scope:
+Priority Korean scope:
 
 - character/person descriptions;
 - region/location descriptions, while place names themselves may remain Japanese;
@@ -28,42 +28,34 @@ Required/priority Korean scope:
 - event narration/body/system/context text;
 - static or otherwise proven-safe dialogue when practical.
 
-Explicitly non-required for the first release:
+Likely first-release exclusions/deferments include person/place identity, yomi, calendar formatting, name composition/input, and unresolved dynamic grammar, but **these are product-policy intentions only until an explicit `release_scope` decision is materialized** under `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`.
 
-- Korean person names;
-- Korean place names;
-- Korean calendar/year/month/day formatting;
-- yomi/reading/sort-key conversion;
-- Korean surname/given-name composition;
-- Korean name-entry input;
-- dynamic grammar formatter dialogue whose composition safety is not proven.
+Translation quality review remains:
 
-Translation quality review is deferred to real-device/runtime QA rather than pre-extraction review.
+```text
+translation_review_status = DEFER_TO_RUNTIME_QA
+```
 
 ## 3. Inherited VERIFIED assets
 
-The following are inherited without revalidation unless identity changes or contradictory evidence appears:
+Inherited without revalidation unless identity changes or contradictory evidence appears:
 
 - Switch v1.1.3 `main` identity and Build ID;
 - Stage1/Stage2/F1/FZ001 structural discoveries as provenance sources;
 - L1/L2/L3 physical/semantic owner findings where applicable;
-- Mapping 10,036 semantic obligation;
-- the four-action Switch Mapping 10,036 realization;
+- Mapping 10,036 semantic obligation and verified Switch realization family;
 - Mapping forward/reverse/round-trip PASS on the tested Eden Android route;
-- Switch text decoder evidence that compact Korean bytes are accepted when they reach the decoder;
+- Switch decoder evidence for compact Korean bytes when they reach the decoder;
 - Switch Japanese halfwidth normalization ownership/route findings;
 - PC Korean translation corpus, terminology, mapping/font assets as source evidence;
 - TAI5MSG container/message parser knowledge;
-- existing event/TS5 structural observations;
-- known full-port failure and rejected-hypothesis history.
+- existing EVENT/TS5 structural observations;
+- known failure/rejected-hypothesis history;
+- full-port portability/action/owner evidence as provenance only for selective adjudication.
 
-Existing full-port WRITE_SAFE does not automatically authorize selective-project output. The selective builder must consume only sources explicitly included by this project.
+Existing full-port WRITE_SAFE does not automatically authorize selective-project output.
 
 ## 4. PC patch authority model
-
-The selective project no longer uses one undifferentiated "PC reference" category.
-
-Authority is separated as follows:
 
 ```text
 PC Korean translation/content/terminology     -> SOURCE_AUTHORITY
@@ -83,9 +75,7 @@ content/semantic obligation = PC source/oracle
 implementation = Switch-native design
 ```
 
-PC occurrence-level differences remain useful as a hazard map even when their Windows-specific implementation is not ported.
-
-## 5. Current migrated repository assets
+## 5. Current repository assets
 
 Direct-reuse family:
 
@@ -98,37 +88,49 @@ Reference-only family:
 - `reference/tai5msg_legacy_reconstruction.py`
 - `reference/t5k_pc_patch_parser.py`
 
-Reference-only code must not become release behavior without a separate review against this project's scope.
+Reference-only code must not become release behavior without separate review against the selective scope.
 
-## 6. Drive workspace
+## 6. Canonical design documents and precedence
 
-Project folder:
+Current selective design baseline includes:
 
-`GPT / 태합입지전 프로젝트 / Switch_선택형_한글화_프로젝트`
+- `ARCHITECTURE.md`
+- `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+- `IDENTITY_PROVENANCE_CONTRACT.md`
+- `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+- `CLASSIFICATION_SCHEMA.md`
+- `EVENT_EXTRACTION_SCHEMA.md`
+- `KNOWN_FAILURES.md`
+- `MIGRATION_MANIFEST.json`
 
-Subfolders:
+Authority by question:
 
-- `00_설계_문서`
-- `10_원본_참조`
-- `20_재사용_자산`
-- `30_대사_이벤트_분류`
-- `90_보류_제외`
+1. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+   - mechanism/usage/investigation taxonomy;
+   - caller/owner/risk/mechanism-decision rules;
+   - source authority and safe-dialogue structural rules.
+2. `IDENTITY_PROVENANCE_CONTRACT.md`
+   - registry-issued opaque IDs;
+   - native locator separation;
+   - edge graph/cardinality derivation;
+   - artifact freshness;
+   - manual-task and field-evidence rules.
+3. `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+   - Switch applicability;
+   - Switch realization and constraints;
+   - release scope;
+   - derived disposition bridge where release scope is relevant;
+   - versioned work-queue derivation and queue accounting.
+4. `CLASSIFICATION_SCHEMA.md`
+   - selective-product presentation bridge, except where its older broad product-default wording is narrowly superseded by item 3.
+5. container-specific schemas such as `EVENT_EXTRACTION_SCHEMA.md`
+   - additional source-specific metadata only.
 
-Copied into `10_원본_참조` during initialization:
+`SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md` is a later narrow correction. It does not erase older provenance; it supersedes only older wording that could be read as mechanism/usage automatically deciding release scope, realization, or final work queue.
 
-- Switch v1.1.3 `main`
-- Switch v1.1.3 original `FONT_JPN.G1T`
-- PC original `TAI5MSG_JP.DAT`
+## 7. Common content/generation taxonomy
 
-The canonical PC v1.02 Korean patch ZIP remains at its existing Drive location and is referenced rather than duplicated.
-
-## 7. Canonical common taxonomy
-
-The project-wide script/text classification authority for the selective subtree is:
-
-`SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-
-New corpus rows use three observed axes:
+Existing observed/classified fields remain independent:
 
 ```text
 mechanism_class
@@ -136,9 +138,7 @@ usage_class
 investigation_status
 ```
 
-`derived_disposition` is computed from those axes plus physical-owner/caller/risk/capacity/provenance/evidence fields. It is not a fourth peer axis.
-
-### 7.1 Mechanism classes
+Mechanism classes:
 
 ```text
 STATIC_COMPLETE
@@ -152,7 +152,7 @@ NAME_COMPOSED
 MECHANISM_MIXED
 ```
 
-### 7.2 Usage classes
+Usage classes:
 
 ```text
 UI_DESCRIPTION
@@ -162,7 +162,7 @@ IDENTITY
 OTHER
 ```
 
-### 7.3 Investigation status
+Investigation status:
 
 ```text
 RESOLVED
@@ -170,179 +170,13 @@ CALLER_UNKNOWN
 NOT_INVESTIGATED
 ```
 
-### 7.4 Derived dispositions
+Existing mechanism-decision inputs and risks remain in force, including `append_after`, variable-source provenance, particle adjacency, dynamic-counter evidence, shared-owner risk, cross-message composition, PC occurrence conflict, and capacity risk.
 
-```text
-INCLUDE_KO
-DEFER_KO
-KEEP_JP
-BLOCKED
-UNRESOLVED
-```
+## 8. Identity/provenance contract
 
-`UNRESOLVED` is not releasable.
+Persistent pipeline IDs are registry-issued opaque IDs and are not generated from RVA, offsets, parser ordinals, text, or hashes.
 
-Manual disposition override requires an explicit reason and provenance and cannot convert missing investigation into proof.
-
-## 8. Cross-cutting decision inputs and risks
-
-Key mechanism-decision inputs include:
-
-```text
-append_after
-append_after_targets
-variable_source_kind
-insert_followed_by
-jp_particle_adjacency
-dynamic_counter_decision
-```
-
-`APPEND_AFTER` is not a risk flag. It is a mechanism-decision input used to distinguish complete branch output from fragment/formatter composition.
-
-No generic `CONTROL_GRAPH_DEPENDENT` risk flag is used because branch-complete output is inherently control-graph dependent.
-
-Current common risk flags include:
-
-```text
-PARTICLE_RISK
-SHARED_OWNER_RISK
-PC_OCCURRENCE_CONFLICT
-PC_SPACING_VARIANT
-CROSS_MESSAGE_COMPOSITION
-BUFFER_CAPACITY_RISK
-```
-
-PC occurrence handling:
-
-- trailing NUL padding is removed for logical conflict comparison under the existing rule;
-- spacing-only logical differences -> `PC_SPACING_VARIANT` and do not automatically block inclusion;
-- non-spacing logical replacement differences -> `PC_OCCURRENCE_CONFLICT` and block automatic inclusion until caller/owner context is resolved.
-
-## 9. Physical-owner/shared-caller rule
-
-Classification follows the Switch physical owner, not raw text identity.
-
-- reuse existing L1/L2/L3 and other canonical owner provenance where applicable;
-- enumerate all known callers of a shared physical owner;
-- if caller-specific separation is not already present, the most restrictive proven caller governs that owner;
-- separate physical owners may be classified independently even when source text is identical;
-- incomplete caller topology gives `CALLER_UNKNOWN` and derives `UNRESOLVED`;
-- caller-specific redirection/restructuring is a separate escalation.
-
-PC RVA/occurrence splitting is a hazard map, not proof of equivalent Switch ownership.
-
-## 10. Safe dialogue boundary
-
-A dialogue row is eligible for R3 only if all common safe-dialogue gates pass.
-
-In particular, it must:
-
-- be `usage_class=DIALOGUE`;
-- have `investigation_status=RESOLVED`;
-- be `STATIC_COMPLETE`, `BRANCH_COMPLETE`, or proven-safe `VARIABLE_INSERT`;
-- have all callers of the same physical owner compatible;
-- have no unresolved particle/grammar responsibility;
-- have no cross-message composition;
-- not be consumed as a formatter/message fragment by another deferred or unsafe composition family;
-- have a proven safe capacity realization.
-
-One rendered line or one safe caller is not global proof.
-
-## 11. Event overlay status
-
-`EVENT_EXTRACTION_SCHEMA.md` remains an auxiliary event-source schema for event-specific caller/branch metadata.
-
-Its event structural classes are not terminal product classes and are mapped into the common taxonomy.
-
-Important consequences:
-
-- event membership alone never implies inclusion;
-- branch presence alone never implies risk;
-- `EVENT_BRANCH_LOCAL_SAFE` becomes candidate `BRANCH_COMPLETE` only after `append_after=NO` and all-caller closure;
-- `EVENT_VARIABLE_SAFE` becomes candidate `VARIABLE_INSERT` only after particle/dynamic-counter screening;
-- dynamic grammar/cross-message event classes map into deferred common mechanism classes;
-- unknown event topology maps into non-resolved investigation status.
-
-The previous read-only event inventory established that EVENT/TS5 contains both structurally simple event output and dynamic grammar/composition candidates. That inventory is evidence for the common taxonomy, not authorization to implement event content first.
-
-## 12. Translation review policy
-
-Initial extraction/classification uses:
-
-```text
-translation_review_status = DEFER_TO_RUNTIME_QA
-```
-
-Translation quality is reviewed while playing on the actual runtime path. Structural classification is not delayed for stylistic translation review unless semantic ambiguity prevents mechanism/usage classification.
-
-## 13. Capacity rule
-
-Capacity failure is not a translation defect.
-
-Canonical escalation order:
-
-```text
-current storage
--> alternate existing storage
--> object/data reconstruction
--> redirect/relocation realization
--> Switch-native runtime semantic equivalent
--> only after technical routes are exhausted: human translation adjustment review
-```
-
-Automatic truncation or translation shortening is forbidden.
-
-## 14. Release phases
-
-R0 — infrastructure
-- Mapping/font/text transport sufficient for selected Korean content.
-
-R1 — descriptions
-- `INCLUDE_KO` rows with `usage_class=UI_DESCRIPTION`.
-
-R2 — narration/events/system
-- add structurally safe `INCLUDE_KO` rows with `usage_class=NARRATION_SYSTEM` and explicitly resolved event-local non-dialogue rows where applicable.
-
-R3 — safe dialogue
-- add only rows satisfying the common Safe Dialogue definition.
-
-R4 — optional deferred grammar/composition
-- selectively revisit `DEFER_KO` families after recorded revisit conditions are met.
-
-R4 remains optional and cannot block R1-R3.
-
-## 15. Materialized design documents
-
-Current selective-project design baseline includes:
-
-- `ARCHITECTURE.md`
-- `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-- `IDENTITY_PROVENANCE_CONTRACT.md`
-- `CLASSIFICATION_SCHEMA.md`
-- `EVENT_EXTRACTION_SCHEMA.md`
-- `KNOWN_FAILURES.md`
-- `MIGRATION_MANIFEST.json`
-
-Authority order for new extraction/classification work:
-
-1. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md` for common taxonomy/authority/risk/disposition rules;
-2. `IDENTITY_PROVENANCE_CONTRACT.md` for persistent IDs, locator separation, edge graph, freshness, manual-task and field-evidence rules;
-3. `CLASSIFICATION_SCHEMA.md` for selective-product mapping and release-set bridge;
-4. container-specific auxiliary schemas such as `EVENT_EXTRACTION_SCHEMA.md` for additional metadata only.
-
-Legacy disposition names remain historical provenance but are superseded for new corpus rows.
-
-## 16. Canonical identity/provenance contract
-
-`IDENTITY_PROVENANCE_CONTRACT.md` is now materialized.
-
-### 16.1 ID model
-
-Persistent pipeline IDs are registry-issued opaque IDs. They are not generated from RVA, offsets, parser ordinals, decoded text, hashes, or native locators.
-
-The ID registry itself is a canonical append-only project asset. Losing it is canonical-data loss, not a regenerable-cache failure.
-
-Minimum namespaces include:
+Minimum namespaces already fixed by contract:
 
 ```text
 entity_id
@@ -353,24 +187,22 @@ manual_task_id
 classification_id
 ```
 
-Native locators are versioned provenance records and may be corrected/superseded without changing an entity ID when entity identity remains valid.
+The registry itself is canonical append-only project data.
 
-### 16.2 Candidate boundary
+Native locators are versioned provenance. Locator correction does not change entity identity when the entity remains the same.
 
-The following is a valid normal state:
+Valid normal state:
 
 ```text
 candidate_id = null
 candidate_status = NOT_ISSUED
 ```
 
-PC source rows and Switch owners are not assumed 1:1. Adapter materialization does not imply candidate issuance.
+Candidate issuance remains intentionally later than adapter-row creation.
 
-### 16.3 Edge/cardinality boundary
+Edge cardinality is derived from graph degree, not stored as immutable edge identity.
 
-Edges are independent directed facts. Relationship cardinality is derived from graph degree rather than frozen into edge identity.
-
-Pilot evidence boundary:
+Contract-pilot evidence boundary remains:
 
 ```text
 N:1 = CORPUS_PROVEN
@@ -378,13 +210,7 @@ N:1 = CORPUS_PROVEN
 N:M = FIXTURE_EXPRESSION_PROVEN / CORPUS_EXISTENCE_NOT_CLAIMED
 ```
 
-Do not read the 7/7 pilot result as corpus proof for 1:N or N:M.
-
-### 16.4 Freshness and evidence
-
-Adapter artifacts are derived evidence and must carry exact input/dependency/contract identities.
-
-Freshness is recomputed and uses:
+Artifact freshness is recomputed:
 
 ```text
 FRESH
@@ -394,15 +220,7 @@ STALE_CONTRACT
 INVALID
 ```
 
-Stale history is superseded rather than overwritten.
-
-Evidence is retained per field/claim; one row-level grade may not silently promote weaker fields.
-
-### 16.5 Manual task model
-
-Manual review/tooling debt is represented by separate task entities.
-
-Required reasons:
+Manual tasks remain separate entities with reasons:
 
 ```text
 STRUCTURE_INSUFFICIENT
@@ -410,11 +228,7 @@ EXTRACTOR_GAP
 SEMANTIC_JUDGMENT
 ```
 
-Multiple tasks may coexist for one target.
-
-### 16.6 Historical recovery status
-
-Historical exact-edge recoverability uses:
+Historical exact-edge recovery state remains:
 
 ```text
 RECOVERABLE_FROM_SOURCE
@@ -422,46 +236,310 @@ STRUCTURE_INSUFFICIENT
 NOT_YET_ASSESSED
 ```
 
-The known 24 internal-collapse edges whose exact machine-readable membership was not preserved remain `NOT_YET_ASSESSED`. This contract does not adjudicate their recoverability.
+The known 24 internal-collapse edges whose exact machine-readable membership was not preserved remain `NOT_YET_ASSESSED` until actual adapter provenance is inspected.
 
-### 16.7 Contract pilot
+## 9. Switch applicability layer
 
-`SELECTIVE_KO_PC_SOURCE_SWITCH_OWNER_CONTRACT_PILOT` result:
+Canonical values:
 
 ```text
-7 / 7 PASS
-production registry IDs issued = 0
-production adapter artifacts emitted = 0
-candidate IDs issued = 0
-classification rows emitted = 0
-Switch write authorization added = 0
+EXACT_COUNTERPART
+EQUIVALENT_COUNTERPART
+COMPOSITE_COUNTERPART
+NO_SWITCH_COUNTERPART
+COUNTERPART_UNKNOWN
 ```
 
-PASS is limited to contract behavior/expressiveness. It is not production materialization.
+Important boundary:
 
-## 17. Current implementation boundary
+```text
+NO_SWITCH_COUNTERPART != impossible
+NO_SWITCH_COUNTERPART != OUT_OF_SCOPE
+NO_SWITCH_COUNTERPART != BLOCKED
+```
 
-No selective corpus rows have been materialized under the common taxonomy.
+The following combination is explicitly valid when supported by independent evidence:
 
-No production identity registry, production entity/edge rows, adapter artifacts, candidates, classifications, selective builder changes, Switch actions, IPS, or runtime artifacts have been created by the contract materialization.
+```text
+NO_SWITCH_COUNTERPART
++ SWITCH_NATIVE_RUNTIME_EQUIVALENT
+```
 
-Translation QA remains deferred.
+## 10. Switch realization layer
 
-## 18. Next scope
+Canonical values:
 
-`PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION`
+```text
+DIRECT_DATA
+OBJECT_RECONSTRUCTION
+REDIRECT_PORT
+SWITCH_NATIVE_RUNTIME_EQUIVALENT
+EXISTING_NATIVE_BEHAVIOR
+REALIZATION_UNRESOLVED
+```
 
-Scope boundary:
+`NO_REALIZATION_REQUIRED` is not used. Existing sufficient behavior is represented by `EXISTING_NATIVE_BEHAVIOR`; no-change work is derived later.
 
-1. materialize only `PC_SOURCE_ADAPTER` and `SWITCH_OWNER_ADAPTER` under `IDENTITY_PROVENANCE_CONTRACT.md`;
-2. create the first production registry/entity/edge/artifact-manifest records using actual canonical inputs;
-3. recompute freshness rather than trusting stored freshness labels;
+Realization is not assumed one-per-source-row. It belongs to actual realization/action responsibility once that unit is materialized, and source/owner/candidate relationships remain graph-based.
+
+Whether a dedicated `realization_unit_id` namespace is needed remains intentionally unresolved until real materialization demonstrates the identity boundary.
+
+## 11. Realization constraints
+
+Use:
+
+```text
+realization_constraints[]
+constraint_kind = BLOCKER | DIRECT_NOT_REQUIRED
+```
+
+Initial BLOCKER codes:
+
+```text
+CAPACITY
+TERMINATOR
+SHARED_OWNER
+STORAGE_MUTABILITY
+LANGUAGE_DOMAIN
+STRUCTURE_MISMATCH
+CONTROL_DEPENDENCY
+RUNTIME_SEMANTICS
+NO_EXISTING_COUNTERPART
+UNKNOWN
+```
+
+Initial DIRECT_NOT_REQUIRED code:
+
+```text
+NATIVE_BEHAVIOR_ALREADY_SATISFIES_OBLIGATION
+```
+
+Hard invariants:
+
+```text
+DIRECT_DATA
+  -> unresolved BLOCKER count = 0
+
+OBJECT_RECONSTRUCTION / REDIRECT_PORT / SWITCH_NATIVE_RUNTIME_EQUIVALENT
+  -> BLOCKER count >= 1
+
+EXISTING_NATIVE_BEHAVIOR
+  -> DIRECT_NOT_REQUIRED count >= 1
+
+REALIZATION_UNRESOLVED
+  -> unresolved or UNKNOWN BLOCKER count >= 1
+```
+
+## 12. Axis-evidence independence
+
+Hard gate:
+
+```text
+AXIS_EVIDENCE_INDEPENDENCE = PASS required
+```
+
+Every non-derived axis requires its own `field_evidence`. A target-axis value may not be assigned merely because another axis or product decision has a particular value.
+
+Mandatory negative validator cases:
+
+```text
+STATIC_COMPLETE       -> DIRECT_DATA
+EXACT_COUNTERPART     -> DIRECT_DATA
+OUT_OF_SCOPE          -> NO_SWITCH_COUNTERPART
+DEFERRED_TO_LATER     -> REALIZATION_UNRESOLVED
+NO_SWITCH_COUNTERPART -> BLOCKED
+```
+
+If target-axis evidence cites only the shortcut source value and no independent structural/technical evidence, validation must FAIL.
+
+## 13. Release scope
+
+Canonical values:
+
+```text
+NOT_DECIDED
+IN_SCOPE
+OUT_OF_SCOPE
+DEFERRED_TO_LATER
+```
+
+Only default:
+
+```text
+release_scope = NOT_DECIDED
+```
+
+`IN_SCOPE`, `OUT_OF_SCOPE`, and `DEFERRED_TO_LATER` require an explicit decision with at least:
+
+```text
+decided_by
+rationale
+decision_provenance
+policy_version
+```
+
+Release scope is intentionally asymmetric with technical axes:
+
+- technical axes change because evidence changes/supersedes;
+- release scope may change because a product/release decision changes;
+- release-scope change must not mutate technical axes.
+
+Batch release-scope decisions are allowed only as explicit versioned policies with decision provenance and exact/rule-based membership provenance. Batch policy storage format remains deferred until actual materialization.
+
+## 14. Derived disposition bridge
+
+Allowed values remain:
+
+```text
+INCLUDE_KO
+DEFER_KO
+KEEP_JP
+BLOCKED
+UNRESOLVED
+```
+
+For new materialization, `release_scope` is an explicit input:
+
+```text
+NOT_DECIDED                     -> UNRESOLVED
+OUT_OF_SCOPE                    -> KEEP_JP
+DEFERRED_TO_LATER               -> DEFER_KO
+IN_SCOPE + required state open  -> UNRESOLVED
+IN_SCOPE + all inclusion gates  -> INCLUDE_KO
+IN_SCOPE + no approved path     -> BLOCKED
+```
+
+Therefore `usage_class=IDENTITY` or `mechanism_class=NAME_COMPOSED` does not automatically derive `KEEP_JP`; an explicit scope decision must exist first.
+
+`BLOCKED` still requires evidence that currently authorized escalation paths are exhausted. Capacity failure or no existing counterpart alone is insufficient.
+
+## 15. Work-queue contract
+
+Work queue is derived, not canonical row state.
+
+Conceptually:
+
+```text
+work_queue = f(
+  content/generation taxonomy,
+  switch_applicability,
+  switch_realization,
+  release_scope,
+  realization_constraints,
+  risk/evidence/freshness,
+  queue_rule_version
+)
+```
+
+Queue rules are versioned. Changing them makes prior cached/generated queue artifacts `STALE_CONTRACT`.
+
+Minimum primary queue precedence:
+
+| Condition | Queue |
+|---|---|
+| `NOT_DECIDED` | `SCOPE_DECISION_QUEUE` |
+| `OUT_OF_SCOPE` | `OUT_OF_SCOPE_HOLD_QUEUE` |
+| `DEFERRED_TO_LATER` | `DEFERRED_LATER_QUEUE` |
+| `IN_SCOPE` + technical/evidence unresolved | `INVESTIGATION_QUEUE` |
+| `IN_SCOPE` + `EXISTING_NATIVE_BEHAVIOR` | `NO_CHANGE_REQUIRED` |
+| `IN_SCOPE` + `DIRECT_DATA` | `DIRECT_DATA_QUEUE` |
+| `IN_SCOPE` + `OBJECT_RECONSTRUCTION` | `OBJECT_RECONSTRUCTION_QUEUE` |
+| `IN_SCOPE` + `REDIRECT_PORT` | `REDIRECT_QUEUE` |
+| `IN_SCOPE` + `SWITCH_NATIVE_RUNTIME_EQUIVALENT` | `RUNTIME_EQUIVALENT_QUEUE` |
+| no defined rule matches | `INVESTIGATION_QUEUE + QUEUE_RULE_GAP` |
+
+Hard accounting invariant:
+
+```text
+QUEUE_UNASSIGNED = 0
+```
+
+Unknown/unresolved technical states never disappear from accounting.
+
+## 16. Queue-rule defect accounting
+
+`QUEUE_RULE_GAP` is a queue-rule defect, not a semantic row defect.
+
+Affected work still enters `INVESTIGATION_QUEUE`, preserving `QUEUE_UNASSIGNED=0`.
+
+But:
+
+```text
+QUEUE_RULE_GAP > 0
+  -> queue_rule_version revision candidate
+```
+
+Queue-rule-gap counts must be separate from ordinary investigation/manual/extractor backlog.
+
+Target closed state for broad production use:
+
+```text
+QUEUE_UNASSIGNED = 0
+QUEUE_RULE_GAP   = 0
+```
+
+## 17. Full-port provenance bridge
+
+Historical full-port values such as `DIRECT_PORT`, `STRUCTURAL_PORT`, `REDIRECT_PORT`, `RUNTIME_PORT`, `NATIVE_EQUIVALENT_VERIFIED`, `SUBSUMED`, and related action families are **evidence/provenance only**.
+
+They are not imported directly into selective `switch_realization`, `release_scope`, or `derived_disposition`.
+
+Selective values must be newly adjudicated under the selective product contract because the historical track targeted the full obligation set while the selective project has explicit release-scope decisions.
+
+## 18. Event/TAI5MSG and translation boundaries
+
+EVENT membership alone never implies safety or scope.
+
+EVENT/TS5 remains blocked from production identity materialization until its future `locator_determinism = PASS` gate.
+
+TAI5MSG remains PARTIAL/strong-foundation and is not part of the next READY-two-adapter materialization.
+
+Translation quality review remains deferred to runtime QA and does not replace structural/applicability/realization evidence.
+
+## 19. Current materialization boundary
+
+Materialized in this state:
+
+- common script taxonomy;
+- identity/provenance contract;
+- 7/7 identity/provenance contract pilot result;
+- Switch applicability/realization/release-scope/work-queue taxonomy contract.
+
+Still **not** materialized:
+
+- production identity registry files;
+- production PC-source/Switch-owner entity rows;
+- production edges/artifact manifests;
+- candidates;
+- classification rows;
+- applicability/realization classifications;
+- release-scope decisions;
+- work-queue artifacts;
+- realization units/actions;
+- selective builder changes;
+- IPS/build/runtime release artifact.
+
+No existing corpus row is reclassified merely by materializing the new taxonomy.
+
+## 20. Next scope
+
+Next planned scope:
+
+```text
+PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
+```
+
+Boundary for that scope:
+
+1. materialize only `PC_SOURCE_ADAPTER` and `SWITCH_OWNER_ADAPTER` under the identity/provenance contract;
+2. create first production registry/entity/edge/artifact-manifest records using actual canonical inputs;
+3. recompute freshness rather than trust stored labels;
 4. preserve field-level evidence and separate manual-task entities;
 5. leave `candidate_id` unissued by default;
-6. assess historical edge recoverability only where actual adapter inputs/provenance require it;
-7. do not implement `TAI5MSG_STRUCTURE_ADAPTER` yet;
-8. do not implement `EVENT_TS5_STRUCTURE_ADAPTER` yet;
-9. do not perform broad mechanism/usage/disposition classification;
+6. assess historical edge recoverability only where actual inputs/provenance require it;
+7. do not broadly populate applicability/realization/release-scope values merely because the taxonomy exists;
+8. do not implement `TAI5MSG_STRUCTURE_ADAPTER` yet;
+9. do not implement `EVENT_TS5_STRUCTURE_ADAPTER` yet;
 10. do not modify the selective builder or produce a build.
 
 Later planned order:
@@ -472,4 +550,4 @@ PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
 -> EVENT_TS5_STRUCTURE_ADAPTER (after locator_determinism PASS)
 ```
 
-After adapter-materialization analysis/report: STOP and require a fresh user execution signal before the next stage.
+After the next stage report: STOP and require a fresh explicit user execution signal.
