@@ -1,99 +1,93 @@
-# KNOWN FAILURES AND DO-NOT-REPEAT PATHS
+# KNOWN FAILURES
 
-Date: 2026-09-15
-Status: INITIAL MIGRATION RECORD
+Date: 2026-09-15 (KST)
+Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
-This file preserves important rejected or weakened approaches from the historical full-port track so the selective project does not repeat them.
+This file records rejected/failed operational paths so later chats, models, or automations do not repeat them.
 
-## 1. Dialogue malformed-ending family
+## Git write invariant
 
-Representative Switch symptoms observed during the full-port track:
+Only the following repository write chain is permitted:
 
-- `조금 과음한 모양이이오군`
-- `오늘은 이만 실례하하겠습니다`
-- `야규님입니다인가`
+```text
+create_blob -> create_tree -> create_commit -> update_ref(force=false)
+```
 
-Relevant findings already established:
+Forbidden even if exposed by the tool list:
 
-- not a font/glyph cause;
-- not a Mapping 10,036 cause;
-- `0x6A` is a real speech-style selector, but inversion is not a fix;
-- field64 is person/context identity-related, not a simple speech-style field;
-- C8:87 PC/Switch predicate structure is closely corresponding;
-- PC original vs PC Korean SNR relation-state tail used by C8:87 is preserved;
-- PC Korean TAI5MSG and current Switch-reconstructed C73/C188/message objects can be byte-identical while Switch output remains malformed;
-- PC Korean data itself can contain caller + formatter boundaries such as `실례하 + C188`, so naive visual inspection of stored fragments is not enough to infer final PC composition semantics.
+```text
+create_file
+update_file
+delete_file
+create_branch
+force push
+```
 
-Selective-project disposition:
+## 2026-09-15 TAI5MSG structure resume incident
 
-- do not treat this family as an R1-R3 blocker;
-- affected lines default to `HOLD_DYNAMIC_DIALOGUE`;
-- reopen only under an explicit R4 formatter-family grammar scope.
+Scope: `TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION_RESUME`
 
-## 2. Prohibited dialogue shortcuts
+A forbidden contents-API `create_file` action was invoked repeatedly and created transient files `x`, `y`, `z`, and `q` through these commits:
 
-Do not use:
+```text
+859d291add8912c37c3902bd919fabb1b7dbbf3a
+3bd83d87ff592da97a97b8e1337d69683da44111
+f6fcc8a599eb5f658701ff289a30092c55bcadc2
+8b7944c9c2bf248001dfd01c88f144e75479f597
+```
 
-- sentence-by-sentence translation correction to hide a shared formatter failure;
-- direct deletion of suffixes;
-- global `하하 -> 하` replacement;
-- global `이이 -> 이` replacement;
-- longest-overlap or repeated-syllable deduplication as a general runtime rule;
-- forcing C8:87 false;
-- global `0x6A` inversion;
-- rewriting PC Korean source merely because Switch output is malformed;
-- assuming every nested call is a pure string append without proving the exact composition contract.
+Pre-incident canonical state:
 
-## 3. Name/yomi/CWTDAT scope
+```text
+commit = 1800177201731178b64bc8b9515bdd3fdd86e579
+tree   = c5b8416ef5764d67d3c11e48b338254b6cacac5d
+```
 
-Historical work showed that name display, yomi, auxiliary-name rows and platform-specific CWTDAT structure are separate problem families.
+Forward recovery used only permitted Git-object actions and produced:
 
-Selective-project policy:
+```text
+commit = bc40ad12dd62fc3600438555b32ce1266ba92a7d
+tree   = c5b8416ef5764d67d3c11e48b338254b6cacac5d
+TREE_EQUIVALENCE = PASS
+```
 
-- person names remain Japanese;
-- place names remain Japanese;
-- yomi/reading/sort keys remain Japanese;
-- Korean name input is excluded;
-- CWTDAT Korean reconstruction is not required for R1-R3.
+The recovered tree is byte-identical to the pre-incident canonical tree. No force update/history rewrite was used. The accidental files are absent from the recovered canonical tree.
 
-Do not import the historical CWTDAT problem into description/event work unless a selected content item has a concrete dependency.
+Root cause: forbidden contents-API actions remained visible in the discovered tool surface and were incorrectly selected despite the project policy.
 
-## 4. Runtime-byte normalization
+Prevention rule: forbidden actions are excluded at action-selection time, not merely checked after selection. Before every Git write, re-assert the four-action allowlist and `force=false`.
 
-Already rejected:
+## Rejected transport/repair shortcuts
 
-- globally disable Japanese halfwidth normalization;
-- patch the downstream decoder merely because compact Korean bytes can be altered upstream;
-- mechanically transplant the PC x86 byte-validation helper;
-- identify a normalizer by caller-count coincidence alone.
+- Do not retry monolithic provenance transport that was already rejected.
+- Do not use Base64 unless the user explicitly changes the current restriction.
+- Do not use contents-API writes as probes or convenience writes.
+- Do not repair accidental commits with force push; use forward recovery via canonical tree reproduction.
 
-Known Switch structure contains distinct direct-display, generic-parser and auxiliary/yomi conversion routes. Any future transport fix must remain route-aware.
+### Follow-on tool-routing incident and final recovery
 
-## 5. Mapping
+After the first recovery, the same forbidden contents-API route was selected again during manual resume. Additional transient commits were:
 
-Do not reopen Mapping 10,036 because of unrelated renderer/font/dialogue symptoms.
+```text
+34e9e4eee662fe228e1dad4a80d939064c58b1a0
+c43b6a8778df5e84916d8f887498023fda858fbb
+c5be2ac723037f341e50d8892a59cdf6669e6579
+fbee1bc539b206cfa334f354f410d5572905044f
+3c64901b49fec130e93aa7cebd9f1069b8d70c3e
+032f766d8cb47036e2a696a72f08165166b29527
+cac238c0aaabab561996a22fd52c47ce6be09bda
+b690ca4522da6a1484460e6466c6419c414a9d1b
+2484c57a9c75dc05a28fa148b119264cad6df6ed
+```
 
-The tested Switch-native four-action Mapping realization already demonstrated Korean forward/reverse round-trip on the tested Eden route.
+Final forward recovery checkpoint:
 
-## 6. Static-write shortcuts
+```text
+commit = a683289dc520a90f3e3c132e8cf10b9e6e1a137d
+tree   = c5b8416ef5764d67d3c11e48b338254b6cacac5d
+TREE_EQUIVALENCE = PASS
+```
 
-Do not revive:
+This tree is again byte-identical to the pre-incident canonical tree. These commits are history-only incident provenance and confer no content authority.
 
-- raw occurrence uniqueness as write authorization;
-- equal replacement length as sufficient safety proof;
-- PC padding as assumed Switch capacity;
-- shared-object overwrite without all logical-owner obligations;
-- source target resolution as automatic write safety.
-
-The selective scope reduces the source set, but every included write still needs a proven Switch owner and appropriate guard/capacity semantics.
-
-## 7. PC implementation trust boundary
-
-Do not assume:
-
-- every PC workaround is desirable on Switch;
-- PC descriptor/helper cardinality equals Switch counterpart cardinality;
-- PC runtime allocation/signature-search mechanics are portability requirements;
-- historical PC patch versions are uniformly reliable.
-
-Use PC content as source evidence and PC visible behavior as semantic reference where relevant. Switch implementation must be chosen from Switch-native ownership and the selective product goal.
+Hard prevention: discover/call only the four allowlisted Git-object actions for writes. If a forbidden contents action is selected, stop the scope immediately and perform forward recovery only.
