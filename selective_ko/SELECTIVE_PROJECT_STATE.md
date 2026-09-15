@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: CROSSCUTTING_TAXONOMY_MATERIALIZED / EVENT_INVENTORY_READ_ONLY_COMPLETE / NO CORPUS MATERIALIZATION / NO BUILD
+Status: IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Base identity
@@ -124,7 +124,7 @@ The canonical PC v1.02 Korean patch ZIP remains at its existing Drive location a
 
 ## 7. Canonical common taxonomy
 
-The project-wide script/text classification authority for the selective subtree is now:
+The project-wide script/text classification authority for the selective subtree is:
 
 `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
 
@@ -317,39 +317,159 @@ Current selective-project design baseline includes:
 
 - `ARCHITECTURE.md`
 - `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+- `IDENTITY_PROVENANCE_CONTRACT.md`
 - `CLASSIFICATION_SCHEMA.md`
 - `EVENT_EXTRACTION_SCHEMA.md`
 - `KNOWN_FAILURES.md`
 - `MIGRATION_MANIFEST.json`
 
-Authority order for new classification work:
+Authority order for new extraction/classification work:
 
 1. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md` for common taxonomy/authority/risk/disposition rules;
-2. `CLASSIFICATION_SCHEMA.md` for selective-product mapping and release-set bridge;
-3. container-specific auxiliary schemas such as `EVENT_EXTRACTION_SCHEMA.md` for additional metadata only.
+2. `IDENTITY_PROVENANCE_CONTRACT.md` for persistent IDs, locator separation, edge graph, freshness, manual-task and field-evidence rules;
+3. `CLASSIFICATION_SCHEMA.md` for selective-product mapping and release-set bridge;
+4. container-specific auxiliary schemas such as `EVENT_EXTRACTION_SCHEMA.md` for additional metadata only.
 
 Legacy disposition names remain historical provenance but are superseded for new corpus rows.
 
-## 16. Current implementation boundary
+## 16. Canonical identity/provenance contract
 
-No selective corpus rows have been materialized under the new common taxonomy.
+`IDENTITY_PROVENANCE_CONTRACT.md` is now materialized.
 
-No selective builder change, Switch action, IPS, or runtime artifact is authorized by the taxonomy documents themselves.
+### 16.1 ID model
+
+Persistent pipeline IDs are registry-issued opaque IDs. They are not generated from RVA, offsets, parser ordinals, decoded text, hashes, or native locators.
+
+The ID registry itself is a canonical append-only project asset. Losing it is canonical-data loss, not a regenerable-cache failure.
+
+Minimum namespaces include:
+
+```text
+entity_id
+candidate_id
+edge_id
+artifact_id
+manual_task_id
+classification_id
+```
+
+Native locators are versioned provenance records and may be corrected/superseded without changing an entity ID when entity identity remains valid.
+
+### 16.2 Candidate boundary
+
+The following is a valid normal state:
+
+```text
+candidate_id = null
+candidate_status = NOT_ISSUED
+```
+
+PC source rows and Switch owners are not assumed 1:1. Adapter materialization does not imply candidate issuance.
+
+### 16.3 Edge/cardinality boundary
+
+Edges are independent directed facts. Relationship cardinality is derived from graph degree rather than frozen into edge identity.
+
+Pilot evidence boundary:
+
+```text
+N:1 = CORPUS_PROVEN
+1:N = FIXTURE_EXPRESSION_PROVEN / CORPUS_EXISTENCE_NOT_CLAIMED
+N:M = FIXTURE_EXPRESSION_PROVEN / CORPUS_EXISTENCE_NOT_CLAIMED
+```
+
+Do not read the 7/7 pilot result as corpus proof for 1:N or N:M.
+
+### 16.4 Freshness and evidence
+
+Adapter artifacts are derived evidence and must carry exact input/dependency/contract identities.
+
+Freshness is recomputed and uses:
+
+```text
+FRESH
+STALE_INPUT
+STALE_DEPENDENCY
+STALE_CONTRACT
+INVALID
+```
+
+Stale history is superseded rather than overwritten.
+
+Evidence is retained per field/claim; one row-level grade may not silently promote weaker fields.
+
+### 16.5 Manual task model
+
+Manual review/tooling debt is represented by separate task entities.
+
+Required reasons:
+
+```text
+STRUCTURE_INSUFFICIENT
+EXTRACTOR_GAP
+SEMANTIC_JUDGMENT
+```
+
+Multiple tasks may coexist for one target.
+
+### 16.6 Historical recovery status
+
+Historical exact-edge recoverability uses:
+
+```text
+RECOVERABLE_FROM_SOURCE
+STRUCTURE_INSUFFICIENT
+NOT_YET_ASSESSED
+```
+
+The known 24 internal-collapse edges whose exact machine-readable membership was not preserved remain `NOT_YET_ASSESSED`. This contract does not adjudicate their recoverability.
+
+### 16.7 Contract pilot
+
+`SELECTIVE_KO_PC_SOURCE_SWITCH_OWNER_CONTRACT_PILOT` result:
+
+```text
+7 / 7 PASS
+production registry IDs issued = 0
+production adapter artifacts emitted = 0
+candidate IDs issued = 0
+classification rows emitted = 0
+Switch write authorization added = 0
+```
+
+PASS is limited to contract behavior/expressiveness. It is not production materialization.
+
+## 17. Current implementation boundary
+
+No selective corpus rows have been materialized under the common taxonomy.
+
+No production identity registry, production entity/edge rows, adapter artifacts, candidates, classifications, selective builder changes, Switch actions, IPS, or runtime artifacts have been created by the contract materialization.
 
 Translation QA remains deferred.
 
-## 17. Next scope
+## 18. Next scope
 
-`SELECTIVE_KO_CROSSCUTTING_AUTOMATABLE_FIELD_INVENTORY_READ_ONLY`
+`PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION`
 
-Goals:
+Scope boundary:
 
-1. inventory each relevant source/container family before content-specific implementation begins;
-2. determine which common metadata fields can be extracted automatically per family;
-3. identify reusable canonical parsers, caller graphs, physical-owner ledgers, and PC patch provenance;
-4. prioritize automatic extraction of `append_after`, caller lists, `insert_followed_by`, cross-message consumers, variable-source provenance, and PC occurrence conflict/spacing classification;
-5. separate machine-extractable fields from manual semantic judgment before broad classification;
-6. do not implement descriptions/events/dialogue yet;
-7. perform no builder modification and no build.
+1. materialize only `PC_SOURCE_ADAPTER` and `SWITCH_OWNER_ADAPTER` under `IDENTITY_PROVENANCE_CONTRACT.md`;
+2. create the first production registry/entity/edge/artifact-manifest records using actual canonical inputs;
+3. recompute freshness rather than trusting stored freshness labels;
+4. preserve field-level evidence and separate manual-task entities;
+5. leave `candidate_id` unissued by default;
+6. assess historical edge recoverability only where actual adapter inputs/provenance require it;
+7. do not implement `TAI5MSG_STRUCTURE_ADAPTER` yet;
+8. do not implement `EVENT_TS5_STRUCTURE_ADAPTER` yet;
+9. do not perform broad mechanism/usage/disposition classification;
+10. do not modify the selective builder or produce a build.
 
-After that read-only report: STOP and require a fresh execution signal before corpus materialization, implementation, or build.
+Later planned order:
+
+```text
+PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
+-> TAI5MSG_STRUCTURE_ADAPTER
+-> EVENT_TS5_STRUCTURE_ADAPTER (after locator_determinism PASS)
+```
+
+After adapter-materialization analysis/report: STOP and require a fresh user execution signal before the next stage.
