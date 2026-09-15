@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: PC_SOURCE_SWITCH_OWNER_PRODUCTION_REGISTRY_SEED_MATERIALIZED / FIXED_PARTICLE_POLICY_MATERIALIZED / SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / NO CANDIDATE / NO CORPUS CLASSIFICATION / NO BUILD
+Status: PC_SOURCE_SWITCH_OWNER_REPLAY_EXPANSION_MATERIALIZED / F1_STATIC_158_COMPLETE / SHARDED_PROVENANCE_MATERIALIZED / FIXED_PARTICLE_POLICY_MATERIALIZED / SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / NO CANDIDATE / NO CORPUS CLASSIFICATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -21,37 +21,30 @@ Required reads for the next selective scope:
 3. `FIXED_PARTICLE_POLICY.md`
 4. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
 5. `PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION.md`
-6. this file
+6. `PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION.md`
+7. `registry/provenance_shards/INDEX.json`
+8. this file
 
-## 2. Product target
+## 2. Product and authority boundary
 
-The selective product target is not a complete clone of the PC Korean patch.
+The selective project is not a full clone of the PC Korean patch.
 
-Priority Korean scope remains:
+Priority Korean scope remains descriptions, event/system/context text, and proven-safe dialogue where practical. Identity/yomi/calendar/name-composition/input and unresolved dynamic grammar may be excluded or deferred only through explicit release-scope decisions.
 
-- character/person descriptions;
-- region/location descriptions while place names may remain Japanese;
-- tools/items descriptions;
-- techniques/skills descriptions;
-- event narration/body/system/context text;
-- static or otherwise proven-safe dialogue where practical.
-
-Identity/yomi/calendar/name-composition/input and unresolved dynamic grammar may be excluded or deferred, but that remains a product decision until explicit `release_scope` materialization.
-
-Translation quality review remains:
+Translation review remains:
 
 ```text
 translation_review_status = DEFER_TO_RUNTIME_QA
 ```
 
-## 3. Authority model
+Authority model:
 
 ```text
 PC Korean content/terminology             -> SOURCE_AUTHORITY
 PC mapping/font source obligation         -> SOURCE_AUTHORITY
 verified Switch mapping realization       -> SWITCH_RUNTIME_AUTHORITY
 Switch script/control/owner/runtime       -> STRUCTURAL_AUTHORITY
-known-good PC visible Korean              -> SEMANTIC_ORACLE (observed context only)
+known-good PC visible Korean              -> SEMANTIC_ORACLE
 PC runtime mechanics                      -> REFERENCE_OR_HINT
 PC workaround/defect                      -> NON_AUTHORITATIVE_EVIDENCE
 ```
@@ -64,197 +57,235 @@ content/semantic obligation = PC source/oracle
 implementation = Switch-native design
 ```
 
-Existing full-port WRITE_SAFE or historical action labels do not automatically authorize selective output.
+Historical full-port WRITE_SAFE/action labels remain provenance only and do not automatically authorize selective output.
 
-## 4. Canonical contracts
+## 3. Canonical contracts
 
-- `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-  - mechanism/usage/investigation taxonomy;
-  - caller/owner/risk/mechanism-decision rules.
-- `IDENTITY_PROVENANCE_CONTRACT.md`
-  - registry-issued opaque IDs;
-  - native-locator separation;
-  - append-only supersession;
-  - edge graph/cardinality;
-  - artifact freshness;
-  - manual tasks;
-  - field evidence.
-- `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
-  - applicability;
-  - realization/constraints;
-  - explicit release scope;
-  - derived disposition bridge;
-  - total work-queue accounting.
-- `FIXED_PARTICLE_POLICY.md`
-  - `FIXED_SURFACE_PARTICLE_V1`;
-  - approved fixed allomorph forms;
-  - narrow investigation-relief boundary;
-  - TAI5MSG shrink-only byte-impact contract;
-  - EVENT/TS5 no-rewrite boundary.
-- `EVENT_EXTRACTION_SCHEMA.md`
-  - event-specific structural metadata only.
+- `IDENTITY_PROVENANCE_CONTRACT.md`: opaque registry IDs, locator separation, append-only history, graph/cardinality, freshness, manual tasks, field evidence.
+- `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`: applicability, realization/constraints, explicit release scope, derived disposition, queue accounting.
+- `FIXED_PARTICLE_POLICY.md`: `FIXED_SURFACE_PARTICLE_V1`; no automatic mechanism reclassification or rewrite authority.
+- `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`: mechanism/usage/investigation and caller/owner risk rules.
+- `registry/provenance_shards/INDEX.json`: physical provenance-shard resolution authority for the current expanded registry.
 
-Persistent IDs are registry-issued opaque IDs. Registry loss is canonical-data loss.
-
-Valid normal adapter state:
+Valid adapter state remains:
 
 ```text
 candidate_id = null
 candidate_status = NOT_ISSUED
 ```
 
-## 5. Current production registry seed
+## 4. Registry history
 
-Completed materialization scope:
+Initial production seed:
 
 ```text
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
+scope  = PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
+commit = 3ee03c11b7b608b03e3094d70f4ae056d7490f2f
+
+PC_SOURCE_INLINE        = 8
+SWITCH_PHYSICAL_OWNER   = 8
+BINDS_TO                = 8
+artifact IDs            = 2
+candidate/manual/class  = 0
 ```
 
-Canonical files:
+Seed IDs remain immutable:
+
+```text
+ENT-00000001 .. ENT-00000016
+EDG-00000001 .. EDG-00000008
+ART-00000001 .. ART-00000002
+```
+
+The seed entities, edges, and provenance were byte-exactly replayed before expansion.
+
+## 5. Current F1 static replay population
+
+Completed scopes:
+
+```text
+PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION
+PROVENANCE_SHARDED_REPLAY_MATERIALIZATION
+```
+
+Declared canonical F1 input:
+
+```text
+rows                       = 158
+source shards              = 20
+INDEX blob                 = 479b21c8bcbaa09aaf845906179411c3cec6dafb
+logical-content SHA-256    = c612bcf55d0c139d55dee42a6a6397f702ead0f1628b47b45c46512fd1b52bff
+ordered-source-IDs SHA-256 = 87d5a7531b5e2b3841fe4ba093a87dd9da11e8c85b5d4184c6ae705436c1833e
+```
+
+Current registry totals:
+
+```text
+PC_SOURCE_INLINE        = 158
+SWITCH_PHYSICAL_OWNER   = 158
+entity IDs              = 316
+BINDS_TO edges          = 158
+edge IDs                = 158
+artifact IDs            = 4
+
+candidate IDs           = 0
+manual task IDs         = 0
+classification IDs      = 0
+```
+
+Next sequences:
+
+```text
+entity_id          = 317
+edge_id            = 159
+artifact_id        = 5
+candidate_id       = 1
+manual_task_id     = 1
+classification_id = 1
+```
+
+New expansion IDs:
+
+```text
+PC source: ENT-00000017 .. ENT-00000166
+Switch owner: ENT-00000167 .. ENT-00000316
+edges: EDG-00000009 .. EDG-00000158
+artifacts: ART-00000003 .. ART-00000004
+```
+
+## 6. Replay/cardinality result
+
+Owner reuse is checked before new owner issuance.
+
+Across all 158 F1 static rows, `localization_id`, `target_object`, `runtime_destination_cell`, `write_start`, and `terminator_offset` are each unique.
+
+Therefore:
+
+```text
+shared owner count = 0
+derived graph cardinality in F1-static-158 = 1:1 x 158
+```
+
+This does not change the broader contract fact that N:1 relationships are corpus-proven elsewhere.
+
+## 7. Provenance storage
+
+Canonical physical storage:
+
+```text
+schema       = SELECTIVE_KO_PROVENANCE_SHARD_INDEX_V1
+storage_mode = SHARDED_INDEXED_V1
+index        = selective_ko/registry/provenance_shards/INDEX.json
+```
+
+The original seed file remains unchanged and serves as physical shard 1:
+
+```text
+selective_ko/registry/provenance.jsonl
+records = 8
+Git blob = 6d1617072cb78fb2b1f3081aab5fa8562d9f59f8
+```
+
+New physical shards:
+
+```text
+selective_ko/registry/provenance_shards/F1_STATIC/part-02.jsonl
+...
+selective_ko/registry/provenance_shards/F1_STATIC/part-20.jsonl
+```
+
+Logical reconstruction:
+
+```text
+records              = 158
+bytes                = 267054
+aggregate SHA-256    = 7d5f753b4c1401cf89cf037d0eb3a3033573e50b47b3e90089c8a2516e38321a
+virtual monolith OID = 0033877e00f7f9eab163b5329531ac4587533bc0
+physical shards      = 20
+```
+
+`provenance_ref` is stable logical identity. Physical path resolution comes from `INDEX.json`, never from parsing the ref string.
+
+## 8. Provenance basis and recovery equivalence
+
+Seed provenance rows retain:
+
+```text
+commit = 2d78b64ab3a13c98e6faaf86f69ec35698be7682
+tree   = a56e71f5eeef7ceb3468c397d4a28f275ac8d363
+```
+
+Expansion rows retain replay evidence basis:
+
+```text
+commit = 3ee03c11b7b608b03e3094d70f4ae056d7490f2f
+tree   = bc534e7664a716c0338826206bb5934859d3bcdc
+```
+
+Actual materialization parent after Git recovery:
+
+```text
+commit = 7c722e65484193420ea0d4405c87c97350dc3624
+tree   = bc534e7664a716c0338826206bb5934859d3bcdc
+TREE_EQUIVALENCE = PASS
+```
+
+Recovery history does not rewrite provenance semantics.
+
+## 9. Canonical expanded artifact identities
 
 ```text
 registry/REGISTRY_STATE.json
+SHA-256 = 96d02fdfbd4f2422f5c2828118274facb22356a37c5d8dd708e9acd39c32d31f
+Git blob = 3bfc9f21cfab01a0ab009e60868ff240626efcbb
+
 registry/entities.jsonl
+SHA-256 = 35c986d5c9563e3b9c2df3c4d444c661034680e9359619cf4986dce01697efdf
+Git blob = fc43b543850b7ced40fada89945aa89f6af5e5cf
+
 registry/edges.jsonl
-registry/provenance.jsonl
-artifacts/PC_SOURCE_SWITCH_OWNER_ADAPTER_MANIFEST.json
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION.md
+SHA-256 = d333f1369e3915e55fda212d2dc9bfc0f39f9f41283e42ff91002fb061727210
+Git blob = 780410d2ed8771042a6b024647f710ffddeeba4a
+
+registry/provenance_shards/INDEX.json
+SHA-256 = 1726f00b327546096f11c3c480feafde5e3224a7a2403a85cb8dec42d2ae7845
+Git blob = 261077ea6e25632ca167cf299fc1221a281cc24f
+
+artifacts/PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION_MANIFEST.json
+SHA-256 = 4d5e915ced4bc597c55ffd18a594c230f0220234ab31bff5a038c6112a797116
+Git blob = a1bc5a49eb939b0abc31d864ed7c54c5ff586315
+
+PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION.md
+SHA-256 = 144a5e932924dc71e383920d8f619ca7c8af439257758a1cbaffa69649da4fa5
+Git blob = 252106d1fccc72b6e50715bdafef43b67088db85
 ```
 
-Initial issued IDs:
+Individual provenance-shard identities are recorded in the shard index.
 
-```text
-entity_id         16
-  PC_SOURCE_INLINE        8
-  SWITCH_PHYSICAL_OWNER   8
+Freshness is computed, not trusted. Missing/mismatched shard/index/ref coverage or aggregate mismatch is `INVALID`.
 
-edge_id            8
-  BINDS_TO                8
+## 10. Historical 24-edge recovery
 
-artifact_id        2
-  PC_SOURCE_ADAPTER       1
-  SWITCH_OWNER_ADAPTER    1
-
-candidate_id       0
-manual_task_id     0
-classification_id  0
-```
-
-Seed cohort is exactly the first canonical F1 static-authorization shard:
-
-```text
-R36
-R103
-R128
-R136
-R137
-R138
-R139
-R140
-```
-
-It is intentionally non-exhaustive.
-
-All row facts are consumed from the already-canonical F1 manifest. No `dinput8.dll`, F1 selector, Switch target discovery, semantic-owner analysis, or write-safety analysis was rerun.
-
-Candidates, mechanism/usage classifications, applicability, realization, release-scope decisions, derived dispositions, work queues, and particle-policy classifications emitted by this materialization: **0**.
-
-## 6. Production artifact identity and freshness
-
-Materialization run provenance before commit:
-
-```text
-basis commit = 2d78b64ab3a13c98e6faaf86f69ec35698be7682
-basis tree   = a56e71f5eeef7ceb3468c397d4a28f275ac8d363
-```
-
-Direct immutable adapter inputs:
-
-```text
-F1 index blob
-479b21c8bcbaa09aaf845906179411c3cec6dafb
-
-F1 seed shard blob
-235ca401ca313369b90b76e710fcc0329312a716
-
-F1 seed shard semantic SHA-256
-0c57bf4da934b20fe93ccf39aed0fb0aba6d6d6b9c7ab82dbff778d84e33776b
-
-identity/provenance contract blob
-da67fff27e6845bb29e728c41ebb763553512bac
-```
-
-Context-only canonical policy identities:
-
-```text
-applicability/realization taxonomy blob
-9813ea91ff5bb8e331b5da721219e15713480fe8
-
-fixed-particle policy blob
-36d6a1530bc96b40a00b96d64dd6173aab834ef5
-```
-
-Freshness is recomputed; stored creation-time `FRESH` is not authority.
-
-Current output SHA-256:
-
-```text
-REGISTRY_STATE.json
-ce29f06b99f6de6a2fcfd8d560a28f1e2616c630316371e2aea3936048620496
-
-entities.jsonl
-90fd30dfe2b9d14e8caecc0f6f9b65c2281a91bca48db219f11e78221c73aab9
-
-edges.jsonl
-0b792990e5cc0dc62c0daebeb63d9774729001ca747220042792ba72f5b055b6
-
-provenance.jsonl
-36ff55b27497618b632ec914d99fff9607cfcb903264dd84510f42b1403c14c2
-
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MANIFEST.json
-b2cca41f1efed7399709e08dc953059660df123ccc1c6e9ccf3bdf4eadaf9844
-```
-
-## 7. Historical 24-edge provenance correction
-
-The old identity-contract placeholder for the known gap-internal 24 exact memberships is superseded on the provenance axis by canonical recovery evidence.
-
-Canonical recovery:
-
-```text
-docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md
-blob = 12fd5f8db9df8d96ad9599f619771fb711a1623a
-
-data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/MEMBERSHIP.json
-blob = 5223f3eb6659a05d67230e5ce621d5a0beb0f025
-
-pair-list SHA-256
-133173ac874c64c9fda0fc40d020363e9fe2214ecba258e9602100f9432c3a5d
-```
-
-Effective state:
+Effective historical state remains:
 
 ```text
 historical_artifact_edge_recovery = RECOVERABLE_FROM_SOURCE
 exact membership recovered canonically = YES
-selective-registry import in current seed = NO
 ```
 
-The recovered set contains 24 pair units. One pair overlaps the historical exact cross-boundary graph, so the recovery evidence records 23 additional reductions when composed with that graph.
-
-No write authority changes.
-
-## 8. Fixed-particle release policy
-
-Canonical policy:
+Canonical evidence:
 
 ```text
-particle_release_policy = FIXED_SURFACE_PARTICLE
-particle_release_policy_version = FIXED_SURFACE_PARTICLE_V1
+recovery document blob = 12fd5f8db9df8d96ad9599f619771fb711a1623a
+membership blob        = 5223f3eb6659a05d67230e5ce621d5a0beb0f025
+pair-list SHA-256      = 133173ac874c64c9fda0fc40d020363e9fe2214ecba258e9602100f9432c3a5d
 ```
 
-Approved first-release forms:
+Those 24 pairs are outside this F1-static-158 population and are not auto-imported.
+
+## 11. Fixed-particle policy
+
+Canonical first-release surface policy remains:
 
 ```text
 은(는) / 는(은) -> 는
@@ -264,20 +295,7 @@ Approved first-release forms:
 (으)로 / 로(으) -> 로
 ```
 
-Applicability is limited to explicit dual-form literals or separately proven particle-only selector leaves. Ordinary Korean particles are never globally substituted.
-
-The structural `PARTICLE_SENSITIVE_INSERT` mechanism and `PARTICLE_RISK` provenance remain intact.
-
-This policy does not automatically determine:
-
-- owner/caller topology;
-- Switch applicability;
-- Switch realization;
-- release scope;
-- capacity/terminator safety;
-- copula/ending/register/interrogative formatters;
-- numeric-counter morphology;
-- cross-message composition.
+The structural `PARTICLE_SENSITIVE_INSERT` / `PARTICLE_RISK` provenance remains intact.
 
 Canonical PC TAI5MSG read-only census remains:
 
@@ -290,62 +308,25 @@ Canonical PC TAI5MSG read-only census remains:
 aggregate semantic payload delta = -520 bytes
 ```
 
-TAI5MSG rewrite and EVENT/TS5 rewrite remain unimplemented and unauthorized in the current registry seed.
+No particle corpus rewrite was performed by this adapter materialization.
 
-## 9. Applicability / realization / release-scope boundary
+## 12. Applicability / realization / release-scope boundary
 
-Applicability values:
+Current adapter registry emits zero applicability, realization, release-scope, derived-disposition, work-queue, and particle-policy classification rows.
 
-```text
-EXACT_COUNTERPART
-EQUIVALENT_COUNTERPART
-COMPOSITE_COUNTERPART
-NO_SWITCH_COUNTERPART
-COUNTERPART_UNKNOWN
-```
-
-Realization values:
-
-```text
-DIRECT_DATA
-OBJECT_RECONSTRUCTION
-REDIRECT_PORT
-SWITCH_NATIVE_RUNTIME_EQUIVALENT
-EXISTING_NATIVE_BEHAVIOR
-REALIZATION_UNRESOLVED
-```
-
-Hard rule:
+Hard rule remains:
 
 ```text
 AXIS_EVIDENCE_INDEPENDENCE = PASS required
-```
-
-Historical full-port action labels are evidence only and never direct selective values.
-
-Release-scope default:
-
-```text
 release_scope = NOT_DECIDED
 ```
 
-Other values require explicit decision provenance.
-
-Work queue is derived and must satisfy:
-
-```text
-QUEUE_UNASSIGNED = 0
-```
-
-`QUEUE_RULE_GAP` is a routing-rule defect tracked separately from ordinary investigation backlog.
-
-## 10. Current exclusions and remaining coverage
+## 13. Current exclusions
 
 Still not materialized:
 
-- remaining 150 F1 static rows;
-- broader F1/Stage2/forward/gap PC-source and Switch-owner registry coverage;
-- pointer/runtime T5K source entities;
+- broader inline/Stage2/forward/gap source-owner coverage outside F1-static-158;
+- pointer/runtime T5K selective entities;
 - candidate IDs;
 - broad mechanism/usage classifications;
 - applicability/realization rows;
@@ -354,28 +335,28 @@ Still not materialized:
 - fixed-particle corpus classifications;
 - TAI5MSG structure adapter;
 - EVENT/TS5 structure adapter;
-- TAI5MSG or EVENT rewritten payloads;
+- rewritten TAI5MSG/EVENT payloads;
 - selective builder/IPS/build;
 - translation QA.
 
-Mapping 10,036 and other inherited VERIFIED full-port facts remain closed and are not reopened by this state.
+Mapping 10,036 and other inherited VERIFIED full-port facts remain closed.
 
-## 11. Next scope
+## 14. Next planned structural scope
 
-Recommended next scope:
+The declared F1 static source-owner registry population and its physical provenance storage are closed.
+
+Next planned structural layer:
 
 ```text
-PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION
+TAI5MSG_STRUCTURE_ADAPTER
 ```
 
-Purpose:
+Future boundary:
 
-1. read the current registry as an input;
-2. consume remaining READY canonical PC-source/Switch-owner evidence;
-3. append IDs/edges without renumbering any issued ID;
-4. validate append-only replay and freshness;
-5. keep `candidate_id` unissued by default;
-6. do not broadly classify mechanism/applicability/realization/release scope;
-7. do not start TAI5MSG/EVENT/build work in the same scope.
+1. consume existing canonical TAI5MSG parser/container facts rather than reopen PC runtime analysis;
+2. materialize deterministic TAI5MSG message/structure identities under the registry contract;
+3. keep EVENT/TS5 separate until its locator-determinism gate;
+4. do not emit game rewrite/build output merely by creating structure identities;
+5. use fixed-particle policy only as context until separately authorized rewrite/serializer work.
 
-After that scope report: STOP and require a fresh explicit user execution signal.
+A fresh explicit user execution signal is required.
