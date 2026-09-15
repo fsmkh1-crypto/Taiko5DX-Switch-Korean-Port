@@ -1,36 +1,42 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: FIXED_PARTICLE_POLICY_MATERIALIZED / SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
+Status: PC_SOURCE_SWITCH_OWNER_PRODUCTION_REGISTRY_SEED_MATERIALIZED / FIXED_PARTICLE_POLICY_MATERIALIZED / SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / NO CANDIDATE / NO CORPUS CLASSIFICATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
-## 1. Base identity
+## 1. Resume authority
 
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
-Umbrella branch: `main`
-Initialization base HEAD: `f652333af41271b32bafb2054a1a1c3c853f1105`
-Selective-project initialization commit: `2fb74c1e53030750012bcf7f13cf2ad8ebe43b2d`
-Nintendo Switch title ID: `0100346017304000`
-Target game version: `1.1.3`
+Branch: `main`
+Target: Nintendo Switch title `0100346017304000`, game v1.1.3.
 
-This file is the resume authority for the `selective_ko/` subtree only. The repository-root `PROJECT_STATE.md` remains authoritative for the historical full-port track.
+This file is the resume authority for the `selective_ko/` subtree. The repository-root `PROJECT_STATE.md` remains authority for the historical full-port track.
 
 A new chat/model is not a reason to reopen VERIFIED or already-closed evidence.
+
+Required reads for the next selective scope:
+
+1. `IDENTITY_PROVENANCE_CONTRACT.md`
+2. `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+3. `FIXED_PARTICLE_POLICY.md`
+4. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+5. `PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION.md`
+6. this file
 
 ## 2. Product target
 
 The selective product target is not a complete clone of the PC Korean patch.
 
-Priority Korean scope:
+Priority Korean scope remains:
 
 - character/person descriptions;
-- region/location descriptions, while place names themselves may remain Japanese;
+- region/location descriptions while place names may remain Japanese;
 - tools/items descriptions;
 - techniques/skills descriptions;
 - event narration/body/system/context text;
-- static or otherwise proven-safe dialogue when practical.
+- static or otherwise proven-safe dialogue where practical.
 
-Likely first-release exclusions/deferments include person/place identity, yomi, calendar formatting, name composition/input, and unresolved dynamic grammar, but these are product-policy intentions only until an explicit `release_scope` decision is materialized under `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`.
+Identity/yomi/calendar/name-composition/input and unresolved dynamic grammar may be excluded or deferred, but that remains a product decision until explicit `release_scope` materialization.
 
 Translation quality review remains:
 
@@ -38,37 +44,16 @@ Translation quality review remains:
 translation_review_status = DEFER_TO_RUNTIME_QA
 ```
 
-The first-release particle-allomorph policy is now separately canonicalized under `FIXED_PARTICLE_POLICY.md`.
-
-## 3. Inherited VERIFIED assets
-
-Inherited without revalidation unless identity changes or contradictory evidence appears:
-
-- Switch v1.1.3 `main` identity and Build ID;
-- Stage1/Stage2/F1/FZ001 structural discoveries as provenance sources;
-- L1/L2/L3 physical/semantic owner findings where applicable;
-- Mapping 10,036 semantic obligation and verified Switch realization family;
-- Mapping forward/reverse/round-trip PASS on the tested Eden Android route;
-- Switch decoder evidence for compact Korean bytes when they reach the decoder;
-- Switch Japanese halfwidth normalization ownership/route findings;
-- PC Korean translation corpus, terminology, mapping/font assets as source evidence;
-- TAI5MSG container/message parser knowledge;
-- existing EVENT/TS5 structural observations;
-- known failure/rejected-hypothesis history;
-- full-port portability/action/owner evidence as provenance only for selective adjudication.
-
-Existing full-port WRITE_SAFE does not automatically authorize selective-project output.
-
-## 4. PC patch authority model
+## 3. Authority model
 
 ```text
-PC Korean translation/content/terminology     -> SOURCE_AUTHORITY
-PC mapping/font source obligation             -> SOURCE_AUTHORITY
-verified Switch mapping/font realization      -> SWITCH_RUNTIME_AUTHORITY
-Switch script/control/owner/runtime structure -> STRUCTURAL_AUTHORITY
-known-good PC Korean visible result           -> SEMANTIC_ORACLE (observed context only)
-PC runtime mechanism                          -> REFERENCE_OR_HINT
-PC workaround/known defect                    -> NON_AUTHORITATIVE_EVIDENCE
+PC Korean content/terminology             -> SOURCE_AUTHORITY
+PC mapping/font source obligation         -> SOURCE_AUTHORITY
+verified Switch mapping realization       -> SWITCH_RUNTIME_AUTHORITY
+Switch script/control/owner/runtime       -> STRUCTURAL_AUTHORITY
+known-good PC visible Korean              -> SEMANTIC_ORACLE (observed context only)
+PC runtime mechanics                      -> REFERENCE_OR_HINT
+PC workaround/defect                      -> NON_AUTHORITATIVE_EVIDENCE
 ```
 
 Conflict rule:
@@ -79,443 +64,188 @@ content/semantic obligation = PC source/oracle
 implementation = Switch-native design
 ```
 
-## 5. Current repository assets
+Existing full-port WRITE_SAFE or historical action labels do not automatically authorize selective output.
 
-Direct-reuse family:
+## 4. Canonical contracts
 
-- `reuse/mapping10036/build_mapping10036_diag.py`
-- `reuse/mapping10036/mapping10036_helper_v2.s`
-- `reuse/mapping10036/mapping10036_helper_v2.ld`
-
-Reference-only family:
-
-- `reference/tai5msg_legacy_reconstruction.py`
-- `reference/t5k_pc_patch_parser.py`
-
-Reference-only code must not become release behavior without separate review against the selective scope.
-
-## 6. Canonical design documents and precedence
-
-Current selective design baseline includes:
-
-- `ARCHITECTURE.md`
 - `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+  - mechanism/usage/investigation taxonomy;
+  - caller/owner/risk/mechanism-decision rules.
 - `IDENTITY_PROVENANCE_CONTRACT.md`
+  - registry-issued opaque IDs;
+  - native-locator separation;
+  - append-only supersession;
+  - edge graph/cardinality;
+  - artifact freshness;
+  - manual tasks;
+  - field evidence.
 - `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+  - applicability;
+  - realization/constraints;
+  - explicit release scope;
+  - derived disposition bridge;
+  - total work-queue accounting.
 - `FIXED_PARTICLE_POLICY.md`
-- `CLASSIFICATION_SCHEMA.md`
+  - `FIXED_SURFACE_PARTICLE_V1`;
+  - approved fixed allomorph forms;
+  - narrow investigation-relief boundary;
+  - TAI5MSG shrink-only byte-impact contract;
+  - EVENT/TS5 no-rewrite boundary.
 - `EVENT_EXTRACTION_SCHEMA.md`
-- `KNOWN_FAILURES.md`
-- `MIGRATION_MANIFEST.json`
+  - event-specific structural metadata only.
 
-Authority by question:
+Persistent IDs are registry-issued opaque IDs. Registry loss is canonical-data loss.
 
-1. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-   - mechanism/usage/investigation taxonomy;
-   - caller/owner/risk/mechanism-decision rules;
-   - source authority and safe-dialogue structural rules.
-2. `IDENTITY_PROVENANCE_CONTRACT.md`
-   - registry-issued opaque IDs;
-   - native locator separation;
-   - edge graph/cardinality derivation;
-   - artifact freshness;
-   - manual-task and field-evidence rules.
-3. `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
-   - Switch applicability;
-   - Switch realization and constraints;
-   - release scope;
-   - derived disposition bridge;
-   - versioned work-queue derivation and queue accounting.
-4. `FIXED_PARTICLE_POLICY.md`
-   - first-release allomorphic-particle surface decision;
-   - exact fixed forms and applicability gate;
-   - particle-only investigation relief boundary;
-   - TAI5MSG shrink-only byte-impact contract;
-   - EVENT/TS5 no-rewrite boundary.
-5. `CLASSIFICATION_SCHEMA.md`
-   - selective-product presentation bridge, except where later narrow canonical corrections supersede older broad defaults.
-6. container-specific schemas such as `EVENT_EXTRACTION_SCHEMA.md`
-   - additional source-specific metadata only.
-
-Later narrow policy documents do not erase older provenance. They supersede only the specific decision surface they explicitly govern.
-
-## 7. Common content/generation taxonomy
-
-Existing observed/classified fields remain independent:
-
-```text
-mechanism_class
-usage_class
-investigation_status
-```
-
-Mechanism classes:
-
-```text
-STATIC_COMPLETE
-BRANCH_COMPLETE
-VARIABLE_INSERT
-PARTICLE_SENSITIVE_INSERT
-NUMERIC_COUNTER_FORMAT
-FRAGMENT_COMPOSED
-GRAMMAR_FORMATTER
-NAME_COMPOSED
-MECHANISM_MIXED
-```
-
-Usage classes:
-
-```text
-UI_DESCRIPTION
-NARRATION_SYSTEM
-DIALOGUE
-IDENTITY
-OTHER
-```
-
-Investigation status:
-
-```text
-RESOLVED
-CALLER_UNKNOWN
-NOT_INVESTIGATED
-```
-
-Existing mechanism-decision inputs and risks remain in force, including `append_after`, variable-source provenance, particle adjacency, dynamic-counter evidence, shared-owner risk, cross-message composition, PC occurrence conflict, and capacity risk.
-
-The fixed-particle product policy does not change a structural `PARTICLE_SENSITIVE_INSERT` classification into `VARIABLE_INSERT`.
-
-## 8. Identity/provenance contract
-
-Persistent pipeline IDs are registry-issued opaque IDs and are not generated from RVA, offsets, parser ordinals, text, or hashes.
-
-Minimum namespaces already fixed by contract:
-
-```text
-entity_id
-candidate_id
-edge_id
-artifact_id
-manual_task_id
-classification_id
-```
-
-The registry itself is canonical append-only project data.
-
-Native locators are versioned provenance. Locator correction does not change entity identity when the entity remains the same.
-
-Valid normal state:
+Valid normal adapter state:
 
 ```text
 candidate_id = null
 candidate_status = NOT_ISSUED
 ```
 
-Candidate issuance remains intentionally later than adapter-row creation.
+## 5. Current production registry seed
 
-Edge cardinality is derived from graph degree, not stored as immutable edge identity.
-
-Contract-pilot evidence boundary remains:
+Completed materialization scope:
 
 ```text
-N:1 = CORPUS_PROVEN
-1:N = FIXTURE_EXPRESSION_PROVEN / CORPUS_EXISTENCE_NOT_CLAIMED
-N:M = FIXTURE_EXPRESSION_PROVEN / CORPUS_EXISTENCE_NOT_CLAIMED
+PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
 ```
 
-Artifact freshness is recomputed:
+Canonical files:
 
 ```text
-FRESH
-STALE_INPUT
-STALE_DEPENDENCY
-STALE_CONTRACT
-INVALID
+registry/REGISTRY_STATE.json
+registry/entities.jsonl
+registry/edges.jsonl
+registry/provenance.jsonl
+artifacts/PC_SOURCE_SWITCH_OWNER_ADAPTER_MANIFEST.json
+PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION.md
 ```
 
-Manual tasks remain separate entities with reasons:
+Initial issued IDs:
 
 ```text
-STRUCTURE_INSUFFICIENT
-EXTRACTOR_GAP
-SEMANTIC_JUDGMENT
+entity_id         16
+  PC_SOURCE_INLINE        8
+  SWITCH_PHYSICAL_OWNER   8
+
+edge_id            8
+  BINDS_TO                8
+
+artifact_id        2
+  PC_SOURCE_ADAPTER       1
+  SWITCH_OWNER_ADAPTER    1
+
+candidate_id       0
+manual_task_id     0
+classification_id  0
 ```
 
-Historical exact-edge recovery state remains:
+Seed cohort is exactly the first canonical F1 static-authorization shard:
 
 ```text
-RECOVERABLE_FROM_SOURCE
-STRUCTURE_INSUFFICIENT
-NOT_YET_ASSESSED
+R36
+R103
+R128
+R136
+R137
+R138
+R139
+R140
 ```
 
-The previously recorded 24 internal-collapse exact edges are not re-adjudicated by this policy materialization.
+It is intentionally non-exhaustive.
 
-## 9. Switch applicability layer
+All row facts are consumed from the already-canonical F1 manifest. No `dinput8.dll`, F1 selector, Switch target discovery, semantic-owner analysis, or write-safety analysis was rerun.
 
-Canonical values:
+Candidates, mechanism/usage classifications, applicability, realization, release-scope decisions, derived dispositions, work queues, and particle-policy classifications emitted by this materialization: **0**.
+
+## 6. Production artifact identity and freshness
+
+Materialization run provenance before commit:
 
 ```text
-EXACT_COUNTERPART
-EQUIVALENT_COUNTERPART
-COMPOSITE_COUNTERPART
-NO_SWITCH_COUNTERPART
-COUNTERPART_UNKNOWN
+basis commit = 2d78b64ab3a13c98e6faaf86f69ec35698be7682
+basis tree   = a56e71f5eeef7ceb3468c397d4a28f275ac8d363
 ```
 
-Important boundary:
+Direct immutable adapter inputs:
 
 ```text
-NO_SWITCH_COUNTERPART != impossible
-NO_SWITCH_COUNTERPART != OUT_OF_SCOPE
-NO_SWITCH_COUNTERPART != BLOCKED
+F1 index blob
+479b21c8bcbaa09aaf845906179411c3cec6dafb
+
+F1 seed shard blob
+235ca401ca313369b90b76e710fcc0329312a716
+
+F1 seed shard semantic SHA-256
+0c57bf4da934b20fe93ccf39aed0fb0aba6d6d6b9c7ab82dbff778d84e33776b
+
+identity/provenance contract blob
+da67fff27e6845bb29e728c41ebb763553512bac
 ```
 
-The following combination is explicitly valid when supported by independent evidence:
+Context-only canonical policy identities:
 
 ```text
-NO_SWITCH_COUNTERPART
-+ SWITCH_NATIVE_RUNTIME_EQUIVALENT
+applicability/realization taxonomy blob
+9813ea91ff5bb8e331b5da721219e15713480fe8
+
+fixed-particle policy blob
+36d6a1530bc96b40a00b96d64dd6173aab834ef5
 ```
 
-## 10. Switch realization layer
+Freshness is recomputed; stored creation-time `FRESH` is not authority.
 
-Canonical values:
+Current output SHA-256:
 
 ```text
-DIRECT_DATA
-OBJECT_RECONSTRUCTION
-REDIRECT_PORT
-SWITCH_NATIVE_RUNTIME_EQUIVALENT
-EXISTING_NATIVE_BEHAVIOR
-REALIZATION_UNRESOLVED
+REGISTRY_STATE.json
+ce29f06b99f6de6a2fcfd8d560a28f1e2616c630316371e2aea3936048620496
+
+entities.jsonl
+90fd30dfe2b9d14e8caecc0f6f9b65c2281a91bca48db219f11e78221c73aab9
+
+edges.jsonl
+0b792990e5cc0dc62c0daebeb63d9774729001ca747220042792ba72f5b055b6
+
+provenance.jsonl
+36ff55b27497618b632ec914d99fff9607cfcb903264dd84510f42b1403c14c2
+
+PC_SOURCE_SWITCH_OWNER_ADAPTER_MANIFEST.json
+b2cca41f1efed7399709e08dc953059660df123ccc1c6e9ccf3bdf4eadaf9844
 ```
 
-`NO_REALIZATION_REQUIRED` is not used. Existing sufficient behavior is represented by `EXISTING_NATIVE_BEHAVIOR`; no-change work is derived later.
+## 7. Historical 24-edge provenance correction
 
-Realization is not assumed one-per-source-row. It belongs to actual realization/action responsibility once that unit is materialized, and source/owner/candidate relationships remain graph-based.
+The old identity-contract placeholder for the known gap-internal 24 exact memberships is superseded on the provenance axis by canonical recovery evidence.
 
-Whether a dedicated `realization_unit_id` namespace is needed remains intentionally unresolved until real materialization demonstrates the identity boundary.
-
-## 11. Realization constraints
-
-Use:
+Canonical recovery:
 
 ```text
-realization_constraints[]
-constraint_kind = BLOCKER | DIRECT_NOT_REQUIRED
+docs/INLINE_GAP_INTERNAL_24_EDGE_PROVENANCE_RECOVERY.md
+blob = 12fd5f8db9df8d96ad9599f619771fb711a1623a
+
+data/post_freeze/inline_gap_internal_24_edge_provenance_recovery_v1/MEMBERSHIP.json
+blob = 5223f3eb6659a05d67230e5ce621d5a0beb0f025
+
+pair-list SHA-256
+133173ac874c64c9fda0fc40d020363e9fe2214ecba258e9602100f9432c3a5d
 ```
 
-Initial BLOCKER codes:
+Effective state:
 
 ```text
-CAPACITY
-TERMINATOR
-SHARED_OWNER
-STORAGE_MUTABILITY
-LANGUAGE_DOMAIN
-STRUCTURE_MISMATCH
-CONTROL_DEPENDENCY
-RUNTIME_SEMANTICS
-NO_EXISTING_COUNTERPART
-UNKNOWN
+historical_artifact_edge_recovery = RECOVERABLE_FROM_SOURCE
+exact membership recovered canonically = YES
+selective-registry import in current seed = NO
 ```
 
-Initial DIRECT_NOT_REQUIRED code:
+The recovered set contains 24 pair units. One pair overlaps the historical exact cross-boundary graph, so the recovery evidence records 23 additional reductions when composed with that graph.
 
-```text
-NATIVE_BEHAVIOR_ALREADY_SATISFIES_OBLIGATION
-```
+No write authority changes.
 
-Hard invariants:
-
-```text
-DIRECT_DATA
-  -> unresolved BLOCKER count = 0
-
-OBJECT_RECONSTRUCTION / REDIRECT_PORT / SWITCH_NATIVE_RUNTIME_EQUIVALENT
-  -> BLOCKER count >= 1
-
-EXISTING_NATIVE_BEHAVIOR
-  -> DIRECT_NOT_REQUIRED count >= 1
-
-REALIZATION_UNRESOLVED
-  -> unresolved or UNKNOWN BLOCKER count >= 1
-```
-
-## 12. Axis-evidence independence
-
-Hard gate:
-
-```text
-AXIS_EVIDENCE_INDEPENDENCE = PASS required
-```
-
-Every non-derived axis requires its own `field_evidence`. A target-axis value may not be assigned merely because another axis or product decision has a particular value.
-
-Mandatory negative validator cases:
-
-```text
-STATIC_COMPLETE       -> DIRECT_DATA
-EXACT_COUNTERPART     -> DIRECT_DATA
-OUT_OF_SCOPE          -> NO_SWITCH_COUNTERPART
-DEFERRED_TO_LATER     -> REALIZATION_UNRESOLVED
-NO_SWITCH_COUNTERPART -> BLOCKED
-```
-
-If target-axis evidence cites only the shortcut source value and no independent structural/technical evidence, validation must FAIL.
-
-The fixed-particle policy is also forbidden as a shortcut to `DIRECT_DATA`, `IN_SCOPE`, `INCLUDE_KO`, or any applicability value.
-
-## 13. Release scope
-
-Canonical values:
-
-```text
-NOT_DECIDED
-IN_SCOPE
-OUT_OF_SCOPE
-DEFERRED_TO_LATER
-```
-
-Only default:
-
-```text
-release_scope = NOT_DECIDED
-```
-
-`IN_SCOPE`, `OUT_OF_SCOPE`, and `DEFERRED_TO_LATER` require an explicit decision with at least:
-
-```text
-decided_by
-rationale
-decision_provenance
-policy_version
-```
-
-Release scope is intentionally asymmetric with technical axes:
-
-- technical axes change because evidence changes/supersedes;
-- release scope may change because a product/release decision changes;
-- release-scope change must not mutate technical axes.
-
-Batch release-scope decisions are allowed only as explicit versioned policies with decision provenance and exact/rule-based membership provenance. Batch policy storage format remains deferred until actual materialization.
-
-`FIXED_SURFACE_PARTICLE_V1` is not itself a release-scope decision.
-
-## 14. Derived disposition bridge
-
-Allowed values remain:
-
-```text
-INCLUDE_KO
-DEFER_KO
-KEEP_JP
-BLOCKED
-UNRESOLVED
-```
-
-For new materialization, `release_scope` is an explicit input:
-
-```text
-NOT_DECIDED                     -> UNRESOLVED
-OUT_OF_SCOPE                    -> KEEP_JP
-DEFERRED_TO_LATER               -> DEFER_KO
-IN_SCOPE + required state open  -> UNRESOLVED
-IN_SCOPE + all inclusion gates  -> INCLUDE_KO
-IN_SCOPE + no approved path     -> BLOCKED
-```
-
-Therefore `usage_class=IDENTITY` or `mechanism_class=NAME_COMPOSED` does not automatically derive `KEEP_JP`; an explicit scope decision must exist first.
-
-`BLOCKED` still requires evidence that currently authorized escalation paths are exhausted. Capacity failure, no existing counterpart, or fixed-particle-policy applicability alone is insufficient.
-
-## 15. Work-queue contract
-
-Work queue is derived, not canonical row state.
-
-Conceptually:
-
-```text
-work_queue = f(
-  content/generation taxonomy,
-  switch_applicability,
-  switch_realization,
-  release_scope,
-  realization_constraints,
-  risk/evidence/freshness,
-  queue_rule_version
-)
-```
-
-Queue rules are versioned. Changing them makes prior cached/generated queue artifacts `STALE_CONTRACT`.
-
-Minimum primary queue precedence:
-
-| Condition | Queue |
-|---|---|
-| `NOT_DECIDED` | `SCOPE_DECISION_QUEUE` |
-| `OUT_OF_SCOPE` | `OUT_OF_SCOPE_HOLD_QUEUE` |
-| `DEFERRED_TO_LATER` | `DEFERRED_LATER_QUEUE` |
-| `IN_SCOPE` + technical/evidence unresolved | `INVESTIGATION_QUEUE` |
-| `IN_SCOPE` + `EXISTING_NATIVE_BEHAVIOR` | `NO_CHANGE_REQUIRED` |
-| `IN_SCOPE` + `DIRECT_DATA` | `DIRECT_DATA_QUEUE` |
-| `IN_SCOPE` + `OBJECT_RECONSTRUCTION` | `OBJECT_RECONSTRUCTION_QUEUE` |
-| `IN_SCOPE` + `REDIRECT_PORT` | `REDIRECT_QUEUE` |
-| `IN_SCOPE` + `SWITCH_NATIVE_RUNTIME_EQUIVALENT` | `RUNTIME_EQUIVALENT_QUEUE` |
-| no defined rule matches | `INVESTIGATION_QUEUE + QUEUE_RULE_GAP` |
-
-Hard accounting invariant:
-
-```text
-QUEUE_UNASSIGNED = 0
-```
-
-Unknown/unresolved technical states never disappear from accounting.
-
-The fixed-particle policy may remove only an allomorph-choice investigation requirement when all other structural/technical gates are already closed. It does not remove unrelated investigation work.
-
-## 16. Queue-rule defect accounting
-
-`QUEUE_RULE_GAP` is a queue-rule defect, not a semantic row defect.
-
-Affected work still enters `INVESTIGATION_QUEUE`, preserving `QUEUE_UNASSIGNED=0`.
-
-But:
-
-```text
-QUEUE_RULE_GAP > 0
-  -> queue_rule_version revision candidate
-```
-
-Queue-rule-gap counts must be separate from ordinary investigation/manual/extractor backlog.
-
-Target closed state for broad production use:
-
-```text
-QUEUE_UNASSIGNED = 0
-QUEUE_RULE_GAP   = 0
-```
-
-## 17. Full-port provenance bridge
-
-Historical full-port values such as `DIRECT_PORT`, `STRUCTURAL_PORT`, `REDIRECT_PORT`, `RUNTIME_PORT`, `NATIVE_EQUIVALENT_VERIFIED`, `SUBSUMED`, and related action families are evidence/provenance only.
-
-They are not imported directly into selective `switch_realization`, `release_scope`, or `derived_disposition`.
-
-Selective values must be newly adjudicated under the selective product contract because the historical track targeted the full obligation set while the selective project has explicit release-scope decisions.
-
-## 18. Event/TAI5MSG and translation boundaries
-
-EVENT membership alone never implies safety or scope.
-
-EVENT/TS5 remains blocked from production identity materialization until its future `locator_determinism = PASS` gate.
-
-TAI5MSG remains PARTIAL/strong-foundation and is not part of the next READY-two-adapter materialization.
-
-Translation quality review remains deferred to runtime QA and does not replace structural/applicability/realization evidence.
-
-## 19. Fixed-particle release policy
+## 8. Fixed-particle release policy
 
 Canonical policy:
 
@@ -534,93 +264,118 @@ Approved first-release forms:
 (으)로 / 로(으) -> 로
 ```
 
-Applicability is limited to explicit dual-form literals or separately proven particle-only selector leaves. Ordinary Korean particles must never be globally substituted.
+Applicability is limited to explicit dual-form literals or separately proven particle-only selector leaves. Ordinary Korean particles are never globally substituted.
 
-The structural mechanism and `PARTICLE_RISK` provenance remain intact. The policy resolves only the first-release allomorph choice; it does not automatically resolve owner/caller topology, applicability, realization, capacity, release scope, copula/ending formatters, numeric counters, or cross-message composition.
+The structural `PARTICLE_SENSITIVE_INSERT` mechanism and `PARTICLE_RISK` provenance remain intact.
 
-Canonical PC TAI5MSG read-only census used for the policy:
+This policy does not automatically determine:
+
+- owner/caller topology;
+- Switch applicability;
+- Switch realization;
+- release scope;
+- capacity/terminator safety;
+- copula/ending/register/interrogative formatters;
+- numeric-counter morphology;
+- cross-message composition.
+
+Canonical PC TAI5MSG read-only census remains:
 
 ```text
-을(를) 94
-이(가) 17
-은(는) 15
-와(과)  2
-(으)로  2
-TOTAL  130 occurrences / 70 messages / 14 blocks
-```
-
-TAI5MSG byte contract for these explicit literals:
-
-```text
+130 occurrences
+70 messages
+14 blocks
 6 bytes -> 2 bytes
-delta = -4 bytes / occurrence
-aggregate observed semantic-payload delta = -520 bytes
+-4 bytes / occurrence
+aggregate semantic payload delta = -520 bytes
 ```
 
-This is shrink-only for the observed explicit TAI5MSG literals, but future implementation must still rebuild message offsets, boundaries, trailing padding, and deterministic output guards. Raw in-place deletion is not authorized.
+TAI5MSG rewrite and EVENT/TS5 rewrite remain unimplemented and unauthorized in the current registry seed.
 
-The existing read-only simulation observed that applying the fixed-particle normalization before the current compact-byte preservation reconstruction would reduce container growth from `2 blocks / +128 bytes` to `1 block / +64 bytes`. This is supporting analysis evidence, not a release-build invariant.
+## 9. Applicability / realization / release-scope boundary
 
-EVENT/TS5 may use the same product policy, but production byte rewrite remains unauthorized until the EVENT/TS5 structure/locator/serializer gates are closed. TAI5MSG layout assumptions must not be transferred to EVENT/TS5.
+Applicability values:
 
-Dynamic copula/verb/register/ending/interrogative/cross-message grammar remains outside this policy.
+```text
+EXACT_COUNTERPART
+EQUIVALENT_COUNTERPART
+COMPOSITE_COUNTERPART
+NO_SWITCH_COUNTERPART
+COUNTERPART_UNKNOWN
+```
 
-## 20. Current materialization boundary
+Realization values:
 
-Materialized in this state:
+```text
+DIRECT_DATA
+OBJECT_RECONSTRUCTION
+REDIRECT_PORT
+SWITCH_NATIVE_RUNTIME_EQUIVALENT
+EXISTING_NATIVE_BEHAVIOR
+REALIZATION_UNRESOLVED
+```
 
-- common script taxonomy;
-- identity/provenance contract;
-- 7/7 identity/provenance contract pilot result;
-- Switch applicability/realization/release-scope/work-queue taxonomy contract;
-- fixed-particle first-release policy and byte-impact contract.
+Hard rule:
 
-Still **not** materialized:
+```text
+AXIS_EVIDENCE_INDEPENDENCE = PASS required
+```
 
-- production identity registry files;
-- production PC-source/Switch-owner entity rows;
-- production edges/artifact manifests;
-- candidates;
-- classification rows;
-- applicability/realization classifications;
+Historical full-port action labels are evidence only and never direct selective values.
+
+Release-scope default:
+
+```text
+release_scope = NOT_DECIDED
+```
+
+Other values require explicit decision provenance.
+
+Work queue is derived and must satisfy:
+
+```text
+QUEUE_UNASSIGNED = 0
+```
+
+`QUEUE_RULE_GAP` is a routing-rule defect tracked separately from ordinary investigation backlog.
+
+## 10. Current exclusions and remaining coverage
+
+Still not materialized:
+
+- remaining 150 F1 static rows;
+- broader F1/Stage2/forward/gap PC-source and Switch-owner registry coverage;
+- pointer/runtime T5K source entities;
+- candidate IDs;
+- broad mechanism/usage classifications;
+- applicability/realization rows;
 - release-scope decisions;
 - work-queue artifacts;
-- realization units/actions;
 - fixed-particle corpus classifications;
-- TAI5MSG rewritten payload/container bytes;
-- EVENT/TS5 rewritten payload/container bytes;
-- selective builder changes;
-- IPS/build/runtime release artifact.
+- TAI5MSG structure adapter;
+- EVENT/TS5 structure adapter;
+- TAI5MSG or EVENT rewritten payloads;
+- selective builder/IPS/build;
+- translation QA.
 
-No existing corpus row is reclassified, included, or rewritten merely by materializing the fixed-particle policy.
+Mapping 10,036 and other inherited VERIFIED full-port facts remain closed and are not reopened by this state.
 
-## 21. Next scope
+## 11. Next scope
 
-Next planned scope:
-
-```text
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
-```
-
-Boundary for that scope:
-
-1. materialize only `PC_SOURCE_ADAPTER` and `SWITCH_OWNER_ADAPTER` under the identity/provenance contract;
-2. create first production registry/entity/edge/artifact-manifest records using actual canonical inputs;
-3. recompute freshness rather than trust stored labels;
-4. preserve field-level evidence and separate manual-task entities;
-5. leave `candidate_id` unissued by default;
-6. assess historical edge recoverability only where actual inputs/provenance require it;
-7. do not broadly populate applicability/realization/release-scope or particle-policy classifications merely because the contracts exist;
-8. do not implement `TAI5MSG_STRUCTURE_ADAPTER` yet;
-9. do not implement `EVENT_TS5_STRUCTURE_ADAPTER` yet;
-10. do not modify the selective builder or produce a build.
-
-Later planned order:
+Recommended next scope:
 
 ```text
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
--> TAI5MSG_STRUCTURE_ADAPTER
--> EVENT_TS5_STRUCTURE_ADAPTER (after locator_determinism PASS)
+PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION
 ```
 
-After the next stage report: STOP and require a fresh explicit user execution signal.
+Purpose:
+
+1. read the current registry as an input;
+2. consume remaining READY canonical PC-source/Switch-owner evidence;
+3. append IDs/edges without renumbering any issued ID;
+4. validate append-only replay and freshness;
+5. keep `candidate_id` unissued by default;
+6. do not broadly classify mechanism/applicability/realization/release scope;
+7. do not start TAI5MSG/EVENT/build work in the same scope.
+
+After that scope report: STOP and require a fresh explicit user execution signal.
