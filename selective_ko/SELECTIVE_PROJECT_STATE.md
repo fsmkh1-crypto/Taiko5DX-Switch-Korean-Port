@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
+Status: FIXED_PARTICLE_POLICY_MATERIALIZED / SWITCH_APPLICABILITY_REALIZATION_TAXONOMY_MATERIALIZED / IDENTITY_PROVENANCE_CONTRACT_MATERIALIZED / CONTRACT_PILOT_7_OF_7_PASS / NO PRODUCTION_REGISTRY / NO CORPUS MATERIALIZATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Base identity
@@ -14,6 +14,8 @@ Nintendo Switch title ID: `0100346017304000`
 Target game version: `1.1.3`
 
 This file is the resume authority for the `selective_ko/` subtree only. The repository-root `PROJECT_STATE.md` remains authoritative for the historical full-port track.
+
+A new chat/model is not a reason to reopen VERIFIED or already-closed evidence.
 
 ## 2. Product target
 
@@ -28,13 +30,15 @@ Priority Korean scope:
 - event narration/body/system/context text;
 - static or otherwise proven-safe dialogue when practical.
 
-Likely first-release exclusions/deferments include person/place identity, yomi, calendar formatting, name composition/input, and unresolved dynamic grammar, but **these are product-policy intentions only until an explicit `release_scope` decision is materialized** under `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`.
+Likely first-release exclusions/deferments include person/place identity, yomi, calendar formatting, name composition/input, and unresolved dynamic grammar, but these are product-policy intentions only until an explicit `release_scope` decision is materialized under `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`.
 
 Translation quality review remains:
 
 ```text
 translation_review_status = DEFER_TO_RUNTIME_QA
 ```
+
+The first-release particle-allomorph policy is now separately canonicalized under `FIXED_PARTICLE_POLICY.md`.
 
 ## 3. Inherited VERIFIED assets
 
@@ -98,6 +102,7 @@ Current selective design baseline includes:
 - `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
 - `IDENTITY_PROVENANCE_CONTRACT.md`
 - `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+- `FIXED_PARTICLE_POLICY.md`
 - `CLASSIFICATION_SCHEMA.md`
 - `EVENT_EXTRACTION_SCHEMA.md`
 - `KNOWN_FAILURES.md`
@@ -119,14 +124,20 @@ Authority by question:
    - Switch applicability;
    - Switch realization and constraints;
    - release scope;
-   - derived disposition bridge where release scope is relevant;
+   - derived disposition bridge;
    - versioned work-queue derivation and queue accounting.
-4. `CLASSIFICATION_SCHEMA.md`
-   - selective-product presentation bridge, except where its older broad product-default wording is narrowly superseded by item 3.
-5. container-specific schemas such as `EVENT_EXTRACTION_SCHEMA.md`
+4. `FIXED_PARTICLE_POLICY.md`
+   - first-release allomorphic-particle surface decision;
+   - exact fixed forms and applicability gate;
+   - particle-only investigation relief boundary;
+   - TAI5MSG shrink-only byte-impact contract;
+   - EVENT/TS5 no-rewrite boundary.
+5. `CLASSIFICATION_SCHEMA.md`
+   - selective-product presentation bridge, except where later narrow canonical corrections supersede older broad defaults.
+6. container-specific schemas such as `EVENT_EXTRACTION_SCHEMA.md`
    - additional source-specific metadata only.
 
-`SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md` is a later narrow correction. It does not erase older provenance; it supersedes only older wording that could be read as mechanism/usage automatically deciding release scope, realization, or final work queue.
+Later narrow policy documents do not erase older provenance. They supersede only the specific decision surface they explicitly govern.
 
 ## 7. Common content/generation taxonomy
 
@@ -171,6 +182,8 @@ NOT_INVESTIGATED
 ```
 
 Existing mechanism-decision inputs and risks remain in force, including `append_after`, variable-source provenance, particle adjacency, dynamic-counter evidence, shared-owner risk, cross-message composition, PC occurrence conflict, and capacity risk.
+
+The fixed-particle product policy does not change a structural `PARTICLE_SENSITIVE_INSERT` classification into `VARIABLE_INSERT`.
 
 ## 8. Identity/provenance contract
 
@@ -236,7 +249,7 @@ STRUCTURE_INSUFFICIENT
 NOT_YET_ASSESSED
 ```
 
-The known 24 internal-collapse edges whose exact machine-readable membership was not preserved remain `NOT_YET_ASSESSED` until actual adapter provenance is inspected.
+The previously recorded 24 internal-collapse exact edges are not re-adjudicated by this policy materialization.
 
 ## 9. Switch applicability layer
 
@@ -352,6 +365,8 @@ NO_SWITCH_COUNTERPART -> BLOCKED
 
 If target-axis evidence cites only the shortcut source value and no independent structural/technical evidence, validation must FAIL.
 
+The fixed-particle policy is also forbidden as a shortcut to `DIRECT_DATA`, `IN_SCOPE`, `INCLUDE_KO`, or any applicability value.
+
 ## 13. Release scope
 
 Canonical values:
@@ -386,6 +401,8 @@ Release scope is intentionally asymmetric with technical axes:
 
 Batch release-scope decisions are allowed only as explicit versioned policies with decision provenance and exact/rule-based membership provenance. Batch policy storage format remains deferred until actual materialization.
 
+`FIXED_SURFACE_PARTICLE_V1` is not itself a release-scope decision.
+
 ## 14. Derived disposition bridge
 
 Allowed values remain:
@@ -411,7 +428,7 @@ IN_SCOPE + no approved path     -> BLOCKED
 
 Therefore `usage_class=IDENTITY` or `mechanism_class=NAME_COMPOSED` does not automatically derive `KEEP_JP`; an explicit scope decision must exist first.
 
-`BLOCKED` still requires evidence that currently authorized escalation paths are exhausted. Capacity failure or no existing counterpart alone is insufficient.
+`BLOCKED` still requires evidence that currently authorized escalation paths are exhausted. Capacity failure, no existing counterpart, or fixed-particle-policy applicability alone is insufficient.
 
 ## 15. Work-queue contract
 
@@ -456,6 +473,8 @@ QUEUE_UNASSIGNED = 0
 
 Unknown/unresolved technical states never disappear from accounting.
 
+The fixed-particle policy may remove only an allomorph-choice investigation requirement when all other structural/technical gates are already closed. It does not remove unrelated investigation work.
+
 ## 16. Queue-rule defect accounting
 
 `QUEUE_RULE_GAP` is a queue-rule defect, not a semantic row defect.
@@ -480,7 +499,7 @@ QUEUE_RULE_GAP   = 0
 
 ## 17. Full-port provenance bridge
 
-Historical full-port values such as `DIRECT_PORT`, `STRUCTURAL_PORT`, `REDIRECT_PORT`, `RUNTIME_PORT`, `NATIVE_EQUIVALENT_VERIFIED`, `SUBSUMED`, and related action families are **evidence/provenance only**.
+Historical full-port values such as `DIRECT_PORT`, `STRUCTURAL_PORT`, `REDIRECT_PORT`, `RUNTIME_PORT`, `NATIVE_EQUIVALENT_VERIFIED`, `SUBSUMED`, and related action families are evidence/provenance only.
 
 They are not imported directly into selective `switch_realization`, `release_scope`, or `derived_disposition`.
 
@@ -496,14 +515,65 @@ TAI5MSG remains PARTIAL/strong-foundation and is not part of the next READY-two-
 
 Translation quality review remains deferred to runtime QA and does not replace structural/applicability/realization evidence.
 
-## 19. Current materialization boundary
+## 19. Fixed-particle release policy
+
+Canonical policy:
+
+```text
+particle_release_policy = FIXED_SURFACE_PARTICLE
+particle_release_policy_version = FIXED_SURFACE_PARTICLE_V1
+```
+
+Approved first-release forms:
+
+```text
+은(는) / 는(은) -> 는
+이(가) / 가(이) -> 가
+을(를) / 를(을) -> 를
+과(와) / 와(과) -> 와
+(으)로 / 로(으) -> 로
+```
+
+Applicability is limited to explicit dual-form literals or separately proven particle-only selector leaves. Ordinary Korean particles must never be globally substituted.
+
+The structural mechanism and `PARTICLE_RISK` provenance remain intact. The policy resolves only the first-release allomorph choice; it does not automatically resolve owner/caller topology, applicability, realization, capacity, release scope, copula/ending formatters, numeric counters, or cross-message composition.
+
+Canonical PC TAI5MSG read-only census used for the policy:
+
+```text
+을(를) 94
+이(가) 17
+은(는) 15
+와(과)  2
+(으)로  2
+TOTAL  130 occurrences / 70 messages / 14 blocks
+```
+
+TAI5MSG byte contract for these explicit literals:
+
+```text
+6 bytes -> 2 bytes
+delta = -4 bytes / occurrence
+aggregate observed semantic-payload delta = -520 bytes
+```
+
+This is shrink-only for the observed explicit TAI5MSG literals, but future implementation must still rebuild message offsets, boundaries, trailing padding, and deterministic output guards. Raw in-place deletion is not authorized.
+
+The existing read-only simulation observed that applying the fixed-particle normalization before the current compact-byte preservation reconstruction would reduce container growth from `2 blocks / +128 bytes` to `1 block / +64 bytes`. This is supporting analysis evidence, not a release-build invariant.
+
+EVENT/TS5 may use the same product policy, but production byte rewrite remains unauthorized until the EVENT/TS5 structure/locator/serializer gates are closed. TAI5MSG layout assumptions must not be transferred to EVENT/TS5.
+
+Dynamic copula/verb/register/ending/interrogative/cross-message grammar remains outside this policy.
+
+## 20. Current materialization boundary
 
 Materialized in this state:
 
 - common script taxonomy;
 - identity/provenance contract;
 - 7/7 identity/provenance contract pilot result;
-- Switch applicability/realization/release-scope/work-queue taxonomy contract.
+- Switch applicability/realization/release-scope/work-queue taxonomy contract;
+- fixed-particle first-release policy and byte-impact contract.
 
 Still **not** materialized:
 
@@ -516,12 +586,15 @@ Still **not** materialized:
 - release-scope decisions;
 - work-queue artifacts;
 - realization units/actions;
+- fixed-particle corpus classifications;
+- TAI5MSG rewritten payload/container bytes;
+- EVENT/TS5 rewritten payload/container bytes;
 - selective builder changes;
 - IPS/build/runtime release artifact.
 
-No existing corpus row is reclassified merely by materializing the new taxonomy.
+No existing corpus row is reclassified, included, or rewritten merely by materializing the fixed-particle policy.
 
-## 20. Next scope
+## 21. Next scope
 
 Next planned scope:
 
@@ -537,7 +610,7 @@ Boundary for that scope:
 4. preserve field-level evidence and separate manual-task entities;
 5. leave `candidate_id` unissued by default;
 6. assess historical edge recoverability only where actual inputs/provenance require it;
-7. do not broadly populate applicability/realization/release-scope values merely because the taxonomy exists;
+7. do not broadly populate applicability/realization/release-scope or particle-policy classifications merely because the contracts exist;
 8. do not implement `TAI5MSG_STRUCTURE_ADAPTER` yet;
 9. do not implement `EVENT_TS5_STRUCTURE_ADAPTER` yet;
 10. do not modify the selective builder or produce a build.
