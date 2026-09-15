@@ -1,110 +1,300 @@
 # SELECTIVE KOREAN SOURCE CLASSIFICATION SCHEMA
 
 Date: 2026-09-15
-Status: DESIGN BASELINE
+Status: CROSS-CUTTING TAXONOMY LINKED
+Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Purpose
 
-This schema classifies existing PC Korean-patch source material for the selective Switch product. It intentionally does not preserve the old requirement that every PC source item must become a Switch action.
+This schema defines the selective-product classification boundary for PC Korean-patch source material.
 
-Event-related candidates must first pass the dedicated structural classification in `EVENT_EXTRACTION_SCHEMA.md`. `INCLUDE_EVENT_KO` is never assigned merely because a source belongs to an event container.
+The canonical common classification rules are defined in:
 
-## 2. Terminal dispositions
+`SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
 
-Every candidate source receives exactly one terminal product disposition.
+That document is authoritative for:
 
-### `INCLUDE_DESCRIPTION_KO`
+- authority hierarchy;
+- the three observed classification axes;
+- mechanism decision inputs;
+- risk flags;
+- Switch physical-owner/shared-caller rules;
+- evidence grades;
+- automatic extraction vs manual judgment;
+- derived disposition rules;
+- safe-dialogue eligibility;
+- release-phase gates.
 
-Use Korean for explanatory information needed to understand game entities or systems.
+This file remains the product-facing bridge between that common taxonomy and the selective Korean release scope.
 
-Typical content:
+Event-related candidates additionally use `EVENT_EXTRACTION_SCHEMA.md` for event-specific caller/branch metadata, but event classes do not replace the common taxonomy.
 
-- person biography/description;
-- region/location explanation;
-- item/tool description;
-- technique/skill description;
-- help/system explanation.
+## 2. Classification model
 
-Proper names inside the text may remain Japanese when separating or replacing them would require excluded identity logic.
+New corpus rows are classified by three observed axes:
 
-### `INCLUDE_EVENT_KO`
+```text
+mechanism_class
+usage_class
+investigation_status
+```
 
-Use Korean for event narration, objective/context text, choices, and structurally safe event sentences.
+`derived_disposition` is not a peer axis. It is computed from the three observed axes plus physical-owner, caller, risk, capacity, provenance, and evidence fields.
 
-Event candidates must first receive an `event_structure_class` under `EVENT_EXTRACTION_SCHEMA.md`. Safe branch selection is permitted when every reachable translated leaf is a complete surface unit and shared callers are compatible. Dynamic grammar, cross-message composition, or unresolved caller topology is not `INCLUDE_EVENT_KO`.
+Manual disposition override is exceptional and requires:
 
-### `INCLUDE_SAFE_DIALOGUE_KO`
+```text
+manual_override = true
+manual_override_reason = non-empty
+provenance = explicit evidence
+```
 
-Use Korean for dialogue only when the full surface sentence is structurally determined without unresolved dynamic grammar.
+Missing investigation may never be manually overridden into release inclusion.
+
+## 3. Mechanism classes
+
+Exactly one `mechanism_class` is assigned when investigation is sufficient:
+
+```text
+STATIC_COMPLETE
+BRANCH_COMPLETE
+VARIABLE_INSERT
+PARTICLE_SENSITIVE_INSERT
+NUMERIC_COUNTER_FORMAT
+FRAGMENT_COMPOSED
+GRAMMAR_FORMATTER
+NAME_COMPOSED
+MECHANISM_MIXED
+```
+
+`APPEND_AFTER` is not a risk flag. It is a mechanism-decision input used, with append-source responsibility, to distinguish complete branch output from fragment/formatter composition.
+
+`CONTROL_GRAPH_DEPENDENT` is not used as a generic risk flag because branch-complete output is inherently control-graph dependent and the label does not discriminate release safety.
+
+## 4. Usage classes
+
+Exactly one `usage_class` is assigned:
+
+```text
+UI_DESCRIPTION
+NARRATION_SYSTEM
+DIALOGUE
+IDENTITY
+OTHER
+```
+
+Usage and generation mechanism are independent.
 
 Examples:
 
-- complete static sentence;
-- simple variable insertion with stable control semantics and no unresolved particle allomorphy;
-- name/place variable may remain Japanese;
-- no unresolved nested grammar formatter;
-- event dialogue whose event-structure classification is `EVENT_DIALOGUE_STATIC`, `EVENT_BRANCH_LOCAL_SAFE`, or `EVENT_VARIABLE_SAFE` and whose caller audit passes.
+- a person biography may be `UI_DESCRIPTION + STATIC_COMPLETE`;
+- event narration may be `NARRATION_SYSTEM + VARIABLE_INSERT`;
+- dialogue may be `DIALOGUE + BRANCH_COMPLETE` or `DIALOGUE + GRAMMAR_FORMATTER`;
+- excluded person/yomi presentation may be `IDENTITY + NAME_COMPOSED`.
 
-### `HOLD_DYNAMIC_DIALOGUE`
+## 5. Investigation status
 
-Dialogue whose Korean surface form depends on unresolved formatter composition, speech-style branching, relation state, shared grammar fragments, or script-level cross-message composition.
+Exactly one `investigation_status` is assigned:
 
-Examples include current C73/C188/C342-related families until a family-wide Korean grammar contract is proven.
+```text
+RESOLVED
+CALLER_UNKNOWN
+NOT_INVESTIGATED
+```
 
-This disposition is valid for R1-R3 and is not a release blocker.
+`CALLER_UNKNOWN` and `NOT_INVESTIGATED` derive `UNRESOLVED`; they are investigation states, not permanent mechanism classes.
 
-### `KEEP_JP_IDENTITY`
+## 6. Derived dispositions
 
-Keep Switch original Japanese representation.
+Allowed terminal product dispositions are:
 
-Default members:
+```text
+INCLUDE_KO
+DEFER_KO
+KEEP_JP
+BLOCKED
+UNRESOLVED
+```
+
+### `INCLUDE_KO`
+
+Eligible only when the current release phase permits the mechanism/usage combination and all required physical-owner/caller/risk/capacity/provenance gates are closed.
+
+### `DEFER_KO`
+
+Koreanization is desired but a later grammar/composition/structural closure is required.
+
+A `DEFER_KO` row must carry `defer_revisit_condition`.
+
+### `KEEP_JP`
+
+Intentional Japanese retention under product scope.
+
+Typical first-release members:
 
 - person names;
 - place names;
-- surname/given-name display fields;
 - yomi/reading/sort keys;
-- calendar/year/month/day text;
-- name-entry/input-specific identity data.
+- surname/given-name composition;
+- name-entry identity behavior;
+- calendar/year/month/day identity presentation;
+- other excluded identity fields.
 
-### `OUT_OF_SCOPE`
+A `KEEP_JP` row must carry `keep_jp_reason`.
 
-PC Korean source has no required product role in the selective release.
+### `BLOCKED`
 
-Typical examples:
+Use only when evidence proves that the candidate cannot be realized under the currently authorized architecture and no approved escalation route remains.
 
-- Windows-only implementation mechanics;
-- Koreanization supporting excluded name/yomi/date functionality;
-- PC-only compatibility/installer behavior.
+Capacity failure alone is not `BLOCKED`.
 
 ### `UNRESOLVED`
 
-Insufficient evidence to decide product scope, event composition safety, caller compatibility, or semantic owner.
+Investigation or ownership/caller/mechanism evidence is incomplete for release classification.
 
 `UNRESOLVED` cannot be emitted by a release builder.
 
-## 3. Required classification fields
+## 7. PC occurrence conflict rule
 
-Recommended base row model:
+PC occurrence-specific replacements are a hazard map, not a Switch implementation template.
+
+For logical conflict classification only:
+
+1. remove the already-defined trailing NUL padding from logical comparison;
+2. classify source-grounded whitespace-only differences separately;
+3. preserve all non-whitespace byte ordering/content for semantic comparison.
+
+Then:
 
 ```text
-source_id
-source_family
-pc_location_or_index
-korean_payload
-logical_role
-product_disposition
-formatter_dependency
-identity_dependency
-switch_owner_status
-switch_owner_or_action
-translation_review_status
-provenance
-notes
+normalized logical replacements differ -> PC_OCCURRENCE_CONFLICT
+only whitespace differs                -> PC_SPACING_VARIANT
 ```
 
-For event-related sources, the full metadata fields in `EVENT_EXTRACTION_SCHEMA.md` are additionally mandatory.
+`PC_OCCURRENCE_CONFLICT` blocks automatic `INCLUDE_KO` until caller/owner context is resolved.
 
-Initial translation review policy:
+`PC_SPACING_VARIANT` does not by itself block inclusion.
+
+This distinction preserves known spacing-only occurrence variants without misclassifying them as semantic caller conflicts.
+
+## 8. Physical-owner/shared-caller rule
+
+Classification follows the Switch physical owner, reusing existing L1/L2/L3 or other canonical owner provenance when applicable.
+
+Rules:
+
+1. enumerate all known callers of one physical owner;
+2. if caller-specific separation is not already available, the most restrictive proven caller governs that owner;
+3. separate physical owners may be classified independently even when source text is identical;
+4. raw string equality or uniqueness is not owner proof;
+5. incomplete caller topology gives `investigation_status=CALLER_UNKNOWN` and derives `UNRESOLVED`;
+6. caller-specific restructuring/redirection is a separate escalation, not an automatic classification shortcut.
+
+## 9. Safe dialogue product definition
+
+A dialogue row is R3-safe only when it satisfies the full safe-dialogue definition in `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`.
+
+At minimum:
+
+- `usage_class=DIALOGUE`;
+- `investigation_status=RESOLVED`;
+- mechanism is `STATIC_COMPLETE`, `BRANCH_COMPLETE`, or proven-safe `VARIABLE_INSERT`;
+- all callers of the same Switch physical owner are compatible;
+- no unresolved particle/grammar risk exists;
+- no cross-message composition exists;
+- the row is not consumed as a formatter/message fragment by another deferred or unsafe composition family;
+- capacity has a proven safe realization.
+
+A Korean line that merely looks complete or renders correctly in one caller is not sufficient proof.
+
+## 10. Particle and numeric screening
+
+Japanese particle adjacency is an automatic risk detector only.
+
+```text
+JP_PARTICLE_ADJACENCY -> may raise PARTICLE_RISK
+```
+
+It does not by itself prove `PARTICLE_SENSITIVE_INSERT`.
+
+Likewise, numeric insertion becomes `NUMERIC_COUNTER_FORMAT` only when runtime behavior dynamically selects counter/unit/morphology/format. A fixed literal unit with a numeric slot remains ordinary `VARIABLE_INSERT` when no dynamic counter decision exists.
+
+## 11. Event overlay
+
+Event membership is not a safety class.
+
+`EVENT_EXTRACTION_SCHEMA.md` remains an auxiliary event overlay for:
+
+- event-specific caller/reference metadata;
+- branch topology;
+- leaf completeness;
+- event control/formatter signatures;
+- event-local variable metadata.
+
+Its legacy event structural classes map into the common taxonomy and are not terminal release dispositions.
+
+Examples:
+
+```text
+EVENT_NARRATION_STATIC / EVENT_OBJECTIVE_STATIC
+  -> usually STATIC_COMPLETE + NARRATION_SYSTEM
+
+EVENT_BRANCH_LOCAL_SAFE
+  -> candidate BRANCH_COMPLETE only after append_after=NO and all-caller closure
+
+EVENT_VARIABLE_SAFE
+  -> candidate VARIABLE_INSERT only after particle/counter screening
+
+EVENT_DIALOGUE_STATIC
+  -> candidate STATIC_COMPLETE + DIALOGUE
+
+EVENT_DYNAMIC_GRAMMAR
+  -> GRAMMAR_FORMATTER or MECHANISM_MIXED
+
+EVENT_SCRIPT_COMPOSED
+  -> FRAGMENT_COMPOSED / GRAMMAR_FORMATTER / MECHANISM_MIXED
+
+EVENT_UNKNOWN
+  -> non-resolved investigation status
+```
+
+New rows do not use legacy dispositions such as `INCLUDE_EVENT_KO` or `HOLD_DYNAMIC_DIALOGUE` as terminal state.
+
+## 12. Required common metadata
+
+New corpus rows must include the common fields defined in `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`, including at least:
+
+```text
+mechanism_class
+usage_class
+investigation_status
+switch_physical_owner_id
+caller_list
+append_after
+append_after_targets
+variable_source_kind
+insert_followed_by
+jp_particle_adjacency
+dynamic_counter_decision
+cross_message_consumers
+risk_flags
+pc_occurrence_count
+pc_conflict_class
+buffer_capacity
+ko_payload_length_bytes
+evidence_grade
+provenance
+derived_disposition
+keep_jp_reason
+defer_revisit_condition
+manual_override
+manual_override_reason
+translation_review_status
+```
+
+Container-specific schemas may add fields but may not redefine common-field semantics.
+
+Initial translation review policy remains:
 
 ```text
 translation_review_status = DEFER_TO_RUNTIME_QA
@@ -112,92 +302,118 @@ translation_review_status = DEFER_TO_RUNTIME_QA
 
 Translation quality is reviewed during runtime play rather than used as a pre-extraction release blocker.
 
-## 4. Decision order
+## 13. Automatic extraction vs manual judgment
 
-For each source:
+Corpus-scale classification must distinguish deterministic extraction from semantic judgment.
 
-1. identify the logical role from existing structural evidence;
-2. if it is person/place/date/yomi/name-input identity, prefer `KEEP_JP_IDENTITY`;
-3. if it is explanatory text, prefer `INCLUDE_DESCRIPTION_KO`;
-4. if it is event-related, run `EVENT_EXTRACTION_SCHEMA.md` before assigning a product disposition;
-5. if dialogue is surface-complete and structurally safe, use `INCLUDE_SAFE_DIALOGUE_KO`;
-6. if dynamic formatter grammar or cross-message grammatical composition is required, use `HOLD_DYNAMIC_DIALOGUE`;
-7. if the source exists only to support excluded PC mechanics, use `OUT_OF_SCOPE`;
-8. if role/ownership/composition remains unclear, use `UNRESOLVED`.
+Machine extraction should be used where possible for:
 
-## 5. Dynamic-dialogue test
+- source/container/message identity;
+- caller/reference graph;
+- branch targets;
+- `append_after` and append target identity;
+- variable-source provenance;
+- `insert_followed_by`;
+- Japanese particle adjacency detector;
+- dynamic counter path/opcode evidence;
+- nested formatter IDs;
+- cross-message consumers;
+- physical-owner reuse from canonical ledgers;
+- PC occurrence/variant data;
+- spacing-only versus logical conflict where byte rules suffice;
+- byte lengths/capacity;
+- direct provenance identities/hashes.
 
-A dialogue source is not `SAFE` merely because its Korean bytes fit.
+Manual/semantic judgment remains for:
 
-It is `HOLD_DYNAMIC_DIALOGUE` when any of the following is true and not already closed:
+- usage when not encoded structurally;
+- semantic branch completeness;
+- whether Korean morphology truly depends on inserted value pronunciation/class;
+- grammatical responsibility across fragments;
+- semantic equivalence of PC source to selected Switch context;
+- mixed mechanism interpretation;
+- exceptional manual override;
+- runtime translation-quality QA.
 
-- nested shared formatter call determines copula/verb/ending;
-- speech-style predicate changes Korean morphology;
-- relation/person predicate changes grammatical output;
-- caller stem + formatter fragment + following suffix have overlapping grammatical responsibility;
-- multiple callers of one formatter require different Korean surface composition;
-- event script composes one sentence across multiple message fragments;
-- shared message caller contexts disagree on Korean grammatical responsibility.
+Do not turn machine-extractable fields into thousands of manual checklist entries.
 
-## 6. Event-first rule
+## 14. Evidence grades
 
-Event membership is not itself a safety class.
-
-Before an event source can become `INCLUDE_EVENT_KO` or `INCLUDE_SAFE_DIALOGUE_KO`, classify it under one of:
+Use:
 
 ```text
-EVENT_NARRATION_STATIC
-EVENT_OBJECTIVE_STATIC
-EVENT_CHOICE_STATIC
-EVENT_BRANCH_LOCAL_SAFE
-EVENT_VARIABLE_SAFE
-EVENT_DIALOGUE_STATIC
-EVENT_DYNAMIC_GRAMMAR
-EVENT_SCRIPT_COMPOSED
-EVENT_UNKNOWN
+VERIFIED
+OBSERVED
+INFERRED
+HINT
+REJECTED
 ```
 
-The exact definitions, branch completeness gates, particle-risk rules, shared-caller audit, and extraction metadata are authoritative in `EVENT_EXTRACTION_SCHEMA.md`.
+`REJECTED` is retained so later agents do not repeat failed or contradicted hypotheses.
 
-## 7. Safety principles
+PC runtime behavior whose exact target executable/runtime identity is not proven cannot exceed `HINT` for mechanism claims.
 
-- Do not classify by Korean text appearance alone.
-- Do not convert a capacity problem into a translation rewrite.
-- Do not translate excluded identity/yomi/date data because a source is easy to patch.
-- Do not use raw-string uniqueness as sole owner proof.
-- Existing VERIFIED Switch owner evidence may be reused without re-tracing.
-- Excluded sources remain accounted for by product disposition; they are not silently dropped.
-- A branch is not unsafe merely because it branches; complete independent leaves may be translated.
-- A variable insertion is not safe merely because the token is understood; Korean particle allomorphy must be resolved or avoided.
-- One safe caller does not prove a shared message safe for all callers.
+## 15. Capacity rule
 
-## 8. Release-set definitions
+Do not convert capacity failure into a translation rewrite.
 
-R1 source set:
+Use the canonical escalation order:
+
+```text
+current storage
+-> alternate existing storage
+-> object/data reconstruction
+-> redirect/relocation realization
+-> Switch-native runtime semantic equivalent
+-> only after technical routes are exhausted: human translation adjustment review
+```
+
+Automatic truncation/shortening is forbidden.
+
+## 16. Release-set definitions
+
+R1:
+
+```text
+INCLUDE_KO + usage_class=UI_DESCRIPTION
+```
+
+R2 adds structurally safe:
+
+```text
+INCLUDE_KO + usage_class=NARRATION_SYSTEM
+```
+
+and explicitly resolved event-local non-dialogue rows where appropriate.
+
+R3 adds only rows satisfying the Safe Dialogue product definition.
+
+R4 may selectively revisit `DEFER_KO` grammar/composition families after their recorded revisit conditions are met.
+
+R4 remains optional and cannot block R1-R3.
+
+## 17. Superseded legacy disposition labels
+
+The following labels remain readable as historical provenance but are superseded for new corpus rows:
 
 ```text
 INCLUDE_DESCRIPTION_KO
-```
-
-R2 adds:
-
-```text
 INCLUDE_EVENT_KO
-```
-
-R3 adds:
-
-```text
 INCLUDE_SAFE_DIALOGUE_KO
-```
-
-Never included in R1-R3:
-
-```text
 HOLD_DYNAMIC_DIALOGUE
 KEEP_JP_IDENTITY
 OUT_OF_SCOPE
-UNRESOLVED
+UNRESOLVED   # legacy direct label; new rows derive it
 ```
 
-R4 may selectively promote `HOLD_DYNAMIC_DIALOGUE` families after explicit grammar-family closure.
+Historical rows/documents are not silently rewritten. When materialized into the new corpus model they must be re-expressed as common axes plus `derived_disposition` with provenance retained.
+
+## 18. Current boundary
+
+This schema creates no corpus rows, Switch actions, builder changes, IPS, or runtime artifact.
+
+Next recommended read-only scope:
+
+`SELECTIVE_KO_CROSSCUTTING_AUTOMATABLE_FIELD_INVENTORY_READ_ONLY`
+
+That scope should identify, per source family/container, which common fields can be extracted automatically and which existing canonical parsers/owner ledgers can be reused before broad corpus classification begins.
