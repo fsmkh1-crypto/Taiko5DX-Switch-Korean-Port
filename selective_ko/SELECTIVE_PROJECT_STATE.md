@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-15 (KST)
-Status: INITIALIZED / NO BUILD / NO RELEASE ACTION AUTHORIZED
+Status: EVENT_EXTRACTION_SCHEMA_MATERIALIZED / NO CORPUS EXTRACTION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Base identity
@@ -9,6 +9,7 @@ Track: `SWITCH_SELECTIVE_KOREANIZATION`
 Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Umbrella branch: `main`
 Initialization base HEAD: `f652333af41271b32bafb2054a1a1c3c853f1105`
+Selective-project initialization commit: `2fb74c1e53030750012bcf7f13cf2ad8ebe43b2d`
 Nintendo Switch title ID: `0100346017304000`
 Target game version: `1.1.3`
 
@@ -56,14 +57,14 @@ Existing full-port WRITE_SAFE does not automatically authorize selective-project
 
 ## 4. PC patch role in this project
 
-`PC_PATCH_ORACLE_GATE` is replaced for product planning by a narrower rule:
+Product-planning rule:
 
 - PC Korean **text/content** = preferred translation/source reference;
 - PC Korean **known-good visible result** = semantic reference where useful;
 - PC Windows **implementation mechanics** = non-authoritative reference;
 - PC workaround/known bug = never copied merely for parity.
 
-The Switch implementation is selected from Switch-native data/code ownership first after the required Korean semantic content is known.
+The Switch implementation is selected from Switch-native data/code ownership after the required Korean semantic content is known.
 
 ## 5. Current migrated repository assets
 
@@ -116,7 +117,38 @@ Every candidate Korean source must end in exactly one of:
 
 `UNRESOLVED` is not releasable.
 
-## 8. Release phases
+Translation quality review is deferred to real-device/runtime QA and is not a pre-extraction blocker:
+
+```text
+translation_review_status = DEFER_TO_RUNTIME_QA
+```
+
+## 8. Event extraction boundary
+
+Event-related text must follow `EVENT_EXTRACTION_SCHEMA.md` before receiving a product disposition.
+
+Current event structural classes:
+
+- `EVENT_NARRATION_STATIC`
+- `EVENT_OBJECTIVE_STATIC`
+- `EVENT_CHOICE_STATIC`
+- `EVENT_BRANCH_LOCAL_SAFE`
+- `EVENT_VARIABLE_SAFE`
+- `EVENT_DIALOGUE_STATIC`
+- `EVENT_DYNAMIC_GRAMMAR`
+- `EVENT_SCRIPT_COMPOSED`
+- `EVENT_UNKNOWN`
+
+Key rules:
+
+- branch presence alone does not make an event unsafe;
+- every translated branch leaf must be a complete semantic surface unit;
+- dynamic grammar and cross-message sentence composition are held out of R1-R3;
+- variable insertion must account for Korean particle allomorphy;
+- shared messages require all-caller compatibility, not one observed safe caller;
+- EVENT/TS5 analysis is deepened only for dynamic/cross-message/mixed/unknown candidates rather than opened globally.
+
+## 9. Release phases
 
 R0 — infrastructure
 - Mapping/font/text transport sufficient for selected Korean content.
@@ -125,17 +157,17 @@ R1 — descriptions
 - character/region/item/skill explanatory text.
 
 R2 — events
-- event narrative and static event text.
+- event narrative, objectives/context, choices, branch-local complete text, and other structurally safe event content.
 
 R3 — safe dialogue
-- complete static lines and proven-safe variable insertion lines.
+- complete static lines and proven-safe variable insertion lines, including safe event dialogue.
 
 R4 — optional dynamic grammar
 - formatter-family reconstruction only if corpus-wide rules are proven.
 
 R4 is optional and cannot block R1-R3 release.
 
-## 9. Known grammar boundary
+## 10. Known grammar boundary
 
 The prior full-port track observed malformed Korean such as:
 
@@ -145,17 +177,29 @@ The prior full-port track observed malformed Korean such as:
 
 Current policy: these are not repaired sentence-by-sentence and are not release blockers for R1-R3. Their formatter families remain `HOLD_DYNAMIC_DIALOGUE` until family-level Korean composition contracts are proven.
 
-## 10. Next scope
+## 11. Materialized design documents
 
-`SELECTIVE_KO_SOURCE_CLASSIFICATION_READ_ONLY`
+Current selective-project design baseline includes:
+
+- `ARCHITECTURE.md`
+- `CLASSIFICATION_SCHEMA.md`
+- `EVENT_EXTRACTION_SCHEMA.md`
+- `KNOWN_FAILURES.md`
+- `MIGRATION_MANIFEST.json`
+
+`EVENT_EXTRACTION_SCHEMA.md` is authoritative for event structural classes, branch completeness, variable/particle risk, shared-caller audit, event metadata fields, and minimal script-analysis depth.
+
+## 12. Next scope
+
+`SELECTIVE_KO_EVENT_CANDIDATE_INVENTORY_READ_ONLY`
 
 Goals:
 
-1. classify existing PC Korean sources into the seven disposition states;
-2. identify high-value description/event corpora first;
-3. mark dynamic formatter dependencies so they cannot leak into R1-R3;
-4. bind selected items to known Switch semantic owners where existing evidence already suffices;
-5. produce source counts and unresolved queues;
-6. perform no builder modification and no build.
+1. identify and count event-related candidate messages using existing PC/Switch provenance;
+2. assign event structural classes where evidence already suffices;
+3. extract control/formatter signatures and caller/branch metadata needed by the event schema;
+4. separate safe narration/objective/choice/branch-local candidates from dynamic/cross-message/unknown queues;
+5. preserve translation review as `DEFER_TO_RUNTIME_QA`;
+6. perform no builder modification, no patch implementation, and no build.
 
-After that report: STOP and require a fresh execution signal before extraction/materialization or implementation.
+After that report: STOP and require a fresh execution signal before any corpus materialization, Switch action implementation, or build.
