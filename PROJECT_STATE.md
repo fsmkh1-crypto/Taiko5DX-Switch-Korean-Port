@@ -5,7 +5,7 @@ Last updated: 2026-09-16 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN_MATERIALIZED_NEXT_CENSUS","scope_kind":"READ_ONLY","status":"KO_GRAMMAR_FLATTENING_DESIGN_MATERIALIZED_NEXT_READ_ONLY","last_closed_validation_id":"V276","last_closed_stage_commit":"44970ade58f09e70a9fdbec3a972ef6981a9eccb","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"runtime_byte_route_latest_commit":"39e5999d5bc24173b39521acec459a205ae42540","dialogue_formatter_graph_diff":"docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","dialogue_formatter_ko_design":"docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","priority_next_scope":"DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"KO_GRAMMAR_FLATTENING_ADVERSARIAL_REVIEW_MATERIALIZED_NEXT_567_MATRIX","scope_kind":"READ_ONLY","status":"KO_GRAMMAR_FLATTENING_REVIEW_MATERIALIZED_NEXT_READ_ONLY","last_closed_validation_id":"V281","last_closed_stage_commit":"22f46107cd1638d9069d9416dff296a9655d6b72","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"runtime_byte_route_latest_commit":"39e5999d5bc24173b39521acec459a205ae42540","dialogue_formatter_graph_diff":"docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","dialogue_formatter_ko_design":"docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","dialogue_formatter_ko_review_validation":"V281","priority_next_scope":"KO_GRAMMAR_FLATTEN_CALLER_STYLE_BRANCH_AVAILABLE_567_MATRIX_READ_ONLY","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
 ## 1. Current canonical state
@@ -25,7 +25,8 @@ Inherited without revalidation:
 - post-V270 runtime-byte route-binding checkpoints;
 - issue-C PC original -> PC Korean formatter graph-diff closure materialized on 2026-09-16;
 - document-governance drift repair V271;
-- Korean dialogue grammar-responsibility analysis and `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1` design materialization V272-V276.
+- Korean dialogue grammar-responsibility analysis and initial `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1` design materialization V272-V276;
+- whole grammar-family census, caller migration census, and adversarial speech-style/morphology review V277-V281.
 
 A new chat/model/automation run is not a reason to reopen VERIFIED facts.
 
@@ -47,8 +48,8 @@ Mapping 10,036               4
 TOTAL                       162
 ```
 
-The Korean grammar-flattening design adds no WRITE_SAFE, implementation authorization,
-build authorization, or gameplay-data mutation authority.
+The Korean grammar-flattening design and V277-V281 review add no WRITE_SAFE,
+implementation authorization, build authorization, or gameplay-data mutation authority.
 
 ## 2. Mandatory PC patch oracle entry gate
 
@@ -252,13 +253,17 @@ After issue C is structurally closed, resume this family by:
 
 No implementation or diagnostic build is authorized yet.
 
-## 7. Dialogue malformed-ending issue C — KOREAN GRAMMAR-FLATTENING DESIGN MATERIALIZED
+## 7. Dialogue malformed-ending issue C — REVIEWED KOREAN GRAMMAR-FLATTENING DESIGN
 
-Status: `KO_GRAMMAR_FLATTENING_DESIGN_MATERIALIZED_NEXT_READ_ONLY`.
+Status: `KO_GRAMMAR_FLATTENING_REVIEW_MATERIALIZED_NEXT_READ_ONLY`.
 
 Current design authority:
 
 `docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
+
+Current validation authority for this family:
+
+`docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt` through V281.
 
 Representative real-device symptoms include:
 
@@ -313,86 +318,124 @@ Do not search for that missing EXE again merely to continue the selected Korean 
 
 ### 7.3 Korean responsibility collision
 
-Actual PC Korean formatter literals carry complete Korean inflectional material. Key
-examples include C73 copula/register forms and C188 `하다` register forms.
-
+Actual PC Korean formatter literals carry complete Korean inflectional/register material.
 Representative boundaries are structurally equivalent to:
 
 ```text
 `...모양이` + C73 branch `이오` + `군`
 `...실례하` + C188 branch `하겠습니다`
+C51 + C342 + `인가`
 ```
 
-Whole-corpus caller-shape evidence:
+The issue is a shared Korean grammatical-responsibility boundary problem, not a local
+repeated-syllable cleanup problem.
+
+Raw identical-syllable overlap is only a lower-bound detector. Korean morphology can
+already be owned by the caller without identical adjacent syllables, as illustrated by
+C109 forms combined after caller material such as `기다리셨`, `기다렸`, or `실패했`.
+
+### 7.4 Whole-family census — V277
+
+The externally used block-0 entry population is closed at:
 
 ```text
-C73 calls immediately preceded by Korean code for `이`    97
-C188 calls immediately preceded by Korean code for `하`   66
+external entry families             73
+GRAMMAR_FLATTEN                       42 / 2,364 KO calls
+DYNAMIC_MEANING_RETAIN                31 / 4,254 KO calls
+MIXED_SPLIT_REQUIRED                   0
+UNRESOLVED                             0
+TOTAL external calls               6,618
 ```
 
-These are risk-shape counts, not rewrite counts.
+The grammar cluster recursively covers exactly `C65..C358`, 294 nodes, with no
+internal edge crossing into the retained dynamic-semantic clusters.
 
-The issue is therefore treated as a Korean grammatical responsibility-boundary
-problem rather than a local repeated-syllable cleanup problem.
+The 2,364 grammar edges occur in 1,013 unique caller messages; 386 of those callers also
+carry dynamic semantic calls that must remain dynamic.
 
-### 7.4 Official SC/TW structural reference
+### 7.5 Initial caller matrix — V278
 
-External non-block-0 -> block-0 call totals:
+Initial structural reference classes were:
 
 ```text
-JP original   6,618
-PC Korean     6,618
-Official SC   4,233
-Official TW   4,263
+DIRECT_STATIC_FLATTEN                 591 callers / 1,252 grammar edges
+DIRECT_DYNAMIC_PRESERVE               322 callers /   835 grammar edges
+CN_SEMANTIC_DIVERGENCE_REVIEW          42 callers /   168 grammar edges
+GRAMMAR_RESIDUAL_EXCEPTION_REVIEW      58 callers /   109 grammar edges
+TOTAL                               1,013 callers / 2,364 grammar edges
 ```
 
-Representative grammar families are largely flattened by SC/TW:
+All 1,013 compared callers preserve their branch-marker sequence across JP/KO/SC/TW.
+This supports control-skeleton preservation, not automatic Korean tone collapse.
+
+The former 913 `DIRECT_*` callers are no longer treated as automatically migratable.
+That interpretation is superseded by V279.
+
+### 7.6 Adversarial speech-style review — V279
+
+All 42 grammar families carry multiple Korean output/register variants. `0x6A` remains
+a real speech-style selector; global inversion remains rejected.
+
+Across all 1,013 callers:
 
 ```text
-          JP    KO    SC    TW
-C73      660   660    13    21
-C188     155   155     1     1
-C342     154   154     0     0
-C209     264   264     1     3
-C125     192   192     1     1
-C272      84    84     0     0
-C244      76    76     1     1
-C202      73    73     2     4
+direct caller-level 0x6A branch      601 / 1,494 grammar edges
+no direct caller-level 0x6A branch   412 /   870 grammar edges
 ```
 
-Dynamic semantic-value families are comparatively retained, including C51/C27/C16,
-and C58 remains 317/317/317/317 across JP/KO/SC/TW.
+Within the former 913 structurally-direct population:
 
-SC/TW is a same-engine structural localization reference, not a Korean translation
-oracle.
+```text
+CALLER_STYLE_BRANCH_AVAILABLE         567 / 1,356 grammar edges
+STYLE_COLLAPSE_REVIEW                 346 /   731 grammar edges
+```
 
-### 7.5 Selected Korean design
+The 567 population is the preferred first detailed matrix because caller-local
+style/control branches already exist and can be preserved. The 346 population must not
+be auto-flattened; nested formatter register/tone loss requires explicit review.
 
-Design:
+### 7.7 Composition/morphology review — V280
+
+Simple visible adjacency risk census:
+
+```text
+left-side stored overlap        604 grammar edges
+right-side Hangul continuation  728 grammar edges
+left only                        458
+right only                       582
+both                             146
+neither                        1,178
+```
+
+At least 1,186 grammar edges across 601 callers are visibly composition-coupled. This is
+a lower bound, not a rewrite classifier. Korean morphology can collide without literal
+syllable equality, so dedup/prefix/suffix boundary rules remain rejected.
+
+### 7.8 Reviewed Korean design contract — V281
+
+Design remains:
 
 `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1`
 
-Core rule:
+Core rule remains:
 
 `preserve dynamic meaning / flatten inherited Japanese dynamic grammar`
 
-Classification buckets for the next analysis:
+Current mandatory contract:
 
 ```text
-GRAMMAR_FLATTEN
-DYNAMIC_MEANING_RETAIN
-MIXED_SPLIT_REQUIRED
-UNRESOLVED
+preserve caller control/branch skeleton
+preserve required dynamic semantic call IDs/order
+flatten inherited Japanese grammar segmentation into branch-local natural Korean
+never collapse nested formatter register/tone implicitly
+explicitly adjudicate STYLE_COLLAPSE_REVIEW / TONE_CRITICAL_EXCEPTION where required
+use SC/TW as structural evidence only, not Korean wording/tone authority
 ```
 
-A Korean grammatical unit has one owner. Japanese inflection/register generator calls
-are candidates to be absorbed into natural Korean caller/full-sentence text. Dynamic
-names, address forms, pronouns, numeric/context values and other semantic inserts remain
-dynamic where required.
+No grammar formatter family is globally blanked before all caller obligations are
+migrated and residuals are explicitly accounted.
 
-Full-sentence flattening does not mean making every sentence static.
-
-### 7.6 Prohibited C repair paths
+### 7.9 Prohibited C repair paths
 
 Remain rejected:
 
@@ -400,29 +443,30 @@ Remain rejected:
 - global `하하 -> 하`;
 - global `이이 -> 이`;
 - repeated-syllable/longest-overlap dedup;
-- direct suffix deletion;
+- fixed left/right prefix/suffix trimming;
 - forced C8:87 result;
 - global `0x6A` inversion;
 - universal first-syllable stripping from C73/C188;
-- globally blanking grammar formatter families before every caller is migrated;
-- retaining Japanese segmentation merely because PC Korean retained it;
+- globally blanking C65..C358 before every caller is migrated/accounted;
+- treating official SC/TW as Korean tone/register authority;
+- treating the former 913 structurally-direct callers as automatic migration authority;
 - requiring recovery of the unavailable exact PC target EXE before design can proceed.
 
-### 7.7 Exact next closure question
+### 7.10 Exact next closure question
 
-Next scope:
+Current next scope:
 
-`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`
+`KO_GRAMMAR_FLATTEN_CALLER_STYLE_BRANCH_AVAILABLE_567_MATRIX_READ_ONLY`
 
-That analysis must enumerate the externally used block-0 families, classify every
-relevant family/caller obligation into the four design buckets, distinguish style-only
-from semantic-bearing branches, and produce explicit residual/exception accounting.
+That analysis may enumerate the 567 callers, each grammar-edge occurrence, caller branch
+ownership, dynamic semantic obligations, speaker/tone obligations, and post-migration
+invariants.
 
-No TAI5MSG rewrite, builder change, translation mutation, runtime patch, diagnostic
-build, IPS generation, or new WRITE_SAFE authority is authorized.
+It may not mutate Korean text or TAI5MSG, modify the builder, patch runtime code,
+generate IPS, create a diagnostic build, or add WRITE_SAFE authority.
 
-Issue C remains the top priority until the full grammar-generator family census and
-classification is closed.
+Issue C remains the top priority until the caller migration obligations and exceptions
+are structurally closed.
 
 ## 8. CWTDAT / issue A hold
 
@@ -474,13 +518,14 @@ or alternate write routes.
 
 ## 11. Current STOP / priority boundary
 
-`KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1` is canonically materialized as the current
-Korean dialogue grammar design direction.
+The adversarial review through V281 is now the current canonical refinement of
+`KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1`.
 
 Current priority next scope is:
 
-**`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`**
+**`KO_GRAMMAR_FLATTEN_CALLER_STYLE_BRANCH_AVAILABLE_567_MATRIX_READ_ONLY`**
 
 A fresh explicit user execution signal is required before beginning that analysis.
 
-No C implementation/write/build is authorized by this design materialization.
+No C implementation, translation mutation, TAI5MSG rewrite, builder change, build, IPS,
+runtime patch, or new WRITE_SAFE authority is authorized by this materialization.

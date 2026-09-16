@@ -1,0 +1,9 @@
+VALIDATION NOTE — WRITE TRANSPORT INCIDENT 2026-09-16 #1
+
+Status: FORWARD RECOVERY MATERIALIZED WITH GRAMMAR-REVIEW DOCUMENTATION
+
+A forbidden GitHub Contents API `update_file` call was accidentally invoked after the intended grammar-review Git objects had already been prepared but before `main` was advanced through the approved Git-object path. The forbidden call created commit `362920c823d2403273f30b21d5396a2125963714` from parent `22f46107cd1638d9069d9416dff296a9655d6b72` and added exactly one root file, `__NEVER__`, containing one line. No existing repository file was modified by that commit.
+
+This call violated the repository write allowlist. Recovery is forward-only: preserve the accidental commit in history, remove `__NEVER__` from the next tree, materialize the already-prepared V277-V281 Korean grammar-flattening review documents, and advance `main` only through `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.
+
+The incident grants no semantic, translation, builder, runtime, game-file, FZ001, build, IPS, or WRITE_SAFE authority. The approved remote write allowlist remains exactly `create_blob`, `create_tree`, `create_commit`, `update_ref(force=false)`; Contents-API `create_file`, `update_file`, `delete_file`, and `create_branch` remain prohibited.
