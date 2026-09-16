@@ -1,313 +1,170 @@
 # VALIDATION LEDGER — KO Full-Sentence Grammar Flattening V1 Design
 
 Date: 2026-09-16 (KST)
-Scope: `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN_MATERIALIZATION`
 Implementation authorization: NONE
 Build authorization: NONE
 WRITE_SAFE added: 0
 
-## V272 — Localization-data provenance and PC runtime limitation
+## Canonical predecessor
 
-Status: PASS / CLOSED
-
-Verified source identities used for the grammar-responsibility design:
+V272-V281 remain inherited unchanged from the immutable predecessor of this same file:
 
 ```text
-JP TAI5MSG_JP.DAT
-  size    1,810,889
-  sha256  aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f
-
-PC Korean v1.02 TAI5MSG_JP.DAT
-  size    2,134,366
-  sha256  e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090
-
-Official SC TAI5MSG_SC.DAT
-  size    1,918,773
-  sha256  04ff8afe290b12f2f7b93e174952f5c7550acff1ef0fe17b96d889170e0a706e
-
-Official TW TAI5MSG_TW.DAT
-  size    1,944,333
-  sha256  bf165a3f30b72045ea5f92e5acca45a950be4d94294cc10e82576f3fffcb0294
+commit  9e542568849b4644c094395fc1e4698ac47b08af
+path    docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt
+blob    22745279d8d9bc16766adae72c731dc0c3e07c3d
 ```
 
-The exact PC executable required by v1.02 remains unavailable. The patch target identity
-is size 18,685,960 and SHA-256
-`10C69BAB50D29BAF6311360CAFBF7383716A126A6484D209F5E299E12AB565A2`.
-The Drive EXE previously used for exploratory formatter disassembly is a different build
-of size 18,479,304 bytes.
+Those validations are not reopened by this continuation. In particular, V277 whole-family
+census, V278 structural caller matrix, V279 speech-style ownership correction, V280
+composition/morphology lower-bound census, and V281 reviewed design contract remain valid.
 
-Therefore exact v1.02 PC `0x43/0x4A` runtime cursor/return parity is not validated and
-must not be cited as canonical proof. Do not reopen the already-abandoned search for the
-missing target EXE merely to continue this Korean design.
+## V282 — 567 caller-style-branch detailed matrix
 
-## V273 — Korean caller/grammar-formatter responsibility collision
+Status: PASS / CLOSED READ_ONLY / REFINES V279
 
-Status: PASS / CLOSED AS DESIGN EVIDENCE
-
-The actual PC Korean v1.02 block-0 data contains complete Korean inflectional outputs,
-including representative families:
+The V279 `CALLER_STYLE_BRANCH_AVAILABLE` population was exhaustively partitioned at
+caller/control-topology level:
 
 ```text
-C73   copula/register forms such as 입니다 / 이다 / 이옵니다 / 이오 / 이네
-C188  하다/register forms such as 합니다 / 한다 / 하오 / 하겠습니다
-C209  없다 forms
-C125  주다 command/register forms
-C272  오다 past/register forms
-C244  past-copula forms
-C202  있다 forms
+ROOT_STYLE_ONLY                         253 callers / 406 grammar edges
+ROOT_STYLE_PLUS_SECONDARY               207 callers / 657 grammar edges
+NESTED_STYLE_BEFORE_ALL_GRAMMAR          64 callers / 166 grammar edges
+PRE_STYLE_GRAMMAR_MIXED                  43 callers / 127 grammar edges
+TOTAL                                   567 callers / 1,356 grammar edges
 ```
 
-Representative malformed Switch composition is structurally consistent with duplicate
-grammatical ownership:
+Dynamic-semantic obligations inside the same population:
 
 ```text
-caller `...모양이` + C73 branch `이오` + suffix `군`
-caller `...실례하` + C188 branch `하겠습니다`
+callers carrying dynamic values         220
+dynamic-semantic edges                  749
 ```
 
-Whole-corpus shape census in the PC Korean payload:
+Official SC/TW structural-reference checks for these 567 callers:
 
 ```text
-C73 calls with immediate caller code for `이` before call    97
-C188 calls with immediate caller code for `하` before call   66
+SC grammar residual                         0
+TW grammar residual                         0
+SC dynamic-call sequence mismatch           0
+TW dynamic-call sequence mismatch           0
 ```
 
-These are risk-shape counts, not rewrite authorization/cardinality. They prove that the
-problem is a shared responsibility-boundary family rather than two isolated typo sites.
+The 43 `PRE_STYLE_GRAMMAR_MIXED` callers contain 58 grammar edges spanning 16 grammar
+families before the first caller `0x6A` style branch. Thus caller-level `0x6A` presence
+is not itself a safe migration classifier.
 
-## V274 — Official SC/TW structural-localization reference census
+The caller's direct predicate set also does not fully cover recursively used formatter
+predicate/state dependencies. The correct interpretation is therefore:
 
-Status: PASS / CLOSED AS STRUCTURAL REFERENCE
+`caller 0x6A branch != complete nested formatter register/tone dispatch`
 
-External block-0 call population from non-block-0 messages:
+Disposition:
+
+- the 567 population remains structurally useful because caller-local style/control exists;
+- it is not direct text-migration authority;
+- no formatter family is blanked or retired by V282;
+- no WRITE_SAFE, build, or implementation authority is added.
+
+## V283 — Root-style-owner 460 tone-obligation matrix
+
+Status: PASS / CLOSED READ_ONLY / REVISES TONE-PRESERVATION ASSUMPTION
+
+The structurally cleanest V282 populations are:
 
 ```text
-JP original   6,618
-PC Korean     6,618
-Official SC   4,233
-Official TW   4,263
+ROOT_STYLE_ONLY                         253 callers / 406 grammar edges
+ROOT_STYLE_PLUS_SECONDARY               207 callers / 657 grammar edges
+TOTAL                                   460 callers / 1,063 grammar edges
 ```
 
-Selected family counts:
+Dynamic-semantic obligations:
 
 ```text
-          JP    KO    SC    TW
-C73      660   660    13    21
-C188     155   155     1     1
-C342     154   154     0     0
-C209     264   264     1     3
-C125     192   192     1     1
-C272      84    84     0     0
-C244      76    76     1     1
-C202      73    73     2     4
-C51    1,278 1,278 1,255 1,255
-C27    1,217 1,217 1,196 1,205
-C16    1,001 1,001   966   970
-C58      317   317   317   317
+callers carrying dynamic values         183
+dynamic-semantic edges                  576
 ```
 
-Official SC/TW largely removes inflectional grammar-generator dependencies while
-retaining most dynamic semantic-value calls. Representative C68/C184 grammar literals
-are emptied while caller/localized sentence data carries the wording.
+SC/TW structural checks remain clean:
 
-Disposition: SC/TW is a same-engine structural localization reference, not a Korean
-translation oracle.
+```text
+SC grammar residual                         0
+TW grammar residual                         0
+SC dynamic-call sequence mismatch           0
+TW dynamic-call sequence mismatch           0
+```
 
-## V275 — KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1 design disposition
+The 460 callers use 34 grammar entry families. Their nested formatter graphs carry a
+substantial non-`0x6A` relationship/register condition space:
 
-Status: CANONICAL DESIGN DIRECTION
+```text
+common non-0x6A relation/register condition atoms    24
+union non-0x6A relation/register condition atoms     28
+```
 
-The selected Korean design rule is:
+Caller-side direct-condition overlap with formatter obligations:
+
+```text
+435 callers   overlap 0
+ 18 callers   overlap 1
+  7 callers   overlap 2
+  0 callers   complete formatter-condition coverage
+TOTAL 460
+```
+
+Therefore strict tone-preservation classification is:
+
+```text
+BRANCH_LOCAL_TONE_PRESERVABLE              0 / 460
+EXPLICIT_TONE_COLLAPSE_REVIEW_REQUIRED    460 / 460
+```
+
+This result does not reject `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1`. It rejects only
+the narrower assumption that preserving caller `0x6A` and caller-local secondary
+branches automatically preserves every nested PC Korean formatter register distinction.
+
+Analysis-matrix provenance:
+
+```text
+rows      460
+SHA-256   84eae893bedb55dccb2cfeb7e3328861fed1501e618e868c75208c248f058d48
+```
+
+The matrix is analysis provenance only and is not a gameplay-data mutation artifact.
+
+### Current design consequence
+
+The core rule remains:
 
 `preserve dynamic meaning / flatten inherited Japanese dynamic grammar`
 
-Required semantic buckets:
+The tone contract is now stricter:
 
-```text
-GRAMMAR_FLATTEN
-DYNAMIC_MEANING_RETAIN
-MIXED_SPLIT_REQUIRED
-UNRESOLVED
-```
+1. preserve caller-owned `0x6A` and all existing caller control/secondary branches;
+2. preserve required dynamic-semantic call IDs/order;
+3. flatten inherited Japanese grammar segmentation only after branch-local tone is
+   explicitly adjudicated;
+4. do not claim nested formatter tone preservation from caller `0x6A` alone;
+5. classify meaningful speaker/relationship differences as `TONE_CRITICAL_EXCEPTION`;
+6. treat SC/TW as structural evidence only, never Korean wording/tone authority.
 
-A grammar family is not globally blanked first. Required order is full caller census,
-semantic/branch classification, caller-level Korean sentence migration, residual caller
-accounting, and only then possible retirement of an unused grammar literal family.
+The following remain rejected: global repeated-syllable cleanup, fixed prefix/suffix
+trimming, global `0x6A` inversion, forced predicate values, early global blanking of the
+grammar cluster, automatic treatment of the former 913, automatic treatment of all 567,
+and automatic treatment of the 460 root-style callers.
 
-Global repeated-syllable dedup, suffix deletion, forced predicate values, global
-speech-style inversion, and C73/C188 local first-syllable stripping remain rejected.
+## Current STOP / next scope
 
-This design adds no WRITE_SAFE authority.
+Current next READ_ONLY scope:
 
-## V276 — Initial materialization/STOP boundary
+`KO_GRAMMAR_ROOT_STYLE_ONLY_253_TONE_POLICY_READ_ONLY`
 
-Status: CLOSED / SUPERSEDED AS NEXT-SCOPE POINTER BY V281
+Purpose: use the least structurally noisy 253 root-style-only callers to establish which
+nested formatter register distinctions may be normalized into natural Korean and which
+must survive as `TONE_CRITICAL_EXCEPTION` before extending that policy to the 207
+secondary-condition callers and later populations.
 
-Canonical design authority:
+No Korean text mutation, TAI5MSG rewrite, builder change, diagnostic build, IPS,
+runtime patch, or new WRITE_SAFE is authorized by V282-V283.
 
-`docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
-
-The original next scope was:
-
-`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`
-
-That census has now been completed and is captured by V277 onward. V276 remains valid
-historical provenance but no longer defines the current next scope.
-
-## V277 — Whole-family grammar/semantic census
-
-Status: PASS / CLOSED READ_ONLY
-
-The externally used block-0 entry population is exactly:
-
-```text
-external entry families             73
-GRAMMAR_FLATTEN families             42
-  KO external calls               2,364
-DYNAMIC_MEANING_RETAIN families      31
-  KO external calls               4,254
-MIXED_SPLIT_REQUIRED families          0
-UNRESOLVED families                    0
-TOTAL external calls               6,618
-```
-
-The recursive block-0 graph reachable from the 42 grammar entry families covers exactly
-`C65..C358`, 294 block-0 message nodes. No internal edge from that grammar cluster crosses
-into the retained dynamic-semantic clusters (`C12..C64` and the later semantic-value
-entries around `C403+`).
-
-External grammar calls occur in exactly:
-
-```text
-unique non-block-0 caller messages   1,013
-grammar call occurrences             2,364
-callers also carrying dynamic values   386
-```
-
-Disposition: family-level responsibility separation is structurally clean, while
-caller-level mixing must be preserved during migration.
-
-## V278 — Initial caller migration matrix and control-skeleton invariants
-
-Status: PASS AS CENSUS / PARTIALLY SUPERSEDED AS MIGRATION PRIORITY BY V279
-
-The initial caller matrix was:
-
-```text
-DIRECT_STATIC_FLATTEN                 591 callers / 1,252 grammar edges
-DIRECT_DYNAMIC_PRESERVE               322 callers /   835 grammar edges
-CN_SEMANTIC_DIVERGENCE_REVIEW          42 callers /   168 grammar edges
-GRAMMAR_RESIDUAL_EXCEPTION_REVIEW      58 callers /   109 grammar edges
-TOTAL                               1,013 callers / 2,364 grammar edges
-```
-
-The first two classes total 913 callers. For those 913, official SC and TW both remove
-the grammar calls while preserving the Korean dynamic-meaning call ID/order where such
-calls exist.
-
-Across all 1,013 callers, the compared JP/KO/SC/TW branch-marker sequence remains
-structurally identical. This supports a migration invariant of preserving existing
-caller control/branch skeleton while moving grammatical wording responsibility into
-localized Korean literals.
-
-Within the 58 residual-exception callers, 22 are C314-only structural/no-op-like
-residuals; the remaining 36 require true branch-level exception review.
-
-Important correction: the labels `DIRECT_STATIC_FLATTEN` and
-`DIRECT_DYNAMIC_PRESERVE` describe structural Chinese-reference compatibility only.
-They do not authorize automatic Korean flattening; V279 supersedes that interpretation.
-
-## V279 — Adversarial speech-style ownership review
-
-Status: PASS / REVISED DESIGN CONTRACT
-
-All 42 grammar families carry multiple Korean output/register variants rather than one
-fixed output. Observed family output multiplicity spans roughly 2–9 variants, with
-representative examples including:
-
-```text
-C73   입니다 / 이오 / 이다 / 이네 / 이옵니다 ...
-C188  하겠습니다 / 하겠다 / 합니다 / 한다 / 하오 ...
-C209  없습니다 / 없소 / 없네 / 없다 / 없사옵니다 / 없어요 ...
-```
-
-`0x6A` remains a real speech-style selector. Global inversion remains rejected.
-
-Among all 1,013 grammar callers:
-
-```text
-caller contains direct 0x6A style branch      601 / 1,494 grammar edges
-caller has no direct 0x6A style branch        412 /   870 grammar edges
-```
-
-The former 913 structurally-direct callers therefore split into:
-
-```text
-CALLER_STYLE_BRANCH_AVAILABLE       567 callers / 1,356 grammar edges
-STYLE_COLLAPSE_REVIEW               346 callers /   731 grammar edges
-TOTAL                               913 callers / 2,087 grammar edges
-```
-
-The earlier assumption that all 913 could proceed as automatic/direct migration is
-rejected. The 567 callers are the preferred first detailed matrix because their caller
-already owns explicit style/control branching that can be preserved while grammar
-segmentation is flattened. The 346 callers require explicit review of register/tone
-loss before a nested formatter dependency may be removed.
-
-## V280 — Composition-coupling and morphology review
-
-Status: PASS / LOWER-BOUND RISK CENSUS
-
-A simple Korean-literal adjacency scan around the 2,364 grammar edges found:
-
-```text
-left-side stored overlap present        604 edges
-right-side Hangul continuation present  728 edges
-
-left only                                458
-right only                               582
-both                                     146
-neither                                1,178
-```
-
-Therefore at least 1,186 grammar edges across 601 callers are directly
-composition-coupled by these simple visible conditions.
-
-This is a lower-bound shape census, not a safe/unsafe rewrite classifier. Korean
-morphology can overlap without identical adjacent syllables. Representative C109 forms
-such as `했습니다 / 했다 / 했사옵니다 / 했어요` can be called after caller stems/forms
-such as `기다리셨`, `기다렸`, or `실패했`. Raw byte/syllable dedup therefore misses real
-responsibility collisions.
-
-Disposition: prefix/suffix trimming, repeated-syllable cleanup, or a fixed boundary rule
-cannot replace caller-level Korean full-sentence responsibility migration.
-
-## V281 — Adversarial-review canonical disposition and STOP boundary
-
-Status: CLOSED / NEXT READ_ONLY
-
-The core design remains:
-
-`preserve dynamic meaning / flatten inherited Japanese dynamic grammar`
-
-The migration contract is strengthened to:
-
-1. preserve caller control/branch skeleton;
-2. preserve required dynamic semantic call IDs/order;
-3. flatten inherited Japanese grammar segmentation into branch-local natural Korean;
-4. never collapse nested formatter register/tone implicitly;
-5. require explicit `STYLE_COLLAPSE_REVIEW` or `TONE_CRITICAL_EXCEPTION` disposition
-   when caller-local control does not already preserve the needed distinction;
-6. treat SC/TW only as proof of engine-compatible structural flattening, not as a
-   Korean tone/register oracle.
-
-Current first detailed-matrix scope:
-
-`KO_GRAMMAR_FLATTEN_CALLER_STYLE_BRANCH_AVAILABLE_567_MATRIX_READ_ONLY`
-
-That scope is analysis only. It may enumerate and design the 567 caller-level migration
-matrix, but it does not authorize Korean text mutation, TAI5MSG rewriting, builder
-implementation, diagnostic build, IPS generation, runtime patching, or new WRITE_SAFE.
-
-A fresh explicit user execution signal is required before beginning that 567-caller
-matrix.
+A fresh explicit user execution signal is required before beginning the next scope.
