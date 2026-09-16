@@ -7,164 +7,171 @@ This file is the sole project-resume authority.
 The previous canonical state remains an immutable inherited base:
 
 ```text
-commit  b1d6a1369a1733cd34b0314beeb4cfadd2ec2ecd
+commit  dfe3b4acaeecba9c28e33db3ad6112752a26defa
 path    PROJECT_STATE.md
-blob    a73a2546520cee07d9a5be1fbf0eea1a0c650c08
+blob    eb2bfe53926b652c502537099cffdd4f58c9a2c8
 ```
 
-All facts, closed validations, rejected hypotheses, required provenance, FZ001 state,
-write-safety boundaries, issue-A hold, runtime-byte queue, and remaining project queues
-in that snapshot are inherited without revalidation unless explicitly superseded below.
+All facts, closed validations, rejected hypotheses, provenance, FZ001 state, existing
+WRITE_SAFE authority, Issue-A hold, runtime-byte queue, and unrelated project queues in
+that snapshot are inherited without revalidation unless explicitly superseded below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"KO_GRAMMAR_ROOT_STYLE_ONLY_253_TONE_POLICY_V284_MATERIALIZED_NEXT_REGISTER_NORMALIZE_125","scope_kind":"READ_ONLY","status":"KO_GRAMMAR_TONE_POLICY_V284_MATERIALIZED_NEXT_READ_ONLY","last_closed_validation_id":"V284","last_closed_stage_commit":"b1d6a1369a1733cd34b0314beeb4cfadd2ec2ecd","canonical_base_commit":"b1d6a1369a1733cd34b0314beeb4cfadd2ec2ecd","canonical_base_project_state_blob":"a73a2546520cee07d9a5be1fbf0eea1a0c650c08","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"dialogue_formatter_ko_design":"docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","dialogue_formatter_ko_review_validation":"V284","priority_next_scope":"KO_GRAMMAR_REGISTER_NORMALIZE_CANDIDATE_125_BRANCH_WORDING_READ_ONLY","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt","docs/WRITE_TRANSPORT_INCIDENT_20260916_1.txt","docs/GITHUB_AND_CI_POLICY.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"KO_GRAMMAR_REGISTER_NORMALIZE_V285_V287_MATERIALIZED_NEXT_STATIC_WRITE_AUTHORIZATION_125","scope_kind":"READ_ONLY","status":"KO_GRAMMAR_REGISTER_NORMALIZE_125_DESIGN_MATERIALIZED_NEXT_WRITE_AUTH_READ_ONLY","last_closed_validation_id":"V287","last_closed_stage_commit":"e75233b9f7d2426a51d8be011c63f96a385eeb4a","canonical_base_commit":"dfe3b4acaeecba9c28e33db3ad6112752a26defa","canonical_base_project_state_blob":"eb2bfe53926b652c502537099cffdd4f58c9a2c8","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"pc_patch_oracle_gate_status":"PASS","dialogue_formatter_ko_design":"docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","dialogue_formatter_ko_review_validation":"V287","priority_next_scope":"KO_GRAMMAR_REGISTER_NORMALIZE_125_STATIC_WRITE_AUTHORIZATION_READ_ONLY","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt","selective_ko/TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md","builder/tai5msg.py","docs/GITHUB_AND_CI_POLICY.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md"]}
 PROJECT_RESUME_V2 -->
 
 ## 1. Inherited state
 
-Inherit the full canonical project state from `PROJECT_STATE.md@b1d6a136...` without
-revalidation. In particular:
+Inherit `PROJECT_STATE.md@dfe3b4ac...` in full. In particular:
 
-- V272-V283 Korean grammar-flattening analysis remains valid;
-- exact PC v1.02 target EXE remains unavailable and must not be re-searched merely for
-  this design;
-- `PC_PATCH_ORACLE_GATE=PASS` remains valid for the localization-data/design question;
+- V272-V284 remain valid and are not reopened;
+- `PC_PATCH_ORACLE_GATE=PASS` remains sufficient for this localization-data family;
+- the exact PC v1.02 target EXE remains unavailable and is not a blocker for this data design;
 - FZ001 remains frozen;
 - existing explicit WRITE_SAFE authority remains exactly F1 158 + Mapping 4 = 162;
-- V284 adds no gameplay-data mutation, builder, build, IPS, runtime-patch, or WRITE_SAFE
-  authority.
+- V285-V287 add no gameplay mutation, builder implementation, build, IPS, runtime patch,
+  or new WRITE_SAFE authority.
 
-## 2. V284 — ROOT_STYLE_ONLY 253 tone policy
+The V284 next-scope pointer is superseded by the closures below.
 
-The least structurally noisy root-style population is exactly:
+## 2. V285 — pure REGISTER_NORMALIZE 125 branch wording closure
 
-```text
-ROOT_STYLE_ONLY callers                 253
-grammar edges                           406
-callers carrying dynamic values          91
-dynamic-semantic edges                  226
-```
-
-Of the 253 callers, 250 have a simple two-arm `0x6A` structure. Among those 250,
-210 callers already contain one branch arm with zero grammar calls while the opposite
-arm still carries inherited grammar calls. The grammar-bearing opposite arms contain
-290 grammar edges.
-
-This is direct PC Korean corpus evidence that branch-local complete Korean wording is
-already used at scale inside the same caller structures; full-sentence flattening is
-not justified solely by SC/TW analogy.
-
-For all 253 compared callers:
+The pure register-normalization tranche is closed at caller-responsibility level:
 
 ```text
-SC grammar residual                         0
-TW grammar residual                         0
-SC dynamic-call sequence mismatch           0
-TW dynamic-call sequence mismatch           0
+callers                              125
+grammar edges                        177
+callers with dynamic semantic values 47
+dynamic-semantic edges               113
 ```
 
-Do not assign a global semantic label such as formal/informal, male/female, polite/plain
-to `0x6A=0` or `0x6A=1`. The caller's existing branch wording is the local tone authority.
-
-### 2.1 Family responsibility classes
-
-All 34 grammar entry families used by this 253-caller tranche are classified; unresolved
-family count is zero.
+Disposition by caller:
 
 ```text
-REGISTER_NORMALIZE_CANDIDATE
-  families: C73 C82 C100 C109 C118 C195 C202 C209 C244 C272 C279 C286 C300 C328 C335
-  241 grammar edges / 174 callers
-
-LEXICAL_MOOD_REWRITE_REQUIRED
-  families: C125 C132 C146 C160 C174 C181 C188 C216 C223 C230 C237 C251 C265
-  109 grammar edges / 92 callers
-
-ZERO_OUTPUT_STRUCTURAL_EXCEPTION
-  families: C91 C342
-  42 grammar edges / 37 callers
-
-HONORIFIC_ROLE_TONE_CRITICAL
-  families: C167 C258 C349 C356
-  14 grammar edges / 9 callers
+CALL_ERASURE_ONLY             99 callers / 138 grammar edges
+CALLER_ENDING_MATERIALIZE     17 callers /  26 grammar edges
+CALLER_PHRASE_REWRITE          6 callers /   9 grammar edges
+BOUNDARY_JOIN_NORMALIZE        3 callers /   4 grammar edges
+TOTAL                        125 callers / 177 grammar edges
 ```
 
-Caller sets overlap across family classes. For execution-order planning, assigning each
-caller to its highest-risk class yields exactly:
+Across all 125 callers, 148 grammar edges are removable without adding grammatical
+material at that edge; 29 edges require caller-owned ending/phrase/boundary handling.
+The 113 dynamic-semantic edges remain preserved.
+
+Analysis scratch provenance:
 
 ```text
-pure REGISTER_NORMALIZE_CANDIDATE      125 callers
-LEXICAL_MOOD_REWRITE_REQUIRED           86 callers
-ZERO_OUTPUT_STRUCTURAL_EXCEPTION        33 callers
-HONORIFIC_ROLE_TONE_CRITICAL             9 callers
-TOTAL                                   253 callers
+KO_GRAMMAR_REGISTER_NORMALIZE_CANDIDATE_125_BRANCH_WORDING_READ_ONLY.csv
+rows      125
+sha256    f638048e3f178551978dd3422e9c170532cfcfdcdc7190cfa179e36551693756
 ```
 
-### 2.2 V1 tone policy
+The exact 125-caller compact membership is preserved in the dedicated V-ledger.
 
-Current Korean V1 tone policy is:
+## 3. V286 — 23 caller literal wording adjudication
 
-1. preserve caller-owned `0x6A` and all caller control branches;
-2. preserve dynamic-semantic call IDs/order;
-3. normalize formatter-only simple register variation into natural branch-local Korean;
-4. do not mechanically rewrite request, intention, proposal, or lexical-mood families;
-5. isolate C91/C342 empty/non-empty output behavior as a structural exception family;
-6. preserve/review honorific-role distinctions such as `-시-`, `말씀-`, `드리-` as
-   `TONE_CRITICAL_EXCEPTION` obligations;
-7. use JP meaning + actual PC Korean wording + caller branch context as Korean wording
-   authority; SC/TW remains structural evidence only.
+The 17 `CALLER_ENDING_MATERIALIZE` and 6 `CALLER_PHRASE_REWRITE` callers are closed at
+Korean wording-design level. These 23 callers contain 35 grammar edges; 26 require new
+caller-owned Korean grammatical material while 9 co-resident grammar edges are still
+simple erasures.
 
-V284 does not authorize Korean text mutation. It only establishes the policy used for
-subsequent READ_ONLY branch-local wording design.
+Wording authority is JP meaning + actual PC Korean wording + the same caller's local
+branch tone/context. SC/TW remains structural evidence only. No claim is made that the
+chosen wording reconstructs the unavailable exact PC v1.02 runtime formatter branch.
 
-## 3. Prohibited/superseded interpretations
+The three `BOUNDARY_JOIN_NORMALIZE` callers from V285 are separately closed by boundary
+normalization after grammar removal and are not part of the 23.
 
-Remain rejected or superseded:
+Detailed wording targets are preserved in the dedicated V-ledger. Wording-design
+UNRESOLVED count for the pure 125 tranche is zero.
 
-- global repeated-syllable cleanup, `이이 -> 이`, `하하 -> 하`;
-- fixed prefix/suffix trimming or first-syllable deletion;
-- forced C8:87 or global `0x6A` inversion;
-- globally blanking C65..C358 before every caller obligation is accounted;
-- treating the former 913, 567, 460, or 253 populations as one automatic migration set;
-- treating `0x6A=0/1` as globally named Korean tone classes;
-- treating SC/TW wording as Korean tone authority;
-- reimplementing the complete Japanese relationship/register formatter merely to retain
-  every nested PC formatter variant;
-- reopening the unavailable exact PC target EXE search for this design.
+## 4. V287 — 125 materialization/write-safety design closure
 
-## 4. Exact next READ_ONLY scope
+A virtual reconstruction of all 125 caller transforms was composed with the existing
+Switch-native compact-byte preservation transform against canonical PC Korean v1.02
+TAI5MSG input SHA-256
+`e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090`.
 
-Current priority next scope:
+Closed structural result:
 
-`KO_GRAMMAR_REGISTER_NORMALIZE_CANDIDATE_125_BRANCH_WORDING_READ_ONLY`
+```text
+grammar callers changed                125
+grammar calls removed                  177
+grammar logical byte delta            -645
+compact-only changed messages            33
+grammar125 ∩ compact33                    0
+combined changed logical messages       158
+combined affected physical blocks        17
+grown blocks                               0
+block count                               33 unchanged
+message count                         14,832 unchanged
+file size                         2,134,366 unchanged
+header block offsets/sizes                identical
+compact occurrences                       44
+compact protected                          44
+compact unprotected                         0
+combined used-data delta                 -469
+```
 
-Purpose: inspect only the 125 callers whose highest-risk class is
-`REGISTER_NORMALIZE_CANDIDATE`, bind each grammar edge to its caller branch, preserve
-all dynamic-semantic obligations, and design/validate branch-local Korean wording
-responsibility without mutating TAI5MSG.
+Affected blocks are exactly:
 
-This next scope may not change Korean text in the repository, modify TAI5MSG/builder,
-generate IPS, create a diagnostic build, patch runtime code, or add WRITE_SAFE.
+`1,2,3,4,5,6,7,8,9,10,11,13,14,15,16,21,24`.
 
-## 5. Write-transport incident and recovery
+The smallest remaining affected-block padding is 13 bytes in block 9. Therefore no
+block relocation or file growth is required for this tranche.
 
-During the attempted V284 materialization, a prohibited GitHub Contents API
-`create_file` call created commit
-`68ac474558f69ba3eca357d8a8f8bb8c95c2d748` from parent `b1d6a136...` and added only
-root file `__DO_NOT_USE__` containing `x`. No legitimate project file was modified by
-that accidental commit.
+Analysis candidate output SHA-256:
 
-Recovery is forward-only. Preserve the accidental commit in history, remove the root
-file from the next tree, materialize V284, and advance `main` only through the allowed
-Git-object route.
+`993d3fc29cabe002d4a2071fe4b0c39fb9c3799dd9e33a7bd68349c7f8ef4b06`
 
-## 6. Write boundary
+This hash is an analysis candidate, not yet a canonical emitted-build hash.
+
+The preferred realization remains one canonical-input transaction:
+
+`parse once -> apply exact 125 grammar manifest -> apply compact preservation -> rebuild offsets once -> encrypt once`
+
+Do not create a grammar-modified intermediate and feed it back through the current
+canonical-input hash guard.
+
+## 5. Current authorization boundary
+
+V285-V287 close wording responsibility and storage/reconstruction design only. They do
+not yet grant a new WRITE_SAFE population because the exact per-caller write manifest
+with original-message guards and target-message hashes has not been canonicalized.
+
+Current priority next scope is therefore:
+
+`KO_GRAMMAR_REGISTER_NORMALIZE_125_STATIC_WRITE_AUTHORIZATION_READ_ONLY`
+
+That scope must produce exact row-level original/target message guards, target call
+sequence/control fingerprints, deterministic reconstructed output identity, and a
+specific authorization boundary before any builder/gameplay-data implementation.
+
+No builder modification, TAI5MSG mutation, build, IPS, or hardware test is authorized by
+this state.
+
+## 6. Rejected/superseded interpretations
+
+Remain rejected:
+
+- global repeated-syllable cleanup such as `이이 -> 이` or `하하 -> 하`;
+- family-wide fixed suffix/prefix trimming;
+- family-wide formatter blanking before caller migration;
+- treating all 125 as call-erasure-only;
+- treating all 125 as one static tone;
+- global `0x6A` tone labeling or inversion;
+- using SC/TW wording as Korean wording authority;
+- feeding a grammar-modified intermediate file into the current canonical-input
+  `reconstruct_tai5msg_switch_native()` path.
+
+## 7. Write boundary
 
 Remote GitHub writes remain restricted to exactly:
 
 `create_blob -> create_tree -> create_commit -> update_ref(force=false)`
 
 `create_file`, `update_file`, `delete_file`, `create_branch`, force push, and alternate
-write routes are prohibited.
+write routes remain prohibited.
 
-A fresh explicit user execution signal is required before the next READ_ONLY scope.
+A fresh explicit user execution signal is required before the next scope.
