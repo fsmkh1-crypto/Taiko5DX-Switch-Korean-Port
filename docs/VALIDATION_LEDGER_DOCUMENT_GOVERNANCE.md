@@ -81,3 +81,48 @@ The affected canonical semantic documents themselves are not reopened or modifie
 V209 is a governance-only repair. It creates no new semantic conclusion, no new Switch write authorization, no builder/IPS/runtime work, and no game-file modification.
 
 The final repository state must pass the existing unmodified `tools/validate_document_governance.py` machine gate.
+
+## V271 — Documentation-governance recurrence repair
+
+Date: 2026-09-16  
+Base HEAD: `2e9760b561e421c8ee717410f54e2a484829d8d8`  
+Implementation commit: `5e0cec7f233f85b0f5ec8b75fe3e6615930a1151`  
+Status: **VERIFIED PENDING FINAL CI READBACK**
+
+### Claim
+
+The governance failure observed after TAI5MSG structure-index materialization is a recurrence of the V209 metadata-drift cause family, not a TAI5MSG artifact failure. The first failing invariant was `INV-DOC-05`; after accounting for that gate, the current resume header also carried two latent contract drifts: noncanonical `scope_kind=CANONICAL_STATE_OVERLAY` and missing frozen-FZ001 provenance bindings required by the unchanged validator.
+
+### Repair scope
+
+- register the eight existing Markdown paths reported by the failing `INV-DOC-05` gate without altering their semantic contents;
+- restore `PROJECT_RESUME_V2.scope_kind` to canonical `READ_ONLY`, preserving the descriptive stage identity in `scope_id`;
+- restore the previously VERIFIED FZ001 declaration path/blob and basis validation/run/head provenance values;
+- retain `tools/validate_document_governance.py` byte-identically; V209's rejected enum-expansion/validator-weakening routes remain rejected;
+- preserve the issue-C next priority `DIALOGUE_FORMATTER_PC_SWITCH_PREDICATE_STATE_PARITY_READ_ONLY`;
+- create no new Switch write authorization and modify no game/runtime/TAI5MSG payload.
+
+### Registered recurrence set
+
+- `docs/CWTDAT_AUXILIARY_NAME_ROW_HOLD.md`
+- `docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md`
+- `docs/POINTER_56_CROSS_AXIS_ACTION_INTEGRATION.md`
+- `docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md`
+- `docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md`
+- `docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md`
+- `docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md`
+- `docs/VALIDATION_LEDGER_POINTER_56_CROSS_AXIS_ACTION_INTEGRATION.md`
+
+### Rejected/superseded repair paths
+
+- treating the TAI5MSG materialization as the cause of the CI failure — REJECTED;
+- weakening Markdown coverage or excluding the eight documents — REJECTED;
+- adding a new `execution_mode` field and expanding validator semantics — REJECTED by the existing V209 contract;
+- modifying frozen FZ001 evidence instead of restoring its resume provenance — REJECTED;
+- force-moving or rewriting branch history — REJECTED.
+
+### Boundary
+
+V271 repairs repository governance metadata only. It does not change frozen evidence, localization semantics, runtime behavior, game files, the TAI5MSG 33-block/14,832-message artifact, or existing WRITE_SAFE cardinality.
+
+Final status becomes fully VERIFIED only after the automatic `Document governance` workflow passes on the final fast-forward `main` commit.
