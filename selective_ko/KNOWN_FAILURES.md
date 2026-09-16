@@ -233,3 +233,71 @@ This recovery removes only the two accidental sentinel paths. History is preserv
 - Do not use contents-API writes as probes or convenience writes.
 - Do not repair accidental commits via force push; use forward canonical-tree recovery.
 - Do not treat orphan Git blobs as canonical artifacts until a verified tree/commit/ref materializes them.
+
+## 10. Exact PC v1.02 formatter-runtime provenance correction
+
+During the 2026-09-16 dialogue-formatter investigation, an exploratory PC disassembly used a Drive `Taiko5DX.exe` of size 18,479,304 bytes. That executable is not the exact target required by Korean patch v1.02.
+
+Exact v1.02 patch target identity:
+
+```text
+size    18,685,960
+sha256  10C69BAB50D29BAF6311360CAFBF7383716A126A6484D209F5E299E12AB565A2
+```
+
+The exact target executable is unavailable and its recovery had already been abandoned before this correction.
+
+Therefore the earlier exploratory conclusion that exact PC v1.02 and Switch `0x43/0x4A` cursor/return semantics were proven equal is withdrawn from canonical status. The 18,479,304-byte wrong-build disassembly may be used only as structural background, not exact-target runtime provenance.
+
+Do not repeat either of these paths:
+
+- do not cite the wrong-build disassembly as proof of exact v1.02 runtime parity;
+- do not restart the abandoned search for the missing exact v1.02 target EXE merely to continue Korean grammar-flattening design.
+
+The correction does not invalidate exact PC Korean TAI5MSG data provenance or the official JP/SC/TW structural-localization evidence used by `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1`.
+
+Canonical correction authority also exists in:
+
+```text
+docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md
+docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt
+PROJECT_STATE.md
+```
+
+## 11. 2026-09-16 prohibited write-action selection incidents during correction materialization
+
+Two prohibited Contents-API write actions were selected during the correction/materialization sequence despite the repository's Git-object-only rule.
+
+### 11.1 Failed `create_file` selection
+
+A forbidden `create_file` action was selected and returned HTTP 404. It did not advance project `main` and did not create a project-repository object.
+
+Even though the call failed, selecting a forbidden write action is itself a stage failure under repository policy. The stage stopped and required a fresh explicit execution signal.
+
+### 11.2 `update_file` selection that created root path `x`
+
+A later forbidden `update_file` selection did mutate `main` and produced:
+
+```text
+commit = f831055b0b69523f6c2f73dc9cb1dca927cdec52
+tree   = 8653ffd0d9970ee925522903873e4c5024105aa2
+parent = 8e297ffcc8987143eb0afacea582d489a5ba159f
+```
+
+Its entire repository delta was one accidental root file:
+
+```text
+path     x
+content  x
+```
+
+No legitimate project file was modified by that commit. This history is preserved rather than force-rewritten.
+
+The canonical forward recovery is the Git-object-only commit that adds this incident record and removes root path `x` in the same final tree. Its commit identity is the direct successor of `f831055b0b69523f6c2f73dc9cb1dca927cdec52` in repository history.
+
+Operational rule reinforced by both incidents:
+
+- tool exposure is not permission;
+- `create_file`, `update_file`, `delete_file`, and `create_branch` are excluded before action selection;
+- the only repository write actions are `create_blob`, `create_tree`, `create_commit`, and `update_ref(force=false)`;
+- any future forbidden-action selection, including a failed 404 call, is an immediate STOP boundary.
