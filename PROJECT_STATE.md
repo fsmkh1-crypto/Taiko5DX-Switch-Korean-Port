@@ -5,7 +5,7 @@ Last updated: 2026-09-16 (KST)
 This file is the sole project-resume authority.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"C_FORMATTER_GRAPH_DIFF_MATERIALIZED_PREDICATE_PARITY_NEXT","scope_kind":"READ_ONLY","status":"C_GRAPH_DIFF_CLOSED_NEXT_READ_ONLY","last_closed_validation_id":"V271","last_closed_stage_commit":"5e0cec7f233f85b0f5ec8b75fe3e6615930a1151","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"runtime_byte_route_latest_commit":"39e5999d5bc24173b39521acec459a205ae42540","dialogue_formatter_graph_diff":"docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","priority_next_scope":"DIALOGUE_FORMATTER_PC_SWITCH_PREDICATE_STATE_PARITY_READ_ONLY","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN_MATERIALIZED_NEXT_CENSUS","scope_kind":"READ_ONLY","status":"KO_GRAMMAR_FLATTENING_DESIGN_MATERIALIZED_NEXT_READ_ONLY","last_closed_validation_id":"V276","last_closed_stage_commit":"44970ade58f09e70a9fdbec3a972ef6981a9eccb","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_allowed":["PASS","NOT_APPLICABLE"],"runtime_byte_route_latest_commit":"39e5999d5bc24173b39521acec459a205ae42540","dialogue_formatter_graph_diff":"docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","dialogue_formatter_ko_design":"docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","priority_next_scope":"DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY","mapping_10036_runtime_validation":"docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","portability_action_population":"docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","runtime_byte_copy_census":"docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/PORTABILITY_MATRIX_AND_ACTION_LEDGER_DESIGN.md","docs/PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt","docs/PC_TO_SWITCH_PORTING_RULE_FRAMEWORK.md","docs/PC_RUNTIME_DLL_SPEC.md","docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md","docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md","docs/RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_PROGRESS_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_LOWLEVEL_OWNER_CHECKPOINT_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_ROUTE_BINDING_C2_TABLE_CLOSURE_20260915.md","docs/RUNTIME_BYTE_COPY_NORMALIZATION_GENERIC_PARSER_OWNER_CLOSURE_20260915.md","docs/MAPPING_10036_RUNTIME_FORWARD_REVERSE_HARDWARE_VALIDATION.txt","docs/F1_STATIC_WRITE_AUTHORIZATION.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
 ## 1. Current canonical state
@@ -24,7 +24,8 @@ Inherited without revalidation:
 - runtime-byte validation/copy census V265-V270;
 - post-V270 runtime-byte route-binding checkpoints;
 - issue-C PC original -> PC Korean formatter graph-diff closure materialized on 2026-09-16;
-- document-governance drift repair V271: authority coverage restored, canonical `scope_kind=READ_ONLY` restored, and frozen FZ001 provenance bindings restored without altering frozen evidence.
+- document-governance drift repair V271;
+- Korean dialogue grammar-responsibility analysis and `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1` design materialization V272-V276.
 
 A new chat/model/automation run is not a reason to reopen VERIFIED facts.
 
@@ -46,8 +47,8 @@ Mapping 10,036               4
 TOTAL                       162
 ```
 
-The issue-C graph-diff closure adds no WRITE_SAFE, implementation authorization,
-build authorization, or new validation ID.
+The Korean grammar-flattening design adds no WRITE_SAFE, implementation authorization,
+build authorization, or gameplay-data mutation authority.
 
 ## 2. Mandatory PC patch oracle entry gate
 
@@ -78,10 +79,12 @@ Rules:
   encoding and output semantics before Switch-specific hypotheses.
 - Reproduce PC semantic obligations, not Windows/x86 mechanics.
 - If PC patch data and Switch runtime output differ, treat the mismatch as
-  port/runtime/composition/normalization/rendering evidence rather than rewriting
-  Korean source text.
+  port/runtime/composition/normalization/rendering evidence before modifying source data.
 - Korean names, place names, readings, glyph codes and translations available from the
   PC patch are never guessed.
+- When exact PC runtime provenance is unavailable, do not promote a different PC build
+  to exact-target authority. Record the limitation and proceed only on evidence that is
+  actually available for the selected design question.
 
 ## 3. Mapping 10,036 — closed realization through V260
 
@@ -106,7 +109,7 @@ renderer/font        NOT VALIDATED BY MAPPING-ONLY BUILD
 physical Switch      NOT TESTED
 ```
 
-Do not reopen Mapping because of unrelated renderer/font symptoms.
+Do not reopen Mapping because of unrelated renderer/font/dialogue symptoms.
 
 ## 4. Portability / Action Ledger planning state — V261-V264
 
@@ -239,7 +242,7 @@ halfwidth route.
 
 ### 6.5 Remaining runtime-byte work
 
-After issue C is closed, resume this family by:
+After issue C is structurally closed, resume this family by:
 
 - classifying the nine `0x157C30` caller contexts by canonical source/storage owner;
 - materializing exact route membership/cardinality for all 2,057 risk rows;
@@ -249,117 +252,177 @@ After issue C is closed, resume this family by:
 
 No implementation or diagnostic build is authorized yet.
 
-## 7. Dialogue malformed-ending issue C — GRAPH DIFF CLOSED / PREDICATE PARITY NEXT
+## 7. Dialogue malformed-ending issue C — KOREAN GRAMMAR-FLATTENING DESIGN MATERIALIZED
 
-Status: `GRAPH_DIFF_CLOSED_NEXT_READ_ONLY`.
+Status: `KO_GRAMMAR_FLATTENING_DESIGN_MATERIALIZED_NEXT_READ_ONLY`.
 
-Representative real-device symptoms:
+Current design authority:
 
+`docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
+
+Representative real-device symptoms include:
+
+- `조금 과음한 모양이이오군`
+- `오늘은 이만 실례하하겠습니다`
 - `야규님입니다인가`
-- `조금 과음한 모양이오군`
-- normal and malformed lines can coexist within one event.
 
-### 7.1 PC_PATCH_ORACLE_GATE
+### 7.1 PC_PATCH_ORACLE_GATE and data authority
 
-`PASS`.
+`PASS` for the data/design question.
 
-Canonical materialized evidence:
-
-`docs/DIALOGUE_FORMATTER_PC_ORIGINAL_TO_KOREAN_GRAPH_DIFF_CLOSURE_20260916.md`
-
-Exact PC source identities used by that closure:
+Canonical source identities:
 
 ```text
-PC original TAI5MSG_JP.DAT
+JP original TAI5MSG_JP.DAT
   size    1,810,889
   sha256  aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f
 
 PC Korean v1.02 TAI5MSG_JP.DAT
   size    2,134,366
   sha256  e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090
+
+Official SC TAI5MSG_SC.DAT
+  size    1,918,773
+  sha256  04ff8afe290b12f2f7b93e174952f5c7550acff1ef0fe17b96d889170e0a706e
+
+Official TW TAI5MSG_TW.DAT
+  size    1,944,333
+  sha256  bf165a3f30b72045ea5f92e5acca45a950be4d94294cc10e82576f3fffcb0294
 ```
 
-The PC runtime descriptor/helper census still contains no separate dialogue-formatter
-VM hook. The semantic obligation remains TAI5MSG formatter data plus the game's
-existing VM/state behavior.
+The earlier graph-diff closure remains valid: all 471 PC original -> PC Korean block-0
+messages preserve their control/graph skeleton while literals change where translated.
 
-### 7.2 Materialized graph-diff closure
+### 7.2 Exact PC runtime provenance correction
 
-The comparison population is:
+The exact PC executable required by v1.02 is unavailable.
+
+Required target:
 
 ```text
-blocks                 33 / 33
-messages           14,832 / 14,832
-block-0 messages      471 / 471
+size    18,685,960
+sha256  10C69BAB50D29BAF6311360CAFBF7383716A126A6484D209F5E299E12AB565A2
 ```
 
-Across all 471 block-0 messages:
+The Drive EXE previously used for exploratory formatter disassembly is a different
+18,479,304-byte build. Therefore any previous assertion that exact v1.02 PC and Switch
+`0x43/0x4A` cursor/return semantics were proven equal is withdrawn from canonical
+status. Exact target runtime parity remains unavailable/unproven.
+
+Do not search for that missing EXE again merely to continue the selected Korean design.
+
+### 7.3 Korean responsibility collision
+
+Actual PC Korean formatter literals carry complete Korean inflectional material. Key
+examples include C73 copula/register forms and C188 `하다` register forms.
+
+Representative boundaries are structurally equivalent to:
 
 ```text
-condition / predicate expressions     PRESERVED
-lower-message call IDs / graph edges  PRESERVED
-branch/default topology               PRESERVED
-empty-output topology                 PRESERVED
-literal/output fragments              CHANGED where translated
+`...모양이` + C73 branch `이오` + `군`
+`...실례하` + C188 branch `하겠습니다`
 ```
 
-Observed content-level block-0 changes:
+Whole-corpus caller-shape evidence:
 
 ```text
-changed messages   366
-identical messages 105
-TOTAL              471
+C73 calls immediately preceded by Korean code for `이`    97
+C188 calls immediately preceded by Korean code for `하`   66
 ```
 
-The closure analysis observed 14,590 graph/control events with corresponding
-event sequence/value structure preserved between PC original and PC Korean v1.02.
+These are risk-shape counts, not rewrite counts.
 
-Therefore the PC Korean patch does **not** redesign the formatter graph for this
-family. It retains the original control graph and supplies Korean output fragments.
+The issue is therefore treated as a Korean grammatical responsibility-boundary
+problem rather than a local repeated-syllable cleanup problem.
 
-### 7.3 Confirmed C facts
+### 7.4 Official SC/TW structural reference
 
-- Not a font/glyph cause.
-- Not a Mapping 10,036 cause.
-- Do not repair individual translated sentences.
-- The current Switch TAI5MSG reconstruction does not intentionally redesign block-0
-  formatter semantics.
-- Problematic dialogue can be `body -> common formatter call -> following suffix`.
-- Switch contains native condition/state families referenced by the formatter; absence
-  of the basic fields is not established as the cause.
-- No separate PC runtime formatter hook has been found in the canonical descriptor/helper census.
-- Missing PC-Korean formatter graph transformation is not the cause because no such
-  transformation exists in the canonical PC graph comparison.
+External non-block-0 -> block-0 call totals:
 
-### 7.4 Rejected/superseded C hypotheses
+```text
+JP original   6,618
+PC Korean     6,618
+Official SC   4,233
+Official TW   4,263
+```
 
-- `0x01 prefix unsupported` as a proven cause — REJECTED.
-- local sentence-by-sentence translation correction — REJECTED.
-- global runtime-state normalization — REJECTED.
-- font/mapping as primary cause — REJECTED.
-- Stage1 `storage_mutability=CODE` count as formatter-code-patch count — REJECTED.
-- PC Korean formatter graph redesign missing on Switch — REJECTED.
+Representative grammar families are largely flattened by SC/TW:
 
-### 7.5 Exact next closure question
+```text
+          JP    KO    SC    TW
+C73      660   660    13    21
+C188     155   155     1     1
+C342     154   154     0     0
+C209     264   264     1     3
+C125     192   192     1     1
+C272      84    84     0     0
+C244      76    76     1     1
+C202      73    73     2     4
+```
+
+Dynamic semantic-value families are comparatively retained, including C51/C27/C16,
+and C58 remains 317/317/317/317 across JP/KO/SC/TW.
+
+SC/TW is a same-engine structural localization reference, not a Korean translation
+oracle.
+
+### 7.5 Selected Korean design
+
+Design:
+
+`KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1`
+
+Core rule:
+
+`preserve dynamic meaning / flatten inherited Japanese dynamic grammar`
+
+Classification buckets for the next analysis:
+
+```text
+GRAMMAR_FLATTEN
+DYNAMIC_MEANING_RETAIN
+MIXED_SPLIT_REQUIRED
+UNRESOLVED
+```
+
+A Korean grammatical unit has one owner. Japanese inflection/register generator calls
+are candidates to be absorbed into natural Korean caller/full-sentence text. Dynamic
+names, address forms, pronouns, numeric/context values and other semantic inserts remain
+dynamic where required.
+
+Full-sentence flattening does not mean making every sentence static.
+
+### 7.6 Prohibited C repair paths
+
+Remain rejected:
+
+- local screenshot-by-screenshot correction;
+- global `하하 -> 하`;
+- global `이이 -> 이`;
+- repeated-syllable/longest-overlap dedup;
+- direct suffix deletion;
+- forced C8:87 result;
+- global `0x6A` inversion;
+- universal first-syllable stripping from C73/C188;
+- globally blanking grammar formatter families before every caller is migrated;
+- retaining Japanese segmentation merely because PC Korean retained it;
+- requiring recovery of the unavailable exact PC target EXE before design can proceed.
+
+### 7.7 Exact next closure question
 
 Next scope:
 
-`DIALOGUE_FORMATTER_PC_SWITCH_PREDICATE_STATE_PARITY_READ_ONLY`
+`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`
 
-The next analysis must bind representative malformed composition paths to their exact
-block-0 condition/state references, then compare PC and Switch for:
+That analysis must enumerate the externally used block-0 families, classify every
+relevant family/caller obligation into the four design buckets, distinguish style-only
+from semantic-bearing branches, and produce explicit residual/exception accounting.
 
-1. predicate expression semantics;
-2. state/reference semantic ownership;
-3. producer and value domain;
-4. evaluation timing / call context;
-5. native Switch counterpart behavior.
+No TAI5MSG rewrite, builder change, translation mutation, runtime patch, diagnostic
+build, IPS generation, or new WRITE_SAFE authority is authorized.
 
-No field inversion, forced runtime value, global normalization, code patch, diagnostic
-build, or translation change is authorized.
-
-C remains the top priority. Predicate/state parity must be closed before C
-implementation design, CWTDAT implementation work, or unrelated realization work resumes.
+Issue C remains the top priority until the full grammar-generator family census and
+classification is closed.
 
 ## 8. CWTDAT / issue A hold
 
@@ -411,12 +474,13 @@ or alternate write routes.
 
 ## 11. Current STOP / priority boundary
 
-The graph-diff scope is canonically materialized and closed.
+`KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1` is canonically materialized as the current
+Korean dialogue grammar design direction.
 
 Current priority next scope is:
 
-**`DIALOGUE_FORMATTER_PC_SWITCH_PREDICATE_STATE_PARITY_READ_ONLY`**
+**`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`**
 
 A fresh explicit user execution signal is required before beginning that analysis.
 
-No C implementation/write/build is authorized by the graph-diff closure.
+No C implementation/write/build is authorized by this design materialization.

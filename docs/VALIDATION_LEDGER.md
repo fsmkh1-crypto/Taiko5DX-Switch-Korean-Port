@@ -56,6 +56,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - V261–V264: `docs/VALIDATION_LEDGER_PORTABILITY_MATRIX_ACTION_LEDGER_POPULATION.txt`
 - V265–V270: `docs/VALIDATION_LEDGER_RUNTIME_BYTE_VALIDATION_COPY_CONSUMER_CENSUS.txt`
 - V271: `docs/VALIDATION_LEDGER_DOCUMENT_GOVERNANCE.md`
+- V272–V276: `docs/VALIDATION_LEDGER_KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.txt`
 
 ## Post-freeze namespaced ledgers
 
@@ -67,6 +68,7 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 ## Current precedence
 
 - project resume authority: `PROJECT_STATE.md`
+- Korean dialogue grammar-flattening design: `docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
 - master rule discovery/precedence overlay: `docs/MASTER_RULE_REGISTRY.md`
 - current full-corpus inline coverage overlay: `docs/INLINE_FULL_CORPUS_COVERAGE_OVERLAY.md`
 - current full-corpus semantic-owner overlay: `docs/INLINE_FULL_CORPUS_SEMANTIC_OWNER_OVERLAY.md`
@@ -106,4 +108,4 @@ Revalidation is allowed only when input identity changes, new evidence contradic
 - schema freeze: `data/pilot/f1_v1_candidate/schema_freeze_declaration.json`
 - post-freeze current forward routing closure: `docs/PC_PATCH_ORACLE_TRACE_19_CLOSURE.md`
 
-Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 granted static write authority to the exact four guarded actions; V246–V251 recanonicalized the helper implementation as reproducible HELPER_TEXT_V2 without changing action cardinality; V252–V257 materialized the exact four-action diagnostic; V258–V260 closes that realization's tested forward/reverse runtime route on Eden Android. V261–V264 materializes the current source-complete portability/action planning population without declaring a final global Action Ledger cardinality or adding write authority. V265–V270 closes the runtime_byte_validation/copy counterpart census at analysis level: renderer decode compatibility is insufficient for native-equivalent closure because an upstream Japanese halfwidth normalization/copy owner overlaps compact Korean byte values; counterpart is found, native equivalence is rejected, P3 runtime-port realization remains a planning candidate pending route binding, and no write authority is added. Physical Nintendo Switch validation and unrelated renderer/font integration remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.
+Later narrower-scope corrections take precedence over older semantic overclaims. `WRITE_SAFE` exists only where a dedicated authorization artifact explicitly grants it. Mapping V240–V245 granted static write authority to the exact four guarded actions; V246–V251 recanonicalized the helper implementation as reproducible HELPER_TEXT_V2 without changing action cardinality; V252–V257 materialized the exact four-action diagnostic; V258–V260 closes that realization's tested forward/reverse runtime route on Eden Android. V261–V264 materializes the current source-complete portability/action planning population without declaring a final global Action Ledger cardinality or adding write authority. V265–V270 closes the runtime_byte_validation/copy counterpart census at analysis level: renderer decode compatibility is insufficient for native-equivalent closure because an upstream Japanese halfwidth normalization/copy owner overlaps compact Korean byte values; counterpart is found, native equivalence is rejected, P3 runtime-port realization remains a planning candidate pending route binding, and no write authority is added. V272–V276 materializes the Korean full-sentence grammar-flattening design direction, records the exact-PC-runtime provenance limitation, and selects whole-family grammar census/classification as the next read-only scope without adding write authority. Physical Nintendo Switch validation and unrelated renderer/font integration remain separate. FZ001 remains immutable; current effective source state is composed from frozen baseline plus exact later canonical overlays within each overlay's proven axis/scope.

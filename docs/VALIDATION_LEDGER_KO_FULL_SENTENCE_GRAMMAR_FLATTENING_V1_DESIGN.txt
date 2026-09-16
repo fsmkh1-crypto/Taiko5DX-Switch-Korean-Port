@@ -1,0 +1,158 @@
+# VALIDATION LEDGER — KO Full-Sentence Grammar Flattening V1 Design
+
+Date: 2026-09-16 (KST)
+Scope: `KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN_MATERIALIZATION`
+Implementation authorization: NONE
+Build authorization: NONE
+WRITE_SAFE added: 0
+
+## V272 — Localization-data provenance and PC runtime limitation
+
+Status: PASS / CLOSED
+
+Verified source identities used for the grammar-responsibility design:
+
+```text
+JP TAI5MSG_JP.DAT
+  size    1,810,889
+  sha256  aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f
+
+PC Korean v1.02 TAI5MSG_JP.DAT
+  size    2,134,366
+  sha256  e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090
+
+Official SC TAI5MSG_SC.DAT
+  size    1,918,773
+  sha256  04ff8afe290b12f2f7b93e174952f5c7550acff1ef0fe17b96d889170e0a706e
+
+Official TW TAI5MSG_TW.DAT
+  size    1,944,333
+  sha256  bf165a3f30b72045ea5f92e5acca45a950be4d94294cc10e82576f3fffcb0294
+```
+
+The exact PC executable required by v1.02 remains unavailable. The patch target identity
+is size 18,685,960 and SHA-256
+`10C69BAB50D29BAF6311360CAFBF7383716A126A6484D209F5E299E12AB565A2`.
+The Drive EXE previously used for exploratory formatter disassembly is a different build
+of size 18,479,304 bytes.
+
+Therefore exact v1.02 PC `0x43/0x4A` runtime cursor/return parity is not validated and
+must not be cited as canonical proof. Do not reopen the already-abandoned search for the
+missing target EXE merely to continue this Korean design.
+
+## V273 — Korean caller/grammar-formatter responsibility collision
+
+Status: PASS / CLOSED AS DESIGN EVIDENCE
+
+The actual PC Korean v1.02 block-0 data contains complete Korean inflectional outputs,
+including representative families:
+
+```text
+C73   copula/register forms such as 입니다 / 이다 / 이옵니다 / 이오 / 이네
+C188  하다/register forms such as 합니다 / 한다 / 하오 / 하겠습니다
+C209  없다 forms
+C125  주다 command/register forms
+C272  오다 past/register forms
+C244  past-copula forms
+C202  있다 forms
+```
+
+Representative malformed Switch composition is structurally consistent with duplicate
+grammatical ownership:
+
+```text
+caller `...모양이` + C73 branch `이오` + suffix `군`
+caller `...실례하` + C188 branch `하겠습니다`
+```
+
+Whole-corpus shape census in the PC Korean payload:
+
+```text
+C73 calls with immediate caller code for `이` before call    97
+C188 calls with immediate caller code for `하` before call   66
+```
+
+These are risk-shape counts, not rewrite authorization/cardinality. They prove that the
+problem is a shared responsibility-boundary family rather than two isolated typo sites.
+
+## V274 — Official SC/TW structural-localization reference census
+
+Status: PASS / CLOSED AS STRUCTURAL REFERENCE
+
+External block-0 call population from non-block-0 messages:
+
+```text
+JP original   6,618
+PC Korean     6,618
+Official SC   4,233
+Official TW   4,263
+```
+
+Selected family counts:
+
+```text
+          JP    KO    SC    TW
+C73      660   660    13    21
+C188     155   155     1     1
+C342     154   154     0     0
+C209     264   264     1     3
+C125     192   192     1     1
+C272      84    84     0     0
+C244      76    76     1     1
+C202      73    73     2     4
+C51    1,278 1,278 1,255 1,255
+C27    1,217 1,217 1,196 1,205
+C16    1,001 1,001   966   970
+C58      317   317   317   317
+```
+
+Official SC/TW largely removes inflectional grammar-generator dependencies while
+retaining most dynamic semantic-value calls. Representative C68/C184 grammar literals
+are emptied while caller/localized sentence data carries the wording.
+
+Disposition: SC/TW is a same-engine structural localization reference, not a Korean
+translation oracle.
+
+## V275 — KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1 design disposition
+
+Status: CANONICAL DESIGN DIRECTION
+
+The selected Korean design rule is:
+
+`preserve dynamic meaning / flatten inherited Japanese dynamic grammar`
+
+Required semantic buckets:
+
+```text
+GRAMMAR_FLATTEN
+DYNAMIC_MEANING_RETAIN
+MIXED_SPLIT_REQUIRED
+UNRESOLVED
+```
+
+A grammar family is not globally blanked first. Required order is full caller census,
+semantic/branch classification, caller-level Korean sentence migration, residual caller
+accounting, and only then possible retirement of an unused grammar literal family.
+
+Global repeated-syllable dedup, suffix deletion, forced predicate values, global
+speech-style inversion, and C73/C188 local first-syllable stripping remain rejected.
+
+This design adds no WRITE_SAFE authority.
+
+## V276 — Materialization/STOP boundary
+
+Status: CLOSED / NEXT READ_ONLY
+
+Canonical design authority:
+
+`docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
+
+Next scope:
+
+`DIALOGUE_FORMATTER_GRAMMAR_GENERATOR_FAMILY_CENSUS_AND_CLASSIFICATION_READ_ONLY`
+
+That next scope is analysis only. It does not authorize TAI5MSG rewrite, builder change,
+translation mutation, runtime patch, diagnostic build, IPS generation, or gameplay
+payload modification.
+
+A fresh explicit user execution signal is required before starting it.
