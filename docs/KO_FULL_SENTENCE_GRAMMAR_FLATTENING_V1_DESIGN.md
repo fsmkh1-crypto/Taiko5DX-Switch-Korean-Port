@@ -459,3 +459,95 @@ a diagnostic build, patch runtime code, or add WRITE_SAFE authority.
 
 A fresh explicit user execution signal is required before beginning the 567-caller
 matrix.
+
+## 14. V282-V284 narrowing and Korean V1 tone policy
+
+Later read-only closures narrow the execution interpretation of sections 11-13 without
+changing the core design.
+
+V282 partitions the 567 caller-style population into:
+
+```text
+ROOT_STYLE_ONLY                         253 callers / 406 grammar edges
+ROOT_STYLE_PLUS_SECONDARY               207 callers / 657 grammar edges
+NESTED_STYLE_BEFORE_ALL_GRAMMAR          64 callers / 166 grammar edges
+PRE_STYLE_GRAMMAR_MIXED                  43 callers / 127 grammar edges
+TOTAL                                   567 callers / 1,356 grammar edges
+```
+
+V283 proves that preserving caller `0x6A` does not reproduce all nested formatter tone
+conditions. Across the 460 root-style-owner callers, complete caller coverage of nested
+formatter relation/register conditions is 0/460. Therefore all 460 require explicit
+tone-collapse adjudication before text migration.
+
+V284 establishes the first reusable Korean tone policy from the least noisy 253
+`ROOT_STYLE_ONLY` callers:
+
+```text
+callers                                  253
+grammar edges                            406
+dynamic callers                           91
+dynamic-semantic edges                   226
+simple two-arm 0x6A callers              250
+of those, one arm already grammar-free   210
+grammar edges in opposite arms           290
+```
+
+The 210/250 corpus pattern is direct PC Korean evidence that branch-local complete
+Korean wording is already used inside the same caller structures.
+
+All 34 grammar entry families used by this tranche are assigned to four policy classes:
+
+```text
+REGISTER_NORMALIZE_CANDIDATE
+  C73 C82 C100 C109 C118 C195 C202 C209 C244 C272 C279 C286 C300 C328 C335
+
+LEXICAL_MOOD_REWRITE_REQUIRED
+  C125 C132 C146 C160 C174 C181 C188 C216 C223 C230 C237 C251 C265
+
+ZERO_OUTPUT_STRUCTURAL_EXCEPTION
+  C91 C342
+
+HONORIFIC_ROLE_TONE_CRITICAL
+  C167 C258 C349 C356
+```
+
+Edge/caller coverage in the 253 population:
+
+```text
+REGISTER_NORMALIZE_CANDIDATE       241 edges / 174 callers
+LEXICAL_MOOD_REWRITE_REQUIRED      109 edges /  92 callers
+ZERO_OUTPUT_STRUCTURAL_EXCEPTION    42 edges /  37 callers
+HONORIFIC_ROLE_TONE_CRITICAL        14 edges /   9 callers
+```
+
+Because callers can use more than one class, highest-risk caller assignment is used for
+execution ordering:
+
+```text
+pure REGISTER_NORMALIZE_CANDIDATE   125 callers
+LEXICAL_MOOD_REWRITE_REQUIRED        86 callers
+ZERO_OUTPUT_STRUCTURAL_EXCEPTION     33 callers
+HONORIFIC_ROLE_TONE_CRITICAL          9 callers
+TOTAL                                253 callers
+```
+
+Korean V1 tone policy is now:
+
+1. preserve caller-owned `0x6A` and all caller-local control branches;
+2. preserve required dynamic-semantic call IDs/order;
+3. normalize formatter-only simple register variation into natural branch-local Korean;
+4. do not mechanically rewrite request/intention/proposal or lexical-mood families;
+5. isolate C91/C342 empty/non-empty output behavior as structural exceptions;
+6. preserve/review `-시-`, `말씀-`, `드리-` and similar honorific-role distinctions as
+   `TONE_CRITICAL_EXCEPTION` obligations;
+7. never assign a global Korean tone meaning to `0x6A=0` or `0x6A=1`; caller wording is
+   the local tone authority;
+8. use SC/TW only as structural evidence, not Korean wording/tone authority.
+
+V284 does not authorize text mutation. The exact next read-only scope is:
+
+`KO_GRAMMAR_REGISTER_NORMALIZE_CANDIDATE_125_BRANCH_WORDING_READ_ONLY`
+
+Only after that wording-responsibility design is reviewed may any implementation or
+write-safety stage be proposed, and such a stage requires a fresh explicit signal.

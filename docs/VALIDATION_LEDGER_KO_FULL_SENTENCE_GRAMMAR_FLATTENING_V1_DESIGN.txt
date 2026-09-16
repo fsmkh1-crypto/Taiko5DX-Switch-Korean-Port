@@ -132,7 +132,7 @@ SHA-256   84eae893bedb55dccb2cfeb7e3328861fed1501e618e868c75208c248f058d48
 
 The matrix is analysis provenance only and is not a gameplay-data mutation artifact.
 
-### Current design consequence
+### Current design consequence through V283
 
 The core rule remains:
 
@@ -153,18 +153,114 @@ trimming, global `0x6A` inversion, forced predicate values, early global blankin
 grammar cluster, automatic treatment of the former 913, automatic treatment of all 567,
 and automatic treatment of the 460 root-style callers.
 
+## V284 — ROOT_STYLE_ONLY 253 Korean tone policy
+
+Status: PASS / CLOSED READ_ONLY / POLICY ESTABLISHED FOR NEXT WORDING DESIGN
+
+The least structurally noisy population is exactly:
+
+```text
+ROOT_STYLE_ONLY callers                 253
+grammar edges                           406
+callers carrying dynamic values          91
+dynamic-semantic edges                  226
+```
+
+Of these 253 callers, 250 have a simple two-arm `0x6A` structure. Among those 250,
+210 callers already have one branch arm with zero grammar calls, while the opposite arm
+retains inherited grammar calls. The grammar-bearing opposite arms contain 290 grammar
+edges.
+
+Disposition: this is direct PC Korean corpus evidence that branch-local complete Korean
+wording is already used at scale inside the same caller structures. The selected
+full-sentence direction therefore does not rest only on the official SC/TW analogy.
+
+Official SC/TW checks across the 253 callers remain:
+
+```text
+SC grammar residual                         0
+TW grammar residual                         0
+SC dynamic-call sequence mismatch           0
+TW dynamic-call sequence mismatch           0
+```
+
+Do not assign a global Korean tone name to `0x6A=0` or `0x6A=1`. The corpus contains
+caller-local style contrasts that do not map to one universal formal/informal or
+male/female interpretation. Existing caller branch wording is the local tone authority.
+
+### V284 family policy classification
+
+All 34 grammar entry families used by the 253 callers are classified; unresolved family
+count is zero.
+
+```text
+REGISTER_NORMALIZE_CANDIDATE
+  C73 C82 C100 C109 C118 C195 C202 C209 C244 C272 C279 C286 C300 C328 C335
+  241 grammar edges / 174 callers
+
+LEXICAL_MOOD_REWRITE_REQUIRED
+  C125 C132 C146 C160 C174 C181 C188 C216 C223 C230 C237 C251 C265
+  109 grammar edges / 92 callers
+
+ZERO_OUTPUT_STRUCTURAL_EXCEPTION
+  C91 C342
+  42 grammar edges / 37 callers
+
+HONORIFIC_ROLE_TONE_CRITICAL
+  C167 C258 C349 C356
+  14 grammar edges / 9 callers
+```
+
+Caller sets overlap across family classes. For execution-order planning, highest-risk
+caller assignment closes exactly:
+
+```text
+pure REGISTER_NORMALIZE_CANDIDATE      125 callers
+LEXICAL_MOOD_REWRITE_REQUIRED           86 callers
+ZERO_OUTPUT_STRUCTURAL_EXCEPTION        33 callers
+HONORIFIC_ROLE_TONE_CRITICAL             9 callers
+TOTAL                                   253 callers
+```
+
+### V284 Korean V1 tone policy
+
+1. preserve caller-owned `0x6A` and caller-local control branches;
+2. preserve required dynamic-semantic call IDs/order;
+3. normalize formatter-only simple register variation into natural branch-local Korean;
+4. do not mechanically rewrite request/intention/proposal or lexical-mood families;
+5. isolate C91/C342 empty/non-empty behavior as structural exceptions;
+6. treat `-시-`, `말씀-`, `드리-` and equivalent honorific-role changes as
+   `TONE_CRITICAL_EXCEPTION` obligations;
+7. use JP meaning, actual PC Korean wording, and caller branch context as Korean wording
+   authority;
+8. use SC/TW as engine-compatible structural evidence only.
+
+V284 authorizes no Korean text mutation, TAI5MSG rewrite, builder change, build, IPS,
+runtime patch, or WRITE_SAFE.
+
+## Write-transport incident during V284 materialization
+
+A prohibited GitHub Contents API `create_file` call created commit
+`68ac474558f69ba3eca357d8a8f8bb8c95c2d748` from parent
+`b1d6a1369a1733cd34b0314beeb4cfadd2ec2ecd`. Its entire delta is one added root file
+`__DO_NOT_USE__` containing `x`; no legitimate project file was modified.
+
+The incident is preserved in history and recovered forward-only by removing that root
+file in the next tree while materializing V284 through the allowed Git-object path.
+The incident grants no semantic or write authority.
+
 ## Current STOP / next scope
 
 Current next READ_ONLY scope:
 
-`KO_GRAMMAR_ROOT_STYLE_ONLY_253_TONE_POLICY_READ_ONLY`
+`KO_GRAMMAR_REGISTER_NORMALIZE_CANDIDATE_125_BRANCH_WORDING_READ_ONLY`
 
-Purpose: use the least structurally noisy 253 root-style-only callers to establish which
-nested formatter register distinctions may be normalized into natural Korean and which
-must survive as `TONE_CRITICAL_EXCEPTION` before extending that policy to the 207
-secondary-condition callers and later populations.
+Purpose: bind only the 125 highest-confidence register-normalization callers to their
+actual caller branches, preserve dynamic-semantic obligations, and establish branch-local
+Korean wording responsibility. This is wording design/analysis only, not repository text
+mutation.
 
 No Korean text mutation, TAI5MSG rewrite, builder change, diagnostic build, IPS,
-runtime patch, or new WRITE_SAFE is authorized by V282-V283.
+runtime patch, or new WRITE_SAFE is authorized by V284.
 
 A fresh explicit user execution signal is required before beginning the next scope.

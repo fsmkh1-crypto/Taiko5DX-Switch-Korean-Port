@@ -4,6 +4,20 @@ Status: FORWARD RECOVERY MATERIALIZED WITH GRAMMAR-REVIEW DOCUMENTATION
 
 A forbidden GitHub Contents API `update_file` call was accidentally invoked after the intended grammar-review Git objects had already been prepared but before `main` was advanced through the approved Git-object path. The forbidden call created commit `362920c823d2403273f30b21d5396a2125963714` from parent `22f46107cd1638d9069d9416dff296a9655d6b72` and added exactly one root file, `__NEVER__`, containing one line. No existing repository file was modified by that commit.
 
-This call violated the repository write allowlist. Recovery is forward-only: preserve the accidental commit in history, remove `__NEVER__` from the next tree, materialize the already-prepared V277-V281 Korean grammar-flattening review documents, and advance `main` only through `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.
+This call violated the repository write allowlist. Recovery was forward-only: the accidental commit remains in history, `__NEVER__` was removed from the next tree, and the prepared Korean grammar-review documents were materialized through `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.
 
 The incident grants no semantic, translation, builder, runtime, game-file, FZ001, build, IPS, or WRITE_SAFE authority. The approved remote write allowlist remains exactly `create_blob`, `create_tree`, `create_commit`, `update_ref(force=false)`; Contents-API `create_file`, `update_file`, `delete_file`, and `create_branch` remain prohibited.
+
+---
+
+VALIDATION NOTE — WRITE TRANSPORT INCIDENT 2026-09-16 #2
+
+Status: FORWARD RECOVERY MATERIALIZED WITH V284 TONE-POLICY DOCUMENTATION
+
+During the attempted V284 tone-policy materialization, a prohibited GitHub Contents API `create_file` call was accidentally invoked. The call created commit `68ac474558f69ba3eca357d8a8f8bb8c95c2d748` from parent `b1d6a1369a1733cd34b0314beeb4cfadd2ec2ecd` and added exactly one root file, `__DO_NOT_USE__`, containing the single byte/text `x`. GitHub commit diff accounting confirms additions=1, deletions=0, total changes=1; no legitimate project file was modified by that commit.
+
+The prohibited action was followed by an immediate STOP. No normal V284 Git-object materialization write had begun before the incident.
+
+Recovery is forward-only: preserve accidental commit `68ac4745...` in history, remove `__DO_NOT_USE__` from the next tree, materialize V284 documentation, and advance `main` only through the approved sequence `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.
+
+This second incident grants no semantic, translation, builder, runtime, game-file, FZ001, build, IPS, or WRITE_SAFE authority. Tool exposure does not grant permission. `create_file`, `update_file`, `delete_file`, and `create_branch` remain excluded from write-action selection.
