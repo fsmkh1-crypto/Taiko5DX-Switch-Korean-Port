@@ -1,7 +1,7 @@
 # SELECTIVE KOREAN SOURCE CLASSIFICATION SCHEMA
 
 Date: 2026-09-17
-Status: CROSS-CUTTING TAXONOMY LINKED / V293 ROUTING CLARIFICATION
+Status: CROSS-CUTTING TAXONOMY LINKED / V295 CONTAINER CORRECTION ALIGNED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Purpose
@@ -28,6 +28,12 @@ That document is authoritative for:
 This file remains the product-facing bridge between that common taxonomy and the selective Korean release scope.
 
 Event-related candidates additionally use `EVENT_EXTRACTION_SCHEMA.md` for event-specific caller/branch metadata, but event classes do not replace the common taxonomy.
+
+Container/file family is descriptive metadata only. It does not determine `usage_class`, `mechanism_class`, release phase, or safety by itself.
+
+V295 correction authority:
+
+`CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
 
 ## 2. Classification model
 
@@ -91,6 +97,15 @@ Examples:
 - event narration may be `NARRATION_SYSTEM + VARIABLE_INSERT`;
 - dialogue may be `DIALOGUE + BRANCH_COMPLETE` or `DIALOGUE + GRAMMAR_FORMATTER`;
 - excluded person/yomi presentation may be `IDENTITY + NAME_COMPOSED`.
+
+Length and container are never substitutes for usage classification:
+
+```text
+long Korean inline text != automatically UI_DESCRIPTION
+TAI5MSG                  != automatically DIALOGUE
+EVENT/TS5                != automatically NARRATION_SYSTEM
+SNR                      != automatically IDENTITY
+```
 
 ## 5. Investigation status
 
@@ -192,6 +207,8 @@ Rules:
 
 Source/mechanism inventory may still proceed before full owner closure where the evidence supports it. Missing owner/caller evidence blocks final release inclusion; it does not automatically erase otherwise valid source-side structural observations.
 
+F1 static 158 is a verified source/owner population only. It is not an R1 row count and does not confer `INCLUDE_KO`.
+
 ## 9. Safe dialogue product definition
 
 A dialogue row is R3-safe only when it satisfies the full safe-dialogue definition in `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`.
@@ -233,7 +250,7 @@ Event membership is not a safety class.
 - event control/formatter signatures;
 - event-local variable metadata.
 
-Its legacy event structural classes map into the common taxonomy and are not terminal release dispositions.
+Its event structural classes map into the common taxonomy and are not terminal release dispositions.
 
 Examples:
 
@@ -260,7 +277,7 @@ EVENT_UNKNOWN
   -> non-resolved investigation status
 ```
 
-New rows do not use legacy dispositions such as `INCLUDE_EVENT_KO` or `HOLD_DYNAMIC_DIALOGUE` as terminal state.
+New rows do not use legacy dispositions such as `INCLUDE_EVENT_KO`, `INCLUDE_SAFE_DIALOGUE_KO`, or `HOLD_DYNAMIC_DIALOGUE` as terminal state.
 
 ## 12. Required common metadata
 
@@ -304,7 +321,13 @@ translation_review_status = DEFER_TO_RUNTIME_QA
 
 Translation quality is reviewed during runtime play rather than used as a pre-extraction release blocker.
 
-This translation-QA deferral does not resolve product-policy questions such as how Japanese-retained identity should appear when the PC Korean prose contains Korean person/place names as literals.
+Identity-in-prose is already resolved independently by V294. Translation-QA deferral does not reopen or weaken that policy:
+
+```text
+identity presentation fields            -> KEEP_JP
+PC Korean prose identity literals        -> PRESERVE_AS_AUTHORED_KO
+runtime-inserted person/place identity   -> KEEP_JP
+```
 
 ## 13. Automatic extraction vs manual judgment
 
@@ -356,6 +379,8 @@ REJECTED
 `REJECTED` is retained so later agents do not repeat failed or contradicted hypotheses.
 
 PC runtime behavior whose exact target executable/runtime identity is not proven cannot exceed `HINT` for mechanism claims.
+
+Raw scans of binary containers must not be promoted into structurally verified text-field counts without a parser or equivalent boundary proof.
 
 ## 15. Capacity rule
 
@@ -422,6 +447,8 @@ The sole executable next-scope authority is:
 
 `selective_ko/SELECTIVE_PROJECT_STATE.md`
 
-Before broad corpus classification, the architecture requires a cross-container inventory that establishes, per source family/container, which common fields are machine-extractable, manually decidable, or currently unavailable, and which existing parsers/owner ledgers can be reused.
+The current cross-container inventory must establish, per source family/container, which common fields are machine-extractable, manually decidable, or currently unavailable, and which existing parsers/owner ledgers can be reused.
 
 That inventory requirement is a design prerequisite, not an independent routing declaration from this schema.
+
+Where Switch-original RomFS structure is needed but not yet supplied, record `NOT_YET_SUPPLIED` and use `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`; do not substitute PC structure as Switch authority.

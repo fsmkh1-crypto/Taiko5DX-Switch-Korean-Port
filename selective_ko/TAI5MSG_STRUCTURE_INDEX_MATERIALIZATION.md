@@ -1,9 +1,11 @@
 # TAI5MSG STRUCTURE INDEX MATERIALIZATION
 
 Date: 2026-09-16 (KST)
-Status: CANONICAL MATERIALIZATION PAYLOAD
+Status: CANONICAL MATERIALIZATION PAYLOAD / V295 ROUTING NOTE APPLIED
 Scope: `TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION`
 Artifact ID: `ART-00000005`
+
+> V295 routing note: this document remains authoritative for the materialized TAI5MSG locator/length structure artifact. Its original direct-next-step recommendation is historical and no longer declares executable scope. Current routing is controlled only by `SELECTIVE_PROJECT_STATE.md`.
 
 ## PC_PATCH_ORACLE_GATE
 
@@ -87,7 +89,7 @@ INDEX SHA-256         = 63b2c12c5c101b1333833992d0c4665aae2e5d6b8ba98d59fa8aeda5
 INDEX Git blob        = f4d7f6db22938639c645e02461a96011c467de9f
 
 manifest SHA-256      = a434ba5ca5e4cf37ca400de81c1b5d53aa1bd5eac2d9925c0d7e24ec65aaa655
-manifest Git blob       = 932047a3a9e0a1d562d86d8d767b7a3a0b52d39d
+manifest Git blob     = 932047a3a9e0a1d562d86d8d767b7a3a0b52d39d
 ```
 
 All 14,832 original/Korean slots replay-validate against the canonical input hashes.
@@ -107,7 +109,9 @@ A future serializer should preserve the observed final-block EOF omission. Seria
 
 ## 미확정 사항
 
-This artifact does not establish semantic VM call-ID equivalence, caller graph, nested formatter edges, mechanism class, usage class, applicability, realization, release scope, or build authorization.
+This artifact does not establish semantic VM call-ID equivalence, caller graph, nested formatter edges, mechanism class, usage class, Switch-original correspondence, Switch physical-owner mapping, applicability, realization, release scope, or build authorization.
+
+The later V295 source-side control-aware Korean-bearing-message census (`13,590`) is not part of ART-00000005 and does not expand this artifact's authority.
 
 ## 기각된 가설
 
@@ -118,7 +122,8 @@ This artifact does not establish semantic VM call-ID equivalence, caller graph, 
 - `local_message_index` as proven semantic VM call ID;
 - final-block declared-minus-physical bytes as writable capacity;
 - legacy full-file reconstruction as selective serializer authority;
-- treating a structure artifact as automatic candidate/release inclusion.
+- treating a structure artifact as automatic candidate/release inclusion;
+- treating PC-original <-> PC-Korean slot correspondence as proof of Switch-original correspondence.
 
 ## 관련 영향 범위
 
@@ -144,12 +149,24 @@ The overnight documentation commit `cd5566c3...` correctly added incident proven
 
 Earlier unattached prototype blobs remain noncanonical.
 
-## 수정 제안
+## Historical recommendation and current routing
 
-After remote readback closes this artifact, proceed to:
+The original post-materialization recommendation was:
 
 ```text
 TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY
 ```
 
-The first partition should separate structurally simple 1:1/static-variable message populations from cross-message/nested grammar-formatter populations. Person/place/yomi identity remains Japanese for the initial selective release.
+That recommendation is retained here only as historical provenance and is superseded by V293/V295 routing.
+
+Current executable next scope is declared only by:
+
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
+
+As of V295, the open scope remains:
+
+```text
+SELECTIVE_KO_CONTENT_CONTAINER_AND_FIELD_AVAILABILITY_READ_ONLY
+```
+
+No broad TAI5MSG classification is authorized solely because ART-00000005 exists.

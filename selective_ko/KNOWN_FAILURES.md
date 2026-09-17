@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
-Date: 2026-09-16 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY
+Date: 2026-09-17 (KST)
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V295 CONTAINER FAILURE ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -28,7 +28,8 @@ Relevant findings already established:
 Selective-project disposition:
 
 - do not treat this family as an R1-R3 blocker;
-- affected lines default to `HOLD_DYNAMIC_DIALOGUE`;
+- affected rows are deferred under the common taxonomy (`DEFER_KO` when a concrete R4 revisit condition is recorded; otherwise unresolved evidence remains `UNRESOLVED`);
+- historical `HOLD_DYNAMIC_DIALOGUE` wording is provenance only, not a new-row terminal disposition;
 - reopen only under an explicit R4 formatter-family grammar scope.
 
 ## 2. Prohibited dialogue shortcuts
@@ -51,11 +52,12 @@ Historical work established that visible names, yomi/readings, auxiliary-name ro
 
 Selective-project policy:
 
-- person names remain Japanese;
-- place names remain Japanese;
+- person names remain Japanese in dedicated identity presentation fields;
+- place names remain Japanese in dedicated identity presentation fields;
 - yomi/reading/sort keys remain Japanese;
 - Korean name input is excluded;
-- CWTDAT Korean reconstruction is not required for R1-R3.
+- CWTDAT Korean reconstruction is not required for R1-R3;
+- Korean person/place spellings already authored inside selected PC Korean prose remain Korean under V294.
 
 Do not import CWTDAT/name risk into description/event work unless a selected content item has a concrete dependency.
 
@@ -93,7 +95,8 @@ Do not assume:
 - every PC workaround is desirable on Switch;
 - PC descriptor/helper cardinality equals Switch counterpart cardinality;
 - PC runtime allocation/signature-search mechanics are portability requirements;
-- historical PC patch versions are uniformly reliable.
+- historical PC patch versions are uniformly reliable;
+- PC-original <-> PC-Korean file/message correspondence proves Switch-original correspondence.
 
 Use PC content as source authority where appropriate and Switch structure as implementation authority.
 
@@ -301,3 +304,59 @@ Operational rule reinforced by both incidents:
 - `create_file`, `update_file`, `delete_file`, and `create_branch` are excluded before action selection;
 - the only repository write actions are `create_blob`, `create_tree`, `create_commit`, and `update_ref(force=false)`;
 - any future forbidden-action selection, including a failed 404 call, is an immediate STOP boundary.
+
+## 12. Full-port container/file-level assembly-order failure — V295
+
+The old full-port product path moved too quickly from verified low-level evidence to bulk/file-level payload assembly.
+
+The failure was not that every underlying binary fact was wrong. Mapping, F1 owner evidence, TAI5MSG structure, font/code-space work, and other closed facts remain usable where their original scope applies.
+
+The rejected product sequence was:
+
+```text
+bulk/file-level PC payload import
+-> run on Switch
+-> observe broken names/grammar/transport
+-> diagnose symptoms individually
+```
+
+Cross-container inspection later established that this sequencing assumption is too coarse:
+
+- TAI5MSG is not dialogue-only;
+- verified EVENT/TS5 samples directly contain narration/dialogue payloads;
+- SNR contains both scenario/narrative and identity-related data;
+- static inline Korean text spans multiple usage roles;
+- container/file names do not determine release phase or safety.
+
+Do not repeat these shortcuts:
+
+```text
+container == usage_class
+container == release phase
+long Korean string == UI_DESCRIPTION
+F1 static 158 == R1 158
+PC original <-> PC Korean structure == Switch structure
+raw binary Korean-looking byte scan == verified text-field census
+Drive search miss == proof of file absence
+bulk PC data/ import == selective release baseline
+```
+
+Current required sequence:
+
+```text
+identify exact field/message/object
+-> classify source-side role/mechanism evidence
+-> bind Switch-original structure/owner/callers when required
+-> close risk/capacity/provenance
+-> authorize only selected Korean realization
+```
+
+Canonical correction authority:
+
+`CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+
+Switch-original sources may be supplied later under:
+
+`SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+
+Do not repeatedly request XCI extraction before an actual Switch-structure scope requires it.

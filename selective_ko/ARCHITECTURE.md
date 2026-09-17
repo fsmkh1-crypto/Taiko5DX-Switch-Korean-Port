@@ -1,7 +1,7 @@
 # SWITCH SELECTIVE KOREANIZATION ARCHITECTURE
 
 Date: 2026-09-17
-Status: DESIGN BASELINE / V293 ROUTING CLARIFICATION / NO IMPLEMENTATION AUTHORITY
+Status: DESIGN BASELINE / V295 CONTAINER CORRECTION LINKED / NO IMPLEMENTATION AUTHORITY
 
 ## 1. Design objective
 
@@ -30,7 +30,7 @@ Every candidate source is classified before implementation.
 Primary questions:
 
 1. Is this explanatory/narrative text needed by the product scope?
-2. Does it contain person/place/date/yomi identity content that may remain Japanese?
+2. Does it contain person/place/date/yomi identity content that remains Japanese under the current product policy?
 3. Does it require a dynamic formatter or relation/speech-style branch?
 4. Is the complete logical object boundary known?
 5. Is a safe Switch semantic owner already known?
@@ -38,6 +38,8 @@ Primary questions:
 No source reaches a builder without a terminal disposition.
 
 Before broad classification, the project must know which containers/source families actually own the R1/R2/R3 content and which required classification fields are extractable for each family.
+
+Container/file membership is metadata, not a release tier. TAI5MSG, EVENT/TS5, SNR, static inline text, and other families may each contain multiple usage/mechanism classes. Do not infer R1/R2/R3 from filename alone.
 
 ### Layer C — Korean code-space foundation
 
@@ -99,7 +101,16 @@ A family rule must cover every in-scope caller or explicitly leave exceptions Ja
 - technique/skill descriptions;
 - explanatory menu/help text required to understand game systems.
 
-Names embedded in these descriptions are a separate unresolved product-policy question when the PC Korean prose itself contains Korean-rendered identity literals. Identity fields remain Japanese by default, but prose-embedded identity handling must be explicitly decided before R1 release materialization depends on it.
+Identity-in-prose is no longer an unresolved product-policy question. V294 fixed the first-release rule:
+
+```text
+dedicated identity presentation fields   -> KEEP_JP
+PC Korean identity literals in prose      -> PRESERVE_AS_AUTHORED_KO
+runtime-inserted person/place identity    -> KEEP_JP
+reverse substitution                      -> FORBIDDEN
+```
+
+Therefore a selected Korean description may retain a Korean-authored person/place spelling inside prose while the dedicated identity field remains Japanese. This visual mismatch is intentional for the first release and is not a release blocker by itself.
 
 ### Tier 2 — mandatory events
 
@@ -187,12 +198,25 @@ V291 screenshots/runtime observations may be retained as historical failure/narr
 
 - CWTDAT Koreanization;
 - yomi conversion;
-- Korean person/place-name replacement;
+- Korean person/place-name replacement in dedicated identity fields;
 - date/calendar Koreanization;
 - Korean name entry;
 - unresolved dynamic dialogue grammar.
 
-## 6. New builder shape
+## 6. Cross-container correction from V295
+
+Current verified/restricted conclusions:
+
+- TAI5MSG is not dialogue-only;
+- verified EVENT/TS5 samples contain direct Korean narration/dialogue payloads, so EVENT is not control-only;
+- SNR is a mixed container containing scenario/narrative and identity-related data;
+- long Korean inline text is not automatically `UI_DESCRIPTION`;
+- F1 static 158 is source/owner provenance, not an R1 row count;
+- PC original <-> PC Korean correspondence never proves Switch correspondence by itself.
+
+The old full-port sequence of bulk/file-level import followed by symptom repair is rejected as a product architecture.
+
+## 7. New builder shape
 
 A future selective builder should consume an explicit manifest, not discover scope heuristically.
 
@@ -218,9 +242,10 @@ Builder must not:
 - infer that a repeated string is safe to overwrite;
 - auto-deduplicate Korean syllables;
 - import all PC patch files merely because they exist;
-- translate names/yomi/date fields implicitly.
+- translate names/yomi/date fields implicitly;
+- infer product tier from container/file name.
 
-## 7. Validation gates
+## 8. Validation gates
 
 For R1-R3 release:
 
@@ -229,12 +254,12 @@ For R1-R3 release:
 - every emitted Korean code has mapping/font coverage;
 - every selected mixed-script surface preserves Japanese and Korean on its actual route;
 - excluded identity/yomi/date objects remain byte-identical to the Switch baseline unless separately approved;
-- unresolved product-policy questions such as identity-in-prose are closed before affected payload materialization;
+- V294 identity-in-prose policy is applied consistently where relevant;
 - no deferred dynamic-grammar source is emitted;
 - build is deterministic;
 - representative runtime tests pass for each included content family.
 
-## 8. Architectural sequence — non-authoritative guidance
+## 9. Architectural sequence — non-authoritative guidance
 
 This section is architectural guidance only. It does **not** declare the executable next scope.
 
@@ -242,16 +267,17 @@ The sole executable next-scope authority is:
 
 `selective_ko/SELECTIVE_PROJECT_STATE.md`
 
-Recommended sequence after V293:
+Recommended sequence after V295 correction:
 
-1. cross-container content-owner / classification-field availability inventory for R1/R2/R3;
-2. identity-in-prose product-policy decision;
-3. R1 description/UI owner and structure closure;
-4. R1 classification/materialization and diagnostic build;
-5. R2 event/system container/owner closure and diagnostic build;
-6. R3 safe-dialogue payload/caller/owner classification and diagnostic build;
-7. optional R4 grammar work only if still desired.
+1. finish cross-container content-owner / classification-field availability inventory for R1/R2/R3;
+2. close R1 description/UI source-role population and owner/structure coverage;
+3. R1 classification/materialization and one-cause-family diagnostic build;
+4. close R2 event/system container/owner coverage and diagnostic build;
+5. R3 safe-dialogue payload/caller/owner classification and diagnostic build;
+6. optional R4 grammar work only if still desired.
 
-The inventory stage may prove that some phases share or reorder containers. If so, change the roadmap explicitly instead of treating this sequence as a hidden execution authority.
+The inventory stage may prove that phases share or reorder containers. If so, change the roadmap explicitly instead of treating filename/container boundaries as hidden execution authority.
+
+Switch-original RomFS inputs may be supplied later under `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md` when a structural scope actually needs them.
 
 Each stage remains separately authorized.
