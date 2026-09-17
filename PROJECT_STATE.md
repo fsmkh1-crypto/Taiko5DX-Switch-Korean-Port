@@ -1,186 +1,218 @@
 # PROJECT_STATE
 
-Last updated: 2026-09-17 (KST)
+Last updated: 2026-09-18 (KST)
 
 This file is the sole repository-level project-resume authority.
 
-The previous canonical state remains inherited in full unless explicitly superseded below:
+The previous canonical state remains inherited in full unless explicitly superseded below.
+
+Current canonical overlay to be materialized by this commit:
 
 ```text
-commit  35ef3c5bc8c0b545542495ba08ffbf7e4cf9f02f
-scope   SELECTIVE_KO_CONTAINER_ANALYSIS_CORRECTION_V295_MATERIALIZED / V295
+scope   INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297
+parent  13e51a34c98f9837ba0c6d3be2bb9da6c82acc52
 ```
 
-All earlier VERIFIED facts, closed validations, rejected hypotheses, provenance, FZ001 state, V292/V293 routing, Git-incident recovery, Mapping 10,036 authority, F1 static-158 provenance, ART-00000005 boundary, V294 identity-in-prose policy, and V295 container/source corrections remain inherited without blanket revalidation. V296 narrows only the claim strength and product-use authority of historical full-port evidence.
+All earlier VERIFIED/CLOSED facts, FZ001, Stage1/Stage2, forward-986, Mapping 10,036, Pointer-56, TAI5MSG structure, F1 provenance, V292-V296 policy, rejected hypotheses, and Git write restrictions remain inherited unless explicitly narrowed below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"SELECTIVE_KO_LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296_MATERIALIZED","scope_kind":"CLAIM_STRENGTH_POLICY_MATERIALIZATION","status":"CLAIM_STRENGTH_POLICY_MATERIALIZED_INVENTORY_SCOPE_OPEN","last_closed_validation_id":"V296","canonical_base_commit":"35ef3c5bc8c0b545542495ba08ffbf7e4cf9f02f","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"SELECTIVE_KO_CONTENT_CONTAINER_AND_FIELD_AVAILABILITY_READ_ONLY","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","historical_write_safe_selective_inclusion":"NOT_AUTOMATIC","runtime_validation_scope":"EXACT_ROUTE_ONLY","v290_selective_product_status":"EXCLUDE_FROM_SELECTIVE_PRODUCT","v291_selective_product_status":"EXCLUDE_FROM_SELECTIVE_PRODUCT","v290_v291_gameplay_success_evidence":"NO","grammar125_selective_role":"OPTIONAL_R4_GRAMMAR_EVIDENCE_REAUDIT_ON_USE","selective_candidate_ids":0,"selective_tai5msg_classification_rows":0,"selective_include_ko_rows":0,"selective_builder_status":"NOT_IMPLEMENTED","identity_in_prose_policy":"RESOLVED_IDENTITY_IN_PROSE_V1","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_source_status":"DEFERRED_USER_SUPPLIED_XCI_EXTRACTION","switch_original_source_contract":"selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","required_reads":["selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","docs/MASTER_RULE_REGISTRY.md","docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md","docs/SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293.md","docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/ARCHITECTURE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/EVENT_EXTRACTION_SCHEMA.md","selective_ko/FIXED_PARTICLE_POLICY.md","selective_ko/PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION.md","selective_ko/TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md","selective_ko/artifacts/tai5msg_structure_index_v1/INDEX.json","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297_MATERIALIZED","scope_kind":"READ_ONLY_ANALYSIS_MATERIALIZATION","status":"V297_MATERIALIZED_ENDING_HELP_CANDIDATE_STAGE_NOT_STARTED","last_closed_validation_id":"V297","canonical_base_commit":"13e51a34c98f9837ba0c6d3be2bb9da6c82acc52","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"SELECTIVE_KO_ENDING_HELP_39_CANDIDATE_CLASSIFICATION_MATERIALIZATION","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","inline_v297_authority":"selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_candidate_ids":0,"selective_classification_ids":0,"selective_include_ko_rows":0,"selective_builder_status":"NOT_IMPLEMENTED","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_romfs_status":"NOT_YET_SUPPLIED","required_reads":["selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","docs/MASTER_RULE_REGISTRY.md","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
-## 1. V296 — legacy-evidence claim-strength policy materialized
+## 1. V297 — inline R1 logical-object reconstruction materialized
 
-Canonical trust-boundary overlay:
+Canonical analysis overlay:
 
-`selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+`selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
 
-V296 records the result of the historical full-port evidence audit.
+This overlay records both the current results and the reusable reconstruction method.
 
-Core rule:
-
-```text
-verified low-level evidence remains reusable within its proven scope
-!=
-historical evidence automatically authorizes selective Korean product inclusion
-```
-
-Claim-strength classes are:
+Key source counts:
 
 ```text
-TRUST_RETAIN_RAW_SOURCE
-TRUST_RETAIN_SCOPE_LIMITED
-REAUDIT_ON_SELECTIVE_USE
-SELECTIVE_PRODUCT_EXCLUDED
-WITHDRAWN_OR_REJECTED
+PC inline raw records                         = 17,103
+exact original/replacement semantic groups   = 8,751
+external provisional YES                     = 205
+external provisional UNCERTAIN               = 227
+Korean-bearing external-positive groups      = 204
+positive PC source occurrences               = 206
+single Switch-location occurrences           = 191
+those collapse to distinct logical objects   = 189
+positive multi-match semantic groups         = 13
 ```
 
-Key boundaries:
+External semantic triage is a prefilter only and is not corpus authority.
+
+## 2. V297 ending-table closure
+
+The Switch ending table is structurally closed as:
 
 ```text
-target resolved        != WRITE_SAFE
-WRITE_SAFE             != INCLUDE_KO
-owner resolved         != release inclusion
-build reproducible     != gameplay/runtime correct
-package byte-identical != hardware validation
-one-route runtime PASS != all-route/platform PASS
+39 records
+record stride = 0x3FF / 1023 bytes
+
+per record:
+  title      21 bytes
+  help       501 bytes
+  narration  501 bytes
+
+offsets:
+  help       +0x15
+  narration  +0x20A
 ```
 
-Historical V290/V291 PASS status remains valid only for their declared build/package scopes. Neither is gameplay-success evidence for the selective product.
-
-No blanket revalidation is authorized merely because the old full-port product failed.
-
-## 2. V295 — container-analysis correction remains inherited
-
-Canonical correction overlay:
-
-`selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-
-Key corrections remain:
+Therefore the table contains 117 text fields:
 
 ```text
-TAI5MSG Korean-bearing messages = 13,590 under the current control-aware census rule
-13,591 prior exploratory count   = WITHDRAWN
-inline 203/98/69 long-text census = VALID COUNTS, NOT R1 USAGE COUNTS
-EVENT payload file denominator   = 169
-EVENT 169/169 structural text-bearing claim = NOT ESTABLISHED
-F1 static 158                    = SOURCE/OWNER PROVENANCE, NOT R1 158
-exact identity-in-prose exposure counts from exploratory matching = NOT CANONICALIZED
+39 title + 39 help + 39 narration
 ```
 
-Container-level shortcuts remain rejected. R1/R2/R3 classification remains field/message/object based.
-
-## 3. V294 identity-in-prose policy remains closed
-
-First-release behavior remains:
+PC patch provenance:
 
 ```text
-identity presentation fields            = KEEP_JP
-PC Korean prose identity literals        = PRESERVE_AS_AUTHORED_KO
-runtime-inserted person/place identity   = KEEP_JP
-Korean-prose identity reverse transform  = FORBIDDEN
+whole ending table PC inline records = 208
+help-field PC inline records          = 102
+original-byte mismatches              = 0
+affine relative-offset violations     = 0
 ```
 
-V296 does not reopen this decision.
+Do not repeat the superseded intermediate claim that 39 ending-help fields equal 208 PC records.
 
-## 4. Historical evidence interpretation
+## 3. Ending-help 39 source/structure/capacity result
 
-The following low-level evidence remains reusable within its original proof boundary:
+All 39 help fields have complete PC Korean logical payload reconstruction.
 
-- exact PC patch source/replacement data and Korean content authority;
-- TAI5MSG 33 blocks / 14,832 logical slots locator structure;
-- Stage2 13,771 affine target resolution, without semantic/write/release escalation;
-- F1 static 158 physical write-safety provenance, without R1/release escalation;
-- Mapping 10,036 tested Eden forward/reverse round-trip, limited to the exact tested route;
-- pointer/semantic-owner relations within their original no-WRITE_SAFE/no-release boundary.
-
-The following require re-audit only when a selected R1/R2/R3/R4 item actually depends on them:
-
-- historical semantic-owner overlays as product-role evidence;
-- historical WRITE_SAFE rows as selective product writes;
-- pointer replacement-pool realization;
-- runtime helper/descriptor counterpart needs;
-- grammar125 and dynamic formatter evidence.
-
-The following remain excluded as selective product baselines:
-
-- V289/V290/V291 full-port assembly path;
-- bulk PC `data/` import;
-- whole-PC-Korean TAI5MSG payload realization;
-- historical broad inline-selection product policy;
-- incremental subtraction/repair from V291.
-
-## 5. Switch-original source supply policy
-
-The user will provide XCI-derived Switch original sources only when a later structural scope actually needs them.
-
-Canonical input contract:
-
-`selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-
-Planned Drive-relative destination:
+Current evidence:
 
 ```text
-태합입지전 프로젝트/Switch/Original_v1.1.3/
-├─ exefs/main
-└─ romfs/<preserve extracted relative tree>
+usage_class      = UI_DESCRIPTION
+mechanism_class  = STATIC_COMPLETE
+append_after     = NO
+investigation    = RESOLVED for analyzed ending-help route
+field capacity   = 501 bytes
+max KO payload including NUL = 412 bytes
+minimum slack    = 89 bytes
+capacity PASS    = 39/39
 ```
 
-Until supplied, record required counterparts as `NOT_YET_SUPPLIED`; do not infer absence from Drive search misses and do not substitute PC structure as Switch authority.
+These facts do not yet create `INCLUDE_KO` rows. Candidate/classification materialization is the next separate stage.
 
-## 6. Current selective counts
+## 4. UI prompt multi-match closure
 
-V296 creates no corpus or gameplay implementation.
+Previously outstanding prompt owners are now closed except only where historical artifacts remain as provenance.
+
+Verified row-level owners retained:
 
 ```text
-candidate IDs                 0
-classification IDs            0
-TAI5MSG classification rows   0
-selective INCLUDE_KO rows     0
-selective builder             NOT IMPLEMENTED
-selective build               NONE
-new WRITE_SAFE                0
+R645 / INLINE:00644 -> target_object 6938194 / DIRECT / owner_count 1
+R2799 / INLINE:02798 -> target_object 6862647 / DIRECT / owner_count 1
+R2975 / INLINE:02974 -> target_object 6957335 / DIRECT / owner_count 1
+R3013 / INLINE:03012 -> target_object 6921870 / DIRECT / owner_count 1
 ```
 
-## 7. Next-scope routing
+R651 was historically unresolved in L3. V297 resolves selected-use target binding by source-sequence evidence:
 
-The sole executable next-scope authority remains:
+```text
+R649 anchor `投資する` -> 0x6A7C18
+R651 investment prompt -> 0x6A7C21
+R652 suffix -> same object at 0x6A7C39
+resulting object -> `いくら投資しますか？\n(1000～%d)`
+```
 
-`selective_ko/SELECTIVE_PROJECT_STATE.md`
+The alternate raw candidate belongs to a different semantic object and fails the same source sequence.
 
-The active read-only scope remains open and unchanged:
+Historical L3 files are retained unchanged as provenance; V297 supersedes only R651's selected-use target-resolution status.
 
-`SELECTIVE_KO_CONTENT_CONTAINER_AND_FIELD_AVAILABILITY_READ_ONLY`
+## 5. Reusable method rules
 
-V296 does not automatically resume that analysis and does not authorize R1 implementation, corpus classification, builder work, IPS generation, or build.
+The following are canonical reusable analysis rules from V297:
 
-## 8. Precedence / stale historical claims
+1. `PC diff-run != logical string`; reconstruct against Switch object/field boundaries before classification.
+2. A PC replacement may consume original NUL padding; the Japanese first NUL is not automatically the Korean structural end.
+3. Prefer object-first reconstruction: source diff -> Switch object -> complete Korean payload -> usage/mechanism -> owner/caller/capacity -> disposition.
+4. Use original-byte guards plus family-bounded relative-offset affine validation for contiguous/table families.
+5. For raw multi-match, use adjacent PC source sequence and same-object containment; raw equality/uniqueness alone is not owner proof.
+6. Detect repeated tables through stable stride, stable field offsets, and caller indexing arithmetic.
+7. PC inline decode precedence: compact one-byte Hangul 0xA1..0xDF -> Korean-added two-byte mapping domain -> ordinary CP932.
+8. Do not use the whole Mapping 10,036 table as a naive inverse decoder because code aliases can misdecode ordinary CP932.
+9. UTF-16/mixed PC UI strings are a distinct family and must not be counted as failed CP932 Switch matches.
 
-Where a historical document states a broader conclusion than the evidence class permitted by V296, V296 narrows the downstream interpretation while preserving the original historical document as provenance.
+## 6. Superseded intermediate claims
 
-In particular:
+```text
+`189 unique positive occurrences`
+  -> correct: 191 single-location occurrences -> 189 logical objects
 
-- V290/V291 PASS must not be cited as gameplay success;
-- historical WRITE_SAFE must not be cited as selective `INCLUDE_KO`;
-- route-scoped runtime evidence must not be generalized to unrelated callers/platforms;
-- wrong-build PC runtime disassembly must not be cited as exact PC v1.02 parity proof.
+`39 ending-help = 208 PC records`
+  -> correct: 39 help = 102 PC records; full ending table = 208
 
-No historical fact is deleted merely because its downstream interpretation is narrowed.
+`UNC zero-match NUL/padding = 7`
+  -> correct: 8 padding/NUL + 3 UTF-16LE
 
-## 9. Repository write boundary
+`R651 requires exact PC EXE to resolve target`
+  -> rejected for selected-use target binding
+```
+
+## 7. V296 trust boundary remains binding
+
+The full-port failure does not invalidate verified low-level data.
+
+Still binding:
+
+```text
+target resolved != WRITE_SAFE
+WRITE_SAFE != INCLUDE_KO
+owner resolved != release inclusion
+build/package PASS != gameplay PASS
+exact-route runtime PASS != all-route PASS
+```
+
+V289-V291 full-port assembly remains excluded as selective product baseline.
+
+## 8. Exact PC EXE limitation remains
+
+The exact PC v1.2.1.0 build-9163702 executable remains unavailable.
+
+Claims depending on exact PC whole-program XREF/call-site/runtime parity cannot exceed their existing evidence boundary. Do not restart a blanket exact-PC-EXE hunt merely because V297 exists.
+
+This does not reopen V297 ending-help or R651 closure because those use exact PC patch bytes plus Switch-native structure/source sequence.
+
+## 9. Current materialization counts
+
+V297 creates analysis authority only.
+
+```text
+candidate IDs                 = 0
+classification IDs            = 0
+selective INCLUDE_KO rows     = 0
+selective builder             = NOT IMPLEMENTED
+selective build               = NONE
+new gameplay WRITE_SAFE       = 0
+IPS/runtime artifact          = NONE
+```
+
+## 10. Next scope
+
+The next recommended scope, only after a fresh explicit user execution signal, is:
+
+`SELECTIVE_KO_ENDING_HELP_39_CANDIDATE_CLASSIFICATION_MATERIALIZATION`
+
+Purpose:
+
+- materialize the 39 ending-help candidates with exact source/object provenance;
+- carry forward `UI_DESCRIPTION + STATIC_COMPLETE + RESOLVED + 39/39 capacity PASS` evidence;
+- derive dispositions only after all required common metadata/risk gates are represented;
+- record the R651 selected-use resolution as provenance;
+- do not mix builder/build/IPS work into the same stage.
+
+The broader container inventory remains open for TAI5MSG/EVENT/SNR after the R1 ending-help candidate materialization stage.
+
+## 11. Repository write boundary
 
 Remote GitHub writes remain restricted to exactly:
 
 `create_blob -> create_tree -> create_commit -> update_ref(force=false)`
 
-No `create_file`, `update_file`, `delete_file`, `create_branch`, issue/PR write, or force update is permitted for repository materialization.
+No `create_file`, `update_file`, `delete_file`, `create_branch`, issue/PR write, or force update is permitted.
 
-A fresh explicit user execution signal is required after V296 materialization is reported before the next analysis/implementation stage begins.
+A fresh explicit user execution signal is required after V297 materialization is reported before the next analysis/materialization/build stage.
