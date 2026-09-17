@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-17 (KST)
-Status: V294 IDENTITY_IN_PROSE POLICY MATERIALIZED / V293 NEXT_SCOPE AUTHORITY RECONCILED / TAI5MSG STRUCTURE MATERIALIZED / F1 STATIC 158 COMPLETE / NO CORPUS CLASSIFICATION / NO BUILD
+Status: V295 CONTAINER-ANALYSIS CORRECTION MATERIALIZED / CONTENT INVENTORY REMAINS OPEN / V294 IDENTITY POLICY CLOSED / NO CORPUS CLASSIFICATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -10,37 +10,62 @@ Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`
 Branch: `main`
 Target: Nintendo Switch title `0100346017304000`, game v1.1.3.
 
-This file is the sole executable next-scope authority for the `SWITCH_SELECTIVE_KOREANIZATION` product track.
+This file is the sole executable next-scope authority for the selective product track.
 
-The repository-root `PROJECT_STATE.md` is the repository-level resume authority and routes selective work here. Historical/design/reference documents may describe sequences or old next stages, but they do not override this file.
+The repository-root `PROJECT_STATE.md` is the sole repository-level resume authority and routes selective work here.
 
-The prior selective canonical state at commit `a954885f7f59c64b18cd969e3178397604e02d58` is inherited without revalidation except where explicitly superseded below.
+Inherited base before V295 correction:
 
-Required reads for the next selective scope:
+```text
+commit = b1bd4972c7d8793150ecf7d2648ae0be1c774b43
+scope  = SELECTIVE_KO_IDENTITY_IN_PROSE_V1_MATERIALIZED / V294
+```
 
-1. `../docs/SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293.md`
-2. `IDENTITY_IN_PROSE_POLICY.md`
-3. `KNOWN_FAILURES.md`
-4. `ARCHITECTURE.md`
-5. `CLASSIFICATION_SCHEMA.md`
-6. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-7. `IDENTITY_PROVENANCE_CONTRACT.md`
-8. `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
-9. `FIXED_PARTICLE_POLICY.md`
-10. `PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION.md`
-11. `registry/provenance_shards/INDEX.json`
-12. `TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md`
-13. `artifacts/TAI5MSG_STRUCTURE_INDEX_MANIFEST.json`
-14. `artifacts/tai5msg_structure_index_v1/INDEX.json`
-15. this file
+All prior VERIFIED/closed facts are inherited without revalidation except where `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md` explicitly corrects claim strength or stale routing.
+
+Required reads for the current selective scope, in authority order:
+
+1. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+2. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+3. `../docs/SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293.md`
+4. `IDENTITY_IN_PROSE_POLICY.md`
+5. `KNOWN_FAILURES.md`
+6. `ARCHITECTURE.md`
+7. `CLASSIFICATION_SCHEMA.md`
+8. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+9. `EVENT_EXTRACTION_SCHEMA.md`
+10. `IDENTITY_PROVENANCE_CONTRACT.md`
+11. `SWITCH_APPLICABILITY_REALIZATION_TAXONOMY.md`
+12. `FIXED_PARTICLE_POLICY.md`
+13. `PC_SOURCE_SWITCH_OWNER_ADAPTER_REPLAY_EXPANSION.md`
+14. `registry/provenance_shards/INDEX.json`
+15. `TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md`
+16. `artifacts/TAI5MSG_STRUCTURE_INDEX_MANIFEST.json`
+17. `artifacts/tai5msg_structure_index_v1/INDEX.json`
+18. this file
+
+If any lower document conflicts with V295 correction or this file, V295 correction + this file govern.
 
 ## 2. Product / authority boundary
 
 The selective project is not a full clone of the PC Korean patch.
 
-Priority Korean scope remains descriptions, event/system/context text, and structurally safe dialogue. Person/place identity, yomi/readings, calendar/name composition/input, and unresolved dynamic grammar remain Japanese or deferred unless separately promoted.
+Priority Korean scope remains:
 
-Authority remains:
+- descriptions/help/UI explanatory text;
+- event/system/context text;
+- structurally safe dialogue.
+
+First-release Japanese/deferred scope remains:
+
+- dedicated person/place identity fields;
+- yomi/readings/sort keys;
+- surname/given-name composition;
+- date/calendar identity presentation;
+- Korean name entry;
+- unresolved dynamic grammar/formatter dialogue.
+
+Authority:
 
 ```text
 PC Korean content/terminology              -> SOURCE_AUTHORITY
@@ -62,17 +87,7 @@ implementation = Switch-native design
 
 ## 3. V294 identity-in-prose policy — CLOSED
 
-Canonical policy:
-
-`IDENTITY_IN_PROSE_POLICY.md`
-
-Current status:
-
-```text
-identity_in_prose_policy = RESOLVED_IDENTITY_IN_PROSE_V1
-```
-
-First-release behavior:
+Current policy remains:
 
 ```text
 identity presentation fields            -> KEEP_JP
@@ -81,92 +96,67 @@ runtime-inserted person/place identity   -> KEEP_JP
 prose-literal reverse substitution       -> FORBIDDEN
 ```
 
-Meaning:
+This decision is not reopened by cross-container inventory.
 
-- dedicated person/place identity fields remain Japanese;
-- yomi/readings/sort keys remain Japanese;
-- surname/given-name composition remains Japanese;
-- Korean name entry remains excluded;
-- a Korean person/place spelling already authored as ordinary PC Korean prose remains Korean as part of that sentence;
-- runtime-inserted person/place identity remains Japanese;
-- the project intentionally tolerates the resulting visual naming mismatch;
-- no Korean-prose -> Japanese-name normalization transform is created for first release.
+The project intentionally accepts Japanese identity presentation alongside Korean-authored prose spellings where they differ.
 
-This is an intentional low-cost product tradeoff and must not be reopened merely because the same identity appears in Japanese in one field and Korean in prose.
+## 4. V295 correction overlay — CLOSED
 
-## 4. Particle / grammar interaction
+Canonical correction:
 
-`IDENTITY_IN_PROSE_V1` does not solve dynamic morphology by itself.
+`CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
 
-`FIXED_SURFACE_PARTICLE_V1` may be used only under its existing exact applicability gate.
-
-The following remain separate unresolved causes when present:
-
-- unknown physical owner/caller topology;
-- shared-owner conflict;
-- cross-message composition;
-- copula/verb/speech-style/interrogative formatter responsibility;
-- numeric-counter morphology;
-- unknown Switch counterpart;
-- storage/capacity/terminator safety.
-
-No pronunciation inference is introduced for Japanese runtime identity tokens.
-
-## 5. Classification metadata rule
-
-Future corpus materialization should record identity handling explicitly when relevant.
-
-Recommended metadata field:
+V295 does not close the inventory. It corrects the following points:
 
 ```text
-identity_token_policy
+TAI5MSG Korean-bearing-message census = 13,590
+prior 13,591 count                    = WITHDRAWN
+inline >=10/20/40 Korean-char counts  = 203 / 98 / 69
+those inline counts                   = LENGTH CENSUS ONLY, NOT USAGE CLASS
+PC patch EVENT file denominator       = 169
+EVENT 169/169 structural text-bearing = NOT ESTABLISHED
+F1 static 158                         = SOURCE/OWNER PROVENANCE, NOT R1 COUNT
+exact exploratory identity-exposure totals = NOT CANONICALIZED
 ```
 
-Allowed first-release values:
+Verified container-role conclusions currently safe to retain:
 
-```text
-KEEP_JP_IDENTITY_FIELD
-PRESERVE_AUTHORED_KO_PROSE_LITERAL
-KEEP_JP_RUNTIME_INSERT
-NOT_APPLICABLE
-```
+- TAI5MSG is not dialogue-only;
+- verified EVENT/TS5 samples directly contain event narration/dialogue payloads, so EVENT is not control-only;
+- SNR is a mixed container containing scenario/narrative and identity-related data, so it requires field/record-selective treatment;
+- a container/file name never determines R1/R2/R3 safety by itself.
 
-This product metadata does not itself change:
+## 5. Superseded stale wording
 
-```text
-mechanism_class
-usage_class
-investigation_status
-switch_applicability
-switch_realization
-derived_disposition
-```
+The following lower-document clauses are non-authoritative where they conflict with V294/V295:
 
-Release inclusion still requires normal owner/caller/risk/capacity/provenance gates.
+### `ARCHITECTURE.md`
 
-## 6. Product-route exclusions and retained evidence
+- identity-in-prose is **not** unresolved; V294 closed it;
+- the old sequence step scheduling an identity-in-prose decision is complete, not future work;
+- content tier must not be inferred from container name.
 
-The following historical full-port artifacts remain excluded from the selective product baseline:
+### `CLASSIFICATION_SCHEMA.md`
 
-```text
-V290 integrated full-port builder/build = EXCLUDE_FROM_SELECTIVE_PRODUCT
-V291 package                            = EXCLUDE_FROM_SELECTIVE_PRODUCT
-```
+- translation-QA deferral does not reopen identity-in-prose; V294 already resolved that product-policy question.
 
-V291 remains historical failure / narrow diagnostic evidence only.
+### `EVENT_EXTRACTION_SCHEMA.md`
 
-Separately retained:
+- event structural classes remain useful overlay metadata;
+- legacy terminal labels `INCLUDE_EVENT_KO`, `INCLUDE_SAFE_DIALOGUE_KO`, `HOLD_DYNAMIC_DIALOGUE` are historical/provisional only;
+- new rows use common axes and terminal dispositions `INCLUDE_KO / DEFER_KO / KEEP_JP / BLOCKED / UNRESOLVED`;
+- its file-local next-scope recommendation is not execution authority.
 
-```text
-V285-V288 grammar125 analysis/manifest = OPTIONAL_R4_GRAMMAR_EVIDENCE
-V289 implementation technique          = REFERENCE_ONLY
-```
+### `TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md`
 
-Do not incrementally subtract problems from V291 to create a selective product.
+- its final direct-next-step recommendation to broad TAI5MSG classification is historical and superseded;
+- ART-00000005 remains locator/length structure only.
 
-## 7. Persistent registry state
+No historical document needs to be silently rewritten to erase what was previously believed; V295 preserves the correction provenance explicitly.
 
-Current totals remain inherited from V293:
+## 6. Persistent registry / owner state
+
+Current totals remain:
 
 ```text
 PC_SOURCE_INLINE        = 158
@@ -180,27 +170,84 @@ manual task IDs         = 0
 classification IDs      = 0
 ```
 
-No candidate/classification IDs are created by V294.
+F1 static 158 is a verified source-owner population only. It does not imply 158 R1 descriptions or automatic `INCLUDE_KO`.
 
-## 8. TAI5MSG and owner boundaries remain unchanged
+## 7. TAI5MSG boundary
 
-`ART-00000005` remains a PC-original <-> PC-Korean locator/length structure lattice only.
+`ART-00000005` remains a PC-original <-> PC-Korean locator/length structure lattice.
 
-It does not by itself prove payload semantics, opcode/call structure, Switch physical-owner mapping, Switch caller topology, or release disposition.
+It does not prove:
 
-Current proven selective Switch owner coverage remains the inherited F1 static 158 bindings where applicable.
+- payload semantics;
+- opcode/call structure;
+- Switch-original correspondence;
+- Switch physical owner;
+- Switch caller topology;
+- mechanism class;
+- release disposition.
 
-Insufficient owner coverage blocks unsupported `INCLUDE_KO`; it does not prohibit source/container/mechanism inventory where evidence exists.
+Corrected source-side Korean-bearing-message census is `13,590`, but this count alone authorizes nothing downstream.
 
-## 9. Mixed-script route safety
+## 8. EVENT/TS5 boundary
 
-The product policy permits Japanese identity tokens and Korean prose to coexist.
+Current source-side facts:
 
-Historical evidence shows at least one route can render both scripts, but route-wide safety is not globally assumed.
+```text
+PC Korean patch EVENT/*.TS5 denominator = 169 files
+verified samples show direct Korean narration/dialogue payloads in EVENT family
+```
 
-For each selected mixed-script family, mapping/font/transport behavior must preserve both Japanese and Korean on the actual Switch route.
+Not yet established:
 
-## 10. Executable next scope — sole authority
+- 169/169 structurally verified text-bearing status;
+- production text-field parser over the whole family;
+- Switch-original script/caller correspondence;
+- production owner/action bindings.
+
+Do not broad-classify EVENT rows merely from raw byte scans.
+
+## 9. SNR boundary
+
+SNR must be treated as a mixed container.
+
+Do not assign one file-level product disposition across scenario prose and identity data.
+
+The current first-release identity policy remains Japanese retention for dedicated identity fields. Selected authored Korean narrative/prose may be considered separately after structural closure.
+
+## 10. Switch-original source supply
+
+The user will provide XCI-derived Switch originals when a later structural scope requires them.
+
+Canonical input contract:
+
+`SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+
+Planned Drive-relative destination:
+
+```text
+태합입지전 프로젝트/Switch/Original_v1.1.3/
+├─ exefs/main
+└─ romfs/<exact extracted relative tree>
+```
+
+Current source status:
+
+```text
+Switch original RomFS bundle = NOT_YET_SUPPLIED
+current blocker              = false
+```
+
+Do not repeatedly request the extraction now.
+
+When needed, provide the extraction method then. Until supplied, mark a required Switch counterpart unavailable/not-yet-supplied instead of guessing.
+
+## 11. Mixed-script route safety
+
+V294 permits Japanese runtime identity tokens and Korean prose to coexist.
+
+Route-wide safety is still not globally assumed. Each selected mixed-script family must preserve Japanese and Korean mapping/font/transport behavior on its actual Switch route.
+
+## 12. Executable next scope — sole authority
 
 The exact next selective scope remains:
 
@@ -208,14 +255,17 @@ The exact next selective scope remains:
 SELECTIVE_KO_CONTENT_CONTAINER_AND_FIELD_AVAILABILITY_READ_ONLY
 ```
 
-Purpose:
+The scope remains open because the prior analysis was corrected before closure.
 
-1. identify the source families/containers that actually own R1 descriptions/UI, R2 event/system context, and R3 dialogue candidates;
-2. record per family/container which common classification fields are machine-extractable, manually decidable, or currently unavailable;
-3. record current Switch owner/caller coverage per family;
-4. bind reusable parsers, structure indices, and owner ledgers;
-5. measure identity-in-prose exposure for coverage/QA planning under the already-fixed `IDENTITY_IN_PROSE_V1` policy;
-6. identify whether TAI5MSG, EVENT/TS5, UI/description tables, or other containers are required for each release phase.
+Remaining purpose:
+
+1. produce an actual R1 `UI_DESCRIPTION` source census without using string length as a proxy;
+2. record per container/family which common fields are machine-extractable, manually decidable, or unavailable;
+3. record EVENT/TS5 parser/text-field/caller-field availability without broad corpus classification;
+4. record SNR field/record parser availability without assigning one file-level disposition;
+5. keep source-side TAI5MSG payload availability separate from Switch owner/caller availability;
+6. either establish a reproducible identity-in-prose exposure method or leave exact totals unmaterialized;
+7. record Switch-original counterpart state as `NOT_YET_SUPPLIED` where required, without making source absence a blocker until the relevant later structural scope.
 
 This scope is READ ONLY inventory/availability analysis.
 
@@ -223,29 +273,29 @@ It must not:
 
 - create broad corpus classification rows;
 - issue candidate/classification IDs;
-- assign corpus dispositions;
-- reopen or redesign `IDENTITY_IN_PROSE_V1`;
-- mutate gameplay data;
+- assign release dispositions to a broad corpus;
 - implement serializers/builders;
-- create IPS/build/runtime artifacts.
+- mutate gameplay data;
+- create IPS/build/runtime artifacts;
+- reopen V294 identity policy;
+- reopen closed Mapping/F1/other VERIFIED work without new contradictory evidence.
 
-A fresh explicit user execution signal is required before this scope begins.
-
-## 11. Current non-materialized work
+## 13. Current non-materialized work
 
 Still not materialized:
 
-- cross-container R1/R2/R3 content-owner inventory;
+- completed cross-container R1/R2/R3 field-availability inventory;
+- actual R1 source-role census;
 - broader source-owner coverage outside F1-static-158;
 - TAI5MSG selective corpus classifications;
 - EVENT/TS5 production adapter;
-- R1 description/UI adapters where needed;
-- rewritten TAI5MSG/EVENT/UI payloads;
+- SNR selective field adapter;
+- selected Korean payloads;
 - selective serializers/builders;
 - IPS/build;
 - translation QA.
 
-## 12. Repository write boundary
+## 14. Repository write boundary
 
 Repository writes remain restricted to:
 
@@ -253,4 +303,6 @@ Repository writes remain restricted to:
 create_blob -> create_tree -> create_commit -> update_ref(force=false)
 ```
 
-No Contents-API writes, branch creation, or force update are permitted.
+No Contents-API write, branch creation, issue/PR write, or force update is permitted for repository materialization.
+
+After V295 materialization is reported, a fresh explicit user execution signal is required before resuming the read-only inventory or beginning any later stage.
