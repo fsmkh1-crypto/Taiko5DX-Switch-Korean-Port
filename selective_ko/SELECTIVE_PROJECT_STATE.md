@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V298 ENDING-HELP 39 CANDIDATE/CLASSIFICATION MATERIALIZED / R1 INCLUDE_KO 39 / NO BUILD
+Status: V299 NUMERIC 53 CANDIDATE/CLASSIFICATION MATERIALIZED / R1 INCLUDE_KO 92 TOTAL / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,24 +14,24 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-2. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-3. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-4. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-5. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-6. `IDENTITY_IN_PROSE_POLICY.md`
-7. `CLASSIFICATION_SCHEMA.md`
-8. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-9. `KNOWN_FAILURES.md`
-10. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-11. `ARCHITECTURE.md`
-12. this file
+1. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+2. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+3. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+4. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+5. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+6. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+7. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+8. `IDENTITY_IN_PROSE_POLICY.md`
+9. `CLASSIFICATION_SCHEMA.md`
+10. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+11. `KNOWN_FAILURES.md`
+12. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+13. `ARCHITECTURE.md`
+14. this file
 
 ## 2. Product boundary
 
 The product remains selective Koreanization, not a full clone of the PC patch.
-
-Priority scope remains explanatory/UI content, structurally safe narration/system/event text, and proven-safe dialogue. Dedicated person/place identity, yomi, name composition, date/calendar identity presentation, Korean name entry, and unresolved dynamic grammar remain Japanese/deferred unless separately promoted.
 
 Authority remains:
 
@@ -43,101 +43,133 @@ known-good PC visible result         -> SEMANTIC_ORACLE
 PC runtime mechanism                 -> REFERENCE_OR_HINT
 ```
 
+Dedicated identity/yomi/date/name-entry and unresolved dynamic grammar remain Japanese/deferred unless separately promoted.
+
 ## 3. Current materialized selective corpus
 
-V298 is the first actual selective candidate/classification population:
+After V299:
 
 ```text
-candidate IDs             39
-classification IDs        39
-INCLUDE_KO rows           39
-R1 materialized rows      39
+candidate IDs             92
+classification IDs        92
+INCLUDE_KO rows           92
+R1 materialized rows      92
 ```
 
-IDs:
+Population:
 
 ```text
-SEL-CAND-000001 .. SEL-CAND-000039
-SEL-CLS-000001  .. SEL-CLS-000039
+SEL-CAND/SEL-CLS-000001..000039  V298 ending-help STATIC_COMPLETE
+SEL-CAND/SEL-CLS-000040..000092  V299 numeric VARIABLE_INSERT
 ```
 
-All 39 are ending-help fixed-field objects and are stored in:
+Artifacts:
 
-`artifacts/ending_help_39_candidate_classification_v1/`
+- `artifacts/ending_help_39_candidate_classification_v1/`
+- `artifacts/inline_r1_numeric_53_candidate_classification_v1/`
 
-Each row is individual and contains actual source records, JP/KO payload, Switch owner, byte length/capacity, classification fields, risk/evidence, and provenance.
+No builder/build/IPS/runtime write exists.
 
-These 39 are not the final R1 corpus total.
-
-## 4. V298 population invariants
+## 4. V299 numeric population invariants
 
 ```text
-usage_class               UI_DESCRIPTION 39/39
-mechanism_class           STATIC_COMPLETE 39/39
-investigation_status      RESOLVED 39/39
-derived_disposition       INCLUDE_KO 39/39
-manual overrides          0
-risk-flagged rows          0
-capacity failures          0
-PC conflict rows           0
+usage_class                 UI_DESCRIPTION 53/53
+mechanism_class             VARIABLE_INSERT 53/53
+investigation_status        RESOLVED 53/53
+derived_disposition         INCLUDE_KO 53/53
+physical owners             53 unique
+PC inline source records    60 unique
+RELA consumer slots         54 unique
+shared-consumer owners       1
+token-sequence mismatches    0
+particle-risk rows           0
+dynamic-counter rows         0
+capacity failures            0
+risk-flagged rows            0
+manual overrides             0
 ```
 
-Structure/capacity:
+Format signatures:
 
 ```text
-ending records             39
-record stride              0x3FF / 1023
-help offset                +0x15
-help capacity              501 bytes
-help PC inline records     102 unique
-KO payload incl NUL        48..412 bytes
-minimum slack              89 bytes
+%d          33
+%d + %d     10
+%u + %d      7
+%u           3
 ```
 
-`INCLUDE_KO` is a content/classification disposition only. No builder, IPS, game-file write, layout PASS, or hardware PASS is implied.
-
-## 5. V297 inherited facts
-
-Retain without re-analysis:
+Capacity:
 
 ```text
-PC inline raw records                      17,103
-exact source/replacement groups            8,751
-external provisional YES                   205
-external provisional UNCERTAIN             227
-Korean-bearing positive groups             204
-positive source occurrences                206
-single Switch-location occurrences         191
-those collapse to logical objects          189
-positive multi-match groups                13
+KO payload incl NUL 15..39 bytes
+proven capacity     18..45 bytes
+minimum slack        0 bytes
+maximum slack       13 bytes
 ```
 
-External AI triage is a prefilter only.
+## 5. Binding census correction
 
-V297 corrections remain binding:
-
-- `189 unique positive occurrences` is superseded by `191 occurrences -> 189 objects`;
-- ending-help 39 uses 102 PC records; 208 belongs to the whole 117-field ending table;
-- UNC zero-match = 8 padding/NUL + 3 UTF-16LE;
-- R651 selected-use owner is resolved to Switch `0x6A7C21`.
-
-Reusable V297 rules (diff-run != string, object-first reconstruction, source-sequence disambiguation, fixed-stride discovery, NUL-padding continuation, decoder precedence) must be reused.
-
-## 6. Identity policy
+Canonical V299 corrections:
 
 ```text
-identity presentation fields           -> KEEP_JP
+numeric objects                         50 -> 53
+%d occurrences                         57 -> 60
+remaining ordinary inline R1 objects   99 -> 102
+inline R1 source-role objects          138 -> 141
+```
+
+`%u = 10` is unchanged.
+
+Do not reuse the superseded 50 / 57 / 99 / 138 intermediate counts.
+
+## 6. Current inline R1 routing
+
+```text
+INLINE R1 source-role total             141
+
+ending-help                              39  V298 INCLUDE_KO
+ordinary inline                         102
+  static-like                            49
+    resolved/not materialized            47
+    unresolved                            2  R2884 / R2885
+  numeric VARIABLE_INSERT                53  V299 INCLUDE_KO
+```
+
+The currently materialized R1 release-classification population is 92, not 141.
+
+`R2884` and `R2885` remain evidence waits. They are not rejected and must not be included by heuristic.
+
+## 7. Reusable V299 discovery
+
+For this ordinary-inline numeric family, direct code XREF absence does not imply absence of a consumer.
+
+The verified route is:
+
+```text
+.rela.dyn R_AARCH64_RELATIVE (0x403)
+ -> r_offset runtime source/consumer slot
+ -> r_addend Switch physical text owner
+```
+
+Before declaring a similar ordinary-inline owner caller-unknown solely because direct ADR/ADRP string XREF is absent, inspect the RELA-slot route.
+
+This is a reusable investigation rule, not blanket authorization for other families.
+
+## 8. Identity policy
+
+```text
+identity presentation fields            -> KEEP_JP
 authored Korean prose identity literals -> PRESERVE_AS_AUTHORED_KO
-runtime-inserted identity               -> KEEP_JP
-reverse substitution                    -> FORBIDDEN
+runtime-inserted identity                -> KEEP_JP
+reverse substitution                     -> FORBIDDEN
 ```
 
-## 7. Open work
+## 9. Open work
 
 Still open:
 
-- remaining inline R1 logical objects outside ending-help 39;
-- full cross-container field availability inventory;
+- materialize the 47 already-resolved static ordinary-inline R1 rows;
+- retain R2884/R2885 as unresolved until consumer semantics are proven, possibly through later shared-route evidence;
 - TAI5MSG selective classifications;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
@@ -145,23 +177,26 @@ Still open:
 - builder/serializer/build/IPS;
 - runtime font/layout/translation QA.
 
-## 8. Executable next scope — sole authority
+## 10. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
 ```text
-SELECTIVE_KO_CONTENT_CONTAINER_AND_FIELD_AVAILABILITY_READ_ONLY
+SELECTIVE_KO_REMAINING_STATIC_47_CANDIDATE_CLASSIFICATION_MATERIALIZATION
 ```
 
-First focus:
+Scope constraints:
 
 ```text
-remaining inline R1 logical-object census outside the materialized ending-help 39
+include only the 47 static rows already resolved by selected-use audit
+exclude R2884 and R2885
+create actual per-row candidate/classification values
+do not begin builder/build/IPS
 ```
 
-Do not begin builder/build/IPS in that scope.
+After reporting that materialization, require another explicit user signal before any further scope.
 
-## 9. Repository write boundary
+## 11. Repository write boundary
 
 Repository writes remain restricted to exactly:
 
