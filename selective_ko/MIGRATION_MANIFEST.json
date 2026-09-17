@@ -113,5 +113,7 @@
     "korean_name_entry",
     "unresolved_dynamic_dialogue_grammar"
   ],
-  "next_scope": "SELECTIVE_KO_SOURCE_CLASSIFICATION_READ_ONLY"
+  "initial_next_scope_at_migration": "SELECTIVE_KO_SOURCE_CLASSIFICATION_READ_ONLY",
+  "current_next_scope_authority": "selective_ko/SELECTIVE_PROJECT_STATE.md",
+  "routing_note": "The migration-time next scope is historical provenance only. Current executable scope is declared only by SELECTIVE_PROJECT_STATE.md."
 }

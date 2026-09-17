@@ -4,58 +4,63 @@ Last updated: 2026-09-17 (KST)
 
 This file is the sole repository-level project-resume authority.
 
-The previous clean canonical product state remains an immutable inherited base:
+The previous canonical state remains an immutable inherited base:
 
 ```text
-commit  2172e3b24bce5daf4e7cc1547d3b1d0f3c78e38a
+commit  405b866d31997bd0b277be11507e8441ba62f08d
 path    PROJECT_STATE.md
-blob    a87f94791f0a017edab9dfa799d923e7bc94afdc
+blob    f50a691f67ce9f1a8f53ecd0efe8da7f79e4606d
 ```
 
-All facts, closed validations, rejected hypotheses, provenance, FZ001 state, and historical WRITE_SAFE authority in that snapshot are inherited without revalidation unless explicitly superseded below.
+All facts, closed validations, rejected hypotheses, provenance, FZ001 state, V292 route reconciliation, V292 Git-incident recovery, and historical WRITE_SAFE authority in that snapshot are inherited without revalidation unless explicitly superseded below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"SELECTIVE_KO_DIRECTION_RECONCILIATION_V292_MATERIALIZED_NEXT_CLASSIFICATION","scope_kind":"PRODUCT_ROUTE_RECONCILIATION","status":"SWITCH_SELECTIVE_KOREANIZATION_ACTIVE_PRODUCT_ROUTE_RESTORED","last_closed_validation_id":"V292","canonical_base_commit":"2172e3b24bce5daf4e7cc1547d3b1d0f3c78e38a","canonical_base_project_state_blob":"a87f94791f0a017edab9dfa799d923e7bc94afdc","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_status":"PASS","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE","historical_full_port_last_closed_validation_id":"V291","v291_selective_release_baseline":false,"grammar125_selective_role":"OPTIONAL_R4_GRAMMAR_EVIDENCE","historical_explicit_write_safe_total":287,"selective_candidate_ids":0,"selective_tai5msg_classification_rows":0,"selective_include_ko_rows":0,"selective_builder_status":"NOT_IMPLEMENTED","priority_next_scope":"TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY","v292_incident_pre_recovery_head":"a358c43b4fa43cff0f0ab8aff145205fcbf08366","v292_accidental_paths_removed":["__NEVER__","__NEVER2__","__SHOULD_NOT_BE_CALLED__"],"required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md","docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/ARCHITECTURE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/FIXED_PARTICLE_POLICY.md","selective_ko/TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md","selective_ko/artifacts/tai5msg_structure_index_v1/INDEX.json","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293_MATERIALIZED","scope_kind":"PRODUCT_ROUTE_GOVERNANCE","status":"SELECTIVE_NEXT_SCOPE_SINGLE_AUTHORITY_RESTORED","last_closed_validation_id":"V293","canonical_base_commit":"405b866d31997bd0b277be11507e8441ba62f08d","canonical_base_project_state_blob":"f50a691f67ce9f1a8f53ecd0efe8da7f79e4606d","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_status":"PASS","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"SEE_SELECTIVE_PROJECT_STATE","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE","historical_full_port_last_closed_validation_id":"V291","v290_selective_product_status":"EXCLUDE_FROM_SELECTIVE_PRODUCT","v291_selective_product_status":"EXCLUDE_FROM_SELECTIVE_PRODUCT","v291_evidence_role":"HISTORICAL_FAILURE_EVIDENCE","grammar125_selective_role":"OPTIONAL_R4_GRAMMAR_EVIDENCE","historical_explicit_write_safe_total":287,"selective_candidate_ids":0,"selective_tai5msg_classification_rows":0,"selective_include_ko_rows":0,"selective_builder_status":"NOT_IMPLEMENTED","art00000005_role":"PC_ORIGINAL_TO_PC_KOREAN_LOCATOR_STRUCTURE_LATTICE_ONLY","selective_known_switch_owner_rows":158,"identity_in_prose_policy":"UNRESOLVED_PRODUCT_DECISION","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md","docs/SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293.md","docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/ARCHITECTURE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/FIXED_PARTICLE_POLICY.md","selective_ko/TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md","selective_ko/artifacts/tai5msg_structure_index_v1/INDEX.json","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
-## 1. Canonical routing correction — V292
+## 1. V293 — next-scope authority reconciliation
 
-V292 restores `SWITCH_SELECTIVE_KOREANIZATION` as the active product track.
+V293 closes the routing/governance defect identified after the independent selective-design audit.
 
 Canonical detail document:
 
-`docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md`
+`docs/SELECTIVE_KO_NEXT_SCOPE_AUTHORITY_RECONCILIATION_V293.md`
 
-The repository contains two distinct tracks:
+The exact executable next scope for the selective product is now declared in exactly one place:
+
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
+
+This root state routes to that file and intentionally does not duplicate the exact executable scope string.
+
+Design/history/reference documents may describe recommended sequences, but they do not override the selective state file.
+
+## 2. Active product route
+
+The active product remains:
 
 ```text
-ACTIVE PRODUCT
-  SWITCH_SELECTIVE_KOREANIZATION
-  subtree resume authority = selective_ko/SELECTIVE_PROJECT_STATE.md
-
-HISTORICAL / DIAGNOSTIC REFERENCE
-  full-port track through V291
-  preserved, not deleted, not reset, not used as the selective release baseline
+SWITCH_SELECTIVE_KOREANIZATION
 ```
 
-This is a routing/product-boundary correction only. It does not invalidate or revalidate previously closed technical evidence.
+The historical full-port track through V291 remains preserved as frozen diagnostic/reference history and is not the selective release baseline.
 
-## 2. Inherited historical state
+V293 does not reopen or invalidate previously VERIFIED/CLOSED technical evidence.
 
-The full-port history through V291 remains preserved exactly as evidence/reference.
+## 3. Historical evidence retained
 
 Inherited without revalidation include:
 
 - Stage1, Stage2, F1 and FZ001;
 - forward-986 / PC Patch Oracle / Assisted / Astra / TRACE closures;
-- Mapping 10,036 analysis and Switch-native runtime realization evidence;
+- Mapping 10,036 analysis and verified Switch-native realization evidence;
 - Pointer-56 evidence;
-- TAI5MSG structural knowledge;
+- TAI5MSG parser/container knowledge;
+- TAI5MSG 33 blocks / 14,832 PC-original-to-PC-Korean logical-slot correspondence;
 - V272-V287 grammar design/analysis;
 - V288 exact 125-row grammar static-write authorization;
-- V289 grammar125 builder implementation;
+- V289 grammar125 implementation technique;
 - V290 integrated historical/full-port build validation;
-- V291 hardware diagnostic package identity and Drive transport.
+- V291 package identity and historical runtime/failure observations.
 
 Historical explicit WRITE_SAFE authority remains:
 
@@ -66,38 +71,30 @@ grammar125            125
 TOTAL                  287
 ```
 
-V292 adds zero WRITE_SAFE rows and revokes none.
+V293 adds zero WRITE_SAFE rows and revokes none.
 
 Historical WRITE_SAFE does not automatically confer selective `INCLUDE_KO` status.
 
-## 3. V291 interpretation after reconciliation
+## 4. V290 / V291 selective-product disposition
 
-V291 remains a byte-valid transport of the V290 historical/full-port diagnostic build.
-
-Its preserved identities remain:
+Selective product disposition is now explicit:
 
 ```text
-TAI5MSG_JP.DAT sha256 = 993d3fc29cabe002d4a2071fe4b0c39fb9c3799dd9e33a7bd68349c7f8ef4b06
-FONT_JPN.G1T sha256   = c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932
-IPS sha256            = ea6bd258e459e913356be68a177efdb48e33eb103cb0c10e378d88133b57408d
-package sha256        = c5a560a2fe4fdcec3c0ec5b6b2ac90efb2c3e57db211f65c2e6729ec38faba3d
+V290 integrated full-port builder/build = EXCLUDE_FROM_SELECTIVE_PRODUCT
+V291 package                            = EXCLUDE_FROM_SELECTIVE_PRODUCT
+V291 evidence role                      = HISTORICAL_FAILURE_EVIDENCE / narrow diagnostic evidence only
 ```
 
-But V291 is not the selective product baseline.
+V290/V291 must not be used as the selective builder or release baseline and must not be incrementally trimmed into one.
 
-Reason: the V290 builder path copied 207 PC payload data files, reconstructed the whole PC Korean TAI5MSG payload, and used the historical inline-selection path. The selective architecture instead requires canonical Switch structure plus explicitly classified/authorized Korean content only.
-
-Therefore:
+Separately reusable evidence remains:
 
 ```text
-V291 role = HISTORICAL_GRAMMAR125_HARDWARE_DIAGNOSTIC
-V291 selective release baseline = NO
-V291 further incremental product completion = DO NOT USE
+V285-V288 grammar125 analysis/manifest = OPTIONAL_R4_GRAMMAR_EVIDENCE
+V289 implementation technique          = REFERENCE_ONLY
 ```
 
-The V291 package may still be used for narrow historical grammar125 evidence if intentionally opened as a separate diagnostic scope, but it no longer defines the project priority path.
-
-## 4. Active selective product boundary
+## 5. Active selective product boundary
 
 The initial selective release keeps these Japanese unless separately promoted:
 
@@ -118,7 +115,15 @@ R3 structurally safe dialogue
 R4 optional dynamic Korean grammar
 ```
 
-PC Korean content/terminology remains source authority. Switch original script/control/owner/runtime structure remains structural authority. Implementation remains Switch-native.
+Authority remains:
+
+```text
+PC Korean content/terminology             -> SOURCE_AUTHORITY
+Switch original script/control/owner      -> STRUCTURAL_AUTHORITY
+verified Switch-native runtime realization -> SWITCH_RUNTIME_AUTHORITY
+known-good PC Korean visible result       -> SEMANTIC_ORACLE where actually observed
+implementation                            -> Switch-native design
+```
 
 Conflict rule remains:
 
@@ -128,40 +133,49 @@ content/semantic obligation = PC source/oracle
 implementation = Switch-native design
 ```
 
-## 5. Reuse boundary
+## 6. Audit-derived constraints accepted by V293
 
-Directly reusable where applicable:
+### 6.1 ART-00000005 boundary
 
-- verified Mapping 10,036 Switch-native realization;
-- selected Korean font/code-space obligations;
-- TAI5MSG parser/container knowledge;
-- deterministic TAI5MSG structure lattice: 33 blocks / 14,832 messages / 1:1 logical slots;
-- F1 and other verified source-owner provenance when a selected source reuses the same owner.
+`ART-00000005` is directly reusable for deterministic PC-original-to-PC-Korean logical location/length structure:
 
-Reference/optional later reuse:
+```text
+blocks                      33
+messages                    14,832
+logical slot correspondence 1:1
+locator_determinism         PASS
+```
 
-- grammar125 V285-V288 analysis/manifest;
-- V289 reconstruction technique;
-- V290/V291 historical integrated artifacts;
-- PC runtime helper/descriptor mechanics.
+It does not, by itself, establish payload semantics, opcode/call structure, append/formatter responsibility, Switch physical owner, Switch caller topology, or release disposition.
 
-Explicitly not used as the selective product baseline:
+The 14,832 lattice must not be described as a proven complete PC-to-Switch mapping.
 
-- bulk PC `data/` payload copy;
-- entire PC Korean TAI5MSG as release payload;
-- heuristic inclusion of historical 17,103 inline records;
-- identity/yomi/date/name-composition Koreanization;
-- unresolved dynamic grammar.
+### 6.2 Owner coverage boundary
 
-## 6. Current selective state
+Current selective registry proves 158 F1 Switch physical-owner bindings.
 
-The selective track remains at its pre-build classification boundary:
+That is reusable evidence where applicable, but broader release inclusion must remain unresolved until the required owner/caller/applicability/capacity gates close.
+
+Insufficient owner coverage does not prohibit all source/mechanism inventory; it prohibits promoting unsupported rows into release inclusion.
+
+### 6.3 Identity-in-prose policy remains open
+
+Identity fields remain Japanese by product policy, but Korean explanatory/narrative source may contain Korean person/place names as prose literals.
+
+The treatment of those embedded identity tokens is an explicit unresolved product-policy decision.
+
+It must not be deferred as ordinary translation polish under `translation_review_status = DEFER_TO_RUNTIME_QA`.
+
+### 6.4 Mixed-script requirement
+
+Historical runtime evidence shows at least one route can render Japanese and Korean together, but route-wide mixed-script safety is not globally proven.
+
+Any selected family that emits mixed Japanese/Korean text must preserve both Japanese and Korean code-space/font behavior on its actual Switch route.
+
+## 7. Current selective state
 
 ```text
 TAI5MSG structure              MATERIALIZED
-blocks                         33
-messages                       14,832
-logical slot correspondence    1:1
 F1 static source-owner layer   158 closed pairs
 candidate IDs                  0
 TAI5MSG classification rows    0
@@ -170,31 +184,11 @@ selective builder              NOT IMPLEMENTED
 selective build                NONE
 ```
 
-Do not interpret the historical V289-V291 builder/build/package as satisfying the selective builder/build stages.
+No corpus classification, gameplay-data rewrite, selective builder, IPS, build, or runtime release artifact is created by V293.
 
-## 7. V292 Git incident recovery
+## 8. V292 Git-incident recovery remains closed
 
-During V292 materialization, forbidden Contents-API writes advanced `main` through accidental commits after `2172e3b...`.
-
-The final pre-recovery incident HEAD was:
-
-```text
-a358c43b4fa43cff0f0ab8aff145205fcbf08366
-```
-
-Read-only comparison against `2172e3b...` proved the net accidental delta was exactly three root sentinel paths:
-
-```text
-__NEVER__
-__NEVER2__
-__SHOULD_NOT_BE_CALLED__
-```
-
-No legitimate project/gameplay path changed in that accidental chain.
-
-V292 forward recovery removes those three paths without rewriting history and records the incident in:
-
-`docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md`
+The V292 forward recovery that removed accidental root sentinel paths remains canonical and closed.
 
 The repository write allowlist remains literal and exclusive:
 
@@ -205,32 +199,24 @@ create_commit
 update_ref(force=false)
 ```
 
-Tool exposure is not permission. `create_file`, `update_file`, `delete_file`, and `create_branch` are excluded before action selection.
+Tool exposure is not permission. Contents-API writes and branch creation remain excluded before action selection.
 
-## 8. Next scope
+## 9. Next-scope routing rule
 
-Under a fresh explicit user execution signal, the next eligible single scope is exactly:
+The repository-level state no longer duplicates the exact selective next scope.
 
-`TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY`
+For the current executable next scope, read:
 
-Consume the existing `ART-00000005` structure lattice. Do not redefine TAI5MSG identity.
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
 
-First partition:
+Any conflicting `next_scope`, `next stage`, or recommended-sequence text in older validation/history documents is non-authoritative unless the selective state explicitly promotes it.
 
-```text
-simple 1:1 / static-variable population
-vs
-cross-message / nested grammar-formatter population
-```
+A fresh explicit user execution signal is required before that next scope begins.
 
-This next scope is classification only. It does not authorize corpus rewrite, builder implementation, build, IPS generation, hardware test, or release packaging.
-
-## 9. Repository write boundary
+## 10. Repository write boundary
 
 Remote GitHub writes remain restricted to exactly:
 
 `create_blob -> create_tree -> create_commit -> update_ref(force=false)`
 
 No `create_file`, `update_file`, `delete_file`, `create_branch`, or force update is permitted.
-
-A fresh explicit user execution signal is required before the next scope.

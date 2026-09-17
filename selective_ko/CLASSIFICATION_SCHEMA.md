@@ -1,7 +1,7 @@
 # SELECTIVE KOREAN SOURCE CLASSIFICATION SCHEMA
 
-Date: 2026-09-15
-Status: CROSS-CUTTING TAXONOMY LINKED
+Date: 2026-09-17
+Status: CROSS-CUTTING TAXONOMY LINKED / V293 ROUTING CLARIFICATION
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Purpose
@@ -190,6 +190,8 @@ Rules:
 5. incomplete caller topology gives `investigation_status=CALLER_UNKNOWN` and derives `UNRESOLVED`;
 6. caller-specific restructuring/redirection is a separate escalation, not an automatic classification shortcut.
 
+Source/mechanism inventory may still proceed before full owner closure where the evidence supports it. Missing owner/caller evidence blocks final release inclusion; it does not automatically erase otherwise valid source-side structural observations.
+
 ## 9. Safe dialogue product definition
 
 A dialogue row is R3-safe only when it satisfies the full safe-dialogue definition in `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`.
@@ -302,6 +304,8 @@ translation_review_status = DEFER_TO_RUNTIME_QA
 
 Translation quality is reviewed during runtime play rather than used as a pre-extraction release blocker.
 
+This translation-QA deferral does not resolve product-policy questions such as how Japanese-retained identity should appear when the PC Korean prose contains Korean person/place names as literals.
+
 ## 13. Automatic extraction vs manual judgment
 
 Corpus-scale classification must distinguish deterministic extraction from semantic judgment.
@@ -408,12 +412,16 @@ UNRESOLVED   # legacy direct label; new rows derive it
 
 Historical rows/documents are not silently rewritten. When materialized into the new corpus model they must be re-expressed as common axes plus `derived_disposition` with provenance retained.
 
-## 18. Current boundary
+## 18. Current boundary and routing
 
 This schema creates no corpus rows, Switch actions, builder changes, IPS, or runtime artifact.
 
-Next recommended read-only scope:
+This file does **not** declare the executable next scope.
 
-`SELECTIVE_KO_CROSSCUTTING_AUTOMATABLE_FIELD_INVENTORY_READ_ONLY`
+The sole executable next-scope authority is:
 
-That scope should identify, per source family/container, which common fields can be extracted automatically and which existing canonical parsers/owner ledgers can be reused before broad corpus classification begins.
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
+
+Before broad corpus classification, the architecture requires a cross-container inventory that establishes, per source family/container, which common fields are machine-extractable, manually decidable, or currently unavailable, and which existing parsers/owner ledgers can be reused.
+
+That inventory requirement is a design prerequisite, not an independent routing declaration from this schema.

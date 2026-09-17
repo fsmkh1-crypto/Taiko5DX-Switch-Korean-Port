@@ -1,7 +1,7 @@
 # SWITCH SELECTIVE KOREANIZATION ARCHITECTURE
 
-Date: 2026-09-15
-Status: DESIGN BASELINE / NO IMPLEMENTATION AUTHORITY
+Date: 2026-09-17
+Status: DESIGN BASELINE / V293 ROUTING CLARIFICATION / NO IMPLEMENTATION AUTHORITY
 
 ## 1. Design objective
 
@@ -37,6 +37,8 @@ Primary questions:
 
 No source reaches a builder without a terminal disposition.
 
+Before broad classification, the project must know which containers/source families actually own the R1/R2/R3 content and which required classification fields are extractable for each family.
+
 ### Layer C — Korean code-space foundation
 
 Reuse the verified Mapping 10,036 Switch-native family and Korean font assets where applicable.
@@ -45,6 +47,7 @@ Requirements:
 
 - Unicode <-> game-code conversion must preserve the selected Korean corpus;
 - Korean page mapping/font coverage must include every emitted Korean code;
+- any selected mixed Japanese/Korean surface must preserve both scripts on its actual Switch transport/render route;
 - no expansion is justified merely because the PC patch contains unused Korean assets.
 
 ### Layer D — text transport
@@ -96,7 +99,7 @@ A family rule must cover every in-scope caller or explicitly leave exceptions Ja
 - technique/skill descriptions;
 - explanatory menu/help text required to understand game systems.
 
-Names embedded in these descriptions may remain Japanese if separating them is safer.
+Names embedded in these descriptions are a separate unresolved product-policy question when the PC Korean prose itself contains Korean-rendered identity literals. Identity fields remain Japanese by default, but prose-embedded identity handling must be explicitly decided before R1 release materialization depends on it.
 
 ### Tier 2 — mandatory events
 
@@ -137,7 +140,7 @@ The old full-port route attempted to preserve PC Korean TAI5MSG composition and 
 Selective-project policy:
 
 1. do not alter C8:87, 0x6A, relation state, or individual fragments merely to hide these examples;
-2. mark affected formatter-dependent lines `HOLD_DYNAMIC_DIALOGUE` for R1-R3;
+2. mark affected formatter-dependent lines as deferred for R1-R3;
 3. when R4 is intentionally opened, enumerate the complete caller set for each formatter family;
 4. derive Korean responsibility boundaries from the original Japanese grammar role + PC Korean intended text + caller/suffix context;
 5. implement one family rule only after all affected callers are classified;
@@ -153,7 +156,8 @@ This converts the old issue from a release blocker into an optional grammar subs
 - Switch binary identities and layout;
 - structural target/owner evidence where the same selected source is reused;
 - TAI5MSG parser/container knowledge;
-- font/code-space inventory;
+- TAI5MSG 14,832-slot structure lattice for deterministic locator/length structure only;
+- font/code-space inventory, subject to exact asset identity and actual selected-route coverage;
 - deterministic build/guard principles.
 
 ### Reuse as reference only
@@ -163,7 +167,21 @@ This converts the old issue from a release blocker into an optional grammar subs
 - full 17,103 source-accounting obligation;
 - full-port Action Ledger cardinalities;
 - PC-specific runtime allocation/signature machinery;
-- TAI5MSG legacy reconstruction that assumes the entire PC Korean file is the product payload.
+- TAI5MSG legacy reconstruction that assumes the entire PC Korean file is the product payload;
+- V289 grammar125 implementation technique.
+
+### Optional later evidence
+
+- V285-V288 grammar125 analysis/manifest as `OPTIONAL_R4_GRAMMAR_EVIDENCE`.
+
+### Exclude from selective product baseline
+
+- V290 integrated full-port builder/build;
+- V291 package;
+- bulk PC patch `data/` import;
+- whole-PC-Korean-TAI5MSG release payload assumptions.
+
+V291 screenshots/runtime observations may be retained as historical failure/narrow diagnostic evidence, not as release payload or builder input.
 
 ### Exclude from initial product scope
 
@@ -209,19 +227,31 @@ For R1-R3 release:
 - every included source has a known logical object;
 - every included source has an explicit Switch owner/action;
 - every emitted Korean code has mapping/font coverage;
+- every selected mixed-script surface preserves Japanese and Korean on its actual route;
 - excluded identity/yomi/date objects remain byte-identical to the Switch baseline unless separately approved;
-- no `HOLD_DYNAMIC_DIALOGUE` source is emitted;
+- unresolved product-policy questions such as identity-in-prose are closed before affected payload materialization;
+- no deferred dynamic-grammar source is emitted;
 - build is deterministic;
 - representative runtime tests pass for each included content family.
 
-## 8. Recommended next sequence
+## 8. Architectural sequence — non-authoritative guidance
 
-1. `SELECTIVE_KO_SOURCE_CLASSIFICATION_READ_ONLY`
-2. selected corpus materialization with counts/provenance
-3. Switch-owner binding for R1 descriptions
-4. R1 diagnostic build
-5. R2 event-owner binding and diagnostic build
-6. R3 safe-dialogue classification and diagnostic build
-7. optional R4 grammar redesign only if still desired
+This section is architectural guidance only. It does **not** declare the executable next scope.
+
+The sole executable next-scope authority is:
+
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
+
+Recommended sequence after V293:
+
+1. cross-container content-owner / classification-field availability inventory for R1/R2/R3;
+2. identity-in-prose product-policy decision;
+3. R1 description/UI owner and structure closure;
+4. R1 classification/materialization and diagnostic build;
+5. R2 event/system container/owner closure and diagnostic build;
+6. R3 safe-dialogue payload/caller/owner classification and diagnostic build;
+7. optional R4 grammar work only if still desired.
+
+The inventory stage may prove that some phases share or reorder containers. If so, change the roadmap explicitly instead of treating this sequence as a hidden execution authority.
 
 Each stage remains separately authorized.

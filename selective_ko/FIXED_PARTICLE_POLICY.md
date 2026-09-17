@@ -1,7 +1,7 @@
 # FIXED PARTICLE POLICY
 
-Date: 2026-09-15 (KST)
-Status: CANONICAL SELECTIVE-KO PRODUCT POLICY / NO CORPUS REWRITE / NO BUILD
+Date: 2026-09-17 (KST)
+Status: CANONICAL SELECTIVE-KO PRODUCT POLICY / V293 ROUTING CLARIFICATION / NO CORPUS REWRITE / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 Scope: `SELECTIVE_KO_FIXED_PARTICLE_POLICY_MATERIALIZATION`
 Policy ID: `FIXED_SURFACE_PARTICLE_V1`
@@ -129,7 +129,8 @@ The policy does not close investigation for:
 - numeric-counter morphology;
 - unknown Switch counterpart;
 - unresolved storage/capacity/terminator safety;
-- EVENT/TS5 locator determinism or serializer gaps.
+- EVENT/TS5 locator determinism or serializer gaps;
+- description/UI container structure or capacity not independently proven.
 
 ## 7. PC TAI5MSG observed literal census
 
@@ -151,9 +152,9 @@ affected messages = 70
 affected blocks   = 14
 ```
 
-These counts are evidence for the policy and byte-impact contract. They do not authorize a corpus rewrite in this materialization stage.
+These counts are evidence for the policy and TAI5MSG byte-impact contract. They do not authorize a corpus rewrite and do not establish an equivalent census for other containers.
 
-## 8. Byte-impact contract
+## 8. TAI5MSG byte-impact contract
 
 Under the canonical compact Korean encoding used by this source family, each Hangul particle character above occupies two bytes. Parentheses occupy one byte each.
 
@@ -170,7 +171,7 @@ For the 130 observed TAI5MSG occurrences:
 aggregate semantic-payload delta = -520 bytes
 ```
 
-This policy is therefore shrink-only for the explicit TAI5MSG dual-form literals.
+This policy is therefore shrink-only **for these explicit TAI5MSG dual-form literals**.
 
 Consequences:
 
@@ -183,6 +184,8 @@ container/output hashes and deterministic guards        = MUST_REFRESH
 ```
 
 Shrink-only does not authorize raw in-place deletion without container reserialization.
+
+No TAI5MSG byte-impact or shrink-only assumption may be generalized to R1 description/UI containers, EVENT/TS5, or other source families without their own container-specific evidence.
 
 ## 9. TAI5MSG container boundary
 
@@ -237,7 +240,7 @@ The following are forbidden:
 3. rewriting the whole sentence merely to avoid byte accounting;
 4. changing `PARTICLE_SENSITIVE_INSERT` into `VARIABLE_INSERT` because a fixed particle is accepted;
 5. using the policy to infer `DIRECT_DATA`, `IN_SCOPE`, or `INCLUDE_KO`;
-6. applying TAI5MSG byte/layout assumptions to EVENT/TS5;
+6. applying TAI5MSG byte/layout assumptions to EVENT/TS5 or other containers;
 7. treating shrink-only payload change as permission for raw in-place deletion without offset regeneration;
 8. claiming copula/ending/formatter families are solved by this policy.
 
@@ -251,13 +254,14 @@ Materialized by this document:
 - axis-independence rule;
 - narrow investigation-relief rule;
 - TAI5MSG observed literal census;
-- shrink-only byte-impact contract;
+- TAI5MSG-specific shrink-only byte-impact contract;
 - TAI5MSG and EVENT/TS5 implementation boundaries.
 
 Not materialized by this document:
 
 - corpus classification rows;
 - release-scope decisions for individual/batch candidates;
+- description/UI container particle census;
 - TAI5MSG rewritten bytes;
 - EVENT/TS5 rewritten bytes;
 - serializer or builder changes;
@@ -266,12 +270,12 @@ Not materialized by this document:
 
 No existing corpus row is automatically reclassified or included merely because this policy is canonical.
 
-## 14. Next-stage interaction
+## 14. Next-stage interaction and routing
 
-The next planned selective stage remains:
+This policy does **not** declare the executable next selective stage.
 
-```text
-PC_SOURCE_SWITCH_OWNER_ADAPTER_MATERIALIZATION
-```
+The sole executable next-scope authority is:
 
-That stage may carry this policy as provenance, but it must not broadly populate particle-policy classifications or perform TAI5MSG/EVENT rewrites unless separately authorized.
+`selective_ko/SELECTIVE_PROJECT_STATE.md`
+
+This policy may be carried as provenance into later source classification, owner binding, and serializer stages, but it must not broadly populate particle-policy classifications or perform TAI5MSG/EVENT/other-container rewrites unless separately authorized.
