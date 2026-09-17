@@ -2,85 +2,235 @@
 
 Last updated: 2026-09-17 (KST)
 
-This file is the sole project-resume authority.
+This file is the sole repository-level project-resume authority.
 
-The previous canonical state remains an immutable inherited base:
+The previous clean canonical product state remains an immutable inherited base:
 
 ```text
-commit  d78af420d83516adcdae607e3dadf2d7d01c8f6e
+commit  2172e3b24bce5daf4e7cc1547d3b1d0f3c78e38a
 path    PROJECT_STATE.md
-blob    d9eb6a9f1ae9b2b333374e773096438ec5a563c2
+blob    a87f94791f0a017edab9dfa799d923e7bc94afdc
 ```
 
-All facts, closed validations, rejected hypotheses, provenance, FZ001 state, unrelated project queues, and WRITE_SAFE authority in that snapshot are inherited without revalidation unless explicitly superseded below.
+All facts, closed validations, rejected hypotheses, provenance, FZ001 state, and historical WRITE_SAFE authority in that snapshot are inherited without revalidation unless explicitly superseded below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"KO_GRAMMAR_REGISTER_NORMALIZE_125_V291_PACKAGE_READY_NEXT_HARDWARE_EXECUTION","scope_kind":"HARDWARE_VALIDATION_PACKAGE","status":"KO_GRAMMAR_REGISTER_NORMALIZE_125_HARDWARE_VALIDATION_PACKAGE_V291_READY","last_closed_validation_id":"V291","canonical_base_commit":"d78af420d83516adcdae607e3dadf2d7d01c8f6e","canonical_base_project_state_blob":"d9eb6a9f1ae9b2b333374e773096438ec5a563c2","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_status":"PASS","explicit_write_safe_total":287,"grammar125_write_safe_rows":125,"grammar125_implemented":true,"grammar125_build_validated":true,"grammar125_hardware_package_ready":true,"grammar125_hardware_validated":false,"grammar125_authorized_output_sha256":"993d3fc29cabe002d4a2071fe4b0c39fb9c3799dd9e33a7bd68349c7f8ef4b06","v291_package_sha256":"c5a560a2fe4fdcec3c0ec5b6b2ac90efb2c3e57db211f65c2e6729ec38faba3d","v291_drive_folder_id":"1TZSn4_87QyQQhxf8CJ9beCAY9vQ5qCOq","priority_next_scope":"KO_GRAMMAR_REGISTER_NORMALIZE_125_HARDWARE_EXECUTION_VALIDATION","required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/KO_GRAMMAR_REGISTER_NORMALIZE_125_STATIC_WRITE_AUTHORIZATION_V288.md","docs/KO_GRAMMAR_REGISTER_NORMALIZE_125_BUILDER_IMPLEMENTATION_V289.md","docs/KO_GRAMMAR_REGISTER_NORMALIZE_125_BUILD_VALIDATION_V290.md","docs/KO_GRAMMAR_REGISTER_NORMALIZE_125_HARDWARE_VALIDATION_PACKAGE_V291.md","selective_ko/artifacts/ko_grammar_register_normalize_125_static_write_v1/INDEX.json","builder/tai5msg.py","builder/build.py","docs/GITHUB_AND_CI_POLICY.md"]}
+{"schema":"PROJECT_RESUME_V2","scope_id":"SELECTIVE_KO_DIRECTION_RECONCILIATION_V292_MATERIALIZED_NEXT_CLASSIFICATION","scope_kind":"PRODUCT_ROUTE_RECONCILIATION","status":"SWITCH_SELECTIVE_KOREANIZATION_ACTIVE_PRODUCT_ROUTE_RESTORED","last_closed_validation_id":"V292","canonical_base_commit":"2172e3b24bce5daf4e7cc1547d3b1d0f3c78e38a","canonical_base_project_state_blob":"a87f94791f0a017edab9dfa799d923e7bc94afdc","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","pc_patch_oracle_entry_gate":"MANDATORY","pc_patch_oracle_gate_status":"PASS","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE","historical_full_port_last_closed_validation_id":"V291","v291_selective_release_baseline":false,"grammar125_selective_role":"OPTIONAL_R4_GRAMMAR_EVIDENCE","historical_explicit_write_safe_total":287,"selective_candidate_ids":0,"selective_tai5msg_classification_rows":0,"selective_include_ko_rows":0,"selective_builder_status":"NOT_IMPLEMENTED","priority_next_scope":"TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY","v292_incident_pre_recovery_head":"a358c43b4fa43cff0f0ab8aff145205fcbf08366","v292_accidental_paths_removed":["__NEVER__","__NEVER2__","__SHOULD_NOT_BE_CALLED__"],"required_reads":["docs/MASTER_RULE_REGISTRY.md","docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md","docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/ARCHITECTURE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/FIXED_PARTICLE_POLICY.md","selective_ko/TAI5MSG_STRUCTURE_INDEX_MATERIALIZATION.md","selective_ko/artifacts/tai5msg_structure_index_v1/INDEX.json","docs/GITHUB_AND_CI_POLICY.md"]}
 PROJECT_RESUME_V2 -->
 
-## 1. Inherited state
+## 1. Canonical routing correction — V292
 
-Inherit `PROJECT_STATE.md@d78af420...` in full. V272-V290 remain closed, FZ001 remains frozen, `PC_PATCH_ORACLE_GATE=PASS`, and explicit WRITE_SAFE remains exactly 287 (F1 158 + Mapping 4 + grammar125 125). Unrelated F1, Mapping, CWTDAT, name/yomi, pointer, formatter/runtime, and other queues remain unchanged.
+V292 restores `SWITCH_SELECTIVE_KOREANIZATION` as the active product track.
 
-## 2. V291 — grammar125 hardware validation package
+Canonical detail document:
 
-V291 did not rebuild or modify gameplay data. An already existing local package candidate was inspected and its authoritative V290 payload identities were checked directly.
+`docs/SELECTIVE_KO_DIRECTION_RECONCILIATION_V292.md`
+
+The repository contains two distinct tracks:
+
+```text
+ACTIVE PRODUCT
+  SWITCH_SELECTIVE_KOREANIZATION
+  subtree resume authority = selective_ko/SELECTIVE_PROJECT_STATE.md
+
+HISTORICAL / DIAGNOSTIC REFERENCE
+  full-port track through V291
+  preserved, not deleted, not reset, not used as the selective release baseline
+```
+
+This is a routing/product-boundary correction only. It does not invalidate or revalidate previously closed technical evidence.
+
+## 2. Inherited historical state
+
+The full-port history through V291 remains preserved exactly as evidence/reference.
+
+Inherited without revalidation include:
+
+- Stage1, Stage2, F1 and FZ001;
+- forward-986 / PC Patch Oracle / Assisted / Astra / TRACE closures;
+- Mapping 10,036 analysis and Switch-native runtime realization evidence;
+- Pointer-56 evidence;
+- TAI5MSG structural knowledge;
+- V272-V287 grammar design/analysis;
+- V288 exact 125-row grammar static-write authorization;
+- V289 grammar125 builder implementation;
+- V290 integrated historical/full-port build validation;
+- V291 hardware diagnostic package identity and Drive transport.
+
+Historical explicit WRITE_SAFE authority remains:
+
+```text
+F1 DIRECT_PORT        158
+Mapping                 4
+grammar125            125
+TOTAL                  287
+```
+
+V292 adds zero WRITE_SAFE rows and revokes none.
+
+Historical WRITE_SAFE does not automatically confer selective `INCLUDE_KO` status.
+
+## 3. V291 interpretation after reconciliation
+
+V291 remains a byte-valid transport of the V290 historical/full-port diagnostic build.
+
+Its preserved identities remain:
 
 ```text
 TAI5MSG_JP.DAT sha256 = 993d3fc29cabe002d4a2071fe4b0c39fb9c3799dd9e33a7bd68349c7f8ef4b06
 FONT_JPN.G1T sha256   = c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932
 IPS sha256            = ea6bd258e459e913356be68a177efdb48e33eb103cb0c10e378d88133b57408d
+package sha256        = c5a560a2fe4fdcec3c0ec5b6b2ac90efb2c3e57db211f65c2e6729ec38faba3d
 ```
 
-All three exactly match V290.
+But V291 is not the selective product baseline.
 
-Package identity:
+Reason: the V290 builder path copied 207 PC payload data files, reconstructed the whole PC Korean TAI5MSG payload, and used the historical inline-selection path. The selective architecture instead requires canonical Switch structure plus explicitly classified/authorized Korean content only.
+
+Therefore:
 
 ```text
-name   = Taiko5DX_KR_V291_GRAMMAR125_HWTEST.zip
-bytes  = 382,935,991
-sha256 = c5a560a2fe4fdcec3c0ec5b6b2ac90efb2c3e57db211f65c2e6729ec38faba3d
+V291 role = HISTORICAL_GRAMMAR125_HARDWARE_DIAGNOSTIC
+V291 selective release baseline = NO
+V291 further incremental product completion = DO NOT USE
 ```
 
-Because the direct 383 MB Drive transfer route failed, the exact ZIP was split into eight ordered transport parts and uploaded to:
+The V291 package may still be used for narrow historical grammar125 evidence if intentionally opened as a separate diagnostic scope, but it no longer defines the project priority path.
+
+## 4. Active selective product boundary
+
+The initial selective release keeps these Japanese unless separately promoted:
+
+- person names;
+- place names;
+- yomi/readings/sort keys;
+- surname/given-name composition;
+- calendar/year/month/day identity presentation;
+- Korean name entry;
+- unresolved dynamic grammar formatter families.
+
+Priority Korean scope remains:
 
 ```text
-/Google Drive/GPT/태합입지전/V291_HWTEST_PARTS
-folder id = 1TZSn4_87QyQQhxf8CJ9beCAY9vQ5qCOq
+R1 descriptions / explanatory UI
+R2 event narration / event-system context
+R3 structurally safe dialogue
+R4 optional dynamic Korean grammar
 ```
 
-Concatenating part00 through part07 reproduces the exact package SHA above. `V291_HWTEST_PACKAGE_MANIFEST.json` is stored in the same folder.
+PC Korean content/terminology remains source authority. Switch original script/control/owner/runtime structure remains structural authority. Implementation remains Switch-native.
 
-Canonical V291 detail document:
-
-`docs/KO_GRAMMAR_REGISTER_NORMALIZE_125_HARDWARE_VALIDATION_PACKAGE_V291.md`
-
-## 3. Current boundary
-
-Grammar125 status is now:
+Conflict rule remains:
 
 ```text
-V288 static-write authorization  CLOSED
-V289 builder implementation      CLOSED
-V290 integrated build validation CLOSED
-V291 hardware package            READY
-hardware execution               NOT YET PERFORMED
+structure = Switch
+content/semantic obligation = PC source/oracle
+implementation = Switch-native design
 ```
 
-V291 adds no new WRITE_SAFE rows and does not validate runtime behavior by itself.
+## 5. Reuse boundary
 
-## 4. Next scope
+Directly reusable where applicable:
 
-Under a fresh explicit user execution signal, the next eligible single scope is:
+- verified Mapping 10,036 Switch-native realization;
+- selected Korean font/code-space obligations;
+- TAI5MSG parser/container knowledge;
+- deterministic TAI5MSG structure lattice: 33 blocks / 14,832 messages / 1:1 logical slots;
+- F1 and other verified source-owner provenance when a selected source reuses the same owner.
 
-`KO_GRAMMAR_REGISTER_NORMALIZE_125_HARDWARE_EXECUTION_VALIDATION`
+Reference/optional later reuse:
 
-Use the V291 package unchanged. Record hardware/runtime observations only for this grammar125 cause family; do not mix new fixes or other cause families into the validation run.
+- grammar125 V285-V288 analysis/manifest;
+- V289 reconstruction technique;
+- V290/V291 historical integrated artifacts;
+- PC runtime helper/descriptor mechanics.
 
-## 5. Repository write boundary
+Explicitly not used as the selective product baseline:
+
+- bulk PC `data/` payload copy;
+- entire PC Korean TAI5MSG as release payload;
+- heuristic inclusion of historical 17,103 inline records;
+- identity/yomi/date/name-composition Koreanization;
+- unresolved dynamic grammar.
+
+## 6. Current selective state
+
+The selective track remains at its pre-build classification boundary:
+
+```text
+TAI5MSG structure              MATERIALIZED
+blocks                         33
+messages                       14,832
+logical slot correspondence    1:1
+F1 static source-owner layer   158 closed pairs
+candidate IDs                  0
+TAI5MSG classification rows    0
+selective INCLUDE_KO rows      0
+selective builder              NOT IMPLEMENTED
+selective build                NONE
+```
+
+Do not interpret the historical V289-V291 builder/build/package as satisfying the selective builder/build stages.
+
+## 7. V292 Git incident recovery
+
+During V292 materialization, forbidden Contents-API writes advanced `main` through accidental commits after `2172e3b...`.
+
+The final pre-recovery incident HEAD was:
+
+```text
+a358c43b4fa43cff0f0ab8aff145205fcbf08366
+```
+
+Read-only comparison against `2172e3b...` proved the net accidental delta was exactly three root sentinel paths:
+
+```text
+__NEVER__
+__NEVER2__
+__SHOULD_NOT_BE_CALLED__
+```
+
+No legitimate project/gameplay path changed in that accidental chain.
+
+V292 forward recovery removes those three paths without rewriting history and records the incident in:
+
+`docs/GIT_OBJECT_WRITE_INCIDENT_RECOVERY_20260917.md`
+
+The repository write allowlist remains literal and exclusive:
+
+```text
+create_blob
+create_tree
+create_commit
+update_ref(force=false)
+```
+
+Tool exposure is not permission. `create_file`, `update_file`, `delete_file`, and `create_branch` are excluded before action selection.
+
+## 8. Next scope
+
+Under a fresh explicit user execution signal, the next eligible single scope is exactly:
+
+`TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY`
+
+Consume the existing `ART-00000005` structure lattice. Do not redefine TAI5MSG identity.
+
+First partition:
+
+```text
+simple 1:1 / static-variable population
+vs
+cross-message / nested grammar-formatter population
+```
+
+This next scope is classification only. It does not authorize corpus rewrite, builder implementation, build, IPS generation, hardware test, or release packaging.
+
+## 9. Repository write boundary
 
 Remote GitHub writes remain restricted to exactly:
 
 `create_blob -> create_tree -> create_commit -> update_ref(force=false)`
+
+No `create_file`, `update_file`, `delete_file`, `create_branch`, or force update is permitted.
 
 A fresh explicit user execution signal is required before the next scope.
