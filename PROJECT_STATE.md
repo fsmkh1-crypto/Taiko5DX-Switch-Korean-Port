@@ -7,14 +7,14 @@ This file is the sole repository-level project-resume authority.
 Current canonical overlay:
 
 ```text
-scope   TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT / V301
-parent  bec39bce36e5b267bee8018d5ee89f2ef93c45fe / V300
+scope   TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE / V302
+parent  7940685f56d51ad1cc260d66e5c7d01a69ae861d / V301
 ```
 
 All earlier VERIFIED/CLOSED facts, FZ001, Stage1/Stage2, forward-986, Mapping 10,036, Pointer-56, TAI5MSG structure, F1 provenance, V292-V300 policy/results, rejected hypotheses, and Git write restrictions remain inherited unless explicitly superseded below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301","scope_kind":"READ_ONLY_ANALYSIS_CHECKPOINT_MATERIALIZATION","status":"V301_CHECKPOINT_TAI5MSG_SELECTED_3370_CALLER_3179_GROWTH_GATE_2004_WAIT_191_NO_BUILD","last_closed_validation_id":"V301","canonical_base_commit":"bec39bce36e5b267bee8018d5ee89f2ef93c45fe","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_READ_ONLY","priority_next_focus":"B17_B19_B20_B21_B22_B23_B24_LOADER_OFFSET_SIZE_ALIGNMENT_ABSOLUTE_OFFSET_EOF_ACCEPTANCE","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","inline_v297_authority":"selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","ending_help_v298_authority":"selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","ending_help_v298_artifact":"selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","numeric_v299_authority":"selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","numeric_v299_artifact":"selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","static_v300_authority":"selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","static_v300_artifact":"selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","inline_r1_source_role_objects":141,"inline_r1_materialized_rows":139,"inline_r1_unresolved_rows":2,"inline_r1_unresolved_rnums":["R2884","R2885"],"selective_candidate_ids":139,"selective_classification_ids":139,"selective_include_ko_rows":139,"selective_r1_materialized_rows":139,"selective_builder_status":"NOT_IMPLEMENTED","selective_build_status":"NONE","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_romfs_status":"NOT_YET_SUPPLIED","required_reads":["selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","docs/MASTER_RULE_REGISTRY.md","docs/GITHUB_AND_CI_POLICY.md"],"tai5msg_v301_authority":"selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","tai5msg_v301_artifact":"selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","tai5msg_selected_total":3370,"tai5msg_selected_r1":3347,"tai5msg_selected_r2":23,"tai5msg_exact_switch_owner_bindings":3370,"tai5msg_internal_cross_message_edges_selected":0,"tai5msg_external_caller_resolved":3179,"tai5msg_external_caller_wait":191,"tai5msg_current_envelope_fit":1254,"tai5msg_block_growth_required":2116,"tai5msg_caller_resolved_current_envelope_fit":1175,"tai5msg_caller_resolved_growth_gate":2004,"tai5msg_growth_blocks":["B17","B19","B20","B21","B22","B23","B24"],"switch_tai5msg_original_status":"HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP"}
+{"schema":"PROJECT_RESUME_V2","scope_id":"TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302","scope_kind":"READ_ONLY_RUNTIME_STRUCTURE_ACCEPTANCE_CHECKPOINT_MATERIALIZATION","status":"V302_TAI5MSG_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_PASS_NEXT_3179_RELEASE_ADMISSION","last_closed_validation_id":"V302","canonical_base_commit":"7940685f56d51ad1cc260d66e5c7d01a69ae861d","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY","priority_next_focus":"3179_CALLER_RESOLVED_ROWS_REMAINING_RELEASE_GATES_NO_191_WAIT_NO_BUILD","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","inline_v297_authority":"selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","ending_help_v298_authority":"selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","ending_help_v298_artifact":"selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","numeric_v299_authority":"selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","numeric_v299_artifact":"selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","static_v300_authority":"selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","static_v300_artifact":"selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","inline_r1_source_role_objects":141,"inline_r1_materialized_rows":139,"inline_r1_unresolved_rows":2,"inline_r1_unresolved_rnums":["R2884","R2885"],"selective_candidate_ids":139,"selective_classification_ids":139,"selective_include_ko_rows":139,"selective_r1_materialized_rows":139,"selective_builder_status":"NOT_IMPLEMENTED","selective_build_status":"NONE","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_romfs_status":"NOT_YET_SUPPLIED","required_reads":["selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","docs/MASTER_RULE_REGISTRY.md","docs/GITHUB_AND_CI_POLICY.md"],"tai5msg_v301_authority":"selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","tai5msg_v301_artifact":"selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","tai5msg_selected_total":3370,"tai5msg_selected_r1":3347,"tai5msg_selected_r2":23,"tai5msg_exact_switch_owner_bindings":3370,"tai5msg_internal_cross_message_edges_selected":0,"tai5msg_external_caller_resolved":3179,"tai5msg_external_caller_wait":191,"tai5msg_current_envelope_fit":1254,"tai5msg_block_growth_required":2116,"tai5msg_caller_resolved_current_envelope_fit":1175,"tai5msg_caller_resolved_growth_gate":2004,"tai5msg_growth_blocks":["B17","B19","B20","B21","B22","B23","B24"],"switch_tai5msg_original_status":"HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP","tai5msg_v302_authority":"selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","tai5msg_v302_artifact":"selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","tai5msg_switch_main_sha256":"b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b","tai5msg_switch_loader":"0x43F518","tai5msg_switch_message_getter":"0x43F2A4","tai5msg_switch_allocator":"0x43F354","tai5msg_per_block_runtime_capacity":131072,"tai5msg_growth_runtime_acceptance":"PASS_STATIC_RUNTIME_STRUCTURE","tai5msg_growth_gate_2004":"STRUCTURALLY_CLEARED","tai5msg_hardware_execution":"NOT_PERFORMED","tai5msg_next_release_admission_population":3179}
 PROJECT_RESUME_V2 -->
 
 ## 1. V300 — ordinary-inline static R1 47 rows materialized
@@ -180,7 +180,7 @@ identity reverse substitution            = FORBIDDEN
 Still open:
 
 - `R2884/R2885` consumer/terminator semantics, retained as evidence waits;
-- TAI5MSG seven-block growth runtime acceptance for B17/B19/B20/B21/B22/B23/B24;
+- TAI5MSG caller-resolved 3,179-row release-admission audit after V302 growth closure;
 - TAI5MSG external-caller evidence waits: 191 selected rows;
 - EVENT/TS5 production parser/caller inventory;
 - SNR field/record selective parser;
@@ -222,21 +222,52 @@ Growth cause-family is limited to B17/B19/B20/B21/B22/B23/B24.
 
 V301 issues zero candidate/classification rows. Cumulative release corpus remains 139 INCLUDE_KO rows. Builder/build/IPS remain absent.
 
-## 11. Next scope
+## 11. V302 — TAI5MSG selected block-growth runtime acceptance
+
+Canonical V302 authority:
+
+`selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+
+Machine-readable checkpoint:
+
+`selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+
+V302 closes the structural growth gate for the 2,004 caller-resolved growth rows.
+
+```text
+Switch loader                     0x43F518
+Switch message getter             0x43F2A4
+Switch block allocator            0x43F354
+header pairs consumed             33
+per-block runtime buffer          0x20000
+selected total growth             +0x7C80
+largest selected rebuilt block    B22 = 0x12B00
+block-offset relocation           PASS
+block-size growth                 PASS
+message-offset regeneration       PASS
+runtime patch for growth          NOT REQUIRED
+hardware execution                NOT PERFORMED
+```
+
+The next release-admission population is 3,179 caller-resolved rows = 1,175 current-fit + 2,004 growth-gate-cleared.
+
+V302 issues no candidate/classification/INCLUDE_KO rows. Cumulative selective corpus remains 139.
+
+## 12. Next scope
 
 The sole executable next-scope authority is `selective_ko/SELECTIVE_PROJECT_STATE.md`.
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_READ_ONLY`
+`TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY`
 
 Keep the 191 external-caller waits outside that cause-family.
 
 Keep `R2884` and `R2885` as separate evidence waits.
 
-Do not begin candidate materialization, builder, build, or IPS in that scope.
+Do not issue candidate/classification IDs and do not begin builder, serializer, build, or IPS in that read-only scope.
 
-## 12. Repository write boundary
+## 13. Repository write boundary
 
 Remote GitHub writes remain restricted to exactly:
 

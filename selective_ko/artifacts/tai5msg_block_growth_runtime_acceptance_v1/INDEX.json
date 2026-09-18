@@ -1,0 +1,122 @@
+{
+  "schema": "TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V1",
+  "validation_id": "V302",
+  "status": "CANONICAL_READ_ONLY_RUNTIME_STRUCTURE_ACCEPTANCE_CLOSURE",
+  "parent_commit": "7940685f56d51ad1cc260d66e5c7d01a69ae861d",
+  "authority": "selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md",
+  "switch_main": {
+    "size": 5287359,
+    "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
+    "nso_magic": "NSO0"
+  },
+  "runtime": {
+    "allocator": "0x43F354",
+    "message_getter": "0x43F2A4",
+    "loader": "0x43F518",
+    "header_pair_bytes_copied": 264,
+    "block_count": 33,
+    "per_block_buffer_bytes": 131072,
+    "per_block_buffer_hex": "0x20000",
+    "block_offset_source": "HEADER_PAIR_RUNTIME_READ",
+    "block_size_source": "HEADER_PAIR_RUNTIME_READ",
+    "message_offset_source": "BLOCK_LOCAL_U32_OFFSET_TABLE_RUNTIME_READ",
+    "absolute_original_file_offset_dependency": "NOT_FOUND_ON_CANONICAL_TAI5MSG_LOAD_GET_PATH",
+    "alignment_loader_check": "NOT_FOUND",
+    "canonical_alignment_to_preserve": "0x40"
+  },
+  "growth": {
+    "blocks": {
+      "B17": {
+        "growth": 832,
+        "final_size": 56832,
+        "final_size_hex": "0xDE00"
+      },
+      "B19": {
+        "growth": 2688,
+        "final_size": 62976,
+        "final_size_hex": "0xF600"
+      },
+      "B20": {
+        "growth": 1728,
+        "final_size": 56704,
+        "final_size_hex": "0xDD80"
+      },
+      "B21": {
+        "growth": 1024,
+        "final_size": 51456,
+        "final_size_hex": "0xC900"
+      },
+      "B22": {
+        "growth": 17216,
+        "final_size": 76544,
+        "final_size_hex": "0x12B00"
+      },
+      "B23": {
+        "growth": 4736,
+        "final_size": 74112,
+        "final_size_hex": "0x12180"
+      },
+      "B24": {
+        "growth": 3648,
+        "final_size": 62016,
+        "final_size_hex": "0xF240"
+      }
+    },
+    "total_growth_bytes": 31872,
+    "total_growth_hex": "0x7C80",
+    "all_blocks_below_runtime_buffer_limit": true,
+    "largest_block": "B22",
+    "largest_block_remaining_capacity": 54528,
+    "following_block_relocation": {
+      "B18_B19": "0x0340",
+      "B20": "0x0DC0",
+      "B21": "0x1480",
+      "B22": "0x1880",
+      "B23": "0x5BC0",
+      "B24": "0x6E40",
+      "B25_B32": "0x7C80"
+    }
+  },
+  "final_block": {
+    "jp_declared_minus_physical": 55,
+    "selective_relation_preservable": true,
+    "pc_original_corroboration": {
+      "sc": {
+        "size": 1918773,
+        "sha256": "04ff8afe290b12f2f7b93e174952f5c7550acff1ef0fe17b96d889170e0a706e",
+        "b32_declared_minus_physical": 11
+      },
+      "tw": {
+        "size": 1944333,
+        "sha256": "bf165a3f30b72045ea5f92e5acca45a950be4d94294cc10e82576f3fffcb0294",
+        "b32_declared_minus_physical": 51
+      }
+    }
+  },
+  "disposition": {
+    "block_offset_relocation": "PASS",
+    "block_size_growth": "PASS",
+    "message_offset_regeneration": "PASS",
+    "runtime_patch_required_for_growth": false,
+    "growth_gate_2004": "STRUCTURALLY_CLEARED",
+    "hardware_execution": "NOT_PERFORMED"
+  },
+  "population": {
+    "caller_resolved_current_fit": 1175,
+    "caller_resolved_growth_cleared": 2004,
+    "next_release_admission_population": 3179,
+    "external_caller_wait_excluded": 191
+  },
+  "release_boundary": {
+    "candidate_ids_issued": 0,
+    "classification_ids_issued": 0,
+    "include_ko_rows_issued": 0,
+    "cumulative_candidate_ids": 139,
+    "cumulative_classification_ids": 139,
+    "cumulative_include_ko_rows": 139,
+    "builder_status": "NOT_IMPLEMENTED",
+    "build_status": "NONE",
+    "ips_status": "NONE"
+  },
+  "next_scope": "TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY"
+}
