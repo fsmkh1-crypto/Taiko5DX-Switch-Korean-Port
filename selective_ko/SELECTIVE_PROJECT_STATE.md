@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V310 SELECTIVE TAI5MSG PACKAGE-INTEGRATION DESIGN MATERIALIZED / NO IMPLEMENTATION / NO BUILD
+Status: V311 SELECTIVE TAI5MSG PACKAGE-INTEGRATION IMPLEMENTED / OFFLINE VALIDATED / NO PACKAGE
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,36 +14,37 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-2. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-3. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-4. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-5. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-6. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-7. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-8. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-9. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-10. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-11. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-12. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-13. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-14. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-15. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-16. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-17. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-18. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-19. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-20. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-21. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-22. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-23. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-24. `IDENTITY_IN_PROSE_POLICY.md`
-25. `CLASSIFICATION_SCHEMA.md`
-26. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-27. `KNOWN_FAILURES.md`
-28. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-29. `ARCHITECTURE.md`
-30. `this file`
+1. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+2. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+3. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+4. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+5. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+6. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+7. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+8. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+9. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+10. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+11. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+12. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+13. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+14. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+15. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+16. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+17. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+18. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+19. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+20. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+21. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+22. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+23. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+24. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+25. `IDENTITY_IN_PROSE_POLICY.md`
+26. `CLASSIFICATION_SCHEMA.md`
+27. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+28. `KNOWN_FAILURES.md`
+29. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+30. `ARCHITECTURE.md`
+31. `this file`
 
 ## 2. Product boundary
 
@@ -433,7 +434,7 @@ Still open:
 
 - `R2884/R2885` unresolved consumer semantics;
 - TAI5MSG 191 external-caller waits;
-- package-integration implementation/offline validation for TAI5MSG + Mapping/page mapper/font;
+- Eden test-package materialization for the V311 TAI5MSG integration slice;
 - EVENT/TS5 and SNR work;
 - remaining R2/R3 corpus;
 - layout/reflow, mistranslation, help/content-completeness QA;
@@ -476,30 +477,51 @@ SELECTIVE_PACKAGE_INFO.json
 
 This is not the complete future selective release; the already materialized inline 139 population and other content families remain outside this TAI5MSG-only integration stage.
 
-## 20. Executable next scope — sole authority
+## 20. V311 package-integration implementation / offline validation
+
+Canonical authority:
+
+`TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+
+```text
+implementation              builder/selective_package.py
+tests                       tests/test_selective_package.py
+combined tests              13/13 PASS
+TAI5MSG                     1,841,481 / dfcb928f694117bdd51e69d25daf337c14e30c3a7078da3961dc3a570ffe44f9
+font                        16,779,036 / c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932
+integrated Eden IPS         5 records / 2,742 bytes
+integrated IPS SHA-256      6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4
+staged allowlist            4/4 exact
+published package           NONE
+hardware                    NONE
+```
+
+The module validates and stages components in memory only. It does not publish a package tree or ZIP.
+
+Inline 139 remains an approved but separate Switch-main carrier family and is not part of the V311 TAI5MSG package slice.
+
+## 21. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION`
+`TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION`
 
 Authorized:
 
-- implement an isolated selective package-integration module, suggested `builder/selective_package.py`;
-- reuse the already verified Mapping 10,036 four-action realization without reopening its closed runtime facts;
-- consume `builder/selective_tai5msg.py` as the only TAI5MSG serializer;
-- add exact page-mapper and Korean-font identity guards defined by V310;
-- enforce exact package allowlist and action-overlap checks;
-- add offline tests and temporary deterministic serialization sufficient to verify the design;
+- materialize exactly the V311 four-file allowlist;
+- use the V311 validated TAI5MSG/font/IPS identities without adding another content family;
+- emit deterministic Eden test-package metadata/ZIP;
+- place the large test artifact in Google Drive and verify transport identity;
 - report and stop.
 
 Not authorized:
 
-- publishing a release/package ZIP for user hardware;
+- hardware execution;
 - physical Switch/Atmosphere delivery;
-- adding W0/W1, legacy 5,519 inline, bulk PC RomFS payload, CWTDAT, EVENT/SNR, name/yomi or unrelated families;
-- hardware execution.
+- inline 139 integration;
+- EVENT/SNR/CWTDAT/name/yomi/W0/W1/pointer-56 or legacy full-port payloads.
 
-## 21. Repository write boundary
+## 22. Repository write boundary
 
 ```text
 create_blob -> create_tree -> create_commit -> update_ref(force=false)
