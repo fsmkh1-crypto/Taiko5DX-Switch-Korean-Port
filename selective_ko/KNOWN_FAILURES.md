@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
-Date: 2026-09-17 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V295 CONTAINER FAILURE ADDED
+Date: 2026-09-18 (KST)
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V305 EXTERNAL-AUDIT REPEAT-PREVENTION ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -460,3 +460,33 @@ authored Korean identity literals in prose   = PRESERVE_AS_AUTHORED_KO
 
 Therefore this historical long-name crash is not a blocker for the current selective R1/R2 TAI5MSG prose track. It becomes a mandatory regression/provenance item only if dedicated Korean identity/place-name presentation is explicitly reopened.
 
+## 15. External text-only audit recurring false blockers and adopted gates — V305
+
+Four user-supplied external text-only red-team reviews were consolidated by TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md.
+
+External reviews do not supersede verified binary evidence.
+
+Rejected without new binary evidence:
+- global selective 3,318 must all be TAI5MSG;
+- inline 139 must be added to TAI5MSG block growth;
+- V304 payload lengths prove a per-message length prefix;
+- TAI5MSG has a movable offset-table pointer that must be rewritten;
+- TAI5MSG checksum/CRC/HMAC must exist because other formats may contain one;
+- V304 necessarily changes +0x7780 physical release growth;
+- reverse mapping conflicts with reverse-substitution policy;
+- post-V304 05 05 05 is a newly introduced unknown Switch sequence.
+
+Binding carrier separation: global selective INCLUDE_KO 3,318 = inline/main 139 + TAI5MSG/RomFS 3,179.
+
+Adopted gates:
+- DETERMINISTIC_PADDING_GATE
+- ZERO_REPLACEMENT_IDENTITY_REBUILD_GATE
+- CONTROL_AND_CODE_VALIDATION_GATE
+- STRONG_REPARSE_OFFSET_GATE
+- MAPPING_TO_GLYPH_CLOSURE_GATE
+
+The first four constrain the TAI5MSG serializer path. Mapping-to-glyph closure is a release/package integration gate.
+
+Next bounded read-only scope: TAI5MSG_SELECTIVE_SERIALIZER_IDENTITY_REBUILD_AND_PADDING_PROVENANCE_READ_ONLY.
+
+Do not implement the serializer merely because V305 records these gates.

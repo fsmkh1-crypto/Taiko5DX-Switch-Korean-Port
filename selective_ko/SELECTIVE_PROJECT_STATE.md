@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V304 TAI5MSG V303 PC PAYLOAD DEFECT CORRECTION 2 MATERIALIZED / COUNTS UNCHANGED / NO BUILDER / NO BUILD
+Status: V305 EXTERNAL TEXT-ONLY DESIGN AUDIT CONSOLIDATED / PREIMPLEMENTATION GATES FROZEN / NO BUILDER / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,30 +14,31 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-2. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-5. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-6. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-3. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-4. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-7. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-8. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-9. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-10. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-11. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-12. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-13. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-14. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-15. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-16. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-17. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-18. `IDENTITY_IN_PROSE_POLICY.md`
-19. `CLASSIFICATION_SCHEMA.md`
-20. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-21. `KNOWN_FAILURES.md`
-22. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-23. `ARCHITECTURE.md`
-24. `this file`
+1. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+2. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+3. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+4. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+5. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+6. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+7. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+8. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+9. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+10. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+11. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+12. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+13. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+14. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+15. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+16. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+17. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+18. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+19. `IDENTITY_IN_PROSE_POLICY.md`
+20. `CLASSIFICATION_SCHEMA.md`
+21. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+22. `KNOWN_FAILURES.md`
+23. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+24. `ARCHITECTURE.md`
+25. `this file`
 
 ## 2. Product boundary
 
@@ -288,13 +289,37 @@ A future builder must apply V304 only after an exact canonical PC-KO file guard 
 
 For all other 3,177 V303 TAI5MSG rows, exact canonical PC-KO locator payload remains the target.
 
-## 13. Open work
+## 13. V305 external text-only design audit consolidation
+
+Canonical authority:
+
+`TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+
+Evidence class: four user-supplied external text-only red-team reviews; advisory claim-strength/invariant review; no new binary fact promoted solely from external opinion.
+
+Carrier separation:
+
+global selective INCLUDE_KO 3,318 = inline/Switch main 139 + TAI5MSG/RomFS 3,179.
+
+Accepted gates:
+
+- DETERMINISTIC_PADDING_GATE
+- ZERO_REPLACEMENT_IDENTITY_REBUILD_GATE
+- CONTROL_AND_CODE_VALIDATION_GATE
+- STRONG_REPARSE_OFFSET_GATE
+- MAPPING_TO_GLYPH_CLOSURE_GATE
+
+Repeated unsupported external hypotheses are recorded in KNOWN_FAILURES.md section 15.
+
+No candidate/classification counts, gameplay data, builder, build or IPS change in V305.
+
+## 14. Open work
 
 Still open:
 
 - retain `R2884/R2885` as unresolved until consumer semantics are proven;
 - TAI5MSG 191 external-caller evidence waits;
-- TAI5MSG selective builder/serializer design consuming V303 + V304 overlay, then later implementation;
+- TAI5MSG serializer identity-rebuild/padding provenance closure, then remaining serializer design and later implementation;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
 - remaining R2/R3 corpus;
@@ -303,34 +328,29 @@ Still open:
 
 Do not re-audit the 3,318 materialized rows merely because work moves to another chat/model.
 
-## 14. Executable next scope — sole authority
+## 15. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-```text
-TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_READ_ONLY
-```
+`TAI5MSG_SELECTIVE_SERIALIZER_IDENTITY_REBUILD_AND_PADDING_PROVENANCE_READ_ONLY`
 
 Scope intent:
 
-```text
-consume exactly the V303 3,179-row artifact
-apply the V304 2-row payload correction overlay fail-closed
-bind canonical PC-Korean payload by global SHA-256 + exact locator
-design fail-closed original/source guards
-design mapping/font coverage gates for every emitted Korean code
-design deterministic TAI5MSG block reconstruction and offset regeneration
-reuse V302 0x20000 per-block runtime capacity closure
-preserve 191 caller waits outside the build population
-no implementation
-no TAI5MSG output generation
-no IPS/build/package
-no hardware execution
-```
+- READ ONLY;
+- inspect stock 33-block padding/filler semantics;
+- verify canonical parse/decrypt -> zero-replacement rebuild -> encrypt identity;
+- verify B32 physical EOF / partial-tail behavior;
+- separate logical plaintext invariants from physical emitted-file invariants;
+- record rejected hypotheses and any identity mismatch;
+- no serializer implementation;
+- no gameplay-data mutation;
+- no TAI5MSG release output;
+- no IPS/build/package;
+- no hardware execution.
 
-After reporting that read-only design, require another explicit user signal before implementation.
+After reporting the required six-part analysis, require another explicit user signal before any subsequent materialization or implementation.
 
-## 15. Repository write boundary
+## 16. Repository write boundary
 
 Repository writes remain restricted to exactly:
 
