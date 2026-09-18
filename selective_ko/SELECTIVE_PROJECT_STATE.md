@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V308 SELECTIVE TAI5MSG SERIALIZER IMPLEMENTED / METADATA OFFLINE PASS / BYTE-EXACT REPLAY PENDING / NO BUILD
+Status: V309 SELECTIVE TAI5MSG SERIALIZER CLOSED / CLEAN-RUNTIME VERIFIED / BYTE-EXACT REPLAY VERIFIED / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,34 +14,35 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-2. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-3. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-4. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-5. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-6. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-7. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-8. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-9. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-10. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-11. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-12. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-13. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-14. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-15. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-16. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-17. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-18. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-19. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-20. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-21. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-22. `IDENTITY_IN_PROSE_POLICY.md`
-23. `CLASSIFICATION_SCHEMA.md`
-24. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-25. `KNOWN_FAILURES.md`
-26. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-27. `ARCHITECTURE.md`
-28. `this file`
+1. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+2. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+3. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+4. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+5. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+6. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+7. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+8. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+9. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+10. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+11. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+12. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+13. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+14. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+15. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+16. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+17. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+18. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+19. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+20. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+21. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+22. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+23. `IDENTITY_IN_PROSE_POLICY.md`
+24. `CLASSIFICATION_SCHEMA.md`
+25. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+26. `KNOWN_FAILURES.md`
+27. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+28. `ARCHITECTURE.md`
+29. `this file`
 
 ## 2. Product boundary
 
@@ -87,7 +88,7 @@ Artifacts:
 - `artifacts/inline_r1_static_47_candidate_classification_v1/`
 - `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/`
 
-No builder/build/IPS/runtime write exists.
+The selective serializer source exists and is byte-exact verified by V309. No package/build/IPS/runtime output exists.
 
 ## 4. Inline R1 source-role state
 
@@ -395,47 +396,71 @@ byte-exact new-module execution  PENDING
 package/build/IPS/runtime        NONE
 ```
 
-Do not promote metadata replay into byte-exact output validation.
+Do not promote metadata replay into byte-exact output validation. That pending state is closed only by V309.
 
-## 17. Open work
+## 17. V309 byte-exact offline replay closure
+
+Canonical authority:
+
+`TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+
+```text
+runtime                   Python 3.13.5 clean directory
+stock identity            PASS
+PC-KO identity            PASS
+V303/V304 canonical data  PASS
+Mapping 10,036 source     PC patch T5K121R actual table
+zero-replacement identity PASS
+effective reconstruction  PASS
+selected                  3,179
+unselected                11,653
+messages                  14,832
+growth                    +0x7780
+final size                0x1C1949
+B32                        off 0x1B4F00 / used 0xB8D5 / declared 0xCA80 / physical 0xCA49 / omitted 0x37
+output SHA-256            dfcb928f694117bdd51e69d25daf337c14e30c3a7078da3961dc3a570ffe44f9
+tests                     7/7 PASS
+```
+
+Status: `CLOSED / CLEAN_RUNTIME_VERIFIED / BYTE_EXACT_REPLAY_VERIFIED`.
+
+No package/build/IPS/runtime package/hardware execution occurred.
+
+## 18. Open work
 
 Still open:
 
-- byte-exact execution of the new selective serializer;
 - `R2884/R2885` unresolved consumer semantics;
 - TAI5MSG 191 external-caller waits;
-- later package integration with Mapping/page mapper/font;
+- package-integration design for TAI5MSG + Mapping/page mapper/font;
 - EVENT/TS5 and SNR work;
 - remaining R2/R3 corpus;
 - layout/reflow, mistranslation, help/content-completeness QA;
 - forced-minigame and 3+-choice runtime QA;
 - physical Nintendo Switch validation.
 
-## 18. Executable next scope — sole authority
+## 19. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY`
+`TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN`
 
 Authorized:
 
-- obtain exact canonical stock and PC-KO TAI5MSG bytes through a working local/Drive transport;
-- obtain canonical Mapping 10,036 game-code set;
-- execute `tests/test_selective_tai5msg.py`;
-- execute zero-replacement identity through the new module;
-- execute effective 3,179 reconstruction through the new module;
-- require V306/V307 size/growth/B32/reparse/code-census postconditions;
-- require diagnostic SHA match;
-- report and STOP.
+- inspect the existing package/build pipeline only as needed for integration design;
+- define exact guarded inputs and carriers for selective TAI5MSG, Mapping 10,036, page mapper and font assets;
+- define package layout, dependency order, fail-closed guards and validation gates;
+- document the integration design and stop.
 
 Not authorized:
 
-- package integration;
-- IPS/build/runtime package;
+- generating a package;
+- creating IPS/build/runtime output;
+- writing gameplay binaries;
 - hardware execution;
 - unrelated content families.
 
-## 19. Repository write boundary
+## 20. Repository write boundary
 
 ```text
 create_blob -> create_tree -> create_commit -> update_ref(force=false)
