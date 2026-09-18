@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V300 STATIC 47 CANDIDATE/CLASSIFICATION MATERIALIZED / INLINE R1 INCLUDE_KO 139 OF 141 / NO BUILD
+Status: V301 TAI5MSG SELECTED-3370 CALLER/CAPACITY CHECKPOINT / NO NEW CANDIDATES / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,22 +14,24 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-2. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-3. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-4. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-5. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-6. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-7. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-8. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-9. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-10. `IDENTITY_IN_PROSE_POLICY.md`
-11. `CLASSIFICATION_SCHEMA.md`
-12. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-13. `KNOWN_FAILURES.md`
-14. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-15. `ARCHITECTURE.md`
-16. this file
+1. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+2. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+3. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+4. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+5. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+6. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+7. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+8. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+9. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+10. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+11. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+12. `IDENTITY_IN_PROSE_POLICY.md`
+13. `CLASSIFICATION_SCHEMA.md`
+14. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+15. `KNOWN_FAILURES.md`
+16. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+17. `ARCHITECTURE.md`
+18. this file
 
 ## 2. Product boundary
 
@@ -166,12 +168,47 @@ runtime-inserted identity                -> KEEP_JP
 reverse substitution                     -> FORBIDDEN
 ```
 
-## 9. Open work
+## 9. TAI5MSG V301 checkpoint
+
+Canonical authority:
+
+`TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+
+Machine-readable checkpoint:
+
+`artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+
+```text
+selected total                              3,370
+R1 UI_DESCRIPTION                          3,347
+R2 NARRATION_SYSTEM                           23
+external caller resolved                   3,179
+external caller evidence wait                191
+current block envelope fit                  1,254
+block growth required                       2,116
+caller resolved + current envelope fit      1,175
+caller resolved + block-growth gate         2,004
+```
+
+Selected internal composition closure:
+
+```text
+outgoing C/J edges              0
+incoming C/J edges              0
+semantic 0x02 insertions        0
+```
+
+Growth blocks: `B17 B19 B20 B21 B22 B23 B24`.
+
+V301 issues no new candidate/classification rows.
+
+## 10. Open work
 
 Still open:
 
 - retain `R2884/R2885` as unresolved until consumer semantics are proven, potentially by later shared-route evidence;
-- TAI5MSG selective message classification;
+- TAI5MSG seven-block growth runtime acceptance;
+- TAI5MSG 191 external-caller evidence waits;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
 - R2/R3 corpus;
@@ -180,7 +217,7 @@ Still open:
 
 Do not re-audit the 139 materialized inline rows because work moves to another container.
 
-## 10. Executable next scope — sole authority
+## 11. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
@@ -191,17 +228,18 @@ SELECTIVE_KO_TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY
 Scope intent:
 
 ```text
-reuse the verified 33-block / 14,832-slot TAI5MSG structural lattice
-classify selected messages by usage/mechanism/owner evidence
-do not treat TAI5MSG as dialogue-only
-do not bulk-import the PC Korean file
-do not begin builder/build/IPS
-keep R2884/R2885 as evidence waits unless independently resolved by new shared-route evidence
+analyze only B17/B19/B20/B21/B22/B23/B24 growth acceptance
+verify loader/parser use of regenerated block offsets/sizes
+verify relocation of following blocks and alignment invariants
+check absolute-offset and EOF/final-block dependencies
+do not mix the 191 external-caller waits into this cause-family
+do not begin candidate materialization, builder, build, or IPS
+keep R2884/R2885 as separate evidence waits
 ```
 
 After reporting that read-only analysis, require another explicit user signal before materialization or implementation.
 
-## 11. Repository write boundary
+## 12. Repository write boundary
 
 Repository writes remain restricted to exactly:
 

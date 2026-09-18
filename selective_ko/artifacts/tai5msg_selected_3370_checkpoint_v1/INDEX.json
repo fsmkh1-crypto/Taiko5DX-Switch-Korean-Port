@@ -1,0 +1,105 @@
+{
+  "schema": "TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V1",
+  "validation_id": "V301",
+  "status": "CANONICAL_READ_ONLY_ANALYSIS_CHECKPOINT",
+  "parent_commit": "bec39bce36e5b267bee8018d5ee89f2ef93c45fe",
+  "authority": "selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md",
+  "tai5msg": {
+    "blocks": 33,
+    "logical_slots": 14832,
+    "locator_cardinality": "1:1",
+    "locator_determinism": "PASS",
+    "switch_original_status": "HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP",
+    "pc_jp": {
+      "size": 1810889,
+      "sha256": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
+    },
+    "pc_ko": {
+      "size": 2134366,
+      "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
+    }
+  },
+  "selected": {
+    "total": 3370,
+    "r1_ui_description": 3347,
+    "r2_narration_system": 23,
+    "unique_switch_owners": 3370,
+    "owner_collisions": 0
+  },
+  "internal_composition": {
+    "all_cj_edges": 11845,
+    "selected_outgoing_cj_edges": 0,
+    "selected_incoming_cj_edges": 0,
+    "selected_semantic_0x02_insertions": 0,
+    "top_level_output_buffer_reset": true,
+    "cross_message_composition": "ABSENT_FOR_SELECTED_POPULATION"
+  },
+  "external_caller": {
+    "resolved_total": 3179,
+    "r1_resolved": 3158,
+    "r2_resolved": 21,
+    "wait_total": 191,
+    "r1_wait": 189,
+    "r2_wait": 2,
+    "wait_breakdown": {
+      "B23:0..93": 94,
+      "B23:616": 1,
+      "B21:44..58": 15,
+      "B32:extras": 79,
+      "B21:39..40": 2
+    }
+  },
+  "capacity": {
+    "current_envelope_fit": 1254,
+    "growth_required": 2116,
+    "current_envelope_fit_by_usage": {
+      "r1": 1252,
+      "r2": 2
+    },
+    "growth_required_by_usage": {
+      "r1": 2095,
+      "r2": 21
+    },
+    "growth_blocks": {
+      "B17": 832,
+      "B19": 2688,
+      "B20": 1728,
+      "B21": 1024,
+      "B22": 17216,
+      "B23": 4736,
+      "B24": 3648
+    },
+    "total_growth_bytes": 31872,
+    "total_growth_hex": "0x7C80"
+  },
+  "combined_partition": {
+    "caller_resolved_current_envelope_fit": 1175,
+    "caller_resolved_growth_gate": 2004,
+    "external_caller_wait": 191
+  },
+  "release_boundary": {
+    "candidate_ids_issued": 0,
+    "classification_ids_issued": 0,
+    "include_ko_rows_issued": 0,
+    "cumulative_candidate_ids": 139,
+    "cumulative_classification_ids": 139,
+    "cumulative_include_ko_rows": 139,
+    "builder_status": "NOT_IMPLEMENTED",
+    "build_status": "NONE",
+    "ips_status": "NONE"
+  },
+  "unchanged_evidence_waits": [
+    "R2884",
+    "R2885"
+  ],
+  "next_scope": "TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_READ_ONLY",
+  "next_scope_growth_blocks": [
+    "B17",
+    "B19",
+    "B20",
+    "B21",
+    "B22",
+    "B23",
+    "B24"
+  ]
+}
