@@ -1,6 +1,6 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
-Date: 2026-09-18 (KST)
+Date: 2026-09-19 (KST)
 Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V308 VALIDATION-BOUNDARY ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
@@ -617,3 +617,47 @@ known B24 semantic misalignment      M227 M228 M229
 ```
 
 Next cause-family is read-only B24 semantic alignment/control-layout audit.
+
+## 20. V322 broad EVENT caller-graph traversal hang
+
+Scope:
+
+`DIALOGUE_SCRIPT_RUNTIME_PC_PATCH_ORACLE_SURVEY_READ_ONLY`
+
+During V322, the investigation reached already-useful bounded EVENT/SNR resource-loader anchors and then expanded into a broad EVENT-subsystem caller/call-flow traversal.
+
+The UI remained on the call-flow/subsequent-code analysis step for more than one hour without completion.
+
+No conclusive internal error code was returned, so the incident is recorded as:
+
+```text
+analysis_path_status = FAILED_BY_UNBOUNDED_EXPANSION_OR_HANG
+tool_defect          = NOT_PROVEN
+repository_write     = NONE
+product_bytes        = NONE
+build/package        = NONE
+```
+
+Do not repeat:
+
+- whole-subsystem recursive caller expansion;
+- unconstrained call-graph traversal from a broad EVENT subsystem root;
+- waiting indefinitely merely because no explicit error banner is shown.
+
+Required replacement method:
+
+```text
+known anchor
+-> finite direct caller/callee census
+-> maximum 1-2 direct call levels
+-> report / checkpoint
+-> fresh authorization before deeper trace
+```
+
+Current allowed next analysis anchor set is bounded to the already-established EVENT path around:
+
+- `0x158A58`;
+- resource getter `0x440A80`;
+- JP `ECF00000.TS5` resource ID 77.
+
+If bounded traversal leaves the declared subsystem or grows beyond the finite planned node set, stop and report rather than recursively expanding it.
