@@ -581,3 +581,39 @@ Do not proceed to package/build integration until the bounded byte-exact offline
 - actual canonical 3,179 serialization;
 - independent reparse;
 - V306 diagnostic SHA comparison.
+
+
+## 19. V313 runtime / reflow audit — do-not-repeat conclusions
+
+Canonical authority:
+
+`selective_ko/TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+
+Runtime evidence closes the following false blockers for the observed V312 Eden route:
+
+- V312 globally not loaded;
+- TAI5MSG LayeredFS globally absent;
+- Korean Mapping/page mapper/font globally nonfunctional.
+
+Content/layout audit adds these prohibitions:
+
+- do not interpret any random Japanese description screen as patch failure without first proving PC-KO payload existence and selected membership;
+- do not infer semantic correctness merely because a PC-KO slot contains Korean codes;
+- do not apply one uniform whitespace-only reflow to all 697 over-width selected messages;
+- do not patch only B24:M227..M229. They are representatives of a common B24 cause-family and require full B24 M221..M344 audit first;
+- do not preserve all PC manual newlines as final layout authority;
+- do not split Korean tokens mechanically at the 40-unit boundary when a legal prior word boundary exists.
+
+Binding V313 partition:
+
+```text
+hard-overflow selected rows              697
+ordinary non-B24 reflow candidates       584
+B0/B21 caller-width waits                  4
+B24 selected rows                         124
+B24 hard-overflow                         109
+B24 body/control skeleton separated       108
+known B24 semantic misalignment      M227 M228 M229
+```
+
+Next cause-family is read-only B24 semantic alignment/control-layout audit.

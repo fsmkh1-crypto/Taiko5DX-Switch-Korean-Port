@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V312 SELECTIVE TAI5MSG EDEN TEST PACKAGE MATERIALIZED / DRIVE ROUNDTRIP VERIFIED / NO HARDWARE
+Status: V313 EDEN RUNTIME PASS / PC COVERAGE + REFLOW AUDIT CLOSED / B24 SEMANTIC-LAYOUT HOLD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,38 +14,40 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
-2. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
-3. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-4. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-5. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-6. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-7. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-8. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-9. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-10. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-11. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-12. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-13. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-14. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-15. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-16. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-17. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-18. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-19. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-20. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-21. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-22. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-23. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-24. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-25. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-26. `IDENTITY_IN_PROSE_POLICY.md`
-27. `CLASSIFICATION_SCHEMA.md`
-28. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-29. `KNOWN_FAILURES.md`
-30. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-31. `ARCHITECTURE.md`
-32. `this file`
+1. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+2. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
+3. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+4. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+5. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+6. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+7. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+8. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+9. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+10. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+11. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+12. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+13. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+14. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+15. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+16. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+17. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+18. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+19. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+20. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+21. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+22. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+23. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+24. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+25. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+26. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+27. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+28. `IDENTITY_IN_PROSE_POLICY.md`
+29. `CLASSIFICATION_SCHEMA.md`
+30. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+31. `KNOWN_FAILURES.md`
+32. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+33. `ARCHITECTURE.md`
+34. `this file`
 
 ## 2. Product boundary
 
@@ -435,7 +437,7 @@ Still open:
 
 - `R2884/R2885` unresolved consumer semantics;
 - TAI5MSG 191 external-caller waits;
-- Eden runtime validation for the exact V312 TAI5MSG package;
+- B24 selected 124-row semantic alignment/control-layout audit;
 - EVENT/TS5 and SNR work;
 - remaining R2/R3 corpus;
 - layout/reflow, mistranslation, help/content-completeness QA;
@@ -521,28 +523,55 @@ hardware                    NOT PERFORMED
 
 The package is an intentionally bounded TAI5MSG 3,179 runtime-test carrier, not the complete 3,318-row selective release.
 
-## 22. Executable next scope — sole authority
+## 22. V313 Eden runtime / PC coverage / reflow audit
+
+Canonical authority:
+
+`TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+
+Machine-readable checkpoint:
+
+`artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
+
+```text
+V312 selected Korean visible in Eden       PASS
+selected rows Korean-bearing              3,179 / 3,179
+PC TAI5MSG Korean-bearing                 13,591
+hard-overflow rows                           697
+ordinary non-B24 reflow candidate             584
+B24 selected                                  124
+B24 hard-overflow                              109
+B24 body/control skeleton separated            108
+proven semantic misalignment              M227 M228 M229
+```
+
+The prior executable runtime-validation scope is closed. The package-loading/font/Mapping route is not the active blocker.
+
+## 23. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_3179_SELECTIVE_EDEN_RUNTIME_VALIDATION`
+`TAI5MSG_B24_124_PC_KO_SEMANTIC_ALIGNMENT_AND_LAYOUT_AUDIT_READ_ONLY`
 
 Authorized:
 
-- use exactly the V312 package identity;
-- define the smallest runtime observation checklist needed to validate TAI5MSG loading/rendering, Mapping/page/font integration and representative selected/unselected behavior;
-- collect Eden observations supplied or produced during the test;
-- classify failures by one cause-family at a time;
-- report and stop.
+- inspect exactly B24 selected M221..M344;
+- compare JP same-slot role/structure to canonical PC-KO same-slot payload;
+- search B24 for duplicate/displaced Korean bodies;
+- inventory body/control/newline skeleton alignment;
+- classify all 124 rows and report common-cause impact.
 
 Not authorized:
 
-- changing package contents while validation is in progress;
-- adding inline 139;
-- EVENT/SNR/CWTDAT/name/yomi/W0/W1/pointer-56 or unrelated content;
-- physical Switch/Atmosphere delivery unless separately authorized.
+- payload repair;
+- whitespace reflow implementation;
+- serializer or package change;
+- build/IPS;
+- inline 139;
+- EVENT/SNR/CWTDAT/name/yomi;
+- repository mutation during the audit.
 
-## 23. Repository write boundary
+## 24. Repository write boundary
 
 ```text
 create_blob -> create_tree -> create_commit -> update_ref(force=false)

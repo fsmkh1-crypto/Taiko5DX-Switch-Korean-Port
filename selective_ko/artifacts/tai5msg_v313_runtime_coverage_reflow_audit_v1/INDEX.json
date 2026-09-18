@@ -1,0 +1,120 @@
+{
+  "schema": "TAI5MSG_V313_RUNTIME_COVERAGE_REFLOW_AUDIT_V1",
+  "validation_id": "V313",
+  "status": "CLOSED_READ_ONLY_AUDIT",
+  "parent_commit": "2856aef8f5dd8a5987a86ecaf69e80ea87788a2b",
+  "authority": "selective_ko/TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md",
+  "runtime": {
+    "eden_android_selected_ko_visible": true,
+    "exefs_ips": "PASS",
+    "layeredfs": "PASS",
+    "tai5msg_selected_visible": "PASS",
+    "mapping_page_font_observed_route": "PASS",
+    "identity_keep_jp_observed": true,
+    "physical_switch": "NOT_TESTED"
+  },
+  "source_identity": {
+    "pc_original_tai5msg": {
+      "size": 1810889,
+      "sha256": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
+    },
+    "pc_korean_tai5msg": {
+      "size": 2134366,
+      "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
+    },
+    "pc_dinput8": {
+      "size": 836096,
+      "sha256": "ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7"
+    }
+  },
+  "coverage": {
+    "total_messages": 14832,
+    "pc_ko_korean_bearing": 13591,
+    "no_korean_code": 1241,
+    "no_korean_byte_identical_jp": 1233,
+    "no_korean_different_jp": 8,
+    "v312_selected": 3179,
+    "v312_selected_korean_bearing": 3179,
+    "v312_selected_byte_identical_jp": 0,
+    "korean_bearing_outside_v312": 10412,
+    "caller_wait": 191,
+    "outside_selected_source_floor": 10221
+  },
+  "width_model": {
+    "halfwidth_limit": 40,
+    "fullwidth_limit": 20,
+    "single_byte_units": 1,
+    "two_byte_units": 2,
+    "control_units": 0
+  },
+  "overflow": {
+    "messages": 697,
+    "over_limit_lines": 1535,
+    "with_existing_pc_newline": 639,
+    "without_pc_newline": 58,
+    "by_block": {
+      "0": 2,
+      "17": 40,
+      "18": 12,
+      "19": 62,
+      "20": 42,
+      "21": 2,
+      "22": 308,
+      "23": 120,
+      "24": 109
+    },
+    "by_caller_family": {
+      "B0_SYSTEM": 2,
+      "HELP_RENDERER_0x220E60": 265,
+      "B21_SYSTEM_PROGRESSION": 2,
+      "B22_DESCRIPTION": 308,
+      "B23_DESCRIPTION": 120
+    },
+    "usage": {
+      "UI_DESCRIPTION": 693,
+      "NARRATION_SYSTEM": 4
+    },
+    "realization": {
+      "REBUILT_BLOCK_GROWTH": 683,
+      "CURRENT_BLOCK_ENVELOPE": 14
+    },
+    "over_40_whitespace_tokens": 0
+  },
+  "partition": {
+    "ordinary_text": 382,
+    "control_integrated": 207,
+    "body_control_skeleton_separated": 108,
+    "ordinary_non_b24_reflow_candidate": 584,
+    "system_width_wait": 4
+  },
+  "b24": {
+    "selected_range": "B24:M221..M344",
+    "selected_rows": 124,
+    "hard_overflow": 109,
+    "body_control_skeleton_separated": 108,
+    "proven_semantic_misalignment": [
+      "B24:M227",
+      "B24:M228",
+      "B24:M229"
+    ],
+    "near_duplicate_targets": [
+      "B24:M327",
+      "B24:M328",
+      "B24:M329"
+    ],
+    "disposition": "HOLD_FOR_FULL_B24_SEMANTIC_ALIGNMENT_AND_LAYOUT_AUDIT"
+  },
+  "runtime_anchor": {
+    "locator": "B23:M094",
+    "candidate_id": "SEL-CAND-001712",
+    "runtime_message_id": 23094,
+    "pc_line_widths": [
+      15,
+      44,
+      36,
+      14,
+      18
+    ]
+  },
+  "next_scope": "TAI5MSG_B24_124_PC_KO_SEMANTIC_ALIGNMENT_AND_LAYOUT_AUDIT_READ_ONLY"
+}
