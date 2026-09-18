@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
 Date: 2026-09-18 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V306 PREIMPLEMENTATION CLOSURE BOUNDARIES ADDED
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V307 SERIALIZER-DESIGN REJECTIONS ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -523,4 +523,38 @@ Binding current release postconditions:
 ```text
 growth      +0x7780
 final size  0x1C1949
+```
+
+
+## 17. V307 serializer-design rejected shortcuts
+
+Canonical authority: `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`.
+
+Do not repeat:
+
+- do not rebuild every B0..B31 declared extent as only `align_up(used,0x40)`; this naive shrink strategy yields aggregate `+0x58C0` for the current corpus instead of canonical `+0x7780`;
+- do not shrink a block below its stock declared envelope merely because Korean target payload is shorter;
+- do not treat B32 like B0..B31; current B32 preserves declared `0xCA80`, physical `0xCA49`, and omits the final `0x37`;
+- do not calculate layout from expected `+0x7780`, `0x1C1949`, `0x1B4F00` or the V306 diagnostic hash; compute layout from inputs and use those only as postconditions;
+- do not begin from full PC-Korean TAI5MSG and restore excluded rows; begin from stock JP and replace exactly V303 membership;
+- do not make `builder/tai5msg.py` the selective policy engine; it remains legacy/reference for the V288/V289/V290 path;
+- do not let the serializer discover, translate, promote, skip, or repair rows beyond V303 membership and exact V304 authority;
+- do not publish a partial output after a guard failure;
+- do not couple the pure TAI5MSG serializer to Mapping/font/ExeFS mutation.
+
+Binding B0..B31 policy:
+
+```text
+required = align_up(effective_used,0x40)
+declared = max(stock_declared, required)
+physical = declared
+```
+
+Binding current B32 policy:
+
+```text
+used-end  0xB8D5
+physical  0xCA49
+declared  0xCA80
+omitted   0x37
 ```

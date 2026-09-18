@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V306 PREIMPLEMENTATION GATE 1-5 CLOSED / 5 OF 5 PASS / NO BUILDER / NO BUILD
+Status: V307 SELECTIVE TAI5MSG SERIALIZER DESIGN MATERIALIZED / NO IMPLEMENTATION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,32 +14,33 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-2. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-3. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-4. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-5. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-6. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-7. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-8. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-9. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-10. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-11. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-12. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-13. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-14. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-15. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-16. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-17. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-18. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-19. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-20. `IDENTITY_IN_PROSE_POLICY.md`
-21. `CLASSIFICATION_SCHEMA.md`
-22. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-23. `KNOWN_FAILURES.md`
-24. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-25. `ARCHITECTURE.md`
-26. `this file`
+1. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+2. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+3. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+4. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+5. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+6. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+7. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+8. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+9. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+10. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+11. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+12. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+13. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+14. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+15. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+16. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+17. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+18. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+19. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+20. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+21. `IDENTITY_IN_PROSE_POLICY.md`
+22. `CLASSIFICATION_SCHEMA.md`
+23. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+24. `KNOWN_FAILURES.md`
+25. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+26. `ARCHITECTURE.md`
+27. `this file`
 
 ## 2. Product boundary
 
@@ -348,48 +349,81 @@ GATE-5 is population-scoped. It closes Mapping/page/font availability for the 99
 
 No builder, serializer, release TAI5MSG, IPS, build or hardware execution exists.
 
-## 15. Open work
+## 15. V307 selective serializer design
+
+Canonical authority:
+
+`TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+
+Binding design summary:
+
+```text
+source lattice          canonical stock JP 14,832
+selected replacement    exact V303 3,179
+correction overlay      exact V304 2 rows
+unselected preservation 11,653 byte-exact JP
+
+B0..B31 declared        max(stock_declared, align_up(used,0x40))
+B32 current declared    0xCA80
+B32 current physical    0xCA49
+B32 current omitted     0x37
+canonical growth        +0x7780
+canonical final size    0x1C1949
+naive shrink growth     +0x58C0 REJECTED
+```
+
+The growth/final-size values are postconditions and must not drive layout calculation.
+
+Existing `builder/tai5msg.py` remains legacy/reference for the historical V288/V289/V290 path. The selective implementation should be isolated, suggested as `builder/selective_tai5msg.py`.
+
+No implementation or gameplay output exists in V307.
+
+## 16. Open work
 
 Still open:
 
-- retain `R2884/R2885` as unresolved until consumer semantics are proven;
-- TAI5MSG 191 external-caller evidence waits;
-- TAI5MSG serializer design and, only after a later explicit signal, implementation;
+- `R2884/R2885` unresolved consumer semantics;
+- TAI5MSG 191 external-caller waits;
+- selective TAI5MSG serializer implementation/offline validation;
+- later package integration with Mapping/page mapper/font;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
 - remaining R2/R3 corpus;
-- runtime layout/reflow, mistranslation, help-completeness and content-completeness QA;
-- forced-minigame and 3+-choice event regression QA;
+- layout/reflow, mistranslation, help/content-completeness QA;
+- forced-minigame and 3+-choice runtime QA;
 - physical Nintendo Switch validation.
 
-Do not re-audit the 3,318 materialized rows or reopen GATE-1..5 merely because work moves to another chat/model.
+Do not re-audit V303/V304/V306/V307 solely because work moves to a new chat/model.
 
-## 16. Executable next scope — sole authority
+## 17. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_READ_ONLY`
+`TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION`
 
-Scope intent:
+Authorized in that next scope:
 
-- READ ONLY design;
-- consume exact V303 3,179 membership;
-- consume exact V304 two-row correction overlay;
-- consume V306 GATE-1..5 contracts;
-- specify fail-closed source/hash/token/mapping guards;
-- specify deterministic block/header/offset/filler reconstruction;
-- specify exact B32 effective physical handling;
-- specify post-emit parse/reparse/hash/size assertions;
-- specify Mapping/page/font package prerequisites without coupling them unnecessarily into the pure RomFS serializer;
-- no serializer implementation;
-- no gameplay-data mutation;
-- no TAI5MSG release output;
-- no IPS/build/package;
-- no hardware execution.
+- create a separate selective TAI5MSG serializer module;
+- implement V303 manifest/shard guards;
+- implement exact V304 overlays;
+- implement V306/V307 block/header/B32 contracts;
+- implement zero-replacement identity regression;
+- implement effective 3,179 reconstruction in memory/temp;
+- implement independent post-emit reparse and offline postcondition checks;
+- add offline tests/reports necessary to validate that module.
 
-After reporting the required analysis, require another explicit user signal before implementation or repository materialization.
+Not authorized by that scope:
 
-## 17. Repository write boundary
+- package integration;
+- broad selective builder integration outside the TAI5MSG module;
+- IPS generation;
+- Eden/Switch runtime package;
+- hardware execution;
+- EVENT/SNR/name/yomi/reflow/translation work.
+
+After the implementation/offline-validation report, require a new explicit user signal before later materialization/build/package/hardware work.
+
+## 18. Repository write boundary
 
 Repository writes remain restricted to exactly:
 
