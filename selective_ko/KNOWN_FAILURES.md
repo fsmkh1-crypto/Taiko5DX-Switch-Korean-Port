@@ -382,3 +382,81 @@ Recovery rule:
 - do not force-rewrite history.
 
 Do not repeat a multiline greedy regex for whole-state section replacement. Use explicit start/end markers or exact section replacement and verify required downstream headings before commit/ref update.
+
+## 14. PC Korean patch historical residual QA hazards
+
+Source status:
+
+- The following items are preserved as user-supplied historical information about issues the PC Korean patch author reportedly stated remained even in an improved release.
+- They are QA/provenance hazards, not independently verified root-cause conclusions.
+- They do not reopen already closed Switch structural facts and do not change the current selective product boundary.
+
+Reported residual issues:
+
+1. Remaining mistranslations still existed.
+2. Manual line-break work remained incomplete in text inside the common event file `ECF00000.TS5` and message files.
+   - Reported message-window width rule: approximately 20 full-width characters or 40 half-width characters per line.
+   - Reported width relation: 2 half-width characters = 1 full-width character.
+   - The author reportedly intended to insert line breaks before forced wrapping but stopped part-way because of the time required.
+3. Some in-game help text remained untranslated, and some deleted/omitted message-file data still required restoration and translation.
+4. Unknown runtime bugs could remain, with forced-minigame events and scenes containing three or more choices specifically mentioned as areas of concern.
+
+### 14.1 Selective-project implications
+
+Do not treat the PC Korean patch payload as a proof of final QA completeness.
+
+Keep these layers separate:
+
+```text
+structural release admission
+-> content completeness / mistranslation audit
+-> layout / reflow QA
+-> runtime event-flow QA
+```
+
+Required future checks when those scopes are opened:
+
+- audit selected PC Korean text for untranslated, deleted, empty, or suspiciously shortened payloads against the corresponding JP slot;
+- treat help-text completeness as its own audit rather than assuming the PC Korean message file is complete;
+- implement/review line wrapping using the actual target UI width model rather than blindly preserving all PC line breaks;
+- include `ECF00000.TS5` and selected TAI5MSG text in line-break QA;
+- include forced-minigame events and scenes with three or more choices in runtime regression coverage;
+- preserve the distinction `build/package PASS != gameplay PASS`.
+
+### 14.2 Historical long place-name / history-screen crash
+
+Reported older-PC-patch symptom:
+
+- before a later improvement, sufficiently long Korean base/place names could crash when opening/calling history information;
+- the exact historical threshold is not considered proven here and was remembered as around 7-8 Korean characters;
+- the concrete example supplied is `히다다카야마마을` (8 Hangul syllables).
+
+Treat this as:
+
+```text
+PLACE_NAME_LONG_LENGTH_HISTORY_CRASH
+status = HISTORICAL_REPORTED_HAZARD
+exact_threshold = UNCONFIRMED
+representative_example = 히다다카야마마을
+```
+
+Do not infer the cause solely from character count. Plausible cause families to investigate only when the identity/name scope is explicitly reopened include:
+
+- fixed-size temporary/history UI buffers;
+- byte-count vs character-count assumptions;
+- descriptor length limits;
+- copy/termination boundaries;
+- secondary consumers of place-name identity data.
+
+Because a later PC patch reportedly improved this issue, future identity/name work must inspect the actual pre-fix vs post-fix PC patch replacement bytes, descriptors, pointers, and runtime handling before designing a Switch-side solution.
+
+Current first-release policy remains unchanged:
+
+```text
+dedicated person/place identity presentation = KEEP_JP
+yomi/reading/sort keys                       = KEEP_JP
+authored Korean identity literals in prose   = PRESERVE_AS_AUTHORED_KO
+```
+
+Therefore this historical long-name crash is not a blocker for the current selective R1/R2 TAI5MSG prose track. It becomes a mandatory regression/provenance item only if dedicated Korean identity/place-name presentation is explicitly reopened.
+
