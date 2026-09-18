@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V311 SELECTIVE TAI5MSG PACKAGE-INTEGRATION IMPLEMENTED / OFFLINE VALIDATED / NO PACKAGE
+Status: V312 SELECTIVE TAI5MSG EDEN TEST PACKAGE MATERIALIZED / DRIVE ROUNDTRIP VERIFIED / NO HARDWARE
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,37 +14,38 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
-2. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-3. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-4. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-5. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-6. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-7. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-8. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-9. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-10. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-11. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-12. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-13. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-14. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-15. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-16. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-17. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-18. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-19. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-20. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-21. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-22. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-23. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-24. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-25. `IDENTITY_IN_PROSE_POLICY.md`
-26. `CLASSIFICATION_SCHEMA.md`
-27. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-28. `KNOWN_FAILURES.md`
-29. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-30. `ARCHITECTURE.md`
-31. `this file`
+1. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+2. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+3. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+4. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+5. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+6. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+7. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+8. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+9. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+10. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+11. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+12. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+13. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+14. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+15. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+16. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+17. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+18. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+19. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+20. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+21. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+22. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+23. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+24. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+25. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+26. `IDENTITY_IN_PROSE_POLICY.md`
+27. `CLASSIFICATION_SCHEMA.md`
+28. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+29. `KNOWN_FAILURES.md`
+30. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+31. `ARCHITECTURE.md`
+32. `this file`
 
 ## 2. Product boundary
 
@@ -434,7 +435,7 @@ Still open:
 
 - `R2884/R2885` unresolved consumer semantics;
 - TAI5MSG 191 external-caller waits;
-- Eden test-package materialization for the V311 TAI5MSG integration slice;
+- Eden runtime validation for the exact V312 TAI5MSG package;
 - EVENT/TS5 and SNR work;
 - remaining R2/R3 corpus;
 - layout/reflow, mistranslation, help/content-completeness QA;
@@ -500,28 +501,48 @@ The module validates and stages components in memory only. It does not publish a
 
 Inline 139 remains an approved but separate Switch-main carrier family and is not part of the V311 TAI5MSG package slice.
 
-## 21. Executable next scope — sole authority
+## 21. V312 Eden test-package materialization
+
+Canonical authority:
+
+`TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+
+```text
+artifact                    Taiko5DX_KR_SELECTIVE_V312_EDEN_TEST.zip
+bytes                       3,320,602
+SHA-256                     cb5fcece2dd793e5de573c7a4380c95f0135eafe41248157da90b80f88036c5e
+entries                     4/4 exact allowlist
+deterministic rebuild       PASS
+Drive upload/download       PASS byte-identical
+Drive path                  Google Drive/GPT/태합입지전/V312_EDEN_TEST_PACKAGE
+inline 139                  NOT INCLUDED
+hardware                    NOT PERFORMED
+```
+
+The package is an intentionally bounded TAI5MSG 3,179 runtime-test carrier, not the complete 3,318-row selective release.
+
+## 22. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION`
+`TAI5MSG_3179_SELECTIVE_EDEN_RUNTIME_VALIDATION`
 
 Authorized:
 
-- materialize exactly the V311 four-file allowlist;
-- use the V311 validated TAI5MSG/font/IPS identities without adding another content family;
-- emit deterministic Eden test-package metadata/ZIP;
-- place the large test artifact in Google Drive and verify transport identity;
+- use exactly the V312 package identity;
+- define the smallest runtime observation checklist needed to validate TAI5MSG loading/rendering, Mapping/page/font integration and representative selected/unselected behavior;
+- collect Eden observations supplied or produced during the test;
+- classify failures by one cause-family at a time;
 - report and stop.
 
 Not authorized:
 
-- hardware execution;
-- physical Switch/Atmosphere delivery;
-- inline 139 integration;
-- EVENT/SNR/CWTDAT/name/yomi/W0/W1/pointer-56 or legacy full-port payloads.
+- changing package contents while validation is in progress;
+- adding inline 139;
+- EVENT/SNR/CWTDAT/name/yomi/W0/W1/pointer-56 or unrelated content;
+- physical Switch/Atmosphere delivery unless separately authorized.
 
-## 22. Repository write boundary
+## 23. Repository write boundary
 
 ```text
 create_blob -> create_tree -> create_commit -> update_ref(force=false)
