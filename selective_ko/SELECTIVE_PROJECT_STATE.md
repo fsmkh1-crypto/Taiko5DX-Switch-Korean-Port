@@ -222,7 +222,7 @@ Do not re-audit the 139 materialized inline rows because work moves to another c
 After a fresh explicit user signal, resume:
 
 ```text
-SELECTIVE_KO_TAI5MSG_SELECTIVE_MESSAGE_CLASSIFICATION_READ_ONLY
+TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_READ_ONLY
 ```
 
 Scope intent:
