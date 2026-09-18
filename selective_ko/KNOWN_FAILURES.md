@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
 Date: 2026-09-18 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V305 EXTERNAL-AUDIT REPEAT-PREVENTION ADDED
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V306 PREIMPLEMENTATION CLOSURE BOUNDARIES ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -490,3 +490,37 @@ The first four constrain the TAI5MSG serializer path. Mapping-to-glyph closure i
 Next bounded read-only scope: TAI5MSG_SELECTIVE_SERIALIZER_IDENTITY_REBUILD_AND_PADDING_PROVENANCE_READ_ONLY.
 
 Do not implement the serializer merely because V305 records these gates.
+
+
+## 16. V306 preimplementation closure — do-not-overgeneralize boundaries
+
+Canonical authority: `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`.
+
+Do not repeat these overgeneralizations:
+
+- do not infer `B32 physical EOF = rebuilt used-end` from the zero-replacement stock identity case;
+- do not shrink B32 declared size merely because the selected payload becomes shorter;
+- do not emit the final stock 55-byte B32 declared-minus-physical tail as writable filler;
+- do not treat `+0x7780` or `0x1C1949` as hard-coded serializer inputs; they are expected recomputed postconditions for the current 3,179-row corpus;
+- do not claim V303 raw payload is control-safe without applying the exact V304 two-row correction overlay;
+- do not treat arbitrary `00` as an allowed TAI5MSG token because the canonical final B32:M242 structural terminator is `...05 05 05 00`;
+- do not import the W0/W1 compact A1..DF font-width family into this TAI5MSG release population; effective compact-Korean usage is zero;
+- do not claim all 2,542 Korean-added Mapping entries have visible glyph closure. V306 GATE-5 is limited to the 992 Hangul codes actually emitted by the effective 3,179 TAI5MSG rows;
+- do not reopen GATE-1..5 without new contradictory binary/runtime evidence.
+
+Binding effective B32 release state:
+
+```text
+used-end       0xB8D5
+physical       0xCA49
+declared       0xCA80
+physical filler 0x1174 bytes
+omitted tail      0x37 bytes
+```
+
+Binding current release postconditions:
+
+```text
+growth      +0x7780
+final size  0x1C1949
+```
