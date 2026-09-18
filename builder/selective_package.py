@@ -347,7 +347,7 @@ def offline_validate(
         require_diagnostic_sha=True,
     )
     if len(tai5msg) != EXPECTED_FINAL_SIZE or _sha(tai5msg) != EXPECTED_DIAGNOSTIC_SHA256:
-        _fail("TAI5MSG_OUTPUT_IDENTITY_MISMATCH", "V309 output identity mismatch")
+        _fail("TAI5MSG_OUTPUT_IDENTITY_MISMATCH", "current selective TAI5MSG output identity mismatch")
 
     ips, _flat = build_integrated_ips(main_blob, mapping_package_blob)
     font = recover_canonical_font(font_part00_blob)

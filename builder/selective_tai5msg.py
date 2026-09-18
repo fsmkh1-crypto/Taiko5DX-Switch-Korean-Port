@@ -8,6 +8,8 @@ from pathlib import Path
 import struct
 from typing import AbstractSet, Iterable, Mapping, Sequence
 
+from builder.tai5msg_corrections import CorrectionOverlayError, MessageCorrection, apply_correction, load_overlay
+
 STOCK_SIZE = 1_810_889
 STOCK_SHA256 = "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
 PC_KO_SIZE = 2_134_366
@@ -24,23 +26,24 @@ EXPECTED_SELECTED = 3_179
 EXPECTED_UNSELECTED = 11_653
 EXPECTED_R1 = 3_158
 EXPECTED_R2 = 21
-EXPECTED_GROWTH = 0x7780
-EXPECTED_FINAL_SIZE = 0x1C1949
-EXPECTED_B32_OFFSET = 0x1B4F00
+EXPECTED_GROWTH = 0x7200
+EXPECTED_FINAL_SIZE = 0x1C13C9
+EXPECTED_B32_OFFSET = 0x1B4980
 EXPECTED_B32_USED_END = 0xB8D5
 EXPECTED_B32_DECLARED = 0xCA80
 EXPECTED_B32_PHYSICAL = 0xCA49
 EXPECTED_B32_OMITTED = 0x37
 EXPECTED_LARGEST_DECLARED = 0x12B00
-EXPECTED_DIAGNOSTIC_SHA256 = "dfcb928f694117bdd51e69d25daf337c14e30c3a7078da3961dc3a570ffe44f9"
+EXPECTED_DIAGNOSTIC_SHA256 = "b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d"
 
 EXPECTED_UNIQUE_TWO_BYTE_CODES = 1_011
-EXPECTED_TWO_BYTE_OCCURRENCES = 225_317
+EXPECTED_TWO_BYTE_OCCURRENCES = 225_866
 EXPECTED_UNIQUE_KOREAN_ADDED_CODES = 992
-EXPECTED_KOREAN_ADDED_OCCURRENCES = 219_354
+EXPECTED_KOREAN_ADDED_OCCURRENCES = 219_210
 
 V303_DIR = Path("selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1")
 V304_DIR = Path("selective_ko/artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1")
+V315_DIR = Path("selective_ko/artifacts/tai5msg_b24_semantic_layout_correction_v1")
 STRUCTURE_DIR = Path("selective_ko/artifacts/tai5msg_structure_index_v1")
 
 
@@ -448,6 +451,25 @@ def load_v304_corrections(repo_root: Path) -> Mapping[tuple[int, int], V304Corre
     return out
 
 
+def load_v315_corrections(repo_root: Path) -> Mapping[tuple[int, int], MessageCorrection]:
+    index_path = repo_root / V315_DIR / "INDEX.json"
+    try:
+        out = load_overlay(index_path, expected_source_identity={"size": PC_KO_SIZE, "sha256": PC_KO_SHA256})
+    except (CorrectionOverlayError, OSError, ValueError, KeyError, TypeError) as exc:
+        _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", str(exc))
+    untouched = {232, 238, 249, 252, 256, 270, 279, 285, 287, 300, 307, 317, 319, 335, 341}
+    expected = {(24, local) for local in range(221, 345) if local not in untouched}
+    if len(out) != 109 or set(out) != expected:
+        _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", f"unexpected V315 locator set/count: {len(out)}")
+    for locator, correction in out.items():
+        local = locator[1]
+        ordinal = 2234 + (local - 221)
+        if correction.candidate_id != f"SEL-CAND-{ordinal:06d}" or correction.classification_id != f"SEL-CLS-{ordinal:06d}":
+            _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", f"id mismatch at {locator}")
+        if correction.operation != "EXACT_REPLACE_MESSAGE":
+            _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", f"operation mismatch at {locator}")
+    return out
+
 def _validate_selected_message(
     message: bytes,
     locator: tuple[int, int],
@@ -619,6 +641,21 @@ def _apply_v304(
     return out
 
 
+def _apply_v315(
+    pc_ko: ParsedTai5Msg,
+    corrections: Mapping[tuple[int, int], MessageCorrection],
+) -> dict[tuple[int, int], bytes]:
+    out: dict[tuple[int, int], bytes] = {}
+    for locator, correction in corrections.items():
+        block, local = locator
+        if block >= len(pc_ko.blocks) or local >= pc_ko.blocks[block].message_count:
+            _fail("LOCATOR_OUT_OF_RANGE", f"V315 locator {locator}")
+        try:
+            out[locator] = apply_correction(pc_ko.blocks[block].messages[local], correction)
+        except CorrectionOverlayError as exc:
+            _fail("V315_SOURCE_GUARD_FAIL", f"{locator}: {exc}")
+    return out
+
 def _validate_current_postconditions(
     stock_blob: bytes,
     emitted: bytes,
@@ -649,6 +686,9 @@ def _validate_current_postconditions(
 def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     membership = load_v303_membership(repo_root)
     corrections = load_v304_corrections(repo_root)
+    b24_corrections = load_v315_corrections(repo_root)
+    if set(corrections) & set(b24_corrections):
+        _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
 
     root = repo_root / STRUCTURE_DIR
     index = json.loads((root / "INDEX.json").read_text(encoding="utf-8"))
@@ -685,6 +725,10 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
         locator: correction.target_length - correction.source_length
         for locator, correction in corrections.items()
     }
+    correction_delta.update({
+        locator: len(correction.target_bytes) - len(correction.source_bytes)
+        for locator, correction in b24_corrections.items()
+    })
 
     metas: list[dict] = []
     file_offset = HEADER_SIZE
@@ -768,7 +812,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
         (21, 0x1C0),
         (22, 0x4340),
         (23, 0xFC0),
-        (24, 0xE40),
+        (24, 0x8C0),
     )
     expected = {
         "selected_rows": EXPECTED_SELECTED,
@@ -806,6 +850,9 @@ def reconstruct_selective_tai5msg(
 
     membership = load_v303_membership(repo_root)
     corrections = load_v304_corrections(repo_root)
+    b24_corrections = load_v315_corrections(repo_root)
+    if set(corrections) & set(b24_corrections):
+        _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
 
     stock = parse_tai5msg(stock_blob)
     pc_ko = parse_tai5msg(pc_ko_blob)
@@ -818,6 +865,7 @@ def reconstruct_selective_tai5msg(
         _fail("STOCK_IDENTITY_MISMATCH", "zero-replacement identity rebuild is not byte-identical")
 
     corrected = _apply_v304(pc_ko, corrections)
+    corrected.update(_apply_v315(pc_ko, b24_corrections))
     targets = _messages_matrix(stock)
     two_byte = Counter()
     korean_added = Counter()

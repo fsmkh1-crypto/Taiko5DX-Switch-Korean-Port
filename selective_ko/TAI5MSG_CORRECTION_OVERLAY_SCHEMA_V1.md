@@ -1,7 +1,7 @@
 # TAI5MSG MESSAGE CORRECTION OVERLAY V1
 
 Date: 2026-09-18 (KST)  
-Status: CANONICAL SCHEMA / UTILITY AVAILABLE / EXISTING V304 PATH NOT MIGRATED
+Status: CANONICAL SCHEMA / V315 ACTIVE / V304 LEGACY PATH NOT MIGRATED
 
 ## 1. Purpose
 
@@ -88,3 +88,11 @@ Overlay application does not itself authorize reflow, membership changes, new tr
 `builder/tai5msg_corrections.py` implements schema parsing and per-message fail-closed application.
 
 V314 intentionally does **not** replace the currently verified V304 path in `builder/selective_tai5msg.py`. That migration would touch the production serializer and therefore remains a separate explicitly authorized implementation scope.
+
+## 7. V315 activation
+
+V315 is the first production selective serializer path to consume this generic overlay schema.
+
+`selective_ko/artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json` supplies 109 `EXACT_REPLACE_MESSAGE` rows for the B24 common-cause correction family.
+
+The previously verified V304 two-row path remains on its legacy loader and is not migrated by V315. The V304 and V315 locator sets are required to be disjoint.

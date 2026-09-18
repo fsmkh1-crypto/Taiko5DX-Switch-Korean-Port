@@ -1,0 +1,52 @@
+{
+  "schema": "TAI5MSG_MESSAGE_CORRECTION_OVERLAY_V1",
+  "validation_id": "V315",
+  "status": "MATERIALIZED_B24_SEMANTIC_LAYOUT_CORRECTION",
+  "source_identity": {
+    "size": 2134366,
+    "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
+  },
+  "scope": {
+    "block": 24,
+    "selected_range": "M221..M344",
+    "changed_rows": 109,
+    "layout_reconstructed": 108,
+    "semantic_corrections": [
+      227,
+      228,
+      229
+    ]
+  },
+  "rows": {
+    "path": "ROWS.jsonl",
+    "bytes": 181233,
+    "sha256": "d9e5d5776b558dcb6cd47b1c3fa911eb6aaf1fb434013b21d7bb7bfe2ac82064",
+    "row_count": 109
+  },
+  "untouched_b24_locals": [
+    232,
+    238,
+    249,
+    252,
+    256,
+    270,
+    279,
+    285,
+    287,
+    300,
+    307,
+    317,
+    319,
+    335,
+    341
+  ],
+  "output_postconditions": {
+    "size": 1840073,
+    "sha256": "b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d",
+    "growth": 29184,
+    "b24_declared": 60608,
+    "b24_used_end": 60581,
+    "b32_offset": 1788288,
+    "b32_used_end": 47317
+  }
+}

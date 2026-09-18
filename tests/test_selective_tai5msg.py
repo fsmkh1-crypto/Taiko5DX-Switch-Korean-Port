@@ -10,6 +10,7 @@ from builder.selective_tai5msg import (
     _is_korean_added_code,
     _validate_selected_message,
     korean_added_code_domain,
+    load_v315_corrections,
     metadata_preflight,
 )
 
@@ -53,20 +54,30 @@ class SelectiveTai5MsgUnitTests(unittest.TestCase):
         with self.assertRaises(SelectiveTai5MsgError):
             _validate_selected_message(b"\x81\x40\x05\x05\x05\x00", (32, 159), mapping)
 
+    def test_v315_b24_correction_overlay(self) -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        corrections = load_v315_corrections(repo_root)
+        self.assertEqual(len(corrections), 109)
+        self.assertNotIn((24, 232), corrections)
+        self.assertNotIn((24, 341), corrections)
+        self.assertEqual(corrections[(24, 227)].target_sha256, "63d1fbd8c880af1218fbd8a51779f02ca8f48e5ab92a8dedcdaeb1575b0e7c0c")
+        self.assertEqual(corrections[(24, 228)].target_sha256, "5b570aa621967923597b2c1649b26abbb8a668c1e788204cf22a8a767e5d5210")
+        self.assertEqual(corrections[(24, 229)].target_sha256, "14b5bd978a162b921c316f9a93b31fb19ecec4e038623583a9ae066e49b26178")
+
     def test_repository_metadata_preflight(self) -> None:
         repo_root = Path(__file__).resolve().parents[1]
         report = metadata_preflight(repo_root)
         self.assertEqual(report.selected_rows, 3179)
-        self.assertEqual(report.growth, 0x7780)
-        self.assertEqual(report.final_size, 0x1C1949)
-        self.assertEqual(report.b32_offset, 0x1B4F00)
+        self.assertEqual(report.growth, 0x7200)
+        self.assertEqual(report.final_size, 0x1C13C9)
+        self.assertEqual(report.b32_offset, 0x1B4980)
         self.assertEqual(report.b32_used_end, 0xB8D5)
         self.assertEqual(report.b32_declared, 0xCA80)
         self.assertEqual(report.b32_physical, 0xCA49)
         self.assertEqual(report.b32_omitted, 0x37)
         self.assertEqual(
             report.growth_blocks,
-            ((17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0xE40)),
+            ((17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0x8C0)),
         )
 
 

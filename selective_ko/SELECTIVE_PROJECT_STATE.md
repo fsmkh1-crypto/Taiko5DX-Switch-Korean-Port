@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V314 FAST SOURCE CACHE + TOOLING CLOSED / B24 SEMANTIC-LAYOUT HOLD UNCHANGED
+Status: V315 B24 CORRECTION IMPLEMENTED / OFFLINE BYTE-EXACT VALIDATED / DIAGNOSTIC PACKAGE PENDING
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,43 +14,45 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
-2. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
-3. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
-4. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
-5. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
-6. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
-7. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
-8. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-9. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-10. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-11. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-12. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-13. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-14. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-15. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-16. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-17. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-18. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-19. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-20. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-21. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-22. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-23. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-24. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-25. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-26. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-27. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-28. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-29. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-30. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-31. `IDENTITY_IN_PROSE_POLICY.md`
-32. `CLASSIFICATION_SCHEMA.md`
-33. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-34. `KNOWN_FAILURES.md`
-35. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-36. `ARCHITECTURE.md`
-37. `this file`
+1. `TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
+2. `artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
+3. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
+4. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
+5. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
+6. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+7. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
+8. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+9. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+10. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+11. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+12. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+13. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+14. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+15. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+16. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+17. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+18. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+19. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+20. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+21. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+22. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+23. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+24. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+25. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+26. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+27. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+28. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+29. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+30. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+31. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+32. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+33. `IDENTITY_IN_PROSE_POLICY.md`
+34. `CLASSIFICATION_SCHEMA.md`
+35. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+36. `KNOWN_FAILURES.md`
+37. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+38. `ARCHITECTURE.md`
+39. `this file`
 
 ## 2. Product boundary
 
@@ -603,3 +605,36 @@ V312 package                 UNCHANGED
 
 Reuse rule: when the V314 source identities and cache hashes match, consume the cache instead of reassembling or re-extracting the PC patcher. The B24 semantic/layout product scope remains unchanged.
 
+## 26. V315 B24 semantic/layout correction
+
+Canonical authority:
+
+`TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
+
+Machine-readable correction artifact:
+
+`artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
+
+```text
+B24 selected                 124
+changed                      109
+layout reconstructed         108
+semantic corrected             3  M227/M228/M229
+unchanged correct             15
+all corrected lines          <= 40 units
+output size                  0x1C13C9
+output sha256                b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d
+B24 declared / used_end      0xECC0 / 0xECA5
+B24 growth                   0x08C0
+B32 offset                   0x1B4980
+runtime capacity             PASS
+package / Eden / hardware    NOT RUN
+```
+
+V312 package bytes are historical after this content change and must not be delivered as the current product build.
+
+Next isolated scope:
+
+`TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION`
+
+Do not begin the ordinary non-B24 584-row reflow family in the same diagnostic build.
