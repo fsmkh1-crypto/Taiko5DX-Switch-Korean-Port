@@ -360,3 +360,25 @@ Switch-original sources may be supplied later under:
 `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
 
 Do not repeatedly request XCI extraction before an actual Switch-structure scope requires it.
+
+
+## 13. V302 SELECTIVE_PROJECT_STATE regex truncation and forward recovery
+
+During V302 checkpoint materialization, the Git-object write route itself was correct, but an in-memory regular-expression replacement used to renumber the required-read list was overly broad because dot matched newlines. The resulting commit:
+
+```text
+9779bd0a5888fe278bc0553c7dfff911a4fdde93
+```
+
+correctly materialized the V302 authority document, machine-readable checkpoint, and root `PROJECT_STATE.md`, but truncated `selective_ko/SELECTIVE_PROJECT_STATE.md` immediately after the required-read list.
+
+No gameplay data, builder, IPS, candidate/classification artifact, or other project file was damaged.
+
+Recovery rule:
+
+- rebuild the selective state from the exact pre-V302 canonical blob at `7940685f56d51ad1cc260d66e5c7d01a69ae861d`;
+- apply V302 edits only through explicit marker-bounded replacements;
+- forward-recover with the allowed Git-object route;
+- do not force-rewrite history.
+
+Do not repeat a multiline greedy regex for whole-state section replacement. Use explicit start/end markers or exact section replacement and verify required downstream headings before commit/ref update.
