@@ -15,6 +15,9 @@ STOCK_SHA256 = "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f
 PC_KO_SIZE = 2_134_366
 PC_KO_SHA256 = "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
 
+V315_INTERMEDIATE_SIZE = 1_840_073
+V315_INTERMEDIATE_SHA256 = "b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d"
+
 BLOCK_COUNT = 33
 MESSAGE_COUNT = 14_832
 HEADER_SIZE = 0x140
@@ -26,24 +29,25 @@ EXPECTED_SELECTED = 3_179
 EXPECTED_UNSELECTED = 11_653
 EXPECTED_R1 = 3_158
 EXPECTED_R2 = 21
-EXPECTED_GROWTH = 0x7200
-EXPECTED_FINAL_SIZE = 0x1C13C9
-EXPECTED_B32_OFFSET = 0x1B4980
+EXPECTED_GROWTH = 0x70C0
+EXPECTED_FINAL_SIZE = 0x1C1289
+EXPECTED_B32_OFFSET = 0x1B4840
 EXPECTED_B32_USED_END = 0xB8D5
 EXPECTED_B32_DECLARED = 0xCA80
 EXPECTED_B32_PHYSICAL = 0xCA49
 EXPECTED_B32_OMITTED = 0x37
 EXPECTED_LARGEST_DECLARED = 0x12B00
-EXPECTED_DIAGNOSTIC_SHA256 = "b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d"
+EXPECTED_DIAGNOSTIC_SHA256 = "fd4c8b9f527f67f667d5fded6bdb4703607b70e8b6addf1f41c5d11ebf93e85c"
 
 EXPECTED_UNIQUE_TWO_BYTE_CODES = 1_011
-EXPECTED_TWO_BYTE_OCCURRENCES = 225_866
+EXPECTED_TWO_BYTE_OCCURRENCES = 225_719
 EXPECTED_UNIQUE_KOREAN_ADDED_CODES = 992
 EXPECTED_KOREAN_ADDED_OCCURRENCES = 219_210
 
 V303_DIR = Path("selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1")
 V304_DIR = Path("selective_ko/artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1")
 V315_DIR = Path("selective_ko/artifacts/tai5msg_b24_semantic_layout_correction_v1")
+V320_DIR = Path("selective_ko/artifacts/tai5msg_b24_native_wrap_layout_correction_v1")
 STRUCTURE_DIR = Path("selective_ko/artifacts/tai5msg_structure_index_v1")
 
 
@@ -470,6 +474,110 @@ def load_v315_corrections(repo_root: Path) -> Mapping[tuple[int, int], MessageCo
             _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", f"operation mismatch at {locator}")
     return out
 
+
+def _b24_layout_line_widths(message: bytes) -> tuple[int, ...]:
+    if not message.endswith(b"\x05\x05\x05"):
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "B24 target terminal mismatch")
+    body = message[:-3]
+    widths: list[int] = []
+    width = 0
+    pos = 0
+    while pos < len(body):
+        value = body[pos]
+        if value == 0x0A:
+            widths.append(width)
+            width = 0
+            pos += 1
+            continue
+        if value == 0x1B:
+            if pos + 1 >= len(body):
+                _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "truncated B24 control")
+            sub = body[pos + 1]
+            if sub in (0x48, 0x6B, 0x4B):
+                pos += 2
+                continue
+            if sub == 0x43 and pos + 2 < len(body) and body[pos + 2] in (0x30, 0x31, 0x33):
+                pos += 3
+                continue
+            _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"unknown B24 control {sub:#x}")
+        if _is_two_byte_lead(value):
+            if pos + 1 >= len(body) or not _is_valid_trail(body[pos + 1]):
+                _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "invalid B24 two-byte glyph")
+            width += 2
+            pos += 2
+            continue
+        width += 1
+        pos += 1
+    widths.append(width)
+    return tuple(widths)
+
+
+def _b24_nonlayout_signature(message: bytes) -> bytes:
+    if not message.endswith(b"\x05\x05\x05"):
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "B24 source/target terminal mismatch")
+    body = message[:-3]
+    out = bytearray()
+    pos = 0
+    while pos < len(body):
+        if body[pos] in (0x0A, 0x20):
+            pos += 1
+            continue
+        if body[pos:pos + 2] == b"\x81\x40":
+            pos += 2
+            continue
+        if body[pos] == 0x1B:
+            if pos + 1 >= len(body):
+                _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "truncated B24 control")
+            sub = body[pos + 1]
+            size = 3 if sub == 0x43 else 2
+            if pos + size > len(body):
+                _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "truncated B24 control")
+            out += body[pos:pos + size]
+            pos += size
+            continue
+        if _is_two_byte_lead(body[pos]):
+            if pos + 1 >= len(body) or not _is_valid_trail(body[pos + 1]):
+                _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "invalid B24 two-byte glyph")
+            out += body[pos:pos + 2]
+            pos += 2
+            continue
+        out.append(body[pos])
+        pos += 1
+    return bytes(out)
+
+
+def load_v320_corrections(repo_root: Path) -> Mapping[tuple[int, int], MessageCorrection]:
+    index_path = repo_root / V320_DIR / "INDEX.json"
+    try:
+        out = load_overlay(
+            index_path,
+            expected_source_identity={
+                "size": V315_INTERMEDIATE_SIZE,
+                "sha256": V315_INTERMEDIATE_SHA256,
+            },
+        )
+    except (CorrectionOverlayError, OSError, ValueError, KeyError, TypeError) as exc:
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", str(exc))
+
+    excluded = {228, 232, 238, 249, 252, 256, 270, 279, 285, 287, 300, 307, 317, 319, 335, 341}
+    expected = {(24, local) for local in range(221, 345) if local not in excluded}
+    if len(out) != 108 or set(out) != expected:
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"unexpected V320 locator set/count: {len(out)}")
+
+    for locator, correction in out.items():
+        local = locator[1]
+        ordinal = 2234 + (local - 221)
+        if correction.candidate_id != f"SEL-CAND-{ordinal:06d}" or correction.classification_id != f"SEL-CLS-{ordinal:06d}":
+            _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"id mismatch at {locator}")
+        if correction.operation != "EXACT_REPLACE_MESSAGE":
+            _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"operation mismatch at {locator}")
+        if _b24_nonlayout_signature(correction.source_bytes) != _b24_nonlayout_signature(correction.target_bytes):
+            _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"semantic/control drift at {locator}")
+        widths = _b24_layout_line_widths(correction.target_bytes)
+        if not widths or len(widths) > 12 or max(widths) > 52:
+            _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", f"52-unit/12-row contract failed at {locator}: {widths}")
+    return out
+
 def _validate_selected_message(
     message: bytes,
     locator: tuple[int, int],
@@ -656,6 +764,22 @@ def _apply_v315(
             _fail("V315_SOURCE_GUARD_FAIL", f"{locator}: {exc}")
     return out
 
+
+def _apply_v320(
+    v315_corrected: Mapping[tuple[int, int], bytes],
+    corrections: Mapping[tuple[int, int], MessageCorrection],
+) -> dict[tuple[int, int], bytes]:
+    out: dict[tuple[int, int], bytes] = {}
+    for locator, correction in corrections.items():
+        source = v315_corrected.get(locator)
+        if source is None:
+            _fail("V320_SOURCE_GUARD_FAIL", f"missing V315 intermediate source at {locator}")
+        try:
+            out[locator] = apply_correction(source, correction)
+        except CorrectionOverlayError as exc:
+            _fail("V320_SOURCE_GUARD_FAIL", f"{locator}: {exc}")
+    return out
+
 def _validate_current_postconditions(
     stock_blob: bytes,
     emitted: bytes,
@@ -687,8 +811,11 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     membership = load_v303_membership(repo_root)
     corrections = load_v304_corrections(repo_root)
     b24_corrections = load_v315_corrections(repo_root)
+    native_wrap_corrections = load_v320_corrections(repo_root)
     if set(corrections) & set(b24_corrections):
         _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
+    if set(native_wrap_corrections) != set(b24_corrections) - {(24, 228)}:
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "V320 must equal V315 layout population exactly")
 
     root = repo_root / STRUCTURE_DIR
     index = json.loads((root / "INDEX.json").read_text(encoding="utf-8"))
@@ -728,6 +855,10 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     correction_delta.update({
         locator: len(correction.target_bytes) - len(correction.source_bytes)
         for locator, correction in b24_corrections.items()
+    })
+    correction_delta.update({
+        locator: len(correction.target_bytes) - len(correction.source_bytes)
+        for locator, correction in native_wrap_corrections.items()
     })
 
     metas: list[dict] = []
@@ -812,7 +943,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
         (21, 0x1C0),
         (22, 0x4340),
         (23, 0xFC0),
-        (24, 0x8C0),
+        (24, 0x780),
     )
     expected = {
         "selected_rows": EXPECTED_SELECTED,
@@ -851,8 +982,11 @@ def reconstruct_selective_tai5msg(
     membership = load_v303_membership(repo_root)
     corrections = load_v304_corrections(repo_root)
     b24_corrections = load_v315_corrections(repo_root)
+    native_wrap_corrections = load_v320_corrections(repo_root)
     if set(corrections) & set(b24_corrections):
         _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
+    if set(native_wrap_corrections) != set(b24_corrections) - {(24, 228)}:
+        _fail("V320_INDEX_OR_ROWS_INTEGRITY_FAIL", "V320 must equal V315 layout population exactly")
 
     stock = parse_tai5msg(stock_blob)
     pc_ko = parse_tai5msg(pc_ko_blob)
@@ -865,7 +999,9 @@ def reconstruct_selective_tai5msg(
         _fail("STOCK_IDENTITY_MISMATCH", "zero-replacement identity rebuild is not byte-identical")
 
     corrected = _apply_v304(pc_ko, corrections)
-    corrected.update(_apply_v315(pc_ko, b24_corrections))
+    v315_corrected = _apply_v315(pc_ko, b24_corrections)
+    corrected.update(v315_corrected)
+    corrected.update(_apply_v320(v315_corrected, native_wrap_corrections))
     targets = _messages_matrix(stock)
     two_byte = Counter()
     korean_added = Counter()

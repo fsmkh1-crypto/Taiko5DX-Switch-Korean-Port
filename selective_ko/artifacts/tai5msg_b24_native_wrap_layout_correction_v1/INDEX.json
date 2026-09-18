@@ -1,0 +1,42 @@
+{
+  "schema": "TAI5MSG_MESSAGE_CORRECTION_OVERLAY_V1",
+  "validation_id": "V320",
+  "status": "MATERIALIZED_B24_NATIVE_WRAP_LAYOUT_CORRECTION",
+  "source_identity": {
+    "size": 1840073,
+    "sha256": "b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d"
+  },
+  "scope": {
+    "block": 24,
+    "layout_rows": 108,
+    "locals": "V315 source_layout_class=LAYOUT_COLLAPSED",
+    "excluded_semantic_only_local": 228,
+    "native_width_units": 52,
+    "max_visual_rows": 12,
+    "decorative_blank_normalization_locals": [
+      221,
+      257,
+      320
+    ],
+    "semantic_corrections_preserved": [
+      227,
+      228,
+      229
+    ]
+  },
+  "rows": {
+    "path": "ROWS.jsonl",
+    "bytes": 195031,
+    "sha256": "f23ece9f76b992abeba57f613975bcc6161c2bb6a46de7f8b9fc5c0887930abe",
+    "row_count": 108
+  },
+  "output_postconditions": {
+    "size": 1839753,
+    "sha256": "fd4c8b9f527f67f667d5fded6bdb4703607b70e8b6addf1f41c5d11ebf93e85c",
+    "growth": 28864,
+    "b24_declared": 60288,
+    "b24_used_end": 60284,
+    "b32_offset": 1787968,
+    "b32_used_end": 47317
+  }
+}

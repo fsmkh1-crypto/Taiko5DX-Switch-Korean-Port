@@ -1,7 +1,7 @@
 # TAI5MSG MESSAGE CORRECTION OVERLAY V1
 
 Date: 2026-09-18 (KST)  
-Status: CANONICAL SCHEMA / V315 ACTIVE / V304 LEGACY PATH NOT MIGRATED
+Status: CANONICAL SCHEMA / V315 + V320 CHAIN ACTIVE / V304 LEGACY PATH NOT MIGRATED
 
 ## 1. Purpose
 
@@ -96,3 +96,26 @@ V315 is the first production selective serializer path to consume this generic o
 `selective_ko/artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json` supplies 109 `EXACT_REPLACE_MESSAGE` rows for the B24 common-cause correction family.
 
 The previously verified V304 two-row path remains on its legacy loader and is not migrated by V315. The V304 and V315 locator sets are required to be disjoint.
+
+## 8. V320 chained activation
+
+V320 adds a second exact-replacement layer for the B24 body-layout family:
+
+`selective_ko/artifacts/tai5msg_b24_native_wrap_layout_correction_v1/INDEX.json`
+
+The V320 overlay has 108 rows and uses the exact V315 corrected messages as its per-row source bytes. Its index source identity is the canonical V315 intermediate TAI5MSG:
+
+```text
+bytes   1,840,073
+sha256  b212da65010d3a2e7ff6f7b8e10ce57371cb67e3093f58a6ad16a085399a8d0d
+```
+
+Application order is binding:
+
+`PC-KO -> V315 semantic/layout correction -> V320 native-wrap body correction`
+
+V320 does not include B24:M228 because that row is semantic/title-only in V315 and is not part of the 108-row body-layout population.
+
+The production serializer must require the V320 locator set to equal the V315 locator set minus B24:M228, must guard every V315 intermediate source message exactly, and must validate the V320 52-unit / 12-row body contract before emission.
+
+V304 remains on its historical legacy loader.

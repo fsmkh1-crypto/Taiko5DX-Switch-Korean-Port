@@ -5,12 +5,15 @@ from builder.selective_tai5msg import (
     ALIGN,
     SelectiveTai5MsgError,
     _align_up,
+    _b24_layout_line_widths,
+    _b24_nonlayout_signature,
     _decrypt,
     _encrypt,
     _is_korean_added_code,
     _validate_selected_message,
     korean_added_code_domain,
     load_v315_corrections,
+    load_v320_corrections,
     metadata_preflight,
 )
 
@@ -64,20 +67,47 @@ class SelectiveTai5MsgUnitTests(unittest.TestCase):
         self.assertEqual(corrections[(24, 228)].target_sha256, "5b570aa621967923597b2c1649b26abbb8a668c1e788204cf22a8a767e5d5210")
         self.assertEqual(corrections[(24, 229)].target_sha256, "14b5bd978a162b921c316f9a93b31fb19ecec4e038623583a9ae066e49b26178")
 
+    def test_v320_b24_native_wrap_overlay(self) -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        corrections = load_v320_corrections(repo_root)
+        self.assertEqual(len(corrections), 108)
+        self.assertIn((24, 221), corrections)
+        self.assertNotIn((24, 228), corrections)
+        self.assertEqual(
+            corrections[(24, 221)].target_sha256,
+            "ff2212aef28bce328d5a2564b8ea1ae499c3b068035794b00cb5212470a51442",
+        )
+        self.assertEqual(
+            corrections[(24, 257)].target_sha256,
+            "26acf8b1ecc24111b46ac25cc5e837e4875ef6b6e4f9629ac9e38e0edd86f288",
+        )
+        self.assertEqual(
+            corrections[(24, 320)].target_sha256,
+            "3834475a5aa1076c3bc43757d780f16a556e0c281dc540aecdc812e6885ad493",
+        )
+        for correction in corrections.values():
+            widths = _b24_layout_line_widths(correction.target_bytes)
+            self.assertLessEqual(len(widths), 12)
+            self.assertLessEqual(max(widths), 52)
+            self.assertEqual(
+                _b24_nonlayout_signature(correction.source_bytes),
+                _b24_nonlayout_signature(correction.target_bytes),
+            )
+
     def test_repository_metadata_preflight(self) -> None:
         repo_root = Path(__file__).resolve().parents[1]
         report = metadata_preflight(repo_root)
         self.assertEqual(report.selected_rows, 3179)
-        self.assertEqual(report.growth, 0x7200)
-        self.assertEqual(report.final_size, 0x1C13C9)
-        self.assertEqual(report.b32_offset, 0x1B4980)
+        self.assertEqual(report.growth, 0x70C0)
+        self.assertEqual(report.final_size, 0x1C1289)
+        self.assertEqual(report.b32_offset, 0x1B4840)
         self.assertEqual(report.b32_used_end, 0xB8D5)
         self.assertEqual(report.b32_declared, 0xCA80)
         self.assertEqual(report.b32_physical, 0xCA49)
         self.assertEqual(report.b32_omitted, 0x37)
         self.assertEqual(
             report.growth_blocks,
-            ((17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0x8C0)),
+            ((17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0x780)),
         )
 
 
