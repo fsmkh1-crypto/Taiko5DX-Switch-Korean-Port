@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
 Date: 2026-09-18 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V307 SERIALIZER-DESIGN REJECTIONS ADDED
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V308 VALIDATION-BOUNDARY ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -558,3 +558,26 @@ physical  0xCA49
 declared  0xCA80
 omitted   0x37
 ```
+
+
+## 18. V308 metadata-PASS is not byte-output PASS
+
+Canonical authority: `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`.
+
+The V308 repository-only metadata replay independently passes V303 shard integrity, V304 exact deletion semantics and V307 block arithmetic.
+
+Do not overclaim it as execution of the new Python serializer.
+
+Current limitation:
+
+```text
+new module byte-exact execution = PENDING
+reason = current container/Python file-mount transport timeout after large PC-patcher attachment
+```
+
+Do not proceed to package/build integration until the bounded byte-exact offline replay executes:
+
+- zero-replacement identity;
+- actual canonical 3,179 serialization;
+- independent reparse;
+- V306 diagnostic SHA comparison.
