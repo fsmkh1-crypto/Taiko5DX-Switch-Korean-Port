@@ -1,0 +1,69 @@
+{
+  "schema": "TAI5MSG_FAST_SOURCE_CACHE_V1",
+  "validation_id": "V314",
+  "status": "CANONICAL_DERIVED_CACHE_POINTER",
+  "purpose": "Avoid repeated reconstruction/re-extraction of the PC v1.02 patcher for already verified TAI5MSG/mapping/B24 source inspection.",
+  "source_identity": {
+    "pc_original_tai5msg": {
+      "size": 1810889,
+      "sha256": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f",
+      "drive_id": "1E6Rq2P4E3DSL9Uk-t1FvoOh6Jx-oFTSJ"
+    },
+    "pc_korean_v1_02_tai5msg": {
+      "size": 2134366,
+      "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090",
+      "drive_id": "1KRueqxUq4f0UdyUWOgfKcch26FOsD5jd"
+    },
+    "pc_dinput8": {
+      "size": 836096,
+      "sha256": "ffe7e9da8e00c96bec631b45a3e9c4d3f314551623351f3e7024e0318913c6b7"
+    },
+    "t5k_rcdata_101": {
+      "size": 613685,
+      "sha256": "5c6f4eba8c6f0516365e4518f27e9d8c840aead463b5a2938dd1e08b99726d29"
+    }
+  },
+  "drive_cache": {
+    "folder_id": "1yn5JMyhLt3Nhjfw4fTPC7PVrAXKXVtyN",
+    "path": "Google Drive/GPT/태합입지전/TAI5MSG_FAST_CACHE_V314",
+    "files": {
+      "pc_korean_tai5msg": {
+        "name": "TAI5MSG_JP_PC_KO_v1.02.DAT",
+        "drive_id": "1KRueqxUq4f0UdyUWOgfKcch26FOsD5jd",
+        "size": 2134366,
+        "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090",
+        "roundtrip": "PASS_BYTE_IDENTICAL"
+      },
+      "mapping10036": {
+        "name": "MAPPING_10036_CACHE.json",
+        "drive_id": "1jlkBuH3_DJLrSo5ljQRP-43NJmxgjWu4",
+        "size": 139920,
+        "sha256": "429dccba3444caf9e63524908f3f00249504da56e60fe5249fb0f1ee0213146f",
+        "entries": 10036,
+        "roundtrip": "PASS_BYTE_IDENTICAL"
+      },
+      "b24_source_cache": {
+        "name": "B24_SOURCE_CACHE.jsonl",
+        "drive_id": "1wtctzo118PQvd31NL3u_t_lZK9766NcY",
+        "size": 312317,
+        "sha256": "bf72cd3b13ff9523e605a752cf479d874e1ec347fbd298e26a707dc8872ab733",
+        "rows": 124,
+        "range": "B24:M221..M344",
+        "roundtrip": "PASS_BYTE_IDENTICAL"
+      }
+    }
+  },
+  "git_anchor_cache": {
+    "path": "B24_ANCHORS.jsonl",
+    "rows": 3,
+    "locators": [
+      "TAI5MSG:B24:M227",
+      "TAI5MSG:B24:M228",
+      "TAI5MSG:B24:M229"
+    ],
+    "bytes": 6260,
+    "sha256": "205c13f48fb6185b15a8c38b3a31cda7f7595a97ef6792152d0b51812e84d6b8"
+  },
+  "reuse_rule": "If source identities and cache hashes match, consume cache/helper output directly. Do not reassemble or re-extract the PC patcher only to re-prove cached bytes. Re-extraction is allowed only after source identity changes, cache integrity fails, or the needed range is not represented by the cache.",
+  "commercial_binaries_committed_to_git": false
+}
