@@ -1,0 +1,191 @@
+{
+  "schema": "TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V1",
+  "validation_id": "V303",
+  "status": "MATERIALIZED",
+  "parent_commit": "ce0e7f2ed5d23849499ba8a3e35e8978aff0787c",
+  "authority": "selective_ko/TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md",
+  "basis": [
+    "selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md",
+    "selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md",
+    "selective_ko/CLASSIFICATION_SCHEMA.md",
+    "selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md",
+    "selective_ko/IDENTITY_IN_PROSE_POLICY.md"
+  ],
+  "source_identity": {
+    "pc_original": {
+      "size": 1810889,
+      "sha256": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
+    },
+    "pc_korean": {
+      "size": 2134366,
+      "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
+    },
+    "switch_original_status": "HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP",
+    "payload_resolution": "canonical file SHA-256 + exact (block,local) locator"
+  },
+  "counts": {
+    "candidate_ids": 3179,
+    "classification_ids": 3179,
+    "include_ko_rows": 3179,
+    "r1_ui_description": 3158,
+    "r2_narration_system": 21,
+    "current_envelope_rows": 1175,
+    "growth_gate_cleared_rows": 2004,
+    "external_caller_wait_excluded": 191
+  },
+  "id_ranges": {
+    "candidate": "SEL-CAND-000140..SEL-CAND-003318",
+    "classification": "SEL-CLS-000140..SEL-CLS-003318"
+  },
+  "resolved_by_block": {
+    "0": 2,
+    "17": 257,
+    "18": 212,
+    "19": 289,
+    "20": 267,
+    "21": 19,
+    "22": 526,
+    "23": 522,
+    "24": 124,
+    "28": 200,
+    "29": 200,
+    "30": 200,
+    "31": 200,
+    "32": 161
+  },
+  "selected_source_floor": {
+    "r1_ui_description": 3347,
+    "r2_narration_system": 23,
+    "total": 3370
+  },
+  "wait_exclusions": {
+    "B23:0..93": 94,
+    "B23:616": 1,
+    "B21:44..58": 15,
+    "B21:39..40": 2,
+    "B32:160,162..176,178..240": 79,
+    "total": 191
+  },
+  "exact_locator_source_ranges": {
+    "R1": [
+      "B17:0..199,202..258",
+      "B18:0..199,204..215",
+      "B19:0..199,202..290",
+      "B20:0..199,202..268",
+      "B21:44..58",
+      "B22:0..354,363..533",
+      "B23:0..616",
+      "B24:221..344",
+      "B28:0..199",
+      "B29:0..199",
+      "B30:0..199",
+      "B31:0..199",
+      "B32:0..160,162..176,178..240,242"
+    ],
+    "R2": [
+      "B0:10..11",
+      "B21:39..40,63..76,78..82"
+    ],
+    "caller_resolved": "selected minus exact 191 wait set"
+  },
+  "realization_distribution": {
+    "CURRENT_BLOCK_ENVELOPE": 1175,
+    "REBUILT_BLOCK_GROWTH": 2004
+  },
+  "rowset": {
+    "row_count": 3179,
+    "row_order": "ascending (block,local)",
+    "uncompressed_bytes": 1055312,
+    "uncompressed_sha256": "142fb44b435fe4a8a0dd7cc91fd147be31182a2402c24e8867af5e3a89a37616",
+    "payload_storage": "LOCATOR_REFERENCED_CANONICAL_SOURCE_NO_DUPLICATED_BYTES"
+  },
+  "invariants": {
+    "unique_candidate_ids": 3179,
+    "unique_classification_ids": 3179,
+    "unique_switch_owner_ids": 3179,
+    "mechanism_static_complete_rows": 3179,
+    "unresolved_rows": 0,
+    "non_include_rows": 0,
+    "manual_override_rows": 0,
+    "cross_message_composition_rows": 0
+  },
+  "identity_policy": {
+    "identity_presentation_fields": "KEEP_JP",
+    "authored_korean_prose_identity_literals": "PRESERVE_AS_AUTHORED_KO",
+    "runtime_inserted_identity": "KEEP_JP",
+    "reverse_substitution": "FORBIDDEN"
+  },
+  "shards": [
+    {
+      "path": "ROWS_01.jsonl",
+      "row_count": 398,
+      "candidate_range": "SEL-CAND-000140..SEL-CAND-000537",
+      "size": 133758,
+      "sha256": "a3463f25101afca45b32e33fa56c59ad7a4e5288b82ce26d68f97e42bd9f461d",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_02.jsonl",
+      "row_count": 398,
+      "candidate_range": "SEL-CAND-000538..SEL-CAND-000935",
+      "size": 133718,
+      "sha256": "faca849c7f285a26998919fbe101625dc10494d4942e9fe828c92b6aaf0012a8",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_03.jsonl",
+      "row_count": 398,
+      "candidate_range": "SEL-CAND-000936..SEL-CAND-001333",
+      "size": 132537,
+      "sha256": "833cb5cfa136b48f095dabe965d791ea81f83d9a8ac1fca16d14618641c7900a",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_04.jsonl",
+      "row_count": 397,
+      "candidate_range": "SEL-CAND-001334..SEL-CAND-001730",
+      "size": 130607,
+      "sha256": "07008c2e81f4f0e9ef7956e70a13b15e130b538c2b24e171d2e54c52e3564586",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_05.jsonl",
+      "row_count": 397,
+      "candidate_range": "SEL-CAND-001731..SEL-CAND-002127",
+      "size": 130613,
+      "sha256": "8aed1558fa3330a32b774a364798e451fa977e6574e7aaf4ffdc5a70de92de5f",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_06.jsonl",
+      "row_count": 397,
+      "candidate_range": "SEL-CAND-002128..SEL-CAND-002524",
+      "size": 131705,
+      "sha256": "9efa047ad5bf27fd58e96b502f85268ab414b97286e7df923fd8b15a7c816182",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_07.jsonl",
+      "row_count": 397,
+      "candidate_range": "SEL-CAND-002525..SEL-CAND-002921",
+      "size": 131187,
+      "sha256": "b560ff48b5ac39cb561312669d4a2624244c22b0f73207774aef5248d6649a99",
+      "encoding": "utf-8-jsonl"
+    },
+    {
+      "path": "ROWS_08.jsonl",
+      "row_count": 397,
+      "candidate_range": "SEL-CAND-002922..SEL-CAND-003318",
+      "size": 131187,
+      "sha256": "6a102a4e21062c8e440c318801d59f44e7c019d155fb738e0dde69fbe26008cc",
+      "encoding": "utf-8-jsonl"
+    }
+  ],
+  "notes": [
+    "Rows are real row-level candidate/classification records; V301 aggregate-only omission is not repeated.",
+    "Canonical PC Korean payload bytes are resolved by exact locator against the globally hashed v1.02 TAI5MSG source; bytes are not duplicated into every row.",
+    "V301 supplies source-role/mechanism/caller closure; V302 supplies block-growth structural acceptance for the 2,004 growth rows.",
+    "INCLUDE_KO is release admission/materialization only. Builder/serializer/build/IPS/hardware execution remain absent.",
+    "Translation, help completeness, line-break/layout and event-flow QA remain separate later gates, including KNOWN_FAILURES section 14."
+  ]
+}

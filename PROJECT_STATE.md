@@ -7,14 +7,14 @@ This file is the sole repository-level project-resume authority.
 Current canonical overlay:
 
 ```text
-scope   TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE / V302
-parent  7940685f56d51ad1cc260d66e5c7d01a69ae861d / V301
+scope   TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION / V303
+parent  ce0e7f2ed5d23849499ba8a3e35e8978aff0787c / V302 state
 ```
 
 All earlier VERIFIED/CLOSED facts, FZ001, Stage1/Stage2, forward-986, Mapping 10,036, Pointer-56, TAI5MSG structure, F1 provenance, V292-V300 policy/results, rejected hypotheses, and Git write restrictions remain inherited unless explicitly superseded below.
 
 <!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302","scope_kind":"READ_ONLY_RUNTIME_STRUCTURE_ACCEPTANCE_CHECKPOINT_MATERIALIZATION","status":"V302_TAI5MSG_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_PASS_NEXT_3179_RELEASE_ADMISSION","last_closed_validation_id":"V302","canonical_base_commit":"7940685f56d51ad1cc260d66e5c7d01a69ae861d","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY","priority_next_focus":"3179_CALLER_RESOLVED_ROWS_REMAINING_RELEASE_GATES_NO_191_WAIT_NO_BUILD","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","inline_v297_authority":"selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","ending_help_v298_authority":"selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","ending_help_v298_artifact":"selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","numeric_v299_authority":"selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","numeric_v299_artifact":"selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","static_v300_authority":"selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","static_v300_artifact":"selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","inline_r1_source_role_objects":141,"inline_r1_materialized_rows":139,"inline_r1_unresolved_rows":2,"inline_r1_unresolved_rnums":["R2884","R2885"],"selective_candidate_ids":139,"selective_classification_ids":139,"selective_include_ko_rows":139,"selective_r1_materialized_rows":139,"selective_builder_status":"NOT_IMPLEMENTED","selective_build_status":"NONE","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_romfs_status":"NOT_YET_SUPPLIED","required_reads":["selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","docs/MASTER_RULE_REGISTRY.md","docs/GITHUB_AND_CI_POLICY.md"],"tai5msg_v301_authority":"selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","tai5msg_v301_artifact":"selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","tai5msg_selected_total":3370,"tai5msg_selected_r1":3347,"tai5msg_selected_r2":23,"tai5msg_exact_switch_owner_bindings":3370,"tai5msg_internal_cross_message_edges_selected":0,"tai5msg_external_caller_resolved":3179,"tai5msg_external_caller_wait":191,"tai5msg_current_envelope_fit":1254,"tai5msg_block_growth_required":2116,"tai5msg_caller_resolved_current_envelope_fit":1175,"tai5msg_caller_resolved_growth_gate":2004,"tai5msg_growth_blocks":["B17","B19","B20","B21","B22","B23","B24"],"switch_tai5msg_original_status":"HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP","tai5msg_v302_authority":"selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","tai5msg_v302_artifact":"selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","tai5msg_switch_main_sha256":"b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b","tai5msg_switch_loader":"0x43F518","tai5msg_switch_message_getter":"0x43F2A4","tai5msg_switch_allocator":"0x43F354","tai5msg_per_block_runtime_capacity":131072,"tai5msg_growth_runtime_acceptance":"PASS_STATIC_RUNTIME_STRUCTURE","tai5msg_growth_gate_2004":"STRUCTURALLY_CLEARED","tai5msg_hardware_execution":"NOT_PERFORMED","tai5msg_next_release_admission_population":3179}
+{"schema":"PROJECT_RESUME_V2","scope_id":"TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303","scope_kind":"CANDIDATE_CLASSIFICATION_ROW_MATERIALIZATION","status":"V303_TAI5MSG_3179_MATERIALIZED_NEXT_BUILDER_SERIALIZER_DESIGN_READ_ONLY","last_closed_validation_id":"V303","canonical_base_commit":"ce0e7f2ed5d23849499ba8a3e35e8978aff0787c","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","priority_next_scope":"TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_READ_ONLY","priority_next_focus":"CONSUME_V303_3179_EXACT_ROWS_FAIL_CLOSED_DESIGN_NO_IMPLEMENTATION_NO_BUILD","historical_full_port_track_status":"FROZEN_DIAGNOSTIC_REFERENCE_CLAIM_SCOPED","legacy_evidence_claim_strength_policy":"selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","inline_v297_authority":"selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","ending_help_v298_authority":"selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","ending_help_v298_artifact":"selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","numeric_v299_authority":"selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","numeric_v299_artifact":"selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","static_v300_authority":"selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","static_v300_artifact":"selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","inline_r1_source_role_objects":141,"inline_r1_materialized_rows":139,"inline_r1_unresolved_rows":2,"inline_r1_unresolved_rnums":["R2884","R2885"],"selective_candidate_ids":3318,"selective_classification_ids":3318,"selective_include_ko_rows":3318,"selective_r1_materialized_rows":3297,"selective_builder_status":"NOT_IMPLEMENTED","selective_build_status":"NONE","identity_presentation_fields":"KEEP_JP","authored_korean_prose_identity_literals":"PRESERVE_AS_AUTHORED_KO","runtime_inserted_identity":"KEEP_JP","identity_reverse_substitution":"FORBIDDEN","switch_original_romfs_status":"NOT_YET_SUPPLIED","required_reads":["selective_ko/TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md","selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json","selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","selective_ko/INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md","selective_ko/artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md","selective_ko/artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json","selective_ko/ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md","selective_ko/artifacts/ending_help_39_candidate_classification_v1/INDEX.json","selective_ko/INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md","selective_ko/LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md","selective_ko/CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md","selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/CLASSIFICATION_SCHEMA.md","selective_ko/SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md","selective_ko/KNOWN_FAILURES.md","selective_ko/SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md","selective_ko/IDENTITY_IN_PROSE_POLICY.md","docs/MASTER_RULE_REGISTRY.md","docs/GITHUB_AND_CI_POLICY.md"],"tai5msg_v301_authority":"selective_ko/TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md","tai5msg_v301_artifact":"selective_ko/artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json","tai5msg_selected_total":3370,"tai5msg_selected_r1":3347,"tai5msg_selected_r2":23,"tai5msg_exact_switch_owner_bindings":3370,"tai5msg_internal_cross_message_edges_selected":0,"tai5msg_external_caller_resolved":3179,"tai5msg_external_caller_wait":191,"tai5msg_current_envelope_fit":1254,"tai5msg_block_growth_required":2116,"tai5msg_caller_resolved_current_envelope_fit":1175,"tai5msg_caller_resolved_growth_gate":2004,"tai5msg_growth_blocks":["B17","B19","B20","B21","B22","B23","B24"],"switch_tai5msg_original_status":"HISTORICALLY_VERIFIED_BYTE_IDENTICAL_TO_PC_JP","tai5msg_v302_authority":"selective_ko/TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md","tai5msg_v302_artifact":"selective_ko/artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json","tai5msg_switch_main_sha256":"b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b","tai5msg_switch_loader":"0x43F518","tai5msg_switch_message_getter":"0x43F2A4","tai5msg_switch_allocator":"0x43F354","tai5msg_per_block_runtime_capacity":131072,"tai5msg_growth_runtime_acceptance":"PASS_STATIC_RUNTIME_STRUCTURE","tai5msg_growth_gate_2004":"STRUCTURALLY_CLEARED","tai5msg_hardware_execution":"NOT_PERFORMED","tai5msg_next_release_admission_population":3179,"selective_r2_materialized_rows":21,"tai5msg_v303_authority":"selective_ko/TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md","tai5msg_v303_artifact":"selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json","tai5msg_v303_materialized_rows":3179,"tai5msg_v303_r1_rows":3158,"tai5msg_v303_r2_rows":21,"tai5msg_v303_candidate_range":"SEL-CAND-000140..SEL-CAND-003318","tai5msg_v303_classification_range":"SEL-CLS-000140..SEL-CLS-003318","tai5msg_v303_rowset_sha256":"142fb44b435fe4a8a0dd7cc91fd147be31182a2402c24e8867af5e3a89a37616"}
 PROJECT_RESUME_V2 -->
 
 ## 1. V300 — ordinary-inline static R1 47 rows materialized
@@ -180,7 +180,7 @@ identity reverse substitution            = FORBIDDEN
 Still open:
 
 - `R2884/R2885` consumer/terminator semantics, retained as evidence waits;
-- TAI5MSG caller-resolved 3,179-row release-admission audit after V302 growth closure;
+- TAI5MSG selective builder/serializer design and later implementation;
 - TAI5MSG external-caller evidence waits: 191 selected rows;
 - EVENT/TS5 production parser/caller inventory;
 - SNR field/record selective parser;
@@ -253,21 +253,49 @@ The next release-admission population is 3,179 caller-resolved rows = 1,175 curr
 
 V302 issues no candidate/classification/INCLUDE_KO rows. Cumulative selective corpus remains 139.
 
-## 12. Next scope
+## 12. V303 — TAI5MSG caller-resolved 3,179 materialized
+
+Canonical V303 authority:
+
+`selective_ko/TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+
+Machine-readable row artifact:
+
+`selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+
+```text
+new candidate/classification/INCLUDE_KO rows  3,179
+R1 UI_DESCRIPTION                            3,158
+R2 NARRATION_SYSTEM                             21
+current-envelope realization                 1,175
+V302 growth-gate-cleared                     2,004
+191 external-caller waits                    EXCLUDED
+ID range                                     000140..003318
+```
+
+Cumulative selective corpus:
+
+```text
+candidate IDs       3,318
+classification IDs  3,318
+INCLUDE_KO rows     3,318
+R1 materialized     3,297
+R2 materialized        21
+```
+
+All 3,179 exact locators are stored row-by-row. Builder, serializer, build and IPS remain absent.
+
+## 13. Next scope
 
 The sole executable next-scope authority is `selective_ko/SELECTIVE_PROJECT_STATE.md`.
 
 After a fresh explicit user signal, resume:
 
-`TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY`
+`TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_READ_ONLY`
 
-Keep the 191 external-caller waits outside that cause-family.
+The next scope is design-only. It must consume the V303 row artifact exactly, keep the 191 caller waits excluded, and must not implement/build/generate IPS until a further explicit user signal.
 
-Keep `R2884` and `R2885` as separate evidence waits.
-
-Do not issue candidate/classification IDs and do not begin builder, serializer, build, or IPS in that read-only scope.
-
-## 13. Repository write boundary
+## 14. Repository write boundary
 
 Remote GitHub writes remain restricted to exactly:
 

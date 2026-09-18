@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V302 TAI5MSG BLOCK-GROWTH RUNTIME ACCEPTANCE PASS / NEXT 3179 RELEASE-ADMISSION READ-ONLY / NO NEW CANDIDATES / NO BUILD
+Status: V303 TAI5MSG 3179 CANDIDATE/CLASSIFICATION MATERIALIZED / 3,318 CUMULATIVE INCLUDE_KO / NO BUILDER / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,26 +14,28 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-2. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-3. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-4. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-5. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-6. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-7. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-8. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-9. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-10. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-11. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-12. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-13. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-14. `IDENTITY_IN_PROSE_POLICY.md`
-15. `CLASSIFICATION_SCHEMA.md`
-16. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-17. `KNOWN_FAILURES.md`
-18. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-19. `ARCHITECTURE.md`
-20. `this file`
+1. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+2. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+3. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+4. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+5. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+6. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+7. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+8. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+9. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+10. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+11. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+12. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+13. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+14. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+15. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+16. `IDENTITY_IN_PROSE_POLICY.md`
+17. `CLASSIFICATION_SCHEMA.md`
+18. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+19. `KNOWN_FAILURES.md`
+20. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+21. `ARCHITECTURE.md`
+22. `this file`
 
 ## 2. Product boundary
 
@@ -53,13 +55,14 @@ Dedicated identity/yomi/date/name-entry and unresolved dynamic grammar remain Ja
 
 ## 3. Current materialized selective corpus
 
-After V300:
+After V303:
 
 ```text
-candidate IDs             139
-classification IDs        139
-INCLUDE_KO rows           139
-R1 materialized rows      139
+candidate IDs             3,318
+classification IDs        3,318
+INCLUDE_KO rows           3,318
+R1 materialized rows      3,297
+R2 materialized rows         21
 ```
 
 Population:
@@ -68,6 +71,7 @@ Population:
 SEL-CAND/SEL-CLS-000001..000039  V298 ending-help STATIC_COMPLETE
 SEL-CAND/SEL-CLS-000040..000092  V299 numeric VARIABLE_INSERT
 SEL-CAND/SEL-CLS-000093..000139  V300 ordinary-inline STATIC_COMPLETE
+SEL-CAND/SEL-CLS-000140..003318  V303 TAI5MSG caller-resolved STATIC_COMPLETE
 ```
 
 Artifacts:
@@ -75,6 +79,7 @@ Artifacts:
 - `artifacts/ending_help_39_candidate_classification_v1/`
 - `artifacts/inline_r1_numeric_53_candidate_classification_v1/`
 - `artifacts/inline_r1_static_47_candidate_classification_v1/`
+- `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/`
 
 No builder/build/IPS/runtime write exists.
 
@@ -228,53 +233,76 @@ hardware execution                NOT PERFORMED
 
 No candidate/classification/INCLUDE_KO rows are issued by V302.
 
-## 11. Open work
+## 11. V303 TAI5MSG 3,179 candidate/classification materialization
+
+Canonical authority:
+
+`TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+
+Machine-readable row artifact:
+
+`artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+
+```text
+new candidate IDs             3,179
+new classification IDs        3,179
+new INCLUDE_KO rows           3,179
+R1 UI_DESCRIPTION             3,158
+R2 NARRATION_SYSTEM              21
+current-envelope realization  1,175
+growth-gate-cleared           2,004
+external-caller waits excluded  191
+ID range                      000140..003318
+```
+
+Cumulative selective corpus is 3,318 candidate/classification/INCLUDE_KO rows.
+
+V303 stores all 3,179 exact row locators in eight UTF-8 JSONL shards. Payload provenance is canonical PC-Korean TAI5MSG SHA-256 plus exact block/local locator.
+
+Builder, serializer, build, IPS and hardware execution remain absent.
+
+## 12. Open work
 
 Still open:
 
-- retain `R2884/R2885` as unresolved until consumer semantics are proven, potentially by later shared-route evidence;
-- TAI5MSG caller-resolved 3,179-row release-admission audit after V302 growth closure;
+- retain `R2884/R2885` as unresolved until consumer semantics are proven;
 - TAI5MSG 191 external-caller evidence waits;
+- TAI5MSG selective builder/serializer design and later implementation;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
-- R2/R3 corpus;
-- builder/serializer/build/IPS;
-- runtime font/layout/translation QA.
+- remaining R2/R3 corpus;
+- runtime font/layout/translation/help-completeness QA;
+- forced-minigame and 3+-choice event regression QA.
 
-Do not re-audit the 139 materialized inline rows because work moves to another container.
+Do not re-audit the 3,318 materialized rows merely because work moves to another chat/model.
 
-## 12. Executable next scope — sole authority
+## 13. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
 ```text
-TAI5MSG_CALLER_RESOLVED_3179_RELEASE_ADMISSION_READ_ONLY
-```
-
-Scope population:
-
-```text
-R1 caller-resolved  3,158
-R2 caller-resolved     21
-total                3,179
+TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_READ_ONLY
 ```
 
 Scope intent:
 
 ```text
-reuse V301 source-role/mechanism/caller closure
-reuse V302 block-growth/capacity structural acceptance
-audit remaining common release gates for exactly the 3,179 caller-resolved rows
-check provenance / PC occurrence conflict / risk flags / transport requirements / identity-policy applicability
-derive terminal release dispositions without issuing candidate/classification IDs
-keep the 191 external-caller waits outside this cause-family
-do not begin builder, serializer, build, or IPS
-keep R2884/R2885 as separate evidence waits
+consume exactly the V303 3,179-row artifact
+bind canonical PC-Korean payload by global SHA-256 + exact locator
+design fail-closed original/source guards
+design mapping/font coverage gates for every emitted Korean code
+design deterministic TAI5MSG block reconstruction and offset regeneration
+reuse V302 0x20000 per-block runtime capacity and growth closure
+preserve 191 caller waits outside the build population
+no implementation
+no TAI5MSG output generation
+no IPS/build/package
+no hardware execution
 ```
 
-After reporting that read-only analysis, require another explicit user signal before candidate/classification materialization or implementation.
+After reporting that read-only design, require another explicit user signal before implementation.
 
-## 13. Repository write boundary
+## 14. Repository write boundary
 
 Repository writes remain restricted to exactly:
 
