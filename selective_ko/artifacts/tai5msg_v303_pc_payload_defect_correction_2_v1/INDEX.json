@@ -1,0 +1,39 @@
+{
+  "schema": "TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V1",
+  "validation_id": "V304",
+  "status": "MATERIALIZED",
+  "authority": "selective_ko/TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md",
+  "source_v303": "selective_ko/artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json",
+  "row_count": 2,
+  "affected_candidates": [
+    "SEL-CAND-000669",
+    "SEL-CAND-002816"
+  ],
+  "affected_classifications": [
+    "SEL-CLS-000669",
+    "SEL-CLS-002816"
+  ],
+  "locators": [
+    "TAI5MSG:B19:M058",
+    "TAI5MSG:B30:M058"
+  ],
+  "verdict": "PAYLOAD_DEFECT",
+  "source_pc_korean_tai5msg": {
+    "size": 2134366,
+    "sha256": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090"
+  },
+  "correction_policy": "Exact source-message guard -> exact single-byte delete -> exact target-message hash guard; any mismatch aborts.",
+  "v303_membership_unchanged": true,
+  "v303_row_count_unchanged": 3179,
+  "cumulative_candidate_ids_unchanged": 3318,
+  "cumulative_classification_ids_unchanged": 3318,
+  "cumulative_include_ko_rows_unchanged": 3318,
+  "rows": {
+    "path": "ROWS.jsonl",
+    "bytes": 4582,
+    "sha256": "17714de6f54c6e8eeab85166845394344bbb283392d7ec19d24b294e7869ac52"
+  },
+  "builder_status": "NOT_IMPLEMENTED",
+  "build_status": "NONE",
+  "ips_status": "NONE"
+}

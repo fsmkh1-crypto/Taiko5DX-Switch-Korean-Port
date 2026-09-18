@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-18 (KST)
-Status: V303 TAI5MSG 3179 CANDIDATE/CLASSIFICATION MATERIALIZED / 3,318 CUMULATIVE INCLUDE_KO / NO BUILDER / NO BUILD
+Status: V304 TAI5MSG V303 PC PAYLOAD DEFECT CORRECTION 2 MATERIALIZED / COUNTS UNCHANGED / NO BUILDER / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,28 +14,30 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-2. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+1. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+2. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+5. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+6. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
 3. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
 4. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-5. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-6. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-7. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-8. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-9. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-10. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-11. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-12. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-13. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-14. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-15. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-16. `IDENTITY_IN_PROSE_POLICY.md`
-17. `CLASSIFICATION_SCHEMA.md`
-18. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-19. `KNOWN_FAILURES.md`
-20. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-21. `ARCHITECTURE.md`
-22. `this file`
+7. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+8. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+9. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+10. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+11. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+12. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+13. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+14. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+15. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+16. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+17. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+18. `IDENTITY_IN_PROSE_POLICY.md`
+19. `CLASSIFICATION_SCHEMA.md`
+20. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+21. `KNOWN_FAILURES.md`
+22. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+23. `ARCHITECTURE.md`
+24. `this file`
 
 ## 2. Product boundary
 
@@ -261,13 +263,38 @@ V303 stores all 3,179 exact row locators in eight UTF-8 JSONL shards. Payload pr
 
 Builder, serializer, build, IPS and hardware execution remain absent.
 
-## 12. Open work
+## 12. V304 TAI5MSG PC payload-defect correction overlay
+
+Canonical authority:
+
+`TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+
+Machine-readable correction artifact:
+
+`artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+
+```text
+correction rows                 2
+affected candidates             000669 / 002816
+affected locators               B19:58 / B30:58
+verdict                         PAYLOAD_DEFECT
+V303 membership                 unchanged 3,179
+candidate/classification count  unchanged 3,318 cumulative
+INCLUDE_KO count                unchanged 3,318 cumulative
+builder/build/IPS               NONE
+```
+
+A future builder must apply V304 only after an exact canonical PC-KO file guard and exact per-message source hash guard. Any mismatch aborts.
+
+For all other 3,177 V303 TAI5MSG rows, exact canonical PC-KO locator payload remains the target.
+
+## 13. Open work
 
 Still open:
 
 - retain `R2884/R2885` as unresolved until consumer semantics are proven;
 - TAI5MSG 191 external-caller evidence waits;
-- TAI5MSG selective builder/serializer design and later implementation;
+- TAI5MSG selective builder/serializer design consuming V303 + V304 overlay, then later implementation;
 - EVENT/TS5 production parser/caller coverage;
 - SNR field/record selective parsing;
 - remaining R2/R3 corpus;
@@ -276,7 +303,7 @@ Still open:
 
 Do not re-audit the 3,318 materialized rows merely because work moves to another chat/model.
 
-## 13. Executable next scope — sole authority
+## 14. Executable next scope — sole authority
 
 After a fresh explicit user signal, resume:
 
@@ -288,11 +315,12 @@ Scope intent:
 
 ```text
 consume exactly the V303 3,179-row artifact
+apply the V304 2-row payload correction overlay fail-closed
 bind canonical PC-Korean payload by global SHA-256 + exact locator
 design fail-closed original/source guards
 design mapping/font coverage gates for every emitted Korean code
 design deterministic TAI5MSG block reconstruction and offset regeneration
-reuse V302 0x20000 per-block runtime capacity and growth closure
+reuse V302 0x20000 per-block runtime capacity closure
 preserve 191 caller waits outside the build population
 no implementation
 no TAI5MSG output generation
@@ -302,7 +330,7 @@ no hardware execution
 
 After reporting that read-only design, require another explicit user signal before implementation.
 
-## 14. Repository write boundary
+## 15. Repository write boundary
 
 Repository writes remain restricted to exactly:
 
