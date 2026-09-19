@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-19 (KST)
-Status: V323 DIALOGUE EVENT INTERPRETER / PC ECF PAYLOAD CHECKPOINT / EXACT COMMAND CENSUS PENDING
+Status: V324 DIALOGUE EVENT TS5 SWITCH PARITY + EXACT CENSUS CLOSED / CODE-GLYPH PRODUCT ADMISSION AUDIT NEXT
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -14,54 +14,55 @@ This file is the sole executable next-scope authority for the selective product 
 
 Required reads, in authority order:
 
-1. `DIALOGUE_EVENT_TS5_INTERPRETER_PC_PAYLOAD_CHECKPOINT_V323.md`
-2. `DIALOGUE_SCRIPT_RUNTIME_PC_PATCH_ORACLE_SURVEY_CHECKPOINT_V322.md`
-3. `TAI5MSG_B24_V320_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V321.md`
-4. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
-5. `artifacts/tai5msg_b24_native_wrap_layout_correction_v1/INDEX.json`
-6. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_DESIGN_V319.md`
-7. `TAI5MSG_B24_V317_EDEN_RUNTIME_ROOT_CAUSE_CLOSURE_V318.md`
-8. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V317.md`
-9. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_DESIGN_V316.md`
-10. `TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
-11. `artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
-12. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
-13. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
-14. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
-15. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
-16. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
-17. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
-18. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
-19. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-20. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-21. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-22. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-23. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-24. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-25. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-26. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-27. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-28. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-29. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-30. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-31. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-32. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-33. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-34. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-35. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-36. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-37. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-38. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-39. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-40. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-41. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-42. `IDENTITY_IN_PROSE_POLICY.md`
-43. `CLASSIFICATION_SCHEMA.md`
-44. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-45. `KNOWN_FAILURES.md`
-46. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-47. `ARCHITECTURE.md`
-48. `this file`
+1. `DIALOGUE_EVENT_TS5_SWITCH_PARITY_AND_CENSUS_CHECKPOINT_V324.md`
+2. `DIALOGUE_EVENT_TS5_INTERPRETER_PC_PAYLOAD_CHECKPOINT_V323.md`
+3. `DIALOGUE_SCRIPT_RUNTIME_PC_PATCH_ORACLE_SURVEY_CHECKPOINT_V322.md`
+4. `TAI5MSG_B24_V320_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V321.md`
+5. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
+6. `artifacts/tai5msg_b24_native_wrap_layout_correction_v1/INDEX.json`
+7. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_DESIGN_V319.md`
+8. `TAI5MSG_B24_V317_EDEN_RUNTIME_ROOT_CAUSE_CLOSURE_V318.md`
+9. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V317.md`
+10. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_DESIGN_V316.md`
+11. `TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
+12. `artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
+13. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
+14. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
+15. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
+16. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+17. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
+18. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+19. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+20. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+21. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+22. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+23. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+24. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+25. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+26. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+27. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+28. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+29. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+30. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+31. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+32. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+33. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+34. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+35. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+36. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+37. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+38. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+39. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+40. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+41. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+42. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+43. `IDENTITY_IN_PROSE_POLICY.md`
+44. `CLASSIFICATION_SCHEMA.md`
+45. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+46. `KNOWN_FAILURES.md`
+47. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+48. `ARCHITECTURE.md`
+49. `this file`
 
 ## 2. Product boundary
 
@@ -900,3 +901,55 @@ Exact next scope after a fresh explicit execution signal:
 `DIALOGUE_EVENT_TS5_PC_PATCH_EXACT_COMMAND_CENSUS_READ_ONLY`
 
 Use a finite command-boundary walker. Do not raw-scan opcode bytes, re-run broad caller graphs, or expand to a full 96-opcode semantic grammar merely to complete the census.
+
+
+## V324 — dialogue EVENT TS5 Switch parity and exact census
+
+Canonical authority:
+
+`DIALOGUE_EVENT_TS5_SWITCH_PARITY_AND_CENSUS_CHECKPOINT_V324.md`
+
+Closed:
+
+- Switch v1.1.3 `ECF00000.TS5` is byte-exact identical to the PC-original manifest identity: 931,936 bytes / `bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09`;
+- PC-Korean `ECF00000.TS5` remains 1,156,480 bytes / `0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe`;
+- 782 entrypoints / 783 offsets / first entrypoint 0xC44 remain structurally aligned;
+- the offset table is an entrypoint table, not a non-overlapping script-partition table;
+- finite Switch-interpreter walker closes 782/782 PC-Korean entrypoints;
+- unique target commands: 4,444;
+- unique message commands: 4,193;
+- unique choice commands: 251;
+- unique choice strings: 504;
+- explicit newline bytes inside message payloads: 4,212;
+- inline 0x1B inside visible message/choice strings: 0;
+- 271/782 entrypoints contradict the old non-overlapping partition model;
+- no product bytes, builder, build, package or IPS changed.
+
+Rejected/do-not-repeat:
+
+- offset[i+1] as the runtime end of entrypoint i;
+- any opcode byte >0x60 as automatic walker failure;
+- full 96-opcode semantic RE as a prerequisite for the finite census;
+- a Switch-specific TS5 serializer solely because the platform differs;
+- mandatory paired ECF00000.TE5 replacement for the PC TS5 payload.
+
+Exact next scope after a fresh explicit user signal:
+
+`ECF00000_PC_KO_SWITCH_CODE_GLYPH_AND_PRODUCT_ADMISSION_AUDIT_READ_ONLY`
+
+Authorized next:
+
+- exact PC-KO EVENT game-code inventory;
+- Mapping 10,036 closure;
+- visible-glyph/font closure;
+- identity/dynamic-grammar product-admission classification;
+- layout/reflow QA inventory.
+
+Not authorized next:
+
+- RomFS replacement;
+- build/package/IPS;
+- translation edits;
+- unrelated EVENT files;
+- SNR implementation;
+- repository gameplay-byte mutation.
