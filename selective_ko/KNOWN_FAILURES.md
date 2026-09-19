@@ -661,3 +661,43 @@ Current allowed next analysis anchor set is bounded to the already-established E
 - JP `ECF00000.TS5` resource ID 77.
 
 If bounded traversal leaves the declared subsystem or grows beyond the finite planned node set, stop and report rather than recursively expanding it.
+
+
+## 21. V323 PC ECF00000 exact-census preparation stall
+
+Scope:
+
+`DIALOGUE_EVENT_TS5_PC_PATCH_TEXT_LAYOUT_ORACLE_READ_ONLY`
+
+The exact PC v1.02 patcher and patched `ECF00000.TS5` were already known from V322, but two follow-up attempts spent excessive time in repeated input identification/parser preparation before producing the requested finite 782-script command census. One attempt remained active for more than 30 minutes without a completed census.
+
+```text
+analysis_path_status  FAILED_TO_REACH_BOUNDED_CENSUS_IN_TIME
+tool_defect           NOT_PROVEN
+pc_patcher_identity   RECONFIRMED_BYTE_EXACT
+pc_ecf_payload        RECONFIRMED_BYTE_EXACT
+exact_command_census  NOT_COMPLETED
+repository_product    UNCHANGED
+build/package         NONE
+```
+
+Do not repeat:
+
+- re-search or reconstruct the PC patcher when the exact input already matches SHA-256 `109dc729e66df8cd0a47c5f6c24719260eb03a89890a0c69d3ba739145dcfb23`;
+- re-extract/re-identify `ECF00000.TS5` when it already matches SHA-256 `0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe`;
+- search indefinitely for a pre-existing TS5 parser before attempting the finite corpus walk;
+- reverse-engineer all 96 opcode semantics before counting the known message/choice family;
+- use raw byte scans as an opcode census.
+
+Required replacement:
+
+```text
+verified 782-script offset table
+-> finite command-boundary walker
+-> resolve only lengths needed for safe stepping
+-> count 0x11 / 0x12 / 0x13 / 0x15 and message 0x0A / 0x1B
+-> stop on first unknown boundary with exact script+offset
+-> report before broader grammar work
+```
+
+This failure does not invalidate the bounded Switch interpreter findings recorded by V323.
