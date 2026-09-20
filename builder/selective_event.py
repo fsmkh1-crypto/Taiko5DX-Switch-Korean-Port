@@ -28,6 +28,13 @@ GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS = (
     DYNAMIC_SWITCH_SPAN_ORIGINAL_STARTS | FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS
 )
 
+# kind, original_start, opcode, canonical original Switch-runtime span
+SWITCH_SPECIAL_SPAN_SPECS = (
+    ("EVENT_04", 0xCBBB0, 0x04, 456),
+    ("EVENT_04", 0x65F40, 0x04, 92),
+    ("BRANCH_09", 0x7E1B0, 0x09, 2612),
+)
+
 
 class SelectiveEventError(RuntimeError):
     def __init__(self, code: str, detail: str):
@@ -55,6 +62,26 @@ class BranchRepairPlan:
     stage_count: int
     intrusion: int
     original_span: int
+    original_start: int
+
+
+@dataclass(frozen=True)
+class SwitchSpecialSpanPlan:
+    kind: str
+    partition_index: int
+    opcode: int
+    original_start: int
+    original_span: int
+    original_target: int
+    owner_item_index: int
+    owner_inner_offset: int
+    target_item_index: int
+
+
+@dataclass(frozen=True)
+class FalseEvent02NonOwner:
+    partition_index: int
+    item_index: int
     original_start: int
 
 
@@ -443,6 +470,243 @@ def repair_generic_branch_items(
             current_span,
             plan.intrusion,
         )
+
+    return tuple(current)
+
+
+def _partition_for_original_offset(parsed: ParsedEventTs5, offset: int) -> EventPartition:
+    for partition in parsed.partitions:
+        if partition.start <= offset < partition.end:
+            return partition
+    _fail("SPECIAL_OWNER_PARTITION_NOT_FOUND", f"offset={offset:#x}")
+
+
+def _locate_grouped_item(items: Sequence[GroupedItem], offset: int) -> tuple[int, int]:
+    for index, item in enumerate(items):
+        end = item.start + len(item.data)
+        if item.start <= offset < end:
+            return index, offset - item.start
+    _fail("SPECIAL_OWNER_ITEM_NOT_FOUND", f"offset={offset:#x}")
+
+
+def _locate_grouped_boundary(items: Sequence[GroupedItem], offset: int) -> int:
+    for index, item in enumerate(items):
+        if item.start == offset:
+            return index
+    if items and items[-1].start + len(items[-1].data) == offset:
+        return len(items)
+    _fail("SPECIAL_TARGET_BOUNDARY_NOT_FOUND", f"offset={offset:#x}")
+
+
+def _decode_switch_runtime_09_span(header: bytes) -> int:
+    if len(header) < 4 or header[0] != 0x09:
+        _fail("SPECIAL_OWNER_HEADER_MISMATCH", f"expected 09 header={header[:4].hex()}")
+    return (int.from_bytes(header[:4], "little") >> 19) << 2
+
+
+def _encode_switch_special_span(kind: str, header: bytes, current_span: int) -> bytes:
+    if len(header) != 4:
+        _fail("SPECIAL_OWNER_HEADER_MISMATCH", f"kind={kind} header_len={len(header)}")
+
+    if kind == "EVENT_04":
+        if header[0] != 0x04:
+            _fail("SPECIAL_OWNER_HEADER_MISMATCH", f"expected 04 header={header.hex()}")
+        encoded = current_span * 2
+        if encoded > 0xFFFF:
+            _fail("SPECIAL_SPAN_FIELD_OVERFLOW", f"kind={kind} span={current_span}")
+        updated = bytearray(header)
+        updated[2:4] = encoded.to_bytes(2, "little")
+        return bytes(updated)
+
+    if kind == "BRANCH_09":
+        if header[0] != 0x09:
+            _fail("SPECIAL_OWNER_HEADER_MISMATCH", f"expected 09 header={header.hex()}")
+        if current_span % 4:
+            _fail(
+                "SPECIAL_SPAN_NOT_REPRESENTABLE",
+                f"kind={kind} span={current_span} is not divisible by 4",
+            )
+        units = current_span // 4
+        if units >= (1 << 13):
+            _fail("SPECIAL_SPAN_FIELD_OVERFLOW", f"kind={kind} units={units:#x}")
+        word = int.from_bytes(header, "little")
+        low19 = word & ((1 << 19) - 1)
+        return (low19 | (units << 19)).to_bytes(4, "little")
+
+    _fail("UNSUPPORTED_SPECIAL_SPAN_KIND", kind)
+
+
+def analyze_switch_special_span_plans(
+    parsed: ParsedEventTs5,
+) -> tuple[SwitchSpecialSpanPlan, ...]:
+    """Bind the three V333/V334 Switch-only span owners to original item anchors."""
+    plans: list[SwitchSpecialSpanPlan] = []
+    for kind, original_start, opcode, expected_span in SWITCH_SPECIAL_SPAN_SPECS:
+        partition = _partition_for_original_offset(parsed, original_start)
+        relative = original_start - partition.start
+        header = partition.data[relative:relative + 4]
+        if len(header) != 4 or header[0] != opcode:
+            _fail(
+                "SPECIAL_OWNER_HEADER_MISMATCH",
+                f"start={original_start:#x} expected={opcode:#x} header={header.hex()}",
+            )
+
+        if kind == "EVENT_04":
+            encoded = int.from_bytes(header[2:4], "little")
+            if encoded % 2:
+                _fail("SPECIAL_SPAN_DECODE_FAIL", f"start={original_start:#x} encoded={encoded:#x}")
+            original_span = encoded // 2
+        elif kind == "BRANCH_09":
+            original_span = _decode_switch_runtime_09_span(header)
+        else:
+            _fail("UNSUPPORTED_SPECIAL_SPAN_KIND", kind)
+
+        if original_span != expected_span:
+            _fail(
+                "SPECIAL_SPAN_CANONICAL_MISMATCH",
+                f"start={original_start:#x} span={original_span} expected={expected_span}",
+            )
+
+        original_target = original_start + original_span
+        if original_target > partition.end:
+            _fail(
+                "SPECIAL_TARGET_OUTSIDE_PARTITION",
+                f"start={original_start:#x} target={original_target:#x} end={partition.end:#x}",
+            )
+
+        owner_item_index, owner_inner_offset = _locate_grouped_item(
+            partition.grouped_items, original_start
+        )
+        target_item_index = _locate_grouped_boundary(
+            partition.grouped_items, original_target
+        )
+
+        if kind == "BRANCH_09":
+            next_09 = None
+            for pos in range(original_start + 4, partition.end, 4):
+                rel = pos - partition.start
+                if partition.data[rel] == 0x09:
+                    next_09 = pos
+                    break
+            if next_09 != original_target:
+                _fail(
+                    "SPECIAL_09_NEXT_BOUNDARY_MISMATCH",
+                    f"start={original_start:#x} target={original_target:#x} next09={next_09}",
+                )
+
+        plans.append(
+            SwitchSpecialSpanPlan(
+                kind=kind,
+                partition_index=partition.index,
+                opcode=opcode,
+                original_start=original_start,
+                original_span=original_span,
+                original_target=original_target,
+                owner_item_index=owner_item_index,
+                owner_inner_offset=owner_inner_offset,
+                target_item_index=target_item_index,
+            )
+        )
+    return tuple(plans)
+
+
+def analyze_false_event_02_nonowners(
+    parsed: ParsedEventTs5,
+) -> tuple[FalseEvent02NonOwner, ...]:
+    """Lock the two V333/V334 0x0A-expression operands out of branch ownership."""
+    result: list[FalseEvent02NonOwner] = []
+    for original_start in sorted(FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS):
+        partition = _partition_for_original_offset(parsed, original_start)
+        relative = original_start - partition.start
+        if relative < 8 or partition.data[relative - 8] != 0x0A:
+            _fail(
+                "FALSE_EVENT_02_CONTEXT_MISMATCH",
+                f"start={original_start:#x} lacks preceding 0x0A expression",
+            )
+        if partition.data[relative] != 0x02:
+            _fail(
+                "FALSE_EVENT_02_CONTEXT_MISMATCH",
+                f"start={original_start:#x} byte={partition.data[relative]:#x}",
+            )
+        if original_start in parsed.offsets:
+            _fail(
+                "FALSE_EVENT_02_ENTRYPOINT_CONFLICT",
+                f"start={original_start:#x} is a TS5 entrypoint",
+            )
+
+        item_index, inner = _locate_grouped_item(partition.grouped_items, original_start)
+        if inner != 0 or partition.grouped_items[item_index].opcode != 0x02:
+            _fail(
+                "FALSE_EVENT_02_GROUPING_MISMATCH",
+                f"start={original_start:#x} item={item_index} inner={inner}",
+            )
+
+        generic = analyze_generic_branch_plans(partition.grouped_items)
+        if any(plan.original_start == original_start for plan in generic):
+            _fail(
+                "FALSE_EVENT_02_PROMOTED_TO_BRANCH",
+                f"start={original_start:#x}",
+            )
+
+        result.append(
+            FalseEvent02NonOwner(
+                partition_index=partition.index,
+                item_index=item_index,
+                original_start=original_start,
+            )
+        )
+    return tuple(result)
+
+
+def repair_switch_special_span_items(
+    original_items: Sequence[GroupedItem],
+    current_item_bytes: Sequence[bytes],
+    plans: Sequence[SwitchSpecialSpanPlan],
+) -> tuple[bytes, ...]:
+    """Repair Switch-only dynamic spans from frozen original item/boundary anchors."""
+    if len(original_items) != len(current_item_bytes):
+        _fail(
+            "GROUPED_ITEM_COUNT_MISMATCH",
+            f"original={len(original_items)} current={len(current_item_bytes)}",
+        )
+
+    current = [bytes(data) for data in current_item_bytes]
+    for plan in plans:
+        if plan.owner_item_index >= len(current) or plan.target_item_index > len(current):
+            _fail(
+                "SPECIAL_PLAN_ITEM_RANGE_FAIL",
+                f"start={plan.original_start:#x}",
+            )
+        owner = current[plan.owner_item_index]
+        inner = plan.owner_inner_offset
+        if inner < 0 or inner + 4 > len(owner):
+            _fail(
+                "SPECIAL_OWNER_INNER_OFFSET_FAIL",
+                f"start={plan.original_start:#x} inner={inner} owner_len={len(owner)}",
+            )
+        header = owner[inner:inner + 4]
+        if header[0] != plan.opcode:
+            _fail(
+                "SPECIAL_OWNER_MUTATED",
+                f"start={plan.original_start:#x} expected={plan.opcode:#x} header={header.hex()}",
+            )
+
+        prefix = [0]
+        for item in current:
+            prefix.append(prefix[-1] + len(item))
+        owner_position = prefix[plan.owner_item_index] + inner
+        target_position = prefix[plan.target_item_index]
+        current_span = target_position - owner_position
+        if current_span <= 0:
+            _fail(
+                "SPECIAL_SPAN_INVALID",
+                f"start={plan.original_start:#x} span={current_span}",
+            )
+
+        new_header = _encode_switch_special_span(plan.kind, header, current_span)
+        updated_owner = bytearray(owner)
+        updated_owner[inner:inner + 4] = new_header
+        current[plan.owner_item_index] = bytes(updated_owner)
 
     return tuple(current)
 

@@ -701,3 +701,36 @@ verified 782-script offset table
 ```
 
 This failure does not invalidate the bounded Switch interpreter findings recorded by V323.
+
+## 22. V337 EVENT unit-fixture byte escape defect
+
+Scope:
+
+`ECF00000_SELECTIVE_EVENT_GENERIC_RELOCATION_ENGINE_IMPLEMENTATION_OFFLINE_VALIDATION`
+
+During V338 pre-publication validation, the four unit-test methods added in V337 were inspected at the actual repository blob level. Fourteen source lines contained doubled byte escapes such as `b"\\\\x02..."` instead of raw-byte Python literals `b"\\x02..."`.
+
+Impact:
+
+```text
+production builder affected             NO
+EVENT product bytes affected            NO
+V337 stock full-corpus arithmetic       NOT INVALIDATED
+V337 repository new unit fixtures       INVALID UNTIL V338 CORRECTION
+V338 publication with bad fixtures      PREVENTED BEFORE main UPDATE
+```
+
+The S2 arithmetic had also been exercised independently against the exact stock corpus, but the repository unit fixtures themselves were not valid evidence until corrected.
+
+V338 correction requirements:
+
+- fix the complete doubled-escape cause-family in `tests/test_selective_event.py`;
+- rerun the four corrected S2 tests;
+- rerun exact stock S2 gates (7,579 plans / unchanged byte-exact / 7,578 controlled growth);
+- run the S3 tests and special-owner stock gates before moving `main`.
+
+Do not repeat:
+
+- counting test methods as proof that tests executed;
+- validating generated Python byte fixtures without inspecting the materialized source;
+- correcting only one visible escaped literal while leaving the same generation defect elsewhere in the file.
