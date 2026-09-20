@@ -1,0 +1,119 @@
+{
+  "artifact_sha256": {
+    "MAPPING.jsonl": "5c9f8a96f985b5cf691b5303b90cff23a8e54b541b5151790a0e93f09045f600",
+    "MAPPING_ORIGINAL_KO_COMPACT.bin": "d510f2965483b3b5a22dbef06a9bfe059bb82fa96c1f36b05423e7fb0438cccc",
+    "ROWS.jsonl": "aef17d206559ec548a5fb3c2414d8a1f17832f7e4c2df03b8468240926c11b65",
+    "ROWSET_OFFSET_OPCODE.bin": "1f927558cf5c16f636d8c3c15323c4bd498e279332ce9ebe9595fa27307c5631"
+  },
+  "authority": "V333 contract; V330 exact baseline + state-aware delta",
+  "compact_mapping": {
+    "disposition_codes": {
+      "0": "PRESERVE_ORIGINAL",
+      "1": "REPLACE_FROM_PC_KO"
+    },
+    "mapping_method_codes": {
+      "0": "EDITOR_TARGET_ORDINAL",
+      "1": "EDITOR_TARGET_ALIGNMENT",
+      "2": "V333_5A_FRESH_REPARSE_DRIFT_BINDING"
+    },
+    "record_count": 13075,
+    "record_size": 12,
+    "serialization": "sorted by KO offset; struct <IIBBBx = original_offset:uint32_le + ko_offset:uint32_le + opcode:uint8 + disposition:uint8 + mapping_method:uint8 + pad:uint8",
+    "sha256": "d510f2965483b3b5a22dbef06a9bfe059bb82fa96c1f36b05423e7fb0438cccc"
+  },
+  "counts": {
+    "entrypoints": 782,
+    "header_mismatch": 5,
+    "korean_bearing": 12597,
+    "local_baseline": 2866,
+    "local_baseline_extra_vs_v330": 3,
+    "mapping_collisions": 0,
+    "preserve_original": 476,
+    "replacement": 12599,
+    "runtime_editor_boundary_mismatch": 113,
+    "runtime_editor_boundary_mismatch_changed": 0,
+    "source_universe": 13075,
+    "stateaware_delta_vs_local_baseline": 10212,
+    "stateaware_raw": 13078,
+    "target_overlaps": 0,
+    "v330_exact_baseline": 2863
+  },
+  "forbidden": [
+    "NUMERIC_FIT_TO_HISTORICAL_4444",
+    "FINAL_KO_FRESH_REPARSE_AS_OWNERSHIP_AUTHORITY",
+    "TREAT_0xD7008_OR_0xBDC58_AS_EVENT_0x02_OWNER",
+    "HARDCODE_FULL_PC_KO_DIAGNOSTIC_BRANCH_HEADERS"
+  ],
+  "inputs": {
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480
+    },
+    "switch_pc_original": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v330_ledger": {
+      "sha256": "de6ccff2139c9f36cdadd650d7cfcaa368e7e8ca0b013528cc09809b9795e36a",
+      "size": 2162832
+    }
+  },
+  "opcode_counts": {
+    "0x11": 10320,
+    "0x12": 1075,
+    "0x13": 1322,
+    "0x15": 358
+  },
+  "rowset_hash": {
+    "algorithm": "sha256",
+    "serialization": "sorted rows; struct <IB = uint32_le physical_offset + uint8 opcode",
+    "sha256": "1f927558cf5c16f636d8c3c15323c4bd498e279332ce9ebe9595fa27307c5631"
+  },
+  "schema": "ECF00000_DETERMINISTIC_SOURCE_UNIVERSE_LEDGER_V1",
+  "special_owners": {
+    "dynamic_switch_span": [
+      {
+        "context": "EVENT",
+        "full_pc_ko_diagnostic_span": 628,
+        "ko_offset": 1039364,
+        "opcode": 4,
+        "original_offset": 834480,
+        "original_span": 456,
+        "policy": "SWITCH_DYNAMIC_SPAN"
+      },
+      {
+        "context": "EVENT",
+        "full_pc_ko_diagnostic_span": 128,
+        "ko_offset": 522152,
+        "opcode": 4,
+        "original_offset": 417600,
+        "original_span": 92,
+        "policy": "SWITCH_DYNAMIC_SPAN"
+      },
+      {
+        "context": "BRANCH",
+        "full_pc_ko_diagnostic_span": 3524,
+        "ko_offset": 645860,
+        "opcode": 9,
+        "original_offset": 516528,
+        "original_runtime_span": 2612,
+        "pc_editor_preservation_span": 2614,
+        "policy": "SWITCH_DYNAMIC_SPAN"
+      }
+    ],
+    "false_event_02_expression_operands": [
+      {
+        "enclosing": "EVENT_0x0A_EXPRESSION",
+        "ko_offset": 880648,
+        "original_offset": 705648,
+        "policy": "NOT_EVENT_OWNER_PRESERVE_AS_EXPRESSION_DATA"
+      },
+      {
+        "enclosing": "EVENT_0x0A_EXPRESSION",
+        "ko_offset": 777304,
+        "original_offset": 622784,
+        "policy": "NOT_EVENT_OWNER_PRESERVE_AS_EXPRESSION_DATA"
+      }
+    ]
+  }
+}

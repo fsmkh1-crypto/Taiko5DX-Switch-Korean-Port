@@ -1,0 +1,10 @@
+{
+  "schema": "ECF00000_V334_DRIVE_POINTER_V1",
+  "drive_folder_path": "Google Drive/GPT/태합입지전/ECF00000_V334_SOURCE_UNIVERSE_LEDGER",
+  "drive_folder_id": "18TFmrFV8fpyaMpKLOPpa2hmAp6rNfLMW",
+  "drive_file_name": "ECF00000_V334_SOURCE_UNIVERSE_LEDGER_CANONICAL.zip",
+  "drive_file_id": "1zunx5DYMOWUtkIPOBUxVCCeDeE27eU1q",
+  "size": 1530925,
+  "sha256": "fc47e81842f299f04c272b6076637ec163cdca2ed469b17105bc36182dc765e0",
+  "drive_roundtrip": "PASS_BYTE_IDENTICAL"
+}

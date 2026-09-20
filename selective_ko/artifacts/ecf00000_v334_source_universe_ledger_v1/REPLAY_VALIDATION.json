@@ -1,0 +1,39 @@
+{
+  "baseline_errors": [],
+  "baseline_extra_offsets": [
+    "0x364FC",
+    "0xE9AF0",
+    "0xE9AFC"
+  ],
+  "clean_replay_byte_identical_files": [
+    "ROWS.jsonl",
+    "MAPPING.jsonl",
+    "ROWSET_OFFSET_OPCODE.bin",
+    "MAPPING_ORIGINAL_KO_COMPACT.bin",
+    "INDEX.json",
+    "REPLAY_VALIDATION.json"
+  ],
+  "clean_replay_result": "PASS_BYTE_IDENTICAL",
+  "compact_mapping_sha256": "d510f2965483b3b5a22dbef06a9bfe059bb82fa96c1f36b05423e7fb0438cccc",
+  "distinct_original_rows": 13075,
+  "mapping_rows": 13075,
+  "preserve_original": 476,
+  "replacement": 12599,
+  "result": "PASS",
+  "rowset_sha256": "1f927558cf5c16f636d8c3c15323c4bd498e279332ce9ebe9595fa27307c5631",
+  "runtime_editor_boundary_mismatch_changed": 0,
+  "schema": "ECF00000_SOURCE_UNIVERSE_CLEAN_REPLAY_V1",
+  "source_universe": 13075,
+  "special_mapping_rows": [
+    {
+      "ko_offset": "0x16828",
+      "original_offset": "0x12C40"
+    },
+    {
+      "ko_offset": "0x168E0",
+      "original_offset": "0x12C90"
+    }
+  ],
+  "stateaware_errors": [],
+  "target_overlaps": 0
+}
