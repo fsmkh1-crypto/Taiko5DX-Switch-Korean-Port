@@ -1,0 +1,75 @@
+{
+  "artifacts": {
+    "bindings": "BINDINGS_V334_HASHED.jsonl",
+    "bindings_sha256": "95f2b98120ddf20f287321393a9d2a52b6f7704d37786df0ef228ae50a47d15f",
+    "validation": "VALIDATION.json",
+    "validation_sha256": "1a9cdab2a56af8249fedd24be2bb01761d24bcd04161f38026ae06eb0dcca5a9"
+  },
+  "authority": "selective_ko/ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION_V352.md",
+  "authority_sha256": "7dfeca92591e845a31ff894ef7bd9db8868fb8fa8314cbcfe99375fe750dbf6a",
+  "build_package_ips_hardware": "NONE",
+  "counts": {
+    "derived_occurrences": 62,
+    "mixed_direct_edits": 3,
+    "mixed_rows": 2,
+    "pure_rows": 59,
+    "rows": 61,
+    "v334_mapping_alignment": 3,
+    "v334_mapping_ordinal": 58
+  },
+  "drive_archive": {
+    "authority_file_id": "1j2nPXB06hNjeh2_gHlNKunHWU6_r3bZb",
+    "bindings_file_id": "14CXkwqi-VvbHb-dKLkZzGEhHpaC_LYQ5",
+    "diagnostic_file_id": "1mIkFwodiotxI6gV0iGGeuW33vC5vEq46",
+    "folder_id": "10mulhDcpOT5c0n9MyWWazorHhkwkn47V",
+    "module_file_id": "104w_4xILpznI3p2HmPUg0ALtTJPSookm",
+    "tests_file_id": "18Ark40jcxR5CGI0AAz-PjaqtE3QL9Zwg",
+    "validation_file_id": "161uKBf8BfxOFGoAAG8j6bBDLS8qr3_G3"
+  },
+  "implementation": {
+    "local_code5_regression": "PASS_17_OF_17",
+    "module": "builder/selective_event_derived_surface.py",
+    "module_sha256": "58d519406f8700c21db48691108ae95d2d5c1e2521b5a3ef2fcdeb01cb14dd39",
+    "tests": "tests/test_selective_event_derived_surface.py",
+    "tests_sha256": "a051e6417c004f36c29487460c682785b7a71a4e00e0885240e06f2121e11df8",
+    "unit_tests": "PASS_6_OF_6"
+  },
+  "mutation_accounting": {
+    "changed_items_vs_v350": 142,
+    "generic_owner_changes": 81,
+    "non_target_items": 81,
+    "special_owner_changes": 0,
+    "target_items": 61,
+    "unexpected_non_target_changes": 0
+  },
+  "next_scope": "ECF00000_CODE5_NON_PARTICLE_SUFFIX_ADJACENCY_RUNTIME_RESPONSIBILITY_READ_ONLY",
+  "output": {
+    "delta_vs_v350": 972,
+    "deterministic_rerun": "PASS_BYTE_IDENTICAL",
+    "sha256": "e61569508ffc9995f78df51f01b42be5402b79d5e26a8c8f3e71c0448d8eaaeb",
+    "size": 1109356
+  },
+  "parent": "e31bed7a5d6a406a6e964c015c256a7d88218134",
+  "product_disposition": {
+    "code5_implemented": 423,
+    "code5_remaining_defer": 3,
+    "effective_v334": {
+      "defer": 3,
+      "include_ko": 12594,
+      "non_korean_target": 478,
+      "total": 13075
+    }
+  },
+  "schema": "ECF00000_V352_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_V1",
+  "scope": "ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "stateaware": {
+    "blocking": false,
+    "candidate_observations": 1,
+    "inherited_stock": 1,
+    "logical_residuals": 1,
+    "novel": 0,
+    "source_alias": 0,
+    "v344_alias_disposition": "RESOLVED_FROM_CONSERVATIVE_REACHABILITY_NON_BLOCKING"
+  },
+  "validation_id": "V352"
+}

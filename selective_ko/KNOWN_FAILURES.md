@@ -1157,3 +1157,49 @@ V348 occurrence authority instead binds row + field + decoded position + exact e
 source particle, and future raw-byte implementation must reverify against the canonical PC-KO
 `ko_offset/ko_length` slice before mutation.
 
+## 34. V352 do not hard-code state-aware residual observation counts across legal payload growth
+
+Scope:
+
+`ECF00000 / V340 / V344 / V352 state-aware validation`
+
+The first V352 integration harness incorrectly asserted that every later valid EVENT diagnostic
+must preserve V344's exact three raw state-aware observations.
+
+V350 had:
+
+```text
+observations          3
+logical residuals     2
+inherited stock       1
+source-proven alias   1
+```
+
+V352 valid payload growth changed conservative MAY-walker reachability and produced:
+
+```text
+observations          1
+logical residuals     1
+inherited stock       1
+source-proven alias   0
+novel                 0
+blocking              false
+```
+
+Isolation proved the disappearance is caused by valid V351 payload growth in partition 593.
+Applying all V351 rows except partition 593 retains the three observations; applying only the
+three partition-593 rows reduces them to one. Row 11082 or row 11090 individually is sufficient.
+
+The V344 alias source bytes are not modified. Partition 604 is byte-identical between V350 and
+V352, including parent 0xC373C and alias 0xC3740.
+
+Do not repeat:
+
+- assert an exact raw observation count from an earlier diagnostic;
+- treat disappearance of an inherited/source-proven diagnostic residual as corruption;
+- patch unchanged source bytes merely to restore a conservative MAY-model observation;
+- replace the V340/V344 provenance-based residual-delta gate with absolute-count validation.
+
+Canonical rule remains: known residuals may disappear; exact inherited or source-proven
+residuals may remain; genuinely novel residuals are blocking.
+

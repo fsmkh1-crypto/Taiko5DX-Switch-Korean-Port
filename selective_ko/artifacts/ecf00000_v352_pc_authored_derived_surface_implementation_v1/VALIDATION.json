@@ -1,0 +1,216 @@
+{
+  "bindings_file": "selective_ko/artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/BINDINGS_V334_HASHED.jsonl",
+  "build_package_ips_hardware": "NONE",
+  "derived_report": {
+    "derived_occurrences": 62,
+    "mixed_direct_edits": 3,
+    "mixed_rows": 2,
+    "opcode_counts": {
+      "17": 32,
+      "18": 5,
+      "19": 24
+    },
+    "original_bytes": 3132,
+    "payload_growth_vs_original": 972,
+    "pure_rows": 59,
+    "raw_ko_bytes": 4104,
+    "rows": 61,
+    "rowset_sha256": "4ecd4f0c090f23cde0dbf338468d2c6f9e9787dac5892fd61c0edf1ffedf00dd",
+    "transformed_bytes": 4104,
+    "transformed_corpus_sha256": "350b185a9569c8ee1032bb34eef89dc3864574cb898f50fa96628af73e81be95"
+  },
+  "implementation_file": "builder/selective_event_derived_surface.py",
+  "inherited_gates": {
+    "baseline_walker_errors": 0,
+    "false_event_02": [
+      {
+        "after": "023e0300",
+        "before": "023e0300",
+        "original_offset": 622784,
+        "pass": true
+      },
+      {
+        "after": "02bc0200",
+        "before": "02bc0200",
+        "original_offset": 705648,
+        "pass": true
+      }
+    ],
+    "fivea_counts": {
+      "CHOICE_NEXT_START": 15,
+      "ORIGINAL_TARGET": 1058,
+      "ZERO_NEXT_TERMINATOR": 1
+    },
+    "fivea_mapping_rows": 1088,
+    "fivea_name_only": 14,
+    "fivea_translated": 1074,
+    "fivea_violations": 0,
+    "generic_plans": 7579,
+    "special_spans": 3,
+    "stateaware_blocking": false,
+    "stateaware_candidate_observations": 1,
+    "stateaware_gate_report": {
+      "baseline_residuals": 1,
+      "blocking": false,
+      "candidate_observations": 1,
+      "candidate_residuals": 1,
+      "inherited_residuals": 1,
+      "novel_residuals": 0,
+      "resolved_baseline_residuals": 0,
+      "source_alias_residuals": 0
+    },
+    "stateaware_inherited": 1,
+    "stateaware_logical_residuals": [
+      {
+        "context": "E",
+        "current_offset": 930660,
+        "decoded_length": 8344584,
+        "f": 1,
+        "kind": "EVENT_PARENT_OVERRUN",
+        "opcode": 14,
+        "original_offset": 777592,
+        "partition": 593,
+        "root": 593,
+        "s": 1
+      }
+    ],
+    "stateaware_novel": 0,
+    "stateaware_resolved_baseline": 0,
+    "stateaware_source_alias": 0,
+    "stateaware_unique_logical_residuals": 1
+  },
+  "inputs": {
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480,
+      "source": "PC patch payload data/EVENT/ECF00000.TS5"
+    },
+    "stock": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v334_rows_source_sha256": "aef17d206559ec548a5fb3c2414d8a1f17832f7e4c2df03b8468240926c11b65",
+    "v350_baseline": {
+      "sha256": "bedd0cd3b367e3caed4f7d06adc6b3ecfb607d0152d8329f830eb6de98411ff2",
+      "size": 1108384
+    },
+    "v351_mixed_sha256": "bbfbd910cfa3955e89d650c3408c12c96b31778101c7ef16c8605237a177a423",
+    "v351_occurrences_sha256": "90b39ed75e738cf31906db3570a45bcc5175428d8904f46149e1ac906b3da4a6",
+    "v351_rows_sha256": "7f394033fa56796d6822cb9403a027d6674d0a0e0a357c4981392da798306f5f",
+    "v352_v334_hashed_bindings_sha256": "95f2b98120ddf20f287321393a9d2a52b6f7704d37786df0ef228ae50a47d15f"
+  },
+  "mixed_composite": {
+    "direct_edits": 3,
+    "length_delta_from_direct_normalization": 0,
+    "rows": [
+      12476,
+      13029
+    ],
+    "transform": "RAW_PC_KO_THEN_EXACT_DIRECT_PARTICLE_NORMALIZATION"
+  },
+  "mutation_accounting": {
+    "changed_items_vs_v350": 142,
+    "generic_relocation_owner_changes": 81,
+    "non_target_items": 81,
+    "special_span_owner_changes": 0,
+    "target_items_also_structural_owners": 0,
+    "target_payload_items": 61,
+    "target_payloads_byte_exact_after_repair": 61,
+    "unexpected_non_target_changes": 0
+  },
+  "output": {
+    "delta_vs_v350": 972,
+    "deterministic_rerun": "PASS_BYTE_IDENTICAL",
+    "sha256": "e61569508ffc9995f78df51f01b42be5402b79d5e26a8c8f3e71c0448d8eaaeb",
+    "size": 1109356
+  },
+  "scope": "ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "stateaware_alias_disappearance_root_cause": {
+    "conclusion": "LEGAL_PARTITION_593_PAYLOAD_GROWTH_CHANGES_CONSERVATIVE_MAY_WALKER_REACHABILITY; SOURCE_ALIAS_BYTES_UNCHANGED",
+    "isolation": {
+      "row_11074_only": {
+        "growth": 28,
+        "observations": 3
+      },
+      "row_11082_only": {
+        "growth": 28,
+        "observations": 1
+      },
+      "row_11090_only": {
+        "growth": 28,
+        "observations": 1
+      },
+      "v351_excluding_partition_593": {
+        "growth": 888,
+        "observations": 3,
+        "rows": 58
+      },
+      "v351_none": {
+        "growth": 0,
+        "observations": 3,
+        "rows": 0
+      },
+      "v351_partition_593_only": {
+        "growth": 84,
+        "observations": 1,
+        "row_ids": [
+          11074,
+          11082,
+          11090
+        ],
+        "rows": 3
+      }
+    },
+    "partition_604_payload": {
+      "alias_bytes": "0e009d06",
+      "mutation": "NONE",
+      "parent_bytes": "0bdc1700",
+      "v350_sha256": "1f3708a138b87704caa95482344c294ae216c239118efeec19c49a589dd5dc9b",
+      "v350_size": 1920,
+      "v352_sha256": "1f3708a138b87704caa95482344c294ae216c239118efeec19c49a589dd5dc9b",
+      "v352_size": 1920
+    },
+    "prior_v350": {
+      "candidate_observations": 3,
+      "inherited_stock": 1,
+      "source_proven_alias": 1,
+      "unique_logical_residuals": 2
+    },
+    "source_alias_original_offset": "0xC3740",
+    "source_alias_parent_original_offset": "0xC373C",
+    "v352": {
+      "blocking": false,
+      "candidate_observations": 1,
+      "inherited_stock": 1,
+      "novel": 0,
+      "source_proven_alias": 0,
+      "unique_logical_residuals": 1
+    },
+    "validator_rule": "PROVENANCE_BASED_RESIDUAL_DELTA; DISAPPEARANCE_NON_BLOCKING; NOVEL_RESIDUAL_BLOCKING"
+  },
+  "test_summary": {
+    "full_offline_integration": "PASS",
+    "initial_regression_discovery_issue": "TEMP_WORKSPACE_MISSING_V348_LEDGER_FIXTURES_NOT_CODE_FAILURE",
+    "local_code5_regression": "PASS_17_OF_17_AFTER_CANONICAL_V348_FIXTURES_STAGED",
+    "new_module_unit_tests": "PASS_6_OF_6"
+  },
+  "tests_file": "tests/test_selective_event_derived_surface.py",
+  "unit_tests": "PASS_6_OF_6",
+  "v334_binding_provenance": {
+    "alignment_row_ids": [
+      8389,
+      8403,
+      8406
+    ],
+    "bindings_sha256": "95f2b98120ddf20f287321393a9d2a52b6f7704d37786df0ef228ae50a47d15f",
+    "disposition_counts": {
+      "REPLACE_FROM_PC_KO": 61
+    },
+    "mapping_method_counts": {
+      "EDITOR_TARGET_ALIGNMENT": 3,
+      "EDITOR_TARGET_ORDINAL": 58
+    },
+    "rows": 61
+  },
+  "validation_id": "V352"
+}
