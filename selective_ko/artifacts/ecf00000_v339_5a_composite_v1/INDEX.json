@@ -1,0 +1,67 @@
+{
+  "schema": "ECF00000_V339_5A_COMPOSITE_V1",
+  "validation_id": "V339",
+  "parent": "c93474d6021a734a1fdf0d460a59fe43b2863b1f",
+  "inputs": {
+    "stock": {
+      "size": 931936,
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09"
+    },
+    "pc_ko": {
+      "size": 1156480,
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe"
+    }
+  },
+  "mapping": {
+    "file": "MAPPING_ORIGINAL_KO_5A_COMPACT.bin",
+    "records": 1088,
+    "record_size": 16,
+    "serialization": "<HHIIHH = partition:uint16 + ordinal:uint16 + original_offset:uint32 + ko_offset:uint32 + original_length:uint16 + ko_length:uint16",
+    "sha256": "6aafe3b284e3ec65a7f2928334bffa9a81b15b54d47c85928484a3b59058c97e",
+    "rowset_sha256": "255a1b40ad776ac55f3d034f64075782c4e51f51227747180237df134694a774",
+    "partitions": 63
+  },
+  "policy": {
+    "identity": "KEEP_JP",
+    "dialogue": "PC_KO",
+    "solve_order": "PARTITION_REVERSE_BRANCH_AWARE"
+  },
+  "counts": {
+    "mapping": 1088,
+    "translated": 1074,
+    "name_only_preserve_original": 14,
+    "original_target": 1058,
+    "choice_next_start": 15,
+    "zero_next_terminator": 1,
+    "unmodified_translated": 992,
+    "dialogue_pad_1": 40,
+    "dialogue_pad_2": 15,
+    "dialogue_pad_3": 11,
+    "name2_pad_2": 16,
+    "modified": 82,
+    "violations": 0
+  },
+  "rowset_sha256": {
+    "modified_82": "26bc49d7a19cafa2e75aed11be2fa2f3874442b07cb55db92f1e7f7dd2b3d016",
+    "dialogue_pad_66": "00bef7fff43008f41014f358611d890c6ac4e7857502c026f2afc6bc6c47eead",
+    "choice_15": "0579d61f80c791e041c056e9a83fce785e5af8b1edf101a91a910b63dd8d0446",
+    "zero_1": "538065cd4a3886366d236e574bd9010306867409e4bd7b698ae9b40d5a7ae9eb"
+  },
+  "implementation": {
+    "module": "builder/selective_event_5a.py",
+    "module_sha256": "16eb972dfd099ddc2faf183ce5616fdf343ab9b1ba05e323e77275ed0ca9fab9",
+    "tests": "tests/test_selective_event_5a.py",
+    "tests_sha256": "285bf186962ccd1a342e2044c5566ae8cf53fefeff410b7d7b41303e17e46717",
+    "unit": "PASS_6_OF_6"
+  },
+  "diagnostic": {
+    "partial_context": "V335 codes 1/2/4 + V339 5A; code3 deferred",
+    "output_size": 1081644,
+    "output_sha256": "9d5821f0cc35356f68d1f243adc644c4be635e62ca4d9154bfe665cb612fd40c",
+    "baseline_walker_errors": 0,
+    "fivea_violations": 0,
+    "stateaware_residual_errors": 1,
+    "residual": "partition 593 original 0xBDD78 opcode 0x0E"
+  },
+  "next_scope": "ECF00000_PARTITION593_0E_RESIDUAL_RUNTIME_OVERRUN_ROOT_CAUSE_READ_ONLY"
+}

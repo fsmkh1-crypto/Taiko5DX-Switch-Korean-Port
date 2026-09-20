@@ -734,3 +734,57 @@ Do not repeat:
 - counting test methods as proof that tests executed;
 - validating generated Python byte fixtures without inspecting the materialized source;
 - correcting only one visible escaped literal while leaving the same generation defect elsewhere in the file.
+
+## 23. V339 5A solve-before-branch-repair interaction
+
+Scope:
+
+`ECF00000_5A_BRANCH_AWARE_JP_IDENTITY_KO_DIALOGUE_COMPOSITE_IMPLEMENTATION_OFFLINE_VALIDATION`
+
+A preimplementation 5A audit initially proved all 1,074 translated outer-5A rows against the current layout before final branch relocation. That was insufficient.
+
+After V337 generic relocation was applied, exactly one previously passing row changed runtime behavior:
+
+```text
+partition        118
+original 5A      0x3FE34
+PC-KO 5A         0x504B8
+following branch 0x04 @ original 0x3FE58
+```
+
+The relocated 0x04 field introduced a new NUL byte into data inspected by the preceding Switch 0x5A runtime-length calculation. The earlier assumption:
+
+```text
+solve all 5A
+-> repair branch fields
+-> 5A geometry remains valid
+```
+
+is therefore rejected.
+
+Binding replacement:
+
+```text
+partition reverse-order 5A solve
+-> evaluate every candidate against current V337 generic + V338 special repaired following bytes
+-> final branch/special repair
+-> reverify all 1,074 translated 5A rows
+```
+
+The affected row is resolved as the single `ZERO_NEXT_TERMINATOR` subtype using original JP names, PC-KO dialogue, and two trailing ASCII spaces in the second JP name field. This makes the 5A self-contained without translating identity.
+
+Final V339 result:
+
+```text
+ORIGINAL_TARGET         1,058
+CHOICE_NEXT_START          15
+ZERO_NEXT_TERMINATOR        1
+violations                  0
+```
+
+Do not repeat:
+
+- validate 5A only before branch relocation;
+- hard-code the 82 modified offsets instead of recomputing from the current layout;
+- treat the partition-118 row as an ordinary dialogue-padding case;
+- translate 5A names merely to inherit PC-KO byte geometry.

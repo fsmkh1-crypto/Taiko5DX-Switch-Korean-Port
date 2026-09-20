@@ -1,0 +1,30 @@
+{
+  "validation_id": "V339",
+  "report": {
+    "mapping_rows": 1088,
+    "translated_rows": 1074,
+    "name_only_preserved_rows": 14,
+    "original_target_rows": 1058,
+    "choice_next_start_rows": 15,
+    "zero_next_terminator_rows": 1,
+    "unmodified_translated_rows": 992,
+    "dialogue_pad_1_rows": 40,
+    "dialogue_pad_2_rows": 15,
+    "dialogue_pad_3_rows": 11,
+    "name2_pad_2_rows": 16,
+    "modified_rows": 82,
+    "modified_rowset_sha256": "26bc49d7a19cafa2e75aed11be2fa2f3874442b07cb55db92f1e7f7dd2b3d016",
+    "dialogue_pad_rowset_sha256": "00bef7fff43008f41014f358611d890c6ac4e7857502c026f2afc6bc6c47eead",
+    "choice_rowset_sha256": "0579d61f80c791e041c056e9a83fce785e5af8b1edf101a91a910b63dd8d0446",
+    "zero_rowset_sha256": "538065cd4a3886366d236e574bd9010306867409e4bd7b698ae9b40d5a7ae9eb",
+    "verification_violations": 0
+  },
+  "diagnostic_output": {
+    "size": 1081644,
+    "sha256": "9d5821f0cc35356f68d1f243adc644c4be635e62ca4d9154bfe665cb612fd40c"
+  },
+  "baseline_walker_errors": 0,
+  "stateaware_residual_errors": 1,
+  "residual": "partition 593 original 0xBDD78 opcode 0x0E",
+  "product": false
+}
