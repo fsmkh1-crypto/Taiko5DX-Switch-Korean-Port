@@ -1,0 +1,27 @@
+{
+  "schema": "V362_EVENT_169_SCOPE_CORRECTION_V1",
+  "validation_id": "V362",
+  "parent_head": "f64a63bdfad3b7b8b886ae882e3e7b315e5b1351",
+  "authority": "selective_ko/V361_EDEN_RUNTIME_FAILURE_EVENT_169_SCOPE_CORRECTION_V362.md",
+  "track": "SWITCH_SELECTIVE_KOREANIZATION",
+  "product_bytes": "UNCHANGED",
+  "runtime": {
+    "v361_executed": true,
+    "ordinary_dialogue": "JAPANESE",
+    "expectation": "FAIL_EXPECTATION"
+  },
+  "event_family": {
+    "pc_patch_ts5_replacements": 169,
+    "switch_main_ts5_paths": 169,
+    "switch_main_te5_paths": 169,
+    "ts5_filename_set_equality": "PASS_169_OF_169",
+    "ecf00000_coverage": "1_OF_169"
+  },
+  "rejected_hypotheses": [
+    "V361_ROMFS_EVENT_PATH_WRONG",
+    "ECF00000_IS_COMPLETE_ORDINARY_DIALOGUE_EVENT_UNIVERSE",
+    "V361_JAPANESE_DIALOGUE_IMPLIES_FONT_OR_MAPPING_FAILURE"
+  ],
+  "required_switch_source": "romfs/EVENT/ (169 TS5 + 169 paired TE5, exact raw paths/bytes)",
+  "next_scope": "SWITCH_V113_EVENT_169_SOURCE_PARITY_AND_PC_PATCH_PORTABILITY_AUDIT_READ_ONLY"
+}

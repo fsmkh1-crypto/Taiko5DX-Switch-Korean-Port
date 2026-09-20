@@ -1251,3 +1251,12 @@ Do not repeat:
 - re-scan all 14,832 TAI5MSG messages or all V288 grammar rows before inspecting the exact 46 roots.
 
 Canonical next step is exact 46-root PC-original vs PC-Korean role/language-output classification only.
+
+
+## V362 — V361 Japanese dialogue / EVENT-family scope correction
+
+- **Wrong-path hypothesis rejected:** Switch v1.1.3 `main` directly names `EVENT\\ECF00000.TS5`; V361's `romfs/EVENT/ECF00000.TS5` placement is not the established cause of the Japanese dialogue result.
+- **ECF00000-only carrier model rejected:** the PC Korean patch replaces 169 EVENT TS5 files and the Switch `main` names the same 169 TS5 members. Do not treat ECF00000 as the complete ordinary-dialogue universe.
+- **V361 unchanged retest is unnecessary:** user Eden runtime already showed ordinary dialogue remained Japanese while the Korean TAI5MSG/description route remained observable.
+- **Do not guess the screenshot owner:** exact EFF/EP/EPF ownership requires the extracted Switch v1.1.3 `romfs/EVENT/` subtree.
+- Next cause-family: `SWITCH_V113_EVENT_169_SOURCE_PARITY_AND_PC_PATCH_PORTABILITY_AUDIT_READ_ONLY` (READ ONLY).
