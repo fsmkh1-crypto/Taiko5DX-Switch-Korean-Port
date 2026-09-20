@@ -1,0 +1,135 @@
+{
+  "build_package_ips_hardware": "NONE",
+  "implementation_file": "builder/selective_event_direct_particle.py",
+  "inherited_gates": {
+    "baseline_walker_errors": 0,
+    "false_event_02": [
+      {
+        "after": "023e0300",
+        "before": "023e0300",
+        "original_offset": 622784,
+        "pass": true
+      },
+      {
+        "after": "02bc0200",
+        "before": "02bc0200",
+        "original_offset": 705648,
+        "pass": true
+      }
+    ],
+    "fivea_counts": {
+      "CHOICE_NEXT_START": 15,
+      "ORIGINAL_TARGET": 1058,
+      "ZERO_NEXT_TERMINATOR": 1
+    },
+    "fivea_mapping_rows": 1088,
+    "fivea_name_only": 14,
+    "fivea_translated": 1074,
+    "fivea_violations": 0,
+    "generic_plans": 7579,
+    "special_spans": 3,
+    "stateaware_blocking": false,
+    "stateaware_candidate_observations": 3,
+    "stateaware_inherited": 1,
+    "stateaware_logical_residuals": [
+      {
+        "context": "E",
+        "current_offset": 929900,
+        "decoded_length": 8344584,
+        "f": 1,
+        "kind": "EVENT_PARENT_OVERRUN",
+        "opcode": 14,
+        "original_offset": 777592,
+        "partition": 593,
+        "root": 593,
+        "s": 1
+      },
+      {
+        "context": "E",
+        "current_offset": 956896,
+        "decoded_length": 1733632,
+        "f": 1,
+        "kind": "EVENT_PARENT_OVERRUN",
+        "opcode": 14,
+        "original_offset": 800576,
+        "partition": 604,
+        "root": 593,
+        "s": 0
+      }
+    ],
+    "stateaware_novel": 0,
+    "stateaware_source_alias": 1,
+    "stateaware_unique_logical_residuals": 2
+  },
+  "inputs": {
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480,
+      "source": "PC patch payload data/EVENT/ECF00000.TS5"
+    },
+    "stock": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v345_baseline": {
+      "sha256": "658d21cecbd038f39f89cf65e063d68861a481e96e73f530387c7133d46f3295",
+      "size": 1102600
+    },
+    "v348_applicability_sha256": "7f2d632d3ccdcf9244c40b82f8b82714d048203bce7e88d0de9a1df532257097",
+    "v348_occurrences_sha256": "76593511a4886ad00f2bb57758e4fb86ef6378664163b8a700dda5f40b2d0575"
+  },
+  "module_report": {
+    "normalization_candidate_rows": 108,
+    "occurrences": 386,
+    "payload_growth_vs_original": 5584,
+    "raw_ko_bytes": 24068,
+    "rows": 350,
+    "rowset_sha256": "295ba0bbed34d36bcca584646a08df42b3e61b38af0ea4c6f89880fecc2aad70",
+    "source_counts": {
+      "가": 104,
+      "과": 9,
+      "는": 81,
+      "로": 10,
+      "를": 47,
+      "와": 27,
+      "은": 50,
+      "을": 13,
+      "이": 45
+    },
+    "substitution_counts": {
+      "과->와": 9,
+      "은->는": 50,
+      "을->를": 13,
+      "이->가": 45
+    },
+    "substitutions": 117,
+    "target_counts": {
+      "가": 149,
+      "는": 131,
+      "로": 10,
+      "를": 60,
+      "와": 36
+    },
+    "transformed_bytes": 24068,
+    "transformed_corpus_sha256": "01157230d52e5ae23ede0c03fc3eda5cc090540254b354e73d720fe5189980ee"
+  },
+  "mutation_accounting": {
+    "changed_items": 632,
+    "generic_relocation_owner_changes": 281,
+    "non_target_items": 282,
+    "special_span_owner_changes": 1,
+    "target_payload_items": 350,
+    "unexpected_non_target_changes": 0
+  },
+  "output": {
+    "delta_vs_v345": 5584,
+    "deterministic_rerun": "PASS_BYTE_IDENTICAL",
+    "sha256": "a175e64b2f52e1735b25e2b3e8c4453c36913416b893e4ebd569d8110de69d5e",
+    "simulation_equivalence": "PASS_BYTE_EXACT",
+    "size": 1108184
+  },
+  "scope": "ECF00000_DIRECT_ESCAPE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "tests_file": "tests/test_selective_event_direct_particle.py",
+  "unit_tests": "PASS_6_OF_6",
+  "validation_id": "V349"
+}
