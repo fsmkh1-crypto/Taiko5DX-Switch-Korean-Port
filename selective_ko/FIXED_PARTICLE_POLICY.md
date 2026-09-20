@@ -1,7 +1,7 @@
 # FIXED PARTICLE POLICY
 
 Date: 2026-09-17 (KST)
-Status: CANONICAL SELECTIVE-KO PRODUCT POLICY / V293 ROUTING CLARIFICATION / NO CORPUS REWRITE / NO BUILD
+Status: CANONICAL SELECTIVE-KO PRODUCT POLICY / V348 DIRECT-ESCAPE EXTENSION / NO BUILD
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 Scope: `SELECTIVE_KO_FIXED_PARTICLE_POLICY_MATERIALIZATION`
 Policy ID: `FIXED_SURFACE_PARTICLE_V1`
@@ -67,6 +67,16 @@ A candidate is eligible for `FIXED_SURFACE_PARTICLE_V1` only when at least one o
 
 1. the Korean source payload contains one of the explicit dual-form literals listed in section 3; or
 2. a formatter/selector leaf is independently proven to own only the corresponding particle allomorph choice.
+
+3. for ECF00000 only, an occurrence belongs to the exact V348
+   `DIRECT_ESCAPE_PARTICLE_V1` applicability overlay, after V347 has proven that the runtime
+   escape owns value/control expansion only and the following standalone Korean particle is an
+   authored EVENT literal.
+
+The V348 extension is restricted to the exact V346 `DIRECT_PARTICLE_ONLY` 350-row population.
+The two mixed rows, copula-derived morphology, non-particle suffix adjacency, and any occurrence
+outside the V348 ledger are not eligible through this route. The V344/V345 1,251-row explicit
+dual-literal membership remains unchanged.
 
 The following are not sufficient by themselves:
 

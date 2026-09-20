@@ -1,0 +1,93 @@
+{
+  "schema": "ECF00000_V348_DIRECT_ESCAPE_PARTICLE_POLICY_V1",
+  "validation_id": "V348",
+  "scope": "ECF00000_CODE5_DIRECT_PARTICLE_FIXED_SURFACE_POLICY_EXTENSION_READ_ONLY",
+  "parent": "aa0c89ff54f112761dbd5308dc1f7609c00a9f66",
+  "product_bytes_changed": false,
+  "implementation": "NONE",
+  "build_package_ips_hardware": "NONE",
+  "policy": {
+    "base_policy": "FIXED_SURFACE_PARTICLE_V1",
+    "extension_id": "DIRECT_ESCAPE_PARTICLE_V1",
+    "exact_class": "V346_DIRECT_PARTICLE_ONLY",
+    "v345_membership_mutated": false,
+    "global_standalone_particle_replacement": "FORBIDDEN",
+    "mixed_rows_promoted": false
+  },
+  "inherited": {
+    "v346_direct_rowset_sha256": "c590ce16cf7d230e0a63914b2e5a2dff92bd0ecad35aa7d8b765b74563944ae6",
+    "v347_runtime_owner": "EVENT_AUTHORED_LITERAL",
+    "v347_switch_runtime_josa_selector": "NONE",
+    "v347_pc_patch_runtime_josa_selector": "NONE_ESTABLISHED"
+  },
+  "applicability": {
+    "rows": 350,
+    "occurrences": 386,
+    "applicability_file": "APPLICABILITY.jsonl",
+    "applicability_git_blob_sha": "0b066775f439c1c2223bbd971b9c6d7f64cd9d4e",
+    "occurrences_file": "OCCURRENCES.jsonl",
+    "occurrences_git_blob_sha": "571f0d0758b38ec98f56806d7bf846fc61a31323",
+    "occurrence_locator": "ROW_ID_PLUS_FIELD_INDEX_PLUS_DECODED_CHAR_OFFSET_PLUS_EXACT_ESCAPE_AND_SOURCE_PARTICLE",
+    "raw_byte_locator_requirement": "IMPLEMENTATION_MUST_REBIND_AND_VERIFY_WITH_CANONICAL_KO_OFFSET_LENGTH_SLICE"
+  },
+  "surfaces": {
+    "source_counts": {
+      "이": 45,
+      "와": 27,
+      "가": 104,
+      "를": 47,
+      "은": 50,
+      "는": 81,
+      "로": 10,
+      "을": 13,
+      "과": 9
+    },
+    "preferred_occurrences": 269,
+    "opposite_occurrences": 117,
+    "normalization_candidate_rows": 108,
+    "substitutions": 117,
+    "substitution_counts": {
+      "은->는": 50,
+      "이->가": 45,
+      "을->를": 13,
+      "과->와": 9
+    },
+    "target_counts": {
+      "가": 149,
+      "와": 36,
+      "를": 60,
+      "는": 131,
+      "로": 10
+    },
+    "particle_transform_byte_delta": 0,
+    "transform_shape": "2_BYTES_TO_2_BYTES"
+  },
+  "v346_human_ledger_metadata_correction": {
+    "mismatches": 2,
+    "rows": [
+      4094,
+      7233
+    ],
+    "field": "surface",
+    "authoritative_occurrence_evidence": "detector_head + exact decoded source adjacency",
+    "membership_impact": "NONE",
+    "count_impact": "NONE",
+    "policy_impact": "NONE",
+    "suspected_cause": "REPEATED_IDENTICAL_ESCAPE_OCCURRENCE_BINDING",
+    "suspected_cause_status": "INFERRED_NOT_PROVEN"
+  },
+  "product_disposition": {
+    "direct_particle_only_350": "INCLUDE_KO_NOT_IMPLEMENTED",
+    "lexical_false_positive_12": "INCLUDE_KO_NOT_IMPLEMENTED",
+    "copula_derived_only_59": "DEFER",
+    "mixed_2": "DEFER",
+    "non_particle_suffix_3": "DEFER",
+    "effective_v334_universe": {
+      "include_ko": 12533,
+      "defer": 64,
+      "non_korean_target": 478,
+      "total": 13075
+    }
+  },
+  "next_scope": "ECF00000_DIRECT_ESCAPE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION"
+}

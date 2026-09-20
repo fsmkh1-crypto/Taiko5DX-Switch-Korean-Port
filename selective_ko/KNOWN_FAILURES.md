@@ -1,6 +1,6 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
-Date: 2026-09-19 (KST)
+Date: 2026-09-20 (KST)
 Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V308 VALIDATION-BOUNDARY ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
@@ -1116,3 +1116,44 @@ remote HEAD
 ```
 
 The `required_reads` array is provenance ordering, not a mandatory read-all checklist.
+
+## 33. V346 human-ledger surface metadata can misbind repeated identical escapes
+
+Scope:
+
+`ECF00000 / V346-V348 DIRECT_ESCAPE_PARTICLE`
+
+V348 found exactly two direct-hit records in V346 `LEDGER.jsonl` where the auxiliary
+`surface` field disagrees with the actual decoded source adjacency and `detector_head`:
+
+```text
+row 4094   \%00   detector_head 를   surface 는
+row 7233   \%01   detector_head 를   surface 가
+```
+
+Both rows contain the same escape multiple times with different following particles. An
+occurrence-binding mistake in the diagnostic `surface` metadata is the leading explanation,
+but the original generating-code cause was not recovered and must remain INFERRED.
+
+Impact is bounded:
+
+```text
+V346 compact membership             unchanged
+V346 DIRECT_PARTICLE_ONLY rowset    unchanged
+direct occurrence total             unchanged
+preferred/opposite totals           unchanged
+V347 runtime responsibility         unchanged
+V348 applicability result           unchanged
+```
+
+Do not repeat:
+
+- use `surface` as authoritative direct-particle content;
+- identify an occurrence only by `(row_id, escape)`;
+- collapse repeated identical escapes inside one message;
+- regenerate the V346 350-row membership because of these two metadata records.
+
+V348 occurrence authority instead binds row + field + decoded position + exact escape + expected
+source particle, and future raw-byte implementation must reverify against the canonical PC-KO
+`ko_offset/ko_length` slice before mutation.
+
