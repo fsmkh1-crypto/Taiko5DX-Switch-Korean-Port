@@ -1037,3 +1037,38 @@ The exact direct-particle hit total remains 389. V346 corrects the prior convers
 ```text
 가 104 / 는 81 / 은 50 / 를 47 / 이 46 / 와 27 / 을 15 / 로 10 / 과 9
 ```
+
+
+## 31. V347 do not invent a hidden runtime Korean-particle selector
+
+Scope:
+
+`ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_READ_ONLY`
+
+The V346 direct-particle family preserves its runtime escape sequence between original-PC and
+PC-KO for all 352 target rows and all 389 direct occurrences. Switch EVENT runtime expands the
+escape value/control token and then resumes ordinary literal scanning; the following Korean
+particle is authored EVENT data.
+
+PC patch code-layer audit gives no Korean josa selector:
+
+```text
+T5K inline records                  17,103
+inline targets inside target .text      0
+runtime descriptors                    11
+helper bytes                           158
+```
+
+Established descriptor/helper responsibilities cover mapping, byte handling, page mapping,
+font/page threshold, UI width and description-font behavior, not Hangul final-consonant or
+particle-allomorph selection.
+
+Do not repeat:
+
+- assume an EVENT escape dynamically chooses Korean particles;
+- search for a missing Switch josa hook before respecting the actual PC patch mechanism;
+- interpret the 17,103 inline replacements as executable particle-selection code;
+- assign one Korean particle to an escape family merely from escape identity;
+- silently fold the V346 direct rows into V345's exact 1,251-row fixed-surface ledger.
+
+The next question is product-policy applicability, not runtime mechanism reconstruction.

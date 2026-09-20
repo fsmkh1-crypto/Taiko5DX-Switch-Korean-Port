@@ -1,0 +1,128 @@
+{
+  "schema": "ECF00000_V347_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_V1",
+  "validation_id": "V347",
+  "scope": "ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_READ_ONLY",
+  "parent": "b6731468936c0f993da7afb65b790ed079578c42",
+  "product_bytes_changed": false,
+  "implementation": "NONE",
+  "build_package_ips_hardware": "NONE",
+  "inherited_membership": {
+    "authority": "V346",
+    "pure_direct_rows": 350,
+    "mixed_rows": 2,
+    "direct_occurrences": 389,
+    "direct_rowset_sha256": "c590ce16cf7d230e0a63914b2e5a2dff92bd0ecad35aa7d8b765b74563944ae6",
+    "mixed_rowset_sha256": "273205999e38291ac557a3a82ac960542acb0ab13e2716ec3629e76cf9ecc69e"
+  },
+  "switch_runtime": {
+    "parser_entry": "0x156D80",
+    "escape_recognition": "0x156E28",
+    "expanded_value_append": "0x1578F0",
+    "resume_scan": "0x157908",
+    "responsibility": "VALUE_OR_CONTROL_EXPANSION_ONLY",
+    "korean_particle_selector": false
+  },
+  "original_to_ko": {
+    "rows_escape_sequence_preserved": 352,
+    "rows_total": 352,
+    "direct_escape_occurrences_preserved": 389,
+    "direct_escape_occurrences_total": 389,
+    "escape_mismatches": 0,
+    "unique_direct_escape_surfaces": 107,
+    "jp_immediate_particle_occurrences": 382,
+    "jp_immediate_particle_breakdown": {
+      "は": 133,
+      "が": 121,
+      "を": 50,
+      "と": 37,
+      "の": 24,
+      "に": 11,
+      "へ": 4,
+      "で": 2
+    },
+    "reordered_or_restructured_occurrences": 7
+  },
+  "pc_runtime_patch": {
+    "inline_records": 17103,
+    "target_text_rva_start": "0x1000",
+    "target_text_rva_end": "0xB000B0",
+    "inline_target_min": "0xB1EA08",
+    "inline_target_max": "0x1061CD7",
+    "inline_records_targeting_text": 0,
+    "runtime_descriptors": 11,
+    "helper_bytes": 158,
+    "korean_particle_selector": false
+  },
+  "allomorph_surface_evidence": {
+    "same_escape_with_opposite_allomorphs": 9,
+    "surfaces": [
+      "\\%00",
+      "\\%01",
+      "\\%03",
+      "\\#07F0",
+      "\\#07FE",
+      "\\%20320",
+      "\\#0218",
+      "\\#01E3",
+      "\\E079"
+    ],
+    "percent00_example": {
+      "subject": {
+        "가": 19,
+        "이": 10
+      },
+      "topic": {
+        "는": 33,
+        "은": 10
+      },
+      "and": {
+        "와": 1,
+        "과": 2
+      }
+    }
+  },
+  "fixed_surface_comparison": {
+    "preferred_occurrences": 269,
+    "opposite_occurrences": 120,
+    "pure_direct": {
+      "rows": 350,
+      "preferred_only_rows": 242,
+      "opposite_only_rows": 104,
+      "mixed_preferred_and_opposite_rows": 4,
+      "normalization_candidate_rows": 108,
+      "opposite_occurrences": 117,
+      "substitution_counts": {
+        "은->는": 50,
+        "이->가": 45,
+        "을->를": 13,
+        "과->와": 9
+      }
+    },
+    "mixed_rows": {
+      "rows": 2,
+      "opposite_direct_occurrences": 3,
+      "row_12476": {
+        "이->가": 1
+      },
+      "row_13029": {
+        "을->를": 2
+      },
+      "product_disposition": "DEFER"
+    }
+  },
+  "binding_conclusion": {
+    "runtime_escape_owner": "RUNTIME_VALUE_OR_CONTROL",
+    "particle_surface_owner": "EVENT_AUTHORED_LITERAL",
+    "switch_runtime_josa_selector": "NONE",
+    "pc_patch_runtime_josa_selector": "NONE_ESTABLISHED"
+  },
+  "product_disposition": {
+    "direct_particle_only_rows": 350,
+    "direct_particle_only": "DEFER",
+    "mixed_rows": 2,
+    "mixed": "DEFER",
+    "v346_defer_total": 414,
+    "admission_changed": false
+  },
+  "next_scope": "ECF00000_CODE5_DIRECT_PARTICLE_FIXED_SURFACE_POLICY_EXTENSION_READ_ONLY"
+}
