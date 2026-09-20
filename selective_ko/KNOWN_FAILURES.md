@@ -1202,4 +1202,32 @@ Do not repeat:
 
 Canonical rule remains: known residuals may disappear; exact inherited or source-proven
 residuals may remain; genuinely novel residuals are blocking.
+## 35. V353 do not treat percent macros as ordinary value-only EVENT escapes
 
+Scope: `ECF00000 / %xx / TAI5MSG block-0 cross-carrier runtime grammar`
+
+The exact V346 suffix-three rows prove that bounded `%xx` macros can emit language-bearing TAI5MSG block-0 formatter fragments.
+
+```text
+\%15 -> 209 -> TAI5MSG 0:209
+\%21 -> 349 -> TAI5MSG 0:349
+\%2A -> 395 -> TAI5MSG 0:395
+```
+
+Switch table: `RODATA 0x6AC004 / 52 entries`
+TAI5MSG getter: `0x43F2A4`
+
+Current selective TAI5MSG B0 Korean locals are only 10 and 11, so the three required roots remain JP in the current product.
+
+Do not repeat:
+- classify all `%xx` macros as value/control-only escapes;
+- patch the three suffix EVENT rows without their TAI5MSG dependency;
+- treat the suffix `는` as an ordinary particle;
+- infer `%xx` owner from the hexadecimal token value itself;
+- return to CWTDAT as grammar owner without contradictory byte evidence;
+- enable all 52 B0 roots blindly;
+- invalidate V349/V352 structural serializer/relocation PASS merely because the runtime-language dependency layer was previously incomplete.
+
+Canonical rule: `EVENT byte validity/relocation PASS != percent-macro runtime-language integration PASS`.
+
+Run the bounded product-admitted `%xx` -> B0 dependency census before any implementation.

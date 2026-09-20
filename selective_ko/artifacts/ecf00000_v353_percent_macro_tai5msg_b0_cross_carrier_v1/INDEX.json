@@ -1,0 +1,73 @@
+{
+  "schema": "ECF00000_V353_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_V1",
+  "validation_id": "V353",
+  "parent": "9db0fef21a7941630625a3020a1ccdee139910fc",
+  "scope": "ECF00000_CODE5_NON_PARTICLE_SUFFIX_ADJACENCY_RUNTIME_RESPONSIBILITY_READ_ONLY",
+  "result": "CROSS_CARRIER_DEPENDENCY_DISCOVERED",
+  "implementation": "NONE",
+  "product_bytes_changed": false,
+  "suffix3": {
+    "rows": 3,
+    "row_ids": [
+      4743,
+      5059,
+      11440
+    ],
+    "v346_class": "NON_PARTICLE_SUFFIX_ADJACENCY",
+    "disposition": "DEFER_PENDING_CROSS_CARRIER_CENSUS"
+  },
+  "switch_percent_macro_runtime": {
+    "dispatch_table_va": "0x6AC004",
+    "entries": 52,
+    "tai5msg_getter": "0x43F2A4",
+    "getter_rule": "block=message_id/1000; local=message_id%1000",
+    "exact_bindings": [
+      {
+        "macro": "\\%15",
+        "entry": 209,
+        "owner": "TAI5MSG:0:209"
+      },
+      {
+        "macro": "\\%21",
+        "entry": 349,
+        "owner": "TAI5MSG:0:349"
+      },
+      {
+        "macro": "\\%2A",
+        "entry": 395,
+        "owner": "TAI5MSG:0:395"
+      }
+    ]
+  },
+  "pc_patch_evidence": {
+    "cwtdat_owner_hypothesis": "REJECTED",
+    "tai5msg_block0_graph": "PRESERVED_PC_ORIGINAL_TO_KOREAN"
+  },
+  "selective_tai5msg_state": {
+    "current_b0_selected_count": 2,
+    "current_b0_selected_locals": [
+      10,
+      11
+    ],
+    "suffix3_required_roots": [
+      209,
+      349,
+      395
+    ],
+    "suffix3_required_roots_selected": 0,
+    "direct_percent_table_roots_intersect_current_b0_selected": 0
+  },
+  "inherited_status": {
+    "v349_byte_structural_validation": "REMAINS_VALID",
+    "v352_byte_structural_validation": "REMAINS_VALID",
+    "percent_macro_runtime_language_integration": "NOT_YET_CLOSED"
+  },
+  "rejected": [
+    "CWTDAT owns %15/%21/%2A grammar output",
+    "percent hex value directly equals TAI5MSG local index",
+    "suffix-three can be fixed by EVENT-only raw PC-KO overlay",
+    "suffix-three can be handled as ordinary particle replacement",
+    "all percent escapes are value-only escapes equivalent to V347 direct-particle escape model"
+  ],
+  "next_scope": "ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DEPENDENCY_CENSUS_READ_ONLY"
+}
