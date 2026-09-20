@@ -1,0 +1,73 @@
+{
+  "schema": "ECF00000_V340_STATEAWARE_RESIDUAL_GATE_V1",
+  "validation_id": "V340",
+  "parent": "042f3b9f549ef155ec951ed965bdaa5afe08a88b",
+  "scope": "ECF00000_PARTITION593_0E_RESIDUAL_RUNTIME_OVERRUN_ROOT_CAUSE_AND_VALIDATOR_GATE",
+  "switch_main": {
+    "size": 5287359,
+    "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
+    "text_decompressed_size": 5820000,
+    "text_sha256": "c80792d1c104320ce995fef3ec4ac798870da85ae8f86c3f52e209e478d0bf35"
+  },
+  "runtime_evidence": {
+    "interpreter_loop": "0x15F2C0",
+    "event_dispatch": "0x15F44C",
+    "event_0e_handler": "0x15FCB8",
+    "event_0e_length_return": "0x15FD60..0x15FD68",
+    "fivea_handler": "0x16087C",
+    "loop_post_handler_control": "0x15F390..0x15F3C4",
+    "state_dimensions_observed": [
+      "context_mode@+0x08",
+      "result@+0x0C",
+      "control@+0x10",
+      "control@+0x11",
+      "branch_chain@+0x12",
+      "global_stop@runtime_object+0x54"
+    ]
+  },
+  "stock_residual": {
+    "partition": 593,
+    "original_offset": "0xBDD78",
+    "current_offset": "0xBDD78",
+    "header": "0E 02 D5 1F",
+    "opcode": "0x0E",
+    "decoded_length": "0x7F5408",
+    "decoded_length_decimal": 8344584
+  },
+  "v339_residual": {
+    "partition": 593,
+    "original_offset": "0xBDD78",
+    "current_offset": "0xDDD84",
+    "header": "0E 02 D5 1F",
+    "opcode": "0x0E",
+    "decoded_length": "0x7F5408",
+    "decoded_length_decimal": 8344584
+  },
+  "classification": "STOCK_PREEXISTING_MAY_MODEL_ARTIFACT_NON_BLOCKING",
+  "root_cause": "STATEAWARE_WALKER_STATE_VECTOR_INCOMPLETE_RELATIVE_TO_SWITCH_INTERPRETER_CONTROL_MODE",
+  "not_caused_by": [
+    "V339_5A_LENGTH_FORMULA",
+    "V337_GENERIC_RELOCATION",
+    "V338_SPECIAL_SPAN",
+    "1E_OMISSION",
+    "3C_OMISSION",
+    "0E_PAYLOAD_MUTATION"
+  ],
+  "validator_policy": {
+    "identity_key": ["kind", "partition", "original_offset", "opcode", "decoded_length"],
+    "current_offset_in_identity": false,
+    "stock_preexisting_same_logical_residual": "NON_BLOCKING_DIAGNOSTIC",
+    "resolved_stock_residual": "NON_BLOCKING",
+    "novel_or_mutated_logical_residual": "BLOCKING"
+  },
+  "implementation": {
+    "module": "builder/selective_event_validation.py",
+    "tests": "tests/test_selective_event_validation.py",
+    "unit": "PASS_7_OF_7",
+    "module_sha256": "b574ef7ae3f4124e241cf318006edd17a5ee864a449bfbac3ea0096312dda698",
+    "tests_sha256": "9de3b968a4fcf38a191f374c28cf5583e89919613de144325523bf5f8b901cdb"
+  },
+  "product_bytes_changed": false,
+  "build_package_ips_hardware": "NONE",
+  "next_scope": "ECF00000_1E_SEMANTIC_ADMISSION_LEDGER_READ_ONLY"
+}

@@ -788,3 +788,46 @@ Do not repeat:
 - hard-code the 82 modified offsets instead of recomputing from the current layout;
 - treat the partition-118 row as an ordinary dialogue-padding case;
 - translate 5A names merely to inherit PC-KO byte geometry.
+
+## 24. V340 absolute state-aware zero-error gate false blocker
+
+Scope:
+
+`ECF00000_PARTITION593_0E_RESIDUAL_RUNTIME_OVERRUN_ROOT_CAUSE_AND_VALIDATOR_GATE`
+
+V339 retained one state-aware diagnostic overrun at partition 593 / original `0xBDD78` / opcode `0x0E`. Replaying the same diagnostic model on unmodified stock produces the same logical residual:
+
+```text
+partition        593
+original anchor  0xBDD78
+header           0E 02 D5 1F
+decoded length   0x7F5408
+```
+
+V339 relocates the same original logical object to current `0xDDD84`; it does not create a new residual.
+
+Bounded Switch-main disassembly confirms the 0x5A consumed-length formula and 0x0E parent-length formula, while also proving that the common interpreter loop carries control state beyond the conservative V333 `(context, physical_address, S, F)` model. Handler-returned length is not applied before mode/control/global-stop checks.
+
+Rejected gate:
+
+```text
+state-aware residual count must equal zero
+```
+
+Binding replacement:
+
+```text
+compare candidate residuals to exact stock logical baseline
+identity = kind + partition + original_offset + opcode + decoded_length
+
+same stock residual, relocated current offset  -> NON_BLOCKING
+stock residual disappears                     -> NON_BLOCKING
+new/mutated logical residual                   -> BLOCKING
+```
+
+Do not:
+
+- patch stock `0x0E` bytes merely to make a diagnostic count zero;
+- force V339 5A geometry to PC-KO solely to suppress the stock residual;
+- compare residual identity by current relocated offset;
+- treat V333 MAY-reachable state union as exact gameplay-feasible execution.
