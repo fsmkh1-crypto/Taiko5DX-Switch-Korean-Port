@@ -1,0 +1,45 @@
+{
+  "changed_rows": 100,
+  "compact_ledger_sha256": "4375510e70d24ed008c80db5fc8efcae6582069b69cad88ba6d42e6ab67df1cf",
+  "compact_ledger_size": 1818,
+  "dispositions": {
+    "KEEP_JP_IDENTITY": 100,
+    "PRESERVE_STRUCTURAL_ALIAS": 1
+  },
+  "header_mismatch": 0,
+  "identical_rows": 1,
+  "input_identity": "PASS",
+  "mapping_rows": 101,
+  "may_reachable_rows": 87,
+  "mutation_allowed": 0,
+  "partition_count_mismatch": 0,
+  "pc_ko_growth_if_copied": 1012,
+  "product": false,
+  "rowsets": {
+    "all_101": {
+      "rows": 101,
+      "sha256": "b360b83de11125d8449bb273cfc13bd018a4ac9b47f07e500b6f3ff2520ab0e2"
+    },
+    "keep_jp_identity_100": {
+      "rows": 100,
+      "sha256": "dd95d3aea68e8bcd6587d3b8172c1e61e7b8b347678a44aa621d9db4cdfdf331"
+    },
+    "may_reachable_87": {
+      "rows": 87,
+      "sha256": "1af9788706429afd406c7c8b955a7b53749fd571efd345cbd7b3b8951489bea4"
+    },
+    "non_may_14": {
+      "rows": 14,
+      "sha256": "fa8e913baeccb838b018094fae935038343aabdbf4365d5a37ebfd71e34cd0bd"
+    },
+    "preserve_structural_alias_1": {
+      "rows": 1,
+      "sha256": "9ce0e1d59937059ed600ff957b2c2df96e6b262375a72863977f25ec3664121e"
+    }
+  },
+  "runtime_unresolved_rows": 0,
+  "semantic_unresolved_rows": 0,
+  "status": "PASS",
+  "v342_current_3c_mutations": 0,
+  "validation_id": "V343"
+}

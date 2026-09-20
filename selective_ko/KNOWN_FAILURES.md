@@ -866,3 +866,41 @@ Do not repeat:
 - equate semantic translatability with runtime admission;
 - promote the 21 pending rows without new runtime provenance;
 - reopen V340's stock-preexisting 0x0E residual as evidence that 1E must be bulk-copied.
+
+## 26. V343 PC-editor 0x3C over-group is not runtime ownership
+
+Scope:
+
+`ECF00000_3C_KEEP_JP_EXACT_LEDGER_CANONICALIZATION`
+
+The PC editor groups 101 apparent `0x3C` objects. Runtime evidence proves that only 100 are normal four-field rename/identity commands.
+
+The exceptional editor object:
+
+```text
+partition        283
+original offset  0x7BFEC
+PC-KO offset     0x9B038
+editor length    36
+runtime 3C len   20
+PC-KO changed    NO
+MAY-reachable    NO
+```
+
+is physically `EVENT 0x38 @ 0x7BFE8 + 4`. The apparent `0x3C` byte is inside another runtime command and must be preserved as `PRESERVE_STRUCTURAL_ALIAS`.
+
+Binding V343 disposition:
+
+```text
+KEEP_JP_IDENTITY             100
+PRESERVE_STRUCTURAL_ALIAS      1
+PC-KO 3C mutation allowed      0
+```
+
+Do not repeat:
+
+- treat every editor-grouped 0x3C as a standalone runtime rename owner;
+- copy all 100 changed PC-KO rename objects merely because mapping is exact;
+- translate only MAY-reachable identity rows while mutating non-MAY identity rows;
+- build a 3C mutation serializer for the current KEEP_JP product;
+- use final-Korean fresh grouping as runtime ownership authority.

@@ -1,0 +1,105 @@
+{
+  "build_package_ips_hardware": "NONE",
+  "compact_ledger": {
+    "disposition_codes": {
+      "1": "KEEP_JP_IDENTITY",
+      "2": "PRESERVE_STRUCTURAL_ALIAS"
+    },
+    "file": "LEDGER_COMPACT.bin",
+    "record_size": 18,
+    "records": 101,
+    "serialization": "<HHIIHHBB",
+    "sha256": "4375510e70d24ed008c80db5fc8efcae6582069b69cad88ba6d42e6ab67df1cf",
+    "subtype_codes": {
+      "1": "RENAME_FOUR_FIELD",
+      "2": "EMBEDDED_EVENT38_PLUS4_EDITOR_OVERGROUP"
+    }
+  },
+  "dispositions": {
+    "KEEP_JP_IDENTITY": 100,
+    "PRESERVE_STRUCTURAL_ALIAS": 1
+  },
+  "human_ledger": {
+    "file": "LEDGER.jsonl",
+    "sha256": "d3f8f4ad7404504c9469a3f31cc55514e5699b3907a372eabef25b9d5bf0e2fc"
+  },
+  "inputs": {
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480
+    },
+    "stock": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v342_diagnostic": {
+      "sha256": "e1f251cb6614fd79bd0e5add752b23460d4e70af5ad52325abbfd4421195569b",
+      "size": 1081652
+    }
+  },
+  "mapping": {
+    "changed": 100,
+    "header_mismatch": 0,
+    "identical": 1,
+    "partition_count": 73,
+    "partition_count_mismatch": 0,
+    "rows": 101
+  },
+  "may_reachable_rowset": {
+    "file": "MAY_REACHABLE_3C_ROWSET.bin",
+    "record_size": 12,
+    "records": 87,
+    "sha256": "1af9788706429afd406c7c8b955a7b53749fd571efd345cbd7b3b8951489bea4"
+  },
+  "next_scope": "ECF00000_FIXED_SURFACE_PARTICLE_V1_EXACT_TRANSFORM_RECOVERY_READ_ONLY",
+  "parent": "e275f8ff457f14aee12fc9df31acdd2fee085eca",
+  "pc_ko_growth_if_copied": 1012,
+  "policy": {
+    "identity": "KEEP_JP",
+    "pc_ko_3c_mutation_allowed": 0,
+    "product_growth_from_3c": 0,
+    "structural_alias": "PRESERVE_ORIGINAL"
+  },
+  "product_bytes_changed": false,
+  "rowsets": {
+    "all_101": {
+      "rows": 101,
+      "sha256": "b360b83de11125d8449bb273cfc13bd018a4ac9b47f07e500b6f3ff2520ab0e2"
+    },
+    "keep_jp_identity_100": {
+      "rows": 100,
+      "sha256": "dd95d3aea68e8bcd6587d3b8172c1e61e7b8b347678a44aa621d9db4cdfdf331"
+    },
+    "may_reachable_87": {
+      "rows": 87,
+      "sha256": "1af9788706429afd406c7c8b955a7b53749fd571efd345cbd7b3b8951489bea4"
+    },
+    "non_may_14": {
+      "rows": 14,
+      "sha256": "fa8e913baeccb838b018094fae935038343aabdbf4365d5a37ebfd71e34cd0bd"
+    },
+    "preserve_structural_alias_1": {
+      "rows": 1,
+      "sha256": "9ce0e1d59937059ed600ff957b2c2df96e6b262375a72863977f25ec3664121e"
+    }
+  },
+  "runtime": {
+    "embedded_alias": {
+      "container": "EVENT_0x38_AT_0x7BFE8_PLUS4",
+      "editor_length": 36,
+      "ko_offset": "0x9b038",
+      "may_reachable": false,
+      "ordinal": 0,
+      "original_offset": "0x7bfec",
+      "partition": 283,
+      "runtime_3c_length": 20,
+      "subtype": "EMBEDDED_EVENT38_PLUS4_EDITOR_OVERGROUP"
+    },
+    "normal_rename_rows": 100,
+    "normal_runtime_length_matches_editor_length_original": 100,
+    "normal_runtime_length_matches_editor_length_pc_ko": 100
+  },
+  "schema": "ECF00000_V343_3C_KEEP_JP_LEDGER_V1",
+  "v342_current_3c_mutations": 0,
+  "validation_id": "V343"
+}
