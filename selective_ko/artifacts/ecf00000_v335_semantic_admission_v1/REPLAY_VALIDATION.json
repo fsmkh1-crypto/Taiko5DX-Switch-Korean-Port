@@ -1,0 +1,15 @@
+{
+  "expected_aggregate_match": true,
+  "include_ko": 12171,
+  "include_rowset_sha256": "714938521e9db784725b1de2bf2018114090a0aabc5759a29975caba092d1d10",
+  "legacy_mismatches": 0,
+  "legacy_v329_exact_regression": "PASS_2858_OF_2858",
+  "non_korean": 478,
+  "non_korean_rowset_sha256": "ff5839e8c45aa07465dfcc7bbe497bfbc144a399dc4dbc1a0eaa3e703241e5f0",
+  "result": "PASS",
+  "schema": "ECF00000_V334_SEMANTIC_ADMISSION_REPLAY_V1",
+  "semantic_jsonl_sha256": "d449b9b30938ec46b3ef40a5fb69f695efdb82cbc05aa0f8f070134e897d235e",
+  "unresolved": 426,
+  "unresolved_rowset_sha256": "5e0fa8d144974082097974b33a119893e553e63ada1a28196c842fd7e3beaa90",
+  "v334_rows": 13075
+}

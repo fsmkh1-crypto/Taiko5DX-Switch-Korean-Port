@@ -1,0 +1,71 @@
+{
+  "authority": "V325/V326 exact byte-level classifier replay bound to V334 exact row IDs",
+  "detail_counts": {
+    "INCLUDE_KO_CHOICE": 357,
+    "INCLUDE_KO_FIXED_SURFACE_PARTICLE": 1226,
+    "INCLUDE_KO_NO_ESCAPE": 8155,
+    "INCLUDE_KO_RUNTIME_EXPANSION": 2433,
+    "NON_KOREAN_TARGET": 478,
+    "UNRESOLVED_PARTICLE_RISK": 426
+  },
+  "detector_explicit_dual_overlap_rows": 17,
+  "detector_only_unresolved_rows": 426,
+  "escape_rows": 4155,
+  "explicit_dual_particle_breakdown": {
+    "(으)로": 23,
+    "과(와)": 41,
+    "와(과)": 51,
+    "은(는)": 521,
+    "을(를)": 358,
+    "이(가)": 395
+  },
+  "explicit_dual_particle_occurrences": 1389,
+  "explicit_dual_particle_rows": 1226,
+  "forbidden": [
+    "BULK_TREAT_ALL_ESCAPES_AS_UNRESOLVED",
+    "BULK_TREAT_ALL_PARTICLE_DETECTOR_HITS_AS_TRUE_PARTICLES",
+    "USE_HISTORICAL_4444_MEMBERSHIP",
+    "SEMANTIC_CLASSIFICATION_WITHOUT_V334_ROW_ID_BINDING"
+  ],
+  "inputs": {
+    "legacy_v329_regression": {
+      "rows": 2858,
+      "sha256": "d00f6ce0a1762dbab69274ff88dc02864330ef0bbcc2bc66321facec27937c17"
+    },
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480
+    },
+    "v334_rows": {
+      "rows": 13075,
+      "rowset_sha256": "1f927558cf5c16f636d8c3c15323c4bd498e279332ce9ebe9595fa27307c5631",
+      "sha256": "aef17d206559ec548a5fb3c2414d8a1f17832f7e4c2df03b8468240926c11b65"
+    }
+  },
+  "legacy_regression": {
+    "mismatches": 0,
+    "rows_checked": 2858,
+    "status": "PASS_EXACT_2858_OF_2858"
+  },
+  "particle_detector_rows": 443,
+  "product_counts": {
+    "INCLUDE_KO": 12171,
+    "NON_KOREAN_TARGET": 478,
+    "UNRESOLVED": 426
+  },
+  "product_rowset_sha256": {
+    "INCLUDE_KO": "714938521e9db784725b1de2bf2018114090a0aabc5759a29975caba092d1d10",
+    "NON_KOREAN_TARGET": "ff5839e8c45aa07465dfcc7bbe497bfbc144a399dc4dbc1a0eaa3e703241e5f0",
+    "UNRESOLVED": "5e0fa8d144974082097974b33a119893e553e63ada1a28196c842fd7e3beaa90"
+  },
+  "rules": {
+    "choice": "korean_bearing=true and opcode=0x15 -> INCLUDE_KO_CHOICE",
+    "detector_only": "particle detector true and no exact dual-particle literal -> UNRESOLVED_PARTICLE_RISK",
+    "fixed_surface_particle": "Korean escaped message containing exact authorized dual-particle literal -> INCLUDE_KO_FIXED_SURFACE_PARTICLE",
+    "no_escape": "Korean message with no parsed runtime escape -> INCLUDE_KO_NO_ESCAPE",
+    "non_korean": "korean_bearing=false -> NON_KOREAN_TARGET",
+    "particle_detector": "parsed runtime escape immediately followed by particle-family code, excluding that occurrence when it begins an exact dual-particle literal",
+    "runtime_expansion": "remaining Korean escaped message -> INCLUDE_KO_RUNTIME_EXPANSION"
+  },
+  "schema": "ECF00000_V334_SEMANTIC_ADMISSION_LAYER_V1"
+}

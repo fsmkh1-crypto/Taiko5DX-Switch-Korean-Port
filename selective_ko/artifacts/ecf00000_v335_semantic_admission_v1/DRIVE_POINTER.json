@@ -1,0 +1,10 @@
+{
+  "schema": "ECF00000_V335_DRIVE_POINTER_V1",
+  "drive_folder_path": "Google Drive/GPT/태합입지전/ECF00000_V335_SEMANTIC_ADMISSION_LAYER",
+  "drive_folder_id": "1eXSc0ml_bO89XIpRdG3BOSnh8GaRti-s",
+  "drive_file_name": "ECF00000_V335_SEMANTIC_ADMISSION_CANONICAL.zip",
+  "drive_file_id": "13ffnjrOgfDv3MtveBg-ktOmd_waJMWHw",
+  "size": 360776,
+  "sha256": "9e1f7cb880235323aadd3aa2e47d94e1775d25b2375201e60ca7eafd9a097a7e",
+  "drive_roundtrip": "PASS_BYTE_IDENTICAL"
+}

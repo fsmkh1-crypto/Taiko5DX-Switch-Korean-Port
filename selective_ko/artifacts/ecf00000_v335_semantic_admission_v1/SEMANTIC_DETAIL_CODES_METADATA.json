@@ -1,0 +1,24 @@
+{
+  "schema": "ECF00000_V335_SEMANTIC_DETAIL_CODES_BY_V334_ROW_V1",
+  "binding": "byte index 0..13074 corresponds exactly to V334 canonical row order 1..13075",
+  "codes": {
+    "0": "NON_KOREAN_TARGET",
+    "1": "INCLUDE_KO_NO_ESCAPE",
+    "2": "INCLUDE_KO_CHOICE",
+    "3": "INCLUDE_KO_FIXED_SURFACE_PARTICLE",
+    "4": "INCLUDE_KO_RUNTIME_EXPANSION",
+    "5": "UNRESOLVED_PARTICLE_RISK"
+  },
+  "raw_file": "SEMANTIC_DETAIL_CODES_BY_V334_ROW.bin",
+  "raw_size": 13075,
+  "raw_sha256": "a698b788787c0006e98b62029e9145f56f33270e363ca31c389ede0442001b12",
+  "git_file": "SEMANTIC_DETAIL_CODES_BY_V334_ROW.bin.zlib",
+  "compression": "zlib level 9",
+  "compressed_size": 2680,
+  "compressed_sha256": "dea9a6b76619f03ec698b8d60c700680a55c422a6ee0ae3ffe794cace27213dd",
+  "reconstruction_validation": {
+    "INCLUDE_KO": "714938521e9db784725b1de2bf2018114090a0aabc5759a29975caba092d1d10",
+    "UNRESOLVED": "5e0fa8d144974082097974b33a119893e553e63ada1a28196c842fd7e3beaa90",
+    "NON_KOREAN_TARGET": "ff5839e8c45aa07465dfcc7bbe497bfbc144a399dc4dbc1a0eaa3e703241e5f0"
+  }
+}
