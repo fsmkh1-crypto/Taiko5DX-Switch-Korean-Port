@@ -1072,3 +1072,47 @@ Do not repeat:
 - silently fold the V346 direct rows into V345's exact 1,251-row fixed-surface ledger.
 
 The next question is product-policy applicability, not runtime mechanism reconstruction.
+
+## 32. Unbounded resume-state fetch creates context I/O bottleneck
+
+Scope:
+
+`PROJECT_RESUME / SELECTIVE_TRACK_OPERATIONS`
+
+On 2026-09-20, a resume attempt fetched accumulated `PROJECT_STATE.md`,
+`SELECTIVE_PROJECT_STATE.md`, and `KNOWN_FAILURES.md` too broadly. The returned material was
+large enough to be truncated and created avoidable context-processing latency before the V345
+implementation itself had begun.
+
+Impact:
+
+```text
+technical analysis lost       NO
+product bytes changed         NO
+repository write              NO
+implementation begun          NO
+root cause                    over-broad resume reads / context I/O
+```
+
+Binding replacement authority:
+
+`selective_ko/BOUNDED_RESUME_READ_POLICY.md`
+
+Do not repeat:
+
+- dump the full accumulated PROJECT_STATE history into active context on every resume;
+- read every `required_reads` entry merely because it is listed;
+- dump all KNOWN_FAILURES when only one current cause-family is relevant;
+- re-read CLOSED/VERIFIED authorities without a demonstrated provenance need.
+
+Required resume pattern:
+
+```text
+remote HEAD
+-> bounded PROJECT_RESUME_V2/current overlay
+-> bounded SELECTIVE current status/next scope
+-> current authority + INDEX
+-> exact-scope code/data only
+```
+
+The `required_reads` array is provenance ordering, not a mandatory read-all checklist.
