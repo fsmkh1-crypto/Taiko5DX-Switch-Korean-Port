@@ -13,6 +13,7 @@ from builder.selective_tai5msg import (
     _validate_selected_message,
     korean_added_code_domain,
     load_v315_corrections,
+    load_v356_percent_macro_roots,
     load_v320_corrections,
     metadata_preflight,
 )
@@ -94,20 +95,29 @@ class SelectiveTai5MsgUnitTests(unittest.TestCase):
                 _b24_nonlayout_signature(correction.target_bytes),
             )
 
+    def test_v356_percent_macro_root_manifest(self) -> None:
+        repo_root = Path(__file__).resolve().parents[1]
+        roots = load_v356_percent_macro_roots(repo_root)
+        self.assertEqual(len(roots), 46)
+        self.assertEqual(sum(spec.delta for spec in roots.values()), 578)
+        self.assertNotIn((0, 10), roots)
+        self.assertNotIn((0, 11), roots)
+
     def test_repository_metadata_preflight(self) -> None:
         repo_root = Path(__file__).resolve().parents[1]
         report = metadata_preflight(repo_root)
         self.assertEqual(report.selected_rows, 3179)
-        self.assertEqual(report.growth, 0x70C0)
-        self.assertEqual(report.final_size, 0x1C1289)
-        self.assertEqual(report.b32_offset, 0x1B4840)
+        self.assertEqual(report.program_root_rows, 46)
+        self.assertEqual(report.growth, 0x7300)
+        self.assertEqual(report.final_size, 0x1C14C9)
+        self.assertEqual(report.b32_offset, 0x1B4A80)
         self.assertEqual(report.b32_used_end, 0xB8D5)
         self.assertEqual(report.b32_declared, 0xCA80)
         self.assertEqual(report.b32_physical, 0xCA49)
         self.assertEqual(report.b32_omitted, 0x37)
         self.assertEqual(
             report.growth_blocks,
-            ((17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0x780)),
+            ((0, 0x240), (17, 0x340), (19, 0xA80), (20, 0x6C0), (21, 0x1C0), (22, 0x4340), (23, 0xFC0), (24, 0x780)),
         )
 
 

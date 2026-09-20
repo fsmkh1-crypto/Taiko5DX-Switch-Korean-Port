@@ -9,6 +9,12 @@ import struct
 from typing import AbstractSet, Iterable, Mapping, Sequence
 
 from builder.tai5msg_corrections import CorrectionOverlayError, MessageCorrection, apply_correction, load_overlay
+from builder.tai5msg_percent_macro_roots import (
+    EXPECTED_ROOTS as EXPECTED_PERCENT_MACRO_ROOTS,
+    PercentMacroRootError,
+    load_v356_percent_macro_root_specs,
+    resolve_v356_percent_macro_root_targets,
+)
 
 STOCK_SIZE = 1_810_889
 STOCK_SHA256 = "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f"
@@ -26,18 +32,21 @@ ALIGN = 0x40
 RUNTIME_BLOCK_CAPACITY = 0x20000
 
 EXPECTED_SELECTED = 3_179
-EXPECTED_UNSELECTED = 11_653
+EXPECTED_PROGRAM_ROOTS = EXPECTED_PERCENT_MACRO_ROOTS
+EXPECTED_UNSELECTED = 11_607
 EXPECTED_R1 = 3_158
 EXPECTED_R2 = 21
-EXPECTED_GROWTH = 0x70C0
-EXPECTED_FINAL_SIZE = 0x1C1289
-EXPECTED_B32_OFFSET = 0x1B4840
+EXPECTED_GROWTH = 0x7300
+EXPECTED_FINAL_SIZE = 0x1C14C9
+EXPECTED_B0_USED_END = 0xE9FC
+EXPECTED_B0_DECLARED = 0xEA00
+EXPECTED_B32_OFFSET = 0x1B4A80
 EXPECTED_B32_USED_END = 0xB8D5
 EXPECTED_B32_DECLARED = 0xCA80
 EXPECTED_B32_PHYSICAL = 0xCA49
 EXPECTED_B32_OMITTED = 0x37
 EXPECTED_LARGEST_DECLARED = 0x12B00
-EXPECTED_DIAGNOSTIC_SHA256 = "fd4c8b9f527f67f667d5fded6bdb4703607b70e8b6addf1f41c5d11ebf93e85c"
+EXPECTED_DIAGNOSTIC_SHA256 = "ad91776d47c3170573bed063dd6677716833e3a138be27474373ef5d2782e794"
 
 EXPECTED_UNIQUE_TWO_BYTE_CODES = 1_011
 EXPECTED_TWO_BYTE_OCCURRENCES = 225_719
@@ -108,6 +117,7 @@ class V304Correction:
 @dataclass(frozen=True)
 class MetadataPreflightReport:
     selected_rows: int
+    program_root_rows: int
     growth: int
     final_size: int
     b32_offset: int
@@ -133,6 +143,7 @@ class SelectiveSerializationReport:
     block_count: int
     message_count: int
     selected_rows: int
+    program_root_rows: int
     unselected_rows: int
     growth: int
     final_size: int
@@ -780,6 +791,25 @@ def _apply_v320(
             _fail("V320_SOURCE_GUARD_FAIL", f"{locator}: {exc}")
     return out
 
+
+def load_v356_percent_macro_roots(repo_root: Path):
+    try:
+        return load_v356_percent_macro_root_specs(repo_root)
+    except (PercentMacroRootError, OSError, ValueError, KeyError, TypeError) as exc:
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", str(exc))
+
+
+def _resolve_v356_percent_macro_roots(
+    stock_messages: Sequence[Sequence[bytes]],
+    pc_ko_messages: Sequence[Sequence[bytes]],
+    specs,
+) -> dict[tuple[int, int], bytes]:
+    try:
+        return resolve_v356_percent_macro_root_targets(stock_messages, pc_ko_messages, specs)
+    except (PercentMacroRootError, ValueError, KeyError, TypeError) as exc:
+        _fail("V356_PERCENT_MACRO_ROOT_SOURCE_TARGET_GUARD_FAIL", str(exc))
+
+
 def _validate_current_postconditions(
     stock_blob: bytes,
     emitted: bytes,
@@ -790,6 +820,14 @@ def _validate_current_postconditions(
         _fail("OUTPUT_GROWTH_POSTCONDITION_FAIL", f"{growth:#x} != {EXPECTED_GROWTH:#x}")
     if len(emitted) != EXPECTED_FINAL_SIZE:
         _fail("OUTPUT_SIZE_POSTCONDITION_FAIL", f"{len(emitted):#x} != {EXPECTED_FINAL_SIZE:#x}")
+
+    b0 = metas[0]
+    if int(b0["used_end"]) != EXPECTED_B0_USED_END or int(b0["declared"]) != EXPECTED_B0_DECLARED:
+        _fail(
+            "V356_PERCENT_MACRO_ROOT_CAPACITY_POSTCONDITION_FAIL",
+            f"B0 used/declared {int(b0['used_end']):#x}/{int(b0['declared']):#x} != "
+            f"{EXPECTED_B0_USED_END:#x}/{EXPECTED_B0_DECLARED:#x}",
+        )
 
     b32 = metas[32]
     checks = {
@@ -812,6 +850,12 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     corrections = load_v304_corrections(repo_root)
     b24_corrections = load_v315_corrections(repo_root)
     native_wrap_corrections = load_v320_corrections(repo_root)
+    percent_macro_roots = load_v356_percent_macro_roots(repo_root)
+    root_locators = set(percent_macro_roots)
+    if root_locators & membership.locators:
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", "V356 roots overlap V303 membership")
+    if root_locators & (set(corrections) | set(b24_corrections) | set(native_wrap_corrections)):
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", "V356 roots overlap correction owners")
     if set(corrections) & set(b24_corrections):
         _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
     if set(native_wrap_corrections) != set(b24_corrections) - {(24, 228)}:
@@ -864,6 +908,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     metas: list[dict] = []
     file_offset = HEADER_SIZE
     selected_seen = 0
+    program_root_seen = 0
 
     for block_index in range(BLOCK_COUNT):
         lengths = lengths_by_block[block_index]
@@ -876,7 +921,13 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
         total = 0
         for local in range(len(original_lengths)):
             locator = (block_index, local)
-            if locator in membership.locators:
+            if locator in percent_macro_roots:
+                spec = percent_macro_roots[locator]
+                if spec.source_length != int(original_lengths[local]) or spec.target_length != int(korean_lengths[local]):
+                    _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", f"length lattice mismatch at {locator}")
+                length = spec.target_length
+                program_root_seen += 1
+            elif locator in membership.locators:
                 length = int(korean_lengths[local])
                 selected_seen += 1
             else:
@@ -917,6 +968,8 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
 
     if selected_seen != EXPECTED_SELECTED:
         _fail("V303_MEMBERSHIP_FAIL", f"metadata selected count {selected_seen}")
+    if program_root_seen != EXPECTED_PROGRAM_ROOTS:
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", f"metadata program-root count {program_root_seen}")
 
     b32 = metas[32]
     final_size = int(b32["offset"]) + int(b32["physical"])
@@ -924,6 +977,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     growth_blocks = tuple((int(meta["block"]), int(meta["growth"])) for meta in metas if int(meta["growth"]))
     report = MetadataPreflightReport(
         selected_rows=selected_seen,
+        program_root_rows=program_root_seen,
         growth=growth,
         final_size=final_size,
         b32_offset=int(b32["offset"]),
@@ -937,6 +991,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     )
 
     expected_growth_blocks = (
+        (0, 0x240),
         (17, 0x340),
         (19, 0xA80),
         (20, 0x6C0),
@@ -947,6 +1002,7 @@ def metadata_preflight(repo_root: Path) -> MetadataPreflightReport:
     )
     expected = {
         "selected_rows": EXPECTED_SELECTED,
+        "program_root_rows": EXPECTED_PROGRAM_ROOTS,
         "growth": EXPECTED_GROWTH,
         "final_size": EXPECTED_FINAL_SIZE,
         "b32_offset": EXPECTED_B32_OFFSET,
@@ -983,6 +1039,12 @@ def reconstruct_selective_tai5msg(
     corrections = load_v304_corrections(repo_root)
     b24_corrections = load_v315_corrections(repo_root)
     native_wrap_corrections = load_v320_corrections(repo_root)
+    percent_macro_roots = load_v356_percent_macro_roots(repo_root)
+    root_locators = set(percent_macro_roots)
+    if root_locators & membership.locators:
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", "V356 roots overlap V303 membership")
+    if root_locators & (set(corrections) | set(b24_corrections) | set(native_wrap_corrections)):
+        _fail("V356_PERCENT_MACRO_ROOT_INTEGRITY_FAIL", "V356 roots overlap correction owners")
     if set(corrections) & set(b24_corrections):
         _fail("V315_INDEX_OR_ROWS_INTEGRITY_FAIL", "V304/V315 correction overlap")
     if set(native_wrap_corrections) != set(b24_corrections) - {(24, 228)}:
@@ -992,6 +1054,12 @@ def reconstruct_selective_tai5msg(
     pc_ko = parse_tai5msg(pc_ko_blob)
     if [b.message_count for b in stock.blocks] != [b.message_count for b in pc_ko.blocks]:
         _fail("POST_REPARSE_COUNT_FAIL", "stock/PC-KO per-block message counts differ")
+
+    program_root_targets = _resolve_v356_percent_macro_roots(
+        _messages_matrix(stock),
+        _messages_matrix(pc_ko),
+        percent_macro_roots,
+    )
 
     zero_messages = _messages_matrix(stock)
     zero_rebuilt, _zero_meta = _serialize_from_messages(stock, zero_messages)
@@ -1022,11 +1090,16 @@ def reconstruct_selective_tai5msg(
     if len(korean_added) != EXPECTED_UNIQUE_KOREAN_ADDED_CODES or sum(korean_added.values()) != EXPECTED_KOREAN_ADDED_OCCURRENCES:
         _fail("MAPPING_DOMAIN_MISS", "effective Korean-added code census differs from V306")
 
+    for locator, payload in program_root_targets.items():
+        block, local = locator
+        targets[block][local] = payload
+
     emitted, metas = _serialize_from_messages(stock, targets)
     _validate_current_postconditions(stock_blob, emitted, metas)
 
     post = parse_tai5msg(emitted)
     selected_matches = 0
+    program_root_matches = 0
     unselected_matches = 0
     for block_index in range(BLOCK_COUNT):
         for local, message in enumerate(post.blocks[block_index].messages):
@@ -1035,13 +1108,21 @@ def reconstruct_selective_tai5msg(
                 if message != targets[block_index][local]:
                     _fail("POST_SELECTED_PAYLOAD_FAIL", f"selected mismatch at {locator}")
                 selected_matches += 1
+            elif locator in program_root_targets:
+                if message != program_root_targets[locator]:
+                    _fail("V356_PERCENT_MACRO_ROOT_POST_PAYLOAD_FAIL", f"program-root mismatch at {locator}")
+                program_root_matches += 1
             else:
                 if message != stock.blocks[block_index].messages[local]:
                     _fail("POST_UNSELECTED_JP_MUTATION", f"unselected mutation at {locator}")
                 unselected_matches += 1
 
-    if selected_matches != EXPECTED_SELECTED or unselected_matches != EXPECTED_UNSELECTED:
-        _fail("POST_REPARSE_COUNT_FAIL", "selected/unselected post-reparse census mismatch")
+    if (
+        selected_matches != EXPECTED_SELECTED
+        or program_root_matches != EXPECTED_PROGRAM_ROOTS
+        or unselected_matches != EXPECTED_UNSELECTED
+    ):
+        _fail("POST_REPARSE_COUNT_FAIL", "selected/program-root/unselected post-reparse census mismatch")
 
     output_sha = _sha(emitted)
     diagnostic_match = output_sha == EXPECTED_DIAGNOSTIC_SHA256
@@ -1059,6 +1140,7 @@ def reconstruct_selective_tai5msg(
         block_count=BLOCK_COUNT,
         message_count=MESSAGE_COUNT,
         selected_rows=selected_matches,
+        program_root_rows=program_root_matches,
         unselected_rows=unselected_matches,
         growth=len(emitted) - len(stock_blob),
         final_size=len(emitted),
