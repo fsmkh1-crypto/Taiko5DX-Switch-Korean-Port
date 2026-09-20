@@ -831,3 +831,38 @@ Do not:
 - force V339 5A geometry to PC-KO solely to suppress the stock residual;
 - compare residual identity by current relocated offset;
 - treat V333 MAY-reachable state union as exact gameplay-feasible execution.
+
+## 25. V341 0x1E semantic-admission vs runtime-admission separation
+
+Scope:
+
+`ECF00000_1E_SEMANTIC_ADMISSION_LEDGER_MATERIALIZATION`
+
+The full PC patch changes 388 of 461 editor-owned `0x1E` objects, but changed does not mean product-admissible.
+
+Exact semantic partition:
+
+```text
+KEEP_JP_IDENTITY             344
+PRESERVE_IDENTICAL            73
+semantic PC-KO candidates     44
+```
+
+The 344 identity rows include 103 direct personal names, 24 clan/kabane identity composites, 216 dynamic name-slot fragments referenced through `\Z001`, and one named-person honorific. Do not translate them merely because PC-KO changed them.
+
+The 44 non-identity semantic candidates must remain separated from runtime admission:
+
+```text
+INCLUDE_KO_READY             23
+INCLUDE_KO_RUNTIME_PENDING   21
+```
+
+Do not repeat:
+
+- copy all 461 PC-KO 1E objects;
+- copy all 388 changed 1E objects;
+- preserve only obvious full personal names while translating dynamic name fragments;
+- classify `国 / 徳 / 愛 / 義 / 豪 / 初 / 早川 / 永 / 冬` as ordinary standalone vocabulary in this context;
+- equate semantic translatability with runtime admission;
+- promote the 21 pending rows without new runtime provenance;
+- reopen V340's stock-preexisting 0x0E residual as evidence that 1E must be bulk-copied.

@@ -1,0 +1,53 @@
+{
+  "validation_id": "V341",
+  "status": "PASS",
+  "input_identity": "PASS",
+  "mapping_rows": 461,
+  "partition_count_mismatch": 0,
+  "header_mismatch": 0,
+  "dispositions": {
+    "INCLUDE_KO_READY": 23,
+    "INCLUDE_KO_RUNTIME_PENDING": 21,
+    "KEEP_JP_IDENTITY": 344,
+    "PRESERVE_IDENTICAL": 73
+  },
+  "semantic_include_total": 44,
+  "may_reachable_rows": 179,
+  "rowsets": {
+    "all_461": {
+      "rows": 461,
+      "sha256": "50f296c1fa044020d48024c52b41f9409e06c453d24dff5d7a8c3257f01b1046"
+    },
+    "changed_388": {
+      "rows": 388,
+      "sha256": "51c4cc5846b20023879b5aee64219eeb9f0770d309cde4fbe1d7278a222a89cc"
+    },
+    "keep_jp_identity_344": {
+      "rows": 344,
+      "sha256": "9cd043a25c74f1be3a8581c2beb9738bf0723dfcb095a4c852f18e295c2a261f"
+    },
+    "preserve_identical_73": {
+      "rows": 73,
+      "sha256": "b413f729be26351a12ba85f2c95e0ee3955f065453193fbefc747d634320a03f"
+    },
+    "semantic_include_44": {
+      "rows": 44,
+      "sha256": "e9387e902b795a675c496a3208604670c13a17ba97924b89daeaf0dab124802a"
+    },
+    "include_ko_ready_23": {
+      "rows": 23,
+      "sha256": "0011c816ae8519750c79b3a1917b830decce3b7f466fe6735212f433859fc38d"
+    },
+    "include_ko_runtime_pending_21": {
+      "rows": 21,
+      "sha256": "42d87f675644aeaf995e9a3beac217acdb21164b10b3e3d2461feeec9f4566cd"
+    },
+    "may_reachable_179": {
+      "rows": 179,
+      "sha256": "883bfcc51b919cd62adadd05991c409c7ddb2dd7bd642ed8a0a1ff488cff03c9"
+    }
+  },
+  "compact_ledger_sha256": "4e84b8278e1fe6b13a7945c6ba13a5b2922cb686b79746a510c92fd2ce856b35",
+  "semantic_unresolved_rows": 0,
+  "product": false
+}

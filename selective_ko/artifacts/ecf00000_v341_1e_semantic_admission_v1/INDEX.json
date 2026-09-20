@@ -1,0 +1,148 @@
+{
+  "schema": "ECF00000_V341_1E_SEMANTIC_ADMISSION_LEDGER_V1",
+  "validation_id": "V341",
+  "parent": "96153e28f1437c29285cefc06a9b14028367a1a2",
+  "inputs": {
+    "stock": {
+      "size": 931936,
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09"
+    },
+    "pc_ko": {
+      "size": 1156480,
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe"
+    }
+  },
+  "mapping": {
+    "rows": 461,
+    "partition_count": 42,
+    "partition_count_mismatch": 0,
+    "header_mismatch": 0,
+    "changed": 388,
+    "identical": 73
+  },
+  "compact_ledger": {
+    "file": "LEDGER_COMPACT.bin",
+    "record_size": 18,
+    "records": 461,
+    "serialization": "<HHIIHHBB = partition:u16 + ordinal:u16 + original_offset:u32 + ko_offset:u32 + original_length:u16 + ko_length:u16 + disposition:u8 + subtype:u8",
+    "sha256": "4e84b8278e1fe6b13a7945c6ba13a5b2922cb686b79746a510c92fd2ce856b35",
+    "disposition_codes": {
+      "0": "PRESERVE_IDENTICAL",
+      "1": "KEEP_JP_IDENTITY",
+      "2": "INCLUDE_KO_READY",
+      "3": "INCLUDE_KO_RUNTIME_PENDING"
+    },
+    "subtype_codes": {
+      "0": "UNCHANGED",
+      "1": "STATUS_ROLE",
+      "2": "COURT_OFFICE",
+      "3": "PERSONAL_NAME",
+      "4": "CLAN_KABANE_IDENTITY_COMPOSITE",
+      "5": "POLITICAL_REGIME_TITLE",
+      "6": "MARTIAL_ART_LABEL",
+      "7": "ITEM_WEAPON_CATEGORY",
+      "8": "DYNAMIC_NAME_SLOT_Z001",
+      "9": "KINSHIP_RELATION",
+      "10": "NAMED_PERSON_HONORIFIC"
+    }
+  },
+  "human_ledger": {
+    "file": "LEDGER.jsonl",
+    "sha256": "1ad6812f30bd55d0b90af01e89946d04b7bae6ca8ce7bf4480167c333ce1359d"
+  },
+  "may_reachable_rowset": {
+    "file": "MAY_REACHABLE_1E_ROWSET.bin",
+    "records": 179,
+    "record_size": 12,
+    "sha256": "883bfcc51b919cd62adadd05991c409c7ddb2dd7bd642ed8a0a1ff488cff03c9",
+    "basis": "V333 conservative MAY-reachable state-aware graph; V340 does not reinterpret it as exact gameplay feasibility"
+  },
+  "dispositions": {
+    "INCLUDE_KO_READY": 23,
+    "INCLUDE_KO_RUNTIME_PENDING": 21,
+    "KEEP_JP_IDENTITY": 344,
+    "PRESERVE_IDENTICAL": 73
+  },
+  "semantic_include_total": 44,
+  "subtypes": {
+    "CLAN_KABANE_IDENTITY_COMPOSITE": 24,
+    "COURT_OFFICE": 3,
+    "DYNAMIC_NAME_SLOT_Z001": 216,
+    "ITEM_WEAPON_CATEGORY": 9,
+    "KINSHIP_RELATION": 1,
+    "MARTIAL_ART_LABEL": 6,
+    "NAMED_PERSON_HONORIFIC": 1,
+    "PERSONAL_NAME": 103,
+    "POLITICAL_REGIME_TITLE": 14,
+    "STATUS_ROLE": 11,
+    "UNCHANGED": 73
+  },
+  "rowsets": {
+    "all_461": {
+      "rows": 461,
+      "sha256": "50f296c1fa044020d48024c52b41f9409e06c453d24dff5d7a8c3257f01b1046"
+    },
+    "changed_388": {
+      "rows": 388,
+      "sha256": "51c4cc5846b20023879b5aee64219eeb9f0770d309cde4fbe1d7278a222a89cc"
+    },
+    "keep_jp_identity_344": {
+      "rows": 344,
+      "sha256": "9cd043a25c74f1be3a8581c2beb9738bf0723dfcb095a4c852f18e295c2a261f"
+    },
+    "preserve_identical_73": {
+      "rows": 73,
+      "sha256": "b413f729be26351a12ba85f2c95e0ee3955f065453193fbefc747d634320a03f"
+    },
+    "semantic_include_44": {
+      "rows": 44,
+      "sha256": "e9387e902b795a675c496a3208604670c13a17ba97924b89daeaf0dab124802a"
+    },
+    "include_ko_ready_23": {
+      "rows": 23,
+      "sha256": "0011c816ae8519750c79b3a1917b830decce3b7f466fe6735212f433859fc38d"
+    },
+    "include_ko_runtime_pending_21": {
+      "rows": 21,
+      "sha256": "42d87f675644aeaf995e9a3beac217acdb21164b10b3e3d2461feeec9f4566cd"
+    },
+    "may_reachable_179": {
+      "rows": 179,
+      "sha256": "883bfcc51b919cd62adadd05991c409c7ddb2dd7bd642ed8a0a1ff488cff03c9"
+    }
+  },
+  "growth": {
+    "include_ko_ready": {
+      "rows": 23,
+      "total_bytes": 8,
+      "delta_counts": {
+        "0": 21,
+        "4": 2
+      },
+      "partitions": [
+        0,
+        11,
+        72,
+        161,
+        681
+      ]
+    },
+    "include_ko_runtime_pending": {
+      "rows": 21,
+      "total_bytes": 20,
+      "delta_counts": {
+        "4": 5,
+        "0": 16
+      }
+    }
+  },
+  "policy": {
+    "identity": "KEEP_JP",
+    "semantic_nonidentity_changed": "PC_KO_CANDIDATE",
+    "runtime_admission": "only MAY-reachable semantic candidates are INCLUDE_KO_READY in V341; non-MAY semantic candidates remain INCLUDE_KO_RUNTIME_PENDING",
+    "semantic_unresolved_rows": 0
+  },
+  "product_bytes_changed": false,
+  "build_package_ips_hardware": "NONE",
+  "next_scope": "ECF00000_1E_INCLUDE_KO_READY_23_IMPLEMENTATION_OFFLINE_VALIDATION"
+}
