@@ -1,0 +1,85 @@
+{
+  "schema": "ECF00000_V351_PC_AUTHORED_DERIVED_SURFACE_POLICY_V1",
+  "validation_id": "V351",
+  "parent": "6b71216089cf6cf852c56a5b2944d76c474b250a",
+  "scope": "ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_POLICY_AND_APPLICABILITY_MATERIALIZATION",
+  "policy": {
+    "id": "PC_AUTHORED_DERIVED_SURFACE_V1",
+    "path": "selective_ko/PC_AUTHORED_DERIVED_SURFACE_POLICY.md"
+  },
+  "applicability": {
+    "rows": 61,
+    "pure_rows": 59,
+    "mixed_rows": 2,
+    "derived_occurrences": 62,
+    "mixed_direct_occurrences": 3,
+    "unique_escape_tokens": 27,
+    "unique_pc_authored_surfaces": 23,
+    "rows_file": "ROWS.jsonl",
+    "rows_sha256": "7f394033fa56796d6822cb9403a027d6674d0a0e0a357c4981392da798306f5f",
+    "occurrences_file": "OCCURRENCES.jsonl",
+    "occurrences_sha256": "90b39ed75e738cf31906db3570a45bcc5175428d8904f46149e1ac906b3da4a6",
+    "escape_cardinality_file": "ESCAPE_CARDINALITY.json",
+    "escape_cardinality_sha256": "865a97be7caa0990b1bac03f353454ff06ab786a3094281ae2047a5d79c0f2e1",
+    "surface_families_file": "SURFACE_FAMILIES.json",
+    "surface_families_sha256": "9738779e08d8746d29135c6fa26b71981b9f1fb3218e45b40ef0788ec3d2a337",
+    "mixed_composite_file": "MIXED_COMPOSITE.jsonl",
+    "mixed_composite_sha256": "bbfbd910cfa3955e89d650c3408c12c96b31778101c7ef16c8605237a177a423"
+  },
+  "cardinality": {
+    "fixed_logical_reference_tokens": 10,
+    "fixed_logical_reference_occurrences": 11,
+    "dynamic_or_limited_tokens": 17,
+    "dynamic_or_limited_occurrences": 51,
+    "pronunciation_singleton_safe_tokens": 0
+  },
+  "raw_byte_impact": {
+    "pure_growth": 944,
+    "mixed_growth": 28,
+    "total_growth": 972
+  },
+  "mixed_composite": {
+    "profile": "V351_MIXED_COMPOSITE_V1",
+    "rows": [
+      12476,
+      13029
+    ],
+    "direct_normalizations": [
+      {
+        "row_id": 12476,
+        "escape": "\\%00",
+        "source": "이",
+        "target": "가"
+      },
+      {
+        "row_id": 13029,
+        "escape": "\\#07F0",
+        "source": "을",
+        "target": "를"
+      },
+      {
+        "row_id": 13029,
+        "escape": "\\E079",
+        "source": "을",
+        "target": "를"
+      }
+    ],
+    "v348_membership": "UNCHANGED"
+  },
+  "product_disposition": {
+    "v351_rows": "INCLUDE_KO_NOT_IMPLEMENTED",
+    "code5_admitted_total": 423,
+    "code5_remaining_defer": 3,
+    "non_particle_suffix_3": "DEFER",
+    "effective_v334_universe": {
+      "include_ko": 12594,
+      "defer": 3,
+      "non_korean_target": 478,
+      "total": 13075
+    }
+  },
+  "implementation": "NONE",
+  "product_bytes_changed": false,
+  "build_package_ips_hardware": "NONE",
+  "next_scope": "ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION"
+}

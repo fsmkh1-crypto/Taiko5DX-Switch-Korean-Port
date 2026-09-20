@@ -1,0 +1,192 @@
+{
+  "schema": "ECF00000_V351_PC_AUTHORED_DERIVED_SURFACES_V1",
+  "unique_surfaces": 23,
+  "occurrences": 62,
+  "policy": "PRESERVE_PC_AUTHORED_SURFACE_NO_PRONUNCIATION_INFERENCE",
+  "rows": [
+    {
+      "pc_authored_surface": "이었다",
+      "occurrence_count": 10,
+      "surface_family": "COPULA_PAST_DECLARATIVE",
+      "counterpart_candidate": "였다",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이었으나",
+      "occurrence_count": 8,
+      "surface_family": "COPULA_PAST_CONCESSIVE",
+      "counterpart_candidate": "였으나",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이라는",
+      "occurrence_count": 7,
+      "surface_family": "COPULA_ATTRIBUTIVE_QUOTATIVE",
+      "counterpart_candidate": "라는",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이라면",
+      "occurrence_count": 5,
+      "surface_family": "COPULA_CONDITIONAL",
+      "counterpart_candidate": "라면",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이니",
+      "occurrence_count": 3,
+      "surface_family": "COPULA_CAUSAL_CONNECTIVE",
+      "counterpart_candidate": "니",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이다",
+      "occurrence_count": 3,
+      "surface_family": "COPULA_DECLARATIVE",
+      "counterpart_candidate": "다",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이라",
+      "occurrence_count": 3,
+      "surface_family": "COPULA_CONNECTIVE",
+      "counterpart_candidate": "라",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "와의",
+      "occurrence_count": 2,
+      "surface_family": "RELATIONAL_CONJUNCTIVE_UI",
+      "counterpart_candidate": "과의",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이네",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_EXCLAMATORY_NE",
+      "counterpart_candidate": "네",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이야말로",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_EMPHATIC_YAMALLO",
+      "counterpart_candidate": "야말로",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이었지만",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_PAST_CONTRAST",
+      "counterpart_candidate": "였지만",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이여",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_VOCATIVE",
+      "counterpart_candidate": "여",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이오",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_FORMAL_OLD",
+      "counterpart_candidate": "요",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이지",
+      "occurrence_count": 2,
+      "surface_family": "COPULA_ASSERTIVE_JI",
+      "counterpart_candidate": "지",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "로군",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_CONTEXTUAL_ROGUN",
+      "counterpart_candidate": "이로군",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이군",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_EXCLAMATORY_GUN",
+      "counterpart_candidate": "군",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이라고",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_QUOTATIVE",
+      "counterpart_candidate": "라고",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이란",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_ATTRIBUTIVE_SHORT",
+      "counterpart_candidate": "란",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이셨군요",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_HONORIFIC_PAST_EXCLAMATORY",
+      "counterpart_candidate": "셨군요",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이시옵니다",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_HONORIFIC_ARCHAIC_FORMAL",
+      "counterpart_candidate": "시옵니다",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이신가",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_HONORIFIC_INTERROGATIVE",
+      "counterpart_candidate": "신가",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이야",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_CASUAL",
+      "counterpart_candidate": "야",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    },
+    {
+      "pc_authored_surface": "이었나",
+      "occurrence_count": 1,
+      "surface_family": "COPULA_PAST_INTERROGATIVE",
+      "counterpart_candidate": "였나",
+      "release_action": "PRESERVE_PC_AUTHORED_SURFACE",
+      "normalization_authorized": false
+    }
+  ]
+}
