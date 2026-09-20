@@ -1,0 +1,102 @@
+{
+  "alias_family": {
+    "compact_sha256": "62e2d01d5aab9b8bc9a156e04acf3842cdef8ca58bbc29c8629228aec651518c",
+    "current_particle_novel_alias": "0xC3740",
+    "dispositions": {
+      "INHERITED_STOCK_RESIDUAL": 1,
+      "NOT_GATE_ELIGIBLE": 3,
+      "NOVEL_ALIAS_ELIGIBLE": 48
+    },
+    "entrypoint_overlap": 0,
+    "parent_lengths": {
+      "12": 19,
+      "8": 33
+    },
+    "rows": 52,
+    "rowset_sha256": "857b880f7380447928fc46abad4d1d66e012859ad00eeaaaaa54f73f17f27c97",
+    "v334_target_overlap": 0
+  },
+  "artifact_rebuild": "PASS_BYTE_IDENTICAL",
+  "implementation": {
+    "event_regression": "PASS_35_OF_35",
+    "particle_serializer": "NOT_IMPLEMENTED",
+    "validator_module": "builder/selective_event_validation.py",
+    "validator_module_sha256": "d08fb0eca0ef1f9e82cd14aa5b96e626d693add2f2088cb84014dd2b453c4d66",
+    "validator_tests": "tests/test_selective_event_validation.py",
+    "validator_tests_sha256": "b14cf3b34f5d4c90e5b9b5259df9a446459f68bfe7636fa6ff2c6ed18e1f1520"
+  },
+  "inputs": {
+    "pc_ko": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480
+    },
+    "stock": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v343_parent": "7386d4168aad0ac85f27ecf16b97d1af5a6bf9cd"
+  },
+  "next_scope": "ECF00000_FIXED_SURFACE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "particle": {
+    "aggregate_shrink_vs_pc_ko": 5556,
+    "breakdown": {
+      "(으)로": 23,
+      "과(와)": 41,
+      "와(과)": 51,
+      "은(는)": 521,
+      "을(를)": 358,
+      "이(가)": 395
+    },
+    "choice_overlap_occurrences": 25,
+    "choice_overlap_rows": 25,
+    "code3_occurrences": 1364,
+    "code3_rows": 1226,
+    "compact_sha256": "b6d228b6b1e8e23285763b88d5d5eda6064153433123283217c4ea955d550a4d",
+    "occurrences": 1389,
+    "row_occurrence_counts": {
+      "1": 1125,
+      "2": 115,
+      "3": 10,
+      "4": 1
+    },
+    "rows": 1251,
+    "rowset_sha256": "8282d175c6666f8fa4700a28f4917ea32abe3d315d0b7a98ebdee53650831aa7",
+    "semantic_codes": {
+      "2": 25,
+      "3": 1226
+    },
+    "transformed_corpus_sha256": "f86a4f49f18c741445dcf9fc69390b818be5feba7f256973a9a69cdbd33368c5"
+  },
+  "product": false,
+  "read_only_simulation": {
+    "baseline_errors": 0,
+    "delta_vs_v342": 20948,
+    "false02": "PASS_2_OF_2",
+    "fivea_violations": 0,
+    "generic": "PASS",
+    "inherited": "0xBDD78",
+    "new_alias": "0xC3740",
+    "sha256": "658d21cecbd038f39f89cf65e063d68861a481e96e73f530387c7133d46f3295",
+    "size": 1102600,
+    "special": "PASS_3_OF_3",
+    "stateaware_raw_observations": 3,
+    "stateaware_unique_logical_residuals": 2
+  },
+  "status": "PASS_PREIMPLEMENTATION_CLOSURE",
+  "v335_particle_count_correction": {
+    "choice_overlap": "25 rows / 25 occurrences",
+    "correct_code3": "1226 rows / 1364 occurrences",
+    "exact_applicability": "1251 rows / 1389 occurrences",
+    "old_interpretation": "1226 rows / 1389 occurrences"
+  },
+  "validation_id": "V344",
+  "validator_gate": {
+    "blocking": false,
+    "candidate_observations": 3,
+    "candidate_unique_logical_residuals": 2,
+    "duplicate_state_policy": "SAME_LOGICAL_KEY_AND_CURRENT_OFFSET_COLLAPSE; DIFFERENT_CURRENT_OFFSET_BLOCK",
+    "inherited_residuals": 1,
+    "novel_residuals": 0,
+    "source_alias_residuals": 1
+  }
+}

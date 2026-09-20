@@ -904,3 +904,57 @@ Do not repeat:
 - translate only MAY-reachable identity rows while mutating non-MAY identity rows;
 - build a 3C mutation serializer for the current KEEP_JP product;
 - use final-Korean fresh grouping as runtime ownership authority.
+
+## 27. V344 particle applicability is not the V335 single semantic-detail code
+
+Scope:
+
+`ECF00000_FIXED_SURFACE_PARTICLE_V1_PREIMPLEMENTATION_CLOSURE`
+
+V335's single semantic-detail code is mutually exclusive. Choice rows are classified as `INCLUDE_KO_CHOICE` before the fixed-particle detail, so 25 choice rows containing exact dual-particle literals do not carry code 3.
+
+Exact correction:
+
+```text
+code 3 fixed-particle rows       1,226 / 1,364 occurrences
+choice-overlap particle rows        25 /    25 occurrences
+exact applicability             1,251 / 1,389 occurrences
+```
+
+The historical total 1,389 occurrence census is retained. The rejected implementation interpretation is that all 1,389 occurrences are inside the 1,226 code-3 rows.
+
+Do not repeat:
+
+- use `semantic_detail == 3` as the complete FIXED_SURFACE_PARTICLE applicability gate;
+- omit particle normalization from the 25 choice rows;
+- convert semantic admission into a single-axis technical applicability model;
+- globally rewrite standalone Korean particles rather than exact approved dual literals.
+
+## 28. V344 layout-exposed embedded aliases require source proof, not one-off residual exceptions
+
+The full particle read-only simulation exposes a new conservative state-aware logical residual at original `0xC3740`. It is `EVENT 0x0B @ 0xC373C + 4`, not a standalone product command.
+
+The exact stock structural family contains 52 `0x0B +4 -> 0x0E` aliases:
+
+```text
+INHERITED_STOCK_RESIDUAL     1
+NOVEL_ALIAS_ELIGIBLE        48
+NOT_GATE_ELIGIBLE            3
+```
+
+No alias overlaps a TS5 entrypoint or V334 canonical text/choice target.
+
+Binding V344 gate:
+
+- inherited stock logical residuals remain non-blocking;
+- a novel residual is non-blocking only if it matches an exact `NOVEL_ALIAS_ELIGIBLE` ledger row **and** current bytes prove the same parent header, parent length, +4 relation, alias header, alias decoded length, and partition containment;
+- identical logical observations at the same current offset are collapsed across conservative S/F states;
+- the same logical key at different current offsets is blocking ambiguity.
+
+Do not repeat:
+
+- add only `0xC3740` as a one-off exception;
+- blanket-whitelist every `0x0B+4` command-looking byte;
+- retain the earlier temporary count of 64 aliases; exact V344 runtime-length census is 52;
+- reject legitimate duplicate S/F observations merely because they share one logical residual;
+- accept a source alias without current-byte proof.

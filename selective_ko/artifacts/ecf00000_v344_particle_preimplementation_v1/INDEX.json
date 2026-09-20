@@ -1,0 +1,66 @@
+{
+  "build_package_ips_hardware": "NONE",
+  "implementation": {
+    "particle_serializer": "NOT_IMPLEMENTED",
+    "unit_regression": "PASS_35_OF_35",
+    "validator_module": "builder/selective_event_validation.py"
+  },
+  "next_scope": "ECF00000_FIXED_SURFACE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "parent": "7386d4168aad0ac85f27ecf16b97d1af5a6bf9cd",
+  "particle_applicability": {
+    "aggregate_shrink_bytes": 5556,
+    "choice_overlap_rows": 25,
+    "code3_rows": 1226,
+    "file": "PARTICLE_APPLICABILITY_COMPACT.bin",
+    "occurrences": 1389,
+    "record_size": 23,
+    "records": 1251,
+    "rowset_sha256": "8282d175c6666f8fa4700a28f4917ea32abe3d315d0b7a98ebdee53650831aa7",
+    "serialization": "<IHIIBBBBxHH",
+    "sha256": "b6d228b6b1e8e23285763b88d5d5eda6064153433123283217c4ea955d550a4d",
+    "transformed_corpus_sha256": "f86a4f49f18c741445dcf9fc69390b818be5feba7f256973a9a69cdbd33368c5"
+  },
+  "particle_mapping": {
+    "(으)로": "로",
+    "과(와)": "와",
+    "와(과)": "와",
+    "은(는)": "는",
+    "을(를)": "를",
+    "이(가)": "가"
+  },
+  "policy": {
+    "blanket_0b_plus4_whitelist": "FORBIDDEN",
+    "novel_residual_rule": "ALLOW_ONLY_EXACT_SOURCE_PROVEN_ALIAS_WITH_CURRENT_BYTE_PROOF",
+    "particle_applicability_axis": "INDEPENDENT_OF_V335_SEMANTIC_DETAIL_CODE"
+  },
+  "product_bytes_changed": false,
+  "schema": "ECF00000_V344_FIXED_SURFACE_PARTICLE_PREIMPLEMENTATION_V1",
+  "stateaware_alias": {
+    "disposition_codes": {
+      "1": "INHERITED_STOCK_RESIDUAL",
+      "2": "NOVEL_ALIAS_ELIGIBLE",
+      "3": "NOT_GATE_ELIGIBLE"
+    },
+    "dispositions": {
+      "INHERITED_STOCK_RESIDUAL": 1,
+      "NOT_GATE_ELIGIBLE": 3,
+      "NOVEL_ALIAS_ELIGIBLE": 48
+    },
+    "file": "STATEAWARE_ALIAS_COMPACT.bin",
+    "parent_lengths": {
+      "12": 19,
+      "8": 33
+    },
+    "record_size": 26,
+    "records": 52,
+    "rowset_sha256": "857b880f7380447928fc46abad4d1d66e012859ad00eeaaaaa54f73f17f27c97",
+    "serialization": "<HIIIHIIBB",
+    "sha256": "62e2d01d5aab9b8bc9a156e04acf3842cdef8ca58bbc29c8629228aec651518c"
+  },
+  "validation_id": "V344",
+  "validator_gate": {
+    "different_current_offset_same_key": "BLOCK",
+    "same_state_duplicate_collapse": true,
+    "source_alias_proof": "CURRENT_BYTES_EXACT_PARENT_0B_PLUS4_ALIAS_0E_AND_LENGTHS"
+  }
+}
