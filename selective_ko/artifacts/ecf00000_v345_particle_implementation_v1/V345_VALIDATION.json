@@ -1,0 +1,117 @@
+{
+  "base_counts": {
+    "1": 8155,
+    "2": 357,
+    "4": 2433
+  },
+  "baseline_errors": 0,
+  "deterministic_rerun": "PASS_BYTE_IDENTICAL",
+  "false02": 2,
+  "fivea": {
+    "choice_next_start_rows": 15,
+    "choice_rowset_sha256": "0579d61f80c791e041c056e9a83fce785e5af8b1edf101a91a910b63dd8d0446",
+    "dialogue_pad_1_rows": 40,
+    "dialogue_pad_2_rows": 15,
+    "dialogue_pad_3_rows": 11,
+    "dialogue_pad_rowset_sha256": "00bef7fff43008f41014f358611d890c6ac4e7857502c026f2afc6bc6c47eead",
+    "mapping_rows": 1088,
+    "modified_rows": 82,
+    "modified_rowset_sha256": "26bc49d7a19cafa2e75aed11be2fa2f3874442b07cb55db92f1e7f7dd2b3d016",
+    "name2_pad_2_rows": 16,
+    "name_only_preserved_rows": 14,
+    "original_target_rows": 1058,
+    "translated_rows": 1074,
+    "unmodified_translated_rows": 992,
+    "verification_violations": 0,
+    "zero_next_terminator_rows": 1,
+    "zero_rowset_sha256": "538065cd4a3886366d236e574bd9010306867409e4bd7b698ae9b40d5a7ae9eb"
+  },
+  "generic_plans": 7579,
+  "onee": {
+    "growth_bytes": 8,
+    "keep_jp_identity_rows": 344,
+    "ledger_rows": 461,
+    "plus4_ready_rows": 2,
+    "preserve_identical_rows": 73,
+    "ready_partitions": [
+      0,
+      11,
+      72,
+      161,
+      681
+    ],
+    "ready_rows": 23,
+    "rowset_sha256": "0011c816ae8519750c79b3a1917b830decce3b7f466fe6735212f433859fc38d",
+    "runtime_pending_rows": 21,
+    "same_length_ready_rows": 21,
+    "unauthorized_preexisting_onee_mutations": 0
+  },
+  "output_sha256": "658d21cecbd038f39f89cf65e063d68861a481e96e73f530387c7133d46f3295",
+  "output_size": 1102600,
+  "particle": {
+    "aggregate_shrink_bytes": 5556,
+    "choice_overlap_rows": 25,
+    "code3_rows": 1226,
+    "literal_counts": {
+      "(으)로": 23,
+      "과(와)": 41,
+      "와(과)": 51,
+      "은(는)": 521,
+      "을(를)": 358,
+      "이(가)": 395
+    },
+    "occurrences": 1389,
+    "raw_ko_bytes": 94092,
+    "rows": 1251,
+    "transformed_bytes": 88536,
+    "transformed_corpus_sha256": "f86a4f49f18c741445dcf9fc69390b818be5feba7f256973a9a69cdbd33368c5"
+  },
+  "special_plans": 3,
+  "stateaware_errors_raw": 3,
+  "stateaware_mapped": [
+    [
+      593,
+      "E",
+      593,
+      926036,
+      777592,
+      14,
+      8344584,
+      1,
+      1
+    ],
+    [
+      593,
+      "E",
+      604,
+      953032,
+      800576,
+      14,
+      1733632,
+      0,
+      1
+    ],
+    [
+      593,
+      "E",
+      604,
+      953032,
+      800576,
+      14,
+      1733632,
+      1,
+      1
+    ]
+  ],
+  "v344_simulation_byte_exact": true,
+  "validator_gate": {
+    "baseline_residuals": 1,
+    "blocking": false,
+    "candidate_observations": 3,
+    "candidate_residuals": 2,
+    "inherited_residuals": 1,
+    "novel_residuals": 0,
+    "resolved_baseline_residuals": 0,
+    "source_alias_residuals": 1
+  }
+}

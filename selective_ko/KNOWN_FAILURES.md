@@ -958,3 +958,30 @@ Do not repeat:
 - retain the earlier temporary count of 64 aliases; exact V344 runtime-length census is 52;
 - reject legitimate duplicate S/F observations merely because they share one logical residual;
 - accept a source alias without current-byte proof.
+
+## 29. V345 final-PC-KO fresh grouping is not payload-owner authority
+
+Scope:
+
+`ECF00000_FIXED_SURFACE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION`
+
+The first V345 particle-module integration attempt tried to locate each Korean particle owner by freshly grouping the final PC-KO TS5 and indexing grouped items by the canonical `ko_offset`.
+
+It failed at canonical row 556 / KO offset `0x16828`.
+
+This is not a bad V344 ledger row. V334 already records final-Korean fresh-reparse drift and exact special original->KO bindings. Final-Korean fresh grouping is explicitly not ownership authority.
+
+Binding implementation:
+
+```text
+exact V344/V334 ko_offset + ko_length
+-> raw slice from exact canonical PC-KO blob
+-> opcode/length guard
+-> transform approved message/choice string ranges
+```
+
+Do not repeat:
+
+- reparse/group final Korean bytes to rediscover a canonical KO owner;
+- reject V334 special bindings because the final-Korean editor grouping does not start at the bound offset;
+- replace exact raw ledger slicing with ordinal lookup against a fresh final-Korean parse.

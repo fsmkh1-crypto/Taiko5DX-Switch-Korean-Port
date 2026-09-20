@@ -1,0 +1,42 @@
+{
+  "schema": "ECF00000_V345_FIXED_SURFACE_PARTICLE_IMPLEMENTATION_V1",
+  "validation_id": "V345",
+  "parent": "9b47c02b9edcc7d83c4b3f3d9160806258ead60d",
+  "module": "builder/selective_event_particle.py",
+  "tests": "tests/test_selective_event_particle.py",
+  "v344_particle_ledger": {
+    "records": 1251,
+    "occurrences": 1389,
+    "sha256": "b6d228b6b1e8e23285763b88d5d5eda6064153433123283217c4ea955d550a4d",
+    "rowset_sha256": "8282d175c6666f8fa4700a28f4917ea32abe3d315d0b7a98ebdee53650831aa7"
+  },
+  "implementation": {
+    "code3_rows": 1226,
+    "choice_overlap_rows": 25,
+    "aggregate_shrink_bytes": 5556,
+    "transformed_corpus_sha256": "f86a4f49f18c741445dcf9fc69390b818be5feba7f256973a9a69cdbd33368c5",
+    "pc_ko_source_mode": "RAW_LEDGER_OFFSET_LENGTH_SLICE_NO_FRESH_GROUPING",
+    "unit_regression": "PASS_41_OF_41"
+  },
+  "integration": {
+    "output_size": 1102600,
+    "output_sha256": "658d21cecbd038f39f89cf65e063d68861a481e96e73f530387c7133d46f3295",
+    "v344_simulation_equivalence": "PASS_BYTE_EXACT",
+    "deterministic_rerun": "PASS_BYTE_IDENTICAL",
+    "generic_plans": 7579,
+    "special_plans": 3,
+    "false02": 2,
+    "fivea_violations": 0,
+    "baseline_walker_errors": 0,
+    "validator": {
+      "candidate_observations": 3,
+      "unique_residuals": 2,
+      "inherited": 1,
+      "source_alias": 1,
+      "novel": 0,
+      "blocking": false
+    }
+  },
+  "product_build_package_ips_hardware": "NONE",
+  "next_scope": "ECF00000_V335_CODE5_426_SEMANTIC_ADJACENCY_CLOSURE_READ_ONLY"
+}
