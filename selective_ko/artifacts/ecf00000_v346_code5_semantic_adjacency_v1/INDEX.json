@@ -1,0 +1,117 @@
+{
+  "build_package_ips_hardware": "NONE",
+  "correction": {
+    "exact_direct_particle_counts": {
+      "가": 104,
+      "과": 9,
+      "는": 81,
+      "로": 10,
+      "를": 47,
+      "와": 27,
+      "은": 50,
+      "을": 15,
+      "이": 46
+    },
+    "note": "The prior conversational per-particle breakdown had minor label-count transcription errors; total 389 was correct. V346 binds the row-level diagnostic counts.",
+    "previous_direct_particle_total": 389
+  },
+  "inputs": {
+    "pc_ko_ecf": {
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "size": 1156480
+    },
+    "source_read_only_diagnostic": {
+      "sha256": "c6463acefa960cf61892ef631ce6759bdb35af387a8fe65411f299af5d82b6e8",
+      "size": 75699
+    },
+    "stock_ecf": {
+      "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "size": 931936
+    },
+    "v334_zip": {
+      "sha256": "fc47e81842f299f04c272b6076637ec163cdca2ed469b17105bc36182dc765e0",
+      "size": 1530925
+    },
+    "v335_zip": {
+      "sha256": "9e1f7cb880235323aadd3aa2e47d94e1775d25b2375201e60ca7eafd9a097a7e",
+      "size": 360776
+    }
+  },
+  "ledger": {
+    "file": "LEDGER_COMPACT.bin",
+    "human_file": "LEDGER.jsonl",
+    "human_sha256": "52b5533e8db3221d9ee8ace6c0e9b3151a80a4b35cb1500a44171a6092281b49",
+    "record_size": 24,
+    "records": 426,
+    "serialization": "<IHIIBBBBHHH",
+    "sha256": "9ca57b03d70d3fc031e9c7d955dd4a90cdea292b2e1fe6e2069373b5c9975ffd"
+  },
+  "next_scope": "ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_READ_ONLY",
+  "parent": "1354bd3a09656fc38be366214e261127d79e987e",
+  "population": {
+    "classes": {
+      "COPULA_DERIVED_ONLY": 59,
+      "DIRECT_PARTICLE_ONLY": 350,
+      "LEXICAL_FALSE_POSITIVE_GAMUN": 12,
+      "MIXED_DIRECT_AND_DERIVED_RISK": 2,
+      "NON_PARTICLE_SUFFIX_ADJACENCY": 3
+    },
+    "derived_morphology_occurrences": 62,
+    "detector_hits": 466,
+    "direct_particle_counts": {
+      "가": 104,
+      "과": 9,
+      "는": 81,
+      "로": 10,
+      "를": 47,
+      "와": 27,
+      "은": 50,
+      "을": 15,
+      "이": 46
+    },
+    "hit_kinds": {
+      "COPULA_DERIVED_MORPHOLOGY": 62,
+      "DIRECT_PARTICLE": 389,
+      "LEXICAL_FALSE_POSITIVE_GAMUN": 12,
+      "NON_PARTICLE_SUFFIX_ADJACENCY": 3
+    },
+    "rows": 426
+  },
+  "product_bytes_changed": false,
+  "product_disposition": {
+    "DEFER": 414,
+    "INCLUDE_KO": 12,
+    "implementation": "NONE",
+    "include_class": "LEXICAL_FALSE_POSITIVE_GAMUN"
+  },
+  "rowsets": {
+    "all": {
+      "file": "ALL_ROWSET.bin",
+      "records": 426,
+      "sha256": "73efb50f6b8be307cb5a0af2e0361293b2053aa7c61d22333da7e2663538e946"
+    },
+    "defer_414": {
+      "file": "DEFER_414_ROWSET.bin",
+      "records": 414,
+      "sha256": "2e81943636fd974f5dd0606446255572b133ce58fb1124d0de74753f6812b439"
+    },
+    "include_ko_12": {
+      "file": "INCLUDE_KO_12_ROWSET.bin",
+      "records": 12,
+      "sha256": "2e3b5b7981ee6b096a3dcc971fb5169cc8ff691c15f98132ef088e8cb07a4014"
+    },
+    "read_only_diagnostic_membership_hashes": {
+      "ALL": "436ce5ef66e7ca4fc4266368220fecae7b52f506bc9b1c3aa9fe78a3b2106387",
+      "COPULA_DERIVED_ONLY": "e80f2737b37b18cebeff70e6d419fa4097a3722f98cb714863947a9fc8edd5fa",
+      "DEFER_414": "aa68ac84782ce834fada052b5a3ac1cb160321d3831323e1132adfc4399cb749",
+      "DIRECT_PARTICLE_ONLY": "c590ce16cf7d230e0a63914b2e5a2dff92bd0ecad35aa7d8b765b74563944ae6",
+      "INCLUDE_KO_12": "5dfc776bdfc639b6a34e2c6a67187be373dfce2afd4e9545e6942691746e94a2",
+      "LEXICAL_FALSE_POSITIVE_GAMUN": "5dfc776bdfc639b6a34e2c6a67187be373dfce2afd4e9545e6942691746e94a2",
+      "MIXED_DIRECT_AND_DERIVED_RISK": "273205999e38291ac557a3a82ac960542acb0ab13e2716ec3629e76cf9ecc69e",
+      "NON_PARTICLE_SUFFIX_ADJACENCY": "5cdaefc7215dfc8d6d8941961394fd08984c7889233b5ed3f78ad70b8697831a"
+    }
+  },
+  "schema": "ECF00000_V346_CODE5_426_SEMANTIC_ADJACENCY_LEDGER_V1",
+  "scope": "ECF00000_V335_CODE5_426_SEMANTIC_ADJACENCY_LEDGER_CANONICALIZATION",
+  "validation_id": "V346"
+}

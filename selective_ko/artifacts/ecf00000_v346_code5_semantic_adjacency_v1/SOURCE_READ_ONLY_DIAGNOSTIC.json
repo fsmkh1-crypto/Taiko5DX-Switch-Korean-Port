@@ -1,0 +1,4568 @@
+{
+  "classes": {
+    "393": "DIRECT_PARTICLE_ONLY",
+    "1566": "COPULA_DERIVED_ONLY",
+    "1755": "COPULA_DERIVED_ONLY",
+    "1756": "COPULA_DERIVED_ONLY",
+    "1940": "COPULA_DERIVED_ONLY",
+    "1945": "COPULA_DERIVED_ONLY",
+    "2788": "DIRECT_PARTICLE_ONLY",
+    "2791": "DIRECT_PARTICLE_ONLY",
+    "2860": "DIRECT_PARTICLE_ONLY",
+    "2905": "DIRECT_PARTICLE_ONLY",
+    "2906": "DIRECT_PARTICLE_ONLY",
+    "2910": "DIRECT_PARTICLE_ONLY",
+    "2915": "DIRECT_PARTICLE_ONLY",
+    "2940": "COPULA_DERIVED_ONLY",
+    "2947": "DIRECT_PARTICLE_ONLY",
+    "2954": "DIRECT_PARTICLE_ONLY",
+    "2958": "DIRECT_PARTICLE_ONLY",
+    "2959": "DIRECT_PARTICLE_ONLY",
+    "2962": "DIRECT_PARTICLE_ONLY",
+    "3030": "COPULA_DERIVED_ONLY",
+    "3715": "DIRECT_PARTICLE_ONLY",
+    "4094": "DIRECT_PARTICLE_ONLY",
+    "4096": "DIRECT_PARTICLE_ONLY",
+    "4097": "DIRECT_PARTICLE_ONLY",
+    "4112": "DIRECT_PARTICLE_ONLY",
+    "4113": "DIRECT_PARTICLE_ONLY",
+    "4127": "DIRECT_PARTICLE_ONLY",
+    "4130": "DIRECT_PARTICLE_ONLY",
+    "4133": "DIRECT_PARTICLE_ONLY",
+    "4137": "DIRECT_PARTICLE_ONLY",
+    "4140": "DIRECT_PARTICLE_ONLY",
+    "4150": "DIRECT_PARTICLE_ONLY",
+    "4167": "DIRECT_PARTICLE_ONLY",
+    "4182": "DIRECT_PARTICLE_ONLY",
+    "4206": "COPULA_DERIVED_ONLY",
+    "4232": "COPULA_DERIVED_ONLY",
+    "4233": "COPULA_DERIVED_ONLY",
+    "4398": "DIRECT_PARTICLE_ONLY",
+    "4399": "COPULA_DERIVED_ONLY",
+    "4401": "DIRECT_PARTICLE_ONLY",
+    "4402": "DIRECT_PARTICLE_ONLY",
+    "4403": "DIRECT_PARTICLE_ONLY",
+    "4404": "DIRECT_PARTICLE_ONLY",
+    "4408": "DIRECT_PARTICLE_ONLY",
+    "4414": "DIRECT_PARTICLE_ONLY",
+    "4421": "COPULA_DERIVED_ONLY",
+    "4443": "DIRECT_PARTICLE_ONLY",
+    "4445": "DIRECT_PARTICLE_ONLY",
+    "4449": "DIRECT_PARTICLE_ONLY",
+    "4461": "DIRECT_PARTICLE_ONLY",
+    "4463": "DIRECT_PARTICLE_ONLY",
+    "4474": "DIRECT_PARTICLE_ONLY",
+    "4476": "COPULA_DERIVED_ONLY",
+    "4477": "DIRECT_PARTICLE_ONLY",
+    "4484": "DIRECT_PARTICLE_ONLY",
+    "4502": "DIRECT_PARTICLE_ONLY",
+    "4506": "DIRECT_PARTICLE_ONLY",
+    "4509": "DIRECT_PARTICLE_ONLY",
+    "4588": "DIRECT_PARTICLE_ONLY",
+    "4592": "DIRECT_PARTICLE_ONLY",
+    "4717": "COPULA_DERIVED_ONLY",
+    "4722": "COPULA_DERIVED_ONLY",
+    "4736": "DIRECT_PARTICLE_ONLY",
+    "4740": "DIRECT_PARTICLE_ONLY",
+    "4742": "DIRECT_PARTICLE_ONLY",
+    "4743": "NON_PARTICLE_SUFFIX_ADJACENCY",
+    "4754": "DIRECT_PARTICLE_ONLY",
+    "4769": "DIRECT_PARTICLE_ONLY",
+    "4771": "DIRECT_PARTICLE_ONLY",
+    "4804": "DIRECT_PARTICLE_ONLY",
+    "4933": "DIRECT_PARTICLE_ONLY",
+    "4934": "DIRECT_PARTICLE_ONLY",
+    "4941": "DIRECT_PARTICLE_ONLY",
+    "4947": "DIRECT_PARTICLE_ONLY",
+    "4992": "DIRECT_PARTICLE_ONLY",
+    "5013": "DIRECT_PARTICLE_ONLY",
+    "5038": "DIRECT_PARTICLE_ONLY",
+    "5049": "DIRECT_PARTICLE_ONLY",
+    "5051": "DIRECT_PARTICLE_ONLY",
+    "5059": "NON_PARTICLE_SUFFIX_ADJACENCY",
+    "5084": "DIRECT_PARTICLE_ONLY",
+    "5095": "DIRECT_PARTICLE_ONLY",
+    "5112": "DIRECT_PARTICLE_ONLY",
+    "5116": "DIRECT_PARTICLE_ONLY",
+    "5118": "DIRECT_PARTICLE_ONLY",
+    "5123": "DIRECT_PARTICLE_ONLY",
+    "5332": "DIRECT_PARTICLE_ONLY",
+    "5449": "COPULA_DERIVED_ONLY",
+    "5570": "DIRECT_PARTICLE_ONLY",
+    "5572": "DIRECT_PARTICLE_ONLY",
+    "5602": "DIRECT_PARTICLE_ONLY",
+    "5603": "DIRECT_PARTICLE_ONLY",
+    "5618": "DIRECT_PARTICLE_ONLY",
+    "5623": "DIRECT_PARTICLE_ONLY",
+    "5632": "DIRECT_PARTICLE_ONLY",
+    "5635": "DIRECT_PARTICLE_ONLY",
+    "5654": "DIRECT_PARTICLE_ONLY",
+    "5670": "DIRECT_PARTICLE_ONLY",
+    "5817": "DIRECT_PARTICLE_ONLY",
+    "5823": "DIRECT_PARTICLE_ONLY",
+    "5824": "DIRECT_PARTICLE_ONLY",
+    "5825": "DIRECT_PARTICLE_ONLY",
+    "5838": "DIRECT_PARTICLE_ONLY",
+    "5873": "DIRECT_PARTICLE_ONLY",
+    "5879": "DIRECT_PARTICLE_ONLY",
+    "5880": "DIRECT_PARTICLE_ONLY",
+    "5881": "DIRECT_PARTICLE_ONLY",
+    "5883": "DIRECT_PARTICLE_ONLY",
+    "5884": "DIRECT_PARTICLE_ONLY",
+    "5885": "DIRECT_PARTICLE_ONLY",
+    "5893": "DIRECT_PARTICLE_ONLY",
+    "5894": "DIRECT_PARTICLE_ONLY",
+    "5897": "DIRECT_PARTICLE_ONLY",
+    "5903": "DIRECT_PARTICLE_ONLY",
+    "5917": "DIRECT_PARTICLE_ONLY",
+    "6080": "COPULA_DERIVED_ONLY",
+    "6313": "COPULA_DERIVED_ONLY",
+    "6383": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "6407": "COPULA_DERIVED_ONLY",
+    "6408": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "6412": "DIRECT_PARTICLE_ONLY",
+    "6417": "DIRECT_PARTICLE_ONLY",
+    "6429": "DIRECT_PARTICLE_ONLY",
+    "6432": "DIRECT_PARTICLE_ONLY",
+    "6433": "DIRECT_PARTICLE_ONLY",
+    "6436": "DIRECT_PARTICLE_ONLY",
+    "6439": "DIRECT_PARTICLE_ONLY",
+    "6440": "DIRECT_PARTICLE_ONLY",
+    "6441": "DIRECT_PARTICLE_ONLY",
+    "6442": "DIRECT_PARTICLE_ONLY",
+    "6448": "DIRECT_PARTICLE_ONLY",
+    "6458": "DIRECT_PARTICLE_ONLY",
+    "6471": "DIRECT_PARTICLE_ONLY",
+    "6477": "DIRECT_PARTICLE_ONLY",
+    "6478": "DIRECT_PARTICLE_ONLY",
+    "6484": "DIRECT_PARTICLE_ONLY",
+    "6488": "DIRECT_PARTICLE_ONLY",
+    "6680": "COPULA_DERIVED_ONLY",
+    "6697": "COPULA_DERIVED_ONLY",
+    "6935": "COPULA_DERIVED_ONLY",
+    "7020": "COPULA_DERIVED_ONLY",
+    "7028": "DIRECT_PARTICLE_ONLY",
+    "7029": "DIRECT_PARTICLE_ONLY",
+    "7031": "DIRECT_PARTICLE_ONLY",
+    "7034": "DIRECT_PARTICLE_ONLY",
+    "7037": "DIRECT_PARTICLE_ONLY",
+    "7038": "COPULA_DERIVED_ONLY",
+    "7047": "DIRECT_PARTICLE_ONLY",
+    "7063": "DIRECT_PARTICLE_ONLY",
+    "7064": "COPULA_DERIVED_ONLY",
+    "7069": "DIRECT_PARTICLE_ONLY",
+    "7073": "DIRECT_PARTICLE_ONLY",
+    "7074": "DIRECT_PARTICLE_ONLY",
+    "7077": "DIRECT_PARTICLE_ONLY",
+    "7080": "DIRECT_PARTICLE_ONLY",
+    "7083": "DIRECT_PARTICLE_ONLY",
+    "7092": "DIRECT_PARTICLE_ONLY",
+    "7095": "DIRECT_PARTICLE_ONLY",
+    "7099": "DIRECT_PARTICLE_ONLY",
+    "7103": "DIRECT_PARTICLE_ONLY",
+    "7104": "DIRECT_PARTICLE_ONLY",
+    "7111": "DIRECT_PARTICLE_ONLY",
+    "7113": "DIRECT_PARTICLE_ONLY",
+    "7117": "DIRECT_PARTICLE_ONLY",
+    "7121": "DIRECT_PARTICLE_ONLY",
+    "7122": "DIRECT_PARTICLE_ONLY",
+    "7124": "DIRECT_PARTICLE_ONLY",
+    "7126": "DIRECT_PARTICLE_ONLY",
+    "7129": "DIRECT_PARTICLE_ONLY",
+    "7133": "DIRECT_PARTICLE_ONLY",
+    "7136": "DIRECT_PARTICLE_ONLY",
+    "7141": "DIRECT_PARTICLE_ONLY",
+    "7142": "DIRECT_PARTICLE_ONLY",
+    "7146": "DIRECT_PARTICLE_ONLY",
+    "7149": "DIRECT_PARTICLE_ONLY",
+    "7150": "COPULA_DERIVED_ONLY",
+    "7153": "DIRECT_PARTICLE_ONLY",
+    "7158": "DIRECT_PARTICLE_ONLY",
+    "7159": "DIRECT_PARTICLE_ONLY",
+    "7163": "DIRECT_PARTICLE_ONLY",
+    "7166": "DIRECT_PARTICLE_ONLY",
+    "7167": "COPULA_DERIVED_ONLY",
+    "7170": "DIRECT_PARTICLE_ONLY",
+    "7174": "DIRECT_PARTICLE_ONLY",
+    "7177": "DIRECT_PARTICLE_ONLY",
+    "7182": "DIRECT_PARTICLE_ONLY",
+    "7184": "DIRECT_PARTICLE_ONLY",
+    "7189": "DIRECT_PARTICLE_ONLY",
+    "7192": "DIRECT_PARTICLE_ONLY",
+    "7197": "DIRECT_PARTICLE_ONLY",
+    "7198": "DIRECT_PARTICLE_ONLY",
+    "7202": "DIRECT_PARTICLE_ONLY",
+    "7205": "DIRECT_PARTICLE_ONLY",
+    "7206": "COPULA_DERIVED_ONLY",
+    "7209": "DIRECT_PARTICLE_ONLY",
+    "7214": "DIRECT_PARTICLE_ONLY",
+    "7215": "DIRECT_PARTICLE_ONLY",
+    "7219": "DIRECT_PARTICLE_ONLY",
+    "7222": "DIRECT_PARTICLE_ONLY",
+    "7223": "COPULA_DERIVED_ONLY",
+    "7226": "DIRECT_PARTICLE_ONLY",
+    "7230": "DIRECT_PARTICLE_ONLY",
+    "7231": "DIRECT_PARTICLE_ONLY",
+    "7233": "DIRECT_PARTICLE_ONLY",
+    "7235": "DIRECT_PARTICLE_ONLY",
+    "7237": "DIRECT_PARTICLE_ONLY",
+    "7240": "DIRECT_PARTICLE_ONLY",
+    "7243": "DIRECT_PARTICLE_ONLY",
+    "7247": "DIRECT_PARTICLE_ONLY",
+    "7248": "DIRECT_PARTICLE_ONLY",
+    "7249": "COPULA_DERIVED_ONLY",
+    "7254": "DIRECT_PARTICLE_ONLY",
+    "7255": "DIRECT_PARTICLE_ONLY",
+    "7259": "DIRECT_PARTICLE_ONLY",
+    "7262": "DIRECT_PARTICLE_ONLY",
+    "7267": "DIRECT_PARTICLE_ONLY",
+    "7268": "DIRECT_PARTICLE_ONLY",
+    "7272": "DIRECT_PARTICLE_ONLY",
+    "7275": "DIRECT_PARTICLE_ONLY",
+    "7276": "COPULA_DERIVED_ONLY",
+    "7284": "DIRECT_PARTICLE_ONLY",
+    "7285": "DIRECT_PARTICLE_ONLY",
+    "7289": "DIRECT_PARTICLE_ONLY",
+    "7302": "DIRECT_PARTICLE_ONLY",
+    "7303": "DIRECT_PARTICLE_ONLY",
+    "7306": "DIRECT_PARTICLE_ONLY",
+    "7307": "DIRECT_PARTICLE_ONLY",
+    "7311": "COPULA_DERIVED_ONLY",
+    "7319": "DIRECT_PARTICLE_ONLY",
+    "7320": "DIRECT_PARTICLE_ONLY",
+    "7323": "DIRECT_PARTICLE_ONLY",
+    "7324": "DIRECT_PARTICLE_ONLY",
+    "7328": "COPULA_DERIVED_ONLY",
+    "7658": "DIRECT_PARTICLE_ONLY",
+    "7680": "DIRECT_PARTICLE_ONLY",
+    "8389": "COPULA_DERIVED_ONLY",
+    "8403": "COPULA_DERIVED_ONLY",
+    "8406": "COPULA_DERIVED_ONLY",
+    "8416": "COPULA_DERIVED_ONLY",
+    "8422": "COPULA_DERIVED_ONLY",
+    "8431": "DIRECT_PARTICLE_ONLY",
+    "8432": "DIRECT_PARTICLE_ONLY",
+    "8441": "DIRECT_PARTICLE_ONLY",
+    "8442": "DIRECT_PARTICLE_ONLY",
+    "8468": "DIRECT_PARTICLE_ONLY",
+    "8469": "DIRECT_PARTICLE_ONLY",
+    "8478": "DIRECT_PARTICLE_ONLY",
+    "8497": "DIRECT_PARTICLE_ONLY",
+    "8506": "DIRECT_PARTICLE_ONLY",
+    "8511": "DIRECT_PARTICLE_ONLY",
+    "8525": "DIRECT_PARTICLE_ONLY",
+    "8526": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "8536": "DIRECT_PARTICLE_ONLY",
+    "8542": "DIRECT_PARTICLE_ONLY",
+    "8543": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "8565": "DIRECT_PARTICLE_ONLY",
+    "8707": "DIRECT_PARTICLE_ONLY",
+    "8727": "COPULA_DERIVED_ONLY",
+    "8841": "DIRECT_PARTICLE_ONLY",
+    "8842": "DIRECT_PARTICLE_ONLY",
+    "8845": "DIRECT_PARTICLE_ONLY",
+    "8846": "DIRECT_PARTICLE_ONLY",
+    "9113": "COPULA_DERIVED_ONLY",
+    "9301": "DIRECT_PARTICLE_ONLY",
+    "9317": "COPULA_DERIVED_ONLY",
+    "9651": "COPULA_DERIVED_ONLY",
+    "9655": "COPULA_DERIVED_ONLY",
+    "9696": "DIRECT_PARTICLE_ONLY",
+    "9722": "DIRECT_PARTICLE_ONLY",
+    "9723": "DIRECT_PARTICLE_ONLY",
+    "9724": "DIRECT_PARTICLE_ONLY",
+    "9726": "DIRECT_PARTICLE_ONLY",
+    "9727": "DIRECT_PARTICLE_ONLY",
+    "9764": "DIRECT_PARTICLE_ONLY",
+    "9780": "DIRECT_PARTICLE_ONLY",
+    "9792": "DIRECT_PARTICLE_ONLY",
+    "9794": "DIRECT_PARTICLE_ONLY",
+    "9798": "DIRECT_PARTICLE_ONLY",
+    "9803": "DIRECT_PARTICLE_ONLY",
+    "9808": "DIRECT_PARTICLE_ONLY",
+    "9809": "DIRECT_PARTICLE_ONLY",
+    "9810": "DIRECT_PARTICLE_ONLY",
+    "9814": "DIRECT_PARTICLE_ONLY",
+    "9819": "DIRECT_PARTICLE_ONLY",
+    "9825": "DIRECT_PARTICLE_ONLY",
+    "9835": "DIRECT_PARTICLE_ONLY",
+    "9852": "DIRECT_PARTICLE_ONLY",
+    "10268": "DIRECT_PARTICLE_ONLY",
+    "10290": "DIRECT_PARTICLE_ONLY",
+    "10292": "DIRECT_PARTICLE_ONLY",
+    "10293": "DIRECT_PARTICLE_ONLY",
+    "10299": "DIRECT_PARTICLE_ONLY",
+    "10301": "DIRECT_PARTICLE_ONLY",
+    "10302": "DIRECT_PARTICLE_ONLY",
+    "10329": "DIRECT_PARTICLE_ONLY",
+    "10343": "DIRECT_PARTICLE_ONLY",
+    "10348": "DIRECT_PARTICLE_ONLY",
+    "10476": "COPULA_DERIVED_ONLY",
+    "10675": "DIRECT_PARTICLE_ONLY",
+    "10978": "DIRECT_PARTICLE_ONLY",
+    "10981": "DIRECT_PARTICLE_ONLY",
+    "10988": "DIRECT_PARTICLE_ONLY",
+    "11056": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "11074": "COPULA_DERIVED_ONLY",
+    "11082": "COPULA_DERIVED_ONLY",
+    "11090": "COPULA_DERIVED_ONLY",
+    "11386": "COPULA_DERIVED_ONLY",
+    "11440": "NON_PARTICLE_SUFFIX_ADJACENCY",
+    "11491": "COPULA_DERIVED_ONLY",
+    "11739": "DIRECT_PARTICLE_ONLY",
+    "11748": "DIRECT_PARTICLE_ONLY",
+    "11755": "COPULA_DERIVED_ONLY",
+    "11759": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "11765": "DIRECT_PARTICLE_ONLY",
+    "11777": "DIRECT_PARTICLE_ONLY",
+    "11778": "DIRECT_PARTICLE_ONLY",
+    "11786": "DIRECT_PARTICLE_ONLY",
+    "11788": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "11789": "DIRECT_PARTICLE_ONLY",
+    "11790": "DIRECT_PARTICLE_ONLY",
+    "11791": "DIRECT_PARTICLE_ONLY",
+    "11793": "DIRECT_PARTICLE_ONLY",
+    "11794": "DIRECT_PARTICLE_ONLY",
+    "11795": "DIRECT_PARTICLE_ONLY",
+    "11797": "DIRECT_PARTICLE_ONLY",
+    "11799": "DIRECT_PARTICLE_ONLY",
+    "11800": "DIRECT_PARTICLE_ONLY",
+    "11801": "DIRECT_PARTICLE_ONLY",
+    "11804": "DIRECT_PARTICLE_ONLY",
+    "11814": "DIRECT_PARTICLE_ONLY",
+    "11821": "DIRECT_PARTICLE_ONLY",
+    "11824": "DIRECT_PARTICLE_ONLY",
+    "11825": "DIRECT_PARTICLE_ONLY",
+    "11844": "DIRECT_PARTICLE_ONLY",
+    "11851": "DIRECT_PARTICLE_ONLY",
+    "11854": "DIRECT_PARTICLE_ONLY",
+    "11858": "DIRECT_PARTICLE_ONLY",
+    "12129": "COPULA_DERIVED_ONLY",
+    "12172": "COPULA_DERIVED_ONLY",
+    "12263": "COPULA_DERIVED_ONLY",
+    "12273": "COPULA_DERIVED_ONLY",
+    "12314": "COPULA_DERIVED_ONLY",
+    "12355": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "12363": "DIRECT_PARTICLE_ONLY",
+    "12370": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "12386": "COPULA_DERIVED_ONLY",
+    "12388": "COPULA_DERIVED_ONLY",
+    "12403": "DIRECT_PARTICLE_ONLY",
+    "12404": "DIRECT_PARTICLE_ONLY",
+    "12410": "DIRECT_PARTICLE_ONLY",
+    "12411": "DIRECT_PARTICLE_ONLY",
+    "12419": "DIRECT_PARTICLE_ONLY",
+    "12422": "DIRECT_PARTICLE_ONLY",
+    "12427": "DIRECT_PARTICLE_ONLY",
+    "12430": "DIRECT_PARTICLE_ONLY",
+    "12431": "DIRECT_PARTICLE_ONLY",
+    "12432": "DIRECT_PARTICLE_ONLY",
+    "12435": "DIRECT_PARTICLE_ONLY",
+    "12436": "DIRECT_PARTICLE_ONLY",
+    "12439": "DIRECT_PARTICLE_ONLY",
+    "12443": "DIRECT_PARTICLE_ONLY",
+    "12444": "DIRECT_PARTICLE_ONLY",
+    "12450": "DIRECT_PARTICLE_ONLY",
+    "12451": "DIRECT_PARTICLE_ONLY",
+    "12458": "DIRECT_PARTICLE_ONLY",
+    "12459": "DIRECT_PARTICLE_ONLY",
+    "12461": "DIRECT_PARTICLE_ONLY",
+    "12464": "DIRECT_PARTICLE_ONLY",
+    "12476": "MIXED_DIRECT_AND_DERIVED_RISK",
+    "12478": "DIRECT_PARTICLE_ONLY",
+    "12481": "COPULA_DERIVED_ONLY",
+    "12482": "DIRECT_PARTICLE_ONLY",
+    "12485": "COPULA_DERIVED_ONLY",
+    "12508": "DIRECT_PARTICLE_ONLY",
+    "12510": "DIRECT_PARTICLE_ONLY",
+    "12512": "DIRECT_PARTICLE_ONLY",
+    "12514": "DIRECT_PARTICLE_ONLY",
+    "12518": "DIRECT_PARTICLE_ONLY",
+    "12519": "DIRECT_PARTICLE_ONLY",
+    "12520": "DIRECT_PARTICLE_ONLY",
+    "12534": "DIRECT_PARTICLE_ONLY",
+    "12535": "DIRECT_PARTICLE_ONLY",
+    "12536": "DIRECT_PARTICLE_ONLY",
+    "12537": "DIRECT_PARTICLE_ONLY",
+    "12538": "DIRECT_PARTICLE_ONLY",
+    "12561": "DIRECT_PARTICLE_ONLY",
+    "12572": "DIRECT_PARTICLE_ONLY",
+    "12574": "DIRECT_PARTICLE_ONLY",
+    "12576": "DIRECT_PARTICLE_ONLY",
+    "12577": "DIRECT_PARTICLE_ONLY",
+    "12580": "DIRECT_PARTICLE_ONLY",
+    "12583": "DIRECT_PARTICLE_ONLY",
+    "12585": "DIRECT_PARTICLE_ONLY",
+    "12587": "DIRECT_PARTICLE_ONLY",
+    "12589": "DIRECT_PARTICLE_ONLY",
+    "12591": "DIRECT_PARTICLE_ONLY",
+    "12597": "DIRECT_PARTICLE_ONLY",
+    "12599": "DIRECT_PARTICLE_ONLY",
+    "12601": "DIRECT_PARTICLE_ONLY",
+    "12604": "DIRECT_PARTICLE_ONLY",
+    "12605": "DIRECT_PARTICLE_ONLY",
+    "12607": "DIRECT_PARTICLE_ONLY",
+    "12609": "DIRECT_PARTICLE_ONLY",
+    "12611": "DIRECT_PARTICLE_ONLY",
+    "12613": "DIRECT_PARTICLE_ONLY",
+    "12615": "DIRECT_PARTICLE_ONLY",
+    "12617": "DIRECT_PARTICLE_ONLY",
+    "12619": "DIRECT_PARTICLE_ONLY",
+    "12621": "DIRECT_PARTICLE_ONLY",
+    "12623": "DIRECT_PARTICLE_ONLY",
+    "12626": "DIRECT_PARTICLE_ONLY",
+    "12628": "DIRECT_PARTICLE_ONLY",
+    "12629": "DIRECT_PARTICLE_ONLY",
+    "12969": "DIRECT_PARTICLE_ONLY",
+    "12989": "DIRECT_PARTICLE_ONLY",
+    "13003": "DIRECT_PARTICLE_ONLY",
+    "13010": "DIRECT_PARTICLE_ONLY",
+    "13024": "DIRECT_PARTICLE_ONLY",
+    "13026": "DIRECT_PARTICLE_ONLY",
+    "13029": "MIXED_DIRECT_AND_DERIVED_RISK",
+    "13038": "DIRECT_PARTICLE_ONLY",
+    "13040": "DIRECT_PARTICLE_ONLY",
+    "13041": "DIRECT_PARTICLE_ONLY",
+    "13045": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "13048": "LEXICAL_FALSE_POSITIVE_GAMUN",
+    "13064": "LEXICAL_FALSE_POSITIVE_GAMUN"
+  },
+  "details": {
+    "393": [
+      [
+        "\\Z001",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "1566": [
+      [
+        "\\&01",
+        "이",
+        "이야말로",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "1755": [
+      [
+        "\\%00",
+        "이",
+        "이다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "1756": [
+      [
+        "\\%00",
+        "이",
+        "이야",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "1940": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "1945": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "2788": [
+      [
+        "\\41DE",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2791": [
+      [
+        "\\41DE",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2860": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2905": [
+      [
+        "\\#00C3",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2906": [
+      [
+        "\\37F1",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2910": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2915": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2940": [
+      [
+        "\\#07F0",
+        "이",
+        "이야말로",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "2947": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2954": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2958": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2959": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "2962": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "3030": [
+      [
+        "\\>3FA",
+        "이",
+        "이네",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "3715": [
+      [
+        "\\41DE",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4094": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "를",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4096": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4097": [
+      [
+        "\\%01",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4112": [
+      [
+        "\\#0FF1",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4113": [
+      [
+        "\\D079",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4127": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4130": [
+      [
+        "\\%03",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4133": [
+      [
+        "\\#0FF1",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4137": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4140": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4150": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4167": [
+      [
+        "\\#0FF1",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4182": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4206": [
+      [
+        "\\1006",
+        "이",
+        "이지",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4232": [
+      [
+        "\\#07F1",
+        "이",
+        "이오",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4233": [
+      [
+        "\\#07FE",
+        "이",
+        "이라고",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4398": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4399": [
+      [
+        "\\#07F0",
+        "와",
+        "와의",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4401": [
+      [
+        "\\#0FFE",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4402": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4403": [
+      [
+        "\\#07F0",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4404": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4408": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4414": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4421": [
+      [
+        "\\#1496",
+        "이",
+        "이라",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4443": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4445": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4449": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4461": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4463": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4474": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4476": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었지만",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4477": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4484": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4502": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4506": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4509": [
+      [
+        "\\#0FFE",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4588": [
+      [
+        "\\%01",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4592": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4717": [
+      [
+        "\\%03",
+        "이",
+        "이신가",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4722": [
+      [
+        "\\>3FA",
+        "이",
+        "이지",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "4736": [
+      [
+        "\\>3FA",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4740": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4742": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4743": [
+      [
+        "\\%21",
+        "는",
+        "는 것도 어떻\\",
+        "NON_PARTICLE_SUFFIX_ADJACENCY"
+      ]
+    ],
+    "4754": [
+      [
+        "\\#07FE",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4769": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4771": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4804": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4933": [
+      [
+        "\\%03",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4934": [
+      [
+        "\\%03",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4941": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4947": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "4992": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5013": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5038": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5049": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5051": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5059": [
+      [
+        "\\%15",
+        "는",
+        "는데\n\\%17겠",
+        "NON_PARTICLE_SUFFIX_ADJACENCY"
+      ]
+    ],
+    "5084": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5095": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5112": [
+      [
+        "\\#07FE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5116": [
+      [
+        "\\37F0",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5118": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5123": [
+      [
+        "\\37F0",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5332": [
+      [
+        "\\1015",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5449": [
+      [
+        "\\%00",
+        "이",
+        "이오",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "5570": [
+      [
+        "\\#07FE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5572": [
+      [
+        "\\#0FFE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5602": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5603": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5618": [
+      [
+        "\\%00",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5623": [
+      [
+        "\\%00",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5632": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%01",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5635": [
+      [
+        "\\#07FE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5654": [
+      [
+        "\\#07F5",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5670": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5817": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5823": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5824": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5825": [
+      [
+        "\\#07F0",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5838": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5873": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5879": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5880": [
+      [
+        "\\%00",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5881": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5883": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5884": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5885": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5893": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5894": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5897": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5903": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "5917": [
+      [
+        "\\%03",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6080": [
+      [
+        "\\#07FE",
+        "로",
+        "로군",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "6313": [
+      [
+        "\\%03",
+        "이",
+        "이셨군요",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "6383": [
+      [
+        "\\#0276",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "6407": [
+      [
+        "\\#09C1",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "6408": [
+      [
+        "\\#11C1",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "6412": [
+      [
+        "\\%041C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6417": [
+      [
+        "\\#08C3",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6429": [
+      [
+        "\\#02D2",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6432": [
+      [
+        "\\%20276",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%20320",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6433": [
+      [
+        "\\%20276",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%20320",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6436": [
+      [
+        "\\%20320",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6439": [
+      [
+        "\\%20276",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%20320",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6440": [
+      [
+        "\\%20320",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6441": [
+      [
+        "\\%20276",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%20320",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6442": [
+      [
+        "\\%20320",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6448": [
+      [
+        "\\%04320",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0218",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6458": [
+      [
+        "\\41DE",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6471": [
+      [
+        "\\#0276",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6477": [
+      [
+        "\\#1276",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6478": [
+      [
+        "\\#1276",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6484": [
+      [
+        "\\#01C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6488": [
+      [
+        "\\#1276",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "6680": [
+      [
+        "\\#0049",
+        "이",
+        "이라",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "6697": [
+      [
+        "\\#0849",
+        "이",
+        "이라",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "6935": [
+      [
+        "\\#08C3",
+        "이",
+        "이란",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7020": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7028": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7029": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7031": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7034": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7037": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7038": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7047": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7063": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7064": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7069": [
+      [
+        "\\%01",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7073": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7074": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7077": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7080": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7083": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7092": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7095": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#02E4",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7099": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7103": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7104": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7111": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7113": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7117": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7121": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7122": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7124": [
+      [
+        "\\%01",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7126": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7129": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7133": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7136": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7141": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7142": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7146": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7149": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7150": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7153": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7158": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7159": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7163": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7166": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7167": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7170": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7174": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7177": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7182": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7184": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7189": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0291",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7192": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7197": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7198": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7202": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7205": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7206": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7209": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7214": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7215": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7219": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7222": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7223": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7226": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7230": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7231": [
+      [
+        "\\%01",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7233": [
+      [
+        "\\%01",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\%01",
+        "를",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7235": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7237": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7240": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7243": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7247": [
+      [
+        "\\%01",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7248": [
+      [
+        "\\%01",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7249": [
+      [
+        "\\%01",
+        "와",
+        "와의",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7254": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7255": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7259": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7262": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7267": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7268": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7272": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7275": [
+      [
+        "\\#07FE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7276": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7284": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7285": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7289": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7302": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7303": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7306": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7307": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7311": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7319": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7320": [
+      [
+        "\\%00",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7323": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7324": [
+      [
+        "\\%01",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7328": [
+      [
+        "\\1009",
+        "이",
+        "이었다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "7658": [
+      [
+        "\\41DF",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "7680": [
+      [
+        "\\37F1",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8389": [
+      [
+        "\\#07F0",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8403": [
+      [
+        "\\#07F0",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8406": [
+      [
+        "\\#0FF0",
+        "이",
+        "이었지만",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8416": [
+      [
+        "\\#0205",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8422": [
+      [
+        "\\%03",
+        "이",
+        "이시옵니다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8431": [
+      [
+        "\\#086E",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8432": [
+      [
+        "\\#01C5",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8441": [
+      [
+        "\\%201FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8442": [
+      [
+        "\\%201FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8468": [
+      [
+        "\\#01FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8469": [
+      [
+        "\\#01FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8478": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8497": [
+      [
+        "\\#0A06",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8506": [
+      [
+        "\\41DF",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8511": [
+      [
+        "\\#01FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8525": [
+      [
+        "\\#0A06",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8526": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "8536": [
+      [
+        "\\#01FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8542": [
+      [
+        "\\#0A06",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8543": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "8565": [
+      [
+        "\\%04205",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8707": [
+      [
+        "\\#1017",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8727": [
+      [
+        "\\51E5",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "8841": [
+      [
+        "\\#17F0",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#17F1",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8842": [
+      [
+        "\\#17F0",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#17F1",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8845": [
+      [
+        "\\#17F0",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#17F1",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "8846": [
+      [
+        "\\#17F0",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#17F1",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9113": [
+      [
+        "\\C498",
+        "이",
+        "이니",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "9301": [
+      [
+        "\\37F1",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9317": [
+      [
+        "\\A407",
+        "이",
+        "이니",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ],
+      [
+        "\\41E1",
+        "이",
+        "이네",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "9651": [
+      [
+        "\\#01C1",
+        "이",
+        "이라면",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "9655": [
+      [
+        "\\#01C1",
+        "이",
+        "이라면",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "9696": [
+      [
+        "\\A407",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9722": [
+      [
+        "\\#002D",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0B48",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9723": [
+      [
+        "\\#002D",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9724": [
+      [
+        "\\#02D2",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9726": [
+      [
+        "\\#0B47",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#002D",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9727": [
+      [
+        "\\#0B47",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9764": [
+      [
+        "\\%04077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9780": [
+      [
+        "\\%04077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9792": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9794": [
+      [
+        "\\#0877",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9798": [
+      [
+        "\\#0877",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9803": [
+      [
+        "\\#0877",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9808": [
+      [
+        "\\A406",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9809": [
+      [
+        "\\A406",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9810": [
+      [
+        "\\A406",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\A406",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9814": [
+      [
+        "\\%040C3",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9819": [
+      [
+        "\\%040C3",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9825": [
+      [
+        "\\%0400E",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9835": [
+      [
+        "\\#000E",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "9852": [
+      [
+        "\\#000E",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10268": [
+      [
+        "\\37F1",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10290": [
+      [
+        "\\#07F0",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10292": [
+      [
+        "\\#07F0",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10293": [
+      [
+        "\\#07F0",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\41DE",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10299": [
+      [
+        "\\#07F0",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10301": [
+      [
+        "\\#07F0",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10302": [
+      [
+        "\\#07F0",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\41DE",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10329": [
+      [
+        "\\E07A",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10343": [
+      [
+        "\\%00",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10348": [
+      [
+        "\\51E6",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10476": [
+      [
+        "\\C498",
+        "이",
+        "이니",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "10675": [
+      [
+        "\\37F1",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10978": [
+      [
+        "\\#0147",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10981": [
+      [
+        "\\#0147",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0944",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "10988": [
+      [
+        "\\#0147",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11056": [
+      [
+        "\\#1218",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "11074": [
+      [
+        "\\>3FA",
+        "이",
+        "이라면",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11082": [
+      [
+        "\\>3FA",
+        "이",
+        "이라면",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11090": [
+      [
+        "\\>3FA",
+        "이",
+        "이라면",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11386": [
+      [
+        "\\#000E",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11440": [
+      [
+        "\\%2A",
+        "는",
+        "는 건 어떤가",
+        "NON_PARTICLE_SUFFIX_ADJACENCY"
+      ]
+    ],
+    "11491": [
+      [
+        "\\#017B",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11739": [
+      [
+        "\\%042C0",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11748": [
+      [
+        "\\#01BF",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11755": [
+      [
+        "\\%040C3",
+        "이",
+        "이군",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "11759": [
+      [
+        "\\#11BF",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "11765": [
+      [
+        "\\%041FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11777": [
+      [
+        "\\#004B",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11778": [
+      [
+        "\\#02D1",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11786": [
+      [
+        "\\#01FA",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11788": [
+      [
+        "\\#1074",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "11789": [
+      [
+        "\\#0320",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11790": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11791": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11793": [
+      [
+        "\\#0320",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11794": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11795": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11797": [
+      [
+        "\\#0077",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11799": [
+      [
+        "\\41E0",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11800": [
+      [
+        "\\#0877",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\41E0",
+        "를",
+        "를",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0A76",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11801": [
+      [
+        "\\#0877",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11804": [
+      [
+        "\\#00C3",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0214",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11814": [
+      [
+        "\\#09E3",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11821": [
+      [
+        "\\#01E3",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#00C3",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11824": [
+      [
+        "\\#09E3",
+        "와",
+        "와",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11825": [
+      [
+        "\\%03",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11844": [
+      [
+        "\\%01",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11851": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11854": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "11858": [
+      [
+        "\\%00",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12129": [
+      [
+        "\\%00",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12172": [
+      [
+        "\\%00",
+        "이",
+        "이라는",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12263": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12273": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12314": [
+      [
+        "\\#0FFE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12355": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "12363": [
+      [
+        "\\41E0",
+        "로",
+        "로",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12370": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "12386": [
+      [
+        "\\#07F1",
+        "이",
+        "이다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12388": [
+      [
+        "\\#07F1",
+        "이",
+        "이다",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12403": [
+      [
+        "\\#0056",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12404": [
+      [
+        "\\#01E3",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12410": [
+      [
+        "\\%20320",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12411": [
+      [
+        "\\#0218",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12419": [
+      [
+        "\\#0098",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12422": [
+      [
+        "\\#0098",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12427": [
+      [
+        "\\51E6",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12430": [
+      [
+        "\\51E6",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12431": [
+      [
+        "\\#08C3",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0810",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12432": [
+      [
+        "\\#0010",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12435": [
+      [
+        "\\#08C3",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#0810",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12436": [
+      [
+        "\\#0010",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12439": [
+      [
+        "\\51E6",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12443": [
+      [
+        "\\51E6",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12444": [
+      [
+        "\\#0017",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12450": [
+      [
+        "\\41DF",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12451": [
+      [
+        "\\#02A7",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12458": [
+      [
+        "\\51E7",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12459": [
+      [
+        "\\#0034",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12461": [
+      [
+        "\\#07FE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12464": [
+      [
+        "\\Z001",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12476": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\Z001",
+        "이",
+        "이었나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12478": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12481": [
+      [
+        "\\#0FFE",
+        "이",
+        "이여",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12482": [
+      [
+        "\\#0FFE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12485": [
+      [
+        "\\#0FFE",
+        "이",
+        "이여",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "12508": [
+      [
+        "\\#02C4",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12510": [
+      [
+        "\\#02C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12512": [
+      [
+        "\\#02C2",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12514": [
+      [
+        "\\#02BD",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12518": [
+      [
+        "\\#0128",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12519": [
+      [
+        "\\E079",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12520": [
+      [
+        "\\E079",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12534": [
+      [
+        "\\#005F",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12535": [
+      [
+        "\\%207F2",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12536": [
+      [
+        "\\#01C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12537": [
+      [
+        "\\#09C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12538": [
+      [
+        "\\#09C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12561": [
+      [
+        "\\#0316",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12572": [
+      [
+        "\\#0150",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12574": [
+      [
+        "\\#00A7",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12576": [
+      [
+        "\\#00A4",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12577": [
+      [
+        "\\#013B",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12580": [
+      [
+        "\\#00AE",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12583": [
+      [
+        "\\#02F7",
+        "는",
+        "는",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12585": [
+      [
+        "\\#0186",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12587": [
+      [
+        "\\#0184",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12589": [
+      [
+        "\\#018A",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12591": [
+      [
+        "\\#018B",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12597": [
+      [
+        "\\#01C1",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12599": [
+      [
+        "\\#01C0",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12601": [
+      [
+        "\\#01E8",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12604": [
+      [
+        "\\#0165",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12605": [
+      [
+        "\\#0169",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12607": [
+      [
+        "\\#000B",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12609": [
+      [
+        "\\#0064",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12611": [
+      [
+        "\\#0029",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12613": [
+      [
+        "\\#01CA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12615": [
+      [
+        "\\#01C8",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12617": [
+      [
+        "\\#027E",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12619": [
+      [
+        "\\#027C",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12621": [
+      [
+        "\\#00BD",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12623": [
+      [
+        "\\#00F0",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12626": [
+      [
+        "\\#019F",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12628": [
+      [
+        "\\#00D8",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12629": [
+      [
+        "\\#0077",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12969": [
+      [
+        "\\#01FA",
+        "가",
+        "가",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "12989": [
+      [
+        "\\%00",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13003": [
+      [
+        "\\E07A",
+        "과",
+        "과",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13010": [
+      [
+        "\\%01",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13024": [
+      [
+        "\\%00",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13026": [
+      [
+        "\\#0FFE",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13029": [
+      [
+        "\\#07F0",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\E079",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#07FE",
+        "이",
+        "이었으나",
+        "COPULA_DERIVED_MORPHOLOGY"
+      ]
+    ],
+    "13038": [
+      [
+        "\\E079",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13040": [
+      [
+        "\\#07FE",
+        "은",
+        "은",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\#07F0",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ],
+      [
+        "\\E079",
+        "을",
+        "을",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13041": [
+      [
+        "\\#07FE",
+        "이",
+        "이",
+        "DIRECT_PARTICLE"
+      ]
+    ],
+    "13045": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "13048": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ],
+    "13064": [
+      [
+        "\\#1206",
+        "가",
+        "가문",
+        "LEXICAL_FALSE_POSITIVE_GAMUN"
+      ]
+    ]
+  },
+  "summary": {
+    "COPULA_DERIVED_ONLY": {
+      "opcodes": {
+        "0x11": 31,
+        "0x12": 5,
+        "0x13": 23
+      },
+      "row_ids": [
+        1566,
+        1755,
+        1756,
+        1940,
+        1945,
+        2940,
+        3030,
+        4206,
+        4232,
+        4233,
+        4399,
+        4421,
+        4476,
+        4717,
+        4722,
+        5449,
+        6080,
+        6313,
+        6407,
+        6680,
+        6697,
+        6935,
+        7020,
+        7038,
+        7064,
+        7150,
+        7167,
+        7206,
+        7223,
+        7249,
+        7276,
+        7311,
+        7328,
+        8389,
+        8403,
+        8406,
+        8416,
+        8422,
+        8727,
+        9113,
+        9317,
+        9651,
+        9655,
+        10476,
+        11074,
+        11082,
+        11090,
+        11386,
+        11491,
+        11755,
+        12129,
+        12172,
+        12263,
+        12273,
+        12314,
+        12386,
+        12388,
+        12481,
+        12485
+      ],
+      "rows": 59,
+      "sha256": "e80f2737b37b18cebeff70e6d419fa4097a3722f98cb714863947a9fc8edd5fa"
+    },
+    "DIRECT_PARTICLE_ONLY": {
+      "opcodes": {
+        "0x11": 260,
+        "0x12": 2,
+        "0x13": 88
+      },
+      "row_ids": [
+        393,
+        2788,
+        2791,
+        2860,
+        2905,
+        2906,
+        2910,
+        2915,
+        2947,
+        2954,
+        2958,
+        2959,
+        2962,
+        3715,
+        4094,
+        4096,
+        4097,
+        4112,
+        4113,
+        4127,
+        4130,
+        4133,
+        4137,
+        4140,
+        4150,
+        4167,
+        4182,
+        4398,
+        4401,
+        4402,
+        4403,
+        4404,
+        4408,
+        4414,
+        4443,
+        4445,
+        4449,
+        4461,
+        4463,
+        4474,
+        4477,
+        4484,
+        4502,
+        4506,
+        4509,
+        4588,
+        4592,
+        4736,
+        4740,
+        4742,
+        4754,
+        4769,
+        4771,
+        4804,
+        4933,
+        4934,
+        4941,
+        4947,
+        4992,
+        5013,
+        5038,
+        5049,
+        5051,
+        5084,
+        5095,
+        5112,
+        5116,
+        5118,
+        5123,
+        5332,
+        5570,
+        5572,
+        5602,
+        5603,
+        5618,
+        5623,
+        5632,
+        5635,
+        5654,
+        5670,
+        5817,
+        5823,
+        5824,
+        5825,
+        5838,
+        5873,
+        5879,
+        5880,
+        5881,
+        5883,
+        5884,
+        5885,
+        5893,
+        5894,
+        5897,
+        5903,
+        5917,
+        6412,
+        6417,
+        6429,
+        6432,
+        6433,
+        6436,
+        6439,
+        6440,
+        6441,
+        6442,
+        6448,
+        6458,
+        6471,
+        6477,
+        6478,
+        6484,
+        6488,
+        7028,
+        7029,
+        7031,
+        7034,
+        7037,
+        7047,
+        7063,
+        7069,
+        7073,
+        7074,
+        7077,
+        7080,
+        7083,
+        7092,
+        7095,
+        7099,
+        7103,
+        7104,
+        7111,
+        7113,
+        7117,
+        7121,
+        7122,
+        7124,
+        7126,
+        7129,
+        7133,
+        7136,
+        7141,
+        7142,
+        7146,
+        7149,
+        7153,
+        7158,
+        7159,
+        7163,
+        7166,
+        7170,
+        7174,
+        7177,
+        7182,
+        7184,
+        7189,
+        7192,
+        7197,
+        7198,
+        7202,
+        7205,
+        7209,
+        7214,
+        7215,
+        7219,
+        7222,
+        7226,
+        7230,
+        7231,
+        7233,
+        7235,
+        7237,
+        7240,
+        7243,
+        7247,
+        7248,
+        7254,
+        7255,
+        7259,
+        7262,
+        7267,
+        7268,
+        7272,
+        7275,
+        7284,
+        7285,
+        7289,
+        7302,
+        7303,
+        7306,
+        7307,
+        7319,
+        7320,
+        7323,
+        7324,
+        7658,
+        7680,
+        8431,
+        8432,
+        8441,
+        8442,
+        8468,
+        8469,
+        8478,
+        8497,
+        8506,
+        8511,
+        8525,
+        8536,
+        8542,
+        8565,
+        8707,
+        8841,
+        8842,
+        8845,
+        8846,
+        9301,
+        9696,
+        9722,
+        9723,
+        9724,
+        9726,
+        9727,
+        9764,
+        9780,
+        9792,
+        9794,
+        9798,
+        9803,
+        9808,
+        9809,
+        9810,
+        9814,
+        9819,
+        9825,
+        9835,
+        9852,
+        10268,
+        10290,
+        10292,
+        10293,
+        10299,
+        10301,
+        10302,
+        10329,
+        10343,
+        10348,
+        10675,
+        10978,
+        10981,
+        10988,
+        11739,
+        11748,
+        11765,
+        11777,
+        11778,
+        11786,
+        11789,
+        11790,
+        11791,
+        11793,
+        11794,
+        11795,
+        11797,
+        11799,
+        11800,
+        11801,
+        11804,
+        11814,
+        11821,
+        11824,
+        11825,
+        11844,
+        11851,
+        11854,
+        11858,
+        12363,
+        12403,
+        12404,
+        12410,
+        12411,
+        12419,
+        12422,
+        12427,
+        12430,
+        12431,
+        12432,
+        12435,
+        12436,
+        12439,
+        12443,
+        12444,
+        12450,
+        12451,
+        12458,
+        12459,
+        12461,
+        12464,
+        12478,
+        12482,
+        12508,
+        12510,
+        12512,
+        12514,
+        12518,
+        12519,
+        12520,
+        12534,
+        12535,
+        12536,
+        12537,
+        12538,
+        12561,
+        12572,
+        12574,
+        12576,
+        12577,
+        12580,
+        12583,
+        12585,
+        12587,
+        12589,
+        12591,
+        12597,
+        12599,
+        12601,
+        12604,
+        12605,
+        12607,
+        12609,
+        12611,
+        12613,
+        12615,
+        12617,
+        12619,
+        12621,
+        12623,
+        12626,
+        12628,
+        12629,
+        12969,
+        12989,
+        13003,
+        13010,
+        13024,
+        13026,
+        13038,
+        13040,
+        13041
+      ],
+      "rows": 350,
+      "sha256": "c590ce16cf7d230e0a63914b2e5a2dff92bd0ecad35aa7d8b765b74563944ae6"
+    },
+    "LEXICAL_FALSE_POSITIVE_GAMUN": {
+      "opcodes": {
+        "0x11": 4,
+        "0x13": 8
+      },
+      "row_ids": [
+        6383,
+        6408,
+        8526,
+        8543,
+        11056,
+        11759,
+        11788,
+        12355,
+        12370,
+        13045,
+        13048,
+        13064
+      ],
+      "rows": 12,
+      "sha256": "5dfc776bdfc639b6a34e2c6a67187be373dfce2afd4e9545e6942691746e94a2"
+    },
+    "MIXED_DIRECT_AND_DERIVED_RISK": {
+      "opcodes": {
+        "0x11": 1,
+        "0x13": 1
+      },
+      "row_ids": [
+        12476,
+        13029
+      ],
+      "rows": 2,
+      "sha256": "273205999e38291ac557a3a82ac960542acb0ab13e2716ec3629e76cf9ecc69e"
+    },
+    "NON_PARTICLE_SUFFIX_ADJACENCY": {
+      "opcodes": {
+        "0x11": 3
+      },
+      "row_ids": [
+        4743,
+        5059,
+        11440
+      ],
+      "rows": 3,
+      "sha256": "5cdaefc7215dfc8d6d8941961394fd08984c7889233b5ed3f78ad70b8697831a"
+    },
+    "PRODUCT": {
+      "ALL_SHA": "436ce5ef66e7ca4fc4266368220fecae7b52f506bc9b1c3aa9fe78a3b2106387",
+      "DEFER": 414,
+      "DEFER_SHA": "aa68ac84782ce834fada052b5a3ac1cb160321d3831323e1132adfc4399cb749",
+      "INCLUDE_KO": 12,
+      "INCLUDE_SHA": "5dfc776bdfc639b6a34e2c6a67187be373dfce2afd4e9545e6942691746e94a2"
+    },
+    "hits_total": 466,
+    "row_count": 426
+  }
+}

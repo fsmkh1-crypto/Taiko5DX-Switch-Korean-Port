@@ -985,3 +985,55 @@ Do not repeat:
 - reparse/group final Korean bytes to rediscover a canonical KO owner;
 - reject V334 special bindings because the final-Korean editor grouping does not start at the bound offset;
 - replace exact raw ledger slicing with ordinal lookup against a fresh final-Korean parse.
+
+## 30. V346 code-5 particle-risk detector conflates four semantic cause families
+
+Scope:
+
+`ECF00000_V335_CODE5_426_SEMANTIC_ADJACENCY_LEDGER_CANONICALIZATION`
+
+V335 code-5 / `UNRESOLVED_PARTICLE_RISK` is a conservative detector bucket, not one implementation family.
+
+Exact V346 partition:
+
+```text
+DIRECT_PARTICLE_ONLY              350
+COPULA_DERIVED_ONLY                59
+MIXED_DIRECT_AND_DERIVED_RISK       2
+LEXICAL_FALSE_POSITIVE_GAMUN       12
+NON_PARTICLE_SUFFIX_ADJACENCY       3
+```
+
+The 12 lexical false positives are exact `escape + 가문...` cases. Here `가` is the first syllable of the noun `가문`, not a subject particle. They are promoted to semantic `INCLUDE_KO` but are not implemented in V346.
+
+The three non-particle suffix rows are:
+
+```text
+row 4743   \%21 + 는 것도 ...
+row 5059   없\%15 + 는데 ...
+row 11440  보\%2A + 는 건 ...
+```
+
+Their detected `는` belongs to verbal/ending morphology rather than a noun-particle attached to a runtime value.
+
+Binding disposition:
+
+```text
+INCLUDE_KO   12
+DEFER       414
+```
+
+Do not repeat:
+
+- treat all 426 rows as one fixed-particle transform family;
+- treat every escape-adjacent `가` as a subject particle;
+- keep the 12 `가문` rows unresolved;
+- route copula/derived forms through V345 FIXED_SURFACE_PARTICLE_V1;
+- treat rows 4743/5059/11440 as noun-particle adjacency;
+- promote the remaining 414 merely because V345 fixed-particle validation passed.
+
+The exact direct-particle hit total remains 389. V346 corrects the prior conversational per-particle transcription to:
+
+```text
+가 104 / 는 81 / 은 50 / 를 47 / 이 46 / 와 27 / 을 15 / 로 10 / 과 9
+```

@@ -1,0 +1,41 @@
+{
+  "all_rowset_sha256": "73efb50f6b8be307cb5a0af2e0361293b2053aa7c61d22333da7e2663538e946",
+  "class_counts": {
+    "COPULA_DERIVED_ONLY": 59,
+    "DIRECT_PARTICLE_ONLY": 350,
+    "LEXICAL_FALSE_POSITIVE_GAMUN": 12,
+    "MIXED_DIRECT_AND_DERIVED_RISK": 2,
+    "NON_PARTICLE_SUFFIX_ADJACENCY": 3
+  },
+  "code5_exact_membership_match": true,
+  "code5_rows": 426,
+  "compact_sha256": "9ca57b03d70d3fc031e9c7d955dd4a90cdea292b2e1fe6e2069373b5c9975ffd",
+  "decoded_binding_mismatches": 0,
+  "defer_rows": 414,
+  "defer_rowset_sha256": "2e81943636fd974f5dd0606446255572b133ce58fb1124d0de74753f6812b439",
+  "direct_particle_counts": {
+    "가": 104,
+    "과": 9,
+    "는": 81,
+    "로": 10,
+    "를": 47,
+    "와": 27,
+    "은": 50,
+    "을": 15,
+    "이": 46
+  },
+  "hit_kind_counts": {
+    "COPULA_DERIVED_MORPHOLOGY": 62,
+    "DIRECT_PARTICLE": 389,
+    "LEXICAL_FALSE_POSITIVE_GAMUN": 12,
+    "NON_PARTICLE_SUFFIX_ADJACENCY": 3
+  },
+  "include_ko_rows": 12,
+  "include_rowset_sha256": "2e3b5b7981ee6b096a3dcc971fb5169cc8ff691c15f98132ef088e8cb07a4014",
+  "product_bytes_changed": false,
+  "source_diagnostic_sha256": "c6463acefa960cf61892ef631ce6759bdb35af387a8fe65411f299af5d82b6e8",
+  "status": "PASS_LEDGER_MATERIALIZATION",
+  "v334_binding_mismatches": 0,
+  "v335_binding_mismatches": 0,
+  "validation_id": "V346"
+}
