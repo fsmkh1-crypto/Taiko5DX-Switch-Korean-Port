@@ -1,0 +1,56 @@
+{
+  "schema": "ECF00000_V354_PERCENT_MACRO_TAI5MSG_B0_PRODUCT_CENSUS_V1",
+  "validation_id": "V354",
+  "parent": "0737bd6b69cddfdb8d93f9ea90e75decf02ff5f3",
+  "scope": "ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DEPENDENCY_CENSUS_READ_ONLY",
+  "result": "PRODUCT_CENSUS_AND_CURRENT_B0_COVERAGE_CLOSED",
+  "implementation": "NONE",
+  "product_bytes_changed": false,
+  "event_product_population": {
+    "admitted_rows": 12594,
+    "percent_macro_rows": 1760,
+    "percent_macro_occurrences": 2440
+  },
+  "percent_dispatch": {
+    "table_va": "0x6AC004",
+    "total_entries": 52,
+    "used_tokens": 46,
+    "unused_tokens": 6,
+    "unused_token_set": [
+      "\\%04",
+      "\\%0C",
+      "\\%12",
+      "\\%1F",
+      "\\%20",
+      "\\%33"
+    ],
+    "unique_b0_roots": 46,
+    "root_collisions": 0,
+    "all_roots_block0": true
+  },
+  "selective_tai5msg_current": {
+    "selected_total": 3179,
+    "unselected_jp_total": 11653,
+    "b0_selected_count": 2,
+    "b0_selected_locals": [
+      10,
+      11
+    ],
+    "used_percent_roots_ko": 0,
+    "used_percent_roots_jp": 46,
+    "used_percent_root_coverage_percent": 0
+  },
+  "v353_anchors": {
+    "\\%15": "0:209",
+    "\\%21": "0:349",
+    "\\%2A": "0:395"
+  },
+  "rows_file": "USED_PERCENT_MACRO_ROOTS.jsonl",
+  "inherited_status": {
+    "v309_selective_tai5msg_serializer": "PASS_REMAINS_VALID",
+    "v349_event_structural_validation": "PASS_REMAINS_VALID",
+    "v352_event_structural_validation": "PASS_REMAINS_VALID",
+    "percent_macro_runtime_language_integration": "OPEN"
+  },
+  "next_scope": "ECF00000_PERCENT_MACRO_TAI5MSG_B0_ROOT_ROLE_LANGUAGE_OUTPUT_CLASSIFICATION_READ_ONLY"
+}

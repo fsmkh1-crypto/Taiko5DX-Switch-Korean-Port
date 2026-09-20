@@ -1231,3 +1231,23 @@ Do not repeat:
 Canonical rule: `EVENT byte validity/relocation PASS != percent-macro runtime-language integration PASS`.
 
 Run the bounded product-admitted `%xx` -> B0 dependency census before any implementation.
+## 36. V354 do not infer percent-macro coverage from aggregate TAI5MSG selection
+
+Scope: `ECF00000 %xx -> TAI5MSG block-0 direct-root coverage`
+
+The selective TAI5MSG product contains 3,179 Korean messages overall, but its B0 Korean membership is exactly locals 10 and 11. The 46 B0 roots directly used by product-admitted `%xx` macros are all different from 10/11.
+
+```text
+product-used %xx roots   46
+current KO roots          0
+current JP roots         46
+```
+
+Do not repeat:
+- infer `%xx` Korean runtime coverage from the aggregate 3,179 selected-message count;
+- treat B0 10/11 as common support for the 46 direct roots;
+- conclude all 2,440 occurrences are visible defects before role classification;
+- globally replace all 46 roots solely because they are JP;
+- re-scan all 14,832 TAI5MSG messages or all V288 grammar rows before inspecting the exact 46 roots.
+
+Canonical next step is exact 46-root PC-original vs PC-Korean role/language-output classification only.
