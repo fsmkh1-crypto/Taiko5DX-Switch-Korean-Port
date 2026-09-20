@@ -1,0 +1,73 @@
+{
+  "schema": "ECF00000_V342_1E_READY23_IMPLEMENTATION_V1",
+  "validation_id": "V342",
+  "parent": "3cfa2d0de033361897428e409b1434e424a4019e",
+  "scope": "ECF00000_1E_INCLUDE_KO_READY_23_IMPLEMENTATION_OFFLINE_VALIDATION",
+  "inputs": {
+    "stock": {"size": 931936, "sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09"},
+    "pc_ko": {"size": 1156480, "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe"},
+    "v341_ledger": {"records": 461, "sha256": "4e84b8278e1fe6b13a7945c6ba13a5b2922cb686b79746a510c92fd2ce856b35", "ready_rowset_sha256": "0011c816ae8519750c79b3a1917b830decce3b7f466fe6735212f433859fc38d"}
+  },
+  "implementation": {
+    "module": "builder/selective_event_1e.py",
+    "module_sha256": "0e3e9c2b7b562301d69a444f83f886a222740dbde1f3e31da2a75b1620040320",
+    "tests": "tests/test_selective_event_1e.py",
+    "tests_sha256": "7a409d7cac003d9202c936f6c2692d5a342c85a5b1a35d3380c19b86f00bb40b",
+    "unit": "PASS_5_OF_5",
+    "full_event_regression": "PASS_34_OF_34"
+  },
+  "application": {
+    "ledger_rows": 461,
+    "include_ko_ready": 23,
+    "same_length": 21,
+    "plus4": 2,
+    "growth_bytes": 8,
+    "partitions": [0, 11, 72, 161, 681],
+    "keep_jp_identity_untouched": 344,
+    "preserve_identical_untouched": 73,
+    "runtime_pending_untouched": 21,
+    "unauthorized_onee_mutations": 0
+  },
+  "integration": {
+    "partial_context": "V335 codes 1/2/4 + V339 5A + V342 1E ready23; code3 deferred",
+    "v339_baseline_reproduced": true,
+    "v339_sha256": "9d5821f0cc35356f68d1f243adc644c4be635e62ca4d9154bfe665cb612fd40c",
+    "output_size": 1081652,
+    "output_sha256": "e1f251cb6614fd79bd0e5add752b23460d4e70af5ad52325abbfd4421195569b",
+    "delta_vs_v339_bytes": 8,
+    "changed_partitions": [0, 11, 72, 161, 681],
+    "changed_original_topology_items": 32,
+    "changed_1e_ready_items": 23,
+    "changed_relocation_headers": 9,
+    "other_item_changes": 0
+  },
+  "gates": {
+    "v337_generic_plan_count": 7579,
+    "v337_generic_span_validation": "PASS_ALL",
+    "v338_special_span_count": 3,
+    "v338_special_span_validation": "PASS_3_OF_3",
+    "v338_false02_nonowners": "PASS_2_OF_2",
+    "v339_fivea_mapping_rows": 1088,
+    "v339_fivea_translated_rows": 1074,
+    "v339_fivea_violations": 0,
+    "v340_residual_gate": "PASS_NONBLOCKING_INHERITED_1",
+    "baseline_walker_errors": 0,
+    "deterministic_rerun": "PASS_BYTE_IDENTICAL"
+  },
+  "special_final": [
+    {"original_start": "0xCBBB0", "span": 620, "header": "04 01 D8 04"},
+    {"original_start": "0x65F40", "span": 128, "header": "04 01 00 01"},
+    {"original_start": "0x7E1B0", "span": 3512, "header": "09 F0 77 1B"}
+  ],
+  "stateaware_residual": {
+    "partition": 593,
+    "original_offset": "0xBDD78",
+    "current_offset": "0xDDD8C",
+    "opcode": "0x0E",
+    "decoded_length": "0x7F5408",
+    "classification": "INHERITED_STOCK_NONBLOCKING"
+  },
+  "product_bytes_changed": false,
+  "build_package_ips_hardware": "NONE",
+  "next_scope": "ECF00000_3C_KEEP_JP_EXACT_LEDGER_MATERIALIZATION_READ_ONLY"
+}
