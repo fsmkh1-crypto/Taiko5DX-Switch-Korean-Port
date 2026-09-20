@@ -4,11 +4,18 @@ import struct
 import unittest
 
 from builder.selective_event import (
+    BRANCH_ANALYSIS_ORDER,
+    DYNAMIC_SWITCH_SPAN_ORIGINAL_STARTS,
+    FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS,
+    GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS,
+    GroupedItem,
     HEADER_SIZE,
     SelectiveEventError,
+    analyze_generic_branch_plans,
     group_partition,
     parse_event_ts5,
     rebuild_event_ts5,
+    repair_generic_branch_items,
 )
 
 
@@ -93,6 +100,89 @@ class SelectiveEventUnitTests(unittest.TestCase):
 
     def test_stock_header_geometry_constant(self) -> None:
         self.assertEqual(HEADER_SIZE, 8 + 4 * (782 + 1))
+
+    def test_pc_editor_generic_relocation_all_families(self) -> None:
+        def fixture(opcode: int, intrusion: int = 0) -> tuple[GroupedItem, GroupedItem]:
+            span = 12
+            if opcode == 0x02:
+                header = b"\\x02\\x03\\x00\\x00"
+            elif opcode == 0x04:
+                header = b"\\x04\\x00\\x18\\x00"
+            elif opcode in (0x06, 0x07):
+                header = bytes((opcode, (span + intrusion) // 2, 0, 0))
+            elif opcode == 0x08:
+                header = b"\\x08\\xAA\\x03\\x00"
+            else:
+                header = bytes((0x09, 0xC3, span * 2 + intrusion, 0))
+            return GroupedItem(0x100, header), GroupedItem(0x104, b"A" * 8)
+
+        expected = {
+            0x02: b"\\x02\\x04\\x00\\x00",
+            0x04: b"\\x04\\x00\\x20\\x00",
+            0x06: b"\\x06\\x09\\x00\\x00",
+            0x07: b"\\x07\\x09\\x00\\x00",
+            0x08: b"\\x08\\xAA\\x04\\x00",
+            0x09: b"\\x09\\xC3\\x23\\x00",
+        }
+
+        for opcode in BRANCH_ANALYSIS_ORDER:
+            intrusion = 2 if opcode in (0x06, 0x07) else 3 if opcode == 0x09 else 0
+            items = fixture(opcode, intrusion)
+            plans = analyze_generic_branch_plans(items, excluded_starts=frozenset())
+            self.assertEqual(len(plans), 1)
+            self.assertEqual(plans[0].stage_count, 2)
+            self.assertEqual(plans[0].original_span, 12)
+            self.assertEqual(plans[0].intrusion, intrusion)
+
+            current = (items[0].data, items[1].data + b"BBBB")
+            repaired = repair_generic_branch_items(items, current, plans=plans)
+            self.assertEqual(repaired[0][:4], expected[opcode])
+
+    def test_pc_editor_04_store_guards(self) -> None:
+        odd = (GroupedItem(0, b"\\x04\\x00\\x05\\x00"),)
+        high_second = (
+            GroupedItem(0, b"\\x04\\x55\\x08\\x00"),
+            GroupedItem(4, b"ABCD"),
+        )
+        merged_false_04 = (GroupedItem(0, b"\\x04\\x00\\x08\\x00XXXX"),)
+        for items in (odd, high_second, merged_false_04):
+            self.assertEqual(
+                analyze_generic_branch_plans(items, excluded_starts=frozenset()),
+                (),
+            )
+
+    def test_generic_special_owner_exclusion(self) -> None:
+        items = (
+            GroupedItem(0x7E1B0, b"\\x09\\xC3\\x18\\x00"),
+            GroupedItem(0x7E1B4, b"A" * 8),
+        )
+        self.assertEqual(analyze_generic_branch_plans(items), ())
+        self.assertEqual(
+            len(analyze_generic_branch_plans(items, excluded_starts=frozenset())),
+            1,
+        )
+        self.assertTrue(
+            DYNAMIC_SWITCH_SPAN_ORIGINAL_STARTS
+            <= GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS
+        )
+        self.assertTrue(
+            FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS
+            <= GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS
+        )
+
+    def test_unrepresentable_generic_span_rejected(self) -> None:
+        items = (
+            GroupedItem(0x100, b"\\x02\\x03\\x00\\x00"),
+            GroupedItem(0x104, b"A" * 8),
+        )
+        plans = analyze_generic_branch_plans(items, excluded_starts=frozenset())
+        with self.assertRaises(SelectiveEventError) as cm:
+            repair_generic_branch_items(
+                items,
+                (items[0].data, items[1].data + b"BB"),
+                plans=plans,
+            )
+        self.assertEqual(cm.exception.code, "BRANCH_SPAN_NOT_REPRESENTABLE")
 
 
 if __name__ == "__main__":

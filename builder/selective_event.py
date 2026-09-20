@@ -7,7 +7,7 @@ import hashlib
 import json
 from pathlib import Path
 import struct
-from typing import Sequence
+from typing import AbstractSet, Sequence
 
 STOCK_SIZE = 931_936
 STOCK_SHA256 = "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09"
@@ -19,6 +19,14 @@ TEXTISH_OPCODES = frozenset({0x11, 0x12, 0x13, 0x1E})
 TARGET_OPCODES = frozenset({0x11, 0x12, 0x13, 0x15})
 TEXT_MERGE_TRAP_STARTS = frozenset({0x11, 0x12, 0x13, 0x1E, 0x15, 0x04, 0x06, 0x07, 0x08, 0x09, 0x3C})
 BRANCH_ANALYSIS_ORDER = (0x02, 0x04, 0x06, 0x07, 0x08, 0x09)
+MAX_BRANCH_STAGE_ITEMS = 2000
+
+# V334 original-side counterparts. S2 never repairs these through the generic pass.
+DYNAMIC_SWITCH_SPAN_ORIGINAL_STARTS = frozenset({0xCBBB0, 0x65F40, 0x7E1B0})
+FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS = frozenset({0xAC470, 0x980C0})
+GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS = (
+    DYNAMIC_SWITCH_SPAN_ORIGINAL_STARTS | FALSE_EVENT_02_EXPRESSION_ORIGINAL_STARTS
+)
 
 
 class SelectiveEventError(RuntimeError):
@@ -38,6 +46,16 @@ class GroupedItem:
     @property
     def opcode(self) -> int:
         return self.data[0]
+
+
+@dataclass(frozen=True)
+class BranchRepairPlan:
+    opcode: int
+    item_index: int
+    stage_count: int
+    intrusion: int
+    original_span: int
+    original_start: int
 
 
 @dataclass(frozen=True)
@@ -230,6 +248,203 @@ def group_partition(data: bytes, absolute_start: int = 0) -> tuple[GroupedItem, 
     if expected != absolute_start + len(data):
         _fail("GROUPING_CONTIGUITY_FAIL", f"grouped extent ends at {expected:#x}")
     return tuple(items)
+
+
+def _pc_editor_04_second_byte_matches(value: int) -> bool:
+    # The VB source uses Regex("[0-4]{2}") for the rendered byte text.
+    rendered = f"{value:02X}"
+    return rendered[0] in "01234" and rendered[1] in "01234"
+
+
+def _is_pc_editor_branch_candidate(opcode: int, item: GroupedItem) -> bool:
+    data = item.data
+    if len(data) < 4 or data[0] != opcode:
+        return False
+    if opcode == 0x02:
+        return data[3] == 0
+    if opcode == 0x04:
+        return len(data) == 4 and _pc_editor_04_second_byte_matches(data[1])
+    return opcode in BRANCH_ANALYSIS_ORDER
+
+
+def _decode_pc_editor_branch_span(opcode: int, header: bytes) -> tuple[int, int] | None:
+    if len(header) < 4 or header[0] != opcode:
+        _fail("BRANCH_HEADER_MISMATCH", f"opcode={opcode:#x} header={header[:4].hex()}")
+
+    if opcode == 0x02:
+        return int.from_bytes(header[1:3], "little") * 4, 0
+    if opcode == 0x04:
+        encoded = int.from_bytes(header[2:4], "little")
+        if encoded % 2:
+            return None
+        return encoded // 2, 0
+    if opcode in (0x06, 0x07):
+        physical = int.from_bytes(header[1:4], "little") * 2
+        intrusion = physical % 4
+        return physical - intrusion, intrusion
+    if opcode == 0x08:
+        return int.from_bytes(header[2:4], "little") * 4, 0
+    if opcode == 0x09:
+        encoded = int.from_bytes(header[2:4], "little")
+        intrusion = encoded % 4
+        return (encoded - intrusion) // 2, intrusion
+    _fail("UNSUPPORTED_BRANCH_OPCODE", f"opcode={opcode:#x}")
+
+
+def _find_pc_editor_stage_count(
+    items: Sequence[GroupedItem],
+    item_index: int,
+    original_span: int,
+) -> int:
+    total = 0
+    for step in range(MAX_BRANCH_STAGE_ITEMS):
+        current = item_index + step
+        if current >= len(items):
+            return 0
+        total += len(items[current].data)
+        if total == original_span:
+            return step + 1
+        if total > original_span:
+            return 0
+    return 0
+
+
+def analyze_generic_branch_plans(
+    items: Sequence[GroupedItem],
+    *,
+    excluded_starts: AbstractSet[int] = GENERIC_BRANCH_EXCLUDED_ORIGINAL_STARTS,
+) -> tuple[BranchRepairPlan, ...]:
+    """Freeze PC-editor branch ownership from original grouped items.
+
+    Ownership is source-item-count based, not final-byte reparsing. Known
+    Switch dynamic-span and false EVENT-02 expression starts are kept out of
+    this generic S2 pass.
+    """
+    plans: list[BranchRepairPlan] = []
+    for opcode in BRANCH_ANALYSIS_ORDER:
+        for item_index, item in enumerate(items):
+            if item.start in excluded_starts:
+                continue
+            if not _is_pc_editor_branch_candidate(opcode, item):
+                continue
+            decoded = _decode_pc_editor_branch_span(opcode, item.data[:4])
+            if decoded is None:
+                continue
+            original_span, intrusion = decoded
+            stage_count = _find_pc_editor_stage_count(items, item_index, original_span)
+            if not stage_count:
+                continue
+            plans.append(
+                BranchRepairPlan(
+                    opcode=opcode,
+                    item_index=item_index,
+                    stage_count=stage_count,
+                    intrusion=intrusion,
+                    original_span=original_span,
+                    original_start=item.start,
+                )
+            )
+    return tuple(plans)
+
+
+def _encode_pc_editor_branch_span(
+    opcode: int,
+    owner: bytes,
+    current_span: int,
+    intrusion: int,
+) -> bytes:
+    if len(owner) < 4 or owner[0] != opcode:
+        _fail("BRANCH_OWNER_MUTATED", f"opcode={opcode:#x} owner={owner[:4].hex()}")
+
+    updated = bytearray(owner)
+    if opcode in (0x02, 0x08):
+        if current_span % 4:
+            _fail(
+                "BRANCH_SPAN_NOT_REPRESENTABLE",
+                f"opcode={opcode:#x} span={current_span} is not divisible by 4",
+            )
+        encoded = current_span // 4
+        if encoded > 0xFFFF:
+            _fail("BRANCH_FIELD_OVERFLOW", f"opcode={opcode:#x} encoded={encoded:#x}")
+        if opcode == 0x02:
+            updated[1:3] = encoded.to_bytes(2, "little")
+        else:
+            updated[2:4] = encoded.to_bytes(2, "little")
+    elif opcode == 0x04:
+        encoded = current_span * 2
+        if encoded > 0xFFFF:
+            _fail("BRANCH_FIELD_OVERFLOW", f"opcode=0x04 encoded={encoded:#x}")
+        updated[2:4] = encoded.to_bytes(2, "little")
+    elif opcode in (0x06, 0x07):
+        physical = current_span + intrusion
+        if physical % 2:
+            _fail(
+                "BRANCH_SPAN_NOT_REPRESENTABLE",
+                f"opcode={opcode:#x} span={current_span} intrusion={intrusion}",
+            )
+        encoded = physical // 2
+        if encoded > 0xFFFFFF:
+            _fail("BRANCH_FIELD_OVERFLOW", f"opcode={opcode:#x} encoded={encoded:#x}")
+        updated[1:4] = encoded.to_bytes(3, "little")
+    elif opcode == 0x09:
+        encoded = current_span * 2 + intrusion
+        if encoded > 0xFFFF:
+            _fail("BRANCH_FIELD_OVERFLOW", f"opcode=0x09 encoded={encoded:#x}")
+        updated[2:4] = encoded.to_bytes(2, "little")
+    else:
+        _fail("UNSUPPORTED_BRANCH_OPCODE", f"opcode={opcode:#x}")
+
+    return bytes(updated)
+
+
+def repair_generic_branch_items(
+    original_items: Sequence[GroupedItem],
+    current_item_bytes: Sequence[bytes],
+    *,
+    plans: Sequence[BranchRepairPlan] | None = None,
+) -> tuple[bytes, ...]:
+    """Apply source-proven PC-editor generic branch arithmetic.
+
+    The original item partition/order is authority. Current bytes may change
+    length, but the serializer never fresh-reparses them to rediscover branch
+    ownership.
+    """
+    if len(original_items) != len(current_item_bytes):
+        _fail(
+            "GROUPED_ITEM_COUNT_MISMATCH",
+            f"original={len(original_items)} current={len(current_item_bytes)}",
+        )
+
+    current = [bytes(data) for data in current_item_bytes]
+    active_plans = (
+        analyze_generic_branch_plans(original_items)
+        if plans is None
+        else tuple(plans)
+    )
+    family_rank = {opcode: rank for rank, opcode in enumerate(BRANCH_ANALYSIS_ORDER)}
+
+    for plan in sorted(active_plans, key=lambda x: (family_rank[x.opcode], x.item_index)):
+        stop = plan.item_index + plan.stage_count
+        if stop > len(current):
+            _fail(
+                "BRANCH_STAGE_RANGE_FAIL",
+                f"start={plan.original_start:#x} stop_item={stop} count={len(current)}",
+            )
+        owner = current[plan.item_index]
+        if len(owner) < 4 or owner[0] != plan.opcode:
+            _fail(
+                "BRANCH_OWNER_MUTATED",
+                f"start={plan.original_start:#x} opcode={plan.opcode:#x}",
+            )
+        current_span = sum(len(current[i]) for i in range(plan.item_index, stop))
+        current[plan.item_index] = _encode_pc_editor_branch_span(
+            plan.opcode,
+            owner,
+            current_span,
+            plan.intrusion,
+        )
+
+    return tuple(current)
 
 
 def parse_event_ts5(blob: bytes, *, require_stock_identity: bool = False) -> ParsedEventTs5:
