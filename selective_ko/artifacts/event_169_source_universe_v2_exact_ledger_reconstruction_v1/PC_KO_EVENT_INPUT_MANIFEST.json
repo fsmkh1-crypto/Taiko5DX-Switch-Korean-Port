@@ -1,0 +1,1540 @@
+{
+  "bundle_main_assembly_offset": 9662464,
+  "bundle_main_assembly_size": 110960640,
+  "embedded_manifest_bytes": 95287,
+  "event_aggregate_bytes": 4085204,
+  "event_count": 169,
+  "event_manifest_tsv_sha256": "43497d6cb6bdd6c23ac892e09676f8557e554a06a90ea07642c0701e24c90de7",
+  "managed_resources_offset_in_assembly": 166568,
+  "payload_archive_declared_sha256": "eebc7aa18ff5811959ea02a4f5c45ed312a3327d00a6c1c99bf2565c788b11a2",
+  "payload_archive_declared_size": 110696619,
+  "rows": [
+    {
+      "bytes": 724,
+      "file": "EC500000.TS5",
+      "path": "data/EVENT/EC500000.TS5",
+      "sha256": "4dca9bb850700e644ac27628002e2db87586fd35fc7cc1ac1964af05d793366b",
+      "zip_compressed_bytes": 526,
+      "zip_data_offset": 17386483,
+      "zip_local_offset": 17386410
+    },
+    {
+      "bytes": 1156480,
+      "file": "ECF00000.TS5",
+      "path": "data/EVENT/ECF00000.TS5",
+      "sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "zip_compressed_bytes": 424732,
+      "zip_data_offset": 17387082,
+      "zip_local_offset": 17387009
+    },
+    {
+      "bytes": 9304,
+      "file": "EF51FA00.TS5",
+      "path": "data/EVENT/EF51FA00.TS5",
+      "sha256": "c45fd33731af2d344715fc180197ee4a7e9d798c36d7447d56347f25e396c3a0",
+      "zip_compressed_bytes": 4736,
+      "zip_data_offset": 17811887,
+      "zip_local_offset": 17811814
+    },
+    {
+      "bytes": 4712,
+      "file": "EF520600.TS5",
+      "path": "data/EVENT/EF520600.TS5",
+      "sha256": "8867bdaf9a7ada8f17d9b026e63cd785131e7813423ac6831887da7ed5171fc8",
+      "zip_compressed_bytes": 2693,
+      "zip_data_offset": 17816696,
+      "zip_local_offset": 17816623
+    },
+    {
+      "bytes": 13648,
+      "file": "EFF00E00.TS5",
+      "path": "data/EVENT/EFF00E00.TS5",
+      "sha256": "4b21642ee9de235f7b7e34abe764399be7697206f03e1668f90bd1e255b043af",
+      "zip_compressed_bytes": 7534,
+      "zip_data_offset": 17819462,
+      "zip_local_offset": 17819389
+    },
+    {
+      "bytes": 13616,
+      "file": "EFF01000.TS5",
+      "path": "data/EVENT/EFF01000.TS5",
+      "sha256": "46233b8708be6f9f12dcc0a17469f823f64ff29cf3881e1649bb3c7c17225ea5",
+      "zip_compressed_bytes": 6854,
+      "zip_data_offset": 17827069,
+      "zip_local_offset": 17826996
+    },
+    {
+      "bytes": 5416,
+      "file": "EFF01100.TS5",
+      "path": "data/EVENT/EFF01100.TS5",
+      "sha256": "718cbafdf7ae9a1ce04131c74ba9442bcd6827c1709751dea15560bd7d49d713",
+      "zip_compressed_bytes": 1453,
+      "zip_data_offset": 17833996,
+      "zip_local_offset": 17833923
+    },
+    {
+      "bytes": 10660,
+      "file": "EFF01700.TS5",
+      "path": "data/EVENT/EFF01700.TS5",
+      "sha256": "309addfd8078fec37ccce94de9f0d93e5f43543fa0f6d4162a2b008d329ba856",
+      "zip_compressed_bytes": 5525,
+      "zip_data_offset": 17835522,
+      "zip_local_offset": 17835449
+    },
+    {
+      "bytes": 20424,
+      "file": "EFF01A00.TS5",
+      "path": "data/EVENT/EFF01A00.TS5",
+      "sha256": "fd2b4059c752087f9843e32e731dd8b534e774be14555a70198db54d05fff1bb",
+      "zip_compressed_bytes": 9172,
+      "zip_data_offset": 17841120,
+      "zip_local_offset": 17841047
+    },
+    {
+      "bytes": 9204,
+      "file": "EFF01D00.TS5",
+      "path": "data/EVENT/EFF01D00.TS5",
+      "sha256": "228b2250a3f0ba9fb88d24a5f91a8074d4dfe9e2b32733741acfd4b5c1b36248",
+      "zip_compressed_bytes": 4771,
+      "zip_data_offset": 17850365,
+      "zip_local_offset": 17850292
+    },
+    {
+      "bytes": 7496,
+      "file": "EFF01F00.TS5",
+      "path": "data/EVENT/EFF01F00.TS5",
+      "sha256": "3d40c8cbd864071858203ce2fc24619a7d31a09c7ae6563dd5075096b5085513",
+      "zip_compressed_bytes": 3708,
+      "zip_data_offset": 17855209,
+      "zip_local_offset": 17855136
+    },
+    {
+      "bytes": 6316,
+      "file": "EFF02000.TS5",
+      "path": "data/EVENT/EFF02000.TS5",
+      "sha256": "e00492e78742778ceef2fa0c64eecd386f4f98b81105120a40cb7ed94cff79a6",
+      "zip_compressed_bytes": 3391,
+      "zip_data_offset": 17858990,
+      "zip_local_offset": 17858917
+    },
+    {
+      "bytes": 6308,
+      "file": "EFF02300.TS5",
+      "path": "data/EVENT/EFF02300.TS5",
+      "sha256": "2d282ac2f72917b2b788d306e563de827f6922f925f3478acd742e4efcdc43c0",
+      "zip_compressed_bytes": 3378,
+      "zip_data_offset": 17862454,
+      "zip_local_offset": 17862381
+    },
+    {
+      "bytes": 10124,
+      "file": "EFF02D00.TS5",
+      "path": "data/EVENT/EFF02D00.TS5",
+      "sha256": "7b21f418e87b2f198aa2556e515983cc326a4b8d20abe11d6b59a1a7d7520d69",
+      "zip_compressed_bytes": 5298,
+      "zip_data_offset": 17865905,
+      "zip_local_offset": 17865832
+    },
+    {
+      "bytes": 5756,
+      "file": "EFF02E00.TS5",
+      "path": "data/EVENT/EFF02E00.TS5",
+      "sha256": "1b71ba442bc4386376a7708d548d10eb1ce6221e0dc2de55f53682834ff07075",
+      "zip_compressed_bytes": 2538,
+      "zip_data_offset": 17871276,
+      "zip_local_offset": 17871203
+    },
+    {
+      "bytes": 25768,
+      "file": "EFF03600.TS5",
+      "path": "data/EVENT/EFF03600.TS5",
+      "sha256": "e1d70636a8ea82be3de5ace658f680faa8a11cd2124e06d4a6704905a32977b0",
+      "zip_compressed_bytes": 12151,
+      "zip_data_offset": 17873887,
+      "zip_local_offset": 17873814
+    },
+    {
+      "bytes": 20380,
+      "file": "EFF04300.TS5",
+      "path": "data/EVENT/EFF04300.TS5",
+      "sha256": "1818fa78e831851ec8c4933a17b4d3e9229ab8ea7326dd28441415946a47c985",
+      "zip_compressed_bytes": 9702,
+      "zip_data_offset": 17886111,
+      "zip_local_offset": 17886038
+    },
+    {
+      "bytes": 1056,
+      "file": "EFF06D00.TS5",
+      "path": "data/EVENT/EFF06D00.TS5",
+      "sha256": "75e5ff54d969208efc044c9cc33d681583a1cd5b0be02b272877e67e408fc8d1",
+      "zip_compressed_bytes": 683,
+      "zip_data_offset": 17895886,
+      "zip_local_offset": 17895813
+    },
+    {
+      "bytes": 44676,
+      "file": "EFF06E00.TS5",
+      "path": "data/EVENT/EFF06E00.TS5",
+      "sha256": "de0555b357724df803ec69d039612b5f4978b8a0fbab399c7664533e3b2ef8dc",
+      "zip_compressed_bytes": 18072,
+      "zip_data_offset": 17896642,
+      "zip_local_offset": 17896569
+    },
+    {
+      "bytes": 29204,
+      "file": "EFF07400.TS5",
+      "path": "data/EVENT/EFF07400.TS5",
+      "sha256": "5f9af7a83640b1b5702b8e3eed06904a27e8895a44b16891ff9c9d26a1f41f0e",
+      "zip_compressed_bytes": 12796,
+      "zip_data_offset": 17914787,
+      "zip_local_offset": 17914714
+    },
+    {
+      "bytes": 664,
+      "file": "EFF07500.TS5",
+      "path": "data/EVENT/EFF07500.TS5",
+      "sha256": "f8161ee96f9ced99aca42a3958a1e4fecae2029bda1894c04296abdb9a83c5f4",
+      "zip_compressed_bytes": 514,
+      "zip_data_offset": 17927656,
+      "zip_local_offset": 17927583
+    },
+    {
+      "bytes": 83588,
+      "file": "EFF07700.TS5",
+      "path": "data/EVENT/EFF07700.TS5",
+      "sha256": "64d58745308bb643358b5a4dc652e457c57a2a36bc11292ae3f8dae2bcad6f41",
+      "zip_compressed_bytes": 32744,
+      "zip_data_offset": 17928243,
+      "zip_local_offset": 17928170
+    },
+    {
+      "bytes": 928,
+      "file": "EFF07C00.TS5",
+      "path": "data/EVENT/EFF07C00.TS5",
+      "sha256": "f2b78309e04c0b110919ff1345464c86694d6091c7b47de29d20b559b6542104",
+      "zip_compressed_bytes": 694,
+      "zip_data_offset": 17961060,
+      "zip_local_offset": 17960987
+    },
+    {
+      "bytes": 25732,
+      "file": "EFF07D00.TS5",
+      "path": "data/EVENT/EFF07D00.TS5",
+      "sha256": "c36de62f77d8ee5e71e55a13ae8b07bb5ad65cb487505d1e9a57e42cab538dc5",
+      "zip_compressed_bytes": 12570,
+      "zip_data_offset": 17961827,
+      "zip_local_offset": 17961754
+    },
+    {
+      "bytes": 6956,
+      "file": "EFF08C00.TS5",
+      "path": "data/EVENT/EFF08C00.TS5",
+      "sha256": "dadc39f51e2d3d7ce541c61e52355f97d339651b070f0cd290ba47080b74556f",
+      "zip_compressed_bytes": 3621,
+      "zip_data_offset": 17974470,
+      "zip_local_offset": 17974397
+    },
+    {
+      "bytes": 13624,
+      "file": "EFF09800.TS5",
+      "path": "data/EVENT/EFF09800.TS5",
+      "sha256": "5c8f334a294555c1a4e855a4f3a13431ab7cc06272872b04bc3c6eb9106de0b5",
+      "zip_compressed_bytes": 6654,
+      "zip_data_offset": 17978164,
+      "zip_local_offset": 17978091
+    },
+    {
+      "bytes": 10420,
+      "file": "EFF0A400.TS5",
+      "path": "data/EVENT/EFF0A400.TS5",
+      "sha256": "f406ce7c9d506d99d6520712523608f1a110913f419366692175e48ee8bd4708",
+      "zip_compressed_bytes": 5345,
+      "zip_data_offset": 17984891,
+      "zip_local_offset": 17984818
+    },
+    {
+      "bytes": 33968,
+      "file": "EFF0A500.TS5",
+      "path": "data/EVENT/EFF0A500.TS5",
+      "sha256": "4e8c81a79876e324e351c1932f2517f0b31e4ea8551c3465500d3fd90ede39ba",
+      "zip_compressed_bytes": 16319,
+      "zip_data_offset": 17990309,
+      "zip_local_offset": 17990236
+    },
+    {
+      "bytes": 7084,
+      "file": "EFF0A700.TS5",
+      "path": "data/EVENT/EFF0A700.TS5",
+      "sha256": "0d09a9b082d4cea9e86a8f04f83f115862eacaf947f274826e30b39f210c9bdc",
+      "zip_compressed_bytes": 3336,
+      "zip_data_offset": 18006701,
+      "zip_local_offset": 18006628
+    },
+    {
+      "bytes": 3168,
+      "file": "EFF0BE00.TS5",
+      "path": "data/EVENT/EFF0BE00.TS5",
+      "sha256": "a5dbc7089c71b1769e5d55d4609e9a2e3e053ef3a639603560c67d4e7923ef46",
+      "zip_compressed_bytes": 2074,
+      "zip_data_offset": 18010110,
+      "zip_local_offset": 18010037
+    },
+    {
+      "bytes": 335772,
+      "file": "EFF0C300.TS5",
+      "path": "data/EVENT/EFF0C300.TS5",
+      "sha256": "7cd21c7ac47b2908862ee83f15c7100b0811e6e23bc2ed3f7cb934c3a63b487a",
+      "zip_compressed_bytes": 147670,
+      "zip_data_offset": 18012257,
+      "zip_local_offset": 18012184
+    },
+    {
+      "bytes": 15108,
+      "file": "EFF0E600.TS5",
+      "path": "data/EVENT/EFF0E600.TS5",
+      "sha256": "4b3ab13021e2ff3ed06fb46af0f9e0ad185a879a04d8e9fcfac8baf54d762dad",
+      "zip_compressed_bytes": 7160,
+      "zip_data_offset": 18160000,
+      "zip_local_offset": 18159927
+    },
+    {
+      "bytes": 692,
+      "file": "EFF0E900.TS5",
+      "path": "data/EVENT/EFF0E900.TS5",
+      "sha256": "24dc68dc4112f3404785b8b9499fc281e1c4247eb90cf07e90a410a2a5c4a433",
+      "zip_compressed_bytes": 540,
+      "zip_data_offset": 18167233,
+      "zip_local_offset": 18167160
+    },
+    {
+      "bytes": 21208,
+      "file": "EFF11600.TS5",
+      "path": "data/EVENT/EFF11600.TS5",
+      "sha256": "3e9e8b40d8bcea4d237b9c3f75d78820f5f6ad9d3889d492f5a837fb6d06f39c",
+      "zip_compressed_bytes": 10362,
+      "zip_data_offset": 18167846,
+      "zip_local_offset": 18167773
+    },
+    {
+      "bytes": 21856,
+      "file": "EFF12500.TS5",
+      "path": "data/EVENT/EFF12500.TS5",
+      "sha256": "7e274ac5c00b56059e9c7532aead2d7652ffd1a30f4970d64fcb209cd9bd798d",
+      "zip_compressed_bytes": 10668,
+      "zip_data_offset": 18178281,
+      "zip_local_offset": 18178208
+    },
+    {
+      "bytes": 25732,
+      "file": "EFF13800.TS5",
+      "path": "data/EVENT/EFF13800.TS5",
+      "sha256": "913c537826e957992c6d1d838b44c8a80539d55b580ed4fed4628c207be0c477",
+      "zip_compressed_bytes": 12295,
+      "zip_data_offset": 18189022,
+      "zip_local_offset": 18188949
+    },
+    {
+      "bytes": 31712,
+      "file": "EFF13B00.TS5",
+      "path": "data/EVENT/EFF13B00.TS5",
+      "sha256": "ebd970b2b599694c695ddad6fb387a81126694ff48cd47e2e8793f6d27f93fb8",
+      "zip_compressed_bytes": 14663,
+      "zip_data_offset": 18201390,
+      "zip_local_offset": 18201317
+    },
+    {
+      "bytes": 18560,
+      "file": "EFF14200.TS5",
+      "path": "data/EVENT/EFF14200.TS5",
+      "sha256": "def3e35f7ebfed46000e86ad56f58bfaf8833169221e5a732f5b62d705838516",
+      "zip_compressed_bytes": 8998,
+      "zip_data_offset": 18216126,
+      "zip_local_offset": 18216053
+    },
+    {
+      "bytes": 21400,
+      "file": "EFF14400.TS5",
+      "path": "data/EVENT/EFF14400.TS5",
+      "sha256": "cb15a668275c5972e457262ff7b83f60f7f67bfc52c634e1d1a4aa6571f8ed08",
+      "zip_compressed_bytes": 7950,
+      "zip_data_offset": 18225197,
+      "zip_local_offset": 18225124
+    },
+    {
+      "bytes": 1204,
+      "file": "EFF14700.TS5",
+      "path": "data/EVENT/EFF14700.TS5",
+      "sha256": "97a437c5a06a7733a13ee098e7a567b093ac9ac80737bc139bd20679f299c203",
+      "zip_compressed_bytes": 721,
+      "zip_data_offset": 18233220,
+      "zip_local_offset": 18233147
+    },
+    {
+      "bytes": 59884,
+      "file": "EFF16700.TS5",
+      "path": "data/EVENT/EFF16700.TS5",
+      "sha256": "00ef7be398075ef37dfed31cc0ca1dfa4723fe143679d945034e7334da477080",
+      "zip_compressed_bytes": 26021,
+      "zip_data_offset": 18234014,
+      "zip_local_offset": 18233941
+    },
+    {
+      "bytes": 14384,
+      "file": "EFF17B00.TS5",
+      "path": "data/EVENT/EFF17B00.TS5",
+      "sha256": "d3237bfee621a251a2afd8d9277a8b257e62a76a099bfffa97ac2fdc59f6b2aa",
+      "zip_compressed_bytes": 6953,
+      "zip_data_offset": 18260108,
+      "zip_local_offset": 18260035
+    },
+    {
+      "bytes": 8024,
+      "file": "EFF18A00.TS5",
+      "path": "data/EVENT/EFF18A00.TS5",
+      "sha256": "b5211acfe2abf0647aabb07cbd946ac4962205f959795b6880716178917482bc",
+      "zip_compressed_bytes": 4403,
+      "zip_data_offset": 18267134,
+      "zip_local_offset": 18267061
+    },
+    {
+      "bytes": 38324,
+      "file": "EFF18B00.TS5",
+      "path": "data/EVENT/EFF18B00.TS5",
+      "sha256": "05b419245224110d623d3fdaf469cd441097bdd3e3c4684a9163bdbe5f031424",
+      "zip_compressed_bytes": 17709,
+      "zip_data_offset": 18271610,
+      "zip_local_offset": 18271537
+    },
+    {
+      "bytes": 2956,
+      "file": "EFF19900.TS5",
+      "path": "data/EVENT/EFF19900.TS5",
+      "sha256": "96b4a693ba2055ada2e154a23da2b4f4489983db1ee3a09b4d52118e18628414",
+      "zip_compressed_bytes": 1848,
+      "zip_data_offset": 18289392,
+      "zip_local_offset": 18289319
+    },
+    {
+      "bytes": 40912,
+      "file": "EFF1BF00.TS5",
+      "path": "data/EVENT/EFF1BF00.TS5",
+      "sha256": "6c110bd8e4d0bce87d3ec961b8a63fbeb10b803606589c6c6335c094dc5e8ffb",
+      "zip_compressed_bytes": 16714,
+      "zip_data_offset": 18291313,
+      "zip_local_offset": 18291240
+    },
+    {
+      "bytes": 83812,
+      "file": "EFF1C100.TS5",
+      "path": "data/EVENT/EFF1C100.TS5",
+      "sha256": "f57b83a21faf7cb685a30b3c5530830c1918aab266c136d5a602be5f3312deaf",
+      "zip_compressed_bytes": 33201,
+      "zip_data_offset": 18308100,
+      "zip_local_offset": 18308027
+    },
+    {
+      "bytes": 25924,
+      "file": "EFF1CA00.TS5",
+      "path": "data/EVENT/EFF1CA00.TS5",
+      "sha256": "c48500df15c1664440823b2c7cb078f9aab6b45e6a1709833a2b034c2f98070c",
+      "zip_compressed_bytes": 12640,
+      "zip_data_offset": 18341374,
+      "zip_local_offset": 18341301
+    },
+    {
+      "bytes": 1268,
+      "file": "EFF1D000.TS5",
+      "path": "data/EVENT/EFF1D000.TS5",
+      "sha256": "45871fccd538890d29004bf598b5632d10736b74e67b73ab9417f1a319cd6b9f",
+      "zip_compressed_bytes": 866,
+      "zip_data_offset": 18354087,
+      "zip_local_offset": 18354014
+    },
+    {
+      "bytes": 34672,
+      "file": "EFF1D200.TS5",
+      "path": "data/EVENT/EFF1D200.TS5",
+      "sha256": "eead6eb34cee7c41534774f03866c89144f80027ada59d36fd5fac899c65518d",
+      "zip_compressed_bytes": 16059,
+      "zip_data_offset": 18355026,
+      "zip_local_offset": 18354953
+    },
+    {
+      "bytes": 12636,
+      "file": "EFF1E300.TS5",
+      "path": "data/EVENT/EFF1E300.TS5",
+      "sha256": "014485f49828eb80073586880a3665f14a6a4e23a0ca80855c1d0b2c80594056",
+      "zip_compressed_bytes": 6331,
+      "zip_data_offset": 18371158,
+      "zip_local_offset": 18371085
+    },
+    {
+      "bytes": 25824,
+      "file": "EFF1E400.TS5",
+      "path": "data/EVENT/EFF1E400.TS5",
+      "sha256": "c56bea6cd272e43444289c9f2435cebb8250149a29984ca1aee56371d30b0b97",
+      "zip_compressed_bytes": 12402,
+      "zip_data_offset": 18377562,
+      "zip_local_offset": 18377489
+    },
+    {
+      "bytes": 20020,
+      "file": "EFF1F300.TS5",
+      "path": "data/EVENT/EFF1F300.TS5",
+      "sha256": "c67f17483a3cbb85e2137e4d909a7df20f6f08f8c843d9d97100964567ed4b68",
+      "zip_compressed_bytes": 9492,
+      "zip_data_offset": 18390037,
+      "zip_local_offset": 18389964
+    },
+    {
+      "bytes": 196828,
+      "file": "EFF1FA00.TS5",
+      "path": "data/EVENT/EFF1FA00.TS5",
+      "sha256": "ed23deaf4bde3c9a9a45a37cc6dbaeeb6169c1252e2161816743e1b31bd57bce",
+      "zip_compressed_bytes": 85034,
+      "zip_data_offset": 18399602,
+      "zip_local_offset": 18399529
+    },
+    {
+      "bytes": 76024,
+      "file": "EFF20500.TS5",
+      "path": "data/EVENT/EFF20500.TS5",
+      "sha256": "bd0f7835036478b7ee8c1e9c54ae318db0d62ed8a506b01bdaa82b7bba9b7262",
+      "zip_compressed_bytes": 31639,
+      "zip_data_offset": 18484709,
+      "zip_local_offset": 18484636
+    },
+    {
+      "bytes": 75000,
+      "file": "EFF20600.TS5",
+      "path": "data/EVENT/EFF20600.TS5",
+      "sha256": "2279f243e16ebadabee3b55507b16acf9935e159a1c3235074f1fd9eccadc5bc",
+      "zip_compressed_bytes": 35130,
+      "zip_data_offset": 18516421,
+      "zip_local_offset": 18516348
+    },
+    {
+      "bytes": 24332,
+      "file": "EFF21800.TS5",
+      "path": "data/EVENT/EFF21800.TS5",
+      "sha256": "35150038ee4ad957f996d98bbb2124ca1af79abef731c7085ab91eab86553ece",
+      "zip_compressed_bytes": 10844,
+      "zip_data_offset": 18551624,
+      "zip_local_offset": 18551551
+    },
+    {
+      "bytes": 20416,
+      "file": "EFF26700.TS5",
+      "path": "data/EVENT/EFF26700.TS5",
+      "sha256": "4fc3fdbe9efc828e3a4bce60fa03f924136591d73eab616ca5a42fa6dc0d1064",
+      "zip_compressed_bytes": 9607,
+      "zip_data_offset": 18562541,
+      "zip_local_offset": 18562468
+    },
+    {
+      "bytes": 3024,
+      "file": "EFF27500.TS5",
+      "path": "data/EVENT/EFF27500.TS5",
+      "sha256": "8514fa5cb582178a180381b60a276396826b14ea6f9edc8f58671b346f9f9d92",
+      "zip_compressed_bytes": 1761,
+      "zip_data_offset": 18572221,
+      "zip_local_offset": 18572148
+    },
+    {
+      "bytes": 35768,
+      "file": "EFF27600.TS5",
+      "path": "data/EVENT/EFF27600.TS5",
+      "sha256": "35a9649570cfe4fe3ae7ed4d3b8270923b83cab2e348b5bc120cc7ef54d8fd7d",
+      "zip_compressed_bytes": 16133,
+      "zip_data_offset": 18574055,
+      "zip_local_offset": 18573982
+    },
+    {
+      "bytes": 24612,
+      "file": "EFF27C00.TS5",
+      "path": "data/EVENT/EFF27C00.TS5",
+      "sha256": "ee2cff9eb069efb0d827ae2acf23572493f94707318f8e4462be31d3acce13e4",
+      "zip_compressed_bytes": 11794,
+      "zip_data_offset": 18590261,
+      "zip_local_offset": 18590188
+    },
+    {
+      "bytes": 3540,
+      "file": "EFF28700.TS5",
+      "path": "data/EVENT/EFF28700.TS5",
+      "sha256": "90820e9d8858254b871e64138b96719c598a2299c74de5b9cc995a5129b9e426",
+      "zip_compressed_bytes": 1941,
+      "zip_data_offset": 18602128,
+      "zip_local_offset": 18602055
+    },
+    {
+      "bytes": 1212,
+      "file": "EFF29300.TS5",
+      "path": "data/EVENT/EFF29300.TS5",
+      "sha256": "d2f4c999c1e8ee7d06d45750ae529768821383a80ec949610cb4db691bd37f0a",
+      "zip_compressed_bytes": 793,
+      "zip_data_offset": 18604142,
+      "zip_local_offset": 18604069
+    },
+    {
+      "bytes": 8392,
+      "file": "EFF2CC00.TS5",
+      "path": "data/EVENT/EFF2CC00.TS5",
+      "sha256": "e27e3f14891859f99559afdbb7c7aff6bd676678cee2214dff7a5de67ed48927",
+      "zip_compressed_bytes": 4548,
+      "zip_data_offset": 18605008,
+      "zip_local_offset": 18604935
+    },
+    {
+      "bytes": 35984,
+      "file": "EFF2D100.TS5",
+      "path": "data/EVENT/EFF2D100.TS5",
+      "sha256": "c0aa43a2e5a113499f134fe0e7eae6138fa1d970b03a35172e44f94fa4fd04fc",
+      "zip_compressed_bytes": 16256,
+      "zip_data_offset": 18609629,
+      "zip_local_offset": 18609556
+    },
+    {
+      "bytes": 37332,
+      "file": "EFF2D200.TS5",
+      "path": "data/EVENT/EFF2D200.TS5",
+      "sha256": "956811cb15b6c44574abaf15b03010cdcd8668e7e8e8de881ca16654cb1e95da",
+      "zip_compressed_bytes": 15837,
+      "zip_data_offset": 18625958,
+      "zip_local_offset": 18625885
+    },
+    {
+      "bytes": 3544,
+      "file": "EFF2D500.TS5",
+      "path": "data/EVENT/EFF2D500.TS5",
+      "sha256": "8b7a9927b56b7c34b06f3e91b8ec2f653bd7cd84422bc70010a1495b1f6ab64d",
+      "zip_compressed_bytes": 1647,
+      "zip_data_offset": 18641868,
+      "zip_local_offset": 18641795
+    },
+    {
+      "bytes": 21004,
+      "file": "EFF2F800.TS5",
+      "path": "data/EVENT/EFF2F800.TS5",
+      "sha256": "9ae81a0355175aff6f4397efa5a9f44124479bae54de119f7df7d917aed29e66",
+      "zip_compressed_bytes": 10210,
+      "zip_data_offset": 18643588,
+      "zip_local_offset": 18643515
+    },
+    {
+      "bytes": 7988,
+      "file": "EFF31100.TS5",
+      "path": "data/EVENT/EFF31100.TS5",
+      "sha256": "39452ee0d807c701520daf6b0c56f7a9f821bd8573eccfb4a8d83522f491e40b",
+      "zip_compressed_bytes": 3664,
+      "zip_data_offset": 18653871,
+      "zip_local_offset": 18653798
+    },
+    {
+      "bytes": 9576,
+      "file": "EFF32000.TS5",
+      "path": "data/EVENT/EFF32000.TS5",
+      "sha256": "2aaa076d1daefa6b0efc6554fbef3fd53486ec9834eb4eb34fb01d3ffa8437a1",
+      "zip_compressed_bytes": 4205,
+      "zip_data_offset": 18657608,
+      "zip_local_offset": 18657535
+    },
+    {
+      "bytes": 18964,
+      "file": "EFF32200.TS5",
+      "path": "data/EVENT/EFF32200.TS5",
+      "sha256": "9b8f3c782f18cc778ac95840ad7ed2e9ba905356922001c60d6c2ab19ed8637f",
+      "zip_compressed_bytes": 8607,
+      "zip_data_offset": 18661886,
+      "zip_local_offset": 18661813
+    },
+    {
+      "bytes": 12700,
+      "file": "EFF32300.TS5",
+      "path": "data/EVENT/EFF32300.TS5",
+      "sha256": "f475138d285f3897309b6d9cf6e9859eb247483b7e9eb1cc022405305c8b2cf5",
+      "zip_compressed_bytes": 6221,
+      "zip_data_offset": 18670566,
+      "zip_local_offset": 18670493
+    },
+    {
+      "bytes": 3772,
+      "file": "EFF32400.TS5",
+      "path": "data/EVENT/EFF32400.TS5",
+      "sha256": "74404344ceb443314c91c8bb6722d4e7d658342ed40e22d1a720549c58e979d0",
+      "zip_compressed_bytes": 2327,
+      "zip_data_offset": 18676860,
+      "zip_local_offset": 18676787
+    },
+    {
+      "bytes": 7812,
+      "file": "EFF32B00.TS5",
+      "path": "data/EVENT/EFF32B00.TS5",
+      "sha256": "b127716932294b5e94633f793c51c31cb9b4bacc8b3d43736d75ba33201db71c",
+      "zip_compressed_bytes": 2970,
+      "zip_data_offset": 18679260,
+      "zip_local_offset": 18679187
+    },
+    {
+      "bytes": 1736,
+      "file": "EFF33000.TS5",
+      "path": "data/EVENT/EFF33000.TS5",
+      "sha256": "2b5da9ffa3a2e6e4d568deeaf57964a96fc7a86e8f1b728962ca5fea18d97596",
+      "zip_compressed_bytes": 916,
+      "zip_data_offset": 18682303,
+      "zip_local_offset": 18682230
+    },
+    {
+      "bytes": 1836,
+      "file": "EKF00300.TS5",
+      "path": "data/EVENT/EKF00300.TS5",
+      "sha256": "4e828f8eae9f7d47427e4a5552e2f08fe50fc538a1ad7157e551f3ffa1d613ac",
+      "zip_compressed_bytes": 965,
+      "zip_data_offset": 18683292,
+      "zip_local_offset": 18683219
+    },
+    {
+      "bytes": 36056,
+      "file": "EKF00400.TS5",
+      "path": "data/EVENT/EKF00400.TS5",
+      "sha256": "abcb8722db0b62d1a294c805c45fcb7a7120a9d2f715379b7f982ce9fa12d0d9",
+      "zip_compressed_bytes": 16765,
+      "zip_data_offset": 18684330,
+      "zip_local_offset": 18684257
+    },
+    {
+      "bytes": 13132,
+      "file": "EKF00800.TS5",
+      "path": "data/EVENT/EKF00800.TS5",
+      "sha256": "abd9368b1a4a5eb98b86cdc610313146e37dace6597a997961b248a811be0e84",
+      "zip_compressed_bytes": 6452,
+      "zip_data_offset": 18701168,
+      "zip_local_offset": 18701095
+    },
+    {
+      "bytes": 1296,
+      "file": "EP005F00.TS5",
+      "path": "data/EVENT/EP005F00.TS5",
+      "sha256": "21b935e50229c82c111ccde5070b049f993bc71f2756fd06dd9d796ffaa6760d",
+      "zip_compressed_bytes": 942,
+      "zip_data_offset": 18707693,
+      "zip_local_offset": 18707620
+    },
+    {
+      "bytes": 51144,
+      "file": "EP111700.TS5",
+      "path": "data/EVENT/EP111700.TS5",
+      "sha256": "cc266623e016ce3d702901859568feea41e4fa221449130592aa9b50ca33fbda",
+      "zip_compressed_bytes": 23016,
+      "zip_data_offset": 18708708,
+      "zip_local_offset": 18708635
+    },
+    {
+      "bytes": 19576,
+      "file": "EP120500.TS5",
+      "path": "data/EVENT/EP120500.TS5",
+      "sha256": "209d855de248d036c0e5c350e90ab2d4e39d32b8e4767ab1c99eec0aa2115ad8",
+      "zip_compressed_bytes": 10032,
+      "zip_data_offset": 18731797,
+      "zip_local_offset": 18731724
+    },
+    {
+      "bytes": 1868,
+      "file": "EP122500.TS5",
+      "path": "data/EVENT/EP122500.TS5",
+      "sha256": "48825c6ced2d1c96c29fc612d5efbfbe34987ad14ad54765371ab7c949e94e70",
+      "zip_compressed_bytes": 1300,
+      "zip_data_offset": 18741902,
+      "zip_local_offset": 18741829
+    },
+    {
+      "bytes": 184056,
+      "file": "EP124B00.TS5",
+      "path": "data/EVENT/EP124B00.TS5",
+      "sha256": "e0d54ba7777350a8f3601269b4e15ed1256a2aa4ad42ca51f4a96ddf66b15299",
+      "zip_compressed_bytes": 83175,
+      "zip_data_offset": 18743275,
+      "zip_local_offset": 18743202
+    },
+    {
+      "bytes": 22304,
+      "file": "EP12E400.TS5",
+      "path": "data/EVENT/EP12E400.TS5",
+      "sha256": "4658d159b1b081de20af5fd5fdbe671cedfa6994ec8fd64cb61c1ef86e37c383",
+      "zip_compressed_bytes": 11289,
+      "zip_data_offset": 18826523,
+      "zip_local_offset": 18826450
+    },
+    {
+      "bytes": 26848,
+      "file": "EP12F400.TS5",
+      "path": "data/EVENT/EP12F400.TS5",
+      "sha256": "868ef1e568ebfaf1ced4409b5e581b1cd404f857bb461e3fe50273956ecec4f0",
+      "zip_compressed_bytes": 11894,
+      "zip_data_offset": 18837885,
+      "zip_local_offset": 18837812
+    },
+    {
+      "bytes": 1800,
+      "file": "EP40CA00.TS5",
+      "path": "data/EVENT/EP40CA00.TS5",
+      "sha256": "f21710b9e1388f840a2ca0f76e20e688b8f123a7213d54ff3c57a171f223fe37",
+      "zip_compressed_bytes": 1239,
+      "zip_data_offset": 18849852,
+      "zip_local_offset": 18849779
+    },
+    {
+      "bytes": 3376,
+      "file": "EP40CB00.TS5",
+      "path": "data/EVENT/EP40CB00.TS5",
+      "sha256": "0da69afc8d4a85d379b56c2f31bb66a5c7c6bf1885baea197b0fd212902f3637",
+      "zip_compressed_bytes": 2098,
+      "zip_data_offset": 18851164,
+      "zip_local_offset": 18851091
+    },
+    {
+      "bytes": 30760,
+      "file": "EP515700.TS5",
+      "path": "data/EVENT/EP515700.TS5",
+      "sha256": "f3f1aabbddbe50826ce8f20431b82d3ee2dc23a2b81a4361cbbdda2de160714f",
+      "zip_compressed_bytes": 15058,
+      "zip_data_offset": 18853335,
+      "zip_local_offset": 18853262
+    },
+    {
+      "bytes": 33732,
+      "file": "EP516900.TS5",
+      "path": "data/EVENT/EP516900.TS5",
+      "sha256": "48fee1e8d72ac718521c9f5c5959653579f77f8c570ede5ca347b7b9566013eb",
+      "zip_compressed_bytes": 14935,
+      "zip_data_offset": 18868466,
+      "zip_local_offset": 18868393
+    },
+    {
+      "bytes": 20752,
+      "file": "EP52BC00.TS5",
+      "path": "data/EVENT/EP52BC00.TS5",
+      "sha256": "8f53b9cbe9cb50d07b4cdbc6993a0600de6351fe0ed161419a0619911fdf1406",
+      "zip_compressed_bytes": 10456,
+      "zip_data_offset": 18883474,
+      "zip_local_offset": 18883401
+    },
+    {
+      "bytes": 1296,
+      "file": "EP605F00.TS5",
+      "path": "data/EVENT/EP605F00.TS5",
+      "sha256": "b420f53f56a6e8623a5fbe3d5e64cfb3833ee7b196c15ba19baeb55c91b8e18a",
+      "zip_compressed_bytes": 956,
+      "zip_data_offset": 18894003,
+      "zip_local_offset": 18893930
+    },
+    {
+      "bytes": 236,
+      "file": "EPF00B00.TS5",
+      "path": "data/EVENT/EPF00B00.TS5",
+      "sha256": "7aa5528c1c7d9c0cbc7cc1131d63a927675aa209b202047795c0add71c9e0cea",
+      "zip_compressed_bytes": 199,
+      "zip_data_offset": 18895032,
+      "zip_local_offset": 18894959
+    },
+    {
+      "bytes": 49200,
+      "file": "EPF00E00.TS5",
+      "path": "data/EVENT/EPF00E00.TS5",
+      "sha256": "b90e65fd8762788cce5a6a04c186ca269af4994582a587f4390535c86c3abddd",
+      "zip_compressed_bytes": 24227,
+      "zip_data_offset": 18895304,
+      "zip_local_offset": 18895231
+    },
+    {
+      "bytes": 156,
+      "file": "EPF01900.TS5",
+      "path": "data/EVENT/EPF01900.TS5",
+      "sha256": "1e9cc611f9cc86a633731c1b4e99251e363b0e2ed2cf2173a737fa9c797ba26f",
+      "zip_compressed_bytes": 131,
+      "zip_data_offset": 18919604,
+      "zip_local_offset": 18919531
+    },
+    {
+      "bytes": 188,
+      "file": "EPF01F00.TS5",
+      "path": "data/EVENT/EPF01F00.TS5",
+      "sha256": "49e4b5a77deeea2c578852864fc2f4cdf83b133651afbab6c574138bd5379399",
+      "zip_compressed_bytes": 156,
+      "zip_data_offset": 18919808,
+      "zip_local_offset": 18919735
+    },
+    {
+      "bytes": 204,
+      "file": "EPF02900.TS5",
+      "path": "data/EVENT/EPF02900.TS5",
+      "sha256": "6a52c8193da1fa6f9b814ab3297f3ca0ebe763d1d62c3ead234f37751a5db1f9",
+      "zip_compressed_bytes": 157,
+      "zip_data_offset": 18920037,
+      "zip_local_offset": 18919964
+    },
+    {
+      "bytes": 4436,
+      "file": "EPF04800.TS5",
+      "path": "data/EVENT/EPF04800.TS5",
+      "sha256": "717e8438604969cd5646765e0607639b98739a5b2886d685730f6ef3ab8364eb",
+      "zip_compressed_bytes": 2656,
+      "zip_data_offset": 18920267,
+      "zip_local_offset": 18920194
+    },
+    {
+      "bytes": 8792,
+      "file": "EPF04900.TS5",
+      "path": "data/EVENT/EPF04900.TS5",
+      "sha256": "3e0805026cea393963dcccbfb7defa779cb33d9f08baf2060fe7ab5101fc3a49",
+      "zip_compressed_bytes": 5151,
+      "zip_data_offset": 18922996,
+      "zip_local_offset": 18922923
+    },
+    {
+      "bytes": 28180,
+      "file": "EPF04B00.TS5",
+      "path": "data/EVENT/EPF04B00.TS5",
+      "sha256": "ab221f83894fba552908a391734db4fed692ad006f1481f46f07a60b0390693d",
+      "zip_compressed_bytes": 14272,
+      "zip_data_offset": 18928220,
+      "zip_local_offset": 18928147
+    },
+    {
+      "bytes": 3528,
+      "file": "EPF05F00.TS5",
+      "path": "data/EVENT/EPF05F00.TS5",
+      "sha256": "daf84996258a0787fb4f2e413ceb52f4ae2409d602e46a7b2ec4e52ebd41fb4d",
+      "zip_compressed_bytes": 2264,
+      "zip_data_offset": 18942565,
+      "zip_local_offset": 18942492
+    },
+    {
+      "bytes": 236,
+      "file": "EPF06400.TS5",
+      "path": "data/EVENT/EPF06400.TS5",
+      "sha256": "6c89babcfb7166731bca368873616fd43d63a17c5fe54e2c581a6883d1d597b4",
+      "zip_compressed_bytes": 192,
+      "zip_data_offset": 18944902,
+      "zip_local_offset": 18944829
+    },
+    {
+      "bytes": 8624,
+      "file": "EPF07700.TS5",
+      "path": "data/EVENT/EPF07700.TS5",
+      "sha256": "5273e70e0f62ce4b4090e78533f43da3fafa64a613b54e32c58845b3ba85b60f",
+      "zip_compressed_bytes": 4826,
+      "zip_data_offset": 18945167,
+      "zip_local_offset": 18945094
+    },
+    {
+      "bytes": 208,
+      "file": "EPF0A400.TS5",
+      "path": "data/EVENT/EPF0A400.TS5",
+      "sha256": "54b23d311f326a99ffe95f9aafc7374d401c1451163bb0a7533b5aebffdaf481",
+      "zip_compressed_bytes": 179,
+      "zip_data_offset": 18950066,
+      "zip_local_offset": 18949993
+    },
+    {
+      "bytes": 340,
+      "file": "EPF0A700.TS5",
+      "path": "data/EVENT/EPF0A700.TS5",
+      "sha256": "a2382c9f8ccf14b9d6b7e11bd17f93723e1e592fe0bff80e3552ab357dda40aa",
+      "zip_compressed_bytes": 303,
+      "zip_data_offset": 18950318,
+      "zip_local_offset": 18950245
+    },
+    {
+      "bytes": 188,
+      "file": "EPF0AE00.TS5",
+      "path": "data/EVENT/EPF0AE00.TS5",
+      "sha256": "fddc26b4581f9328764f4189a2a8844f054859c3b41e3aa88c0a2fa0e0daf7ca",
+      "zip_compressed_bytes": 172,
+      "zip_data_offset": 18950694,
+      "zip_local_offset": 18950621
+    },
+    {
+      "bytes": 320,
+      "file": "EPF0BD00.TS5",
+      "path": "data/EVENT/EPF0BD00.TS5",
+      "sha256": "97ffdd13d10f4bee415ba7decd4b5ba6da6973aef2a5654fa4199d271ffcaf5d",
+      "zip_compressed_bytes": 274,
+      "zip_data_offset": 18950939,
+      "zip_local_offset": 18950866
+    },
+    {
+      "bytes": 2676,
+      "file": "EPF0BE00.TS5",
+      "path": "data/EVENT/EPF0BE00.TS5",
+      "sha256": "3606a50a052dc7505253c7d26b0973f48eaa4d06cf2aefe4ca2165feca39f15d",
+      "zip_compressed_bytes": 1764,
+      "zip_data_offset": 18951286,
+      "zip_local_offset": 18951213
+    },
+    {
+      "bytes": 6428,
+      "file": "EPF0BF00.TS5",
+      "path": "data/EVENT/EPF0BF00.TS5",
+      "sha256": "58c6f0baead3b78e6c986f9ab606dea7eacbbc2ffc7d29d28b21674f3ce1ab5d",
+      "zip_compressed_bytes": 3697,
+      "zip_data_offset": 18953123,
+      "zip_local_offset": 18953050
+    },
+    {
+      "bytes": 6440,
+      "file": "EPF0C100.TS5",
+      "path": "data/EVENT/EPF0C100.TS5",
+      "sha256": "1ded3e1903f32cb0def599208a8beb4ebef948de101cf8233d58ce827b74d450",
+      "zip_compressed_bytes": 3659,
+      "zip_data_offset": 18956893,
+      "zip_local_offset": 18956820
+    },
+    {
+      "bytes": 16644,
+      "file": "EPF0C200.TS5",
+      "path": "data/EVENT/EPF0C200.TS5",
+      "sha256": "6b4a1fb3373e51764eff85b2bd153ac2ad019a6416846a41b34f621c5930c727",
+      "zip_compressed_bytes": 8206,
+      "zip_data_offset": 18960625,
+      "zip_local_offset": 18960552
+    },
+    {
+      "bytes": 24088,
+      "file": "EPF0C300.TS5",
+      "path": "data/EVENT/EPF0C300.TS5",
+      "sha256": "d1c30ec9eb1a6dd284934dff895ae1876c28745debc16e6e510bfdc8f4900b94",
+      "zip_compressed_bytes": 12648,
+      "zip_data_offset": 18968904,
+      "zip_local_offset": 18968831
+    },
+    {
+      "bytes": 336,
+      "file": "EPF0C700.TS5",
+      "path": "data/EVENT/EPF0C700.TS5",
+      "sha256": "3d8b443e76da96c16aa0965c8a6ae288c89de16eba91ec817d5b4bd93e5d60e5",
+      "zip_compressed_bytes": 256,
+      "zip_data_offset": 18981625,
+      "zip_local_offset": 18981552
+    },
+    {
+      "bytes": 376,
+      "file": "EPF0C800.TS5",
+      "path": "data/EVENT/EPF0C800.TS5",
+      "sha256": "b4680fa07811c876fe97cdd5f637d4fa44f790205e6948794b7eb75bdfded205",
+      "zip_compressed_bytes": 274,
+      "zip_data_offset": 18981954,
+      "zip_local_offset": 18981881
+    },
+    {
+      "bytes": 500,
+      "file": "EPF0CB00.TS5",
+      "path": "data/EVENT/EPF0CB00.TS5",
+      "sha256": "818c8e417e96035a36738b15621acdb0d5320dd0d61ce79189e90813f17b0134",
+      "zip_compressed_bytes": 378,
+      "zip_data_offset": 18982301,
+      "zip_local_offset": 18982228
+    },
+    {
+      "bytes": 452,
+      "file": "EPF0D800.TS5",
+      "path": "data/EVENT/EPF0D800.TS5",
+      "sha256": "cac1db931db33a6c80a4ba702f47d130e439ec09b13b1f2fbbefede704e4ecf6",
+      "zip_compressed_bytes": 335,
+      "zip_data_offset": 18982752,
+      "zip_local_offset": 18982679
+    },
+    {
+      "bytes": 200,
+      "file": "EPF0F000.TS5",
+      "path": "data/EVENT/EPF0F000.TS5",
+      "sha256": "9052420526acf01e85a8b0073771ea45e5992c713a5d7d67334460f4633055b4",
+      "zip_compressed_bytes": 165,
+      "zip_data_offset": 18983160,
+      "zip_local_offset": 18983087
+    },
+    {
+      "bytes": 256,
+      "file": "EPF0F300.TS5",
+      "path": "data/EVENT/EPF0F300.TS5",
+      "sha256": "c4eb25debac9a55eb43c0cea91de7329379767ead1823797a90893a2b4d467ee",
+      "zip_compressed_bytes": 215,
+      "zip_data_offset": 18983398,
+      "zip_local_offset": 18983325
+    },
+    {
+      "bytes": 10492,
+      "file": "EPF11700.TS5",
+      "path": "data/EVENT/EPF11700.TS5",
+      "sha256": "3533b1baed75643d7c0ef01998f2d82007e9d45f4967b2c52506ffe85f12a1d9",
+      "zip_compressed_bytes": 5620,
+      "zip_data_offset": 18983686,
+      "zip_local_offset": 18983613
+    },
+    {
+      "bytes": 16268,
+      "file": "EPF12400.TS5",
+      "path": "data/EVENT/EPF12400.TS5",
+      "sha256": "a678762edcf249e383a917fb81a54c9eb3649b15e4a4ef7f3d70dc074c1dab10",
+      "zip_compressed_bytes": 9008,
+      "zip_data_offset": 18989379,
+      "zip_local_offset": 18989306
+    },
+    {
+      "bytes": 8444,
+      "file": "EPF12800.TS5",
+      "path": "data/EVENT/EPF12800.TS5",
+      "sha256": "dcd6008130a63c2ab933a063b99d151c709d7b03364d74116d5e4863ff9ba8b6",
+      "zip_compressed_bytes": 4662,
+      "zip_data_offset": 18998460,
+      "zip_local_offset": 18998387
+    },
+    {
+      "bytes": 232,
+      "file": "EPF14A00.TS5",
+      "path": "data/EVENT/EPF14A00.TS5",
+      "sha256": "6fcdc8f0265207b7ce98a72dd2868533024efacad5ef814c99b3279b43c80181",
+      "zip_compressed_bytes": 200,
+      "zip_data_offset": 19003195,
+      "zip_local_offset": 19003122
+    },
+    {
+      "bytes": 208,
+      "file": "EPF15000.TS5",
+      "path": "data/EVENT/EPF15000.TS5",
+      "sha256": "f08ca4c5e52e9b9d9823b15724779d160464e5478b0a3e19e8ea0188e6bcf4c5",
+      "zip_compressed_bytes": 159,
+      "zip_data_offset": 19003468,
+      "zip_local_offset": 19003395
+    },
+    {
+      "bytes": 276,
+      "file": "EPF16500.TS5",
+      "path": "data/EVENT/EPF16500.TS5",
+      "sha256": "6b703cd3f7f00d78428779bc2dd5ceb2fbd961ffe2d6fc5fe77cd0e2b1849ffa",
+      "zip_compressed_bytes": 226,
+      "zip_data_offset": 19003700,
+      "zip_local_offset": 19003627
+    },
+    {
+      "bytes": 37540,
+      "file": "EPF16900.TS5",
+      "path": "data/EVENT/EPF16900.TS5",
+      "sha256": "49348eeff352a5163bc788fda0968824b1a9ae5763b4b20cf5e2af19bc3a76e5",
+      "zip_compressed_bytes": 18625,
+      "zip_data_offset": 19003999,
+      "zip_local_offset": 19003926
+    },
+    {
+      "bytes": 27636,
+      "file": "EPF17B00.TS5",
+      "path": "data/EVENT/EPF17B00.TS5",
+      "sha256": "d628f3726ea5f667d4e4c11c9fac3db409396bb95ec2b11659f8e913e84a1981",
+      "zip_compressed_bytes": 13072,
+      "zip_data_offset": 19022697,
+      "zip_local_offset": 19022624
+    },
+    {
+      "bytes": 228,
+      "file": "EPF18400.TS5",
+      "path": "data/EVENT/EPF18400.TS5",
+      "sha256": "b1992ac2fc59b3d41a6ece3c90981b408fe08181c8181c7aa253f994d4ee4e5c",
+      "zip_compressed_bytes": 200,
+      "zip_data_offset": 19035842,
+      "zip_local_offset": 19035769
+    },
+    {
+      "bytes": 320,
+      "file": "EPF18600.TS5",
+      "path": "data/EVENT/EPF18600.TS5",
+      "sha256": "1984a291c1ed55e071e81c165991906cc514794a46a9502094e36c670d176468",
+      "zip_compressed_bytes": 268,
+      "zip_data_offset": 19036115,
+      "zip_local_offset": 19036042
+    },
+    {
+      "bytes": 200,
+      "file": "EPF18A00.TS5",
+      "path": "data/EVENT/EPF18A00.TS5",
+      "sha256": "bd8fcc73f63a151173f5f29c30335e4bcd906edb208bd2d61f6f3c47521c3faf",
+      "zip_compressed_bytes": 180,
+      "zip_data_offset": 19036456,
+      "zip_local_offset": 19036383
+    },
+    {
+      "bytes": 204,
+      "file": "EPF18B00.TS5",
+      "path": "data/EVENT/EPF18B00.TS5",
+      "sha256": "97af0ba368899298df17e703eec220194f7f0d675c0921965c30747d6a4f93a2",
+      "zip_compressed_bytes": 180,
+      "zip_data_offset": 19036709,
+      "zip_local_offset": 19036636
+    },
+    {
+      "bytes": 344,
+      "file": "EPF19F00.TS5",
+      "path": "data/EVENT/EPF19F00.TS5",
+      "sha256": "f1322505d7e4d0ae97cf19ff7d92f46f73e1b3ccfde4b2517d33119db6faeedd",
+      "zip_compressed_bytes": 273,
+      "zip_data_offset": 19036962,
+      "zip_local_offset": 19036889
+    },
+    {
+      "bytes": 276,
+      "file": "EPF1AA00.TS5",
+      "path": "data/EVENT/EPF1AA00.TS5",
+      "sha256": "cc4e1db7da38ce28dfc472edd504b796b27e7863450bf4a364e02e14434b2665",
+      "zip_compressed_bytes": 246,
+      "zip_data_offset": 19037308,
+      "zip_local_offset": 19037235
+    },
+    {
+      "bytes": 6756,
+      "file": "EPF1B100.TS5",
+      "path": "data/EVENT/EPF1B100.TS5",
+      "sha256": "e4558a8f70a094ca91b09d74c58bb26f2086134cf3ca5e2e95f86e7ea0b3a38d",
+      "zip_compressed_bytes": 3822,
+      "zip_data_offset": 19037627,
+      "zip_local_offset": 19037554
+    },
+    {
+      "bytes": 184,
+      "file": "EPF1C000.TS5",
+      "path": "data/EVENT/EPF1C000.TS5",
+      "sha256": "a0e7cf9fa173510b04fba9792ebddbb6b860cf015f0e9d716e91762fed09ad07",
+      "zip_compressed_bytes": 157,
+      "zip_data_offset": 19041522,
+      "zip_local_offset": 19041449
+    },
+    {
+      "bytes": 216,
+      "file": "EPF1C100.TS5",
+      "path": "data/EVENT/EPF1C100.TS5",
+      "sha256": "e65f6c61d40b49310f72ea17e90799a3f056e9d8bfe724f523e7c3fcf897e4ed",
+      "zip_compressed_bytes": 181,
+      "zip_data_offset": 19041752,
+      "zip_local_offset": 19041679
+    },
+    {
+      "bytes": 13672,
+      "file": "EPF1C700.TS5",
+      "path": "data/EVENT/EPF1C700.TS5",
+      "sha256": "7028a3392a83919f61f528fa82fed65e20e748203953191fd7aa921900262c02",
+      "zip_compressed_bytes": 7152,
+      "zip_data_offset": 19042006,
+      "zip_local_offset": 19041933
+    },
+    {
+      "bytes": 1420,
+      "file": "EPF1C800.TS5",
+      "path": "data/EVENT/EPF1C800.TS5",
+      "sha256": "e6a87877bfcb55485a4947ab06a4364740f667e4bb08742897845ff614dcb974",
+      "zip_compressed_bytes": 1010,
+      "zip_data_offset": 19049231,
+      "zip_local_offset": 19049158
+    },
+    {
+      "bytes": 4388,
+      "file": "EPF1CA00.TS5",
+      "path": "data/EVENT/EPF1CA00.TS5",
+      "sha256": "71601bfeca3aecf799a192bf1fee953cfb5bf4fbb234e02373d326f2463a79cf",
+      "zip_compressed_bytes": 2505,
+      "zip_data_offset": 19050314,
+      "zip_local_offset": 19050241
+    },
+    {
+      "bytes": 236,
+      "file": "EPF1E800.TS5",
+      "path": "data/EVENT/EPF1E800.TS5",
+      "sha256": "57086a487da5f9886902535c0ff2d49390347aed39012ee5e7c469300fe176b8",
+      "zip_compressed_bytes": 195,
+      "zip_data_offset": 19052892,
+      "zip_local_offset": 19052819
+    },
+    {
+      "bytes": 4028,
+      "file": "EPF1FA00.TS5",
+      "path": "data/EVENT/EPF1FA00.TS5",
+      "sha256": "096fc4367389592c71133c6cffb92e7fa034096c4528209988f615e26a334c20",
+      "zip_compressed_bytes": 2143,
+      "zip_data_offset": 19053160,
+      "zip_local_offset": 19053087
+    },
+    {
+      "bytes": 13700,
+      "file": "EPF1FB00.TS5",
+      "path": "data/EVENT/EPF1FB00.TS5",
+      "sha256": "d7e57182682649f104a60aa5715b484f5c91b25a1b830f11f93771cd00d52f21",
+      "zip_compressed_bytes": 6820,
+      "zip_data_offset": 19055376,
+      "zip_local_offset": 19055303
+    },
+    {
+      "bytes": 25228,
+      "file": "EPF1FC00.TS5",
+      "path": "data/EVENT/EPF1FC00.TS5",
+      "sha256": "861b281b1ba9b499e023e3d799a173ffeb51a82f4a1ed47f5ecbd2611d617d80",
+      "zip_compressed_bytes": 12746,
+      "zip_data_offset": 19062269,
+      "zip_local_offset": 19062196
+    },
+    {
+      "bytes": 1080,
+      "file": "EPF20300.TS5",
+      "path": "data/EVENT/EPF20300.TS5",
+      "sha256": "959034f9ea7a260dd200097dccae59878c2ea8697e075d645de23c4936d949f3",
+      "zip_compressed_bytes": 734,
+      "zip_data_offset": 19075088,
+      "zip_local_offset": 19075015
+    },
+    {
+      "bytes": 4312,
+      "file": "EPF20400.TS5",
+      "path": "data/EVENT/EPF20400.TS5",
+      "sha256": "dc0cc7fe5d6701d672a605262117e59cae71ed45aa72c0fb84e1dee7eb7b6bde",
+      "zip_compressed_bytes": 2266,
+      "zip_data_offset": 19075895,
+      "zip_local_offset": 19075822
+    },
+    {
+      "bytes": 74860,
+      "file": "EPF20500.TS5",
+      "path": "data/EVENT/EPF20500.TS5",
+      "sha256": "7e99994b409285e95064bae79d89b73436822f2c5f7712e304b37c8701a03488",
+      "zip_compressed_bytes": 35757,
+      "zip_data_offset": 19078234,
+      "zip_local_offset": 19078161
+    },
+    {
+      "bytes": 28212,
+      "file": "EPF22500.TS5",
+      "path": "data/EVENT/EPF22500.TS5",
+      "sha256": "ef6c858e06d838fbb41a8760a26480a1017581fb28382220a8ee4c8640a9243b",
+      "zip_compressed_bytes": 13538,
+      "zip_data_offset": 19114064,
+      "zip_local_offset": 19113991
+    },
+    {
+      "bytes": 7448,
+      "file": "EPF24900.TS5",
+      "path": "data/EVENT/EPF24900.TS5",
+      "sha256": "c3a44a7e6f925ca8f65fa9ab522a21e1e5fb21090b1c8eb0229a5c00ef61ca0f",
+      "zip_compressed_bytes": 4139,
+      "zip_data_offset": 19127675,
+      "zip_local_offset": 19127602
+    },
+    {
+      "bytes": 7204,
+      "file": "EPF25900.TS5",
+      "path": "data/EVENT/EPF25900.TS5",
+      "sha256": "2960de2c4c78eaa4866ad373cf5c8fda9687616d533337b308598c37ae761055",
+      "zip_compressed_bytes": 3942,
+      "zip_data_offset": 19131887,
+      "zip_local_offset": 19131814
+    },
+    {
+      "bytes": 208,
+      "file": "EPF27C00.TS5",
+      "path": "data/EVENT/EPF27C00.TS5",
+      "sha256": "897a348dacf4f1880ae149a972aa96ef72463bfcd6eabb695d1757ab435fb817",
+      "zip_compressed_bytes": 175,
+      "zip_data_offset": 19135902,
+      "zip_local_offset": 19135829
+    },
+    {
+      "bytes": 264,
+      "file": "EPF27E00.TS5",
+      "path": "data/EVENT/EPF27E00.TS5",
+      "sha256": "419789738848e53daa86b8305b6a343c1f073f1f6337ae0abce49aa3b1a6fd98",
+      "zip_compressed_bytes": 244,
+      "zip_data_offset": 19136150,
+      "zip_local_offset": 19136077
+    },
+    {
+      "bytes": 1900,
+      "file": "EPF29100.TS5",
+      "path": "data/EVENT/EPF29100.TS5",
+      "sha256": "f142273d7dfa0a9a53accdd67e83239afff23fe832d67c55ba5787b5629052a3",
+      "zip_compressed_bytes": 1163,
+      "zip_data_offset": 19136467,
+      "zip_local_offset": 19136394
+    },
+    {
+      "bytes": 19632,
+      "file": "EPF29300.TS5",
+      "path": "data/EVENT/EPF29300.TS5",
+      "sha256": "ea3d4426ad180826c0758c1642fbf95e5749f3a7b42676f0a1e63efb065e65ce",
+      "zip_compressed_bytes": 10078,
+      "zip_data_offset": 19137703,
+      "zip_local_offset": 19137630
+    },
+    {
+      "bytes": 180,
+      "file": "EPF2BD00.TS5",
+      "path": "data/EVENT/EPF2BD00.TS5",
+      "sha256": "b444834e16011879cd8f34dc1b5bd63ce6afcf2329ffd3183a042eeb5f5dc671",
+      "zip_compressed_bytes": 163,
+      "zip_data_offset": 19147854,
+      "zip_local_offset": 19147781
+    },
+    {
+      "bytes": 3024,
+      "file": "EPF2C000.TS5",
+      "path": "data/EVENT/EPF2C000.TS5",
+      "sha256": "d929017a8fa0fe342bb535bfcfa7f51e38642892fdc2adf44fc65394ff406a60",
+      "zip_compressed_bytes": 1906,
+      "zip_data_offset": 19148090,
+      "zip_local_offset": 19148017
+    },
+    {
+      "bytes": 172,
+      "file": "EPF2C100.TS5",
+      "path": "data/EVENT/EPF2C100.TS5",
+      "sha256": "fb90097abbc0a96c1b8ed433109706755a7168bf0ac36d546fb523f595e8d644",
+      "zip_compressed_bytes": 139,
+      "zip_data_offset": 19150069,
+      "zip_local_offset": 19149996
+    },
+    {
+      "bytes": 184,
+      "file": "EPF2C200.TS5",
+      "path": "data/EVENT/EPF2C200.TS5",
+      "sha256": "d2e37da7661c1817c3b069756e655b913d5920291af960935e37c14f7261c3b1",
+      "zip_compressed_bytes": 146,
+      "zip_data_offset": 19150281,
+      "zip_local_offset": 19150208
+    },
+    {
+      "bytes": 196,
+      "file": "EPF2C400.TS5",
+      "path": "data/EVENT/EPF2C400.TS5",
+      "sha256": "bee0a838b6425f8451b8f145bafe601cc8ee577d61dd4e2fa44ccab8ba7c2756",
+      "zip_compressed_bytes": 160,
+      "zip_data_offset": 19150500,
+      "zip_local_offset": 19150427
+    },
+    {
+      "bytes": 12396,
+      "file": "EPF2E000.TS5",
+      "path": "data/EVENT/EPF2E000.TS5",
+      "sha256": "26e5ad85d5ebc45f5c7837abad14b7a8cffd2791a90fc88c15213b35917bc4fb",
+      "zip_compressed_bytes": 6847,
+      "zip_data_offset": 19150733,
+      "zip_local_offset": 19150660
+    },
+    {
+      "bytes": 264,
+      "file": "EPF2E400.TS5",
+      "path": "data/EVENT/EPF2E400.TS5",
+      "sha256": "aa1ee215ee95195f2fa3131f71508b98970a3b42b45ed15f9e2d587dbd1b32b0",
+      "zip_compressed_bytes": 232,
+      "zip_data_offset": 19157653,
+      "zip_local_offset": 19157580
+    },
+    {
+      "bytes": 19368,
+      "file": "EPF2F400.TS5",
+      "path": "data/EVENT/EPF2F400.TS5",
+      "sha256": "c4e62387232c5d70a261a66914f65baffe46e1aa0778c7399b50a3b893968f32",
+      "zip_compressed_bytes": 9564,
+      "zip_data_offset": 19157958,
+      "zip_local_offset": 19157885
+    },
+    {
+      "bytes": 224,
+      "file": "EPF2F700.TS5",
+      "path": "data/EVENT/EPF2F700.TS5",
+      "sha256": "13af09b18830031ee96fa6f7f33ab0b58bf2ca691cf2b8389d13ecca319b8da8",
+      "zip_compressed_bytes": 206,
+      "zip_data_offset": 19167595,
+      "zip_local_offset": 19167522
+    },
+    {
+      "bytes": 1768,
+      "file": "EPF2FC00.TS5",
+      "path": "data/EVENT/EPF2FC00.TS5",
+      "sha256": "ab6ec2cf577dccc0cdd2df469df19120037a37269a3b48e3f10ff130d33cff8d",
+      "zip_compressed_bytes": 1140,
+      "zip_data_offset": 19167874,
+      "zip_local_offset": 19167801
+    },
+    {
+      "bytes": 216,
+      "file": "EPF31600.TS5",
+      "path": "data/EVENT/EPF31600.TS5",
+      "sha256": "1a34590c7f99355d4d370fb9351c5fe2dfd7b96c25752929749540bc5f2390b0",
+      "zip_compressed_bytes": 186,
+      "zip_data_offset": 19169087,
+      "zip_local_offset": 19169014
+    },
+    {
+      "bytes": 10732,
+      "file": "EPF32000.TS5",
+      "path": "data/EVENT/EPF32000.TS5",
+      "sha256": "0e169eae5f22c0a59f80eaba9538f83ab9f3e2f2dacee049e1a4ea68fb0cac80",
+      "zip_compressed_bytes": 5448,
+      "zip_data_offset": 19169346,
+      "zip_local_offset": 19169273
+    },
+    {
+      "bytes": 2720,
+      "file": "EPF32100.TS5",
+      "path": "data/EVENT/EPF32100.TS5",
+      "sha256": "5aa0c6cde637745221cc97d62e1269eec44ec5ff315cad9261cffc1666b5f513",
+      "zip_compressed_bytes": 1544,
+      "zip_data_offset": 19174867,
+      "zip_local_offset": 19174794
+    },
+    {
+      "bytes": 3084,
+      "file": "EPF32400.TS5",
+      "path": "data/EVENT/EPF32400.TS5",
+      "sha256": "b92161457707e933b08d089ac8cd2d583cccf422c210f19c77223cd473798462",
+      "zip_compressed_bytes": 1802,
+      "zip_data_offset": 19176484,
+      "zip_local_offset": 19176411
+    },
+    {
+      "bytes": 6104,
+      "file": "EPF32500.TS5",
+      "path": "data/EVENT/EPF32500.TS5",
+      "sha256": "339954e753ee739ea744f1ee2cfda20e4a2a84012c1016518398e561d859565c",
+      "zip_compressed_bytes": 3621,
+      "zip_data_offset": 19178359,
+      "zip_local_offset": 19178286
+    },
+    {
+      "bytes": 1332,
+      "file": "EPF33000.TS5",
+      "path": "data/EVENT/EPF33000.TS5",
+      "sha256": "c5b49224501085b54f9580ebfc1c733b4b6e21f39254be1571fd243e453c5068",
+      "zip_compressed_bytes": 931,
+      "zip_data_offset": 19182053,
+      "zip_local_offset": 19181980
+    },
+    {
+      "bytes": 6764,
+      "file": "EPF34700.TS5",
+      "path": "data/EVENT/EPF34700.TS5",
+      "sha256": "c42b3a9e9ab5ab877e21c634cf38a9c9e963f4389753130b8e9e4ade953b2da4",
+      "zip_compressed_bytes": 3856,
+      "zip_data_offset": 19183057,
+      "zip_local_offset": 19182984
+    },
+    {
+      "bytes": 6948,
+      "file": "EPF34800.TS5",
+      "path": "data/EVENT/EPF34800.TS5",
+      "sha256": "85049c59b24bc39820c133ee31c3b834b6d7d021b7345816930588902d3242eb",
+      "zip_compressed_bytes": 3958,
+      "zip_data_offset": 19186986,
+      "zip_local_offset": 19186913
+    }
+  ],
+  "schema": "V366_PC_KO_EVENT_INPUT_RECOVERY_V1",
+  "source_drive_part00_id": "1Kq9dg1iJ47MuDTcOZ3tx9_uNFoh3mDk5",
+  "source_package_id": "taiko5dx-ko-v102-steam-121-20260721",
+  "source_patch_version": "1.02",
+  "source_patcher_expected_bytes": 177267850,
+  "source_patcher_expected_sha256": "109dc729e66df8cd0a47c5f6c24719260eb03a89890a0c69d3ba739145dcfb23"
+}

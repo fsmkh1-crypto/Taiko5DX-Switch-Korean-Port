@@ -1287,3 +1287,35 @@ Do not repeat:
 - guess five structural-drift bindings or promote KO-only `0x8E010` without original ownership.
 
 V334's existing 13,075 rows remain valid and stable; only its completeness claim is superseded.
+
+
+## 38. V366 exact-ledger reconstruction — source authority, grouping, and percent-root traps
+
+Scope: `EVENT 169 / V366 exact-ledger reconstruction`
+
+V366 independently reconstructed the 66,987-owner EVENT universe and rejected three repeatable
+failure paths.
+
+```text
+source owners                 66,987
+direct/header-preserved       66,956
+overlap-composite                 31
+unaccounted                        0
+ambiguous                          0
+direct-target collisions           0
+```
+
+Do not repeat:
+
+- use the Drive `Taiko5DX/data/EVENT` installation-state folder as canonical PC-KO authority; its
+  representative file sizes conflict with the exact v1.02 embedded payload;
+- rebuild/download the full 177 MB patcher solely to recover EVENT 169; all EVENT payload members
+  are available from the part00-contained embedded archive and must be SHA-guarded by manifest;
+- use final PC-KO fresh grouping as source-owner authority or treat grouping-induced hidden headers
+  as deleted runtime owners;
+- weaken direct-target uniqueness when a fresh-group collision appears; rebuild the containing
+  drift partition atomically;
+- count `%04/%20` as independent percent roots. They are argument-bearing EVENT references; the
+  exact independent root count is 48, not 50;
+- claim a universal runtime `event_len` PASS or full semantic replay merely because exact accounting
+  is closed. Those remain a separate bounded closure scope after V366.

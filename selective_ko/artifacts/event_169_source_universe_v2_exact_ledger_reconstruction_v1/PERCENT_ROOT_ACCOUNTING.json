@@ -1,0 +1,472 @@
+{
+  "classification": {
+    "absent_tokens": [
+      "%0C",
+      "%1F"
+    ],
+    "argument_reference_nonroots": [
+      "%04",
+      "%20"
+    ],
+    "independent_root_count": 48,
+    "independent_roots": [
+      "%00",
+      "%01",
+      "%02",
+      "%03",
+      "%05",
+      "%06",
+      "%07",
+      "%08",
+      "%09",
+      "%0A",
+      "%0B",
+      "%0D",
+      "%0E",
+      "%0F",
+      "%10",
+      "%11",
+      "%12",
+      "%13",
+      "%14",
+      "%15",
+      "%16",
+      "%17",
+      "%18",
+      "%19",
+      "%1A",
+      "%1B",
+      "%1C",
+      "%1D",
+      "%1E",
+      "%21",
+      "%22",
+      "%23",
+      "%24",
+      "%25",
+      "%26",
+      "%27",
+      "%28",
+      "%29",
+      "%2A",
+      "%2B",
+      "%2C",
+      "%2D",
+      "%2E",
+      "%2F",
+      "%30",
+      "%31",
+      "%32",
+      "%33"
+    ],
+    "syntactic_token_types": 50
+  },
+  "roots": {
+    "00": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1638,
+      "occurrences": 1681,
+      "owners": 1638,
+      "uncovered_owner_count": 0
+    },
+    "01": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1383,
+      "occurrences": 1442,
+      "owners": 1383,
+      "uncovered_owner_count": 0
+    },
+    "02": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 86,
+      "occurrences": 86,
+      "owners": 86,
+      "uncovered_owner_count": 0
+    },
+    "03": {
+      "composite_owner_count": 2,
+      "direct_owner_count": 1781,
+      "occurrences": 1807,
+      "owners": 1783,
+      "uncovered_owner_count": 0
+    },
+    "04": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1033,
+      "occurrences": 1127,
+      "owners": 1033,
+      "uncovered_owner_count": 0
+    },
+    "05": {
+      "composite_owner_count": 1,
+      "direct_owner_count": 524,
+      "occurrences": 544,
+      "owners": 525,
+      "uncovered_owner_count": 0
+    },
+    "06": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 23,
+      "occurrences": 23,
+      "owners": 23,
+      "uncovered_owner_count": 0
+    },
+    "07": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 59,
+      "occurrences": 60,
+      "owners": 59,
+      "uncovered_owner_count": 0
+    },
+    "08": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 42,
+      "occurrences": 45,
+      "owners": 42,
+      "uncovered_owner_count": 0
+    },
+    "09": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 64,
+      "occurrences": 64,
+      "owners": 64,
+      "uncovered_owner_count": 0
+    },
+    "0A": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 24,
+      "occurrences": 24,
+      "owners": 24,
+      "uncovered_owner_count": 0
+    },
+    "0B": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 3,
+      "occurrences": 3,
+      "owners": 3,
+      "uncovered_owner_count": 0
+    },
+    "0D": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 7,
+      "occurrences": 7,
+      "owners": 7,
+      "uncovered_owner_count": 0
+    },
+    "0E": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 5,
+      "occurrences": 5,
+      "owners": 5,
+      "uncovered_owner_count": 0
+    },
+    "0F": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 3,
+      "occurrences": 3,
+      "owners": 3,
+      "uncovered_owner_count": 0
+    },
+    "10": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 7,
+      "occurrences": 7,
+      "owners": 7,
+      "uncovered_owner_count": 0
+    },
+    "11": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 19,
+      "occurrences": 19,
+      "owners": 19,
+      "uncovered_owner_count": 0
+    },
+    "12": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1,
+      "occurrences": 1,
+      "owners": 1,
+      "uncovered_owner_count": 0
+    },
+    "13": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 118,
+      "occurrences": 118,
+      "owners": 118,
+      "uncovered_owner_count": 0
+    },
+    "14": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 59,
+      "occurrences": 62,
+      "owners": 59,
+      "uncovered_owner_count": 0
+    },
+    "15": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 140,
+      "occurrences": 140,
+      "owners": 140,
+      "uncovered_owner_count": 0
+    },
+    "16": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 3,
+      "occurrences": 3,
+      "owners": 3,
+      "uncovered_owner_count": 0
+    },
+    "17": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 5,
+      "occurrences": 5,
+      "owners": 5,
+      "uncovered_owner_count": 0
+    },
+    "18": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "19": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "1A": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 30,
+      "occurrences": 30,
+      "owners": 30,
+      "uncovered_owner_count": 0
+    },
+    "1B": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 25,
+      "occurrences": 25,
+      "owners": 25,
+      "uncovered_owner_count": 0
+    },
+    "1C": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 6,
+      "occurrences": 6,
+      "owners": 6,
+      "uncovered_owner_count": 0
+    },
+    "1D": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "1E": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 56,
+      "occurrences": 56,
+      "owners": 56,
+      "uncovered_owner_count": 0
+    },
+    "20": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 166,
+      "occurrences": 197,
+      "owners": 166,
+      "uncovered_owner_count": 0
+    },
+    "21": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 6,
+      "occurrences": 6,
+      "owners": 6,
+      "uncovered_owner_count": 0
+    },
+    "22": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 3,
+      "occurrences": 3,
+      "owners": 3,
+      "uncovered_owner_count": 0
+    },
+    "23": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 41,
+      "occurrences": 42,
+      "owners": 41,
+      "uncovered_owner_count": 0
+    },
+    "24": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 4,
+      "occurrences": 4,
+      "owners": 4,
+      "uncovered_owner_count": 0
+    },
+    "25": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 17,
+      "occurrences": 17,
+      "owners": 17,
+      "uncovered_owner_count": 0
+    },
+    "26": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 108,
+      "occurrences": 109,
+      "owners": 108,
+      "uncovered_owner_count": 0
+    },
+    "27": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 5,
+      "occurrences": 5,
+      "owners": 5,
+      "uncovered_owner_count": 0
+    },
+    "28": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 9,
+      "occurrences": 9,
+      "owners": 9,
+      "uncovered_owner_count": 0
+    },
+    "29": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 4,
+      "occurrences": 4,
+      "owners": 4,
+      "uncovered_owner_count": 0
+    },
+    "2A": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "2B": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "2C": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 2,
+      "occurrences": 2,
+      "owners": 2,
+      "uncovered_owner_count": 0
+    },
+    "2D": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 14,
+      "occurrences": 14,
+      "owners": 14,
+      "uncovered_owner_count": 0
+    },
+    "2E": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 3,
+      "occurrences": 3,
+      "owners": 3,
+      "uncovered_owner_count": 0
+    },
+    "2F": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 45,
+      "occurrences": 45,
+      "owners": 45,
+      "uncovered_owner_count": 0
+    },
+    "30": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1,
+      "occurrences": 1,
+      "owners": 1,
+      "uncovered_owner_count": 0
+    },
+    "31": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 8,
+      "occurrences": 8,
+      "owners": 8,
+      "uncovered_owner_count": 0
+    },
+    "32": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 1,
+      "occurrences": 1,
+      "owners": 1,
+      "uncovered_owner_count": 0
+    },
+    "33": {
+      "composite_owner_count": 0,
+      "direct_owner_count": 4,
+      "occurrences": 4,
+      "owners": 4,
+      "uncovered_owner_count": 0
+    }
+  },
+  "unused": [
+    "%0C",
+    "%1F"
+  ],
+  "used": [
+    "%00",
+    "%01",
+    "%02",
+    "%03",
+    "%04",
+    "%05",
+    "%06",
+    "%07",
+    "%08",
+    "%09",
+    "%0A",
+    "%0B",
+    "%0D",
+    "%0E",
+    "%0F",
+    "%10",
+    "%11",
+    "%12",
+    "%13",
+    "%14",
+    "%15",
+    "%16",
+    "%17",
+    "%18",
+    "%19",
+    "%1A",
+    "%1B",
+    "%1C",
+    "%1D",
+    "%1E",
+    "%20",
+    "%21",
+    "%22",
+    "%23",
+    "%24",
+    "%25",
+    "%26",
+    "%27",
+    "%28",
+    "%29",
+    "%2A",
+    "%2B",
+    "%2C",
+    "%2D",
+    "%2E",
+    "%2F",
+    "%30",
+    "%31",
+    "%32",
+    "%33"
+  ]
+}

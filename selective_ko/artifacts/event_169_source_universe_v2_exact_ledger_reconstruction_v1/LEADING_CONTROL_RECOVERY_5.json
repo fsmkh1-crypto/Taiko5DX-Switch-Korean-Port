@@ -1,0 +1,71 @@
+{
+  "changed_pc_ko_leading_control_row_occurrences": 9,
+  "changed_pc_ko_leading_control_unique_families": [
+    "04010111",
+    "04010211",
+    "04010511",
+    "04010711",
+    "0401EF55"
+  ],
+  "changed_pc_ko_leading_control_unique_family_count": 5,
+  "count": 5,
+  "definition": "source owner is bracketed by an immediate Switch-original 0x04 leading control and a non-empty trailing control block; recipe keeps Switch control ownership while taking only PC-KO Korean surface, then repairs enclosing branch span",
+  "rows": [
+    {
+      "file": "ECF00000.TS5",
+      "final_selective_owner_sha256": "c1a1a90f69893cc13d8cf483162aefbe3d846a237765aa8615de85f46dfbc473",
+      "korean_surface_sha256": "15822fcfee7267e76c0c2522f1fcbb504bbcdbfef0dea0ed0200683aa3baa232",
+      "partition_index": 527,
+      "pc_ko_leading_control_hex": "04010711",
+      "pc_ko_trailing_control_hex": "0AB01A00034CF43F0200050004016800",
+      "source_offset_hex": "0xB0E44",
+      "switch_leading_control_hex": "0401B007",
+      "switch_trailing_control_hex": "0AB01A00034CF43F0200050004015000"
+    },
+    {
+      "file": "ECF00000.TS5",
+      "final_selective_owner_sha256": "c1a1a90f69893cc13d8cf483162aefbe3d846a237765aa8615de85f46dfbc473",
+      "korean_surface_sha256": "15822fcfee7267e76c0c2522f1fcbb504bbcdbfef0dea0ed0200683aa3baa232",
+      "partition_index": 527,
+      "pc_ko_leading_control_hex": "04012807",
+      "pc_ko_trailing_control_hex": "0A801A0003CCF43F82E8030004016800",
+      "source_offset_hex": "0xB122C",
+      "switch_leading_control_hex": "04012807",
+      "switch_trailing_control_hex": "0A801A0003CCF43F82E8030004015000"
+    },
+    {
+      "file": "ECF00000.TS5",
+      "final_selective_owner_sha256": "16f87b94f5c2955aaf7668783e8fbca9083e72ada2402f39a87683488f5147e2",
+      "korean_surface_sha256": "9d86a20f5b4603cf61594c863a5db74219fdfde9041a803a723db473153d2918",
+      "partition_index": 664,
+      "pc_ko_leading_control_hex": "04012003",
+      "pc_ko_trailing_control_hex": "0A801A0003CCF33F82150B000400F001",
+      "source_offset_hex": "0xD752C",
+      "switch_leading_control_hex": "04012003",
+      "switch_trailing_control_hex": "0A801A0003CCF33F82150B0004005001"
+    },
+    {
+      "file": "EFF01700.TS5",
+      "final_selective_owner_sha256": "e5370d9eb68da8a401c724ae9b45052db4b2a3384ff811e07ef547297d47e701",
+      "korean_surface_sha256": "3be612d701c6e5f020114485478cefcf5b789c9ea7e7a1dc82841b310d0b5091",
+      "partition_index": 3,
+      "pc_ko_leading_control_hex": "04011801",
+      "pc_ko_trailing_control_hex": "0ACF1A00830470008200080004014800",
+      "source_offset_hex": "0x19D0",
+      "switch_leading_control_hex": "04011801",
+      "switch_trailing_control_hex": "0ACF1A00830470008200080004014000"
+    },
+    {
+      "file": "EFF0C300.TS5",
+      "final_selective_owner_sha256": "5709358e2a440d5c3e519624dbab31fc96bf4566bfa9a2057be082f52e64f546",
+      "korean_surface_sha256": "4c080c93230c9859111526d06b98c177e61ad019fd88cc99642b8ef817ca17d1",
+      "partition_index": 31,
+      "pc_ko_leading_control_hex": "04010211",
+      "pc_ko_trailing_control_hex": "0AD41A00034CF03F021C03000401B800",
+      "source_offset_hex": "0xBFF4",
+      "switch_leading_control_hex": "0401B002",
+      "switch_trailing_control_hex": "0AD41A00034CF03F021C030004018800"
+    }
+  ],
+  "schema": "V366_LEADING_CONTROL_RECOVERY_LOCAL_V1"
+}

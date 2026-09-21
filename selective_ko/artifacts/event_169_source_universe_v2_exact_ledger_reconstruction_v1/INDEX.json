@@ -1,0 +1,101 @@
+{
+  "schema": "EVENT_169_SOURCE_UNIVERSE_V2_EXACT_LEDGER_RECONSTRUCTION_V1",
+  "validation_id": "V366",
+  "track": "SWITCH_SELECTIVE_KOREANIZATION",
+  "canonical_base_commit": "b1826ba4c34c2354257cbd19165548dce4868ad9",
+  "status": "EXACT_LEDGER_MATERIALIZED_ACCOUNTING_CLOSED_RUNTIME_EVENT_LEN_SEMANTIC_REPLAY_PENDING",
+  "source_files": 169,
+  "editor_source_owners": 66977,
+  "runtime_only_valid": 10,
+  "source_owner_universe": 66987,
+  "direct_header_preserved": 66956,
+  "overlap_composite": 31,
+  "leading_control_recovery_rows": 5,
+  "surface_leading_literal_recovery_rows": 1,
+  "duplicate_ko_overrides": 2,
+  "direct_target_collisions": 0,
+  "unaccounted_source_owners": 0,
+  "ambiguous_product_bindings": 0,
+  "percent_macro_independent_roots": 48,
+  "percent_macro_syntactic_token_types": 50,
+  "percent_macro_argument_reference_nonroots": [
+    "%04",
+    "%20"
+  ],
+  "percent_macro_absent_tokens": [
+    "%0C",
+    "%1F"
+  ],
+  "identity_policy": {
+    "identity_presentation_fields": "KEEP_JP",
+    "authored_korean_prose_identity_literals": "PRESERVE_AS_AUTHORED_KO",
+    "runtime_inserted_identity": "KEEP_JP",
+    "identity_reverse_substitution": "FORBIDDEN"
+  },
+  "git_resident_artifacts": {
+    "DIRECT_VALIDATION.json": {
+      "bytes": 4390,
+      "sha256": "80953351699ff61dde4f7d5b99efe28b383b568f1209db31cd2caa29340afee4"
+    },
+    "OVERLAP_COMPOSITE_31.jsonl": {
+      "bytes": 71168,
+      "sha256": "d249bd71bca0a60d950e4b8e48884b100cf3c38b296fd5598cf98a21514a8527"
+    },
+    "LEADING_CONTROL_RECOVERY_5.json": {
+      "bytes": 3357,
+      "sha256": "b38eb447a2479a80b1676d91227ba575053e98f4f7bfa49c8f7ea5be79840d68"
+    },
+    "COMPOSITE_VALIDATION.json": {
+      "bytes": 1530,
+      "sha256": "02329e9fb1aed790975aa38400f3f917bd6c39fa7193ce9075623b7f26e8f1c4"
+    },
+    "WHOLE_ACCOUNTING_VALIDATION.json": {
+      "bytes": 3156,
+      "sha256": "d77a2ecfe4958bfa913778429cc68513a6a0904d9ca7d951759ceb8ce7418f52"
+    },
+    "PERCENT_ROOT_ACCOUNTING.json": {
+      "bytes": 9611,
+      "sha256": "53ea9314ca7f6ed2ad7ed8a64038e4f771c1f80ee00ef00b54b73dbbb578f00f"
+    },
+    "PC_KO_EVENT_INPUT_MANIFEST.json": {
+      "bytes": 50748,
+      "sha256": "6a9a2efaf509985e527725d5ce3bbc81eee7011652961a4ad6acc3bb7b6d110b"
+    },
+    "PC_KO_EVENT_INPUT_MANIFEST.tsv": {
+      "bytes": 15923,
+      "sha256": "43497d6cb6bdd6c23ac892e09676f8557e554a06a90ea07642c0701e24c90de7"
+    }
+  },
+  "large_artifacts": {
+    "archive_filename": "V366_EVENT_169_EXACT_LEDGER_RECONSTRUCTION_LARGE_ARTIFACTS.zip",
+    "archive_bytes": 2211822,
+    "archive_sha256": "430ab6394ade066c5314ac734819d68cd9f24554da2a5346bc23031019712b1c",
+    "drive_status": "UPLOADED_STEP5",
+    "drive_file_id": "1gQT2PQt1yk_HGDxvhieeJWni5vQtAfU4",
+    "drive_url": "https://drive.google.com/file/d/1gQT2PQt1yk_HGDxvhieeJWni5vQtAfU4/view?usp=drivesdk",
+    "members": {
+      "DIRECT_HEADER_PRESERVED.jsonl": {
+        "bytes": 34971518,
+        "sha256": "6e7ca36d05a1a79e4e0918645f27a72b05c05505f66ac33a683e745b03da3d60"
+      },
+      "DIRECT_HEADER_PRESERVED.tsv": {
+        "bytes": 3099583,
+        "sha256": "4281262794fed28c68dbfa157bb634bb5fce15390df7b901d661df566b97a4ca"
+      },
+      "SOURCE_OWNER_ACCOUNTING.tsv": {
+        "bytes": 1822085,
+        "sha256": "dde908445fdfa0b8a57fdd32421a60e29880e0555aaf9d336990e52f596d6b37"
+      }
+    },
+    "drive_folder_id": "1xD602kz4XiVkjgtM5hs99AWyRLcZZrQ0",
+    "drive_roundtrip_metadata_size_match": true
+  },
+  "claim_boundary": {
+    "runtime_event_len_continuity": "NOT_INDEPENDENTLY_GENERALIZED_IN_V366_RECONSTRUCTION",
+    "full_semantic_admission_replay": "NOT_INDEPENDENTLY_REDERIVED_IN_V366_RECONSTRUCTION",
+    "product_serializer_implementation": "NONE",
+    "event_tai5msg_mutation": "NONE",
+    "build_package_ips_hardware": "NONE"
+  },
+  "exact_next_scope": "EVENT_169_V366_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_READ_ONLY"
+}

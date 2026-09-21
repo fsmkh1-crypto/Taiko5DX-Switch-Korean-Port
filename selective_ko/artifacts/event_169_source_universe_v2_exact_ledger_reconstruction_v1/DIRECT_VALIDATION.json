@@ -1,0 +1,157 @@
+{
+  "ambiguous_boundaries_resolved_by_preserved_anchor_order": 8,
+  "canonical_git_head": "b1826ba4c34c2354257cbd19165548dce4868ad9",
+  "composite_recipe_materialization": "NOT_RUN_THIS_STAGE",
+  "deterministic_reserialization": "PASS_BYTE_IDENTICAL",
+  "direct_editor_rows": 66946,
+  "direct_header_preserved": 66956,
+  "direct_only_drift_partitions": 9,
+  "direct_runtime_only_rows": 10,
+  "direct_target_collisions": 0,
+  "duplicate_ko_overrides": 2,
+  "duplicate_override_checks": [
+    {
+      "chosen": "0x8e010",
+      "chosen_equals_source": false,
+      "chosen_header_eq": true,
+      "chosen_len": 44,
+      "extra": "0x8e040",
+      "extra_equals_source": true,
+      "extra_header_eq": true,
+      "extra_len": 36,
+      "name": "ECF00000.TS5",
+      "source": "0x71ad0",
+      "source_len": 36
+    },
+    {
+      "chosen": "0x1794",
+      "chosen_equals_source": false,
+      "chosen_header_eq": true,
+      "chosen_len": 20,
+      "extra": "0x17b0",
+      "extra_equals_source": true,
+      "extra_header_eq": true,
+      "extra_len": 20,
+      "name": "EP111700.TS5",
+      "source": "0x1364",
+      "source_len": 20
+    }
+  ],
+  "editor_source_owners": 66977,
+  "excluded_for_overlap_composite_next_stage": 31,
+  "false_raw_target_like": 3,
+  "github_write": "NONE",
+  "header_equality": "PASS_66956_OF_66956",
+  "header_only_lcs_ambiguous_boundaries": 8,
+  "independent_reference_rows": [
+    {
+      "file": "ECF00000.TS5",
+      "header_hex": "11600864",
+      "partition_index": 388,
+      "source_kind": "EDITOR",
+      "source_offset_hex": "0x96E6C",
+      "target_offset_hex": "0xBC498"
+    },
+    {
+      "file": "ECF00000.TS5",
+      "header_hex": "11600864",
+      "partition_index": 388,
+      "source_kind": "EDITOR",
+      "source_offset_hex": "0x96E7C",
+      "target_offset_hex": "0xBC4A8"
+    },
+    {
+      "file": "EKF00800.TS5",
+      "header_hex": "1128CBFF",
+      "partition_index": 4,
+      "source_kind": "RUNTIME_ONLY",
+      "source_offset_hex": "0xF60",
+      "target_offset_hex": "0x1308"
+    }
+  ],
+  "jsonl_bytes": 34971518,
+  "jsonl_sha256": "6e7ca36d05a1a79e4e0918645f27a72b05c05505f66ac33a683e745b03da3d60",
+  "leading_control_recovery": "NOT_RUN_THIS_STAGE",
+  "partition_containment": "PASS_66956_OF_66956",
+  "pc_ko_files": 169,
+  "per_partition_monotonic_order": "PASS",
+  "product_mutation": "NONE",
+  "raw_extra_original_target_like_candidates": 13,
+  "runtime_only_by_file": {
+    "EFF0C300": 2,
+    "EFF2D200": 1,
+    "EKF00400": 2,
+    "EKF00800": 2,
+    "EP124B00": 3
+  },
+  "runtime_only_rows": [
+    {
+      "file": "EFF0C300.TS5",
+      "header_hex": "115C6418",
+      "source_offset_hex": "0x2ED1C",
+      "target_offset_hex": "0x39B88"
+    },
+    {
+      "file": "EFF0C300.TS5",
+      "header_hex": "110CC3FF",
+      "source_offset_hex": "0x3A2F4",
+      "target_offset_hex": "0x47B94"
+    },
+    {
+      "file": "EFF2D200.TS5",
+      "header_hex": "1108D4FF",
+      "source_offset_hex": "0x3ECC",
+      "target_offset_hex": "0x5064"
+    },
+    {
+      "file": "EKF00400.TS5",
+      "header_hex": "110CE322",
+      "source_offset_hex": "0x5458",
+      "target_offset_hex": "0x6448"
+    },
+    {
+      "file": "EKF00400.TS5",
+      "header_hex": "110CC3FF",
+      "source_offset_hex": "0x6DBC",
+      "target_offset_hex": "0x8324"
+    },
+    {
+      "file": "EKF00800.TS5",
+      "header_hex": "1128CBFF",
+      "source_offset_hex": "0xF60",
+      "target_offset_hex": "0x1308"
+    },
+    {
+      "file": "EKF00800.TS5",
+      "header_hex": "1128CBFF",
+      "source_offset_hex": "0x104C",
+      "target_offset_hex": "0x1400"
+    },
+    {
+      "file": "EP124B00.TS5",
+      "header_hex": "11F83F5B",
+      "source_offset_hex": "0x22D84",
+      "target_offset_hex": "0x2AA00"
+    },
+    {
+      "file": "EP124B00.TS5",
+      "header_hex": "1164CBFF",
+      "source_offset_hex": "0x22DA4",
+      "target_offset_hex": "0x2AA2C"
+    },
+    {
+      "file": "EP124B00.TS5",
+      "header_hex": "11F83F5B",
+      "source_offset_hex": "0x22DE4",
+      "target_offset_hex": "0x2AA84"
+    }
+  ],
+  "runtime_only_valid": 10,
+  "schema": "V366_DIRECT_HEADER_PRESERVED_REPLAY_LOCAL_V1",
+  "source_files": 169,
+  "source_owner_universe": 66987,
+  "target_hidden_by_pc_editor_fresh_grouping": 17,
+  "tsv_bytes": 3099583,
+  "tsv_sha256": "4281262794fed28c68dbfa157bb634bb5fce15390df7b901d661df566b97a4ca",
+  "unique_direct_targets": 66956
+}

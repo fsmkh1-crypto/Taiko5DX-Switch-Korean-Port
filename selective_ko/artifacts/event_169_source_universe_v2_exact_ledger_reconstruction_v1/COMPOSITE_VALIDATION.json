@@ -1,0 +1,46 @@
+{
+  "canonical_git_head": "b1826ba4c34c2354257cbd19165548dce4868ad9",
+  "changed_pc_ko_leading_control_row_occurrences": 9,
+  "changed_pc_ko_leading_control_unique_families": [
+    "04010111",
+    "04010211",
+    "04010511",
+    "04010711",
+    "0401EF55"
+  ],
+  "changed_pc_ko_leading_control_unique_family_count": 5,
+  "direct_header_preserved_authority_rows": 66956,
+  "drive_write": "NONE",
+  "github_write": "NONE",
+  "identity_policy": "V365_INHERITED",
+  "leading_control_json_bytes": 3357,
+  "leading_control_json_sha256": "b38eb447a2479a80b1676d91227ba575053e98f4f7bfa49c8f7ea5be79840d68",
+  "leading_control_recovery_rows": 5,
+  "leading_control_recovery_source_offsets": [
+    "ECF00000.TS5:0xB0E44",
+    "ECF00000.TS5:0xB122C",
+    "ECF00000.TS5:0xD752C",
+    "EFF01700.TS5:0x19D0",
+    "EFF0C300.TS5:0xBFF4"
+  ],
+  "membership_disjoint_direct": true,
+  "membership_unique": true,
+  "overlap_composite_rows": 31,
+  "overlap_jsonl_bytes": 71168,
+  "overlap_jsonl_sha256": "d249bd71bca0a60d950e4b8e48884b100cf3c38b296fd5598cf98a21514a8527",
+  "product_mutation": "NONE",
+  "schema": "V366_OVERLAP_COMPOSITE31_REPLAY_LOCAL_V1",
+  "semantic_full_replay": "NOT_RUN_THIS_STAGE",
+  "source_owner_universe_accounting": 66987,
+  "surface_direct_target_internal_overlaps": [],
+  "surface_prepend_from_switch_details": [
+    {
+      "file": "ECF00000.TS5",
+      "hex": "5C",
+      "source_offset_hex": "0xC22BC"
+    }
+  ],
+  "surface_prepend_from_switch_rows": 1,
+  "surface_slices": 31,
+  "surface_start_sanity_failures": []
+}
