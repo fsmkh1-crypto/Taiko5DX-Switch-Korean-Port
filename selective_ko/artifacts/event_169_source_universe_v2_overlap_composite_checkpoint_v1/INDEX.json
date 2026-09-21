@@ -1,0 +1,136 @@
+{
+  "schema": "EVENT_169_SOURCE_UNIVERSE_V2_OVERLAP_COMPOSITE_CHECKPOINT_V1",
+  "validation_id": "V365",
+  "parent_commit": "589ce489cc9ff1fc2c58e3630803c5bbfe5fce95",
+  "status": "CHECKPOINT_PARTITION111_COLLISION_CLOSED_EXACT_LEDGER_NOT_MATERIALIZED",
+  "scope_kind": "READ_ONLY_SOURCE_UNIVERSE_AND_COUNTERPART_MAPPING_CHECKPOINT",
+  "inputs": {
+    "switch_event_drive_folder_id": "1byPWJuG7dIn4KVS2GFLpXiMsDUHaZuHh",
+    "switch_ts5_files": 169,
+    "switch_te5_files": 169,
+    "ep124b00_original": {
+      "bytes": 150508,
+      "sha256": "8ff94b34fb1db16cbd4f15ca63df3a786ca3100787278d2c9fab7d2a1d70061c"
+    },
+    "ep124b00_pc_ko": {
+      "bytes": 184056,
+      "sha256": "e0d54ba7777350a8f3601269b4e15ed1256a2aa4ad42ca51f4a96ddf66b15299"
+    }
+  },
+  "inherited_whole_family": {
+    "switch_pc_original_byte_identical": "169_OF_169",
+    "noop_serialize_byte_identical": "169_OF_169",
+    "editor_owners": 66977,
+    "runtime_only_valid": 10,
+    "provisional_source_owner_universe": 66987,
+    "provisional_direct_header_preserved": 66956,
+    "provisional_overlap_composite": 31,
+    "counts_status": "PROVISIONAL_UNTIL_EXACT_LEDGER_REPLAY",
+    "runtime_only_by_file": {
+      "EFF0C300": 2,
+      "EFF2D200": 1,
+      "EKF00400": 2,
+      "EKF00800": 2,
+      "EP124B00": 3
+    },
+    "duplicate_ko_overrides": [
+      {
+        "file": "ECF00000",
+        "source_offset": "0x71AD0"
+      },
+      {
+        "file": "EP111700",
+        "source_offset": "0x1364"
+      }
+    ],
+    "direct_percent_roots": 48,
+    "added_roots": [
+      {
+        "macro": "%12",
+        "owner": "TAI5MSG B0:181"
+      },
+      {
+        "macro": "%33",
+        "owner": "TAI5MSG B0:307",
+        "event_file": "EP12E400",
+        "occurrences": 4
+      }
+    ]
+  },
+  "ep124b00_partition_111": {
+    "original_bounds": [
+      "0x22590",
+      "0x22CB4"
+    ],
+    "pc_ko_bounds": [
+      "0x2A050",
+      "0x2A928"
+    ],
+    "source_owners": 34,
+    "fresh_grouped_ko_targets": 31,
+    "recovered_raw_runtime_headers": [
+      "0x2A120",
+      "0x2A154",
+      "0x2A194"
+    ],
+    "corrected_ko_owners": 34,
+    "opcode_sequence_equal": true,
+    "header_equal": "34_OF_34",
+    "unique_ko_targets": "34_OF_34",
+    "collisions": 0,
+    "false_structural_byte": {
+      "offset": "0x2A0FC",
+      "byte": "0x3C",
+      "role": "ASCII_LT_INSIDE_TEXT_ESCAPE",
+      "original_offset": "0x2263B",
+      "original_mod4": 3,
+      "pc_ko_mod4": 0
+    },
+    "correction_rows": [
+      {
+        "source": "0x22624",
+        "previous_ko": null,
+        "corrected_ko": "0x2A0E4"
+      },
+      {
+        "source": "0x22654",
+        "previous_ko": null,
+        "corrected_ko": "0x2A120"
+      },
+      {
+        "source": "0x2267C",
+        "previous_ko": null,
+        "corrected_ko": "0x2A154"
+      },
+      {
+        "source": "0x226B0",
+        "previous_ko": "0x2A0E4",
+        "corrected_ko": "0x2A194"
+      }
+    ],
+    "unchanged_partition_rows": 30
+  },
+  "confirmed_wrong_existing_mapping_lower_bound": 23,
+  "identity_policy": {
+    "presentation_fields": "KEEP_JP",
+    "authored_korean_prose_identity_literals": "PRESERVE_AS_AUTHORED_KO",
+    "runtime_inserted_identity": "KEEP_JP",
+    "reverse_substitution": "FORBIDDEN"
+  },
+  "exact_next_scope": "EVENT_169_SOURCE_UNIVERSE_V2_OVERLAP_COMPOSITE_31_PREIMPLEMENTATION_EXACT_LEDGER_MATERIALIZATION_REPLAY",
+  "completion_gates": {
+    "source_owners": 66987,
+    "unaccounted_source_owners": 0,
+    "ambiguous_product_bindings": 0,
+    "direct_target_collisions": 0,
+    "overlap_composite_recipes": 31
+  },
+  "forbidden": [
+    "RELAX_DIRECT_TARGET_UNIQUENESS_ASSERTION",
+    "FINAL_PC_KO_FRESH_GROUPING_AS_SOURCE_AUTHORITY",
+    "ROW_LOCAL_OVERRIDE_WITHOUT_PARTITION_REBUILD",
+    "PRODUCT_SERIALIZER_IMPLEMENTATION",
+    "EVENT_OR_TAI5MSG_MUTATION",
+    "BUILD_PACKAGE_IPS_HARDWARE"
+  ]
+}
