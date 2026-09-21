@@ -1260,3 +1260,30 @@ Canonical next step is exact 46-root PC-original vs PC-Korean role/language-outp
 - **V361 unchanged retest is unnecessary:** user Eden runtime already showed ordinary dialogue remained Japanese while the Korean TAI5MSG/description route remained observable.
 - **Do not guess the screenshot owner:** exact EFF/EP/EPF ownership requires the extracted Switch v1.1.3 `romfs/EVENT/` subtree.
 - Next cause-family: `SWITCH_V113_EVENT_169_SOURCE_PARITY_AND_PC_PATCH_PORTABILITY_AUDIT_READ_ONLY` (READ ONLY).
+
+
+## 37. V363 runtime-MAY source universe is not a completeness gate
+
+Scope: `ECF00000 / V333-V363 source-universe completeness`
+
+V361 hardware-visible dialogue at original ECF offset `0x4748` is absent from V334's 13,075-row deterministic MAY-reachable universe but is a real PC-original editor text owner and has exact PC-KO counterpart `0x4ED4`. The V361 payload kept the original command, proving a coverage omission rather than a wrong RomFS path or another-file owner for that exact dialogue.
+
+V363 full original-owner census:
+
+```text
+PC-original text owners        15,951
+V334 stable subset             13,075
+new rows                        2,876
+exact new mappings              2,871
+binding DEFER                       5
+```
+
+Do not repeat:
+
+- use runtime-MAY reachability as a source-universe completeness gate;
+- infer owner from final rendered screenshot literals when runtime placeholders exist in source;
+- use final PC-KO fresh grouping as owner authority;
+- renumber legacy V334 rows when extending coverage;
+- guess five structural-drift bindings or promote KO-only `0x8E010` without original ownership.
+
+V334's existing 13,075 rows remain valid and stable; only its completeness claim is superseded.

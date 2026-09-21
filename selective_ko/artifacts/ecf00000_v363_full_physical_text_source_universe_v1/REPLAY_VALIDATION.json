@@ -1,0 +1,22 @@
+{
+  "binding_defer": 5,
+  "full_product_disposition": {
+    "BINDING_DEFER": 5,
+    "INCLUDE_KO": 13805,
+    "NON_KOREAN_TARGET": 1671,
+    "UNRESOLVED": 470
+  },
+  "mapped": 15946,
+  "new_mapped": 2871,
+  "new_rows": 2876,
+  "old_v334_semantic_compatibility": "PASS_EXACT_13075_OF_13075",
+  "original_editor_targets": 15951,
+  "result": "PASS",
+  "rowset_sha256": {
+    "full_original_offset_opcode": "934fd1c95c52fb72f3af721e5c2f65d811a8259f438498157bf8fdc94af08e87",
+    "mapped_pair": "1d55d9124cdf02b09f7290709c886ff543202e28d4e775c4a5a7f928d9e89180",
+    "stable_ledger_compact": "7588a165b179884c23e175e4059a4a8ebf5ad11f8c9159decff88f774fea4a0e"
+  },
+  "schema": "ECF00000_FULL_PHYSICAL_TEXT_SOURCE_UNIVERSE_REPLAY_V1",
+  "screen_0x4748": "INCLUDE_KO_FIXED_SURFACE_PARTICLE"
+}
