@@ -1,0 +1,122 @@
+{
+  "schema": "EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_VALIDATION_V1",
+  "validation_id": "V367",
+  "parent_commit": "cf86983083279683c63a9f0208b92214fb23d80d",
+  "status": "PASS_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSED",
+  "frozen_accounting": {
+    "source_owner_universe": 66987,
+    "direct_header_preserved": 66956,
+    "overlap_composite": 31
+  },
+  "semantic_replay": {
+    "total": 66987,
+    "include_ko": 49627,
+    "unresolved": 2864,
+    "non_korean_target": 14496,
+    "detail": {
+      "include_ko_no_escape": 28151,
+      "include_ko_runtime_expansion": 14724,
+      "include_ko_fixed_surface_particle": 6125,
+      "include_ko_choice": 627,
+      "unresolved_particle_risk": 2864,
+      "non_korean_target": 14496
+    },
+    "direct": {
+      "include_ko": 49596,
+      "unresolved": 2864,
+      "non_korean_target": 14496,
+      "total": 66956
+    },
+    "composite": {
+      "include_ko": 31,
+      "unresolved": 0,
+      "non_korean_target": 0,
+      "total": 31
+    },
+    "runtime_only_valid": {
+      "include_ko": 9,
+      "unresolved": 1,
+      "total": 10
+    }
+  },
+  "runtime_event_len": {
+    "switch_main": {
+      "bytes": 5287359,
+      "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+    },
+    "handlers": {
+      "0x11": "0x160334",
+      "0x12": "0x16049C",
+      "0x13": "0x1605AC",
+      "0x15": "0x16068C"
+    },
+    "single_string_switch_formula": "(strlen(payload)+8)&~3",
+    "single_string_v334_formula": "4+align4(strlen(payload)+1)",
+    "formulas_algebraically_equivalent": true,
+    "direct_source_formula_pass": 66956,
+    "direct_target_formula_pass": 66956,
+    "composite_source_formula_pass": 31,
+    "composite_final_formula_pass": 31,
+    "formula_mismatches": 0,
+    "direct_opcode_counts": {
+      "0x11": 54363,
+      "0x12": 2916,
+      "0x13": 8902,
+      "0x15": 775
+    },
+    "direct_topology_preserved": 66956,
+    "direct_topology_mismatches": 0,
+    "source_partition_contained": 66954,
+    "target_partition_contained": 66954,
+    "inherited_stock_disguised_15_exceptions": [
+      {
+        "file": "ECF00000",
+        "source_offset": "0xDAB1C",
+        "target_offset": "0x10FA8C",
+        "semantic": "NON_KOREAN_TARGET"
+      },
+      {
+        "file": "EPF11700",
+        "source_offset": "0x12BC",
+        "target_offset": "0x179C",
+        "semantic": "NON_KOREAN_TARGET"
+      }
+    ]
+  },
+  "serializer_design_constraints": {
+    "editor_runtime_len_equal": 60180,
+    "editor_runtime_len_different": 6776,
+    "multi_owner_runtime_span_rows": 2240,
+    "multi_owner_semantic": {
+      "non_korean_target": 2149,
+      "include_ko": 89,
+      "unresolved": 2
+    },
+    "include_outer_to_include_inner_relations": 128,
+    "include_inner_relation_split": {
+      "direct": 106,
+      "composite": 22
+    },
+    "direct_disguised_15_rows": 127,
+    "direct_disguised_15_semantic": {
+      "non_korean_target": 99,
+      "include_ko": 28
+    },
+    "include_disguised_15_multi_owner": 27
+  },
+  "rejected_erroneous_intermediate_claims": [
+    "V334_EVENT_LEN_DIFFERS_FROM_SWITCH_HANDLER",
+    "V334_VS_SWITCH_LENGTH_CONFLICT_52290",
+    "SAMPLED_SOURCE_KO_PHASE_MISMATCH_8512",
+    "COMPOSITE_PHASE_MISMATCH_13_OF_31",
+    "RUNTIME_EVENT_LEN_CLOSURE_FAIL"
+  ],
+  "mutation": {
+    "product_bytes": "UNCHANGED",
+    "builder_code": "UNCHANGED",
+    "event_tai5msg": "UNCHANGED",
+    "build_package_ips": "NONE",
+    "hardware": "NOT_RUN"
+  },
+  "exact_next_scope": "EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_DESIGN_READ_ONLY"
+}

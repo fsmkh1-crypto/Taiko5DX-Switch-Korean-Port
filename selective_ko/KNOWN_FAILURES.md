@@ -1319,3 +1319,34 @@ Do not repeat:
   exact independent root count is 48, not 50;
 - claim a universal runtime `event_len` PASS or full semantic replay merely because exact accounting
   is closed. Those remain a separate bounded closure scope after V366.
+
+
+## V367 — rejected event_len formula-mismatch hypothesis
+
+Date: 2026-09-22 (KST)
+
+Do not repeat or reuse the intermediate claim that the V334 text-command `event_len` formula
+differs from the Nintendo Switch v1.1.3 handler.
+
+Correct equivalence:
+
+```text
+V334     4 + align4(strlen(payload) + 1)
+Switch   (strlen(payload) + 8) & ~3
+result   ALGEBRAICALLY IDENTICAL
+```
+
+The following intermediate failure counts were artifacts of an incorrect comparator and are invalid:
+
+```text
+52,290 V334-vs-Switch length conflicts
+8,512 source/KO runtime phase mismatches in the sampled 12 files
+13 / 31 composite runtime phase mismatches
+runtime event_len closure FAIL
+```
+
+V367 independently closes the universal runtime gate as PASS with zero formula mismatches,
+`66,956 / 66,956` direct source/KO topology preservation, and `31 / 31` composite runtime
+continuity. Preserve the separate implementation-design finding that editor grouping and runtime
+span topology are not one-to-one: 6,776 direct rows differ in span length and 2,240 runtime spans
+contain multiple frozen owners, including 89 INCLUDE_KO outer rows.

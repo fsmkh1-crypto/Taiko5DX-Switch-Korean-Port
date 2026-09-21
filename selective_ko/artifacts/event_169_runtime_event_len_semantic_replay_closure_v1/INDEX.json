@@ -1,0 +1,35 @@
+{
+  "schema": "EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V1",
+  "validation_id": "V367",
+  "track": "SWITCH_SELECTIVE_KOREANIZATION",
+  "canonical_base_commit": "cf86983083279683c63a9f0208b92214fb23d80d",
+  "status": "RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSED_OVERLAP_CLUSTER_DESIGN_PENDING",
+  "authority": "EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V367.md",
+  "validation": "VALIDATION.json",
+  "source_owner_universe": 66987,
+  "direct_header_preserved": 66956,
+  "overlap_composite": 31,
+  "semantic_replay": {
+    "include_ko": 49627,
+    "unresolved": 2864,
+    "non_korean_target": 14496,
+    "total": 66987
+  },
+  "runtime_event_len": {
+    "formula_equivalence": "PASS",
+    "direct_topology": "PASS_66956_OF_66956",
+    "composite_continuity": "PASS_31_OF_31",
+    "formula_mismatches": 0
+  },
+  "serializer_design_constraints": {
+    "editor_runtime_span_mismatch_rows": 6776,
+    "multi_owner_runtime_span_rows": 2240,
+    "include_ko_multi_owner_outer_rows": 89,
+    "include_to_include_relations": 128
+  },
+  "rejected_intermediate_failure_hypothesis": true,
+  "product_serializer_implementation": "NONE",
+  "event_tai5msg_mutation": "NONE",
+  "build_package_ips_hardware": "NONE",
+  "exact_next_scope": "EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_DESIGN_READ_ONLY"
+}
