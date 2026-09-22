@@ -69,7 +69,7 @@
     },
     "document_governance_validator": {
       "path": "tools/validate_document_governance.py",
-      "git_blob_sha": "3a3d0e2ba81df168b108b7692370a75edab531af"
+      "git_blob_sha": "bbd4102a5dabec045920399a99536ed06e9dacc6"
     }
   },
   "routing_changes": {
@@ -82,13 +82,17 @@
     "detailed_failure_discovery": "selective_ko/KNOWN_FAILURES_INDEX.json"
   },
   "governance_repairs": [
-    "DOCUMENT_AUTHORITY_INDEX_V2 rule-based coverage closes omitted Markdown registration drift without enumerating every historical document.",
+    "DOCUMENT_AUTHORITY_INDEX_V2 uses rule-based Markdown coverage and explicit current/anchor exceptions instead of enumerating every historical Markdown file.",
+    "Non-Markdown declared current authorities, including the authority index itself, are validated as explicit registry members outside the Markdown coverage set.",
     "scope_kind is operational READ_ONLY; descriptive checkpoint type is stored separately as checkpoint_kind.",
     "FZ001 explicit declaration/basis fields are restored in PROJECT_RESUME_V2.",
     "Selective current validation identity is routed through selective_ko/VALIDATION_INDEX.json instead of docs/VALIDATION_LEDGER.md max-version inference.",
     "Active required_reads has an explicit budget and excludes the full KNOWN_FAILURES registry and historical catalog."
   ],
-  "corrective_validation_note": "The first V370 CI attempt exposed an accidental recursive collect_markdown_scope helper in the migration validator. The helper was corrected within the same governance-migration cause family before final acceptance.",
+  "corrective_validation_notes": [
+    "The first V370 CI attempt exposed an accidental recursive collect_markdown_scope helper introduced during migration; it was corrected.",
+    "The second CI attempt exposed that the JSON authority index self-entry must be handled outside the Markdown coverage set; V2 registry expansion was generalized accordingly."
+  ],
   "unchanged": {
     "v366_v369_technical_findings": true,
     "applicability_2438_identity": true,

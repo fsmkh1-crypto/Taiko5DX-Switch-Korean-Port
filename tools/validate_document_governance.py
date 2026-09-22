@@ -143,12 +143,19 @@ def expand_document_authority_index(root: Path, index: dict) -> list[dict]:
         anchor_map[path] = sha
 
     actual = collect_markdown_scope(root)
-    missing_declared = sorted((set(current_map) | set(anchor_map)) - set(actual))
+    declared = set(current_map) | set(anchor_map)
+    non_markdown_declared = {
+        path for path in declared
+        if not path.endswith(".md") and (root / path).is_file()
+    }
+    registry_paths = sorted(set(actual) | non_markdown_declared)
+
+    missing_declared = sorted(declared - set(registry_paths))
     if missing_declared:
         fail(f"INV-DOC-05 declared authority/anchor paths missing: {missing_declared}")
 
     entries = []
-    for path in actual:
+    for path in registry_paths:
         item = dict(default)
         item["path"] = path
         if path in current_map:
