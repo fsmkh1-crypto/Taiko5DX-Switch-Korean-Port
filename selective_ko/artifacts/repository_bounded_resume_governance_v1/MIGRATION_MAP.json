@@ -69,7 +69,7 @@
     },
     "document_governance_validator": {
       "path": "tools/validate_document_governance.py",
-      "git_blob_sha": "32fe7fa08ebe21ab0147f41bb997c2d45fa0f006"
+      "git_blob_sha": "3a3d0e2ba81df168b108b7692370a75edab531af"
     }
   },
   "routing_changes": {
@@ -88,6 +88,7 @@
     "Selective current validation identity is routed through selective_ko/VALIDATION_INDEX.json instead of docs/VALIDATION_LEDGER.md max-version inference.",
     "Active required_reads has an explicit budget and excludes the full KNOWN_FAILURES registry and historical catalog."
   ],
+  "corrective_validation_note": "The first V370 CI attempt exposed an accidental recursive collect_markdown_scope helper in the migration validator. The helper was corrected within the same governance-migration cause family before final acceptance.",
   "unchanged": {
     "v366_v369_technical_findings": true,
     "applicability_2438_identity": true,

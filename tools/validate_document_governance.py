@@ -91,7 +91,20 @@ def anchor_gate_registry(root: Path) -> list[str]:
 
 
 def collect_markdown_scope(root: Path) -> list[str]:
-    actual = set(collect_markdown_scope(root))
+    actual: set[str] = set()
+    actual.update(
+        str(path.relative_to(root)).replace("\\", "/")
+        for path in root.glob("*.md")
+        if path.is_file()
+    )
+    actual.update(
+        str(path.relative_to(root)).replace("\\", "/")
+        for path in (root / "docs").rglob("*.md")
+        if path.is_file()
+    )
+    builder_readme = root / "builder/README.md"
+    if builder_readme.is_file():
+        actual.add("builder/README.md")
     return sorted(actual)
 
 
