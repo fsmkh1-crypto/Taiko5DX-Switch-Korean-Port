@@ -1,0 +1,69 @@
+{
+  "schema": "V371_ROLE_AWARE_FIELD_POLICY_ADAPTER_BOUNDED_VALIDATION_V1",
+  "base_head": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
+  "component_tests": {
+    "im01": {
+      "tests": 150,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true,
+      "elapsed_seconds": 3.649,
+      "sha256": "092ab5eaebfb2d7a754d4c7723ce008e350389394c519c7d970063926afadb25"
+    },
+    "im02": {
+      "tests": 363,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true,
+      "elapsed_seconds": 28.961,
+      "sha256": "1cce45147d7dba0194b10a7c94c1f8f4558d6425c6d08d83360d5c2312db323a"
+    },
+    "im03": {
+      "tests": 196,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true,
+      "elapsed_seconds": 3.37,
+      "sha256": "dd6770212a41a26b305464e522101c1ccbf783aa6768d4401c2e29177d6a2240"
+    },
+    "h01": {
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true,
+      "elapsed_seconds": 0.001,
+      "sha256": "34e4e8ca3379f4aa0ee5b1e789f9bb56adbc7d10264e34c399d769038764afca"
+    },
+    "role": {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true,
+      "elapsed_seconds": 4.953,
+      "sha256": "5213693b320e9289070d66f033fe959403002d42d4c3c69ecc687276b5db4cbf"
+    },
+    "canonical_compact": {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skips": 0,
+      "success": true
+    }
+  },
+  "total_tests": 731,
+  "full_policy_rows": 24305,
+  "full_policy_source_oracle_checks": 24305,
+  "full_policy_output_oracle_checks": 24305,
+  "policy_sha256": "4cdf5df2c6b7264641374d459ef1dc7484749ea6adfb99b5646a6c40cfddfeff",
+  "policy_bytes": 18399148,
+  "cli_no_candidate_expected_exit": 2,
+  "cli_product_outputs": 0,
+  "candidate_event_files_emitted": 0,
+  "git_write_at_validation_time": false,
+  "status": "PASS_BOUNDED_IMPLEMENTATION_NOT_PRODUCT_ACCEPTANCE"
+}

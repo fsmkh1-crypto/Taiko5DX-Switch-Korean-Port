@@ -1,0 +1,63 @@
+{
+  "schema": "V371_ECF_E29F4_ACTIVE_INTERIOR_CONTRACT_V1",
+  "canonical_head": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
+  "owner": "ECF00000.TS5:E29F4",
+  "recipe_id": "R:ECF00000.TS5:E29F4",
+  "partition": 763,
+  "unit": null,
+  "source_span": [
+    928244,
+    928300
+  ],
+  "source_sha256": "ff614cb41ddf19bb54d0131cde7fa160fe84d443e4eb7a90f9884f691a0ab5e7",
+  "source_full_file_sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+  "pc_span": [
+    1152368,
+    1152424
+  ],
+  "pc_sha256": "ff614cb41ddf19bb54d0131cde7fa160fe84d443e4eb7a90f9884f691a0ab5e7",
+  "pc_full_file_sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+  "payload_sha256": "ff614cb41ddf19bb54d0131cde7fa160fe84d443e4eb7a90f9884f691a0ab5e7",
+  "payload_bytes": 56,
+  "payload_hex": "1509f8030aff1c0081091b0080000000040188001d3a60300ba417009500d00336f08f49f4f73a280a001d00030b853f00d6060004012000",
+  "identity_map": true,
+  "slots": [
+    {
+      "field": "ECF00000.TS5:E2A04",
+      "source_span": [
+        928260,
+        928264
+      ],
+      "relative": 16,
+      "source_word_sha256": "9bb6e82b7254645c4c37bd8b37220ddd386c83955dae53a25e17acf9a34d3792",
+      "source_target": 928328,
+      "codec": "PC_EDITOR04",
+      "partition": 763,
+      "unit": null,
+      "source_word_hex": "04018800"
+    },
+    {
+      "field": "ECF00000.TS5:E2A28",
+      "source_span": [
+        928296,
+        928300
+      ],
+      "relative": 52,
+      "source_word_sha256": "6618ca33be94c2641de9d877973fbec1b50f0b3b1dd861fe0e6276bc3349dc92",
+      "source_target": 928312,
+      "codec": "PC_EDITOR04",
+      "partition": 763,
+      "unit": null,
+      "source_word_hex": "04012000"
+    }
+  ],
+  "writer_order": [
+    "PREPARED_PARENT_PAYLOAD",
+    "SUBORDINATE_FIELD_SLOTS",
+    "FINAL_PARTITION_TABLE"
+  ],
+  "t01_secondary_header_disposition": "SELECT_EXPLICIT_REVIEWED_PRESERVATION_IN_ECF_REQUEST",
+  "runtime_role_promotion": false,
+  "product_accepted": false,
+  "claim_boundary": "Exact local H01 parent/slot/writer contract only; full 169-file and VAL01 output acceptance remain pending."
+}

@@ -1,0 +1,60 @@
+name: EVENT serializer policy
+
+on:
+  push:
+    paths:
+      - 'builder/selective_event_contract_*.py'
+      - 'builder/selective_event_field_policy.py'
+      - 'builder/selective_event_final_layout.py'
+      - 'builder/selective_event_obligation_*.py'
+      - 'builder/selective_event_overlap.py'
+      - 'builder/selective_event_recipe_catalog.py'
+      - 'builder/selective_event_relocation_adapter.py'
+      - 'builder/selective_event_role_session.py'
+      - 'tools/validate_event_overlap.py'
+      - 'tests/test_selective_event_role_policy.py'
+      - 'tests/test_v371_h01_connection.py'
+      - 'selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/**'
+      - '.github/workflows/event-serializer-policy.yml'
+  pull_request:
+    paths:
+      - 'builder/selective_event_contract_*.py'
+      - 'builder/selective_event_field_policy.py'
+      - 'builder/selective_event_final_layout.py'
+      - 'builder/selective_event_obligation_*.py'
+      - 'builder/selective_event_overlap.py'
+      - 'builder/selective_event_recipe_catalog.py'
+      - 'builder/selective_event_relocation_adapter.py'
+      - 'builder/selective_event_role_session.py'
+      - 'tools/validate_event_overlap.py'
+      - 'tests/test_selective_event_role_policy.py'
+      - 'tests/test_v371_h01_connection.py'
+      - 'selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/**'
+
+permissions:
+  contents: read
+
+jobs:
+  bounded-policy-regression:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: >-
+          python -m py_compile
+          builder/selective_event_contract_catalog.py
+          builder/selective_event_contracts.py
+          builder/selective_event_field_policy.py
+          builder/selective_event_final_layout.py
+          builder/selective_event_obligation_catalog.py
+          builder/selective_event_obligation_receipts.py
+          builder/selective_event_overlap.py
+          builder/selective_event_recipe_catalog.py
+          builder/selective_event_relocation_adapter.py
+          builder/selective_event_role_session.py
+          tools/validate_event_overlap.py
+      - run: python -m unittest discover -s tests -p 'test_selective_event_role_policy.py' -v
+      - run: python -m unittest discover -s tests -p 'test_v371_h01_connection.py' -v
