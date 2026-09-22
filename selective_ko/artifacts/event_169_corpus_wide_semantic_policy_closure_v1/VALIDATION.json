@@ -1,0 +1,136 @@
+{
+  "schema": "EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_VALIDATION_V1",
+  "validation_id": "V368",
+  "parent_commit": "7f9822f27fe9b3696ffb914fc856d2f68d5109e7",
+  "status": "PASS_POST_POLICY_SEMANTIC_CLOSURE_UNRESOLVED_ZERO",
+  "frozen_authority": {
+    "v366_source_owner_universe": 66987,
+    "v366_direct_header_preserved": 66956,
+    "v366_overlap_composite": 31,
+    "v367_runtime_event_len_continuity": "PASS",
+    "v367_direct_runtime_topology": "PASS_66956_OF_66956",
+    "v367_composite_runtime_continuity": "PASS_31_OF_31"
+  },
+  "exact_set_accounting": {
+    "v367_raw_unresolved": 2864,
+    "existing_exact_policy_membership": 426,
+    "generalized_residual_membership": 2438,
+    "set_equation": "2864 = 426 + 2438",
+    "generalized_residual_include": 2438,
+    "generalized_residual_unresolved": 0
+  },
+  "exact_policy_breakdown": {
+    "direct_particle_exact": 350,
+    "lexical_gamun_exact": 12,
+    "derived_and_mixed_exact": 61,
+    "cross_carrier_suffix_exact": 3,
+    "total": 426
+  },
+  "generalized_cause_family_breakdown": {
+    "direct_particle": 1334,
+    "copula_derived_composite_surface": 363,
+    "lexical_gamun": 702,
+    "lexical_gasin": 2,
+    "cross_carrier_authored_suffix": 14,
+    "direct_plus_derived": 12,
+    "direct_plus_lexical_gamun": 2,
+    "derived_plus_lexical_gamun": 4,
+    "direct_plus_cross_carrier_suffix": 5,
+    "total": 2438,
+    "unresolved": 0
+  },
+  "final_three_occurrence_ownership": [
+    {
+      "file": "EFF27C00.TS5",
+      "source_owner": "0x3BA0",
+      "pc_ko_owner": "0x41F8",
+      "disposition": "INCLUDE_KO",
+      "reason": "NESTED_OCCURRENCE_DELEGATION",
+      "outer_exclusive_particle_occurrences": 0,
+      "delegated_occurrences": [
+        "0x4211",
+        "0x4229"
+      ]
+    },
+    {
+      "file": "EFF27C00.TS5",
+      "source_owner": "0x3BA8",
+      "pc_ko_owner": "0x4200",
+      "disposition": "INCLUDE_KO",
+      "reason": "PRESERVED_ESCAPE_PLUS_AUTHORED_LITERAL_DIRECT_PARTICLE",
+      "occurrences": [
+        "0x4211",
+        "0x4229"
+      ]
+    },
+    {
+      "file": "EFF2D100.TS5",
+      "source_owner": "0x7A34",
+      "pc_ko_owner": "0x8AF0",
+      "disposition": "INCLUDE_KO",
+      "reason": "NESTED_OCCURRENCE_DELEGATION",
+      "outer_exclusive_particle_occurrences": 0,
+      "delegated_occurrences": [
+        "0x8B0C"
+      ]
+    }
+  ],
+  "nested_occurrence_delegation_predicate": [
+    "V366_EXACT_OWNER_BINDING",
+    "SOURCE_TARGET_RUNTIME_CONTAINMENT_TOPOLOGY_PRESERVED",
+    "OUTER_OCCURRENCE_EQUALS_INNER_OCCURRENCE_AT_EXACT_ABSOLUTE_BYTE_LOCATOR",
+    "OUTER_EXCLUSIVE_PARTICLE_OCCURRENCE_COUNT_ZERO",
+    "INNER_OWNER_INDEPENDENTLY_ADMITTED"
+  ],
+  "post_policy_semantic": {
+    "include_ko": 52491,
+    "unresolved": 0,
+    "non_korean_target": 14496,
+    "total": 66987,
+    "direct": {
+      "include_ko": 52460,
+      "unresolved": 0,
+      "non_korean_target": 14496,
+      "total": 66956
+    },
+    "composite": {
+      "include_ko": 31,
+      "unresolved": 0,
+      "non_korean_target": 0,
+      "total": 31
+    }
+  },
+  "serializer_design_constraints_post_policy": {
+    "multi_owner_runtime_span_rows": 2240,
+    "multi_owner_semantic": {
+      "non_korean_target": 2149,
+      "include_ko": 91,
+      "unresolved": 0
+    },
+    "include_outer_to_include_inner_relations": 130,
+    "include_inner_relation_split": {
+      "direct": 108,
+      "composite": 22
+    }
+  },
+  "rejected_paths": [
+    "RESIDUAL_TO_DIRECT_PARTICLE_FALLBACK",
+    "CLASS_NAME_ONLY_POLICY_PROMOTION",
+    "WORK_CLASSIFICATION_AS_GROUND_TRUTH",
+    "ECF_EXACT_MEMBERSHIP_AS_CORPUS_WIDE_PROOF_WITHOUT_PROVENANCE",
+    "ALL_PERCENT_ESCAPES_ARE_SIMPLE_VALUE_SUBSTITUTIONS",
+    "LEXICAL_GASIN_AS_PARTICLE_OR_GAMUN",
+    "FINAL_THREE_AS_INDEPENDENT_GRAMMAR_HAZARDS",
+    "EFF27C00_LEADING_BYTE_AMBIGUITY_AS_OCCURRENCE_BLOCKER",
+    "MODIFY_V366_MEMBERSHIP_OR_V367_RUNTIME_CLOSURE_TO_FORCE_SEMANTIC_PASS",
+    "POST_POLICY_SERIALIZER_POPULATION_89_OUTER_128_RELATIONS"
+  ],
+  "mutation": {
+    "product_bytes": "UNCHANGED",
+    "builder_code": "UNCHANGED",
+    "event_tai5msg": "UNCHANGED",
+    "build_package_ips": "NONE",
+    "hardware": "NOT_RUN"
+  },
+  "exact_next_scope": "EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_DESIGN_READ_ONLY"
+}

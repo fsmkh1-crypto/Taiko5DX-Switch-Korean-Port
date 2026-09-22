@@ -1,7 +1,7 @@
 # KNOWN FAILURES AND DO-NOT-REPEAT PATHS
 
-Date: 2026-09-20 (KST)
-Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V308 VALIDATION-BOUNDARY ADDED
+Date: 2026-09-22 (KST)
+Status: CANONICAL SELECTIVE-KO FAILURE / REJECTION REGISTRY / V368 SEMANTIC-POLICY REJECTIONS ADDED
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 This file preserves rejected, weakened, and failed paths so later chats, models, or automations do not repeat them. New operational incidents are appended; older technical failures must not be erased merely to add a newer failure record.
@@ -1350,3 +1350,36 @@ V367 independently closes the universal runtime gate as PASS with zero formula m
 continuity. Preserve the separate implementation-design finding that editor grouping and runtime
 span topology are not one-to-one: 6,776 direct rows differ in span length and 2,240 runtime spans
 contain multiple frozen owners, including 89 INCLUDE_KO outer rows.
+
+
+## V368 — rejected semantic-policy shortcuts and superseded raw overlap counts
+
+Date: 2026-09-22 (KST)
+
+Do not repeat:
+
+- absorb a residual/unknown EVENT row into `DIRECT_PARTICLE` merely to force UNRESOLVED to zero;
+- use Work cause-family output or a cause-family name as admission ground truth;
+- promote corpus-wide rows solely because V346/V348/V351/V360 contain a similarly named exact class;
+- generalize V347 ECF00000 membership without exact owner/occurrence/runtime provenance;
+- treat every `%` escape as a simple name/value substitution; cross-carrier suffix cases require established TAI5MSG root authority;
+- classify lexical `가신` as a 조사 hit or fold it into lexical `가문` merely because the first syllable matches a detector surface;
+- count a nested outer runtime span's byte-identical inner occurrence as a separate grammar risk when outer-exclusive occurrences are zero and the inner owner is independently admitted;
+- treat EFF27C00 source `0x3BA8` leading-byte ambiguity as a blocker after exact escape/particle byte locators are established;
+- change V366 source membership/binding or V367 runtime continuity to force semantic closure;
+- reuse V367 raw-semantic serializer counts `89 outer / 128 relations` after V368.
+
+Canonical V368 post-policy result:
+
+```text
+INCLUDE_KO                     52,491
+UNRESOLVED                          0
+NON_KOREAN_TARGET              14,496
+TOTAL                          66,987
+
+INCLUDE multi-owner outer          91
+INCLUDE -> INCLUDE relations      130
+```
+
+The earlier fallback-based Work result happened to produce the same final `52,491 / 0` aggregate.
+That derivation remains rejected. V368 closes the population through exact policy/provenance.

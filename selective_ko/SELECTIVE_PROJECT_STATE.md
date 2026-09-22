@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-22 (KST)
-Status: V367 EVENT-169 RUNTIME EVENT_LEN + SEMANTIC REPLAY CLOSED / OVERLAP-CLUSTER SERIALIZER DESIGN NEXT
+Status: V368 EVENT-169 SEMANTIC POLICY CLOSED / UNRESOLVED ZERO / OVERLAP-CLUSTER SERIALIZER DESIGN NEXT
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -19,168 +19,171 @@ Resume with current HEAD/state + current authority/INDEX + exact-scope dependenc
 
 Required reads, in authority order:
 
-1. `EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V367.md`
-2. `artifacts/event_169_runtime_event_len_semantic_replay_closure_v1/INDEX.json`
-3. `artifacts/event_169_runtime_event_len_semantic_replay_closure_v1/VALIDATION.json`
-4. `EVENT_169_SOURCE_UNIVERSE_V2_EXACT_LEDGER_RECONSTRUCTION_CHECKPOINT_V366.md`
-5. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/INDEX.json`
-6. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/DIRECT_VALIDATION.json`
-7. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/COMPOSITE_VALIDATION.json`
-8. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/WHOLE_ACCOUNTING_VALIDATION.json`
-9. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/PERCENT_ROOT_ACCOUNTING.json`
-10. `EVENT_169_SOURCE_UNIVERSE_V2_OVERLAP_COMPOSITE_PREIMPLEMENTATION_CHECKPOINT_V365.md`
-11. `artifacts/event_169_source_universe_v2_overlap_composite_checkpoint_v1/INDEX.json`
-12. `ECF00000_V363_ADDED_PERCENT12_SWITCH_MAIN_DISPATCH_DIRECT_EVIDENCE_V364.md`
-13. `artifacts/ecf00000_v364_percent12_switch_main_dispatch_direct_evidence_v1/INDEX.json`
-14. `ECF00000_FULL_PHYSICAL_TEXT_SOURCE_UNIVERSE_CORRECTION_V363.md`
-15. `artifacts/ecf00000_v363_full_physical_text_source_universe_v1/INDEX.json`
-16. `artifacts/ecf00000_v363_full_physical_text_source_universe_v1/REPLAY_VALIDATION.json`
-17. `V361_EDEN_RUNTIME_FAILURE_EVENT_169_SCOPE_CORRECTION_V362.md`
-18. `artifacts/v362_event_169_scope_correction_v1/INDEX.json`
-19. `ECF00000_V360_EVENT_V357_TAI5MSG_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V361.md`
-20. `artifacts/ecf00000_v361_v360_event_v357_tai5msg_eden_diag_package_v1/INDEX.json`
-21. `ECF00000_SUFFIX3_POST_V357_EVENT_IMPLEMENTATION_OFFLINE_VALIDATION_V360.md`
-22. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/INDEX.json`
-23. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/VALIDATION.json`
-24. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/APPLICABILITY.jsonl`
-25. `../builder/selective_event_suffix3.py`
-26. `../tests/test_selective_event_suffix3.py`
-27. `V358_RUNTIME_SCREEN_CARRIER_GAP_AND_REFLOW_PARTITION_AUDIT_V359.md`
-28. `artifacts/v359_runtime_carrier_gap_reflow_partition_v1/INDEX.json`
-29. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DISCOVERY_V353.md`
-30. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION_V352.md`
-31. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
-32. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
-33. `ECF00000_PERCENT_MACRO_TAI5MSG_V357_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V358.md`
-34. `artifacts/ecf00000_v358_percent_macro_v357_eden_diagnostic_package_v1/INDEX.json`
-35. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_46_ROOT_REPLACEMENT_IMPLEMENTATION_OFFLINE_VALIDATION_V357.md`
-36. `artifacts/ecf00000_v357_percent_macro_b0_46_root_implementation_v1/INDEX.json`
-37. `artifacts/ecf00000_v357_percent_macro_b0_46_root_implementation_v1/VALIDATION.json`
-38. `../builder/tai5msg_percent_macro_roots.py`
-39. `../builder/selective_tai5msg.py`
-40. `../tests/test_tai5msg_percent_macro_roots.py`
-41. `../tests/test_selective_tai5msg.py`
-42. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_46_ROOT_REPLACEMENT_PREIMPLEMENTATION_CAPACITY_AND_SERIALIZER_ADMISSION_V356.md`
-43. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/INDEX.json`
-44. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/ADMISSION.json`
-45. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/ADMISSION_ROWS.json`
-46. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_ROOT_ROLE_LANGUAGE_OUTPUT_CLASSIFICATION_V355.md`
-47. `artifacts/ecf00000_v355_percent_macro_b0_root_role_classification_v1/INDEX.json`
-48. `artifacts/ecf00000_v355_percent_macro_b0_root_role_classification_v1/ROOT_ROLE_CLASSIFICATION.json`
-49. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_PRODUCT_CENSUS_AND_COVERAGE_V354.md`
-50. `artifacts/ecf00000_v354_percent_macro_tai5msg_b0_product_census_v1/INDEX.json`
-51. `artifacts/ecf00000_v354_percent_macro_tai5msg_b0_product_census_v1/USED_PERCENT_MACRO_ROOTS.jsonl`
-52. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DISCOVERY_V353.md`
-53. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
-54. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
-55. `KNOWN_FAILURES.md`
-56. `BOUNDED_RESUME_READ_POLICY.md`
-57. `artifacts/ecf00000_v353_percent_macro_tai5msg_b0_cross_carrier_v1/INDEX.json`
-58. `artifacts/ecf00000_v353_percent_macro_tai5msg_b0_cross_carrier_v1/SUFFIX3_MACRO_BINDINGS.jsonl`
-59. `DIALOGUE_SCRIPT_RUNTIME_PC_PATCH_ORACLE_SURVEY_CHECKPOINT_V322.md`
-60. `DIALOGUE_EVENT_TS5_INTERPRETER_PC_PAYLOAD_CHECKPOINT_V323.md`
-61. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
-62. `../docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
-63. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION_V352.md`
-64. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/INDEX.json`
-65. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/VALIDATION.json`
-66. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/BINDINGS_V334_HASHED.jsonl`
-67. `../builder/selective_event_derived_surface.py`
-68. `../tests/test_selective_event_derived_surface.py`
-69. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_POLICY_AND_APPLICABILITY_V351.md`
-70. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/INDEX.json`
-71. `PC_AUTHORED_DERIVED_SURFACE_POLICY.md`
-72. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/ROWS.jsonl`
-73. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/MIXED_COMPOSITE.jsonl`
-74. `ECF00000_V335_CODE5_426_SEMANTIC_ADJACENCY_LEDGER_CANONICALIZATION_V346.md`
-75. `ECF00000_CODE5_DIRECT_PARTICLE_FIXED_SURFACE_POLICY_EXTENSION_V348.md`
-76. `ECF00000_DIRECT_ESCAPE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION_V349.md`
-77. `IDENTITY_IN_PROSE_POLICY.md`
-78. `ECF00000_CODE5_LEXICAL_FALSE_POSITIVE_12_IMPLEMENTATION_OFFLINE_VALIDATION_V350.md`
-79. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/INDEX.json`
-80. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/VALIDATION.json`
-81. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/APPLICABILITY.jsonl`
-82. `../builder/selective_event_code5_lexical.py`
-83. `../tests/test_selective_event_code5_lexical.py`
-84. `artifacts/ecf00000_v346_code5_semantic_adjacency_v1/INDEX.json`
-85. `artifacts/ecf00000_v349_direct_escape_particle_implementation_v1/INDEX.json`
-86. `artifacts/ecf00000_v349_direct_escape_particle_implementation_v1/VALIDATION.json`
-87. `../builder/selective_event_direct_particle.py`
-88. `../tests/test_selective_event_direct_particle.py`
-89. `artifacts/ecf00000_v348_direct_escape_particle_policy_v1/INDEX.json`
-90. `FIXED_PARTICLE_POLICY.md`
-91. `ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_CLOSURE_V347.md`
-92. `artifacts/ecf00000_v347_direct_particle_runtime_responsibility_v1/INDEX.json`
-93. `ECF00000_FIXED_SURFACE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION_V345.md`
-94. `artifacts/ecf00000_v345_particle_implementation_v1/INDEX.json`
-95. `ECF00000_FIXED_SURFACE_PARTICLE_V1_PREIMPLEMENTATION_CLOSURE_V344.md`
-96. `artifacts/ecf00000_v344_particle_preimplementation_v1/INDEX.json`
-97. `ECF00000_3C_KEEP_JP_EXACT_LEDGER_CANONICALIZATION_V343.md`
-98. `artifacts/ecf00000_v343_3c_keep_jp_v1/INDEX.json`
-99. `ECF00000_1E_INCLUDE_KO_READY_23_IMPLEMENTATION_OFFLINE_VALIDATION_V342.md`
-100. `artifacts/ecf00000_v342_1e_ready23_v1/INDEX.json`
-101. `ECF00000_1E_SEMANTIC_ADMISSION_LEDGER_MATERIALIZATION_V341.md`
-102. `artifacts/ecf00000_v341_1e_semantic_admission_v1/INDEX.json`
-103. `ECF00000_PARTITION593_0E_RESIDUAL_RUNTIME_OVERRUN_ROOT_CAUSE_AND_VALIDATOR_GATE_V340.md`
-104. `ECF00000_5A_BRANCH_AWARE_JP_IDENTITY_KO_DIALOGUE_COMPOSITE_IMPLEMENTATION_OFFLINE_VALIDATION_V339.md`
-105. `ECF00000_SELECTIVE_EVENT_SWITCH_SPECIAL_OWNER_IMPLEMENTATION_OFFLINE_VALIDATION_V338.md`
-106. `ECF00000_SELECTIVE_EVENT_GENERIC_RELOCATION_ENGINE_IMPLEMENTATION_OFFLINE_VALIDATION_V337.md`
-107. `ECF00000_SELECTIVE_EVENT_NOOP_SERIALIZER_CORE_IMPLEMENTATION_OFFLINE_VALIDATION_V336.md`
-108. `ECF00000_V334_SOURCE_UNIVERSE_SEMANTIC_ADMISSION_LAYER_MATERIALIZATION_V335.md`
-109. `artifacts/ecf00000_v335_semantic_admission_v1/INDEX.json`
-110. `ECF00000_DETERMINISTIC_SOURCE_UNIVERSE_LEDGER_MATERIALIZATION_REPLAY_V334.md`
-111. `artifacts/ecf00000_v334_source_universe_ledger_v1/INDEX.json`
-112. `ECF00000_DETERMINISTIC_SOURCE_UNIVERSE_AND_SERIALIZER_CONTRACT_CONSOLIDATION_V333.md`
-113. `ECF00000_V324_4444_ORIGINAL_PROVENANCE_ARTIFACT_RECOVERY_V332.md`
-114. `ECF00000_PC_EDITOR_V030_PARSER_PROVENANCE_AND_V324_4444_CONFLICT_V331.md`
-115. `ECF00000_NESTED_INTERPRETER_CONTEXT_DESCRIPTOR_AUDIT_V330.md`
-116. `ECF00000_NESTED_AWARE_REPRESENTATIVE_RANGE_VALIDATION_V329.md`
-117. `ECF00000_NESTED_COMMAND_TRAVERSAL_RULE_RECOVERY_V328.md`
-118. `ECF00000_V324_V326_LEDGER_PROVENANCE_RECONSTRUCTION_DIAGNOSTIC_V327.md`
-119. `ECF00000_SELECTIVE_COMMAND_ADMISSION_CLASSIFICATION_V326.md`
-120. `ECF00000_PC_KO_SWITCH_CODE_GLYPH_PRODUCT_ADMISSION_AUDIT_V325.md`
-121. `DIALOGUE_EVENT_TS5_SWITCH_PARITY_AND_CENSUS_CHECKPOINT_V324.md`
-122. `TAI5MSG_B24_V320_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V321.md`
-123. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
-124. `artifacts/tai5msg_b24_native_wrap_layout_correction_v1/INDEX.json`
-125. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_DESIGN_V319.md`
-126. `TAI5MSG_B24_V317_EDEN_RUNTIME_ROOT_CAUSE_CLOSURE_V318.md`
-127. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V317.md`
-128. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_DESIGN_V316.md`
-129. `TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
-130. `artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
-131. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
-132. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
-133. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
-134. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
-135. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
-136. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
-137. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
-138. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
-139. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
-140. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
-141. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
-142. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
-143. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
-144. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
-145. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
-146. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
-147. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
-148. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
-149. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
-150. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
-151. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
-152. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
-153. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
-154. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
-155. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
-156. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
-157. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
-158. `CLASSIFICATION_SCHEMA.md`
-159. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
-160. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
-161. `ARCHITECTURE.md`
-162. `this file`
+1. `EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md`
+2. `artifacts/event_169_corpus_wide_semantic_policy_closure_v1/INDEX.json`
+3. `artifacts/event_169_corpus_wide_semantic_policy_closure_v1/VALIDATION.json`
+4. `EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V367.md`
+5. `artifacts/event_169_runtime_event_len_semantic_replay_closure_v1/INDEX.json`
+6. `artifacts/event_169_runtime_event_len_semantic_replay_closure_v1/VALIDATION.json`
+7. `EVENT_169_SOURCE_UNIVERSE_V2_EXACT_LEDGER_RECONSTRUCTION_CHECKPOINT_V366.md`
+8. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/INDEX.json`
+9. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/DIRECT_VALIDATION.json`
+10. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/COMPOSITE_VALIDATION.json`
+11. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/WHOLE_ACCOUNTING_VALIDATION.json`
+12. `artifacts/event_169_source_universe_v2_exact_ledger_reconstruction_v1/PERCENT_ROOT_ACCOUNTING.json`
+13. `EVENT_169_SOURCE_UNIVERSE_V2_OVERLAP_COMPOSITE_PREIMPLEMENTATION_CHECKPOINT_V365.md`
+14. `artifacts/event_169_source_universe_v2_overlap_composite_checkpoint_v1/INDEX.json`
+15. `ECF00000_V363_ADDED_PERCENT12_SWITCH_MAIN_DISPATCH_DIRECT_EVIDENCE_V364.md`
+16. `artifacts/ecf00000_v364_percent12_switch_main_dispatch_direct_evidence_v1/INDEX.json`
+17. `ECF00000_FULL_PHYSICAL_TEXT_SOURCE_UNIVERSE_CORRECTION_V363.md`
+18. `artifacts/ecf00000_v363_full_physical_text_source_universe_v1/INDEX.json`
+19. `artifacts/ecf00000_v363_full_physical_text_source_universe_v1/REPLAY_VALIDATION.json`
+20. `V361_EDEN_RUNTIME_FAILURE_EVENT_169_SCOPE_CORRECTION_V362.md`
+21. `artifacts/v362_event_169_scope_correction_v1/INDEX.json`
+22. `ECF00000_V360_EVENT_V357_TAI5MSG_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V361.md`
+23. `artifacts/ecf00000_v361_v360_event_v357_tai5msg_eden_diag_package_v1/INDEX.json`
+24. `ECF00000_SUFFIX3_POST_V357_EVENT_IMPLEMENTATION_OFFLINE_VALIDATION_V360.md`
+25. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/INDEX.json`
+26. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/VALIDATION.json`
+27. `artifacts/ecf00000_v360_suffix3_post_v357_event_v1/APPLICABILITY.jsonl`
+28. `../builder/selective_event_suffix3.py`
+29. `../tests/test_selective_event_suffix3.py`
+30. `V358_RUNTIME_SCREEN_CARRIER_GAP_AND_REFLOW_PARTITION_AUDIT_V359.md`
+31. `artifacts/v359_runtime_carrier_gap_reflow_partition_v1/INDEX.json`
+32. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DISCOVERY_V353.md`
+33. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION_V352.md`
+34. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+35. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
+36. `ECF00000_PERCENT_MACRO_TAI5MSG_V357_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V358.md`
+37. `artifacts/ecf00000_v358_percent_macro_v357_eden_diagnostic_package_v1/INDEX.json`
+38. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_46_ROOT_REPLACEMENT_IMPLEMENTATION_OFFLINE_VALIDATION_V357.md`
+39. `artifacts/ecf00000_v357_percent_macro_b0_46_root_implementation_v1/INDEX.json`
+40. `artifacts/ecf00000_v357_percent_macro_b0_46_root_implementation_v1/VALIDATION.json`
+41. `../builder/tai5msg_percent_macro_roots.py`
+42. `../builder/selective_tai5msg.py`
+43. `../tests/test_tai5msg_percent_macro_roots.py`
+44. `../tests/test_selective_tai5msg.py`
+45. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_46_ROOT_REPLACEMENT_PREIMPLEMENTATION_CAPACITY_AND_SERIALIZER_ADMISSION_V356.md`
+46. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/INDEX.json`
+47. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/ADMISSION.json`
+48. `artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/ADMISSION_ROWS.json`
+49. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_ROOT_ROLE_LANGUAGE_OUTPUT_CLASSIFICATION_V355.md`
+50. `artifacts/ecf00000_v355_percent_macro_b0_root_role_classification_v1/INDEX.json`
+51. `artifacts/ecf00000_v355_percent_macro_b0_root_role_classification_v1/ROOT_ROLE_CLASSIFICATION.json`
+52. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_PRODUCT_CENSUS_AND_COVERAGE_V354.md`
+53. `artifacts/ecf00000_v354_percent_macro_tai5msg_b0_product_census_v1/INDEX.json`
+54. `artifacts/ecf00000_v354_percent_macro_tai5msg_b0_product_census_v1/USED_PERCENT_MACRO_ROOTS.jsonl`
+55. `ECF00000_PERCENT_MACRO_TAI5MSG_B0_CROSS_CARRIER_DISCOVERY_V353.md`
+56. `TAI5MSG_CALLER_RESOLVED_3179_CANDIDATE_CLASSIFICATION_V303.md`
+57. `TAI5MSG_3179_SELECTIVE_SERIALIZER_BYTE_EXACT_OFFLINE_REPLAY_CLOSURE_V309.md`
+58. `KNOWN_FAILURES.md`
+59. `BOUNDED_RESUME_READ_POLICY.md`
+60. `artifacts/ecf00000_v353_percent_macro_tai5msg_b0_cross_carrier_v1/INDEX.json`
+61. `artifacts/ecf00000_v353_percent_macro_tai5msg_b0_cross_carrier_v1/SUFFIX3_MACRO_BINDINGS.jsonl`
+62. `DIALOGUE_SCRIPT_RUNTIME_PC_PATCH_ORACLE_SURVEY_CHECKPOINT_V322.md`
+63. `DIALOGUE_EVENT_TS5_INTERPRETER_PC_PAYLOAD_CHECKPOINT_V323.md`
+64. `TAI5MSG_3179_SELECTIVE_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION_V308.md`
+65. `../docs/KO_FULL_SENTENCE_GRAMMAR_FLATTENING_V1_DESIGN.md`
+66. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_IMPLEMENTATION_OFFLINE_VALIDATION_V352.md`
+67. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/INDEX.json`
+68. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/VALIDATION.json`
+69. `artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/BINDINGS_V334_HASHED.jsonl`
+70. `../builder/selective_event_derived_surface.py`
+71. `../tests/test_selective_event_derived_surface.py`
+72. `ECF00000_CODE5_PC_AUTHORED_DERIVED_SURFACE_POLICY_AND_APPLICABILITY_V351.md`
+73. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/INDEX.json`
+74. `PC_AUTHORED_DERIVED_SURFACE_POLICY.md`
+75. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/ROWS.jsonl`
+76. `artifacts/ecf00000_v351_pc_authored_derived_surface_policy_v1/MIXED_COMPOSITE.jsonl`
+77. `ECF00000_V335_CODE5_426_SEMANTIC_ADJACENCY_LEDGER_CANONICALIZATION_V346.md`
+78. `ECF00000_CODE5_DIRECT_PARTICLE_FIXED_SURFACE_POLICY_EXTENSION_V348.md`
+79. `ECF00000_DIRECT_ESCAPE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION_V349.md`
+80. `IDENTITY_IN_PROSE_POLICY.md`
+81. `ECF00000_CODE5_LEXICAL_FALSE_POSITIVE_12_IMPLEMENTATION_OFFLINE_VALIDATION_V350.md`
+82. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/INDEX.json`
+83. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/VALIDATION.json`
+84. `artifacts/ecf00000_v350_code5_lexical_false_positive_v1/APPLICABILITY.jsonl`
+85. `../builder/selective_event_code5_lexical.py`
+86. `../tests/test_selective_event_code5_lexical.py`
+87. `artifacts/ecf00000_v346_code5_semantic_adjacency_v1/INDEX.json`
+88. `artifacts/ecf00000_v349_direct_escape_particle_implementation_v1/INDEX.json`
+89. `artifacts/ecf00000_v349_direct_escape_particle_implementation_v1/VALIDATION.json`
+90. `../builder/selective_event_direct_particle.py`
+91. `../tests/test_selective_event_direct_particle.py`
+92. `artifacts/ecf00000_v348_direct_escape_particle_policy_v1/INDEX.json`
+93. `FIXED_PARTICLE_POLICY.md`
+94. `ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_CLOSURE_V347.md`
+95. `artifacts/ecf00000_v347_direct_particle_runtime_responsibility_v1/INDEX.json`
+96. `ECF00000_FIXED_SURFACE_PARTICLE_V1_IMPLEMENTATION_OFFLINE_VALIDATION_V345.md`
+97. `artifacts/ecf00000_v345_particle_implementation_v1/INDEX.json`
+98. `ECF00000_FIXED_SURFACE_PARTICLE_V1_PREIMPLEMENTATION_CLOSURE_V344.md`
+99. `artifacts/ecf00000_v344_particle_preimplementation_v1/INDEX.json`
+100. `ECF00000_3C_KEEP_JP_EXACT_LEDGER_CANONICALIZATION_V343.md`
+101. `artifacts/ecf00000_v343_3c_keep_jp_v1/INDEX.json`
+102. `ECF00000_1E_INCLUDE_KO_READY_23_IMPLEMENTATION_OFFLINE_VALIDATION_V342.md`
+103. `artifacts/ecf00000_v342_1e_ready23_v1/INDEX.json`
+104. `ECF00000_1E_SEMANTIC_ADMISSION_LEDGER_MATERIALIZATION_V341.md`
+105. `artifacts/ecf00000_v341_1e_semantic_admission_v1/INDEX.json`
+106. `ECF00000_PARTITION593_0E_RESIDUAL_RUNTIME_OVERRUN_ROOT_CAUSE_AND_VALIDATOR_GATE_V340.md`
+107. `ECF00000_5A_BRANCH_AWARE_JP_IDENTITY_KO_DIALOGUE_COMPOSITE_IMPLEMENTATION_OFFLINE_VALIDATION_V339.md`
+108. `ECF00000_SELECTIVE_EVENT_SWITCH_SPECIAL_OWNER_IMPLEMENTATION_OFFLINE_VALIDATION_V338.md`
+109. `ECF00000_SELECTIVE_EVENT_GENERIC_RELOCATION_ENGINE_IMPLEMENTATION_OFFLINE_VALIDATION_V337.md`
+110. `ECF00000_SELECTIVE_EVENT_NOOP_SERIALIZER_CORE_IMPLEMENTATION_OFFLINE_VALIDATION_V336.md`
+111. `ECF00000_V334_SOURCE_UNIVERSE_SEMANTIC_ADMISSION_LAYER_MATERIALIZATION_V335.md`
+112. `artifacts/ecf00000_v335_semantic_admission_v1/INDEX.json`
+113. `ECF00000_DETERMINISTIC_SOURCE_UNIVERSE_LEDGER_MATERIALIZATION_REPLAY_V334.md`
+114. `artifacts/ecf00000_v334_source_universe_ledger_v1/INDEX.json`
+115. `ECF00000_DETERMINISTIC_SOURCE_UNIVERSE_AND_SERIALIZER_CONTRACT_CONSOLIDATION_V333.md`
+116. `ECF00000_V324_4444_ORIGINAL_PROVENANCE_ARTIFACT_RECOVERY_V332.md`
+117. `ECF00000_PC_EDITOR_V030_PARSER_PROVENANCE_AND_V324_4444_CONFLICT_V331.md`
+118. `ECF00000_NESTED_INTERPRETER_CONTEXT_DESCRIPTOR_AUDIT_V330.md`
+119. `ECF00000_NESTED_AWARE_REPRESENTATIVE_RANGE_VALIDATION_V329.md`
+120. `ECF00000_NESTED_COMMAND_TRAVERSAL_RULE_RECOVERY_V328.md`
+121. `ECF00000_V324_V326_LEDGER_PROVENANCE_RECONSTRUCTION_DIAGNOSTIC_V327.md`
+122. `ECF00000_SELECTIVE_COMMAND_ADMISSION_CLASSIFICATION_V326.md`
+123. `ECF00000_PC_KO_SWITCH_CODE_GLYPH_PRODUCT_ADMISSION_AUDIT_V325.md`
+124. `DIALOGUE_EVENT_TS5_SWITCH_PARITY_AND_CENSUS_CHECKPOINT_V324.md`
+125. `TAI5MSG_B24_V320_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V321.md`
+126. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_IMPLEMENTATION_OFFLINE_VALIDATION_V320.md`
+127. `artifacts/tai5msg_b24_native_wrap_layout_correction_v1/INDEX.json`
+128. `TAI5MSG_B24_NATIVE_WRAP_LAYOUT_RECONSTRUCTION_DESIGN_V319.md`
+129. `TAI5MSG_B24_V317_EDEN_RUNTIME_ROOT_CAUSE_CLOSURE_V318.md`
+130. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_MATERIALIZATION_V317.md`
+131. `TAI5MSG_B24_V315_EDEN_DIAGNOSTIC_PACKAGE_DESIGN_V316.md`
+132. `TAI5MSG_B24_SEMANTIC_LAYOUT_CORRECTION_IMPLEMENTATION_OFFLINE_VALIDATION_V315.md`
+133. `artifacts/tai5msg_b24_semantic_layout_correction_v1/INDEX.json`
+134. `TAI5MSG_FAST_SOURCE_CACHE_AND_TOOLING_V314.md`
+135. `artifacts/tai5msg_fast_source_cache_v1/INDEX.json`
+136. `TAI5MSG_CORRECTION_OVERLAY_SCHEMA_V1.md`
+137. `TAI5MSG_V312_EDEN_RUNTIME_PC_COVERAGE_REFLOW_AUDIT_V313.md`
+138. `artifacts/tai5msg_v313_runtime_coverage_reflow_audit_v1/INDEX.json`
+139. `TAI5MSG_3179_SELECTIVE_EDEN_TEST_PACKAGE_MATERIALIZATION_V312.md`
+140. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_IMPLEMENTATION_OFFLINE_VALIDATION_V311.md`
+141. `TAI5MSG_3179_SELECTIVE_PACKAGE_INTEGRATION_DESIGN_V310.md`
+142. `TAI5MSG_3179_SELECTIVE_BUILDER_SERIALIZER_DESIGN_V307.md`
+143. `TAI5MSG_PREIMPLEMENTATION_GATE_1_5_CLOSURE_V306.md`
+144. `TAI5MSG_EXTERNAL_DESIGN_AUDIT_CONSOLIDATION_V305.md`
+145. `TAI5MSG_V303_PC_PAYLOAD_DEFECT_CORRECTION_2_V304.md`
+146. `artifacts/tai5msg_v303_pc_payload_defect_correction_2_v1/INDEX.json`
+147. `artifacts/tai5msg_caller_resolved_3179_candidate_classification_v1/INDEX.json`
+148. `TAI5MSG_SELECTED_BLOCK_GROWTH_RUNTIME_ACCEPTANCE_V302.md`
+149. `artifacts/tai5msg_block_growth_runtime_acceptance_v1/INDEX.json`
+150. `TAI5MSG_SELECTED_3370_CALLER_CAPACITY_CHECKPOINT_V301.md`
+151. `artifacts/tai5msg_selected_3370_checkpoint_v1/INDEX.json`
+152. `INLINE_R1_STATIC_47_CANDIDATE_CLASSIFICATION_V300.md`
+153. `artifacts/inline_r1_static_47_candidate_classification_v1/INDEX.json`
+154. `INLINE_R1_NUMERIC_53_CANDIDATE_CLASSIFICATION_V299.md`
+155. `artifacts/inline_r1_numeric_53_candidate_classification_v1/INDEX.json`
+156. `ENDING_HELP_39_CANDIDATE_CLASSIFICATION_V298.md`
+157. `artifacts/ending_help_39_candidate_classification_v1/INDEX.json`
+158. `INLINE_R1_LOGICAL_OBJECT_RECONSTRUCTION_AND_REUSABLE_RULES_V297.md`
+159. `LEGACY_EVIDENCE_CLAIM_STRENGTH_POLICY_V296.md`
+160. `CONTENT_CONTAINER_FIELD_AVAILABILITY_CORRECTION_V295.md`
+161. `CLASSIFICATION_SCHEMA.md`
+162. `SCRIPT_TAXONOMY_AND_CROSSCUTTING_RULES.md`
+163. `SWITCH_ORIGINAL_SOURCE_INPUT_CONTRACT.md`
+164. `ARCHITECTURE.md`
+165. `this file`
 
 ## 2. Product boundary
 
@@ -2594,3 +2597,70 @@ READ ONLY. Freeze V366 membership/binding and V367 runtime/semantic closure. Cen
 89 product-relevant INCLUDE_KO multi-owner outer spans and 128 INCLUDE-to-INCLUDE relations, then
 intersect them with existing ECF EVENT overlay modules. No implementation, mutation, build/package,
 IPS, or hardware.
+
+
+## V368 — EVENT 169 corpus-wide semantic policy closure
+
+Canonical authority:
+`EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md`
+
+Artifact:
+`artifacts/event_169_corpus_wide_semantic_policy_closure_v1/INDEX.json`
+
+```text
+V367 raw semantic
+  INCLUDE_KO              49,627
+  UNRESOLVED               2,864
+  NON_KOREAN_TARGET       14,496
+
+policy promotion
+  existing exact              426
+  generalized               2,438
+
+post-policy semantic
+  INCLUDE_KO              52,491
+  UNRESOLVED                   0
+  NON_KOREAN_TARGET       14,496
+  TOTAL                   66,987
+```
+
+The generalized residual is the exact set difference `2,864 - 426 = 2,438`.
+All 2,438 are justified INCLUDE under exact owner/occurrence/runtime provenance.
+Class labels and fallback are not applicability authority.
+
+Final three rows:
+
+```text
+EFF27C00.TS5  source 0x3BA0 -> PC-KO 0x41F8   INCLUDE_KO
+EFF27C00.TS5  source 0x3BA8 -> PC-KO 0x4200   INCLUDE_KO
+EFF2D100.TS5  source 0x7A34 -> PC-KO 0x8AF0   INCLUDE_KO
+```
+
+Post-policy serializer-design constraints:
+
+```text
+multi-owner runtime-span rows              2,240   unchanged
+product INCLUDE multi-owner outer rows        91   supersedes 89
+INCLUDE -> INCLUDE inner relations            130   supersedes 128
+  direct                                      108
+  composite                                    22
+```
+
+Claim boundary:
+
+```text
+V366 membership/binding              CLOSED / unchanged
+V367 runtime continuity              CLOSED PASS / unchanged
+V368 post-policy semantic admission  CLOSED
+UNRESOLVED                           0
+product serializer                   NONE
+EVENT/TAI5MSG mutation               NONE
+build/package/IPS/hardware           NONE
+```
+
+Exact next scope after a fresh explicit user execution signal:
+
+`EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_DESIGN_READ_ONLY`
+
+READ ONLY. Use 91 product-relevant INCLUDE_KO multi-owner outer spans and 130 INCLUDE-to-INCLUDE
+relations, and intersect them with the existing ECF overlay modules. No implementation or product mutation.

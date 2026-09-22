@@ -1,0 +1,43 @@
+{
+  "schema": "EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V1",
+  "validation_id": "V368",
+  "track": "SWITCH_SELECTIVE_KOREANIZATION",
+  "canonical_base_commit": "7f9822f27fe9b3696ffb914fc856d2f68d5109e7",
+  "status": "SEMANTIC_POLICY_CLOSED_UNRESOLVED_ZERO_OVERLAP_CLUSTER_DESIGN_PENDING",
+  "authority": "EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md",
+  "validation": "VALIDATION.json",
+  "frozen_accounting": {
+    "source_owner_universe": 66987,
+    "direct_header_preserved": 66956,
+    "overlap_composite": 31
+  },
+  "v367_raw_semantic": {
+    "include_ko": 49627,
+    "unresolved": 2864,
+    "non_korean_target": 14496,
+    "total": 66987
+  },
+  "policy_overlay": {
+    "existing_exact_policy_include": 426,
+    "generalized_policy_residual_input": 2438,
+    "generalized_policy_include": 2438,
+    "generalized_policy_unresolved": 0
+  },
+  "post_policy_semantic": {
+    "include_ko": 52491,
+    "unresolved": 0,
+    "non_korean_target": 14496,
+    "total": 66987
+  },
+  "serializer_design_constraints": {
+    "multi_owner_runtime_span_rows": 2240,
+    "include_ko_multi_owner_outer_rows": 91,
+    "include_to_include_relations": 130,
+    "direct_include_inner_relations": 108,
+    "composite_include_inner_relations": 22
+  },
+  "product_serializer_implementation": "NONE",
+  "event_tai5msg_mutation": "NONE",
+  "build_package_ips_hardware": "NONE",
+  "exact_next_scope": "EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_DESIGN_READ_ONLY"
+}
