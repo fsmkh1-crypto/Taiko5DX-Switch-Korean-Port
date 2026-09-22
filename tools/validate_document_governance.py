@@ -90,6 +90,70 @@ def anchor_gate_registry(root: Path) -> list[str]:
     return sorted(found)
 
 
+def collect_markdown_scope(root: Path) -> list[str]:
+    actual = set(collect_markdown_scope(root))
+    return sorted(actual)
+
+
+def expand_document_authority_index(root: Path, index: dict) -> list[dict]:
+    schema = index.get("schema")
+    if schema == "DOCUMENT_AUTHORITY_INDEX_V1":
+        entries = index.get("documents", [])
+        if not isinstance(entries, list):
+            fail("INV-DOC-05 malformed V1 document registry")
+        return entries
+
+    if schema != "DOCUMENT_AUTHORITY_INDEX_V2":
+        fail(f"INV-DOC-05 unsupported document-authority schema: {schema!r}")
+
+    default = index.get("default_classification")
+    current = index.get("current_authorities")
+    anchors = index.get("anchor_protected")
+    if not isinstance(default, dict) or not isinstance(current, list) or not isinstance(anchors, list):
+        fail("INV-DOC-05 malformed V2 document-authority registry")
+
+    current_map = {}
+    for item in current:
+        path = item.get("path")
+        if not isinstance(path, str) or not path or path in current_map:
+            fail(f"INV-DOC-05 duplicate/malformed current-authority path: {path!r}")
+        current_map[path] = item
+
+    anchor_map = {}
+    for item in anchors:
+        path = item.get("path")
+        sha = item.get("registered_blob_sha")
+        if not isinstance(path, str) or not path or path in anchor_map:
+            fail(f"INV-DOC-05 duplicate/malformed anchor path: {path!r}")
+        if not isinstance(sha, str) or not re.fullmatch(r"[0-9a-f]{40}", sha):
+            fail(f"INV-DOC-05 malformed anchor blob SHA: {path}")
+        anchor_map[path] = sha
+
+    actual = collect_markdown_scope(root)
+    missing_declared = sorted((set(current_map) | set(anchor_map)) - set(actual))
+    if missing_declared:
+        fail(f"INV-DOC-05 declared authority/anchor paths missing: {missing_declared}")
+
+    entries = []
+    for path in actual:
+        item = dict(default)
+        item["path"] = path
+        if path in current_map:
+            declared = current_map[path]
+            item.update({
+                "doc_role": declared.get("doc_role"),
+                "authority_scope": declared.get("authority_scope"),
+                "current_authority": True,
+                "evidence_still_valid": True,
+                "superseded_as_plan_by": None,
+            })
+        if path in anchor_map:
+            item["anchor_protected"] = True
+            item["registered_blob_sha"] = anchor_map[path]
+        entries.append(item)
+    return entries
+
+
 def check_machine_facts(root: Path, entries: list[dict]) -> None:
     required = [
         entry["path"]
@@ -191,13 +255,47 @@ def check_generated_boundary(root: Path, entries: list[dict], resume_obj: dict) 
             fail(f"INV-DOC-07 generated artifact carries authority/next-step keys: {rel} {bad}")
 
 
-def check_scope_read_policy(resume_obj: dict) -> None:
+def check_scope_read_policy(root: Path, resume_obj: dict) -> None:
     scope_kind = resume_obj.get("scope_kind")
     if scope_kind not in {"READ_ONLY", "REPOSITORY_WRITE"}:
         fail(f"INV-DOC-09 invalid scope_kind: {scope_kind!r}")
+
+    required = resume_obj.get("required_reads")
+    if not isinstance(required, list) or not required:
+        fail("INV-DOC-09 required_reads must be a non-empty active bootstrap list")
+    if any(not isinstance(path, str) or not path for path in required):
+        fail("INV-DOC-09 required_reads contains a malformed path")
+    if len(required) != len(set(required)):
+        fail("INV-DOC-09 required_reads contains duplicates")
+
+    budget = resume_obj.get("active_read_budget_max", 16)
+    if not isinstance(budget, int) or budget < 1:
+        fail(f"INV-DOC-09 invalid active_read_budget_max: {budget!r}")
+    if len(required) > budget:
+        fail(
+            f"INV-DOC-09 active required_reads exceed budget: "
+            f"count={len(required)} budget={budget}"
+        )
+
+    historical_catalog = resume_obj.get("historical_dependency_catalog")
+    if not isinstance(historical_catalog, str) or not historical_catalog:
+        fail("INV-DOC-09 historical_dependency_catalog missing")
+    if historical_catalog in required:
+        fail("INV-DOC-09 historical dependency catalog must remain lazy, not a bootstrap read")
+    if not (root / historical_catalog).is_file():
+        fail(f"INV-DOC-09 historical dependency catalog missing: {historical_catalog}")
+
+    failure_index = resume_obj.get("failure_discovery_index")
+    if not isinstance(failure_index, str) or not failure_index:
+        fail("INV-DOC-09 failure_discovery_index missing")
+    if not (root / failure_index).is_file():
+        fail(f"INV-DOC-09 failure discovery index missing: {failure_index}")
+
+    if "selective_ko/KNOWN_FAILURES.md" in required:
+        fail("INV-DOC-09 full KNOWN_FAILURES.md must not be a mandatory bootstrap read")
+
     if scope_kind == "REPOSITORY_WRITE":
-        required = set(resume_obj.get("required_reads", []))
-        if "docs/GITHUB_AND_CI_POLICY.md" not in required:
+        if "docs/GITHUB_AND_CI_POLICY.md" not in set(required):
             fail("INV-DOC-09 repository-writing scope must require docs/GITHUB_AND_CI_POLICY.md")
 
 
@@ -368,18 +466,45 @@ def check_master_rule_registry(root: Path, entries: list[dict]) -> None:
 
 def check_closure_identity(root: Path, resume_obj: dict) -> None:
     declared = resume_obj.get("last_closed_validation_id")
-    index_path = root / "docs/VALIDATION_LEDGER.md"
-    ledger_index = index_path.read_text(encoding="utf-8")
-    nums = [int(value) for value in re.findall(r"\bV(\d{3})\b", ledger_index)]
-    if not nums:
-        fail("INV-DOC-08 central validation index has no Vnnn entries")
-    actual = f"V{max(nums):03d}"
-    if declared != actual:
-        fail(f"INV-DOC-08 PROJECT_RESUME/validation-index closure mismatch: declared={declared} actual={actual}")
+    track = resume_obj.get("active_product_track")
 
-    commit = resume_obj.get("last_closed_stage_commit")
+    if track == "SWITCH_SELECTIVE_KOREANIZATION":
+        rel = resume_obj.get("validation_index")
+        if rel != "selective_ko/VALIDATION_INDEX.json":
+            fail(f"INV-DOC-08 unexpected selective validation index: {rel!r}")
+        index_path = root / rel
+        if not index_path.is_file():
+            fail(f"INV-DOC-08 selective validation index missing: {rel}")
+        obj = json.loads(index_path.read_text(encoding="utf-8"))
+        if obj.get("schema") != "SELECTIVE_VALIDATION_INDEX_V1":
+            fail(f"INV-DOC-08 unexpected selective validation-index schema: {obj.get('schema')!r}")
+        actual = obj.get("current_validation_id")
+        checkpoint = obj.get("current_checkpoint")
+        declared_checkpoint = resume_obj.get("current_checkpoint_authority")
+        if checkpoint != declared_checkpoint:
+            fail(
+                "INV-DOC-08 current checkpoint mismatch "
+                f"resume={declared_checkpoint!r} index={checkpoint!r}"
+            )
+        if not isinstance(checkpoint, str) or not (root / checkpoint).is_file():
+            fail(f"INV-DOC-08 current checkpoint missing: {checkpoint!r}")
+    else:
+        index_path = root / "docs/VALIDATION_LEDGER.md"
+        ledger_index = index_path.read_text(encoding="utf-8")
+        nums = [int(value) for value in re.findall(r"\bV(\d{3})\b", ledger_index)]
+        if not nums:
+            fail("INV-DOC-08 central validation index has no Vnnn entries")
+        actual = f"V{max(nums):03d}"
+
+    if declared != actual:
+        fail(
+            "INV-DOC-08 PROJECT_RESUME/validation-index closure mismatch: "
+            f"declared={declared} actual={actual}"
+        )
+
+    commit = resume_obj.get("canonical_base_commit") or resume_obj.get("last_closed_stage_commit")
     if not isinstance(commit, str) or not re.fullmatch(r"[0-9a-f]{40}", commit):
-        fail("INV-DOC-08 invalid last_closed_stage_commit")
+        fail("INV-DOC-08 invalid canonical_base_commit")
     result = subprocess.run(
         ["git", "-C", str(root), "merge-base", "--is-ancestor", commit, "HEAD"],
         stdout=subprocess.DEVNULL,
@@ -387,7 +512,7 @@ def check_closure_identity(root: Path, resume_obj: dict) -> None:
         check=False,
     )
     if result.returncode != 0:
-        fail(f"INV-DOC-08 last_closed_stage_commit is not an ancestor of HEAD: {commit}")
+        fail(f"INV-DOC-08 canonical_base_commit is not an ancestor of HEAD: {commit}")
 
 
 def main() -> int:
@@ -398,7 +523,7 @@ def main() -> int:
 
     index_path = root / "docs/DOCUMENT_AUTHORITY_INDEX.json"
     index = json.loads(index_path.read_text(encoding="utf-8"))
-    entries = index.get("documents", [])
+    entries = expand_document_authority_index(root, index)
     paths = [entry["path"] for entry in entries]
 
     if len(paths) != len(set(paths)):
@@ -471,7 +596,7 @@ def main() -> int:
 
     check_machine_facts(root, entries)
     check_generated_boundary(root, entries, resume_obj)
-    check_scope_read_policy(resume_obj)
+    check_scope_read_policy(root, resume_obj)
     check_schema_freeze(root, resume_obj)
     check_master_rule_registry(root, entries)
     check_closure_identity(root, resume_obj)

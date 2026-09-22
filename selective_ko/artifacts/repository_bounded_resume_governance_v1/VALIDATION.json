@@ -1,0 +1,30 @@
+{
+  "schema": "REPOSITORY_BOUNDED_RESUME_GOVERNANCE_VALIDATION_V1",
+  "validation_id": "V370",
+  "parent_commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+  "static_precommit_checks": {
+    "product_authority_preserved": true,
+    "v366_v369_reanalysis_performed": false,
+    "active_required_reads_count": 8,
+    "active_read_budget_max": 12,
+    "old_required_reads_count": 166,
+    "historical_catalog_present": true,
+    "failure_index_present": true,
+    "selective_validation_index_present": true,
+    "detailed_known_failures_modified": false,
+    "scope_kind": "READ_ONLY",
+    "checkpoint_kind": "REPOSITORY_BOUNDED_RESUME_AND_GOVERNANCE_COMPATIBILITY_MIGRATION",
+    "fz001_explicit_resume_fields_restored": true,
+    "document_authority_schema": "DOCUMENT_AUTHORITY_INDEX_V2",
+    "document_authority_rule_based_coverage": true,
+    "selective_validation_routing": true,
+    "git_history_rewrite": false,
+    "ledger_resharding": false,
+    "builder_or_product_changes": false
+  },
+  "final_gate": {
+    "required": "GitHub Actions Document governance PASS on the canonical V370 commit",
+    "status_at_materialization": "PENDING_POST_REF_UPDATE"
+  },
+  "acceptance_boundary": "If the post-ref Document governance workflow fails, V370 is not accepted until the same governance-drift cause family is corrected. No product implementation may begin from a failing governance state."
+}

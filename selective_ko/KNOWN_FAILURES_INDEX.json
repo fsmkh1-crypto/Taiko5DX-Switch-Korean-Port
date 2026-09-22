@@ -1,0 +1,197 @@
+{
+  "schema": "KNOWN_FAILURES_DISCOVERY_INDEX_V1",
+  "created_at_kst": "2026-09-22",
+  "source": {
+    "path": "selective_ko/KNOWN_FAILURES.md",
+    "commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+    "git_blob_sha": "1875d566e86c25e3fa12eb083f92a03464244447",
+    "bytes": 56220
+  },
+  "purpose": "Topic-level discovery only. Detailed failure/rejection evidence remains in the canonical source file and historical Git snapshots.",
+  "global_mandatory_sections": [
+    "8. Git write invariant",
+    "9. Transport / repair shortcuts",
+    "32. Unbounded resume-state fetch creates context I/O bottleneck"
+  ],
+  "event_serializer_priority_sections": [
+    "17. V307 serializer-design rejected shortcuts",
+    "22. V337 EVENT unit-fixture byte escape defect",
+    "23. V339 5A solve-before-branch-repair interaction",
+    "29. V345 final-PC-KO fresh grouping is not payload-owner authority",
+    "30. V346 code-5 particle-risk detector conflates four semantic cause families",
+    "31. V347 do not invent a hidden runtime Korean-particle selector",
+    "35. V353 do not treat percent macros as ordinary value-only EVENT escapes",
+    "38. V366 exact-ledger reconstruction — source authority, grouping, and percent-root traps",
+    "V367 — rejected event_len formula-mismatch hypothesis",
+    "V368 — rejected semantic-policy shortcuts and superseded raw overlap counts"
+  ],
+  "lookup_rule": "Match the exact section title in KNOWN_FAILURES.md and read only that section unless a broader failure audit is explicitly authorized.",
+  "sections": [
+    {
+      "section": 1,
+      "title": "1. Dialogue malformed-ending family"
+    },
+    {
+      "section": 2,
+      "title": "2. Prohibited dialogue shortcuts"
+    },
+    {
+      "section": 3,
+      "title": "3. Name / yomi / CWTDAT boundary"
+    },
+    {
+      "section": 4,
+      "title": "4. Runtime-byte normalization"
+    },
+    {
+      "section": 5,
+      "title": "5. Mapping 10,036"
+    },
+    {
+      "section": 6,
+      "title": "6. Static-write shortcuts"
+    },
+    {
+      "section": 7,
+      "title": "7. PC implementation trust boundary"
+    },
+    {
+      "section": 8,
+      "title": "8. Git write invariant"
+    },
+    {
+      "section": 9,
+      "title": "9. Transport / repair shortcuts"
+    },
+    {
+      "section": 10,
+      "title": "10. Exact PC v1.02 formatter-runtime provenance correction"
+    },
+    {
+      "section": 11,
+      "title": "11. 2026-09-16 prohibited write-action selection incidents during correction materialization"
+    },
+    {
+      "section": 12,
+      "title": "12. Full-port container/file-level assembly-order failure — V295"
+    },
+    {
+      "section": 13,
+      "title": "13. V302 SELECTIVE_PROJECT_STATE regex truncation and forward recovery"
+    },
+    {
+      "section": 14,
+      "title": "14. PC Korean patch historical residual QA hazards"
+    },
+    {
+      "section": 15,
+      "title": "15. External text-only audit recurring false blockers and adopted gates — V305"
+    },
+    {
+      "section": 16,
+      "title": "16. V306 preimplementation closure — do-not-overgeneralize boundaries"
+    },
+    {
+      "section": 17,
+      "title": "17. V307 serializer-design rejected shortcuts"
+    },
+    {
+      "section": 18,
+      "title": "18. V308 metadata-PASS is not byte-output PASS"
+    },
+    {
+      "section": 19,
+      "title": "19. V313 runtime / reflow audit — do-not-repeat conclusions"
+    },
+    {
+      "section": 20,
+      "title": "20. V322 broad EVENT caller-graph traversal hang"
+    },
+    {
+      "section": 21,
+      "title": "21. V323 PC ECF00000 exact-census preparation stall"
+    },
+    {
+      "section": 22,
+      "title": "22. V337 EVENT unit-fixture byte escape defect"
+    },
+    {
+      "section": 23,
+      "title": "23. V339 5A solve-before-branch-repair interaction"
+    },
+    {
+      "section": 24,
+      "title": "24. V340 absolute state-aware zero-error gate false blocker"
+    },
+    {
+      "section": 25,
+      "title": "25. V341 0x1E semantic-admission vs runtime-admission separation"
+    },
+    {
+      "section": 26,
+      "title": "26. V343 PC-editor 0x3C over-group is not runtime ownership"
+    },
+    {
+      "section": 27,
+      "title": "27. V344 particle applicability is not the V335 single semantic-detail code"
+    },
+    {
+      "section": 28,
+      "title": "28. V344 layout-exposed embedded aliases require source proof, not one-off residual exceptions"
+    },
+    {
+      "section": 29,
+      "title": "29. V345 final-PC-KO fresh grouping is not payload-owner authority"
+    },
+    {
+      "section": 30,
+      "title": "30. V346 code-5 particle-risk detector conflates four semantic cause families"
+    },
+    {
+      "section": 31,
+      "title": "31. V347 do not invent a hidden runtime Korean-particle selector"
+    },
+    {
+      "section": 32,
+      "title": "32. Unbounded resume-state fetch creates context I/O bottleneck"
+    },
+    {
+      "section": 33,
+      "title": "33. V346 human-ledger surface metadata can misbind repeated identical escapes"
+    },
+    {
+      "section": 34,
+      "title": "34. V352 do not hard-code state-aware residual observation counts across legal payload growth"
+    },
+    {
+      "section": 35,
+      "title": "35. V353 do not treat percent macros as ordinary value-only EVENT escapes"
+    },
+    {
+      "section": 36,
+      "title": "36. V354 do not infer percent-macro coverage from aggregate TAI5MSG selection"
+    },
+    {
+      "section": 37,
+      "title": "V362 — V361 Japanese dialogue / EVENT-family scope correction"
+    },
+    {
+      "section": 38,
+      "title": "37. V363 runtime-MAY source universe is not a completeness gate"
+    },
+    {
+      "section": 39,
+      "title": "38. V366 exact-ledger reconstruction — source authority, grouping, and percent-root traps"
+    },
+    {
+      "section": 40,
+      "title": "V367 — rejected event_len formula-mismatch hypothesis"
+    },
+    {
+      "section": 41,
+      "title": "V368 — rejected semantic-policy shortcuts and superseded raw overlap counts"
+    }
+  ],
+  "deletion_authorization": "NONE",
+  "compaction_note": "The detailed registry is intentionally not split during V370; this index reduces routine read cost without changing evidence bytes."
+}

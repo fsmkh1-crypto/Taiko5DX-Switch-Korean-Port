@@ -1,0 +1,102 @@
+{
+  "schema": "REPOSITORY_BOUNDED_RESUME_GOVERNANCE_MIGRATION_MAP_V1",
+  "validation_id": "V370",
+  "parent_commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+  "preserved_product_authority": "selective_ko/EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md",
+  "pre_migration_snapshots": {
+    "project_state": {
+      "path": "PROJECT_STATE.md",
+      "git_blob_sha": "b2101cef3955dafbeaaab97681c013d0d0c5282c",
+      "bytes": 175202
+    },
+    "selective_state": {
+      "path": "selective_ko/SELECTIVE_PROJECT_STATE.md",
+      "git_blob_sha": "2139822f144d4e67d920b524630282beec837548",
+      "bytes": 101708
+    },
+    "known_failures": {
+      "path": "selective_ko/KNOWN_FAILURES.md",
+      "git_blob_sha": "1875d566e86c25e3fa12eb083f92a03464244447",
+      "bytes": 56220
+    },
+    "bounded_resume_policy": {
+      "path": "selective_ko/BOUNDED_RESUME_READ_POLICY.md",
+      "git_blob_sha": "3801a7602fc9c81c05c318aec067f3cbb2598a36"
+    },
+    "document_authority_index": {
+      "path": "docs/DOCUMENT_AUTHORITY_INDEX.json",
+      "git_blob_sha": "11d1a0163ccdabb585c1fbede222c340662edced",
+      "schema": "DOCUMENT_AUTHORITY_INDEX_V1"
+    },
+    "document_governance_validator": {
+      "path": "tools/validate_document_governance.py",
+      "git_blob_sha": "b91ba9416c935d0c6a06d8b92ecb34d1d3ad4dbf"
+    }
+  },
+  "post_migration_blobs": {
+    "project_state": {
+      "path": "PROJECT_STATE.md",
+      "git_blob_sha": "df1a8c09f923ca791b063ced5e37da4b9cb780e6"
+    },
+    "selective_state": {
+      "path": "selective_ko/SELECTIVE_PROJECT_STATE.md",
+      "git_blob_sha": "8254bbdd65a49ba9a0d7140ba9816737b0b46464"
+    },
+    "bounded_resume_policy": {
+      "path": "selective_ko/BOUNDED_RESUME_READ_POLICY.md",
+      "git_blob_sha": "7babaed24192a3cfab90c5728bbc63e6f2185a56"
+    },
+    "history_index": {
+      "path": "selective_ko/RESUME_HISTORY_INDEX.json",
+      "git_blob_sha": "c3d6dfddd1a75ad9dbb980100f1b5f0950ff5c5e"
+    },
+    "failure_index": {
+      "path": "selective_ko/KNOWN_FAILURES_INDEX.json",
+      "git_blob_sha": "d6c3f25b3e65deabe5d5c66d5f6c22740316bfa3"
+    },
+    "selective_validation_index": {
+      "path": "selective_ko/VALIDATION_INDEX.json",
+      "git_blob_sha": "61da4916165ed42f0b68157e036f9efedd9d3d49"
+    },
+    "checkpoint": {
+      "path": "selective_ko/REPOSITORY_BOUNDED_RESUME_AND_GOVERNANCE_COMPATIBILITY_MIGRATION_V370.md",
+      "git_blob_sha": "4962831d32d3e6360edaf880e2ba0f170e845bda"
+    },
+    "document_authority_index": {
+      "path": "docs/DOCUMENT_AUTHORITY_INDEX.json",
+      "git_blob_sha": "15f8cccc47370166be5ccbb3bac487e0d9d19bac",
+      "schema": "DOCUMENT_AUTHORITY_INDEX_V2"
+    },
+    "document_governance_validator": {
+      "path": "tools/validate_document_governance.py",
+      "git_blob_sha": "32fe7fa08ebe21ab0147f41bb997c2d45fa0f006"
+    }
+  },
+  "routing_changes": {
+    "old_project_required_reads": 166,
+    "new_project_required_reads": 8,
+    "old_selective_historical_numbered_dependencies": 165,
+    "new_selective_active_historical_dependencies": 0,
+    "historical_dependency_recovery": "selective_ko/RESUME_HISTORY_INDEX.json",
+    "detailed_failure_bytes_unchanged": true,
+    "detailed_failure_discovery": "selective_ko/KNOWN_FAILURES_INDEX.json"
+  },
+  "governance_repairs": [
+    "DOCUMENT_AUTHORITY_INDEX_V2 rule-based coverage closes omitted Markdown registration drift without enumerating every historical document.",
+    "scope_kind is operational READ_ONLY; descriptive checkpoint type is stored separately as checkpoint_kind.",
+    "FZ001 explicit declaration/basis fields are restored in PROJECT_RESUME_V2.",
+    "Selective current validation identity is routed through selective_ko/VALIDATION_INDEX.json instead of docs/VALIDATION_LEDGER.md max-version inference.",
+    "Active required_reads has an explicit budget and excludes the full KNOWN_FAILURES registry and historical catalog."
+  ],
+  "unchanged": {
+    "v366_v369_technical_findings": true,
+    "applicability_2438_identity": true,
+    "overlap_210_130_87_80_identity": true,
+    "builder_files": true,
+    "event_bytes": true,
+    "tai5msg_bytes": true,
+    "build_package_ips": true,
+    "hardware_runtime": true,
+    "git_history": true
+  }
+}

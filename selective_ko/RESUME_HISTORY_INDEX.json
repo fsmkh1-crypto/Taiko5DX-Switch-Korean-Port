@@ -1,0 +1,67 @@
+{
+  "schema": "SELECTIVE_RESUME_HISTORY_INDEX_V1",
+  "created_at_kst": "2026-09-22",
+  "purpose": "Lazy historical provenance discovery after V370 bounded-resume migration. Not a mandatory bootstrap read.",
+  "migration_parent": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+  "pinned_full_state_snapshots": {
+    "project_state_v369": {
+      "commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+      "path": "PROJECT_STATE.md",
+      "git_blob_sha": "b2101cef3955dafbeaaab97681c013d0d0c5282c",
+      "bytes": 175202,
+      "role": "FULL_PRE_COMPACTION_REPOSITORY_RESUME_SNAPSHOT"
+    },
+    "selective_project_state_v369": {
+      "commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+      "path": "selective_ko/SELECTIVE_PROJECT_STATE.md",
+      "git_blob_sha": "2139822f144d4e67d920b524630282beec837548",
+      "bytes": 101708,
+      "role": "FULL_PRE_COMPACTION_SELECTIVE_TRACK_STATE_AND_165_PATH_HISTORY"
+    },
+    "known_failures_v369": {
+      "commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+      "path": "selective_ko/KNOWN_FAILURES.md",
+      "git_blob_sha": "1875d566e86c25e3fa12eb083f92a03464244447",
+      "bytes": 56220,
+      "role": "DETAILED_REJECTION_AND_FAILURE_EVIDENCE"
+    }
+  },
+  "current_event_authority_chain": [
+    {
+      "validation_id": "V369",
+      "path": "selective_ko/EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md",
+      "status": "CURRENT_PRODUCT_AUTHORITY_BEFORE_SERIALIZER_IMPLEMENTATION"
+    },
+    {
+      "validation_id": "V368",
+      "path": "selective_ko/EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md",
+      "status": "HISTORICAL_PRODUCT_AUTHORITY_POST_POLICY_SEMANTIC_CLOSURE"
+    },
+    {
+      "validation_id": "V367",
+      "path": "selective_ko/EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V367.md",
+      "status": "HISTORICAL_PRODUCT_AUTHORITY_RUNTIME_CONTINUITY"
+    },
+    {
+      "validation_id": "V366",
+      "path": "selective_ko/EVENT_169_SOURCE_UNIVERSE_V2_EXACT_LEDGER_RECONSTRUCTION_CHECKPOINT_V366.md",
+      "status": "HISTORICAL_PRODUCT_AUTHORITY_SOURCE_MEMBERSHIP_AND_BINDING"
+    }
+  ],
+  "discovery_rules": [
+    "Use the current compact PROJECT_STATE and SELECTIVE_PROJECT_STATE first.",
+    "Open a pinned historical state snapshot only when a specific provenance question cannot be answered by the current checkpoint or INDEX.",
+    "The V369 selective state snapshot preserves the former 165-entry historical dependency list exactly at its pinned commit.",
+    "The V369 root state snapshot preserves the former 166-entry required_reads superset exactly at its pinned commit.",
+    "Do not regenerate VERIFIED/CLOSED evidence solely because it is no longer in the active bootstrap set."
+  ],
+  "supporting_indexes": {
+    "detailed_failures": "selective_ko/KNOWN_FAILURES.md",
+    "failure_discovery": "selective_ko/KNOWN_FAILURES_INDEX.json",
+    "document_authority_registry": "docs/DOCUMENT_AUTHORITY_INDEX.json",
+    "historical_full_port_validation_index": "docs/VALIDATION_LEDGER.md",
+    "active_selective_validation_index": "selective_ko/VALIDATION_INDEX.json"
+  },
+  "deletion_authorization": "NONE",
+  "git_history_rewrite_authorization": "NONE"
+}

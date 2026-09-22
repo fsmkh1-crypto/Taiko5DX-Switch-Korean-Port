@@ -1,0 +1,46 @@
+{
+  "schema": "REPOSITORY_BOUNDED_RESUME_GOVERNANCE_MIGRATION_INDEX_V1",
+  "validation_id": "V370",
+  "track": "SWITCH_SELECTIVE_KOREANIZATION",
+  "canonical_parent": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+  "authority": "selective_ko/REPOSITORY_BOUNDED_RESUME_AND_GOVERNANCE_COMPATIBILITY_MIGRATION_V370.md",
+  "migration_map": "MIGRATION_MAP.json",
+  "validation": "VALIDATION.json",
+  "status": "MIGRATION_CANONICALIZATION_REQUIRES_POST_REF_CI_PASS",
+  "active_resume": {
+    "project_state": "PROJECT_STATE.md",
+    "selective_state": "selective_ko/SELECTIVE_PROJECT_STATE.md",
+    "required_reads_count": 8,
+    "active_read_budget_max": 12,
+    "historical_catalog": "selective_ko/RESUME_HISTORY_INDEX.json",
+    "failure_index": "selective_ko/KNOWN_FAILURES_INDEX.json",
+    "validation_index": "selective_ko/VALIDATION_INDEX.json"
+  },
+  "preserved_product_milestone": {
+    "validation_id": "V369",
+    "source_owner_universe": 66987,
+    "direct_header_preserved": 66956,
+    "overlap_composite": 31,
+    "include_ko": 52491,
+    "unresolved": 0,
+    "non_korean_target": 14496,
+    "overlap_nodes": 210,
+    "overlap_relations": 130,
+    "overlap_clusters": 87,
+    "final_write_responsibility_units": 80
+  },
+  "changed_governance_surfaces": [
+    "PROJECT_STATE.md",
+    "selective_ko/SELECTIVE_PROJECT_STATE.md",
+    "selective_ko/BOUNDED_RESUME_READ_POLICY.md",
+    "selective_ko/RESUME_HISTORY_INDEX.json",
+    "selective_ko/KNOWN_FAILURES_INDEX.json",
+    "selective_ko/VALIDATION_INDEX.json",
+    "docs/DOCUMENT_AUTHORITY_INDEX.json",
+    "tools/validate_document_governance.py"
+  ],
+  "product_changes": "NONE",
+  "history_rewrite": "NONE",
+  "ledger_resharding": "NONE",
+  "exact_next_product_scope": "EVENT_169_RUNTIME_OVERLAP_CLUSTER_SERIALIZER_IMPLEMENTATION_OFFLINE_VALIDATION"
+}
