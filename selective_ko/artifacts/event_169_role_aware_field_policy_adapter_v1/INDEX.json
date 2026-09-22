@@ -1,0 +1,135 @@
+{
+  "schema": "EVENT_169_ROLE_AWARE_FIELD_POLICY_ADAPTER_V1_INDEX",
+  "validation_id": "V371",
+  "base_head": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
+  "implementation_commit": "4c5d2c4e010bf9c760337d39c0a64b6a82314918",
+  "implementation_tree": "7a7a2a579c52d1457a86973f2b78061287cbad57",
+  "status": "BOUNDED_ADAPTER_IMPLEMENTED_PRODUCT_NOT_EMITTED",
+  "field_policy": {
+    "rows": 24305,
+    "bytes": 18399148,
+    "sha256": "4cdf5df2c6b7264641374d459ef1dc7484749ea6adfb99b5646a6c40cfddfeff",
+    "writer_rows": 24284,
+    "no_writer_rows": 21,
+    "authority_package_drive_id": "1RiWHEyUTrOW-Ctc3WxG_q-Q6nCf8vRle"
+  },
+  "implementation_files": [
+    {
+      "path": ".github/workflows/event-serializer-policy.yml",
+      "bytes": 2410,
+      "sha256": "026370a5b45634b54c478edc0636ce77eea3eb7996dd6875a703c65b6baafad0",
+      "git_blob_sha1": "7ac5b5ad5b4e91741735e9daf1c735bb0ea2d1a3"
+    },
+    {
+      "path": "builder/selective_event_contract_catalog.py",
+      "bytes": 12354,
+      "sha256": "ade650ba435bf197e6859fa641a3473d75f498bdeb8a75ab9b03611dc01209e6",
+      "git_blob_sha1": "9397ef08c88e7c443033d6bc72e4c530d184cb23"
+    },
+    {
+      "path": "builder/selective_event_contracts.py",
+      "bytes": 31575,
+      "sha256": "f464a9a0f8a79c332c0aacd30a193da18ab740d59246c124213a681a4877ebc5",
+      "git_blob_sha1": "d176f3a9493506f556758d7135faf3e41d6a2355"
+    },
+    {
+      "path": "builder/selective_event_field_policy.py",
+      "bytes": 14920,
+      "sha256": "36710109c675deb0cba6fe1c7ca1ee11192f596103b7a480f1ecbd4f78e28aab",
+      "git_blob_sha1": "678860d74a0d83734ca5fb5bb4aa8c25a0036bec"
+    },
+    {
+      "path": "builder/selective_event_final_layout.py",
+      "bytes": 26914,
+      "sha256": "144df60d6764ded14a36f4c75fc11b493a1afb78a9e81b483b0879523d65d1c7",
+      "git_blob_sha1": "dd3ae5a7c768b92d205c880170f548aea8fa8ad1"
+    },
+    {
+      "path": "builder/selective_event_obligation_catalog.py",
+      "bytes": 12097,
+      "sha256": "cfb4d783414490dd11b1d7c040026720dd404385ba7491235874cbf37ef7f0cc",
+      "git_blob_sha1": "de5ba653ed2acececc4c5c996f9115a472d350fe"
+    },
+    {
+      "path": "builder/selective_event_obligation_receipts.py",
+      "bytes": 39132,
+      "sha256": "66d401db091ad1b33155e11a129901951e370e2f521147485620defcb142434d",
+      "git_blob_sha1": "357ed1e0b71f80505038a3761f8cf30c3dcd6828"
+    },
+    {
+      "path": "builder/selective_event_overlap.py",
+      "bytes": 32360,
+      "sha256": "1ad3542ff1a6dbb27f3b991224d4adb1175edcf9bf2754a38e8d285edb11c113",
+      "git_blob_sha1": "fab97ee266ac030d125a17b841d7a429e540a784"
+    },
+    {
+      "path": "builder/selective_event_recipe_catalog.py",
+      "bytes": 5797,
+      "sha256": "fc079e4d2d43025468a62c478eb5f47c19f5cf33b5c1c0f058dabd4fdf4b9192",
+      "git_blob_sha1": "e0f3314b32411273428592e6407ee0d484cf6c91"
+    },
+    {
+      "path": "builder/selective_event_relocation_adapter.py",
+      "bytes": 5878,
+      "sha256": "cf99cac0c54ca3866ba7da687a3b2fa10f16d3ca839867460d57fbaac9152e1d",
+      "git_blob_sha1": "d47a8d0ecfb1e8c35c428aa574904453532a15c7"
+    },
+    {
+      "path": "builder/selective_event_role_session.py",
+      "bytes": 3579,
+      "sha256": "ca6539179cc86a16dcdc1a85258bf2b351546e327b7269460d8b4d5ce6284bce",
+      "git_blob_sha1": "dd61ebf46861c26dffcb3ecb5ea0e0f27c6fad80"
+    },
+    {
+      "path": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/ECF_E29F4_ACTIVE_CONTRACT.json",
+      "bytes": 2118,
+      "sha256": "069a585f0e6380556d3b9a6e487174df48b69080fc88a10b9e045b43f280ce46",
+      "git_blob_sha1": "06f53978804ab058c6d9d319f63c5cd2c35bc8fb"
+    },
+    {
+      "path": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/VALIDATION.json",
+      "bytes": 1944,
+      "sha256": "d49fd5693b8a795b625baf61dd13ff3b90eca6b2cd4ed02f67d1dd53f2ed68ed",
+      "git_blob_sha1": "6927dc8c56c0cc6c04e010c4617d5a69b4376175"
+    },
+    {
+      "path": "tests/test_selective_event_role_policy.py",
+      "bytes": 7583,
+      "sha256": "22afbe0cdad2afd903fca3d539a318d25ceadee1c8fc285dc7dd26952b50e730",
+      "git_blob_sha1": "f1bd7d9a385490e51d536cb9097230e97175f099"
+    },
+    {
+      "path": "tests/test_v371_h01_connection.py",
+      "bytes": 4220,
+      "sha256": "63909375d8cfdae11b98cf327653cbf39faa9d557c00b5dd86b330db0f44dccb",
+      "git_blob_sha1": "9fe9d1b05d291662a4632d66d7c85db355c9993f"
+    },
+    {
+      "path": "tools/validate_event_overlap.py",
+      "bytes": 11271,
+      "sha256": "44c7d1d8f9f25e88a9f3eda22cbb69aba6f935ff89b0c7de00115c3620a722dc",
+      "git_blob_sha1": "ebc463323b88216c6ffe1b143181d5726f54e5a1"
+    }
+  ],
+  "validation": {
+    "path": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/VALIDATION.json",
+    "tests": 731,
+    "full_policy_source_oracle": 24305,
+    "full_policy_output_oracle": 24305,
+    "candidate_event_files": 0,
+    "git_blob_sha1": "6927dc8c56c0cc6c04e010c4617d5a69b4376175"
+  },
+  "h01_contract": {
+    "path": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/ECF_E29F4_ACTIVE_CONTRACT.json",
+    "git_blob_sha1": "06f53978804ab058c6d9d319f63c5cd2c35bc8fb"
+  },
+  "implementation_package": {
+    "name": "V371_ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_AND_BOUNDED_VALIDATION_20260923.zip",
+    "bytes": 139343,
+    "sha256": "a8f11bcdf712f7995a749a381ff2dd400acf26f784605cadd32a16041f10a1c0",
+    "drive_id": "1DUK7JUgY17PFw8_Ma3csgCA2uOR58h6S"
+  },
+  "product_outputs_emitted": 0,
+  "claim_boundary": "Bounded adapter implementation and regression only; 169-file candidate and VAL01 remain pending.",
+  "next_scope": "V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION"
+}

@@ -1,22 +1,24 @@
 {
   "schema": "SELECTIVE_VALIDATION_INDEX_V1",
   "track": "SWITCH_SELECTIVE_KOREANIZATION",
-  "current_validation_id": "V370",
-  "current_checkpoint": "selective_ko/REPOSITORY_BOUNDED_RESUME_AND_GOVERNANCE_COMPATIBILITY_MIGRATION_V370.md",
-  "current_checkpoint_kind": "REPOSITORY_BOUNDED_RESUME_AND_GOVERNANCE_COMPATIBILITY_MIGRATION",
-  "current_status": "CLOSED_AWAIT_FRESH_EVENT_SERIALIZER_IMPLEMENTATION_INSTRUCTION",
-  "parent_validation_id": "V369",
-  "parent_commit": "5fb2499d6bbbd4ffd4d0c7a4122d0a510f9e5f77",
+  "current_validation_id": "V371",
+  "current_checkpoint": "selective_ko/EVENT_169_ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_V371.md",
+  "current_checkpoint_kind": "ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_AND_BOUNDED_VALIDATION",
+  "current_status": "CLOSED_BOUNDED_ADAPTER_IMPLEMENTED_AWAIT_ACTIVE_REQUEST_AND_169_FILE_OFFLINE_VALIDATION",
+  "parent_validation_id": "V370",
+  "parent_commit": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
+  "implementation_commit": "4c5d2c4e010bf9c760337d39c0a64b6a82314918",
   "product_milestone": {
     "validation_id": "V369",
     "authority": "selective_ko/EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md",
     "applicability_index": "selective_ko/artifacts/event_169_v368_exact_applicability_v1/INDEX.json",
     "overlap_index": "selective_ko/artifacts/event_169_overlap_cluster_design_v1/INDEX.json",
-    "unchanged_by_v370": true
+    "unchanged_by_v371": true
   },
+  "current_implementation_artifact": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/INDEX.json",
   "historical_validation_discovery": {
     "catalog": "selective_ko/RESUME_HISTORY_INDEX.json",
     "full_port_index": "docs/VALIDATION_LEDGER.md"
   },
-  "next_scope": "AWAIT_FRESH_EXPLICIT_EVENT_SERIALIZER_IMPLEMENTATION_INSTRUCTION"
+  "next_scope": "AWAIT_EXPLICIT_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION"
 }
