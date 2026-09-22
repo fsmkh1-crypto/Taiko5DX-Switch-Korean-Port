@@ -1,0 +1,201 @@
+{
+  "canonical_parent": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+  "canonical_remote_head": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+  "canonical_remote_head_role": "PARENT_AUTHORITY_NOT_THE_NEW_COMMIT_SELF_HASH",
+  "counts": {
+    "branch_fields_covered_by_multiple_runtime_views": 4,
+    "cluster_branch_dependencies": 148,
+    "clusters_intersecting_generic_branch_spans": 65,
+    "clusters_requiring_atomic_design": 87,
+    "composite_involved_clusters": 22,
+    "composite_nodes": 22,
+    "connected_clusters": 87,
+    "cross_partition_clusters": 0,
+    "direct_nodes": 188,
+    "direct_only_clusters": 65,
+    "event_files": 33,
+    "existing_overlay_intersections": {
+      "derived": {
+        "clusters": 0,
+        "owners": 0
+      },
+      "direct_particle": {
+        "clusters": 0,
+        "owners": 0
+      },
+      "fixed_surface_particle": {
+        "clusters": 17,
+        "owners": 17
+      },
+      "lexical": {
+        "clusters": 0,
+        "owners": 0
+      },
+      "suffix_cross_carrier": {
+        "clusters": 0,
+        "owners": 0
+      }
+    },
+    "identical_target_range_relations": 0,
+    "independent_owner_serialization_approved_clusters": 0,
+    "input_outer_rows": 91,
+    "input_relations": 130,
+    "known_ecf_special_span_intersections": 0,
+    "leading_control_owners": 5,
+    "local_branch_fields": 39,
+    "maximum_containment_depth_edges": 2,
+    "nonkorean_support_owners": 5,
+    "other_overlay_intersections": {
+      "1E_grouped": [],
+      "3C_grouped": [],
+      "existing_5A_runtime": []
+    },
+    "outer_exclusive_mapped_korean_pairs": 0,
+    "outer_inner_node_intersection": 4,
+    "outer_mapped_korean_pair_observations": 2327,
+    "overlapping_sibling_pairs": 0,
+    "potential_full_owner_double_write_relations": 130,
+    "relation_binding_split": {
+      "COMPOSITE_INNER": 22,
+      "DIRECT_INNER": 108
+    },
+    "relations_by_type": {
+      "PARTIAL_OVERLAP": 3,
+      "SHARED_END_SUFFIX": 88,
+      "STRICT_CONTAINMENT": 39
+    },
+    "relocation_domain_binding_split": {
+      "COMPOSITE_INVOLVED": 20,
+      "DIRECT_ONLY": 60
+    },
+    "relocation_responsibility_domains": 80,
+    "same_partition_clusters": 87,
+    "shared_relocation_fields": 12,
+    "source_grouped_lookup_missing_nodes": 1,
+    "source_grouped_runtime_length_mismatch_nodes": 90,
+    "unclassified_transaction_models": 0,
+    "unique_generic_branch_plans": 136,
+    "unique_inner_nodes": 123,
+    "unique_nodes": 210
+  },
+  "design_authority": {
+    "c31_order": [
+      "V366_CANONICAL_COMPOSITE_RECONSTRUCTION",
+      "APPROVED_PARTICLE_TRANSFORM"
+    ],
+    "connected_clusters": 87,
+    "final_write_responsibility_units": 80,
+    "implementation": "NOT_STARTED",
+    "independent_serializer_transactions_87": false,
+    "responsibility_membership": "TRANSACTION_DOMAINS.jsonl"
+  },
+  "files": {
+    "CENSUS.json": {
+      "bytes": 2079,
+      "sha256": "6ce040919508d91237305a2e1e0cb253f44bb2e97811c82ef2eda6203f8495fd"
+    },
+    "CLUSTERS.jsonl": {
+      "bytes": 94405,
+      "row_count": 87,
+      "sha256": "9bb1d802debb9e8303d3989a8dc3f7f3f55bc555697bd4eb695dfc2f9bd655b6"
+    },
+    "COMPOSITE_MEMBERSHIP_31.jsonl": {
+      "bytes": 6812,
+      "row_count": 31,
+      "sha256": "71e1f5b14b2520f6d94263dc8b8c8de50610ce5ac740f5bd90fb22e1eaf82248"
+    },
+    "EDGES.jsonl": {
+      "bytes": 69832,
+      "row_count": 130,
+      "sha256": "5027c8b0d10af3fbdc00f1c2260729078537dc758006a33e85c8eadec919e360"
+    },
+    "EDGE_IDENTITIES.tsv": {
+      "bytes": 3090,
+      "sha256": "b152cea2825e0fefcbd4a4b686fbce913cf93ed00e32f890ddcf045a2007c0ea"
+    },
+    "EXACT_CENSUS.md": {
+      "bytes": 29229,
+      "sha256": "aa2cfa6203a05c36a630ebbfebe4c442fdeac38f40f3ecff76d1df21bb6cf2a0"
+    },
+    "NODES.jsonl": {
+      "bytes": 300184,
+      "row_count": 210,
+      "sha256": "3b8fe8bd9a2dcbacdf500c1cb39b67f30d43f61b9ed15e52ea2717d7b5c1869d"
+    },
+    "OVERLAY_INTERSECTIONS.jsonl": {
+      "bytes": 13236,
+      "row_count": 17,
+      "sha256": "516ca20cd4f449804592e7b8c38a020cdf5abe99519f9e9aeb5e70e6b011f23d"
+    },
+    "PROVENANCE.json": {
+      "bytes": 16101,
+      "sha256": "202adff5804b77fba4805ff338c8bdc12043e05d5b2394da6663c2d335318116"
+    },
+    "RELOCATION_PLANS.jsonl": {
+      "bytes": 69961,
+      "row_count": 136,
+      "sha256": "f851ba24e9485044079a070a3c37599a9a22ce8801107638ba33b14de023bfce"
+    },
+    "REPLAY_VALIDATION.json": {
+      "bytes": 2345,
+      "sha256": "0cd200da25a2e0a287c89517a25e35cca264054fd654145feb817c041a88d869"
+    },
+    "REPORT.md": {
+      "bytes": 11383,
+      "sha256": "fbde40a685afd1161cd2022af9b19138b290e5c495014d0e63546b15f3f672db"
+    },
+    "STRUCTURAL_FIELD_VIEWS.jsonl": {
+      "bytes": 2910,
+      "row_count": 39,
+      "sha256": "46b6db06a48ab038ab16326f24655605311ff8d2a2685d067fe65060f339eb71"
+    },
+    "SUPPORT_OWNERS.jsonl": {
+      "bytes": 1065,
+      "row_count": 5,
+      "sha256": "573befed50f17e80a803327f04870e370cd94f1096ceb6e67a5374354fec975d"
+    },
+    "TRANSACTION_DOMAINS.jsonl": {
+      "bytes": 64889,
+      "row_count": 80,
+      "sha256": "634cc571461aefa0fceb8a872f4b8d6aa8e12d03d1cee76db7c8a83f0c10990e"
+    },
+    "VALIDATION.json": {
+      "bytes": 2718,
+      "sha256": "f17a82eb8dad99513fd5306293df251198520ec3d535e2d1247be2fc9d785e28"
+    }
+  },
+  "human_exact_census": "EXACT_CENSUS.md",
+  "promotion_provenance": {
+    "all_graph_membership_bytes_unchanged": true,
+    "analysis_rerun": false,
+    "exact_census_bytes_unchanged": true,
+    "original_domains_sha256": "ce4a3605678fff016cd2e1abc265b8918a3d9c19d336505e70277fcdbd220462",
+    "original_index_sha256": "25f02c74cfedec72cd9a537e27a823e408b32653a9f52850a92c7a655d57ff12",
+    "original_local_wording": "Historical local-generation/proposal wording in unchanged census/evidence and replay receipt describes origin. This canonical index and REPORT govern status; replay receipt hashes refer to the original generated outputs.",
+    "original_report_sha256": "4a67260d1aefbb3591010949062021c9510ddb0fe12b45d2a2264e4af9c75ccc"
+  },
+  "provenance": "PROVENANCE.json",
+  "report": "REPORT.md",
+  "schema": "EVENT_OVERLAP_CLUSTER_DESIGN_CANONICAL_INDEX_V1",
+  "scope": "V369_PROMOTION_OF_COMPLETED_OVERLAP_DESIGN",
+  "serialization": {
+    "encoding": "UTF-8",
+    "jsonl": "sort_keys=true; separators=(comma,colon); ensure_ascii=false; one object per line",
+    "line_endings": "LF",
+    "offsets_in_json": "integer byte offsets",
+    "order": {
+      "clusters": "first node key, assigned C01..C87",
+      "edges": "outer filename/numeric offset then inner numeric offset",
+      "nodes": "filename then numeric source offset",
+      "relocation_plans": "filename, partition, numeric source owner offset",
+      "transactions": "first cluster ID, assigned T01..T80"
+    },
+    "range_convention": "half-open",
+    "semantic_and_transport_hashes": "JSONL logical UTF-8 stream equals stored bytes; no transport normalization",
+    "terminal_LF": true,
+    "transport": "Plain UTF-8 canonical Git artifacts; original input references remain in pinned V366/V368 authority."
+  },
+  "status": "CANONICAL_DESIGN_CLOSED_IMPLEMENTATION_REQUIRES_FRESH_INSTRUCTION",
+  "validation": "VALIDATION.json",
+  "validation_id": "V369"
+}

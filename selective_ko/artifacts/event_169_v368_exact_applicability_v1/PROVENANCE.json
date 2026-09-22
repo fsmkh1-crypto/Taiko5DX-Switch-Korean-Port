@@ -1,0 +1,168 @@
+{
+  "authorities": {
+    "V323": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/DIALOGUE_EVENT_TS5_INTERPRETER_PC_PAYLOAD_CHECKPOINT_V323.md",
+      "sha256": "a1c51fea3c417b69a79cb911f6437a8a28e10a403110780850b6ca953c0b81ec"
+    },
+    "V347": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/ECF00000_CODE5_DIRECT_PARTICLE_RUNTIME_RESPONSIBILITY_CLOSURE_V347.md",
+      "sha256": "96c26c5ca93376d7e9054afd7d41fd65bf475a2e37185069e584f992129be4fe"
+    },
+    "V351": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/PC_AUTHORED_DERIVED_SURFACE_POLICY.md",
+      "sha256": "d13084d55e03a537844706a2e294487a240be531f522ae2e0b9755444f5e4900"
+    },
+    "V356_ROOTS": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/artifacts/ecf00000_v356_percent_macro_b0_46_root_serializer_admission_v1/ADMISSION_ROWS.json",
+      "sha256": "55d79c420255b2efdd01df859089f2b83048a1fd3ada721bb1739e933306ab80"
+    },
+    "V357": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/artifacts/ecf00000_v357_percent_macro_b0_46_root_implementation_v1/INDEX.json",
+      "sha256": "a337a84a685cc731c0e798e9bdd168ec49d96903f9922809cbc65734d275215a"
+    },
+    "V367": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/EVENT_169_RUNTIME_EVENT_LEN_AND_SEMANTIC_REPLAY_CLOSURE_V367.md",
+      "sha256": "7149a1d20bf957988667c38bf0ffd232da51c1e9ec0ede80af98d0019fa81b8d"
+    },
+    "V368": {
+      "commit": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+      "path": "selective_ko/EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md",
+      "sha256": "28d2688b9270b849fb60691acebfbd9a6b293b329929e7acb27ef43ffafe1a6d"
+    }
+  },
+  "canonical_parent": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+  "excluded_exact_overlays": [
+    {
+      "path": "selective_ko/artifacts/ecf00000_v348_direct_escape_particle_policy_v1/APPLICABILITY.jsonl",
+      "rows": 350,
+      "sha256": "7f2d632d3ccdcf9244c40b82f8b82714d048203bce7e88d0de9a1df532257097"
+    },
+    {
+      "path": "selective_ko/artifacts/ecf00000_v350_code5_lexical_false_positive_v1/APPLICABILITY.jsonl",
+      "rows": 12,
+      "sha256": "d0c6bf82792f1edbcc04363205c7b11f0ce11293ebb3c8dffa56761aa0b87edd"
+    },
+    {
+      "path": "selective_ko/artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/BINDINGS_V334_HASHED.jsonl",
+      "rows": 61,
+      "sha256": "95f2b98120ddf20f287321393a9d2a52b6f7704d37786df0ef228ae50a47d15f"
+    },
+    {
+      "path": "selective_ko/artifacts/ecf00000_v360_suffix3_post_v357_event_v1/APPLICABILITY.jsonl",
+      "rows": 3,
+      "sha256": "f92b9e8f2ad7ff5c904cbbbd3ca1932f70a85050ed93591ff718f597cd777b5b"
+    }
+  ],
+  "membership_selection": "Frozen V367 raw detector set minus the exact four canonical overlays; no owner discovery, rebinding or fresh grouping.",
+  "offset_contract": "Integer byte offsets; half-open intervals in original source or PC-KO file coordinates. Literal ends at the next parsed escape or NUL, excluding both. Hex bytes are authoritative. Surface is the exact leading Korean run, not a rewritten translation.",
+  "pc_manifest_sha256": "6a9a2efaf509985e527725d5ce3bbc81eee7011652961a4ad6acc3bb7b6d110b",
+  "predicate_contract": [
+    "Exact V366 owner binding and PC file hash must match.",
+    "Exact escape and following authored literal byte locators must match.",
+    "Switch source header owns structure; opcode links to V323 shared text processing.",
+    "V347 runtime expansion owns the escape; the following EVENT bytes remain literal. V368 authorizes this exact corpus-wide application.",
+    "Every occurrence must satisfy an explicit recorded surface predicate; there is no fallback.",
+    "Mixed rows require every component, including its root dependency, to pass.",
+    "Cross-carrier occurrences require the exact B0 root identity, V356 target size/hash and V357 dependency.",
+    "Nested outer delegation requires V368 exact inner binding, identical absolute occurrences, preserved source/target topology, zero exclusive occurrences and independent inner admission.",
+    "Class labels are descriptive indexes, never standalone admission predicates.",
+    "INCLUDE_KO is inherited policy admission; this ledger does not authorize unreviewed serializer transforms."
+  ],
+  "schema": "V368_EXACT_APPLICABILITY_PROVENANCE_V1",
+  "semantic_authority": "V368",
+  "source_ledger_drive_id": "1gQT2PQt1yk_HGDxvhieeJWni5vQtAfU4",
+  "source_ledger_sha256": "6e7ca36d05a1a79e4e0918645f27a72b05c05505f66ac33a683e745b03da3d60",
+  "source_membership": "FROZEN_V366_NO_REGENERATION",
+  "surface_predicates": {
+    "derived": [
+      "과는",
+      "과의",
+      "로구나",
+      "로군",
+      "로는",
+      "로다",
+      "로부터",
+      "로서는",
+      "로의",
+      "와는",
+      "와의",
+      "이겠구나",
+      "이겠군요",
+      "이군",
+      "이나",
+      "이냐",
+      "이네",
+      "이니",
+      "이니라",
+      "이다",
+      "이라",
+      "이라고",
+      "이라는",
+      "이라니",
+      "이라도",
+      "이라면",
+      "이란",
+      "이로구나",
+      "이로군",
+      "이며",
+      "이셨군요",
+      "이시다",
+      "이야",
+      "이야말로",
+      "이었겠지",
+      "이었는가",
+      "이었다",
+      "이었으나",
+      "이었지",
+      "이여",
+      "이오",
+      "이옵니",
+      "이옵니다",
+      "이옵니다만",
+      "이지",
+      "이지만"
+    ],
+    "direct": [
+      "가",
+      "과",
+      "는",
+      "로",
+      "를",
+      "와",
+      "은",
+      "을",
+      "이"
+    ],
+    "lexical_gamun": [
+      "가문",
+      "가문과",
+      "가문과는",
+      "가문과도",
+      "가문과의",
+      "가문까지",
+      "가문도",
+      "가문뿐",
+      "가문에",
+      "가문에는",
+      "가문에도",
+      "가문에서",
+      "가문에서는",
+      "가문으로",
+      "가문은",
+      "가문을",
+      "가문의",
+      "가문이"
+    ],
+    "lexical_gasin": [
+      "가신"
+    ]
+  },
+  "transport": "UTF-8 without BOM; JSONL sorted by filename and numeric source owner; keys sorted; compact separators; LF and terminal LF",
+  "v366_archive_sha256": "430ab6394ade066c5314ac734819d68cd9f24554da2a5346bc23031019712b1c"
+}

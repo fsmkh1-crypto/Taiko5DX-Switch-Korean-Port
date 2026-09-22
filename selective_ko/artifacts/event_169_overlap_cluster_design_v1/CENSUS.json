@@ -1,0 +1,76 @@
+{
+  "branch_fields_covered_by_multiple_runtime_views": 4,
+  "cluster_branch_dependencies": 148,
+  "clusters_intersecting_generic_branch_spans": 65,
+  "clusters_requiring_atomic_design": 87,
+  "composite_involved_clusters": 22,
+  "composite_nodes": 22,
+  "connected_clusters": 87,
+  "cross_partition_clusters": 0,
+  "direct_nodes": 188,
+  "direct_only_clusters": 65,
+  "event_files": 33,
+  "existing_overlay_intersections": {
+    "derived": {
+      "clusters": 0,
+      "owners": 0
+    },
+    "direct_particle": {
+      "clusters": 0,
+      "owners": 0
+    },
+    "fixed_surface_particle": {
+      "clusters": 17,
+      "owners": 17
+    },
+    "lexical": {
+      "clusters": 0,
+      "owners": 0
+    },
+    "suffix_cross_carrier": {
+      "clusters": 0,
+      "owners": 0
+    }
+  },
+  "identical_target_range_relations": 0,
+  "independent_owner_serialization_approved_clusters": 0,
+  "input_outer_rows": 91,
+  "input_relations": 130,
+  "known_ecf_special_span_intersections": 0,
+  "leading_control_owners": 5,
+  "local_branch_fields": 39,
+  "maximum_containment_depth_edges": 2,
+  "nonkorean_support_owners": 5,
+  "other_overlay_intersections": {
+    "1E_grouped": [],
+    "3C_grouped": [],
+    "existing_5A_runtime": []
+  },
+  "outer_exclusive_mapped_korean_pairs": 0,
+  "outer_inner_node_intersection": 4,
+  "outer_mapped_korean_pair_observations": 2327,
+  "overlapping_sibling_pairs": 0,
+  "potential_full_owner_double_write_relations": 130,
+  "relation_binding_split": {
+    "COMPOSITE_INNER": 22,
+    "DIRECT_INNER": 108
+  },
+  "relations_by_type": {
+    "PARTIAL_OVERLAP": 3,
+    "SHARED_END_SUFFIX": 88,
+    "STRICT_CONTAINMENT": 39
+  },
+  "relocation_domain_binding_split": {
+    "COMPOSITE_INVOLVED": 20,
+    "DIRECT_ONLY": 60
+  },
+  "relocation_responsibility_domains": 80,
+  "same_partition_clusters": 87,
+  "shared_relocation_fields": 12,
+  "source_grouped_lookup_missing_nodes": 1,
+  "source_grouped_runtime_length_mismatch_nodes": 90,
+  "unclassified_transaction_models": 0,
+  "unique_generic_branch_plans": 136,
+  "unique_inner_nodes": 123,
+  "unique_nodes": 210
+}

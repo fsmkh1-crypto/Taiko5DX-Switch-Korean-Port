@@ -1,7 +1,7 @@
 # SELECTIVE PROJECT STATE
 
 Date: 2026-09-22 (KST)
-Status: V368 EVENT-169 SEMANTIC POLICY CLOSED / UNRESOLVED ZERO / OVERLAP-CLUSTER SERIALIZER DESIGN NEXT
+Status: V369 EXACT APPLICABILITY AND 80-UNIT OVERLAP DESIGN CANONICAL / STOP
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
@@ -17,7 +17,16 @@ Bounded resume I/O policy: `BOUNDED_RESUME_READ_POLICY.md`.
 The required-reads list below is a provenance-ordered superset, not a read-all instruction.
 Resume with current HEAD/state + current authority/INDEX + exact-scope dependencies only.
 
-Required reads, in authority order:
+Current bounded resume authority:
+
+- `EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md`
+- `artifacts/event_169_v368_exact_applicability_v1/INDEX.json`
+- `artifacts/event_169_overlap_cluster_design_v1/INDEX.json`
+- `artifacts/event_169_overlap_cluster_design_v1/REPORT.md`
+
+V369 supersedes every historical next-scope entry below. Await a fresh explicit instruction before serializer implementation. The 87 components are governed by 80 final write-responsibility units.
+
+Historical dependency reads, in provenance order:
 
 1. `EVENT_169_CORPUS_WIDE_SEMANTIC_POLICY_CLOSURE_V368.md`
 2. `artifacts/event_169_corpus_wide_semantic_policy_closure_v1/INDEX.json`
@@ -683,7 +692,7 @@ proven semantic misalignment              M227 M228 M229
 
 The prior executable runtime-validation scope is closed. The package-loading/font/Mapping route is not the active blocker.
 
-## 23. Executable next scope — sole authority
+## 23. Historical executable scope — superseded by V369
 
 After a fresh explicit user signal, resume:
 
@@ -2664,3 +2673,17 @@ Exact next scope after a fresh explicit user execution signal:
 
 READ ONLY. Use 91 product-relevant INCLUDE_KO multi-owner outer spans and 130 INCLUDE-to-INCLUDE
 relations, and intersect them with the existing ECF overlay modules. No implementation or product mutation.
+
+
+
+## V369 — exact applicability and overlap design canonicalization
+
+Authority: `EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md`.
+
+The V368 residual ledger is materialized as exactly 2,438 INCLUDE_KO rows with UNRESOLVED=0 and 2,671 exact occurrences in 106 files. Membership, binding and admission are inherited, with no fallback or class-only authority. Its canonical INDEX pins the Drive archive and the separate uncompressed ledger SHA-256.
+
+The completed overlap evidence is promoted unchanged in membership: 210 nodes / 130 relations / 87 connected clusters / 80 final write-responsibility units. Preserve 91 outer owners, direct/composite 108/22, seven relocation-sharing pairs, 12 shared fields, fixed-particle 17, composite 22, leading-control 5, runtime-only EKF00800:F60, and five NON_KOREAN_TARGET preservation-boundary owners. C31 reconstructs the canonical composite before the approved particle transform.
+
+No builder, serializer, EVENT, TAI5MSG, build/package/IPS, or hardware/runtime package changed. This is documentation/artifact canonicalization, not product validation.
+
+Exact next action: STOP and await a fresh explicit serializer-implementation instruction. Resume from these ledgers; do not redo the closed analyses.

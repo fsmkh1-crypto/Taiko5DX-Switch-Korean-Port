@@ -1,0 +1,61 @@
+{
+  "generator_sha256": "4c7bb7d72b28946ccf7241c385216773a0df3d6f65adfb660319d763397c540b",
+  "method": "Before/after full directory SHA256 snapshots matched for 23 files during a completed materialize.py + verify_artifacts.py replay. This receipt binds the 13 materialized evidence outputs, excluding later-added receipts/index updates.",
+  "product_rebuild": "NOT_RUN",
+  "schema": "EVENT_OVERLAP_DOCUMENTATION_REPLAY_RECEIPT_V1",
+  "status": "PASS_BYTE_IDENTICAL_DOCUMENTATION_REPLAY",
+  "tested_outputs": {
+    "CENSUS.json": {
+      "bytes": 2079,
+      "sha256": "6ce040919508d91237305a2e1e0cb253f44bb2e97811c82ef2eda6203f8495fd"
+    },
+    "CLUSTERS.jsonl": {
+      "bytes": 94405,
+      "sha256": "9bb1d802debb9e8303d3989a8dc3f7f3f55bc555697bd4eb695dfc2f9bd655b6"
+    },
+    "COMPOSITE_MEMBERSHIP_31.jsonl": {
+      "bytes": 6812,
+      "sha256": "71e1f5b14b2520f6d94263dc8b8c8de50610ce5ac740f5bd90fb22e1eaf82248"
+    },
+    "EDGES.jsonl": {
+      "bytes": 69832,
+      "sha256": "5027c8b0d10af3fbdc00f1c2260729078537dc758006a33e85c8eadec919e360"
+    },
+    "EDGE_IDENTITIES.tsv": {
+      "bytes": 3090,
+      "sha256": "b152cea2825e0fefcbd4a4b686fbce913cf93ed00e32f890ddcf045a2007c0ea"
+    },
+    "EXACT_CENSUS.md": {
+      "bytes": 29229,
+      "sha256": "aa2cfa6203a05c36a630ebbfebe4c442fdeac38f40f3ecff76d1df21bb6cf2a0"
+    },
+    "NODES.jsonl": {
+      "bytes": 300184,
+      "sha256": "3b8fe8bd9a2dcbacdf500c1cb39b67f30d43f61b9ed15e52ea2717d7b5c1869d"
+    },
+    "OVERLAY_INTERSECTIONS.jsonl": {
+      "bytes": 13236,
+      "sha256": "516ca20cd4f449804592e7b8c38a020cdf5abe99519f9e9aeb5e70e6b011f23d"
+    },
+    "PROVENANCE.json": {
+      "bytes": 16101,
+      "sha256": "202adff5804b77fba4805ff338c8bdc12043e05d5b2394da6663c2d335318116"
+    },
+    "RELOCATION_PLANS.jsonl": {
+      "bytes": 69961,
+      "sha256": "f851ba24e9485044079a070a3c37599a9a22ce8801107638ba33b14de023bfce"
+    },
+    "STRUCTURAL_FIELD_VIEWS.jsonl": {
+      "bytes": 2910,
+      "sha256": "46b6db06a48ab038ab16326f24655605311ff8d2a2685d067fe65060f339eb71"
+    },
+    "SUPPORT_OWNERS.jsonl": {
+      "bytes": 1065,
+      "sha256": "573befed50f17e80a803327f04870e370cd94f1096ceb6e67a5374354fec975d"
+    },
+    "TRANSACTION_DOMAINS.jsonl": {
+      "bytes": 60409,
+      "sha256": "ce4a3605678fff016cd2e1abc265b8918a3d9c19d336505e70277fcdbd220462"
+    }
+  }
+}

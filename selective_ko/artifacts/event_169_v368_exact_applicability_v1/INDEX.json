@@ -1,0 +1,56 @@
+{
+  "canonical_compact_files": {
+    "PROVENANCE.json": {
+      "bytes": 6453,
+      "sha256": "31c1e6970d06c3fed703408deacb1e9077921872e109592f6083c1d2057f4093"
+    },
+    "VALIDATION.json": {
+      "bytes": 1005,
+      "sha256": "b09a716cfe0378b0c0512225d0139e8208fb2d1ee39dccaf217a508272d8b998"
+    }
+  },
+  "canonical_parent": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+  "claim_boundary": "Policy applicability only. No builder/serializer implementation, product byte mutation, build/package/IPS or hardware execution.",
+  "detector_occurrences": 2671,
+  "event_files": 106,
+  "large_artifact": {
+    "bytes": 490825,
+    "drive_readback": "PASS_BYTE_IDENTICAL_SHA256",
+    "file_id": "1zROWsuux1d3m7T4SAKfuimHXuiJ_GJbv",
+    "file_name": "V369_V368_EXACT_APPLICABILITY_2438.zip",
+    "members": {
+      "APPLICABILITY.jsonl": {
+        "bytes": 4498481,
+        "sha256": "b9c421d18e7ce0a5d7603d7d3e764ad102bf791d965d7216edac85682a838c43"
+      },
+      "MATERIALIZE.py": {
+        "bytes": 14464,
+        "sha256": "30ce2f790dba5627d3b0d47a29fd3071fa90c11a1103296fb1cc5cb6ab478daa"
+      },
+      "PROVENANCE.json": {
+        "bytes": 6453,
+        "sha256": "31c1e6970d06c3fed703408deacb1e9077921872e109592f6083c1d2057f4093"
+      },
+      "VALIDATION.json": {
+        "bytes": 1005,
+        "sha256": "b09a716cfe0378b0c0512225d0139e8208fb2d1ee39dccaf217a508272d8b998"
+      }
+    },
+    "sha256": "4e8b5dc2899789541e010ec16adcf1921b05673913e6840c3b2e8eb0cfa07189",
+    "url": "https://drive.google.com/file/d/1zROWsuux1d3m7T4SAKfuimHXuiJ_GJbv/view?usp=drivesdk"
+  },
+  "ledger": {
+    "bytes": 4498481,
+    "member": "APPLICABILITY.jsonl",
+    "row_count": 2438,
+    "sha256": "b9c421d18e7ce0a5d7603d7d3e764ad102bf791d965d7216edac85682a838c43"
+  },
+  "resume": "Download the pinned Drive ZIP and verify its SHA-256; extract APPLICABILITY.jsonl and verify its separate bytes/hash and 2,438-row count. Read PROVENANCE and VALIDATION. Do not regenerate source membership or repeat closed semantic/cluster analyses.",
+  "rows": 2438,
+  "schema": "V368_EXACT_APPLICABILITY_CANONICAL_INDEX_V1",
+  "semantic_authority": "V368_UNCHANGED",
+  "serialization": "UTF-8 without BOM; sort by EVENT filename then numeric source owner; sorted JSON keys, compact comma/colon separators, LF and terminal LF.",
+  "status": "CANONICAL_EXACT_LEDGER_MATERIALIZED",
+  "unresolved": 0,
+  "validation_id": "V369"
+}

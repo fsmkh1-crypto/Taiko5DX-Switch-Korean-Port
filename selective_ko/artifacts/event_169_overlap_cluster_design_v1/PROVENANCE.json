@@ -1,0 +1,356 @@
+{
+  "canonical_archive_members": {
+    "DIRECT_HEADER_PRESERVED.jsonl": {
+      "bytes": 34971518,
+      "sha256": "6e7ca36d05a1a79e4e0918645f27a72b05c05505f66ac33a683e745b03da3d60"
+    },
+    "OVERLAP_COMPOSITE_31.jsonl": {
+      "bytes": 71168,
+      "sha256": "d249bd71bca0a60d950e4b8e48884b100cf3c38b296fd5598cf98a21514a8527"
+    },
+    "PC_KO_EVENT_INPUT_MANIFEST.json": {
+      "bytes": 50748,
+      "sha256": "6a9a2efaf509985e527725d5ce3bbc81eee7011652961a4ad6acc3bb7b6d110b"
+    }
+  },
+  "canonical_remote_head": "756596e57353a0ed8f3538c22b4fbeac8f08a326",
+  "extracted_helper_names": [
+    "align4",
+    "event_len",
+    "korean_bearing",
+    "mapped_hangul_code",
+    "str_aligned_len",
+    "target_strings_raw",
+    "u16",
+    "u32"
+  ],
+  "input_archives": [
+    {
+      "bytes": 2211822,
+      "drive_file_id": "1gQT2PQt1yk_HGDxvhieeJWni5vQtAfU4",
+      "path": "C:\\Users\\LG\\AppData\\Local\\Temp\\taiko-v366-ledger-readonly.zip",
+      "sha256": "430ab6394ade066c5314ac734819d68cd9f24554da2a5346bc23031019712b1c"
+    },
+    {
+      "bytes": 1984864,
+      "drive_file_id": "1afc-b8Zh39RQq2XGO7DAVNXlq1ir70_0",
+      "path": "C:\\Users\\LG\\AppData\\Local\\Temp\\taiko-v363-readonly.zip",
+      "sha256": "2ac7c048150887e7b47196f8d784c813d2a33dc8c6e4d5582e19d6f95b1952dc"
+    }
+  ],
+  "input_materialization": "Embedded ZIP read in memory; individual EVENT payload hashes matched V366 manifest. No patcher execution or product serialization.",
+  "local_checkout_commit": "7f9822f27fe9b3696ffb914fc856d2f68d5109e7",
+  "pc_patch_oracle_gate": "PASS_INHERITED_V366_V337_PLUS_INPUT_IDENTITY",
+  "pc_patcher_identity_reference": "109dc729e66df8cd0a47c5f6c24719260eb03a89890a0c69d3ba739145dcfb23",
+  "pc_patcher_path": "C:\\Codex\\Taiko5DX\\inputs\\PC_Korean_Patch\\Taiko5DX_Korean_Patcher_v1.02\\Taiko5DX_Korean_Patcher.exe",
+  "runtime_formula_use": "Reuse V367-proven V334 helper to attach spans, not to reopen universal continuity.",
+  "schema": "EVENT_OVERLAP_LOCAL_PROVENANCE_V1",
+  "semantic_selection": "Canonical V334 korean_bearing selector on V366 bindings; V368 promotes every Korean-bearing row. No new policy or fallback.",
+  "source_code_and_ledgers": {
+    "builder/selective_event.py": {
+      "bytes": 31430,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event.py",
+      "sha256": "e52b0ae997a711a697aab9cbc5b3a9ba6ec806cb2bc9501c7809d9938a5b74c8"
+    },
+    "builder/selective_event_1e.py": {
+      "bytes": 9568,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_1e.py",
+      "sha256": "ef5e20e1e627a3c9efd8e44b35cf7e18b02d3241277e123f38690772afeb7a97"
+    },
+    "builder/selective_event_5a.py": {
+      "bytes": 21359,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_5a.py",
+      "sha256": "5f1726ccb47278ba982e094c25b34522114b93fadfc4a1567a7366e157091bcc"
+    },
+    "builder/selective_event_code5_lexical.py": {
+      "bytes": 9789,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_code5_lexical.py",
+      "sha256": "8cbed06a8d5d8bbb958bfac3062ad3ad18e3ce15275dc452b1978591aa615479"
+    },
+    "builder/selective_event_derived_surface.py": {
+      "bytes": 19557,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_derived_surface.py",
+      "sha256": "2e29346be3ed0f09600026a03581b9ef6541e368cc6f22aedfb17be7851f7871"
+    },
+    "builder/selective_event_direct_particle.py": {
+      "bytes": 23011,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_direct_particle.py",
+      "sha256": "e9c9020b8f61952b262af6fb67b18a24afa5f3ccaa37658099e933771d4ae6d3"
+    },
+    "builder/selective_event_particle.py": {
+      "bytes": 14502,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_particle.py",
+      "sha256": "db7008db586d6ff85cde1f9511f6249f300ec48417c75bbd78b3443aa41aaed6"
+    },
+    "builder/selective_event_suffix3.py": {
+      "bytes": 10862,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\builder\\selective_event_suffix3.py",
+      "sha256": "e0431b9a64835817b5174e182381a1b6951bcc7c947d22134ade57b5fb17be57"
+    },
+    "selective_ko/artifacts/ecf00000_v339_5a_composite_v1/MAPPING_ORIGINAL_KO_5A_COMPACT.bin": {
+      "bytes": 17408,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v339_5a_composite_v1\\MAPPING_ORIGINAL_KO_5A_COMPACT.bin",
+      "sha256": "6aafe3b284e3ec65a7f2928334bffa9a81b15b54d47c85928484a3b59058c97e"
+    },
+    "selective_ko/artifacts/ecf00000_v344_particle_preimplementation_v1/PARTICLE_APPLICABILITY.jsonl": {
+      "bytes": 586860,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v344_particle_preimplementation_v1\\PARTICLE_APPLICABILITY.jsonl",
+      "sha256": "9db96237304b1283eddd6a629acc1ec2f91508bc0e7418ffa6ce12b5b8a9eb49"
+    },
+    "selective_ko/artifacts/ecf00000_v348_direct_escape_particle_policy_v1/APPLICABILITY.jsonl": {
+      "bytes": 99380,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v348_direct_escape_particle_policy_v1\\APPLICABILITY.jsonl",
+      "sha256": "1e86ea744dc3e7ad7524b1362a399e8c13a3b61dd1ad6ad302f7111620cac887"
+    },
+    "selective_ko/artifacts/ecf00000_v350_code5_lexical_false_positive_v1/APPLICABILITY.jsonl": {
+      "bytes": 5019,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v350_code5_lexical_false_positive_v1\\APPLICABILITY.jsonl",
+      "sha256": "e7f7e177d05a4c5f0a3bcfbad9d0b55ea8f82393c05a355b52f098f7364821d8"
+    },
+    "selective_ko/artifacts/ecf00000_v352_pc_authored_derived_surface_implementation_v1/BINDINGS_V334_HASHED.jsonl": {
+      "bytes": 31345,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v352_pc_authored_derived_surface_implementation_v1\\BINDINGS_V334_HASHED.jsonl",
+      "sha256": "21fe54278b6526d6d7d565d5cd5bafda53d9a360c26fb7b28fe8c9f2dc8257b9"
+    },
+    "selective_ko/artifacts/ecf00000_v360_suffix3_post_v357_event_v1/APPLICABILITY.jsonl": {
+      "bytes": 1388,
+      "local_path": "C:\\Codex\\Taiko5DX\\repo\\Taiko5DX-Switch-Korean-Port\\selective_ko\\artifacts\\ecf00000_v360_suffix3_post_v357_event_v1\\APPLICABILITY.jsonl",
+      "sha256": "77b046709dd98cc35877b99e8e9ba1443b10189873e270ece2f907b5d106a853"
+    }
+  },
+  "status": "LOCAL_GENERATED_NOT_CANONICAL_COMMIT",
+  "used_event_files": [
+    {
+      "file": "ECF00000.TS5",
+      "pc_ko_bytes": 1156480,
+      "pc_ko_sha256": "0899bf81789acfbd243d43be209a8a3960933fa090960ac8c753c63f95f07bbe",
+      "source_bytes": 931936,
+      "source_sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09"
+    },
+    {
+      "file": "EF51FA00.TS5",
+      "pc_ko_bytes": 9304,
+      "pc_ko_sha256": "c45fd33731af2d344715fc180197ee4a7e9d798c36d7447d56347f25e396c3a0",
+      "source_bytes": 7404,
+      "source_sha256": "69ea5795f31a13e7e754531cf52d5ac6a025f3908f78b68ea57e1c11c9025314"
+    },
+    {
+      "file": "EFF01700.TS5",
+      "pc_ko_bytes": 10660,
+      "pc_ko_sha256": "309addfd8078fec37ccce94de9f0d93e5f43543fa0f6d4162a2b008d329ba856",
+      "source_bytes": 8448,
+      "source_sha256": "19e01ce27a89a7a579cbf73721cca566867d3a7600bbf5d1ba53b15286803ee3"
+    },
+    {
+      "file": "EFF03600.TS5",
+      "pc_ko_bytes": 25768,
+      "pc_ko_sha256": "e1d70636a8ea82be3de5ace658f680faa8a11cd2124e06d4a6704905a32977b0",
+      "source_bytes": 22468,
+      "source_sha256": "9055f0d52efe80977752f50bbb4d2de1e2fdd9d76040a62539dd97963412dd48"
+    },
+    {
+      "file": "EFF07700.TS5",
+      "pc_ko_bytes": 83588,
+      "pc_ko_sha256": "64d58745308bb643358b5a4dc652e457c57a2a36bc11292ae3f8dae2bcad6f41",
+      "source_bytes": 67952,
+      "source_sha256": "e9f3998f2ab779fedd36c5d141fa883d04a1a934794d53df832c2d81de5f8b86"
+    },
+    {
+      "file": "EFF07D00.TS5",
+      "pc_ko_bytes": 25732,
+      "pc_ko_sha256": "c36de62f77d8ee5e71e55a13ae8b07bb5ad65cb487505d1e9a57e42cab538dc5",
+      "source_bytes": 22388,
+      "source_sha256": "aba9a9fb3f44737c84d29c50ff0496330d30efbee2bc1f07c81708c296c5aebc"
+    },
+    {
+      "file": "EFF0A500.TS5",
+      "pc_ko_bytes": 33968,
+      "pc_ko_sha256": "4e8c81a79876e324e351c1932f2517f0b31e4ea8551c3465500d3fd90ede39ba",
+      "source_bytes": 29004,
+      "source_sha256": "75e63b6bb0a1212a3320bccde34e26c716ba1894626edbe442554166c3c91b46"
+    },
+    {
+      "file": "EFF0C300.TS5",
+      "pc_ko_bytes": 335772,
+      "pc_ko_sha256": "7cd21c7ac47b2908862ee83f15c7100b0811e6e23bc2ed3f7cb934c3a63b487a",
+      "source_bytes": 273016,
+      "source_sha256": "1749ce39b4a990e7ace5cfaa2684e2db7df42839a9d9916218a67598dff6df66"
+    },
+    {
+      "file": "EFF13800.TS5",
+      "pc_ko_bytes": 25732,
+      "pc_ko_sha256": "913c537826e957992c6d1d838b44c8a80539d55b580ed4fed4628c207be0c477",
+      "source_bytes": 22456,
+      "source_sha256": "8a3c66011f7de61fbcba7d2bfbd7397ef01c07f3b149e62b7856b824f8f7065d"
+    },
+    {
+      "file": "EFF13B00.TS5",
+      "pc_ko_bytes": 31712,
+      "pc_ko_sha256": "ebd970b2b599694c695ddad6fb387a81126694ff48cd47e2e8793f6d27f93fb8",
+      "source_bytes": 27840,
+      "source_sha256": "cdd4224d170dcda58c20957a087f1e4d62f826cfd0dd4b068a3516d4c172e941"
+    },
+    {
+      "file": "EFF16700.TS5",
+      "pc_ko_bytes": 59884,
+      "pc_ko_sha256": "00ef7be398075ef37dfed31cc0ca1dfa4723fe143679d945034e7334da477080",
+      "source_bytes": 50176,
+      "source_sha256": "fa44d45eedd35cc1b6dc74066e47b01266dad144a7433943c7b2c844a5ae9254"
+    },
+    {
+      "file": "EFF18A00.TS5",
+      "pc_ko_bytes": 8024,
+      "pc_ko_sha256": "b5211acfe2abf0647aabb07cbd946ac4962205f959795b6880716178917482bc",
+      "source_bytes": 6572,
+      "source_sha256": "59b41a048f6137c54a756d6e0b818a9c07e903b7bdd186728b9e159bc4749d66"
+    },
+    {
+      "file": "EFF18B00.TS5",
+      "pc_ko_bytes": 38324,
+      "pc_ko_sha256": "05b419245224110d623d3fdaf469cd441097bdd3e3c4684a9163bdbe5f031424",
+      "source_bytes": 33268,
+      "source_sha256": "f01f11859f7e28ec1c2119ae865465977890a89bd3125a9f122f8fbb7035dcac"
+    },
+    {
+      "file": "EFF1CA00.TS5",
+      "pc_ko_bytes": 25924,
+      "pc_ko_sha256": "c48500df15c1664440823b2c7cb078f9aab6b45e6a1709833a2b034c2f98070c",
+      "source_bytes": 22560,
+      "source_sha256": "ff08e0ee1736c4dbc257dd6fbae53f50a6603de652c3f94f296d9ee854601828"
+    },
+    {
+      "file": "EFF1E400.TS5",
+      "pc_ko_bytes": 25824,
+      "pc_ko_sha256": "c56bea6cd272e43444289c9f2435cebb8250149a29984ca1aee56371d30b0b97",
+      "source_bytes": 22508,
+      "source_sha256": "528aa495c74214c994b9c1f120dd95728e267224e6c095d545c280e071881128"
+    },
+    {
+      "file": "EFF1FA00.TS5",
+      "pc_ko_bytes": 196828,
+      "pc_ko_sha256": "ed23deaf4bde3c9a9a45a37cc6dbaeeb6169c1252e2161816743e1b31bd57bce",
+      "source_bytes": 162680,
+      "source_sha256": "ad5649af2b1aa37aa048a6f879c593978a3a60a61e92200f8c1138b842bbfaab"
+    },
+    {
+      "file": "EFF20600.TS5",
+      "pc_ko_bytes": 75000,
+      "pc_ko_sha256": "2279f243e16ebadabee3b55507b16acf9935e159a1c3235074f1fd9eccadc5bc",
+      "source_bytes": 63008,
+      "source_sha256": "33f933e5a54e4c2084f1fb95c706db876ad0a0f811900b4a474f5797e03a6ae3"
+    },
+    {
+      "file": "EFF27C00.TS5",
+      "pc_ko_bytes": 24612,
+      "pc_ko_sha256": "ee2cff9eb069efb0d827ae2acf23572493f94707318f8e4462be31d3acce13e4",
+      "source_bytes": 21716,
+      "source_sha256": "b531ce819cf67137b871c275bc144eacdb457c7bf573a013ff2f6313e336a208"
+    },
+    {
+      "file": "EFF2D100.TS5",
+      "pc_ko_bytes": 35984,
+      "pc_ko_sha256": "c0aa43a2e5a113499f134fe0e7eae6138fa1d970b03a35172e44f94fa4fd04fc",
+      "source_bytes": 31656,
+      "source_sha256": "32b0ff59919103a9a4c21e107216993c6b707f6d860bea50750a2dda64afae91"
+    },
+    {
+      "file": "EFF2D200.TS5",
+      "pc_ko_bytes": 37332,
+      "pc_ko_sha256": "956811cb15b6c44574abaf15b03010cdcd8668e7e8e8de881ca16654cb1e95da",
+      "source_bytes": 29704,
+      "source_sha256": "05025e206efc9db44fe40669fe19d1e672767a0a2345d5fb785637fb16f9aaca"
+    },
+    {
+      "file": "EKF00400.TS5",
+      "pc_ko_bytes": 36056,
+      "pc_ko_sha256": "abcb8722db0b62d1a294c805c45fcb7a7120a9d2f715379b7f982ce9fa12d0d9",
+      "source_bytes": 30128,
+      "source_sha256": "7dae309223330842453c1b77b4aa1409454bb666a57ba477e47a12aa5405c63c"
+    },
+    {
+      "file": "EKF00800.TS5",
+      "pc_ko_bytes": 13132,
+      "pc_ko_sha256": "abd9368b1a4a5eb98b86cdc610313146e37dace6597a997961b248a811be0e84",
+      "source_bytes": 10796,
+      "source_sha256": "56b2341241a6960aabda4cb864a1df21603f68213712d385387f06c48fea2b88"
+    },
+    {
+      "file": "EP111700.TS5",
+      "pc_ko_bytes": 51144,
+      "pc_ko_sha256": "cc266623e016ce3d702901859568feea41e4fa221449130592aa9b50ca33fbda",
+      "source_bytes": 42304,
+      "source_sha256": "a5d8446d36cb49195970b7c343fb83795aa5c1bb036201bd305c45fdec36ba37"
+    },
+    {
+      "file": "EP122500.TS5",
+      "pc_ko_bytes": 1868,
+      "pc_ko_sha256": "48825c6ced2d1c96c29fc612d5efbfbe34987ad14ad54765371ab7c949e94e70",
+      "source_bytes": 1472,
+      "source_sha256": "fd6bc5410bdf5c8215b82406e41324dccd2e06746bdd356f667f1e5c02455850"
+    },
+    {
+      "file": "EP12F400.TS5",
+      "pc_ko_bytes": 26848,
+      "pc_ko_sha256": "868ef1e568ebfaf1ced4409b5e581b1cd404f857bb461e3fe50273956ecec4f0",
+      "source_bytes": 20624,
+      "source_sha256": "09f4a2cef1b4316b178c25b4b9a7764385aa3a2e97420d85ab3dfa8f3fc9d897"
+    },
+    {
+      "file": "EPF00E00.TS5",
+      "pc_ko_bytes": 49200,
+      "pc_ko_sha256": "b90e65fd8762788cce5a6a04c186ca269af4994582a587f4390535c86c3abddd",
+      "source_bytes": 40124,
+      "source_sha256": "24246eccf78d5bb5bbbf03566c71bff4f5d2c209fd66ae68ff810883791443bf"
+    },
+    {
+      "file": "EPF11700.TS5",
+      "pc_ko_bytes": 10492,
+      "pc_ko_sha256": "3533b1baed75643d7c0ef01998f2d82007e9d45f4967b2c52506ffe85f12a1d9",
+      "source_bytes": 8624,
+      "source_sha256": "bb70782b6d5f14ed427a90259b922c5f6666f13bee0314b29b019884f287852b"
+    },
+    {
+      "file": "EPF12800.TS5",
+      "pc_ko_bytes": 8444,
+      "pc_ko_sha256": "dcd6008130a63c2ab933a063b99d151c709d7b03364d74116d5e4863ff9ba8b6",
+      "source_bytes": 6928,
+      "source_sha256": "d8f07b1ab94b18dcc43f5ed41d1703b0e1547760bed8f53d3e4d8fecc43a7254"
+    },
+    {
+      "file": "EPF20500.TS5",
+      "pc_ko_bytes": 74860,
+      "pc_ko_sha256": "7e99994b409285e95064bae79d89b73436822f2c5f7712e304b37c8701a03488",
+      "source_bytes": 60784,
+      "source_sha256": "3f9f98ae203992daf86c5e39285e90f66bfc91f9d70b1dd1fa3dfe91d83d8a99"
+    },
+    {
+      "file": "EPF22500.TS5",
+      "pc_ko_bytes": 28212,
+      "pc_ko_sha256": "ef6c858e06d838fbb41a8760a26480a1017581fb28382220a8ee4c8640a9243b",
+      "source_bytes": 23052,
+      "source_sha256": "d1004c911a1fedc745231837c9e2f7a74834b5a2e3c00416b3cd8a76663f6f75"
+    },
+    {
+      "file": "EPF29300.TS5",
+      "pc_ko_bytes": 19632,
+      "pc_ko_sha256": "ea3d4426ad180826c0758c1642fbf95e5749f3a7b42676f0a1e63efb065e65ce",
+      "source_bytes": 15648,
+      "source_sha256": "f04a25a23788d143ea23b499ff57f12e2945629e4101c78e9e71a1a1f181721e"
+    },
+    {
+      "file": "EPF2F400.TS5",
+      "pc_ko_bytes": 19368,
+      "pc_ko_sha256": "c4e62387232c5d70a261a66914f65baffe46e1aa0778c7399b50a3b893968f32",
+      "source_bytes": 14608,
+      "source_sha256": "cfb589434cf4264201df9f5508b1be1f414d55e42322732890a0e07596a5d42d"
+    },
+    {
+      "file": "EPF32000.TS5",
+      "pc_ko_bytes": 10732,
+      "pc_ko_sha256": "0e169eae5f22c0a59f80eaba9538f83ab9f3e2f2dacee049e1a4ea68fb0cac80",
+      "source_bytes": 9116,
+      "source_sha256": "4b09784d5e3cade108a15c6437f348a9289a7dcfd90fecaddbb8509ed9369bd3"
+    }
+  ],
+  "v334_generator_sha256": "a0677b9bee1f50a191606a2eada3f391dfdf57851ccb913d2b8c54acb6e33eec"
+}

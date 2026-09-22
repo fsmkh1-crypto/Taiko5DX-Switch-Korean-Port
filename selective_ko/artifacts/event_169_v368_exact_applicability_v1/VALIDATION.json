@@ -1,0 +1,33 @@
+{
+  "cause_families": {
+    "copula_derived_composite_surface": 363,
+    "cross_carrier_authored_suffix": 14,
+    "derived_plus_lexical_gamun": 4,
+    "direct_particle": 1334,
+    "direct_plus_cross_carrier_suffix": 5,
+    "direct_plus_derived": 12,
+    "direct_plus_lexical_gamun": 2,
+    "lexical_gamun": 702,
+    "lexical_gasin": 2
+  },
+  "class_only_admissions": 0,
+  "cluster_analysis_rerun": false,
+  "detector_occurrences": 2671,
+  "duplicate_owner_keys": 0,
+  "event_files": 106,
+  "excluded_exact_rows": 426,
+  "fallback_classifications": 0,
+  "include_ko": 2438,
+  "ledger_bytes": 4498481,
+  "ledger_sha256": "b9c421d18e7ce0a5d7603d7d3e764ad102bf791d965d7216edac85682a838c43",
+  "nested_outer_delegations": 2,
+  "product_mutation": false,
+  "raw_input_rows": 2864,
+  "rows": 2438,
+  "rows_with_pc_authored_added_escapes": 550,
+  "schema": "V368_EXACT_APPLICABILITY_VALIDATION_V1",
+  "source_escape_order_mismatches": 0,
+  "status": "PASS",
+  "unknown_surface_predicates": 0,
+  "unresolved": 0
+}

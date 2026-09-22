@@ -1,0 +1,5 @@
+{"cluster_id":"C39","node_id":"EFF07700.TS5:5FE8","overlapped_node":"EFF07700.TS5:5FEC","pc_runtime_span":[30588,30596],"role":"NON_KOREAN_EXTERNAL_HEADER_OVERLAP","semantic_disposition":"NON_KOREAN_TARGET","source_runtime_span":[24552,24560]}
+{"cluster_id":"C60","node_id":"EFF20600.TS5:7914","overlapped_node":"EFF20600.TS5:7918","pc_runtime_span":[35792,35800],"role":"NON_KOREAN_EXTERNAL_HEADER_OVERLAP","semantic_disposition":"NON_KOREAN_TARGET","source_runtime_span":[30996,31004]}
+{"cluster_id":"C63","node_id":"EFF2D200.TS5:5CE8","pc_runtime_span":[29928,29936],"role":"NON_KOREAN_INSIDE_UNION","semantic_disposition":"NON_KOREAN_TARGET","source_runtime_span":[23784,23792]}
+{"cluster_id":"C67","node_id":"EKF00800.TS5:1764","pc_runtime_span":[7284,7292],"role":"NON_KOREAN_INSIDE_UNION","semantic_disposition":"NON_KOREAN_TARGET","source_runtime_span":[5988,5996]}
+{"cluster_id":"C69","node_id":"EP111700.TS5:1358","pc_runtime_span":[6024,6032],"role":"NON_KOREAN_INSIDE_UNION","semantic_disposition":"NON_KOREAN_TARGET","source_runtime_span":[4952,4960]}

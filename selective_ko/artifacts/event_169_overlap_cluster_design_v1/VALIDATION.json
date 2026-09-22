@@ -1,0 +1,61 @@
+{
+  "canonicalization": {
+    "analysis_rerun": false,
+    "inherited_checks": 17,
+    "original_local_validation_sha256": "557a3abc07d5e141724809a7264ed0301effa2cb55616edeb33b86186f14ba5e",
+    "promotion_checks": [
+      "Reused evidence bytes match the verified local INDEX.",
+      "Responsibility-unit membership and relocation ownership are unchanged; only status/emission wording is promoted.",
+      "The approved design authority is 80 units; 87 are connected payload/runtime components.",
+      "New report and metadata are English.",
+      "Implementation and product paths are absent from the commit manifest."
+    ],
+    "status": "PASS",
+    "validation_id": "V369"
+  },
+  "checks": {
+    "composite_coordinate_separation_22": "PASS",
+    "composite_membership_22_of_31": "PASS",
+    "connected_components_87": "PASS",
+    "direct_target_uniqueness_188": "PASS",
+    "exact_relations_130_independent_reconstruction": "PASS",
+    "fixed_overlay_intersections_17": "PASS",
+    "outer_rows_91": "PASS",
+    "prior_report_edge_digest": "PASS",
+    "shared_fields_12": "PASS",
+    "shared_relocation_domains_80": "PASS",
+    "source_ledger_row_provenance_210": "PASS",
+    "source_target_overlap_ranges": "PASS",
+    "support_boundary_owners_5": "PASS",
+    "true_containment_depth": "PASS",
+    "unique_nodes_210": "PASS",
+    "unique_relocation_plan_assignment_136": "PASS",
+    "v368_reference_git_blob_identity": "PASS"
+  },
+  "frozen_inherited_gates": {
+    "binding_split_66956_31": "V366_CLOSED_NOT_REVALIDATED",
+    "semantic_52491_0_14496": "V368_CLOSED_NOT_READMITTED",
+    "source_universe_66987": "V366_CLOSED_NOT_REVALIDATED",
+    "universal_runtime_continuity": "V367_CLOSED_PASS_NOT_REVALIDATED"
+  },
+  "future_product_gates": {
+    "deterministic_product_rebuild": "NOT_RUN",
+    "final_output_runtime_continuity": "NOT_RUN",
+    "hardware": "NOT_RUN",
+    "serializer": "NOT_IMPLEMENTED",
+    "zero_unrelated_product_mutation": "NOT_RUN_NO_PRODUCT_OUTPUT"
+  },
+  "prior_report_comparison": {
+    "claim_qualifications": [
+      "87 atomic and 0 independent are design classifications, not implemented safety proof.",
+      "80 domains cover observed shared generic writers for this population, not all future file changes.",
+      "Composite PC window is not a PC runtime owner or final output interval.",
+      "1E/3C zero is grouped-range intersection; known special zero is limited to canonical ECF specials."
+    ],
+    "edge_identity_sha256": "b152cea2825e0fefcbd4a4b686fbce913cf93ed00e32f890ddcf045a2007c0ea",
+    "numeric_discrepancies": [],
+    "population_match": true
+  },
+  "schema": "EVENT_OVERLAP_DOCUMENTATION_VALIDATION_V1",
+  "status": "PASS_LOCAL_ARTIFACT_ACCOUNTING_ONLY"
+}
