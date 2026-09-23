@@ -1,0 +1,137 @@
+[
+  {
+    "workspace_relative_path": "evidence/backup/work/resume/replay.py",
+    "sha256": "f76da83ddf455c1eba1cabec616dbb62215cfcef95d74780a246402c39f2aa02",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/evidence/backup/work/resume/replay.py"
+  },
+  {
+    "workspace_relative_path": "implementation/caller_local_integration/compose.py",
+    "sha256": "3deede6da4841b97e38fbebc4df60b6c3d9a5ed65ecb8212dd68cec427267b90",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/caller_local_integration/compose.py"
+  },
+  {
+    "workspace_relative_path": "implementation/caller_local_redesign/caller_local.py",
+    "sha256": "764b22fea1e404d8243ddb3569c124fa56bfb5eeefdd23320fe2c6df71612d60",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/caller_local_redesign/caller_local.py"
+  },
+  {
+    "workspace_relative_path": "implementation/candidate217/package_builder.py",
+    "sha256": "b0c5b3f912ac098726ecec30de8634b1c50a088d3a99bbe7402d93a9598abae0",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/package_builder.py"
+  },
+  {
+    "workspace_relative_path": "implementation/candidate217/validate.py",
+    "sha256": "5c6723f8ebc529ca2cb181ebf6b1b69dbffb478bd9e8d567e7502e78e26208a3",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/validate.py"
+  },
+  {
+    "workspace_relative_path": "implementation/residual75_integration/residual.py",
+    "sha256": "8781c04c4351e01348a09f6c450fbc7fc2da710be65cc0d7531297f06dff22ec",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/residual75_integration/residual.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event.py",
+    "sha256": "cba55ab5000dde968fb1ab0d7e8a5ed9860324165815acdc1a03aa0b205852b3",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_contract_catalog.py",
+    "sha256": "ade650ba435bf197e6859fa641a3473d75f498bdeb8a75ab9b03611dc01209e6",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_contract_catalog.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_contracts.py",
+    "sha256": "f464a9a0f8a79c332c0aacd30a193da18ab740d59246c124213a681a4877ebc5",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_contracts.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_field_policy.py",
+    "sha256": "36710109c675deb0cba6fe1c7ca1ee11192f596103b7a480f1ecbd4f78e28aab",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_field_policy.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_final_layout.py",
+    "sha256": "144df60d6764ded14a36f4c75fc11b493a1afb78a9e81b483b0879523d65d1c7",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_final_layout.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_obligation_catalog.py",
+    "sha256": "cfb4d783414490dd11b1d7c040026720dd404385ba7491235874cbf37ef7f0cc",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_obligation_catalog.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_obligation_receipts.py",
+    "sha256": "2c3085251104ee60e69ce18270adf6e1a5e1288a7f5bb06695694f5ca57d00c7",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_obligation_receipts.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_overlap.py",
+    "sha256": "a87a8a8f1fee928a29012539fd4c4f8b793b96c02ab030be68654a0d8474dfec",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_overlap.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_particle.py",
+    "sha256": "545e2718046da10b5a27adfe020b6af36c252eb99681fe0d044471be03316706",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_particle.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_recipe_catalog.py",
+    "sha256": "fc079e4d2d43025468a62c478eb5f47c19f5cf33b5c1c0f058dabd4fdf4b9192",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_recipe_catalog.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_relocation_adapter.py",
+    "sha256": "cf99cac0c54ca3866ba7da687a3b2fa10f16d3ca839867460d57fbaac9152e1d",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_relocation_adapter.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_role_session.py",
+    "sha256": "ca6539179cc86a16dcdc1a85258bf2b351546e327b7269460d8b4d5ce6284bce",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_role_session.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_event_root_values.py",
+    "sha256": "30f5e9e09623733c1699aced9020c28b02f68e3040d7e2dc706b1c0e0139ccf5",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_root_values.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_package.py",
+    "sha256": "e7d0349b53d14bb2dde3fd3ccb00bed92c17c25487a5194f1be274bff37a4cde",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_package.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_tai5msg.py",
+    "sha256": "8046a0fb363d778b4d5a3b6241fe0a10a45aec4e79e5d1ffecae14248e02ea7a",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_tai5msg.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/selective_tai5msg_additional_roots.py",
+    "sha256": "60ebbd01b827eef6618740051eebd97f73b286543fd98b4ea624666343c0596b",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_tai5msg_additional_roots.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/t5k.py",
+    "sha256": "7557686824d7c5805a3ad5f75382a1b371648c4ca8c749c316c77065eca57028",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/t5k.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/tai5msg_corrections.py",
+    "sha256": "1c9530980c1fe6bd57361b122b2bf1223cec5d8c88f71fee649f04b06ab397b9",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/tai5msg_corrections.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/builder/tai5msg_percent_macro_roots.py",
+    "sha256": "bb716715ddf9574ff31087a2ed2d5b765f731ecad970be73d9015c77b89fe2c5",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/tai5msg_percent_macro_roots.py"
+  },
+  {
+    "workspace_relative_path": "implementation/two_root_overlay/work/tools/validate_event_overlap.py",
+    "sha256": "44c7d1d8f9f25e88a9f3eda22cbb69aba6f935ff89b0c7de00115c3620a722dc",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/tools/validate_event_overlap.py"
+  },
+  {
+    "workspace_relative_path": "implementation/candidate217/build.py",
+    "sha256": "be63dc2579db0e8814175562b3ab66455b6c029b789ed85d9ca824b625cc8623",
+    "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/build.py"
+  }
+]

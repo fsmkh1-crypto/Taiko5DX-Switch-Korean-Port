@@ -1,0 +1,3606 @@
+[
+  {
+    "id": "REM:001",
+    "owner": "EP12E400.TS5:42E4",
+    "parent_audit_ids": [
+      "ADJ:002"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      34,
+      38
+    ],
+    "actual_final_file_span": [
+      21002,
+      21006
+    ],
+    "final_command_sha256": "c9d6be184a05dcdee77dda60ea9d2f0bfbf0576c044d55c585f43045649ed2b6",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "이제 볼일은 끝났소\n잘 있으시오",
+    "context_after": "",
+    "source_japanese_clause": "モウ、用ハ\\%15\nサラば\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Farewell is already expressed by 잘 있으시오; the copula contributes no missing action.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "c9d6be184a05dcdee77dda60ea9d2f0bfbf0576c044d55c585f43045649ed2b6",
+      "relative_span": [
+        34,
+        38
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:002",
+    "owner": "ECF00000.TS5:188E4",
+    "parent_audit_ids": [
+      "ADJ:003"
+    ],
+    "token": "\\%08",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      87,
+      91
+    ],
+    "actual_final_file_span": [
+      119995,
+      119999
+    ],
+    "final_command_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+    "final_token_hex": "5c253038",
+    "root": "B0:100",
+    "inherited_role": "VERB_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "갖가지 기능을 배울 수 있네만\n이 또한 【대련】과 마찬가지로\n일정한 친밀함이 필요하네",
+    "context_after": "\n",
+    "source_japanese_clause": "サマざマナ技能ヲ教エテ貰エ\\%08が\nコレニモ【手合ワセ】ト同様ニ\n一定ノ親密サが求メラレ\\%08\n",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "필요하네 already states the requirement; source passive ending does not add a second action.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+      "relative_span": [
+        87,
+        91
+      ],
+      "old_display": "\\%08",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:003",
+    "owner": "ECF00000.TS5:18930",
+    "parent_audit_ids": [
+      "ADJ:004"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      89,
+      93
+    ],
+    "actual_final_file_span": [
+      120093,
+      120097
+    ],
+    "final_command_sha256": "3ecb203a6b88f6ae10271d630ddf28f1d6f7332f12312316ea37bbc9c549340d",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "무가 저택에서는 상황에 따라 그 밖에도 할 수 있는 일이\n여러 가지 있네만\n기본은 이 정도",
+    "context_after": "",
+    "source_japanese_clause": "武家宅でハ状況ニヨリ他ニモでキルコトが\n種々存在スルノ\\%05が\n基本ハコノヨウナモノ\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "The source basic-description copula completes 정도; adopt the neighboring 있네만 register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "3ecb203a6b88f6ae10271d630ddf28f1d6f7332f12312316ea37bbc9c549340d",
+      "relative_span": [
+        89,
+        93
+      ],
+      "old_display": "\\%05",
+      "new_display": "일세"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:005",
+    "owner": "ECF00000.TS5:1D288",
+    "parent_audit_ids": [
+      "ADJ:007"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      57,
+      61
+    ],
+    "actual_final_file_span": [
+      143545,
+      143549
+    ],
+    "final_command_sha256": "5254ce14d2aac34dff53a900da08fa03459915091b36954c2e611ac7415e6577",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "오, 낯선 분이시군요\n괜찮다면 도장에 대해 설명드리지요",
+    "context_after": "\n들어 보시려나?",
+    "source_japanese_clause": "オヤ、見知ラヌ御仁でござイマスナ\nヨロシケレば道場ニツイテ説明\\%13が\nオ聞キナサ\\%23カナ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "설명드리지요 already expresses the offered explanation with honorification.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "5254ce14d2aac34dff53a900da08fa03459915091b36954c2e611ac7415e6577",
+      "relative_span": [
+        57,
+        61
+      ],
+      "old_display": "\\%13",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:006",
+    "owner": "ECF00000.TS5:1DA2C",
+    "parent_audit_ids": [
+      "ADJ:008"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      32,
+      36
+    ],
+    "actual_final_file_span": [
+      145904,
+      145908
+    ],
+    "final_command_sha256": "0e69eec81f7165b006c98b9b93227989fa0a1f6b5193af4230ec6830d17790a1",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "기다리게, 그대들의 적이 아니",
+    "context_after": "\n이 마을에 볼일이 있어 왔을 뿐이지만…\n여기는…",
+    "source_japanese_clause": "待テオヌシラノ敵でハ\\%15\nコノ里ニ用がアッテ参ッタノ\\%05が...\nココハ...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "아니 already negates enemy identity; complete 아니네 consistently with 기다리게.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "0e69eec81f7165b006c98b9b93227989fa0a1f6b5193af4230ec6830d17790a1",
+      "relative_span": [
+        32,
+        36
+      ],
+      "old_display": "\\%15",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:007",
+    "owner": "ECF00000.TS5:1E044",
+    "parent_audit_ids": [
+      "ADJ:009"
+    ],
+    "token": "\\%08",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      87,
+      91
+    ],
+    "actual_final_file_span": [
+      147943,
+      147947
+    ],
+    "final_command_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+    "final_token_hex": "5c253038",
+    "root": "B0:100",
+    "inherited_role": "VERB_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "갖가지 기능을 배울 수 있네만\n이 또한 【대련】과 마찬가지로\n일정한 친밀함이 필요하네",
+    "context_after": "\n",
+    "source_japanese_clause": "サマざマナ技能ヲ教エテ貰エ\\%08が\nコレニモ【手合ワセ】ト同様ニ\n一定ノ親密サが求メラレ\\%08\n",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Same requirement clause as REM002 in a distinct owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+      "relative_span": [
+        87,
+        91
+      ],
+      "old_display": "\\%08",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:008",
+    "owner": "ECF00000.TS5:1E090",
+    "parent_audit_ids": [
+      "ADJ:010"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      91,
+      95
+    ],
+    "actual_final_file_span": [
+      148043,
+      148047
+    ],
+    "final_command_sha256": "22ac41b18ba967cf6d2d69d106ad59a5853ac15d4580894b1809026f06502a27",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "시노비 저택에서는 상황에 따라 그 밖에도 할 수 있는 일이\n여러 가지 있네만\n기본은 이 정도",
+    "context_after": "",
+    "source_japanese_clause": "忍び宅でハ状況ニヨリ他ニモでキルコトが\n種々存在スルノ\\%05が\n基本ハコノヨウナモノ\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same basic-description clause as REM003, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "22ac41b18ba967cf6d2d69d106ad59a5853ac15d4580894b1809026f06502a27",
+      "relative_span": [
+        91,
+        95
+      ],
+      "old_display": "\\%05",
+      "new_display": "일세"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:009",
+    "owner": "ECF00000.TS5:1E4D0",
+    "parent_audit_ids": [
+      "ADJ:011"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      32,
+      36
+    ],
+    "actual_final_file_span": [
+      149300,
+      149304
+    ],
+    "final_command_sha256": "167075bdee63e24c07235c90a22a59484af6469d0c0314878cc635e96d77c85f",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "기다리게, 그대들의 적이 아니",
+    "context_after": "\n이 요새에 볼일이 있어 왔을 뿐이지만…\n이곳은…",
+    "source_japanese_clause": "待テオヌシラノ敵でハ\\%15\nコノ砦ニ用がアッテ参ッタノ\\%05が...\nコノ場所ハ...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same negative enemy-identity clause as REM006, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "167075bdee63e24c07235c90a22a59484af6469d0c0314878cc635e96d77c85f",
+      "relative_span": [
+        32,
+        36
+      ],
+      "old_display": "\\%15",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:010",
+    "owner": "ECF00000.TS5:1EB6C",
+    "parent_audit_ids": [
+      "ADJ:012"
+    ],
+    "token": "\\%08",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      87,
+      91
+    ],
+    "actual_final_file_span": [
+      151475,
+      151479
+    ],
+    "final_command_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+    "final_token_hex": "5c253038",
+    "root": "B0:100",
+    "inherited_role": "VERB_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "갖가지 기능을 배울 수 있네만\n이 또한 【대련】과 마찬가지로\n일정한 친밀함이 필요하네",
+    "context_after": "\n",
+    "source_japanese_clause": "サマざマナ技能ヲ教エテ貰エ\\%08が\nコレニモ【手合ワセ】ト同様ニ\n一定ノ親密サが求メラレ\\%08\n",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Same requirement clause as REM002 in a distinct owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "1128d1ede4720126f8d0d6582fdff396450a6304c74be8b56c8d0f07a872ce69",
+      "relative_span": [
+        87,
+        91
+      ],
+      "old_display": "\\%08",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:011",
+    "owner": "ECF00000.TS5:1EBB8",
+    "parent_audit_ids": [
+      "ADJ:013"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      89,
+      93
+    ],
+    "actual_final_file_span": [
+      151573,
+      151577
+    ],
+    "final_command_sha256": "265378344fdd731757ba56ebaa258f8afc7d5890b690958c79f506a19e66ab73",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "해적 저택에서는 상황에 따라 그 밖에도 할 수 있는 일이\n여러 가지 있네만\n기본은 이 정도",
+    "context_after": "",
+    "source_japanese_clause": "海賊宅でハ状況ニヨリ他ニモでキルコトが\n種々存在スルノ\\%05が\n基本ハコノヨウナモノ\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same basic-description clause as REM003, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "265378344fdd731757ba56ebaa258f8afc7d5890b690958c79f506a19e66ab73",
+      "relative_span": [
+        89,
+        93
+      ],
+      "old_display": "\\%05",
+      "new_display": "일세"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:013",
+    "owner": "ECF00000.TS5:471D0",
+    "parent_audit_ids": [
+      "ADJ:016"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      36,
+      40
+    ],
+    "actual_final_file_span": [
+      344804,
+      344808
+    ],
+    "final_command_sha256": "805e5dddd842c0f249a71070e7fc344ee5ca49f146be5f5ca7a3cc5cb5c33b9e",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "\\#17FE 님 아닌가\n기이한 인연이군",
+    "context_after": "",
+    "source_japanese_clause": "\\#17FE殿\\%06カ\n奇遇\\%05ナ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "기이한 인연이군 already expresses the recognition/exclamation.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "805e5dddd842c0f249a71070e7fc344ee5ca49f146be5f5ca7a3cc5cb5c33b9e",
+      "relative_span": [
+        36,
+        40
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:014",
+    "owner": "ECF00000.TS5:49CBC",
+    "parent_audit_ids": [
+      "ADJ:017"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      21,
+      25
+    ],
+    "actual_final_file_span": [
+      358389,
+      358393
+    ],
+    "final_command_sha256": "8baa513ad67d373e3476c1e0084f6ee816a87ca8032c6ea8fd9eea096608e22f",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "무슨 말을 하는 거",
+    "context_after": "?\n\\%00는 \\D079의 닌자라네",
+    "source_japanese_clause": "何ヲ言ウノ\\%05?\n\\%00ハ\\D079ノ忍び\\%05ぞ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Compose 거+인가 as 건가; preserve the question about what was said and the following self-identity assertion.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "8baa513ad67d373e3476c1e0084f6ee816a87ca8032c6ea8fd9eea096608e22f",
+      "relative_span": [
+        19,
+        25
+      ],
+      "old_display": "거\\%05",
+      "new_display": "건가"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:018",
+    "owner": "ECF00000.TS5:4D3AC",
+    "parent_audit_ids": [
+      "ADJ:019"
+    ],
+    "token": "\\%0E",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      60,
+      64
+    ],
+    "actual_final_file_span": [
+      375704,
+      375708
+    ],
+    "final_command_sha256": "5efea7522f0116e2948bce6c19f5d7f8cca6d983b19137541c671f4510dc469b",
+    "final_token_hex": "5c253045",
+    "root": "B0:160",
+    "inherited_role": "RECEIVE_NEGATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "염치없는 부탁이네만\n그 \\>3FA를…\\%00에게\n넘겨주지 않겠나",
+    "context_after": "？",
+    "source_japanese_clause": "差シ出がマシイオ願イでハ\\%14が\nソノ\\>3FA...\\%00ニ\n譲ッテハ\\%0Eカ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "넘겨주지 않겠나 already expresses the Japanese negative-form transfer request; the request beneficiary remains in the prior clause.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "5efea7522f0116e2948bce6c19f5d7f8cca6d983b19137541c671f4510dc469b",
+      "relative_span": [
+        60,
+        64
+      ],
+      "old_display": "\\%0E",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:021",
+    "owner": "ECF00000.TS5:4D3FC",
+    "parent_audit_ids": [
+      "ADJ:020"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      64,
+      68
+    ],
+    "actual_final_file_span": [
+      375808,
+      375812
+    ],
+    "final_command_sha256": "df2cd81cc53b99ff184fad74e315b8968b5cb80d4d6d19d13c135b4bda9f93f8",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그 \\>3FA를 넘겨주기만 하면\n\\%00는 \\%01를 섬기겠다고\n약속하겠",
+    "context_after": "！",
+    "source_japanese_clause": "ソノ\\>3FAヲ譲ッテ\\%0Fナラ\n\\%00ハ\\%01ニ仕エルコトヲ\nオ約束\\%13!",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "약속하겠 already carries the promise/intention to serve under the preceding condition; finish in the caller register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "df2cd81cc53b99ff184fad74e315b8968b5cb80d4d6d19d13c135b4bda9f93f8",
+      "relative_span": [
+        64,
+        68
+      ],
+      "old_display": "\\%13",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:022",
+    "owner": "ECF00000.TS5:4D458",
+    "parent_audit_ids": [
+      "ADJ:021"
+    ],
+    "token": "\\%1B",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      15,
+      19
+    ],
+    "actual_final_file_span": [
+      375875,
+      375879
+    ],
+    "final_command_sha256": "f07b0a8325e0e0eb9b0d86311cb5f168f2005e1b6e6854ce5aa89f8cd182dbf3",
+    "final_token_hex": "5c253142",
+    "root": "B0:251",
+    "inherited_role": "COPULA_VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떻게 하겠",
+    "context_after": "…\n\\>3FA를 넘겨주겠나…？",
+    "source_japanese_clause": "イカが\\%1B...\n\\>3FA、譲ッテ\\%0Eカ...?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "어떻게 하겠 plus 나 retains the question about the addressee decision, before the transfer request.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "f07b0a8325e0e0eb9b0d86311cb5f168f2005e1b6e6854ce5aa89f8cd182dbf3",
+      "relative_span": [
+        15,
+        19
+      ],
+      "old_display": "\\%1B",
+      "new_display": "나"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:025",
+    "owner": "ECF00000.TS5:4D54C",
+    "parent_audit_ids": [
+      "ADJ:024"
+    ],
+    "token": "\\%0E",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      60,
+      64
+    ],
+    "actual_final_file_span": [
+      376228,
+      376232
+    ],
+    "final_command_sha256": "5efea7522f0116e2948bce6c19f5d7f8cca6d983b19137541c671f4510dc469b",
+    "final_token_hex": "5c253045",
+    "root": "B0:160",
+    "inherited_role": "RECEIVE_NEGATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "염치없는 부탁이네만\n그 \\>3FA를…\\%00에게\n넘겨주지 않겠나",
+    "context_after": "？",
+    "source_japanese_clause": "差シ出がマシイオ願イでハ\\%14が\nソノ\\>3FA...\\%00ニ\n譲ッテハ\\%0Eカ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Same transfer request as REM018 in a distinct owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "5efea7522f0116e2948bce6c19f5d7f8cca6d983b19137541c671f4510dc469b",
+      "relative_span": [
+        60,
+        64
+      ],
+      "old_display": "\\%0E",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:028",
+    "owner": "ECF00000.TS5:4D59C",
+    "parent_audit_ids": [
+      "ADJ:025"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      64,
+      68
+    ],
+    "actual_final_file_span": [
+      376332,
+      376336
+    ],
+    "final_command_sha256": "df2cd81cc53b99ff184fad74e315b8968b5cb80d4d6d19d13c135b4bda9f93f8",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그 \\>3FA를 넘겨주기만 하면\n\\%00는 \\%01를 섬기겠다고\n약속하겠",
+    "context_after": "！",
+    "source_japanese_clause": "ソノ\\>3FAヲ譲ッテ\\%0Fナラ\n\\%00ハ\\%01ニ仕エルコトヲ\nオ約束\\%13!",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same conditional promise as REM021, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "df2cd81cc53b99ff184fad74e315b8968b5cb80d4d6d19d13c135b4bda9f93f8",
+      "relative_span": [
+        64,
+        68
+      ],
+      "old_display": "\\%13",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:029",
+    "owner": "ECF00000.TS5:4D5F4",
+    "parent_audit_ids": [
+      "ADJ:026"
+    ],
+    "token": "\\%1B",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      15,
+      19
+    ],
+    "actual_final_file_span": [
+      376403,
+      376407
+    ],
+    "final_command_sha256": "f07b0a8325e0e0eb9b0d86311cb5f168f2005e1b6e6854ce5aa89f8cd182dbf3",
+    "final_token_hex": "5c253142",
+    "root": "B0:251",
+    "inherited_role": "COPULA_VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떻게 하겠",
+    "context_after": "…\n\\>3FA를 넘겨주겠나…？",
+    "source_japanese_clause": "イカが\\%1B...\n\\>3FA、譲ッテ\\%0Eカ...?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same decision question as REM022, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "f07b0a8325e0e0eb9b0d86311cb5f168f2005e1b6e6854ce5aa89f8cd182dbf3",
+      "relative_span": [
+        15,
+        19
+      ],
+      "old_display": "\\%1B",
+      "new_display": "나"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:030",
+    "owner": "ECF00000.TS5:4E1A4",
+    "parent_audit_ids": [
+      "ADJ:029"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      36,
+      40
+    ],
+    "actual_final_file_span": [
+      379996,
+      380000
+    ],
+    "final_command_sha256": "805e5dddd842c0f249a71070e7fc344ee5ca49f146be5f5ca7a3cc5cb5c33b9e",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "\\#17FE 님 아닌가\n기이한 인연이군",
+    "context_after": "",
+    "source_japanese_clause": "\\#17FE殿\\%06カ\n奇遇\\%05ナ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Same recognition/exclamation as REM013 in a distinct owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "805e5dddd842c0f249a71070e7fc344ee5ca49f146be5f5ca7a3cc5cb5c33b9e",
+      "relative_span": [
+        36,
+        40
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:031",
+    "owner": "ECF00000.TS5:52938",
+    "parent_audit_ids": [
+      "ADJ:030"
+    ],
+    "token": "\\%2D",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      10,
+      14
+    ],
+    "actual_final_file_span": [
+      402242,
+      402246
+    ],
+    "final_command_sha256": "09a12dc03867580dfe8c4b4dc2c2488ba17626250e14178a82ba3ded69a070ac",
+    "final_token_hex": "5c253244",
+    "root": "B0:195",
+    "inherited_role": "DO_PAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떠했",
+    "context_after": "?\n피곤해 보이지만…",
+    "source_japanese_clause": "イカが\\%2D?\n疲レテイルヨウ\\%05が...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "어떠했 already contains past tense; complete the question without duplicating the past-action root.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "09a12dc03867580dfe8c4b4dc2c2488ba17626250e14178a82ba3ded69a070ac",
+      "relative_span": [
+        10,
+        14
+      ],
+      "old_display": "\\%2D",
+      "new_display": "나"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:033",
+    "owner": "ECF00000.TS5:52CC8",
+    "parent_audit_ids": [
+      "ADJ:033"
+    ],
+    "token": "\\%29",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      53,
+      57
+    ],
+    "actual_final_file_span": [
+      403521,
+      403525
+    ],
+    "final_command_sha256": "daccdc89aa03c11ac7879fb22c3ece88e6eb65e52c7f2461c8b00846f71ddbcf",
+    "final_token_hex": "5c253239",
+    "root": "B0:293",
+    "inherited_role": "DO_HONORIFIC",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "추격자가 와도 반드시 \\%01를 지켜 내겠네만, 어떤가",
+    "context_after": "?",
+    "source_japanese_clause": "追ッ手が来テモ必ず\\%01ヲ守ッテミセ\\%08が、どウ\\%29?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "어떤가 already asks the addressee about the offer; source どうなさる is not an extra event.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "daccdc89aa03c11ac7879fb22c3ece88e6eb65e52c7f2461c8b00846f71ddbcf",
+      "relative_span": [
+        53,
+        57
+      ],
+      "old_display": "\\%29",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:037",
+    "owner": "ECF00000.TS5:54610",
+    "parent_audit_ids": [
+      "ADJ:036"
+    ],
+    "token": "\\%1C",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      26,
+      30
+    ],
+    "actual_final_file_span": [
+      411366,
+      411370
+    ],
+    "final_command_sha256": "7bbcdcc41a9be8e03172905b1f580bb285a6f2e1c974db4872870635634aa7bc",
+    "final_token_hex": "5c253143",
+    "root": "B0:258",
+    "inherited_role": "COME_PAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%01가 \\%03인가?\n잘 왔",
+    "context_after": "",
+    "source_japanese_clause": "\\%01が\\%03\\%07カ?\nヨク\\%1C",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "잘 왔 already contains arrival and past aspect; finish the welcome in the adjacent 인가 register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "7bbcdcc41a9be8e03172905b1f580bb285a6f2e1c974db4872870635634aa7bc",
+      "relative_span": [
+        26,
+        30
+      ],
+      "old_display": "\\%1C",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:038",
+    "owner": "ECF00000.TS5:5F868",
+    "parent_audit_ids": [
+      "ADJ:037"
+    ],
+    "token": "\\%11",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      28,
+      32
+    ],
+    "actual_final_file_span": [
+      466116,
+      466120
+    ],
+    "final_command_sha256": "d7383d0364059a69859b85026f59c8000144146e7476b005c8f923641956adc7",
+    "final_token_hex": "5c253131",
+    "root": "B0:174",
+    "inherited_role": "VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그렇군\n그럼 곧바로 가 보",
+    "context_after": "",
+    "source_japanese_clause": "ソウ\\%07カ\nでハ早速ムカウト\\%11",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root174 has しよう/하자. Combine with the caller 가 보 to preserve the proposal to go now.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "d7383d0364059a69859b85026f59c8000144146e7476b005c8f923641956adc7",
+      "relative_span": [
+        28,
+        32
+      ],
+      "old_display": "\\%11",
+      "new_display": "자"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:040",
+    "owner": "ECF00000.TS5:5FFA4",
+    "parent_audit_ids": [
+      "ADJ:040"
+    ],
+    "token": "\\%08",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      29,
+      33
+    ],
+    "actual_final_file_span": [
+      468261,
+      468265
+    ],
+    "final_command_sha256": "6a46db46b163cbce3987a7568f6d8a2aa64ef4bcd1843c95f412f44891c90595",
+    "final_token_hex": "5c253038",
+    "root": "B0:100",
+    "inherited_role": "VERB_ENDING",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "해님도 풍류를 아는 모양이",
+    "context_after": "\n야외 다회 날을 이렇게 쾌적하게\n보내게 해 주시니까",
+    "source_japanese_clause": "オ天道サマモ風流ヲ解スルト見エ\\%08\n野点ノ日ヲコノヨウニ快適ニ過ごサセテ\nクだサルノ\\%05カラ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Complete 모양이군 as a present assessment, retaining the following causal observation. Do not introduce an extra action.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "6a46db46b163cbce3987a7568f6d8a2aa64ef4bcd1843c95f412f44891c90595",
+      "relative_span": [
+        29,
+        33
+      ],
+      "old_display": "\\%08",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:043",
+    "owner": "ECF00000.TS5:60248",
+    "parent_audit_ids": [
+      "ADJ:043"
+    ],
+    "token": "\\%21",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      30,
+      34
+    ],
+    "actual_final_file_span": [
+      469018,
+      469022
+    ],
+    "final_command_sha256": "183797ad05bff27058cb77f84699786b820ce029ab96f8c31ea6ccc71aeb9a5f",
+    "final_token_hex": "5c253231",
+    "root": "B0:349",
+    "inherited_role": "SAY_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "초대에 응하고도 이런 말을 ",
+    "context_after": "는 것도 좀 그렇지만, \\%00에게는 그게…\n조금 마음이 편치 않\\%15",
+    "source_japanese_clause": "招待ニ応じテオイテカヨウナコトヲ\\%21ノモ何\\%05が、\\%00ニハソノ...\n少々居心地がヨロシク\\%15",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root349 is the saying predicate. 이런 말을 하+는 retains that action and the nominalized qualification; names and self-reference remain dynamic.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "183797ad05bff27058cb77f84699786b820ce029ab96f8c31ea6ccc71aeb9a5f",
+      "relative_span": [
+        30,
+        34
+      ],
+      "old_display": "\\%21",
+      "new_display": "하"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:045",
+    "owner": "ECF00000.TS5:60248",
+    "parent_audit_ids": [
+      "ADJ:043"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      92,
+      96
+    ],
+    "actual_final_file_span": [
+      469080,
+      469084
+    ],
+    "final_command_sha256": "183797ad05bff27058cb77f84699786b820ce029ab96f8c31ea6ccc71aeb9a5f",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "초대에 응하고도 이런 말을 \\%21는 것도 좀 그렇지만, \\%00에게는 그게…\n조금 마음이 편치 않",
+    "context_after": "",
+    "source_japanese_clause": "招待ニ応じテオイテカヨウナコトヲ\\%21ノモ何\\%05が、\\%00ニハソノ...\n少々居心地がヨロシク\\%15",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "편치 않 already expresses discomfort/negation; finish without a second existential-negative assertion.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "183797ad05bff27058cb77f84699786b820ce029ab96f8c31ea6ccc71aeb9a5f",
+      "relative_span": [
+        92,
+        96
+      ],
+      "old_display": "\\%15",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:046",
+    "owner": "ECF00000.TS5:602BC",
+    "parent_audit_ids": [
+      "ADJ:044"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      51,
+      55
+    ],
+    "actual_final_file_span": [
+      469199,
+      469203
+    ],
+    "final_command_sha256": "1af7e6645a0ad1a15ce3627c82b4c5a86caa32c6d2af43c7938fd1c41651da97",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "예의 속에서도 편안함을 느껴 주실 수 있으면 좋겠",
+    "context_after": "",
+    "source_japanese_clause": "礼節ノ中ニモクツロぎヲ感じテ\\%0Fト幸イ\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "좋겠 already carries the speaker wish; complete it without losing REM044 beneficiary/potential design.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "1af7e6645a0ad1a15ce3627c82b4c5a86caa32c6d2af43c7938fd1c41651da97",
+      "relative_span": [
+        51,
+        55
+      ],
+      "old_display": "\\%05",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:047",
+    "owner": "ECF00000.TS5:602E4",
+    "parent_audit_ids": [
+      "ADJ:045"
+    ],
+    "token": "\\%2A",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      22,
+      26
+    ],
+    "actual_final_file_span": [
+      469226,
+      469230
+    ],
+    "final_command_sha256": "f4d5749f5cb209a55cb11cfda4a47ff23798ecd8adce60c28767e46dd299c87c",
+    "final_token_hex": "5c253241",
+    "root": "B0:395",
+    "inherited_role": "SEE_VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그렇군…\n그렇게 하",
+    "context_after": "…",
+    "source_japanese_clause": "ソウ\\%07カ...\nヤッテ\\%2A...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root395 has みよう/보자. Recompose 하 to 해 and preserve the try/proposal meaning: 그렇게 해 보자.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "f4d5749f5cb209a55cb11cfda4a47ff23798ecd8adce60c28767e46dd299c87c",
+      "relative_span": [
+        20,
+        26
+      ],
+      "old_display": "하\\%2A",
+      "new_display": "해 보자"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:050",
+    "owner": "ECF00000.TS5:6076C",
+    "parent_audit_ids": [
+      "ADJ:048"
+    ],
+    "token": "\\%19",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      91,
+      95
+    ],
+    "actual_final_file_span": [
+      470847,
+      470851
+    ],
+    "final_command_sha256": "0b6d2ebdc7959caf0e79ca56cf02bd74a127d74a901c16b11e658586c2623f44",
+    "final_token_hex": "5c253139",
+    "root": "B0:237",
+    "inherited_role": "POTENTIAL_VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "무슨 말씀을 하십니까\n\\%03의 힘이 없었다면 어찌 이토록 큰 만족을 여러분께 드릴 수 있었겠",
+    "context_after": "",
+    "source_japanese_clause": "何ヲ\\%22カ\n\\%03ノ力ナクシテどウシテコレ程ノ満足ヲ皆様ニ与エルコトが\\%19",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "드릴 수 있었겠 already carries potential, past counterfactual and modality. Complete the rhetorical question 어찌 ... 있었겠습니까 in the preceding 하십니까 register; preserve the named helper and beneficiaries.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "0b6d2ebdc7959caf0e79ca56cf02bd74a127d74a901c16b11e658586c2623f44",
+      "relative_span": [
+        91,
+        95
+      ],
+      "old_display": "\\%19",
+      "new_display": "습니까"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:051",
+    "owner": "ECF00000.TS5:64678",
+    "parent_audit_ids": [
+      "ADJ:049"
+    ],
+    "token": "\\%1E",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      78,
+      82
+    ],
+    "actual_final_file_span": [
+      490182,
+      490186
+    ],
+    "final_command_sha256": "4a86e132c94b74f82c3dd5daf82ca905e06fbc7743c64cdec0a3087f46cd7141",
+    "final_token_hex": "5c253145",
+    "root": "B0:279",
+    "inherited_role": "EXIST_ANIMATE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "시작한 지도 제법 오래됐지만\n사철 채취에 시간이 너무 많이 들어\n애를 먹고 있",
+    "context_after": "",
+    "source_japanese_clause": "始メテカラカナリ経ツノ\\%05が\n砂鉄採集ニ時間ヲ取ラレ過ぎルノニ\n難儀シテ\\%1E",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "애를 먹고 있 already carries ongoing difficulty; complete the present progressive.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "4a86e132c94b74f82c3dd5daf82ca905e06fbc7743c64cdec0a3087f46cd7141",
+      "relative_span": [
+        78,
+        82
+      ],
+      "old_display": "\\%1E",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:052",
+    "owner": "ECF00000.TS5:64898",
+    "parent_audit_ids": [
+      "ADJ:050",
+      "ADJ:052"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      53,
+      57
+    ],
+    "actual_final_file_span": [
+      490793,
+      490797
+    ],
+    "final_command_sha256": "9c81ee42bfa4002512e8ccee6026c1362a266642580a2f95b3ff8a30d0a750ab",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "기스케는 여행 중이니까\n이 기회를 놓치면 다음은 없",
+    "context_after": "는데\n괜찮겠나?",
+    "source_japanese_clause": "木助ハ、旅ノ途中で\\%14カラ\nコノ機会ヲ逃スト次ハ\\%15が\n\\%17カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "없는데 retains negation and connective; source 次はない is not double negation.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "9c81ee42bfa4002512e8ccee6026c1362a266642580a2f95b3ff8a30d0a750ab",
+      "relative_span": [
+        53,
+        57
+      ],
+      "old_display": "\\%15",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:053",
+    "owner": "ECF00000.TS5:650D8",
+    "parent_audit_ids": [
+      "ADJ:054"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      48,
+      52
+    ],
+    "actual_final_file_span": [
+      493104,
+      493108
+    ],
+    "final_command_sha256": "7f8a69d93e2f4749375658bf782627edc6b9d9dfb9018e7957d4e8b654243181",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그건 반가운 소식이군\n일부러 나간\n보람이 있었",
+    "context_after": "\\%26",
+    "source_japanese_clause": "ソレハ朗報\\%07\nワざワざ出掛ケタ甲斐が\nアッタトイウモノ\\%05\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "The authored 있었 preserves past benefit; REM054 realizes the associated emphatic ending.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "7f8a69d93e2f4749375658bf782627edc6b9d9dfb9018e7957d4e8b654243181",
+      "relative_span": [
+        48,
+        52
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:054",
+    "owner": "ECF00000.TS5:650D8",
+    "parent_audit_ids": [
+      "ADJ:054"
+    ],
+    "token": "\\%26",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      52,
+      56
+    ],
+    "actual_final_file_span": [
+      493108,
+      493112
+    ],
+    "final_command_sha256": "7f8a69d93e2f4749375658bf782627edc6b9d9dfb9018e7957d4e8b654243181",
+    "final_token_hex": "5c253236",
+    "root": "B0:357",
+    "inherited_role": "SHORT_SUFFIX_NA",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "그건 반가운 소식이군\n일부러 나간\n보람이 있었\\%05",
+    "context_after": "",
+    "source_japanese_clause": "ソレハ朗報\\%07\nワざワざ出掛ケタ甲斐が\nアッタトイウモノ\\%05\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root357 directly stores 군/네; with REM053 removal form 있었군, preserving past and exclamation.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "7f8a69d93e2f4749375658bf782627edc6b9d9dfb9018e7957d4e8b654243181",
+      "relative_span": [
+        52,
+        56
+      ],
+      "old_display": "\\%26",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:055",
+    "owner": "ECF00000.TS5:65320",
+    "parent_audit_ids": [
+      "ADJ:055"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      20,
+      24
+    ],
+    "actual_final_file_span": [
+      493792,
+      493796
+    ],
+    "final_command_sha256": "61d002730ef06b37de34e5149b13b4f5b08ae8873b1119f8bcb54ffc875a6b63",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그만한 시간이 없",
+    "context_after": "\n모처럼의 기회지만 포기하\\%13",
+    "source_japanese_clause": "ソレだケノ時間が\\%15\n折角ノ機会\\%05が断念\\%13",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "없 already denies available time; complete 없네 without changing the later decision.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "61d002730ef06b37de34e5149b13b4f5b08ae8873b1119f8bcb54ffc875a6b63",
+      "relative_span": [
+        20,
+        24
+      ],
+      "old_display": "\\%15",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:056",
+    "owner": "ECF00000.TS5:65320",
+    "parent_audit_ids": [
+      "ADJ:055"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      49,
+      53
+    ],
+    "actual_final_file_span": [
+      493821,
+      493825
+    ],
+    "final_command_sha256": "61d002730ef06b37de34e5149b13b4f5b08ae8873b1119f8bcb54ffc875a6b63",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그만한 시간이 없\\%15\n모처럼의 기회지만 포기하",
+    "context_after": "",
+    "source_japanese_clause": "ソレだケノ時間が\\%15\n折角ノ機会\\%05が断念\\%13",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "포기하 carries the decision to abandon the opportunity; complete nonpast 포기하네. No new past or conditional promise.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "61d002730ef06b37de34e5149b13b4f5b08ae8873b1119f8bcb54ffc875a6b63",
+      "relative_span": [
+        49,
+        53
+      ],
+      "old_display": "\\%13",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:057",
+    "owner": "ECF00000.TS5:65350",
+    "parent_audit_ids": [
+      "ADJ:056"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      25,
+      29
+    ],
+    "actual_final_file_span": [
+      493853,
+      493857
+    ],
+    "final_command_sha256": "014a0cebc6703c4cd66b552b3cd77b2eda68373890726419c648e8d1d648609d",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그렇군\n뭐, 어쩔 수 없",
+    "context_after": "\\%26",
+    "source_japanese_clause": "ソウ\\%07カ\nマア仕方が\\%15\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "없 already expresses lack of an alternative; REM058 completes the linked ending.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "014a0cebc6703c4cd66b552b3cd77b2eda68373890726419c648e8d1d648609d",
+      "relative_span": [
+        25,
+        29
+      ],
+      "old_display": "\\%15",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:058",
+    "owner": "ECF00000.TS5:65350",
+    "parent_audit_ids": [
+      "ADJ:056"
+    ],
+    "token": "\\%26",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      29,
+      33
+    ],
+    "actual_final_file_span": [
+      493857,
+      493861
+    ],
+    "final_command_sha256": "014a0cebc6703c4cd66b552b3cd77b2eda68373890726419c648e8d1d648609d",
+    "final_token_hex": "5c253236",
+    "root": "B0:357",
+    "inherited_role": "SHORT_SUFFIX_NA",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "그렇군\n뭐, 어쩔 수 없\\%15",
+    "context_after": "",
+    "source_japanese_clause": "ソウ\\%07カ\nマア仕方が\\%15\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root357 stores 군; together with REM057 removal form 어쩔 수 없군.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "014a0cebc6703c4cd66b552b3cd77b2eda68373890726419c648e8d1d648609d",
+      "relative_span": [
+        29,
+        33
+      ],
+      "old_display": "\\%26",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:060",
+    "owner": "ECF00000.TS5:65714",
+    "parent_audit_ids": [
+      "ADJ:058"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      15,
+      19
+    ],
+    "actual_final_file_span": [
+      494903,
+      494907
+    ],
+    "final_command_sha256": "b52b64d0169acd582e3c5cb6acd075a664e0b72e6820acdfffe0afb4e51e53f7",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "바쁜 모양이",
+    "context_after": "\\%26\n조사는 잘돼 가나?",
+    "source_japanese_clause": "忙シイヨウ\\%05\\%26\n調査ハ順調\\%07カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "모양이 carries the inference predicate; REM061 supplies the linked expressive ending.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "b52b64d0169acd582e3c5cb6acd075a664e0b72e6820acdfffe0afb4e51e53f7",
+      "relative_span": [
+        15,
+        19
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:061",
+    "owner": "ECF00000.TS5:65714",
+    "parent_audit_ids": [
+      "ADJ:058"
+    ],
+    "token": "\\%26",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      19,
+      23
+    ],
+    "actual_final_file_span": [
+      494907,
+      494911
+    ],
+    "final_command_sha256": "b52b64d0169acd582e3c5cb6acd075a664e0b72e6820acdfffe0afb4e51e53f7",
+    "final_token_hex": "5c253236",
+    "root": "B0:357",
+    "inherited_role": "SHORT_SUFFIX_NA",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "바쁜 모양이\\%05",
+    "context_after": "\n조사는 잘돼 가나?",
+    "source_japanese_clause": "忙シイヨウ\\%05\\%26\n調査ハ順調\\%07カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root357 stores 군; together with REM060 removal form 바쁜 모양이군.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "b52b64d0169acd582e3c5cb6acd075a664e0b72e6820acdfffe0afb4e51e53f7",
+      "relative_span": [
+        19,
+        23
+      ],
+      "old_display": "\\%26",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:063",
+    "owner": "ECF00000.TS5:A6AB8",
+    "parent_audit_ids": [
+      "ADJ:059"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      64,
+      68
+    ],
+    "actual_final_file_span": [
+      820852,
+      820856
+    ],
+    "final_command_sha256": "7c64ca43ab12392a0581306c269e3eeb6aec05083850af9c60fa626b9138e383",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%03\n세속적인 이야기지만, 아무래도 마을의\n자금이 부족한 듯하",
+    "context_after": "…",
+    "source_japanese_clause": "\\%03\n下世話ナ話\\%05が、どウモ里ノ\n資金が足リナイヨウナ気が\\%13...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "부족한 듯하 already carries the tentative assessment of insufficient funds; complete 듯하네.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "7c64ca43ab12392a0581306c269e3eeb6aec05083850af9c60fa626b9138e383",
+      "relative_span": [
+        64,
+        68
+      ],
+      "old_display": "\\%13",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:065",
+    "owner": "ECF00000.TS5:A6EB8",
+    "parent_audit_ids": [
+      "ADJ:062"
+    ],
+    "token": "\\%13",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      64,
+      68
+    ],
+    "actual_final_file_span": [
+      822248,
+      822252
+    ],
+    "final_command_sha256": "7c64ca43ab12392a0581306c269e3eeb6aec05083850af9c60fa626b9138e383",
+    "final_token_hex": "5c253133",
+    "root": "B0:188",
+    "inherited_role": "DO_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%03\n세속적인 이야기지만, 아무래도 마을의\n자금이 부족한 듯하",
+    "context_after": "…",
+    "source_japanese_clause": "\\%03\n下世話ナ話\\%05が、どウモ里ノ\n資金が足リナイヨウナ気が\\%13...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same tentative insufficient-funds assessment as REM063, independent owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "7c64ca43ab12392a0581306c269e3eeb6aec05083850af9c60fa626b9138e383",
+      "relative_span": [
+        64,
+        68
+      ],
+      "old_display": "\\%13",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:066",
+    "owner": "ECF00000.TS5:C37C0",
+    "parent_audit_ids": [
+      "ADJ:065"
+    ],
+    "token": "\\%2D",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      8,
+      12
+    ],
+    "actual_final_file_span": [
+      963996,
+      964000
+    ],
+    "final_command_sha256": "3ef41dce5236107294f3861b205b76dd458cc6bd20f852516a304723440d8d89",
+    "final_token_hex": "5c253244",
+    "root": "B0:195",
+    "inherited_role": "DO_PAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떻",
+    "context_after": ", \\%03\n산책 중인가？",
+    "source_japanese_clause": "どウ\\%2D、\\%03\n散策\\%07カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Japanese どうした in the encounter is an inquiry about the situation before asking whether the person is strolling. Use the corresponding Korean situational question, not an unrelated past deed. Explicit idiomatic design judgment.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "3ef41dce5236107294f3861b205b76dd458cc6bd20f852516a304723440d8d89",
+      "relative_span": [
+        4,
+        12
+      ],
+      "old_display": "어떻\\%2D",
+      "new_display": "무슨 일인가"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:068",
+    "owner": "ECF00000.TS5:C37E8",
+    "parent_audit_ids": [
+      "ADJ:066"
+    ],
+    "token": "\\%2D",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      8,
+      12
+    ],
+    "actual_final_file_span": [
+      964040,
+      964044
+    ],
+    "final_command_sha256": "2e49e5d542df64b93357d2ff5f329c477ce4bee4c98cafc7c6f9e3bb0d6fd050",
+    "final_token_hex": "5c253244",
+    "root": "B0:195",
+    "inherited_role": "DO_PAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떻",
+    "context_after": "\n산책 중인가？",
+    "source_japanese_clause": "どウ\\%2D\n散策\\%07カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same どうした situational inquiry as REM066 without the separate address call.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "2e49e5d542df64b93357d2ff5f329c477ce4bee4c98cafc7c6f9e3bb0d6fd050",
+      "relative_span": [
+        4,
+        12
+      ],
+      "old_display": "어떻\\%2D",
+      "new_display": "무슨 일인가"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:069",
+    "owner": "ECF00000.TS5:C3914",
+    "parent_audit_ids": [
+      "ADJ:067"
+    ],
+    "token": "\\%1B",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      10,
+      14
+    ],
+    "actual_final_file_span": [
+      964426,
+      964430
+    ],
+    "final_command_sha256": "65c153a43cd0cefde9f532dcc425a5ffca172df6dd72277543aeaf4b59c6ad26",
+    "final_token_hex": "5c253142",
+    "root": "B0:251",
+    "inherited_role": "COPULA_VOLITIONAL",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "어떻겠",
+    "context_after": "\n전란의 세상에 잠시나마\n한 송이 큰 꽃을 피워 보지 않겠나",
+    "source_japanese_clause": "どウ\\%1B\n戦乱ノ世ニヒトトキ\n大輪ノ華ヲ咲カセテミ\\%09カ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "어떻겠나 retains the proposal question, followed by the existing invitation to bloom amid the wars.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "65c153a43cd0cefde9f532dcc425a5ffca172df6dd72277543aeaf4b59c6ad26",
+      "relative_span": [
+        10,
+        14
+      ],
+      "old_display": "\\%1B",
+      "new_display": "나"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:070",
+    "owner": "ECF00000.TS5:C3A20",
+    "parent_audit_ids": [
+      "ADJ:069"
+    ],
+    "token": "\\%28",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      11,
+      15
+    ],
+    "actual_final_file_span": [
+      964799,
+      964803
+    ],
+    "final_command_sha256": "8c1f14491f98c1ed495dff59b4e3299c21c4593db236b9869ea1b33bbb57df90",
+    "final_token_hex": "5c253238",
+    "root": "B0:381",
+    "inherited_role": "HONORIFIC_PREFIX_GO",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "그 무렵",
+    "context_after": " 집으로 부르러 가\\%2E\n사정에 따라 다른 사람을 보낼지도 모르지만…",
+    "source_japanese_clause": "ソノ頃\\%28自宅ニ呼びニ\\%2E\n都合で他ノモノヲ遣ルカモシレ\\%09が...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Japanese ご before 自宅 is an honorific register prefix, not a house identity. Adopt the existing caller-owned register and retain 집 and the visit proposition. Selector-dependent honorific variation is intentionally removed.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "8c1f14491f98c1ed495dff59b4e3299c21c4593db236b9869ea1b33bbb57df90",
+      "relative_span": [
+        11,
+        15
+      ],
+      "old_display": "\\%28",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:071",
+    "owner": "ECF00000.TS5:C3A20",
+    "parent_audit_ids": [
+      "ADJ:069"
+    ],
+    "token": "\\%2E",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      32,
+      36
+    ],
+    "actual_final_file_span": [
+      964820,
+      964824
+    ],
+    "final_command_sha256": "8c1f14491f98c1ed495dff59b4e3299c21c4593db236b9869ea1b33bbb57df90",
+    "final_token_hex": "5c253245",
+    "root": "B0:265",
+    "inherited_role": "COME_HUMBLE_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그 무렵\\%28 집으로 부르러 가",
+    "context_after": "\n사정에 따라 다른 사람을 보낼지도 모르지만…",
+    "source_japanese_clause": "ソノ頃\\%28自宅ニ呼びニ\\%2E\n都合で他ノモノヲ遣ルカモシレ\\%09が...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "The visit is scheduled for 그 무렵 and followed by a possible substitute. 가겠네 preserves planned speaker motion and the contingency. Humble selector variation is intentionally normalized to caller register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "8c1f14491f98c1ed495dff59b4e3299c21c4593db236b9869ea1b33bbb57df90",
+      "relative_span": [
+        32,
+        36
+      ],
+      "old_display": "\\%2E",
+      "new_display": "겠네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:072",
+    "owner": "ECF00000.TS5:C3A58",
+    "parent_audit_ids": [
+      "ADJ:070"
+    ],
+    "token": "\\%0A",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      29,
+      33
+    ],
+    "actual_final_file_span": [
+      964901,
+      964905
+    ],
+    "final_command_sha256": "78c25aa52a3b9fffe45fc2ade1b28dc0479b26268791a05bbf875be85eebf792",
+    "final_token_hex": "5c253041",
+    "root": "B0:125",
+    "inherited_role": "REQUEST_ENDING",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "세세한 일은 우리에게 맡기",
+    "context_after": "\n\\%01는 손님을 어떻게 대접할지에\n집중하게",
+    "source_japanese_clause": "細カイコトハ我ラニ任セテ\\%0A\n\\%01ハ客人ヲイカニモテナスカニ\n集中シテ\\%0Eカ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root125 includes 주게 and the source requests delegation. 맡기게 preserves the directive in the same register as 집중하게.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "78c25aa52a3b9fffe45fc2ade1b28dc0479b26268791a05bbf875be85eebf792",
+      "relative_span": [
+        29,
+        33
+      ],
+      "old_display": "\\%0A",
+      "new_display": "게"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:074",
+    "owner": "ECF00000.TS5:C3B14",
+    "parent_audit_ids": [
+      "ADJ:072"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      17,
+      21
+    ],
+    "actual_final_file_span": [
+      965121,
+      965125
+    ],
+    "final_command_sha256": "4f93397afbc2ad2419c2ef0950063a2f7df90789d81a54b6968280bdf9bb7f8f",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "그것은 아쉽군",
+    "context_after": "\n\\%01보다 적임인 사람은\n달리 생각할 수 없지만…",
+    "source_japanese_clause": "ソレハ残念\\%05\n\\%01以上ノ適任者ハ\n他ニハ考エラレナイノ\\%05が...",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "아쉽군 already expresses regret.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "4f93397afbc2ad2419c2ef0950063a2f7df90789d81a54b6968280bdf9bb7f8f",
+      "relative_span": [
+        17,
+        21
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:077",
+    "owner": "ECF00000.TS5:C6F5C",
+    "parent_audit_ids": [
+      "ADJ:073",
+      "ADJ:074"
+    ],
+    "token": "\\%31",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      15,
+      19
+    ],
+    "actual_final_file_span": [
+      981079,
+      981083
+    ],
+    "final_command_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+    "final_token_hex": "5c253331",
+    "root": "B0:388",
+    "inherited_role": "HONORIFIC_PREFIX_O",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "\\%03이(가) ",
+    "context_after": " 상대인가…\n미안하지만 이기게 해 주\\%0D\\%2F",
+    "source_japanese_clause": "\\%03が\\%31相手\\%07カ...\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "Japanese お before 相手 is an honorific register prefix. Preserve %03 dynamic address and the opponent identity; normalize the ornamental prefix under caller-owned register. Consume the following separator to avoid duplicate spaces.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+      "relative_span": [
+        15,
+        20
+      ],
+      "old_display": "\\%31 ",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:078",
+    "owner": "ECF00000.TS5:C6F5C",
+    "parent_audit_ids": [
+      "ADJ:073",
+      "ADJ:074"
+    ],
+    "token": "\\%0D",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      54,
+      58
+    ],
+    "actual_final_file_span": [
+      981118,
+      981122
+    ],
+    "final_command_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+    "final_token_hex": "5c253044",
+    "root": "B0:132",
+    "inherited_role": "RECEIVE_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%03이(가) \\%31 상대인가…\n미안하지만 이기게 해 주",
+    "context_after": "\\%2F",
+    "source_japanese_clause": "\\%03が\\%31相手\\%07カ...\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Japanese 勝たせてもらう is an assertive competitive idiom, not a request that the opponent actually grant victory. Recompose as 이기겠; REM079 completes 네. Retain the apology, implicit speaker as winner and intention. Explicit idiomatic judgment, not literal morpheme parity.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+      "relative_span": [
+        42,
+        58
+      ],
+      "old_display": "이기게 해 주\\%0D",
+      "new_display": "이기겠"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:079",
+    "owner": "ECF00000.TS5:C6F5C",
+    "parent_audit_ids": [
+      "ADJ:073",
+      "ADJ:074"
+    ],
+    "token": "\\%2F",
+    "token_ordinal_in_final_command": 3,
+    "command_relative_span": [
+      58,
+      62
+    ],
+    "actual_final_file_span": [
+      981122,
+      981126
+    ],
+    "final_command_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+    "final_token_hex": "5c253246",
+    "root": "B0:358",
+    "inherited_role": "SHORT_SUFFIX_YO_ZO",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "\\%03이(가) \\%31 상대인가…\n미안하지만 이기게 해 주\\%0D",
+    "context_after": "",
+    "source_japanese_clause": "\\%03が\\%31相手\\%07カ...\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Complete the assertive competitive idiom from REM078 in caller register. Source よ/ぞ emphasis is represented by the complete assertion, not a new command to the opponent.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "0c550eab1c4230983af87a7b621f6091b736cf512813da13c2a1cbcaf150efb3",
+      "relative_span": [
+        58,
+        62
+      ],
+      "old_display": "\\%2F",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:081",
+    "owner": "ECF00000.TS5:C77A8",
+    "parent_audit_ids": [
+      "ADJ:075"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      54,
+      58
+    ],
+    "actual_final_file_span": [
+      983434,
+      983438
+    ],
+    "final_command_sha256": "c290eb5a0da68056cab2679b15bac1907e8928bd2b3ae43d0171eba164ff3327",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "이번에는 \\%03인가…\n쉽게 이길 수 있을 것 같지는 않",
+    "context_after": "\\%26",
+    "source_japanese_clause": "今度ハ\\%03\\%07カ...\n簡単ニハ勝タセテモラエソウニ\\%15\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "같지는 않 preserves negative possibility; REM082 supplies the linked expressive ending.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "c290eb5a0da68056cab2679b15bac1907e8928bd2b3ae43d0171eba164ff3327",
+      "relative_span": [
+        54,
+        58
+      ],
+      "old_display": "\\%15",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:082",
+    "owner": "ECF00000.TS5:C77A8",
+    "parent_audit_ids": [
+      "ADJ:075"
+    ],
+    "token": "\\%26",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      58,
+      62
+    ],
+    "actual_final_file_span": [
+      983438,
+      983442
+    ],
+    "final_command_sha256": "c290eb5a0da68056cab2679b15bac1907e8928bd2b3ae43d0171eba164ff3327",
+    "final_token_hex": "5c253236",
+    "root": "B0:357",
+    "inherited_role": "SHORT_SUFFIX_NA",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "이번에는 \\%03인가…\n쉽게 이길 수 있을 것 같지는 않\\%15",
+    "context_after": "",
+    "source_japanese_clause": "今度ハ\\%03\\%07カ...\n簡単ニハ勝タセテモラエソウニ\\%15\\%26",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Root357 stores 군; with REM081 removal form 같지는 않군, preserving negative possibility and assessment.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "c290eb5a0da68056cab2679b15bac1907e8928bd2b3ae43d0171eba164ff3327",
+      "relative_span": [
+        58,
+        62
+      ],
+      "old_display": "\\%26",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:083",
+    "owner": "ECF00000.TS5:C8038",
+    "parent_audit_ids": [
+      "ADJ:076"
+    ],
+    "token": "\\%15",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      61,
+      65
+    ],
+    "actual_final_file_span": [
+      985857,
+      985861
+    ],
+    "final_command_sha256": "08aa7aa8f064802fe828e365667bb2e8f6d2d44fcd2e96214a553a853f2769bb",
+    "final_token_hex": "5c253135",
+    "root": "B0:209",
+    "inherited_role": "EXIST_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "가능하다면 결승에서 겨루고 싶었지만…\n이것만은 어쩔 수 없",
+    "context_after": "",
+    "source_japanese_clause": "出来レば決勝で戦イタカッタノ\\%05が...\nコレばカリハ仕方が\\%15",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "The source says this cannot be helped; caller 없 already supplies negation. Complete 어쩔 수 없군 without adding a cause or alternative.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "08aa7aa8f064802fe828e365667bb2e8f6d2d44fcd2e96214a553a853f2769bb",
+      "relative_span": [
+        61,
+        65
+      ],
+      "old_display": "\\%15",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:087",
+    "owner": "EFF16700.TS5:727C",
+    "parent_audit_ids": [
+      "ADJ:083"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      16,
+      20
+    ],
+    "actual_final_file_span": [
+      33532,
+      33536
+    ],
+    "final_command_sha256": "6e4689d899c2dbf5d92b47fb9bee01c8accdac27856f0bd22ae376edc599f0de",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "좋아, 도착했",
+    "context_after": "\n\\%02167의 군세도 먼저 온 모양이구나",
+    "source_japanese_clause": "ヨシ、到着\\%05\n\\%02167ノ軍勢モ先ニ来テイルヨウ\\%05ナ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "도착했 already expresses completed arrival. Complete the exclamation in the adjacent 모양이구나 register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "6e4689d899c2dbf5d92b47fb9bee01c8accdac27856f0bd22ae376edc599f0de",
+      "relative_span": [
+        16,
+        20
+      ],
+      "old_display": "\\%05",
+      "new_display": "군"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:097",
+    "owner": "EP12E400.TS5:2134",
+    "parent_audit_ids": [
+      "ADJ:105"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      10,
+      14
+    ],
+    "actual_final_file_span": [
+      10218,
+      10222
+    ],
+    "final_command_sha256": "602fcecaf975d7a38dd78efe9bf64edb0387765a6bf2e8ac2c6070e1a76378cf",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\#0128",
+    "context_after": "\n\\%03의 소문은 들어 알고 있네",
+    "source_japanese_clause": "\\#0128\\%05\n\\%03ノオ噂ハ聞イテオ\\%23ぞ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Self-identification: retain the dynamic #0128 name and supply 일세, compatible with both consonant/vowel-final names without guessing the actual name value.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "602fcecaf975d7a38dd78efe9bf64edb0387765a6bf2e8ac2c6070e1a76378cf",
+      "relative_span": [
+        10,
+        14
+      ],
+      "old_display": "\\%05",
+      "new_display": "일세"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:099",
+    "owner": "EP12E400.TS5:219C",
+    "parent_audit_ids": [
+      "ADJ:106"
+    ],
+    "token": "\\%23",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      42,
+      46
+    ],
+    "actual_final_file_span": [
+      10378,
+      10382
+    ],
+    "final_command_sha256": "8f6814960150b196e0a1285f28cd0d6c8353d3b333612a6f409bea51de6617ac",
+    "final_token_hex": "5c253233",
+    "root": "B0:328",
+    "inherited_role": "VERB_SUFFIX_RU",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "좋소\n우선 문하생인 \\#0259이(가)\n상대하",
+    "context_after": "",
+    "source_japanese_clause": "ヨロシュウござ\\%23\nマずハ門弟ノ\\#0259が\n御相手ヲツカマツ\\%23",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "상대하 already carries the action of facing the addressee; finish 상대하오 in the neighboring 좋소 register. Preserve the disciple reference.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "8f6814960150b196e0a1285f28cd0d6c8353d3b333612a6f409bea51de6617ac",
+      "relative_span": [
+        42,
+        46
+      ],
+      "old_display": "\\%23",
+      "new_display": "오"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:104",
+    "owner": "EP12E400.TS5:2D24",
+    "parent_audit_ids": [
+      "ADJ:112"
+    ],
+    "token": "\\%14",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      82,
+      86
+    ],
+    "actual_final_file_span": [
+      14114,
+      14118
+    ],
+    "final_command_sha256": "b97cc179729664f5b78767ef6a304603d3f888470a05745b562421c35969751a",
+    "final_token_hex": "5c253134",
+    "root": "B0:202",
+    "inherited_role": "EXIST_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%01은(는) 검의 재능이 넘쳐\n여러 비기를 익히고 있지만\n전혀 갖추지 못한 것이 있",
+    "context_after": "",
+    "source_japanese_clause": "\\%01ハ剣ノ才能ニアフレ\n様々ナ秘技ヲ習得シテオ\\%23が\n全ク足リナイモノが\\%14",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "있 already asserts existence of the missing quality; finish 있네 while preserving 전혀 갖추지 못한.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "b97cc179729664f5b78767ef6a304603d3f888470a05745b562421c35969751a",
+      "relative_span": [
+        82,
+        86
+      ],
+      "old_display": "\\%14",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:106",
+    "owner": "EP12E400.TS5:2E40",
+    "parent_audit_ids": [
+      "ADJ:113"
+    ],
+    "token": "\\%14",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      77,
+      81
+    ],
+    "actual_final_file_span": [
+      14485,
+      14489
+    ],
+    "final_command_sha256": "6f069536df3c3ed8097202519cfe055b02fbfcfcefc5b09ea38f7ae3ddd61971",
+    "final_token_hex": "5c253134",
+    "root": "B0:202",
+    "inherited_role": "EXIST_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%01은(는) 검의 재능이 넘쳐\n여러 비기를 익히고 있지만\n조금 부족한 것이 있",
+    "context_after": "",
+    "source_japanese_clause": "\\%01ハ剣ノ才能ニアフレ\n様々ナ秘技ヲ習得シテイ\\%08が\n少シ足リナイモノが\\%14",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same existential completion as REM104, retaining 조금 부족한 rather than conflating the two claims.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "6f069536df3c3ed8097202519cfe055b02fbfcfcefc5b09ea38f7ae3ddd61971",
+      "relative_span": [
+        77,
+        81
+      ],
+      "old_display": "\\%14",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:109",
+    "owner": "EP12E400.TS5:2F40",
+    "parent_audit_ids": [
+      "ADJ:114"
+    ],
+    "token": "\\%09",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      55,
+      59
+    ],
+    "actual_final_file_span": [
+      14791,
+      14795
+    ],
+    "final_command_sha256": "957329298234bf528e1092335387660203ca92864dca7a3c20e4ce6a1e509d8f",
+    "final_token_hex": "5c253039",
+    "root": "B0:118",
+    "inherited_role": "VERB_NEGATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "오오, \\%03\n수련에 힘쓰고 있나?\n\\%01에게는 지지 않겠",
+    "context_after": "!",
+    "source_japanese_clause": "オオ、\\%03\n修業ニ励ンで\\%1Eカ?\n\\%01ニハ負ケ\\%09ぞ!",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "지지 않겠 already preserves negation and speaker resolve; finish 않겠네 without adding another negative predicate.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "957329298234bf528e1092335387660203ca92864dca7a3c20e4ce6a1e509d8f",
+      "relative_span": [
+        55,
+        59
+      ],
+      "old_display": "\\%09",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:112",
+    "owner": "EP12E400.TS5:3474",
+    "parent_audit_ids": [
+      "ADJ:117"
+    ],
+    "token": "\\%23",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      11,
+      15
+    ],
+    "actual_final_file_span": [
+      16447,
+      16451
+    ],
+    "final_command_sha256": "3231c138549f8ed9d18630e3a0dd8a71cf1cc93d78223fe23c799a2d0511dda1",
+    "final_token_hex": "5c253233",
+    "root": "B0:328",
+    "inherited_role": "VERB_SUFFIX_RU",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "알고 있",
+    "context_after": "\n천하제일의 병법가라더군\n유파는 신카게류지",
+    "source_japanese_clause": "知ッテオ\\%23ぞ\n天下一ノ兵法家だトカ\n流派ハ新陰流\\%05ナ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "알고 있 already carries knowledge state; finish 알고 있네 while preserving the following report and school identity.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "3231c138549f8ed9d18630e3a0dd8a71cf1cc93d78223fe23c799a2d0511dda1",
+      "relative_span": [
+        11,
+        15
+      ],
+      "old_display": "\\%23",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:113",
+    "owner": "EP12E400.TS5:3544",
+    "parent_audit_ids": [
+      "ADJ:118"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      50,
+      54
+    ],
+    "actual_final_file_span": [
+      16754,
+      16758
+    ],
+    "final_command_sha256": "bbe40b37cea64890cdaa8fc4ad5d2876e2b2bf7ac4f4ded01daf07e72f0b8122",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "뭐라고, 그게 참말인가!\n부디 가르침을 받고 싶군",
+    "context_after": "",
+    "source_japanese_clause": "ナント、ソレハマコト\\%07カ!\nぜヒ、教エヲ受ケタイモノ\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "가르침을 받고 싶군 already expresses desire to receive instruction.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "bbe40b37cea64890cdaa8fc4ad5d2876e2b2bf7ac4f4ded01daf07e72f0b8122",
+      "relative_span": [
+        50,
+        54
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:114",
+    "owner": "EP12E400.TS5:3674",
+    "parent_audit_ids": [
+      "ADJ:119"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      32,
+      36
+    ],
+    "actual_final_file_span": [
+      17108,
+      17112
+    ],
+    "final_command_sha256": "879a53f87c64ba83ed3e9057ba0f6b9f5d1bee3ff681f8be6715dc8b4f70a7c9",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "참으로 갑작스럽군\n아쉽습니다",
+    "context_after": "",
+    "source_japanese_clause": "ソレハマタ急\\%07ナ\n残念\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "아쉽습니다 already expresses regret and polite register.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "879a53f87c64ba83ed3e9057ba0f6b9f5d1bee3ff681f8be6715dc8b4f70a7c9",
+      "relative_span": [
+        32,
+        36
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:115",
+    "owner": "EP12E400.TS5:3690",
+    "parent_audit_ids": [
+      "ADJ:120"
+    ],
+    "token": "\\%0A",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      64,
+      68
+    ],
+    "actual_final_file_span": [
+      17180,
+      17184
+    ],
+    "final_command_sha256": "cee97dedd40484839c0385755ab29dd07aa7d39f1a46d373f033ac1d9757ca91",
+    "final_token_hex": "5c253041",
+    "root": "B0:125",
+    "inherited_role": "REQUEST_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "\\#0A59은(는) 이 마을에 남아 있을 테니\n그자에게 비기를 배우게",
+    "context_after": "",
+    "source_japanese_clause": "\\#0A59ハコノ町ニ残\\%23ノで\nアノ者カラ秘技ヲ教ワッテ\\%0A",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "배우게 already gives the source instruction to learn from the named person; do not duplicate the request ending.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "cee97dedd40484839c0385755ab29dd07aa7d39f1a46d373f033ac1d9757ca91",
+      "relative_span": [
+        64,
+        68
+      ],
+      "old_display": "\\%0A",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:121",
+    "owner": "EP12E400.TS5:412C",
+    "parent_audit_ids": [
+      "ADJ:125"
+    ],
+    "token": "\\%0A",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      52,
+      56
+    ],
+    "actual_final_file_span": [
+      20468,
+      20472
+    ],
+    "final_command_sha256": "9f1efa6ce7fa7b3d23c2dbf78103eb56261b637b64359dc3dda97e012d6cdbf5",
+    "final_token_hex": "5c253041",
+    "root": "B0:125",
+    "inherited_role": "REQUEST_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "사과라 하기에는 변변치 않지만\n이것을 받아 주세요",
+    "context_after": "",
+    "source_japanese_clause": "オ詫びトイッテハナン\\%05が\nコレヲ受ケ取ッテ\\%0A",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "받아 주세요 already carries the request to accept the object.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "9f1efa6ce7fa7b3d23c2dbf78103eb56261b637b64359dc3dda97e012d6cdbf5",
+      "relative_span": [
+        52,
+        56
+      ],
+      "old_display": "\\%0A",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:123",
+    "owner": "EP12E400.TS5:41B8",
+    "parent_audit_ids": [
+      "ADJ:126"
+    ],
+    "token": "\\%0A",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      75,
+      79
+    ],
+    "actual_final_file_span": [
+      20659,
+      20663
+    ],
+    "final_command_sha256": "ed8d02ec7793e480f07f326f88fecf86a8d81ee7a82b44e456f4f3f436f0d4ed",
+    "final_token_hex": "5c253041",
+    "root": "B0:125",
+    "inherited_role": "REQUEST_ENDING",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "\\%00은(는) \\41DE에 살고 있소\n\\41DE 근처에 올 일이 있으면\n꼭 들러 주시오",
+    "context_after": "",
+    "source_japanese_clause": "\\%00ハ\\41DEニ住ンで\\%1E\n\\41DEノ近クニ来タトキハ\nぜヒ、立チ寄ッテ\\%0A",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "들러 주시오 already carries the invitation to visit the preserved location.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "ed8d02ec7793e480f07f326f88fecf86a8d81ee7a82b44e456f4f3f436f0d4ed",
+      "relative_span": [
+        75,
+        79
+      ],
+      "old_display": "\\%0A",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:125",
+    "owner": "EP12E400.TS5:728",
+    "parent_audit_ids": [
+      "ADJ:127"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      63,
+      67
+    ],
+    "actual_final_file_span": [
+      2247,
+      2251
+    ],
+    "final_command_sha256": "80ce94a6055cbd105b1e82c18e932e13c552ccbd3e656d07479f2b0aa50ca9bb",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "\\%03, 이제 오늘 입문한 문하생에게\n기초 전투법을 지도할 텐데",
+    "context_after": "…\n구경하시겠소?",
+    "source_japanese_clause": "\\%03、コレカラ本日入門シタ門弟ニ\n初歩ノ戦イ方ヲ指導スルノ\\%05が...\nご覧ニナ\\%23カ?",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "지도할 텐데 already frames the pending instruction before the following invitation.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "80ce94a6055cbd105b1e82c18e932e13c552ccbd3e656d07479f2b0aa50ca9bb",
+      "relative_span": [
+        63,
+        67
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:127",
+    "owner": "EP12F400.TS5:34C0",
+    "parent_audit_ids": [
+      "ADJ:128"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      68,
+      72
+    ],
+    "actual_final_file_span": [
+      17468,
+      17472
+    ],
+    "final_command_sha256": "cfc22b981d0ee4a5d5cf92a9007595111efff32ac721ed3b96eac6f3577c1883",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\%00이(가) 생각하건대\n모리와 가까운 미토야성이야말로\n수비의 요충",
+    "context_after": "\n우선 미토야성의 방비를 굳히는 것이\n긴요할 듯하옵니다",
+    "source_japanese_clause": "\\%00が考エ\\%08ニ\n毛利ニ近イ三刀屋城コソ\n守備ノ要\\%05\nマずハ三刀屋城ノ防備ヲ固メルノが\n肝要カト",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "The consonant-final 요충 needs a copular ending. Root73 contains 이옵니다; use the caller register also present in 긴요할 듯하옵니다.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "cfc22b981d0ee4a5d5cf92a9007595111efff32ac721ed3b96eac6f3577c1883",
+      "relative_span": [
+        68,
+        72
+      ],
+      "old_display": "\\%05",
+      "new_display": "이옵니다"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:137",
+    "owner": "ECF00000.TS5:C6F98",
+    "parent_audit_ids": [
+      "ADJ:143"
+    ],
+    "token": "\\%21",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      12,
+      16
+    ],
+    "actual_final_file_span": [
+      981148,
+      981152
+    ],
+    "final_command_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+    "final_token_hex": "5c253231",
+    "root": "B0:349",
+    "inherited_role": "SAY_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\37F3와 ",
+    "context_after": "\n미안하지만 이기게 해 주\\%0D\\%2F",
+    "source_japanese_clause": "\\37F3ト\\%21\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Japanese dynamic-name と言う is self-identification. Preserve exactly the existing name reference and realize a Korean self-identification copula. Do not freeze the name or guess its final consonant; 일세 works without name-dependent particle selection. Explicit phrase-level design judgment.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+      "relative_span": [
+        4,
+        16
+      ],
+      "old_display": "\\37F3와 \\%21",
+      "new_display": "\\37F3일세"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:138",
+    "owner": "ECF00000.TS5:C6F98",
+    "parent_audit_ids": [
+      "ADJ:143"
+    ],
+    "token": "\\%0D",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      40,
+      44
+    ],
+    "actual_final_file_span": [
+      981176,
+      981180
+    ],
+    "final_command_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+    "final_token_hex": "5c253044",
+    "root": "B0:132",
+    "inherited_role": "RECEIVE_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "\\37F3와 \\%21\n미안하지만 이기게 해 주",
+    "context_after": "\\%2F",
+    "source_japanese_clause": "\\37F3ト\\%21\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Same assertive 勝たせてもらう competitive idiom as REM078, in the self-introduction owner.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+      "relative_span": [
+        28,
+        44
+      ],
+      "old_display": "이기게 해 주\\%0D",
+      "new_display": "이기겠"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:139",
+    "owner": "ECF00000.TS5:C6F98",
+    "parent_audit_ids": [
+      "ADJ:143"
+    ],
+    "token": "\\%2F",
+    "token_ordinal_in_final_command": 2,
+    "command_relative_span": [
+      44,
+      48
+    ],
+    "actual_final_file_span": [
+      981180,
+      981184
+    ],
+    "final_command_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+    "final_token_hex": "5c253246",
+    "root": "B0:358",
+    "inherited_role": "SHORT_SUFFIX_YO_ZO",
+    "status": "MODIFIER_OR_CHAIN_REVIEW",
+    "context_before": "\\37F3와 \\%21\n미안하지만 이기게 해 주\\%0D",
+    "context_after": "",
+    "source_japanese_clause": "\\37F3ト\\%21\n悪イ\\%07が勝タセテ\\%0D\\%2F",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Review together with its neighboring predicate/call; preserve emphasis/honorification and do not delete independently.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "Complete the competitive assertion paired with REM138; preserve apology and speaker intention.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "398544f444d782fc945d39f0213e81f2b3428dbf3a48081cdcae1094bc8abf8e",
+      "relative_span": [
+        44,
+        48
+      ],
+      "old_display": "\\%2F",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:140",
+    "owner": "EP12E400.TS5:18D4",
+    "parent_audit_ids": [
+      "ADJ:156"
+    ],
+    "token": "\\%07",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      17,
+      21
+    ],
+    "actual_final_file_span": [
+      7657,
+      7661
+    ],
+    "final_command_sha256": "1baf714c4eb1ea97670fd3e2b2ca10c22317544187fa1c13620e8d7b9029cbb8",
+    "final_token_hex": "5c253037",
+    "root": "B0:91",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "그렇게나 드는",
+    "context_after": "가…\n하지만 야규신카게류를 널리 알리려면\n어쩔 수 없군",
+    "source_japanese_clause": "ソンナニカカルノ\\%07カ...\nシカシ、柳生新陰流ヲ広メルニハ\n止ムヲ得\\%09ナ",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "드는가 already forms the question about that expense; the following contrast and obligation remain.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "1baf714c4eb1ea97670fd3e2b2ca10c22317544187fa1c13620e8d7b9029cbb8",
+      "relative_span": [
+        17,
+        21
+      ],
+      "old_display": "\\%07",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:142",
+    "owner": "EP12E400.TS5:20F8",
+    "parent_audit_ids": [
+      "ADJ:159"
+    ],
+    "token": "\\%05",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      35,
+      39
+    ],
+    "actual_final_file_span": [
+      10179,
+      10183
+    ],
+    "final_command_sha256": "2c45164599b45710a8000370fea26e041e7232e0082659945be31cddd94a7afb",
+    "final_token_hex": "5c253035",
+    "root": "B0:73",
+    "inherited_role": "COPULA_AFFIRMATIVE",
+    "status": "COMPLETED_CALLER_PLUS_GRAMMAR_CANDIDATE",
+    "context_before": "오, 왔군, \\%03\n이쪽이 \\#0128 공",
+    "context_after": "이네",
+    "source_japanese_clause": "オ、来\\%25ナ、\\%03\nコチラが\\#0128殿\\%05",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Adjudicate the exact remaining boundary from paired source and root data; then implement only an explicitly selected local edit. Static adjacency alone is not a runtime failure.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "공 and 이네 already retain the address and identification. Remove the intervening copula only.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "2c45164599b45710a8000370fea26e041e7232e0082659945be31cddd94a7afb",
+      "relative_span": [
+        35,
+        39
+      ],
+      "old_display": "\\%05",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:143",
+    "owner": "EP12E400.TS5:3638",
+    "parent_audit_ids": [
+      "ADJ:163"
+    ],
+    "token": "\\%0B",
+    "token_ordinal_in_final_command": 0,
+    "command_relative_span": [
+      31,
+      35
+    ],
+    "actual_final_file_span": [
+      17027,
+      17031
+    ],
+    "final_command_sha256": "9abedd09b10fc87fa954175a42e1309a238741325b266c9c627aabc3b65a7224",
+    "final_token_hex": "5c253042",
+    "root": "B0:139",
+    "inherited_role": "RECEIVE_PAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "모처럼 민가까지 마련해 주었",
+    "context_after": "는데\n미안하지만, 잠시\n교토에 다녀오겠\\%2E",
+    "source_japanese_clause": "セッカク民家ヲ世話シテ\\%0Bノニ\n申シ訳\\%15が、シばラク\n京ヘ行ッテ\\%2E",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "ERASE_LOCAL_GRAMMAR",
+    "reason": "마련해 주었는데 already represents the other person providing the residence to the speaker, past aspect and contrast. Do not append a second receive-past predicate.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "9abedd09b10fc87fa954175a42e1309a238741325b266c9c627aabc3b65a7224",
+      "relative_span": [
+        31,
+        35
+      ],
+      "old_display": "\\%0B",
+      "new_display": ""
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  },
+  {
+    "id": "REM:144",
+    "owner": "EP12E400.TS5:3638",
+    "parent_audit_ids": [
+      "ADJ:163"
+    ],
+    "token": "\\%2E",
+    "token_ordinal_in_final_command": 1,
+    "command_relative_span": [
+      72,
+      76
+    ],
+    "actual_final_file_span": [
+      17068,
+      17072
+    ],
+    "final_command_sha256": "9abedd09b10fc87fa954175a42e1309a238741325b266c9c627aabc3b65a7224",
+    "final_token_hex": "5c253245",
+    "root": "B0:265",
+    "inherited_role": "COME_HUMBLE_NONPAST",
+    "status": "PREDICATE_OR_ENDING_REVIEW",
+    "context_before": "모처럼 민가까지 마련해 주었\\%0B는데\n미안하지만, 잠시\n교토에 다녀오겠",
+    "context_after": "",
+    "source_japanese_clause": "セッカク民家ヲ世話シテ\\%0Bノニ\n申シ訳\\%15が、シばラク\n京ヘ行ッテ\\%2E",
+    "evidence_origin": [
+      "V355 root-role evidence",
+      "V369/V371 source binding",
+      "supplemental142 final-owner readbacks"
+    ],
+    "confirmed_runtime_defect": false,
+    "exit_condition": "Bind required predicate/tense/modality/beneficiary contribution before selecting caller-local wording; root role alone cannot authorize deletion.",
+    "disposition": "BOUNDARY_DESIGN_DECIDED",
+    "action": "MATERIALIZE_CALLER_GRAMMAR",
+    "reason": "다녀오겠 already expresses the speaker intended round trip; finish 다녀오겠네 while preserving the preceding apology and temporary duration.",
+    "edit": {
+      "baseline": "POST142_COMPOSED_FINAL_COMMAND",
+      "baseline_sha256": "9abedd09b10fc87fa954175a42e1309a238741325b266c9c627aabc3b65a7224",
+      "relative_span": [
+        72,
+        76
+      ],
+      "old_display": "\\%2E",
+      "new_display": "네"
+    },
+    "exact_full_phrase_attested": false,
+    "claim": "Source-grounded design judgment only; no implementation or runtime acceptance",
+    "implementation_authorized": false
+  }
+]

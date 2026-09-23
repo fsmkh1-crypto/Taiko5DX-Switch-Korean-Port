@@ -1,0 +1,28 @@
+{
+  "schema": "TAI5MSG_B0_ADDITIONAL_ROOTS_181_307_V1",
+  "profile": "V357_PLUS_EXACT_ROOTS_181_307_V1",
+  "canonical_admission": false,
+  "local_execution_scope": "USER_AUTHORIZED_BOUNDED_IMPLEMENTATION",
+  "rows": [
+    {
+      "block": 0,
+      "local": 181,
+      "source_length": 303,
+      "source_sha256": "2c71d5b47d1c5396295add00682df87133bfedeb962531f96889d0efdd76ea09",
+      "target_length": 339,
+      "target_sha256": "e515cccf2157cc85726845c50b7efaa865d1e0a9d4962edfa7cace58b57b92da",
+      "delta": 36,
+      "target_method": "EXACT_SAME_LOCATOR_PC_KO_PROGRAM_BYTES"
+    },
+    {
+      "block": 0,
+      "local": 307,
+      "source_length": 307,
+      "source_sha256": "aee4c71b525fac5fcde27ee054f71408a753903ab68ac9d4baffb667813991d1",
+      "target_length": 323,
+      "target_sha256": "5c31d61c70b8da01daa833a471fa17164cb8b6b294bb9fc39ff1bbba438b00f0",
+      "delta": 16,
+      "target_method": "EXACT_SAME_LOCATOR_PC_KO_PROGRAM_BYTES"
+    }
+  ]
+}

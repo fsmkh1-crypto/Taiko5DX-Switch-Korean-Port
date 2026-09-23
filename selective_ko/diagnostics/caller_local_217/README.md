@@ -1,0 +1,11 @@
+# Caller-local 217 diagnostic source snapshot
+
+This supplemental, user-authorized diagnostic preserves the exact source and transformation ledgers for 217 boundaries across 139 owners in 13 EVENT files. The earlier V371 54/169 checkpoint is historical evidence for its own payload profile; these counts must not be added together. V369 remains unchanged and V371 remains partial/blocked.
+
+Reconstruction: map `workspace/` to the workspace root. Retrieve the external input files in INPUT_INVENTORY.json and verify size/SHA-256 before use. Preserve the relative layout. The SOURCE_MAP.json paths map each executed Python source to this snapshot. SOURCE_FREEZE_REQUIRED.json local paths must be rebound to the restored workspace without changing source bytes. The authenticated committed-source receipt or a clean Git checkout gates build.py before generation. This snapshot is not a self-contained raw-input distribution.
+
+Run workspace/implementation/candidate217/build.py with --checkout (clean checkout or authenticated readback receipt), --commit (source commit), --source-map (absolute local paths and repository paths), and --output (fresh ZIP). Every mapped source must match committed bytes. Never substitute a later report commit for the source commit.
+
+PC_PATCH_ORACLE_GATE=PASS for this bounded family, inherited from exact PC source pairs and the committed 143/75 decision ledgers. Existing root reconstruction and 14 particle transformations are prerequisites. Font and five IPS records are inherited unchanged from the hash-pinned V361 package. The local game main is unavailable; original-byte guard provenance is inherited, not freshly verified.
+
+This is an offline diagnostic, not release/runtime acceptance. The 69 remaining percent calls within the owner set are dynamic identity/address/argument classes; this does not close the entire game. Preserve ADJ:084, source-identity holds (60, no overlap in these 13 files), TE5/SNR, inline 139, non-B24 reflow, legacy test/PASS provenance and circular-readback concerns. Whole TAI5MSG 48 roots, historical V357 46 roots, and V371 five roots remain different scopes. B0:181/307 use explicit supplemental PC-byte admission; suffix3 and root locator stored/decoded-byte obligations remain under their own evidence.

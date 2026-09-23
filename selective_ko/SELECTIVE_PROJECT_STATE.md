@@ -62,3 +62,8 @@ After a fresh explicit user execution signal, continue only:
 `V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION`
 
 Reuse the current adapter and frozen authorities. Connect existing legacy ECF evidence before the remaining 115-file replay; do not start another role/rule census.
+
+
+## Current supplemental diagnostic stage — 2026-09-23
+
+The user authorized exact source freeze and diagnostic ZIP generation for caller-local 217. Resume this bounded stage through `selective_ko/diagnostics/caller_local_217/INDEX.json`. The preceding 54/169 checkpoint and pending statements describe the earlier payload profile, not this supplemental stage. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain in force. Runtime has not been authorized or run.

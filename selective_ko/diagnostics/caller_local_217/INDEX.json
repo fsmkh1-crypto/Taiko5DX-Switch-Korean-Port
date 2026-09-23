@@ -1,0 +1,28 @@
+{
+  "schema": "CALLER_LOCAL_217_DIAGNOSTIC_V1",
+  "status": "SOURCE_FREEZE_PREPARED_AWAIT_DIAGNOSTIC_BUILD",
+  "base_head": "821eeaff82aab20eb696dfa1543fa8f67d10a136",
+  "builder_source_commit": null,
+  "report_commit_resolution": "Commit introducing the completed BUILD_REPORT.json; never confused with builder_source_commit.",
+  "scope": {
+    "boundaries": 217,
+    "owners": 139,
+    "event_files": 13,
+    "initial143_implemented": 142,
+    "initial143_held": [
+      "ADJ:084"
+    ],
+    "additional_boundaries": 75
+  },
+  "V369": "UNCHANGED",
+  "V371": "PARTIAL_BLOCKED",
+  "runtime": "NOT_RUN",
+  "release_accepted": false,
+  "source_map": "selective_ko/diagnostics/caller_local_217/SOURCE_MAP.json",
+  "input_inventory": "selective_ko/diagnostics/caller_local_217/INPUT_INVENTORY.json",
+  "build_report": "selective_ko/diagnostics/caller_local_217/BUILD_REPORT.json",
+  "package_manifest": "selective_ko/diagnostics/caller_local_217/PACKAGE_MANIFEST.json",
+  "previous_integration_drive_id": "1_EMXa0YPwxug0VPJbYsIkZXFdKoezLUg",
+  "previous_source_review_drive_id": "1DaFoFD4UI4BcxjNJopZUE_Wv90T_xvg3",
+  "base_ips_font_drive_id": "18Mux9kvYU5Qmx8ASuI7MELTAnTDuPE5p"
+}
