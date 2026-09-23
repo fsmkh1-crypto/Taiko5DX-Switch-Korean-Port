@@ -1,0 +1,1343 @@
+{
+  "schema": "MESSAGE_COVERAGE_218_OPEN_ISSUES_V1",
+  "new_field_holds": [
+    {
+      "locator": "B1:213",
+      "source_sha256": "9f62d18cd71273324a254384d78c974f2e51e3284333f0704c282c688ff17e41",
+      "pc_sha256": "5fccea8d6bb202fbd3fd26124f37b387feb78aef1b9bc297cf1223f6c56d034e",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B1:215"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:215",
+      "source_sha256": "0cbadfccb726c82afd9eb6f4337acde78aab028a771ece7ce19becb99f9a5f49",
+      "pc_sha256": "cfd09278e35fcc1e7988c90231476487f6e8157c8250915d14735269434406b4",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:426",
+      "source_sha256": "a9062667ed804e305f655b38c621b998769250290017d08d25a35275a6c89384",
+      "pc_sha256": "43354a7cc6e05737e40cb12b758e42b21e39de5182aa86dceba6bfbfe012dbc3",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:453",
+      "source_sha256": "055a05c893c29549008470c1bf26626d9c79725d12296531474fbabdba1b308d",
+      "pc_sha256": "64203a5788e9b57d83c29b36b7509dbe77a3f5191f1e75da128a0239d9b9608a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:456",
+      "source_sha256": "c1cc0822b0f509d0927e68b071883cd3fe213ccb44317dc56679220d1fa3f4e8",
+      "pc_sha256": "b93e35627520e940f8e3c6755191f3941ec65c5b440d3508aa8204af4708c4b8",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:458",
+      "source_sha256": "ba311c77dc4e29d279250796619cf03c995b76f3d88cabc9deafa48d37dbfc80",
+      "pc_sha256": "c1066b45faedd56a742e68b07c93de8617cd54094dba7c41261c65c4900c940a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B1:472",
+      "source_sha256": "b7c85aae05739a507bea9bbefd438ae3d741592a050e27ba653d055fa1a02a29",
+      "pc_sha256": "eece9f0610a39583a0815c22c4c0b87830d2ae447c868626c88001c61557b456",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B4:74",
+      "source_sha256": "ee2e9c55c9e964f719e5cbde1cc294c06432cd3ab5d275a12f21f533d7d15a77",
+      "pc_sha256": "5d4c104fa54e72651b125c612eb79d98e624557195a52ff25be25ae11a4eede7",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B4:75"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B4:75",
+      "source_sha256": "a96703456a712b9155e17f047082f77c55fb1036bc3bf41ddf5cde1cd30a912c",
+      "pc_sha256": "58adcf0cbbdbf4414145e0e492e561cf6f9b0ac10f4fd2083eaa6af9118a948e",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B4:485",
+      "source_sha256": "33980af575d8cb913aeecc0264035a06e6725fa5f09ad4ac319d5ed5b92106dc",
+      "pc_sha256": "7d9ac91d9af47033d8eb8f85602189bbb8fa8410286d7f59ed5faee309ef5d0f",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:83",
+      "source_sha256": "90117c897f7388a8d62f17b3c4c3c11fef55e0406070165de6de628c7058ebb9",
+      "pc_sha256": "5f0243bb9c3fdcc5b5c9db0414216f7b67d3b14ddda2dab2d6de76658a1048ea",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:103",
+      "source_sha256": "fcf908abf772bf12f7e964522697c1f3e2b4f911a2065d4473b32fe86c6c9c6a",
+      "pc_sha256": "0c1b5794e733f34719a89e8cc8d9799b197adad8633d213f957a92fb0a5b2d8f",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:155",
+      "source_sha256": "bad6003e2442e8b56f12636f2e7c037490ba2a10404266d19f8989d929a0ebd2",
+      "pc_sha256": "f17f4f027547ee4f21bac19d12853013cfe6355fb2271a405adfb47e73cd57c5",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:160",
+      "source_sha256": "ebf5efbc8af780cc77caa9a54a89a4313ecf8f61ef9ef1c3990a46cc3049a70c",
+      "pc_sha256": "0dd6f974e2c27c0c3ab9ac4ba6bd3fd3566b0eee4d2b1ff4538a2910ff931699",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:227",
+      "source_sha256": "000994622633245d14c40e4916ac3b73b416d31fa71cc25e0d5fb06932a77f24",
+      "pc_sha256": "d0b950cc5830b890de2a91ba1299bb8efc6758b98579feb42829a6a9f4f2c28c",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:230",
+      "source_sha256": "d02eaac7f0b8a0bdcbc090aaeac87a4803a74ae51fe23aebff70a75709b7cd04",
+      "pc_sha256": "6e15db94b4d5587dc9de17b97902a70d2a2af34b1d19d9a8b0db32163767c4a2",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:248",
+      "source_sha256": "64ec04aeda99fd2a3c583906a5fdb825a88f0a010f65866bc1904a4e6361aa24",
+      "pc_sha256": "5e8d3e3214ac91d02e198ffb12982fa5432b88be7b01d4e84e17c3c3de1641fc",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:335",
+      "source_sha256": "6080ea28557205716bcd510c222a54a6cec0d189782f9f6041b1850ea3966497",
+      "pc_sha256": "81444c8afc9667e77dc42b7a454c9fd520d78b5e937551da4b4ef44d6787e339",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:353",
+      "source_sha256": "ca8c1bacb1feccb82eddfe67677ee97c1b672a26f78e70d1cc6dc44dd7032a89",
+      "pc_sha256": "33d3e4db03ef5419634fdeb53b86ab1961c5e093267a8073c62173f03e6d7055",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf7",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:354",
+      "source_sha256": "3f08d9b732bb0d35873625674c54ae3029ecb405876d3cb084bedc7252259766",
+      "pc_sha256": "2dad0f5b4942e2755152a5421108af7176e1f33212abf6dd70c341295c9cbced",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf2",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:355",
+      "source_sha256": "cb2369c98b69e83a0f8d619b7a1652dd3ebddcf6a30c0431085ff531d24387d6",
+      "pc_sha256": "3b15671846c7a41139a3b5780c8eefeb2685d4f7a09ce73055fde6f31921bb5e",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf1",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B5:439",
+      "source_sha256": "32d85f1c08dbd2b9e0a00fa4402e4c719e67f41cb284dc145fa8ff6320873eb7",
+      "pc_sha256": "57b695bc066273d5264f7a2eace3d947db34e2a81b0f225d54e68a98327de66b",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:63",
+      "source_sha256": "41bd04ddef582d7f57e8fcf9598800afe0344d0def7fe5c148b924297c7a4eb6",
+      "pc_sha256": "ac4fb974daa49397198e737b16f616beb39263ef2895d6dc0afa8a3e1ba5877b",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:65"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:65",
+      "source_sha256": "9d231c7a3a5a8d51e5b7ab61ceba61669b28db483e5dc58d9458308a92d157d5",
+      "pc_sha256": "27279990088ce8e6a3d735e964ae9caa89cfa82736f2011d476278fa89e7cf45",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:139",
+      "source_sha256": "8d8bb81c12e03e927f5d5a2d1354986f9d9f082715d30b74857b9a5d5b03fd2f",
+      "pc_sha256": "d4d4c43ec237f9dc581d4faacd9812d454776782babf59bc9a3feecdbfece3fa",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:140"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:140",
+      "source_sha256": "c6a842a89bf1454354d0e8956efae7d8f353768223a4ecf62e46e0460249c19b",
+      "pc_sha256": "b04621c86d65b7ae9cd5b1590b54f11c65a7de919ab28d998e5a7ed887784c06",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:141",
+      "source_sha256": "e911f0808b35366b8792053fc3dc0e50908b429c248b0583c4c5af426995757b",
+      "pc_sha256": "5e684a043300953ef415dc13915909564ac50e5808a24211413181aabbc5f38b",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:142"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:142",
+      "source_sha256": "ea936bcb3afd46d14130537bed2ed597c1930161a2685e5c40295909b09cd344",
+      "pc_sha256": "0b2379a31f0844ee1f37b893a252fab57148a388f50f871064a27d5be6aa0c65",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:143",
+      "source_sha256": "d774bfb5e96625866b4820a02efe6c37fc45f8253d92134f173d1ea0eef8c9f0",
+      "pc_sha256": "a6a7b808cc4b18a42bb4e4fb3b112927c43f19dd6ed1d212abb3e66b32116d3e",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:144"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:144",
+      "source_sha256": "f24d377f6ec0e75e8fdb4e17f81714d6431ee15fe8b67bb21bd7e6b12546445a",
+      "pc_sha256": "d6bb878cf887605ad2d70b4dc4d32cde683889c75a4ae93e68619e4f89ae744c",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:145",
+      "source_sha256": "6ffbbf3725db10d5977880bf3d656802d606abca8b07b33fd2cc49360cf39c17",
+      "pc_sha256": "2ca38b6bf04cd569a3fb8defa5c82337a7d81a725dd05f174f13d3f2e117320d",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:146"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:146",
+      "source_sha256": "c2a9f3153593c960bfb2faeb0a975f387b9e62d42b40db88c30b9c1f9e5a8c93",
+      "pc_sha256": "a507a61c2063e20907d484afc5c2c6ad0331a1790a766c712da77eb5e50df591",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:147",
+      "source_sha256": "592c77ffe2b58a6c145d65fd68066fd47e2c8f542d2a6df5a4f3fceb6a9e08db",
+      "pc_sha256": "40e902ecdd77603f9168f62cdca134a3e0b4378a583e0e6b1b0fe99758744077",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:148"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:148",
+      "source_sha256": "f59cde2de7f45e4ba523a461888ba1b44c2de6d05ae0a7be318aea3d93eef685",
+      "pc_sha256": "39c0814c8e36e34b48e0fc3dfbbd01f1089aabfeff4a7534109e33eb1b3cc2de",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:149",
+      "source_sha256": "38cfca62b4d5dd1eb75f03f2311f2d39e3a108175a03d075667353dfb6797050",
+      "pc_sha256": "7baafc9d89962be35510a2213171b19add2961fe1f7189c1b66090e7ed31702c",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B6:150"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:150",
+      "source_sha256": "df7e42be2c6d84d1dae90f18a092d969b1f5ca1c279c5c3c2a51b77658f2e92d",
+      "pc_sha256": "60e23ee8e3e411a1088065649daa7740a4e2522eeeddd36a7fd32bdfcedec99a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": "INPUT_EXHAUSTED",
+      "pc": "INPUT_EXHAUSTED",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:376",
+      "source_sha256": "44b75a2336117b01583b3c06f7cc165ac3e5e0f5969f5c59ab62c6c302e4f5d1",
+      "pc_sha256": "ca4f30bd11a8d905c7a4fb1caac49633b9c55d11ad4581b38f7180e936133d80",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B6:377",
+      "source_sha256": "eb39baef3fa1b53325b25f91bd92c26350bb045a52a11a5b354fbbe05cb6f2a7",
+      "pc_sha256": "25edb572144e6b229432384426cee2bfeca95f49ceec5aa541e10b4cda644f3d",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B7:505",
+      "source_sha256": "4eb11d6bc68bf017e81f1295261b142d69d532769b2eae585e8563ada2ab9488",
+      "pc_sha256": "4e0fb3250960e7b36f5c3c0f98ff60cb397091c3659097859bf2559dfb81d6c7",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B8:31",
+      "source_sha256": "dbbe3c23753079486a5aa1d5faf108ac86224f7eda45a7337fff31242a0efa37",
+      "pc_sha256": "f984dfd536ab0ce8f6c74a58fffae244b830ad36294e993530798459f075c231",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf5",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B8:32",
+      "source_sha256": "ae0414224f2e5a3766710ed3ec547cb22d7f566f0807ca1e30b2184a94e0c101",
+      "pc_sha256": "9b4a31c6309a1c65398a87c00a8a6e5c97667061e17fc6433d2b960f3f6d229a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf5",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:230",
+      "source_sha256": "ebd961b52f2f8163982108c662c970ad435543b6fbf54fd95e99cbcbfe73c820",
+      "pc_sha256": "a93cdbbc36a7ae6b70f0a789f5a347d0ab4cbccc080cfd5b901ee18a595d71b0",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:325",
+      "source_sha256": "6449a9b7819b80110129e0382963bd0dc01bf2f16ad420fbabbc098a069a6108",
+      "pc_sha256": "f9b1e13b787e4da6744ff7208f2a34a40276193cf33176c32066a9f66a4914f7",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:418",
+      "source_sha256": "1af05bdc016f415137807f8364030f62f18ab8764e51c894fbf5efc8205a6d38",
+      "pc_sha256": "b38874323baa67384ea54c3c3e05ac1fc5fcefe8dafa155cc80b0b423f04ec54",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:421",
+      "source_sha256": "70f404d93b0a9a649aacb707be87fe14f32e778cfa2c2514292d2b5ff2808efe",
+      "pc_sha256": "66c3d19396bef14aa40076a0af40ef74fd137d7ae185c40cc54548c1eb6d968b",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:422",
+      "source_sha256": "4e77d82d53fd7246cbb989ea5afcdd2309584a8c6f25a558ba7123bde4e258ea",
+      "pc_sha256": "f9d8efd8b1b80df8d0d1dbb954b02046607b4a719b2a2286515f1c8814055cd1",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B9:423"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:423",
+      "source_sha256": "70f404d93b0a9a649aacb707be87fe14f32e778cfa2c2514292d2b5ff2808efe",
+      "pc_sha256": "66c3d19396bef14aa40076a0af40ef74fd137d7ae185c40cc54548c1eb6d968b",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:429",
+      "source_sha256": "0edf1c313c1acf4058f38251dca0db84cc47bcb468b7109d7f44ad8f5989b2cd",
+      "pc_sha256": "5db05ac5e2def1a0cacfaca105ab5ce6efe86a1fba6eadc8e30d1816ed147b75",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:463",
+      "source_sha256": "1191a11aaf380b24d91abcc3aa1aad888652ecaf7c5aa1d29651e46cab4d4906",
+      "pc_sha256": "8cd5dc27b87af9118ac91bf6c9ec4fbfd12ff2964e37365e50f50e4f58c0bea2",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:464",
+      "source_sha256": "09e15f853a8507416c99fb9ed1d79744aee7b2240ffb56e692046331e04506c8",
+      "pc_sha256": "86778d1065958f9c9cbe4c171dc8f4a3f118982a6dc8e612008c805eb2f05442",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:486",
+      "source_sha256": "9eebc0f31803cdefbb36f919325ceca9fbc407819b1a8ddf3dde73e2ed3fa01b",
+      "pc_sha256": "53977beb279d8e847a00e2371324f0b86be907a592acecc816386bc47e44279a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:487",
+      "source_sha256": "c948f58e5ec3fa8e634ad7849438ebadd8217c1ccd087be5fbdf214178bc043a",
+      "pc_sha256": "df9de4c2b5d824af6d4b192475438c847cafa605022f9d224f57aaedb2317310",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:509",
+      "source_sha256": "91e58c91ca0b0de0874291802f79fb5c90a270252e44c6538893edab443d01a0",
+      "pc_sha256": "a5261c74d75baf3aa4d12ec033f80a40a125ba36f97517dcad660e3b93cb1d66",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:510",
+      "source_sha256": "7307d47b95770fa8f252b1fb4e164e37cd4c0beddff35d23ae92436bb03d15e5",
+      "pc_sha256": "9c868f77dca072bc4fc2caa0ac3006a8fdf78e3c9bbe355b5c17abffc49ca455",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:511",
+      "source_sha256": "fdf7cb67d3fbff18be186f70b8cd0c28d57e5682e0baba12c0eef684408f7788",
+      "pc_sha256": "6e65a08f90e4f720f82099b1ff791bbdd9ad4844afe57bef9e596c7a17bb42cd",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:512",
+      "source_sha256": "b58eafc9c16b3616902e8793b17019f4cc722e74d298dd5cba7c2b92eb94ab87",
+      "pc_sha256": "3c504a0c1a8300530bb373bc1a7374e78f597ab99005e0b48b195b2909eb5104",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:513",
+      "source_sha256": "c625d7202261b773980c0ec1130ebfea670bebeeaea4a8e4704199b5de60a41f",
+      "pc_sha256": "015a8ad708808508c9889eb441ba2dfc38737c6ce4a17024b49d593b2548680f",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:515",
+      "source_sha256": "45162c95e66af7d86d6a064aa9b9be23e520b953e1c2a75d010cb7254e6e9d8e",
+      "pc_sha256": "bfd99da3e192d120237860d7444b6a21c0199a57b864edde3a49bd37c3e52ae6",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:517",
+      "source_sha256": "b7f9b16048aea92abab0285f1a0d667e4bc24e4185aa95dc721818ad9a770f74",
+      "pc_sha256": "750e4d09d3cad1923cf055c4a5d3a8805373263a0a0237d6173d7da2ee55e3e6",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:522",
+      "source_sha256": "5c66fd93cc97068f3a96ccc06ae13bfaa947069e89df260483b83438f1e7c0f1",
+      "pc_sha256": "c97900e9c28a9cac00d9b7900a527c8f4e7ddd4c5dc683f3ce8d2c482d217f44",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:523",
+      "source_sha256": "42b85fd8eb087a1926bb27b951eedce35bdb44e859741566daf4438c4318f51f",
+      "pc_sha256": "a733ce459dbc1e5d0cf74ea4e14ccb46598716dda43dfda66d28e17efa081e20",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:527",
+      "source_sha256": "403c39152a912d921b8a98e851af23c4299c3dc6a3ea86bb6664b393ffa26c3a",
+      "pc_sha256": "cdb6b11a1d30036ea795a04be1e41fff45e5ffb066ba53c86b65fa1a644d4e73",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:528",
+      "source_sha256": "f963af6ee8c1a353377e40317e4282b39b975378937a45b26c485e506568d3a3",
+      "pc_sha256": "73adb068c09bee1beddc74038070fc461661a08d3ea78e1771061599ea0631bc",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:572",
+      "source_sha256": "ac5db28bab6eadaefcdd2cc7eb4a32c0f64a283faeef898da235115d74aa6e83",
+      "pc_sha256": "8c2e445998195756c4417aca5c9c7f41e78f6898200fd836be5817cfb39f1c84",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:574",
+      "source_sha256": "4f510534caf6ef172ba315d81a3509089ac0eb6975f34f354627ad40999ce5a2",
+      "pc_sha256": "e6c32b424326d5c45295b578db350a334e73612149513482028f10539ce605e1",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B9:619",
+      "source_sha256": "eb1ac8324e69807d1faf00ca77678e3b623bebdc652045cdd69e5cc740f0394d",
+      "pc_sha256": "221768f1a4a56e4c3e49761d61c23eebc647060324fb0433dd2581103f29f105",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:99",
+      "source_sha256": "35b7e153b9ad7575b15c67b4832c192e3e412479977dfc8aef6113b846115d6e",
+      "pc_sha256": "ca12d27f67b3071581ecc78f3e28c59b6c272a89a49e62ac341736d0300b4c1e",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:100",
+      "source_sha256": "a32d4fad495980bb917e80cb9a686f4034ed95a08d859636f5ca1fe95c152fe6",
+      "pc_sha256": "140db1cf1042c463828b286e36aa227c6fbaefd1b3c3b2dbc512788805f9afbf",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:101",
+      "source_sha256": "0a8625981459f8924d578a97af640ed59a35d1c69369daa8f6fac4bcca4836db",
+      "pc_sha256": "7ccf4b57f18b377e42b67af19f5a9b40fe463de863af64e951d7233b0ac33493",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:104",
+      "source_sha256": "385733efdb939302ec815ef33d0e86dc6547bfcad0e68152d38c32a40248e408",
+      "pc_sha256": "1cdac8a8582e0faf7d8a2c94eeb67ce9cdf9777ab93e55141d0fc98fb79ccf36",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:163",
+      "source_sha256": "a6b97db96a0bf7b9353320b20beda0045a4391363bc155d097cd9d11ee9690cb",
+      "pc_sha256": "ecd4a4413f50bf95eb449f275cf0474406ffacc38b1d1fc48e4ec1303b3f9658",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B10:202",
+      "source_sha256": "dc6970d0cd0627f25f98bab5f177fc91825825fc818da67276400c8ef37eb531",
+      "pc_sha256": "eea076284dc49a29573e38eaa5c3a8eb6cec36a90721d0fdbdb2463722ca06c9",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:9",
+      "source_sha256": "4e9ddfa4418e845119322589b16fe806bc7d05a188fce0cdf1d76a3ff50ecefc",
+      "pc_sha256": "2cdfbc8bac1552bf3b16d5502dcea882ca3f04e9ecda2a09f3b3a66db93bd16f",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:35",
+      "source_sha256": "7501d048f4752372e1e935d2ac0a756736adf2976eed18728d61536d9cc1685e",
+      "pc_sha256": "aa182c58058e505b952acd548c0e05c84756fcda098720ab20d6dcc706775241",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:41",
+      "source_sha256": "3e88656c1bc254ca3ededcf744977f4d98dbd3bae2cca28216ae41fa0b6a51c6",
+      "pc_sha256": "c136add452ceaa59cdf679d286d61b51bf157de080ebd2846bb62b671fdf6bf9",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:174",
+      "source_sha256": "89bec425d9500bb065d3d3880cd3b154c605fdf26d3011953e12e8ea420ed2fa",
+      "pc_sha256": "d192582409fa97c4a71cd11aa88071e0fede738e6ab792d8a274e296fe18dc21",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:227",
+      "source_sha256": "7981da69fad477a05042c88b8b6817ccaa2b048f1eb8fd7bf96f48119ad3e4ff",
+      "pc_sha256": "fcfaabf024d855206e9c75011a1fe1961f102fd9893dd4d58774d4bcb1ded100",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B11:228"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:228",
+      "source_sha256": "30ba0bd30809e06a261fff851228a827b81c343b042e1cffc601d9522633dd90",
+      "pc_sha256": "f75582858f21587c517e732ad57798d805efe0761ec633b86ffe7d215622f8da",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:232",
+      "source_sha256": "26f213c79d7b5df5e882fdeb8e6e534dea5da6b9b218331afa81b31da534ef3a",
+      "pc_sha256": "dc80bee09c060362f2db9ad7149913fd399b322f846d3f67447e31a9b2af2e35",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B11:233"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:233",
+      "source_sha256": "3563d5625c6f18e8593e5cd556489d577390693c9283bb4ba4fc197953e9f41f",
+      "pc_sha256": "f0f512d865ce9af01f2d6aa2775ab741d5336120da8738f253a0d609b127080c",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNREVIEWED_CONTROL_0x4",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:256",
+      "source_sha256": "a5d44fd114a1c93ef0ecbd1b7026a549dd45df4d35ff9cd6995ea1f3cd70d61d",
+      "pc_sha256": "b12f336af7dbc21bb725faf0e1db7139127157a65ebef44a361cf50e1e96ab56",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:278",
+      "source_sha256": "a8c67ab346227d7d8e49d64fcec9c21f07efb0957d92448d507f3934bf77ffe7",
+      "pc_sha256": "f5471e5dc7a74c2ecc44c435d981c21e0eeee78c9075b960854b51e032d50a07",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B11:286",
+        "B11:288"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:286",
+      "source_sha256": "a1c0fd28808a9d83f8b80433b37ca40bf10bf03883c93078c0c381dd55ceb622",
+      "pc_sha256": "57380019be815652df71ba9726fb37f3d017d99270fa5e2c420cf9f452006ae1",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B11:288",
+      "source_sha256": "494965c348bafc29ef9959523dbad76affde8afde73d7e37ecab954557387142",
+      "pc_sha256": "5ce40fe22b9c3be02bb59bae63dd79e12a48654b9fa9e9503aea5cee732fa898",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:154",
+      "source_sha256": "0441c8c16fd9862dc2344cb88f011fd20c621258d41d51b377ae6c50f5eab370",
+      "pc_sha256": "a056ccd943d5ef5ee035c89f9d9f74a9220d9ec719c7cca25e6bfe6f7f5cc80b",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:156",
+      "source_sha256": "a7321b79bfd9fdf879613a6e9c8a221d35eb62528785cab94122dea70108dfd8",
+      "pc_sha256": "965cfdb6d5d47ba8c15a218d103f288b4862aa96e5ed071af4e05aae399a8956",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:168",
+      "source_sha256": "f362e75cfa7a92c00e39f0b9e65774481b62d10f53c5468104a274b4ee55534b",
+      "pc_sha256": "b2ca556db9d4673485f6ef4f30a2fb8ffe95bb62d6c3e704600af07ccaec794e",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:178",
+      "source_sha256": "894bdf0b95335b537dcab432f36bdf3699542f1d277feaeff905986ad4bddedc",
+      "pc_sha256": "b2b51ad19e1d7cf5b31e29045fb47d9f6ca8c394347165527149ae6346fd0aee",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:192",
+      "source_sha256": "a4f94960d4355dd7842a5b3fd119e7ed9e10d33d6f8b957f9008dc9319c0db12",
+      "pc_sha256": "a1dcac2a0cc3fe6ec1d235007ec2cfe65bf3463eff85b3764bd74fc2a8277110",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:193",
+      "source_sha256": "ada8fcad5384dd1e142fa0244653ba8b5b16b80944ea4d720289265c39ddc4ce",
+      "pc_sha256": "bfaf56c28c6423346a02b50e3431e3a0b3769187de7252f3fe0165db58f0fdd1",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:194",
+      "source_sha256": "6935a6eb845ee71677438df7ac6b7052204f44cd3e2f5fad13e9357e63899e93",
+      "pc_sha256": "0ec3c73d415a8a7925b6de34a935d757e9bd96c614218560f29404a48b32f693",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:195",
+      "source_sha256": "639ae2b09f6f78cd1fcc41d7952fc064c87e415ef64912ba7c2b8a30ceb73d83",
+      "pc_sha256": "e6c7c6b768c4a9c6cdde761fd0cf289dfed62f507e2e64d5c10cde2bcc25bb52",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:196",
+      "source_sha256": "05c0d5c394f95717e80242fe2c486c0d81e45cf3326a5eded13357279c09e96e",
+      "pc_sha256": "af2914e0a31099073ccf3896a22a2b6ddaa4c699989d41029858135532dff4ec",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:204",
+      "source_sha256": "10ccd41c0dab06c629fbd249993c4bcce1999248ab99eab3a5ee6f1ffb5a171d",
+      "pc_sha256": "e54adac2a913f11e826c6eacc7ef1a6871eff53cc2bbd9d6586f512a18cb25e1",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:205",
+      "source_sha256": "8a55e835ea8f0c31fe546254931f4c20f7cd46f013cde20ffc82bdec1717e34c",
+      "pc_sha256": "4544ff6313d73f208a8a3cd79cc57a34ee54f2efb7e4194276ce6251f378eb56",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:210",
+      "source_sha256": "a8436d29e2966be83a9e4555982ab2a1ecb5dd88097ac2e408bb2f0790381d1b",
+      "pc_sha256": "b324ebb4fa34f6d83fbbcee4c826138e24d32ece270dd13f21edec2bc74efcb2",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:277",
+      "source_sha256": "90fa3fcaf2c6fcb2e4155edb484f88573658451f471dc51ce5a073527a8ca246",
+      "pc_sha256": "e921a4f07f0169e4bebcd7fd664a0538863cc44c46f6b90d17d5b297d8b2bd9e",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:278",
+      "source_sha256": "de432622cb002a9b9bfd368d1f126dc908b5d93a9f05860917f2e05b66a8185d",
+      "pc_sha256": "e81c36933b77f35011b51cac75861ebe57fc5ddab457766dbecb1704744c162f",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:289",
+      "source_sha256": "505754b8e6842d04b3af4fdcf18c2b5860e2c330cf9d181d66bf83d0b779d554",
+      "pc_sha256": "dca4f7a23287c38d3e35e50877ce75084e700f51064d13d7e3d9556997fd8989",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:301",
+      "source_sha256": "73cbe18156dae14b9d3d08f17f0455bef3f68ae6cd3f41bcc5443eba9779072c",
+      "pc_sha256": "71839ba7d49760c59f2d44354b3a0842ba30ffaa45bb1ef23b2ac700858c9da5",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:302",
+      "source_sha256": "3a7d922c9cdd46cea8415852cafd7f4210313a544af9a84b53672c76d9800949",
+      "pc_sha256": "300bbbdacaeb8abbaad136ed6c47924b7cbfd7feb1db00fdc8d4c6a680f9cd32",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:303",
+      "source_sha256": "bf128224eaa41940f6ee56a21f658d8d568db69c301a66b60c624ab85dbde6a2",
+      "pc_sha256": "050eab0fd3d447204d7c248208ee9c4ec3fa8ff19715c968bf352d39cb18ff13",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:304",
+      "source_sha256": "779226ae15d0c61808a700253830e21c04e92eb8ffffe94710efcdff1f9d04fe",
+      "pc_sha256": "e8a7b86e841dc1c1dddcd38664054bb9cd4445d8ddc0b2f396e152d3e49f0802",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:307",
+      "source_sha256": "750b3fa9962ab8d51c2ea8136f1ac4817922018b8510a539c102c466f8805e96",
+      "pc_sha256": "31ea9af6e33749a17acceed9d1d57a0f67235f660f56242c5e44c35b51dc64ad",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:310",
+      "source_sha256": "cd6a0a0d3458a0a1dd2a9f2834f844770a4a816b8b6f2ede51e2b3643f604d40",
+      "pc_sha256": "092950d0274e20e4efe3105843ad51652f16db2c7f3be5b53ecec29e74859ba0",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:311",
+      "source_sha256": "8cca49ff002473b3e533b9371c5d9eb8e76d071586697b2cf5c3445d0b310a08",
+      "pc_sha256": "de7d5c4991f8b59a73c80301c763e86caf9bd8cdcf1fc10b665f50483bafc9af",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:313",
+      "source_sha256": "fa2bf78140226d907dced6b6c9fd2987c0e8f5bb0a35a3767cd9cfafcd17b7d3",
+      "pc_sha256": "5f7c9b0d68d8b6257ac4f2472db54ab1855d544e385d64af6d8a44170c06011d",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:377",
+      "source_sha256": "d0eab60273d20b3e12c341131906e4f83f1ab6a725bce97448bbb498ec1f875d",
+      "pc_sha256": "f9afc1f29b3519ea2ef9818cb0d557d352227817fff8ad2849ca1da370dce299",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:378",
+      "source_sha256": "4579e56541eb9f39984dfc70195f60c16c3d3af6547bf53bff30a1113786d028",
+      "pc_sha256": "6d9e645fa39531ee7d9df37e1e4800e4e14a5377d60b1a389f4ad53a3ef5f0f2",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:379",
+      "source_sha256": "7cbc13eea20819e867fe25f24807b651c36df2127ddbe7c3d5616fb8b8ae5e0f",
+      "pc_sha256": "80f89b4eca13c82cf2b88ae9bdb2a32babcb17cea9fd57bf58afca5d0ae9c704",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:380",
+      "source_sha256": "bb4846252a4301a9df3c165373370dc80d0fd60f48bcc7c2d274e234a359646f",
+      "pc_sha256": "c734a3daf968ab1ae16d6db09133eca948171ee1b8b8a43c92b3cd0e7a594493",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:381",
+      "source_sha256": "a01dcd2d08e69e291850c5aedd6a4940bcae334dd07c0df2dd8d9ea40d164d76",
+      "pc_sha256": "145c6421a6f2713eb39c38777b6992e1a9d6d17bd7ef1bfcaffa0c30bfeb0b8a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:382",
+      "source_sha256": "9da998273c6affc176ce95f36275575514bdb7e90954ff7113fe79de54754200",
+      "pc_sha256": "ab8ef3f1363874ff041e3a336cde4bee9983888d6c3ffd7cdd216f1fc7ad7691",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:388",
+      "source_sha256": "29fbd8951106cd90d4bd9fd5e1077428fc24658cfdc9316e48f4b9279894f9ba",
+      "pc_sha256": "ab1ea0be320c4fecd841904419023a2fff0f87a7cdba79ed5b79161d64f5f122",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:393",
+      "source_sha256": "e2ee0c36a066662e71f6238a05362bb724a8f32ec6136d4121cc2d41c6fd2a00",
+      "pc_sha256": "2b20039cecc475f6329d29d8864034545b49bccbfdc97b2e055763c315279310",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B12:394",
+      "source_sha256": "6da3d692d382df4abb9b2e733dad368935a8861a2deb348a054a6242dd8f2914",
+      "pc_sha256": "0b925d159a46b95f9cd8891422dd0554597fdfdae4ce612fa880cfb2f54e0d0a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:105",
+      "source_sha256": "51f1cce69fd4092b8dcc1bae9da18b7de640008c77c02f488d8e18b92179e6f7",
+      "pc_sha256": "41a1d10370349b752f1474867b17084fbcafb3426aeff96d6fef16b9fc568153",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf5",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:106",
+      "source_sha256": "998e21a009be15834089bd3861c14495b988eeb1cd6e2ab4b7181a442194f55e",
+      "pc_sha256": "3d113b6efdbca04fabad67d36fdd6538f8d433e8656688026daf1d13f13a58ba",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf5",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:109",
+      "source_sha256": "81f4a3b10a93ed9a94bd257888d98b8bc8e0fb20557ddf741aae4cd08f5de5eb",
+      "pc_sha256": "3d2f4ee3899ba654dede456b5f36a3b500db4e398063924f34acbcf3278dc055",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B13:111"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:110",
+      "source_sha256": "7eed104a31adb606e214b81cc17ef1b0fdbf6f55340c34f7c00cf52ffd5b3bba",
+      "pc_sha256": "38b9c03dad0694522cb36771c9b369fc28cccf819a324b5790083b9891e4d04d",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B13:112"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:111",
+      "source_sha256": "49aef58cb1a6843029c433b24b79821e2d4b7aee9fcd29bcc6abdab4b6be7b14",
+      "pc_sha256": "403e4ec98b39e2113e6f53be395fa167f76e85061b222b1e022bb606e667fd9e",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B13:112",
+      "source_sha256": "0b187600776d225a41acd1609ad30b8fb35d6eb30ec56e67268f1a4a74fd4ad0",
+      "pc_sha256": "70d52a6f4af6992ff487c45ba394fc701f16064d68dc81b71248b18040b0b019",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B14:26",
+      "source_sha256": "39cc99ce2659c62b892d48996cbc7ff87dbb65e144d68b028b2153f0c3c7bda1",
+      "pc_sha256": "2e00b43056bb53f8176978a9d900f2a36678a86963a197f85d0ec5ed4651f577",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B14:30",
+      "source_sha256": "234602af8334887c5427da48d528c022ebb1589191ccce7ee9abcf7926b0ff6f",
+      "pc_sha256": "f520dd7d7b48993ad5d8e59b3103cb5aa417d3953088ca7e3999e94b673cab2a",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B14:31",
+      "source_sha256": "8a196c21a3a75ce48f9ab6f6c70b9b6e78e1271f574ba8813bbd9de2e7bfbf77",
+      "pc_sha256": "aa4214a97098a853be1fe9d0e165f308a5f40fda5e856a7c87999d0dc02d74dd",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B14:47",
+      "source_sha256": "512a84c61818e5da4d5fd99e70991996f2ab35f9433d4ac43b7bd9607fd662fe",
+      "pc_sha256": "680e2e060afa56dc7ca4e7c80671b27330f17ff9035fe92ed438869b49cfc49a",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "UNRECOGNIZED_SELECTOR_0xf3",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B14:54",
+      "source_sha256": "94b9b86f7b14db8bc28c8e1657e9226fbd58dc11b6717fea5a8d6aa08cf5210f",
+      "pc_sha256": "57eeebf3e5f61eb40acbd134291f1ceeea43fb337be75817645fbc6008e047ca",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B15:162",
+      "source_sha256": "e0caa514900bc8a195cfd7a9828c7c52477da46d8cc177af15b6ea03a862acbd",
+      "pc_sha256": "7399a25ae319be753a88826e3e4dbcc030316a7087122d5234a5517fa507fd02",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B15:279",
+      "source_sha256": "e44e9d1b711d34cb5ca8888744065320f709188824c85642c80bb3f74cfa2a2d",
+      "pc_sha256": "833bf7af95664a04f35ad384c99e6d825c0914c04aeeff9577ef53fe2123d79c",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B15:280"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B15:280",
+      "source_sha256": "6c157e936521022c11dbab555553b555cc465e4885c69bd17668de7e0141b7c8",
+      "pc_sha256": "84bace4c5933d9126a136980caf1ade9a0313b7451fb9f65a1dc71320d92a138",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B16:535",
+      "source_sha256": "a9f731e64ee673919ea3b17871c469489fb3de27045c03e839800ff3d7d5d3d5",
+      "pc_sha256": "7f9c7c3cd8ceaffcdc768ebd0bbacb80e488d173dc98555f511925c66a854c70",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B16:536",
+      "source_sha256": "5c751c79cb53666367a5830fa93b2582ab20190f1cbbcb55edd7ade870be7d1f",
+      "pc_sha256": "6d0a5883132bf63d7a66658a3d44ba76d826a08bfd51d6bcd8ff43dc4d7d7679",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B21:184",
+      "source_sha256": "ec1d4ec5d9b3008bf0ab7948341b8a14513809a0459e51efa7d2d48566e7cf39",
+      "pc_sha256": "f2a460b1c40cd1615294fd95b3e48c90d23f763feab2d3677e0b6004b9940432",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B21:187",
+      "source_sha256": "995c3ce14daeaba68e0957f7b99feb0159fc87d6afa4d6742a3299f84e5bd37f",
+      "pc_sha256": "85319d846211532e07ac527ba6f01655c8cc1dca833502e5754604473d6c22ab",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B21:188",
+      "source_sha256": "e047c9299220867c4592a3f7fc5739da6fbd4abdabd192506930ccf16d1a6599",
+      "pc_sha256": "75a32fe896f97edab234f62d1b861cd1337784724c7d9548154a2dca97c5421e",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B21:191",
+      "source_sha256": "5b4a1fc59423aaaa4cc6dfdaa5c2366ea9d935e8622662f8e4f92cad67d072d4",
+      "pc_sha256": "d96cab8322055e4be2ca55a69d1b12b301e6d3b32a149d567f9a756aeaa343fe",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "INVALID_GLYPH_TRAIL",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:56",
+      "source_sha256": "6dd6c45afad378f6effbdc73cbe2ec7b1e4cca9d84645278064e352e35797be9",
+      "pc_sha256": "f524bead7719ba0eafc4c25fd58138f466316caacd316946aea5a64a0b0395b4",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B24:57",
+        "B24:58"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:57",
+      "source_sha256": "5be8048efb7913b078b90883e0c9012b74aba0fb2a317be7fe44c6df5d925c4b",
+      "pc_sha256": "64a4654aaf37998a83d381ff01ef1e1fc7e85271e245a396e96e8dddad41d073",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:58",
+      "source_sha256": "48c7f0edc4836a7e51b7c45806cdbdd1d9317c05b69cd64e4ab19d2a557945b3",
+      "pc_sha256": "afa8ae4413bcc8ef1e1e60f573189447ceafb333cf86f1bff6cb6b1cf8bb71ab",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:182",
+      "source_sha256": "34c9b45fe474e4a4d4e11f67859ca3d487f08e51a4e609ca2cd930053a7b9264",
+      "pc_sha256": "cb289dc37e5be4e8e49a6720b3699e64c78ac63669379f321510b7937440d6d2",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:184",
+      "source_sha256": "73e7623d0e62f66b799bcc71caf87896d2fe3ed680ea091ee4848b62cf77ce4b",
+      "pc_sha256": "4751b4eb2eff6897a7c2afd5ee9cbb88050d6027724b538b14b4d5f3dccf3e77",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:186",
+      "source_sha256": "d18ce62a2e493c7fe839b5df1c9a0cc19c4fbb7ccab703f7bf9014d14f964881",
+      "pc_sha256": "de741e0006351dad77ec28bdc4b4fb377626574ccba0f8471c4f2aa705a3b2ab",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:190",
+      "source_sha256": "b179ccc750e4a79b473c7ab7889ec6aadf8594d475f2bbd3e4d54c5e6ef623be",
+      "pc_sha256": "526af2b76637883dcd0e85b581f36387dd60fdd59c9456722d3504cc1acdd827",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:192",
+      "source_sha256": "8d8d86ba12e844187dcfe956665987bcc2e49d81b4ba60247bacc45d03bc7296",
+      "pc_sha256": "6ff026aeced023b6f7b1e6573960c1ef0986be9195401a18e27a47f7f4df848b",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:194",
+      "source_sha256": "504d10e4f5a937191fca8c016d7a1313e3b78e723713fc9444c97ce1e71ccc66",
+      "pc_sha256": "085a8e58e6a48224db29613d2c2bced5da3e8427f7e562af1c32ba1739f41818",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:198",
+      "source_sha256": "6aa175dee8f4854244b9cb8a584db5ece1b71c1f71b605225333cb33f8af02b1",
+      "pc_sha256": "f8166541eb50008fe5cab79d5e5707d82de35b31887d4ecb6ef8524a08b3e9e4",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:205",
+      "source_sha256": "86b88fce609fb680e8e089401a939c1118bb2e484c7961fc972b4ffa3544fd71",
+      "pc_sha256": "5e0bd9e3b435216117de9de46bb0717aeec518ff45d5a3c0387efa7274b463fe",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:206",
+      "source_sha256": "115ec73743c86b0d2256595dacd5cf0a61b3e3d83897ec98812bacb22d876a4a",
+      "pc_sha256": "60dd971ad9d5773948f76cf5466b4a2d997f0bacd61b89f5d3317628f44ce04d",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B24:211",
+      "source_sha256": "f2ab76e962dfd102cce0ba18324a86f19f998fa268cd52cab0d05010adfc7bcd",
+      "pc_sha256": "5453180a5af21097e943b33d52df306272c4b10dd012360b55f2835a6187190e",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B27:177",
+      "source_sha256": "1659dad13bde23167ccdf2712d30c32655e4056e0c05945cc8d4f42dbab72580",
+      "pc_sha256": "e317933bd98ebcc194efe89fe1688d31bdb6297f81f74cbc8b401346e9aeec2f",
+      "reason": "EXPLICIT_DEPENDENCY_HOLD",
+      "targets": [
+        "B27:178"
+      ],
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B27:178",
+      "source_sha256": "5be8048efb7913b078b90883e0c9012b74aba0fb2a317be7fe44c6df5d925c4b",
+      "pc_sha256": "64a4654aaf37998a83d381ff01ef1e1fc7e85271e245a396e96e8dddad41d073",
+      "reason": "UNRESOLVED_FIELD_BOUNDARY",
+      "original": null,
+      "pc": "COMPARISON_OPERATOR",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    },
+    {
+      "locator": "B32:161",
+      "source_sha256": "be7b00fd8c421e94f40c11b27492610c944749a99fde6c737622db063dd20650",
+      "pc_sha256": "84de16508a8b9040ba20818bffdda2c1cf42d1168659e17babd02e1132ac90ac",
+      "reason": "PC_CONTROL_DIVERGENCE",
+      "closure": "Source-grounded field/program equivalence; then dependency re-evaluation"
+    }
+  ],
+  "existing": [
+    {
+      "source_validation": "V371",
+      "evidence": "selective_ko/artifacts/event_169_active_request_partial_54_v1/KNOWN_FAILURES.json",
+      "scope": "Product status, source identity hold 60, EVENT semantic obligations",
+      "closure": "Existing authority conditions, unchanged"
+    },
+    {
+      "source_validation": "V357/V369/V371",
+      "evidence": "Inherited root contract authorities and caller_local_217 baseline",
+      "scope": "48/46/5 distinct root sets; B0:181/307; suffix3 and ROOT/stored-decoded contracts",
+      "closure": "No new closure asserted"
+    },
+    {
+      "source_validation": "DIAG217",
+      "evidence": "selective_ko/diagnostics/caller_local_217/INDEX.json",
+      "scope": "inline139, ADJ084, non-B24 layout, TE5/SNR, legacy PASS/code version and circular readback",
+      "closure": "Their existing exact per-family contracts"
+    }
+  ],
+  "diagnostic_limits": [
+    {
+      "id": "D218-RUNTIME",
+      "scope": "10220 experimental targets, all-caller semantics, visual/output capacity and names/particles",
+      "closure": "Observed runtime identity/branch results plus per-family semantic admission; no release promotion from byte equality alone"
+    },
+    {
+      "id": "D218-EVENT",
+      "scope": "Only inherited 13 of intended169 EVENT files packaged",
+      "closure": "Connect remaining156 under their source/semantic authorities"
+    }
+  ]
+}

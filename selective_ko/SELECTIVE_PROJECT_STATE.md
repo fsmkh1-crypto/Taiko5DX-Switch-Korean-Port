@@ -71,3 +71,7 @@ The user authorized exact source freeze and diagnostic ZIP generation for caller
 ### Supplemental diagnostic stage result
 
 Source commit `78accba33eb39d7fbb944f462515282d1b47d3dc` was published before generation. The bounded diagnostic ZIP now contains 13 EVENT files and 17 total members; 217 transformed boundaries and 139 owner readbacks were verified. Package SHA-256 `43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe`. Drive file `1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt` was downloaded again and matched exactly. Build/report pointers are in `selective_ko/diagnostics/caller_local_217/INDEX.json`. The earlier zero-emission figures apply only to the historical checkpoint. Product state remains V369_UNCHANGED; V371 is PARTIAL_BLOCKED. Runtime NOT_RUN; installed game/main identity unverified. Stop after this stage; wait for a new user instruction before runtime or additional implementation.
+
+## Supplemental message coverage diagnostic 218
+
+The user authorized continued implementation through a new installable diagnostic. Resume this experiment through `selective_ko/diagnostics/message_coverage_218/INDEX.json`. It targets 10,220 omitted PC message programs after target-VM field/control checks and explicit C/J hold propagation; 152 records remain held. The 3,227 reviewed baseline messages and existing EVENT/font/IPS bytes are preserved. This is a diagnostic experiment, not semantic release admission. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain. Source freeze precedes game-file emission.

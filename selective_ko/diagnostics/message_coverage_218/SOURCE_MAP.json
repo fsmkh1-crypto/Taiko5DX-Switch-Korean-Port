@@ -1,0 +1,27 @@
+[
+  {
+    "relative_path": "build.py",
+    "repository_path": "selective_ko/diagnostics/message_coverage_218/build.py",
+    "sha256": "b85e7a6e4152f0d24578051ecdbb56509d8bf8a1d16da0900df3d51bf82c68b7"
+  },
+  {
+    "relative_path": "switch_vm_fields.py",
+    "repository_path": "selective_ko/diagnostics/message_coverage_218/switch_vm_fields.py",
+    "sha256": "c343cacf993eeb9794c87eab19b88f03afebe1fdd781720bbae10541e644b84a"
+  },
+  {
+    "relative_path": "vendor/builder/selective_tai5msg.py",
+    "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/selective_tai5msg.py",
+    "sha256": "8046a0fb363d778b4d5a3b6241fe0a10a45aec4e79e5d1ffecae14248e02ea7a"
+  },
+  {
+    "relative_path": "vendor/builder/tai5msg_corrections.py",
+    "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/tai5msg_corrections.py",
+    "sha256": "1c9530980c1fe6bd57361b122b2bf1223cec5d8c88f71fee649f04b06ab397b9"
+  },
+  {
+    "relative_path": "vendor/builder/tai5msg_percent_macro_roots.py",
+    "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/tai5msg_percent_macro_roots.py",
+    "sha256": "bb716715ddf9574ff31087a2ed2d5b765f731ecad970be73d9015c77b89fe2c5"
+  }
+]
