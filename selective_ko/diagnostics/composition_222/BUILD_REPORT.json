@@ -1,0 +1,829 @@
+{
+  "test_id": "COMPOSITION222",
+  "builder_source_commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
+  "inputs": {
+    "profile": "COMPOSITION222_EXTENDED_DIAGNOSTIC_ONLY",
+    "title_id": "0100346017304000",
+    "game_version": "1.1.3",
+    "build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9",
+    "baseline_zip_sha256": "4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70",
+    "baseline_tai_sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f",
+    "main_sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
+    "message_plan_sha256": "69884b1afd952c94c330440e741120ee76c57ecb91ff2501abc524c621182f78",
+    "baseline_counts": [
+      471,
+      723,
+      751,
+      544,
+      592,
+      576,
+      443,
+      554,
+      444,
+      638,
+      524,
+      824,
+      776,
+      409,
+      583,
+      421,
+      599,
+      547,
+      216,
+      291,
+      269,
+      515,
+      534,
+      617,
+      345,
+      173,
+      169,
+      241,
+      200,
+      200,
+      200,
+      200,
+      243
+    ],
+    "original_records": 14832,
+    "appended_helpers": 40,
+    "candidate_records": 14872,
+    "baseline_B0": 471,
+    "candidate_B0": 511,
+    "expected_changed_original_records": 18,
+    "base_last_lengths": [
+      38,
+      46,
+      3,
+      3,
+      202,
+      86,
+      113,
+      75,
+      186,
+      28,
+      477,
+      403,
+      37,
+      56,
+      74,
+      55,
+      95,
+      3,
+      526,
+      172,
+      568,
+      71,
+      245,
+      178,
+      155,
+      390,
+      634,
+      41,
+      198,
+      196,
+      198,
+      210,
+      111
+    ],
+    "preimages": {
+      "B4:477": "19b0e3044ae027f6fedefb414f32e79e982a0ba6cce3fedc715740207eef367b",
+      "B4:478": "8d8bf2749916b3363b59e556d387eada4511a54f7338f3fc0b7062a7532415a3",
+      "B4:482": "c683095857b02b7f41e5ee618ff8159e85d0bccd2ac4a0674550b36bb5dae811",
+      "B4:488": "a68cac53b958b3e5482d66eb7c11ab00a5bb106e5c49a963edc78da567ccf768",
+      "B4:525": "71c9f20ec0fe1eb777c35b21e9d3c257c97fb3515736a9ce85e02e8a9486597d",
+      "B6:417": "733a4642ad898dcda8e5dd6528f741f98d68b79a64e96d21872adbe7bab69b22",
+      "B8:204": "4dda2fc50aed1be910d9085ecddc3f769d3d1b2bfd8cc543ec58008c14e12c80",
+      "B8:257": "6f2aee9fe23bc7acd92d498cc0222c31cc07924b1d6c066e352c7ac31b411a69",
+      "B16:564": "2ef4688cda6914eef890c61d75f6f6e7ab866fa2b1b47e432313e0f71934b6ed",
+      "B16:565": "670c5fb2aff60f01af5c96d871cd43e479d156e73597ccdba8af8e9be0a8a28a",
+      "B16:568": "e7f9f7f339d965e7ff3b8cf25e9e01f738671ca3a5fcac2bf156e179a34895c4",
+      "B21:130": "e8bb43da6f0cd18141afd6e6340fafbddd00cab410fcab0ff594a683099f5e0f",
+      "B21:131": "b7fa752c16a5715692364bd07d64acc0744fd3f63b4236e4e0bbc0260ba1e8ba",
+      "B21:132": "3e68704b1cba7d9c90381646e3d168cff5ba0ccbb1b521dcbbb8e8747fead07c",
+      "B21:133": "8577428f6966daefaa952c720f69ccfec7784d24a93475583c1b1c2fc51cad35",
+      "B21:289": "dbb879c986f8792fc0262271ee34736fbe4e196241d45e0df3800cdbfee2a83a",
+      "B21:374": "3652617bbce499f0fb117e0ba7b886f801be4966e5c8895bd594bc0afa597dd0",
+      "B21:412": "063c72618986eac07f3f524e499a055a4e4d90453cb28f86747ffff180f560cb"
+    },
+    "clone_sources": [
+      {
+        "id": 471,
+        "source_root": 16,
+        "source_sha256": "209c4483e203856a71ee9e5e96bc2893d3a959988b4aa56c68e4b1f91ddcbcc3",
+        "suffix": "는",
+        "decoded_sha256": "f3a737c3711f7b8426183eb0356ebf4a8543cf189d447474c94eace7eff11fd8"
+      },
+      {
+        "id": 472,
+        "source_root": 12,
+        "source_sha256": "e1b1d462d36053c79f82c9eccc61e35dad532d18cd4681953844df87064518e2",
+        "suffix": "는",
+        "decoded_sha256": "50d2c97f4801460cce6041e3b8ba610a0c0dcff44189c9867b2eaa3c3cf1b994"
+      },
+      {
+        "id": 473,
+        "source_root": 13,
+        "source_sha256": "304813aab30288f633eed28950b3a35de26b380a04d17cfaf37d7433cea066bd",
+        "suffix": "는",
+        "decoded_sha256": "d4046438d3a78d003fd91b5be68615a8055f22daac36add222860c386cd0b8b6"
+      },
+      {
+        "id": 474,
+        "source_root": 14,
+        "source_sha256": "23dd58ac7ebb4c85ff5faf673e479bafa3bd1f626f68e4490680d592a2d7bcab",
+        "suffix": "는",
+        "decoded_sha256": "4ed465e853b8b47eb22497bc8cb0a2e3f5df081f962e13ee72ecb3be6a903b5d"
+      },
+      {
+        "id": 475,
+        "source_root": 15,
+        "source_sha256": "be93b45e249db2ba89726ae819272fb613691d6da1d0bfa5ffe53acfacff31d5",
+        "suffix": "는",
+        "decoded_sha256": "dcb1d382c1058e4b0c08baf2179561affa5005a854e5d77eec2220c05867d588"
+      },
+      {
+        "id": 476,
+        "source_root": 27,
+        "source_sha256": "9724be5427307325f3cbb916a10d989fa3c0e59070a23ca1a43a2c8cd605a041",
+        "suffix": "은",
+        "decoded_sha256": "d7fbdbff75fda9908eba35ed17c8618e6da70b5807904492e2b89873ff89855d"
+      },
+      {
+        "id": 477,
+        "source_root": 18,
+        "source_sha256": "bef803aac55bc032513487e53079b033448cbd4ca75e24b33870e4cb0952cea6",
+        "suffix": "은",
+        "decoded_sha256": "a44d9e1696f9c97fca1f78ba94b7b447c4935b5e19bc920ce0979bb051c05659"
+      },
+      {
+        "id": 478,
+        "source_root": 23,
+        "source_sha256": "d585eb72de1fb37ef8ab72b8c2e50e1816e8bac6549457090e498d2cccd45348",
+        "suffix": "은",
+        "decoded_sha256": "fcf2b4ad7cb06523af1f3190783c10bd22324e048a42fd663cfe859cb9a2278c"
+      },
+      {
+        "id": 479,
+        "source_root": 21,
+        "source_sha256": "47c021581c1f2486c093dc62fb6a2ae5f014f20431784cc04d5538cfb659247b",
+        "suffix": "은",
+        "decoded_sha256": "850c266182191c9a44d0391c38385444b8aae17b342ed1b7e87e4b966b3825aa"
+      },
+      {
+        "id": 480,
+        "source_root": 19,
+        "source_sha256": "af62546c34178c8eccdc42aabc1bbe31515e63d41a73a85b11f2be4208e129a8",
+        "suffix": "은",
+        "decoded_sha256": "75becf620cc3d4d2a5157fe669f90d3303c12f2ee772afbe673304923745100a"
+      },
+      {
+        "id": 481,
+        "source_root": 24,
+        "source_sha256": "d4c1bb255baf52ea3c8bf270d3754970979f8de8c5c6fcb87a0ca5fb1435b272",
+        "suffix": "은",
+        "decoded_sha256": "4cdd74e335c16074546194cb329e9fde21716cde2b17bc908ae0e84f85ece2e5"
+      },
+      {
+        "id": 482,
+        "source_root": 25,
+        "source_sha256": "e0570e1980afeade6745cd86692ec42be7e79b43a249cddbae50a2434f0bbbed",
+        "suffix": "은",
+        "decoded_sha256": "868438273d7dd02ee657d199424a89148ff05a3198c11e46abb46ae096f0fe48"
+      },
+      {
+        "id": 483,
+        "source_root": 26,
+        "source_sha256": "35a32ec29251e5d72a74d384c64ed32da2902e78268ae974468923ee0757214e",
+        "suffix": "은",
+        "decoded_sha256": "a6e7f2f4106ddb07a9423cf65fa4f165617251596d38c47e6d60730c063977fc"
+      },
+      {
+        "id": 484,
+        "source_root": 17,
+        "source_sha256": "c115f0a1271b2d42d72bc2bbce5415c2d3529f68d67db7aa32778f33fb5efea9",
+        "suffix": "은",
+        "decoded_sha256": "fc5faedd7a42928bc8dccd84f6da307cac8f1f9ee28ab7c303dfb0b38fd9cc11"
+      },
+      {
+        "id": 485,
+        "source_root": 51,
+        "source_sha256": "4da106133bf7f6177f5d132e74301a1db3e8727215a9009b96939a2e211a5876",
+        "suffix": "님",
+        "decoded_sha256": "53db07e1392af6d88838b2dc3632d74d511d5c6115159dcce6201f22aee7cba5"
+      },
+      {
+        "id": 486,
+        "source_root": 46,
+        "source_sha256": "6ddc5d268258c96063e1dc1323740da807f73aa52af61f5ca1b41a4353151e2f",
+        "suffix": "님",
+        "decoded_sha256": "905d1bc02cee85da63eb967f7bad6a7696f385b9280961dae7f4c756a3e5bd63"
+      },
+      {
+        "id": 487,
+        "source_root": 47,
+        "source_sha256": "7c92d651c38efe57f4c2a041c736f9f95aa37e6ff4dcab3b86b1fde4d387321b",
+        "suffix": "님",
+        "decoded_sha256": "11b36020db0ac988d8af8fb2eb4708ebd2f5ad61f7bac1d8f70d0eb933bc15f8"
+      },
+      {
+        "id": 488,
+        "source_root": 45,
+        "source_sha256": "bcb1b5c6ab2b72f4fc7c24ca18372fefc0f2fd90114c22f0caeafe3eb3cff72c",
+        "suffix": "님",
+        "decoded_sha256": "3f34408689b582401861bbd6d614902441374c11383848f3f7106d7554e3b57f"
+      },
+      {
+        "id": 489,
+        "source_root": 21,
+        "source_sha256": "47c021581c1f2486c093dc62fb6a2ae5f014f20431784cc04d5538cfb659247b",
+        "suffix": "님",
+        "decoded_sha256": "c8d2cce31d39d7ba33522d63977b3ab3bccbdbdf84698a6293ebac6b12d13855"
+      },
+      {
+        "id": 490,
+        "source_root": 19,
+        "source_sha256": "af62546c34178c8eccdc42aabc1bbe31515e63d41a73a85b11f2be4208e129a8",
+        "suffix": "님",
+        "decoded_sha256": "ba99cd4caf00050b4f72e1cbc83b585adbf3de644ac0842e71b3501f73dbb095"
+      },
+      {
+        "id": 491,
+        "source_root": 44,
+        "source_sha256": "81454e08cd61d33fdf26fd307b72877d6989d14762dc5d9bdb6d8e931d27c8ab",
+        "suffix": "님",
+        "decoded_sha256": "4f7a85aaf51b926a7e40db7342f3d6e8f4843e7649ad0859b45ae474b8f7a342"
+      },
+      {
+        "id": 492,
+        "source_root": 43,
+        "source_sha256": "5f564541179fc1b94c27268b62a4f5fe6d6b89a7a9c3e8b9523fe731d42e1f16",
+        "suffix": "님",
+        "decoded_sha256": "f735eaa6ae2a848be6d755c5b84f88e338acbf0a2edb92305df28a42073834ad"
+      },
+      {
+        "id": 493,
+        "source_root": 42,
+        "source_sha256": "7b5287cebac24d511a9855ca91bf27e847a5064d24f2789393750661c0150a8b",
+        "suffix": "님",
+        "decoded_sha256": "11cfc1a14d6c895fe881e9fd8a94b88daf86a82b237c2c20f15bf2297342c84d"
+      },
+      {
+        "id": 494,
+        "source_root": 48,
+        "source_sha256": "dadf523301f4bb38999eb46502319ee6895eadc59e5694cc0c5378800a929283",
+        "suffix": "님",
+        "decoded_sha256": "00a0b6c0ee8bd492f3afae2936385a494fbce05c7c7e83332835420bc4e0baf1"
+      },
+      {
+        "id": 495,
+        "source_root": 49,
+        "source_sha256": "7f3385b3f220c285a67af445bf6b79be279c045b26aa6576b05c6b0c950ddf0d",
+        "suffix": "님",
+        "decoded_sha256": "699bd895293af6e750507cbc3ea27f41318f727e03f372b28a5ebd17f80a9b86"
+      },
+      {
+        "id": 496,
+        "source_root": 50,
+        "source_sha256": "b28cf63961b2e2194a99953e638c9440ae4ff8186cbf5ab0aacfbd3169b8b158",
+        "suffix": "님",
+        "decoded_sha256": "0ecb2397b5cb521405af0286265000b203656d8f92e8a951709001ff700b6c63"
+      },
+      {
+        "id": 497,
+        "source_root": 27,
+        "source_sha256": "9724be5427307325f3cbb916a10d989fa3c0e59070a23ca1a43a2c8cd605a041",
+        "suffix": "을",
+        "decoded_sha256": "0673e2d6cb081461fa7417a467208dd4bac6caecbd33aee8f5da25c3df57ef8f"
+      },
+      {
+        "id": 498,
+        "source_root": 18,
+        "source_sha256": "bef803aac55bc032513487e53079b033448cbd4ca75e24b33870e4cb0952cea6",
+        "suffix": "을",
+        "decoded_sha256": "9ee3cb452687d209170094de642bf110b05824ce829714ef50c9ec189e203b0d"
+      },
+      {
+        "id": 499,
+        "source_root": 23,
+        "source_sha256": "d585eb72de1fb37ef8ab72b8c2e50e1816e8bac6549457090e498d2cccd45348",
+        "suffix": "을",
+        "decoded_sha256": "03248bc377f1e00568f81a142298967d839c6fcd9f0687cfaabd0f3a4820ff88"
+      },
+      {
+        "id": 500,
+        "source_root": 21,
+        "source_sha256": "47c021581c1f2486c093dc62fb6a2ae5f014f20431784cc04d5538cfb659247b",
+        "suffix": "을",
+        "decoded_sha256": "eacf0c86acc542f001922238f4cac890847dee2aea73465d18a8cfd779fdb905"
+      },
+      {
+        "id": 501,
+        "source_root": 19,
+        "source_sha256": "af62546c34178c8eccdc42aabc1bbe31515e63d41a73a85b11f2be4208e129a8",
+        "suffix": "을",
+        "decoded_sha256": "4a090932b3759916177688caa0bef10fe78a2a514760354f1f569eb54509491a"
+      },
+      {
+        "id": 502,
+        "source_root": 24,
+        "source_sha256": "d4c1bb255baf52ea3c8bf270d3754970979f8de8c5c6fcb87a0ca5fb1435b272",
+        "suffix": "을",
+        "decoded_sha256": "4a5effbb9c895dfa9ba48bcb182d678d38301f1946b2fb4ed9d2bba7972113c8"
+      },
+      {
+        "id": 503,
+        "source_root": 25,
+        "source_sha256": "e0570e1980afeade6745cd86692ec42be7e79b43a249cddbae50a2434f0bbbed",
+        "suffix": "을",
+        "decoded_sha256": "67e5a43084a325fa7c2cc85e3f7046bfc179bd541795c7b89e6a5d70cff3ff0c"
+      },
+      {
+        "id": 504,
+        "source_root": 26,
+        "source_sha256": "35a32ec29251e5d72a74d384c64ed32da2902e78268ae974468923ee0757214e",
+        "suffix": "을",
+        "decoded_sha256": "09b275f11defaa0cb1a64f7cae0a52996821534dfe9723cb6f2d99535112500d"
+      },
+      {
+        "id": 505,
+        "source_root": 17,
+        "source_sha256": "c115f0a1271b2d42d72bc2bbce5415c2d3529f68d67db7aa32778f33fb5efea9",
+        "suffix": "을",
+        "decoded_sha256": "b2eba18731818ad4b1c748c3b4f1fa7d5f57ca41e3ab8dfb675209e2588a3855"
+      },
+      {
+        "id": 506,
+        "source_root": 16,
+        "source_sha256": "209c4483e203856a71ee9e5e96bc2893d3a959988b4aa56c68e4b1f91ddcbcc3",
+        "suffix": "을",
+        "decoded_sha256": "c2c0edfb19e2e9797d888b0990bbb2faf59b1cba306147eb431d71b6a1ca367c"
+      },
+      {
+        "id": 507,
+        "source_root": 12,
+        "source_sha256": "e1b1d462d36053c79f82c9eccc61e35dad532d18cd4681953844df87064518e2",
+        "suffix": "을",
+        "decoded_sha256": "e61aacdaedf82238374a5d7a6d683ed7001e0c453079e8e0bdcf3e7d45d9e177"
+      },
+      {
+        "id": 508,
+        "source_root": 13,
+        "source_sha256": "304813aab30288f633eed28950b3a35de26b380a04d17cfaf37d7433cea066bd",
+        "suffix": "을",
+        "decoded_sha256": "943d8f5859d90892cecacbf393f435c6ebb4bbdf106bb6a591bcd9114a6f518b"
+      },
+      {
+        "id": 509,
+        "source_root": 14,
+        "source_sha256": "23dd58ac7ebb4c85ff5faf673e479bafa3bd1f626f68e4490680d592a2d7bcab",
+        "suffix": "을",
+        "decoded_sha256": "4bf6238eda9f60a4fb8851a4ace6ea23cd33b8e93a63d92081d88ae2c6bbaeba"
+      },
+      {
+        "id": 510,
+        "source_root": 15,
+        "source_sha256": "be93b45e249db2ba89726ae819272fb613691d6da1d0bfa5ffe53acfacff31d5",
+        "suffix": "을",
+        "decoded_sha256": "334b771b4776959b032cdc1de9dd399398548c34ad10d6a4bdd3efa6eca38d3a"
+      }
+    ],
+    "lineage": {
+      "full_plan_sha256": "339af32000fb9362fa81088791d522079541ac2820187742a95f20e2c3cdc066",
+      "analysis_archive_drive_id": "1LPob4F5cfTi5V4rMGKj6isjsu6778Wrn",
+      "analysis_archive_sha256": "236ec68d15a54997c6283fa2ee1dca3ba01d85efae4a202c24da50b6d119d598",
+      "prior_observer_runs": 128,
+      "dynamic_terminal_holds": 8,
+      "empty_local_fallbacks": 1
+    },
+    "product_state": "V369_UNCHANGED",
+    "v371": "PARTIAL_BLOCKED",
+    "semantic_release_admissions": 0
+  },
+  "verification": {
+    "checked_records": 14872,
+    "changed_original": 18,
+    "preserved_original": 14814,
+    "appended_helpers": 40,
+    "blocks": [
+      {
+        "block": 0,
+        "offset": 320,
+        "declared": 73792,
+        "physical": 73792,
+        "messages": 511,
+        "used": 73767,
+        "omitted": 0
+      },
+      {
+        "block": 1,
+        "offset": 74112,
+        "declared": 64256,
+        "physical": 64256,
+        "messages": 723,
+        "used": 64206,
+        "omitted": 0
+      },
+      {
+        "block": 2,
+        "offset": 138368,
+        "declared": 59136,
+        "physical": 59136,
+        "messages": 751,
+        "used": 59132,
+        "omitted": 0
+      },
+      {
+        "block": 3,
+        "offset": 197504,
+        "declared": 56064,
+        "physical": 56064,
+        "messages": 544,
+        "used": 56048,
+        "omitted": 0
+      },
+      {
+        "block": 4,
+        "offset": 253568,
+        "declared": 73728,
+        "physical": 73728,
+        "messages": 592,
+        "used": 73647,
+        "omitted": 0
+      },
+      {
+        "block": 5,
+        "offset": 327296,
+        "declared": 85312,
+        "physical": 85312,
+        "messages": 576,
+        "used": 85271,
+        "omitted": 0
+      },
+      {
+        "block": 6,
+        "offset": 412608,
+        "declared": 74304,
+        "physical": 74304,
+        "messages": 443,
+        "used": 74281,
+        "omitted": 0
+      },
+      {
+        "block": 7,
+        "offset": 486912,
+        "declared": 72192,
+        "physical": 72192,
+        "messages": 554,
+        "used": 72163,
+        "omitted": 0
+      },
+      {
+        "block": 8,
+        "offset": 559104,
+        "declared": 57152,
+        "physical": 57152,
+        "messages": 444,
+        "used": 57105,
+        "omitted": 0
+      },
+      {
+        "block": 9,
+        "offset": 616256,
+        "declared": 75200,
+        "physical": 75200,
+        "messages": 638,
+        "used": 75158,
+        "omitted": 0
+      },
+      {
+        "block": 10,
+        "offset": 691456,
+        "declared": 78592,
+        "physical": 78592,
+        "messages": 524,
+        "used": 78592,
+        "omitted": 0
+      },
+      {
+        "block": 11,
+        "offset": 770048,
+        "declared": 75264,
+        "physical": 75264,
+        "messages": 824,
+        "used": 75226,
+        "omitted": 0
+      },
+      {
+        "block": 12,
+        "offset": 845312,
+        "declared": 77696,
+        "physical": 77696,
+        "messages": 776,
+        "used": 77654,
+        "omitted": 0
+      },
+      {
+        "block": 13,
+        "offset": 923008,
+        "declared": 78208,
+        "physical": 78208,
+        "messages": 409,
+        "used": 78170,
+        "omitted": 0
+      },
+      {
+        "block": 14,
+        "offset": 1001216,
+        "declared": 69888,
+        "physical": 69888,
+        "messages": 583,
+        "used": 69864,
+        "omitted": 0
+      },
+      {
+        "block": 15,
+        "offset": 1071104,
+        "declared": 69184,
+        "physical": 69184,
+        "messages": 421,
+        "used": 69164,
+        "omitted": 0
+      },
+      {
+        "block": 16,
+        "offset": 1140288,
+        "declared": 70784,
+        "physical": 70784,
+        "messages": 599,
+        "used": 70689,
+        "omitted": 0
+      },
+      {
+        "block": 17,
+        "offset": 1211072,
+        "declared": 56960,
+        "physical": 56960,
+        "messages": 547,
+        "used": 56946,
+        "omitted": 0
+      },
+      {
+        "block": 18,
+        "offset": 1268032,
+        "declared": 45504,
+        "physical": 45504,
+        "messages": 216,
+        "used": 44760,
+        "omitted": 0
+      },
+      {
+        "block": 19,
+        "offset": 1313536,
+        "declared": 62976,
+        "physical": 62976,
+        "messages": 291,
+        "used": 62938,
+        "omitted": 0
+      },
+      {
+        "block": 20,
+        "offset": 1376512,
+        "declared": 56704,
+        "physical": 56704,
+        "messages": 269,
+        "used": 56700,
+        "omitted": 0
+      },
+      {
+        "block": 21,
+        "offset": 1433216,
+        "declared": 65088,
+        "physical": 65088,
+        "messages": 515,
+        "used": 64953,
+        "omitted": 0
+      },
+      {
+        "block": 22,
+        "offset": 1498304,
+        "declared": 76672,
+        "physical": 76672,
+        "messages": 534,
+        "used": 76625,
+        "omitted": 0
+      },
+      {
+        "block": 23,
+        "offset": 1574976,
+        "declared": 74112,
+        "physical": 74112,
+        "messages": 617,
+        "used": 74084,
+        "omitted": 0
+      },
+      {
+        "block": 24,
+        "offset": 1649088,
+        "declared": 69696,
+        "physical": 69696,
+        "messages": 345,
+        "used": 69687,
+        "omitted": 0
+      },
+      {
+        "block": 25,
+        "offset": 1718784,
+        "declared": 69312,
+        "physical": 69312,
+        "messages": 173,
+        "used": 69287,
+        "omitted": 0
+      },
+      {
+        "block": 26,
+        "offset": 1788096,
+        "declared": 73600,
+        "physical": 73600,
+        "messages": 169,
+        "used": 73562,
+        "omitted": 0
+      },
+      {
+        "block": 27,
+        "offset": 1861696,
+        "declared": 66752,
+        "physical": 66752,
+        "messages": 241,
+        "used": 66752,
+        "omitted": 0
+      },
+      {
+        "block": 28,
+        "offset": 1928448,
+        "declared": 41088,
+        "physical": 41088,
+        "messages": 200,
+        "used": 39459,
+        "omitted": 0
+      },
+      {
+        "block": 29,
+        "offset": 1969536,
+        "declared": 42112,
+        "physical": 42112,
+        "messages": 200,
+        "used": 40300,
+        "omitted": 0
+      },
+      {
+        "block": 30,
+        "offset": 2011648,
+        "declared": 42304,
+        "physical": 42304,
+        "messages": 200,
+        "used": 40457,
+        "omitted": 0
+      },
+      {
+        "block": 31,
+        "offset": 2053952,
+        "declared": 42432,
+        "physical": 42432,
+        "messages": 200,
+        "used": 40401,
+        "omitted": 0
+      },
+      {
+        "block": 32,
+        "offset": 2096384,
+        "declared": 51840,
+        "physical": 51785,
+        "messages": 243,
+        "used": 46239,
+        "omitted": 55
+      }
+    ]
+  },
+  "negative_readback_probes_rejected": [
+    "stored_payload",
+    "appended_helper",
+    "header_offset",
+    "block_count"
+  ],
+  "members": [
+    {
+      "path": "SELECTIVE_PACKAGE_INFO.json",
+      "size": 15726,
+      "sha256": "3ca7b6d89826767228c7496c4ffb3a94df5d675a086766e676ab83e004200114",
+      "role": "DIAGNOSTIC_METADATA"
+    },
+    {
+      "path": "exefs/D9120950C258610A746F4A31CE3A3B376DE393D9.ips",
+      "size": 2742,
+      "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/ECF00000.TS5",
+      "size": 1119288,
+      "sha256": "1332c037abb44a97f996a1046d4372675428ee2294857b269cb60345bde22c7b",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EFF00E00.TS5",
+      "size": 13612,
+      "sha256": "e72cba217af5210e4681ac651833fcad94622fd21ea3162a28fc564460388d41",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EFF0A700.TS5",
+      "size": 7048,
+      "sha256": "ce6264f71051e08be98f7c6e4c890c5fb6f566671259062db4e19d18fb77ae4a",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EFF0C300.TS5",
+      "size": 334764,
+      "sha256": "e1f4a5aaed8ab015c57e76ab5105b49b2c23d5b1f4673f9d9daa0d5a5491f257",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EFF16700.TS5",
+      "size": 59748,
+      "sha256": "24460e9aced66bda3a8a3542ea5dd16b611e50838082815e4775b2e57f4151f7",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EFF20500.TS5",
+      "size": 75820,
+      "sha256": "8d5ef717b614ccc72a3fa1b7176266801f031c961483add8d9135efd6e6a4045",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EP124B00.TS5",
+      "size": 183644,
+      "sha256": "ae057b4499d46b195f170b33ffd724e73bbf584af1765f661033ebcd71afb5ef",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EP12E400.TS5",
+      "size": 21820,
+      "sha256": "a6d7b3b233480065aea0ee0bed1a184d05f4cff98db4dde1b190acd163181852",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EP12F400.TS5",
+      "size": 26692,
+      "sha256": "935b3358271be4c082f0798355130ef111fa339ab7fcc3a82d7b1263c2c50463",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EP40CB00.TS5",
+      "size": 3372,
+      "sha256": "7d58bcb76e9c511b2daee3ca5d0c64545a0639b672eef1deaef0eec7a2d17d12",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EPF00E00.TS5",
+      "size": 48468,
+      "sha256": "a8d8964330ed03e64239dfcb39123f73cd79f6397c8faba8dca76c17eb8b2632",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EPF20500.TS5",
+      "size": 74656,
+      "sha256": "d892fe9fe347159e693224bd36ee69b6d8bb778d84c6a239fc092a04c97d1655",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/EVENT/EPF2E000.TS5",
+      "size": 12344,
+      "sha256": "c55c7c727cd59ffb59e81581d237144855ae16dadadd1c88fecfaba2dc32d07a",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/FONT/FONT_JPN.G1T",
+      "size": 16779036,
+      "sha256": "c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932",
+      "role": "UNCHANGED_218_PREREQUISITE"
+    },
+    {
+      "path": "romfs/TAI5MSG_JP.DAT",
+      "size": 2148169,
+      "sha256": "77c5231d7b9e297cb82445334eb1f1f75f3049865d4b2da59bbea7b2ba29ec1a",
+      "role": "DIAGNOSTIC_TAI"
+    }
+  ],
+  "artifact": {
+    "filename": "TAIKO5DX_KR_DIAG_222_COMPOSITION.zip",
+    "bytes": 4155050,
+    "sha256": "dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e",
+    "tai_sha256": "77c5231d7b9e297cb82445334eb1f1f75f3049865d4b2da59bbea7b2ba29ec1a"
+  },
+  "unchanged_prerequisite_product_members": 15,
+  "runtime": "NOT_RUN",
+  "product_state": "V369_UNCHANGED",
+  "v371": "PARTIAL_BLOCKED",
+  "semantic_release_admissions": 0
+}

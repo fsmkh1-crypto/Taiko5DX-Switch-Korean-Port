@@ -1,0 +1,37 @@
+{
+  "base_head": "cda06cc10e6895ded69d518074937f82d70f267a",
+  "files": [
+    {
+      "local_name": "build.py",
+      "repository_path": "selective_ko/diagnostics/composition_222/build.py",
+      "sha256": "671e2ff2648d0db0360c809e477c7425a1fec9f9b9857801c51605c8edd7dc34",
+      "git_blob_sha": "1887056e2285c1d1aa438c2f16569617e76a5ae7"
+    },
+    {
+      "local_name": "readback.py",
+      "repository_path": "selective_ko/diagnostics/composition_222/readback.py",
+      "sha256": "8a06724ed9e5e86a0fb494733d7eab207018e005f2c380144c22bfc16392f911",
+      "git_blob_sha": "bc04eaa9bd3ddc0f2d6214b9ab1b0bf97f3f009d"
+    },
+    {
+      "local_name": "CONTRACT.json",
+      "repository_path": "selective_ko/diagnostics/composition_222/CONTRACT.json",
+      "sha256": "ac3fb67afa0da1efc938bf174d7b1dd2a181ad83d5ee2556b6ad8013b1a8e6e9",
+      "git_blob_sha": "123b35526451d5647dbf85eb1aebf90faa48623c"
+    },
+    {
+      "local_name": "MESSAGE_PLAN.json",
+      "repository_path": "selective_ko/diagnostics/composition_222/MESSAGE_PLAN.json",
+      "sha256": "69884b1afd952c94c330440e741120ee76c57ecb91ff2501abc524c621182f78",
+      "git_blob_sha": "bb6a87156c896da8b9cae1ec38a94cb8e2a5f5e9"
+    },
+    {
+      "local_name": "README.md",
+      "repository_path": "selective_ko/diagnostics/composition_222/README.md",
+      "sha256": "d61e5f74f017ff39b93c822186edcdc8a5689316894dd61b0ac4922c67463fa4",
+      "git_blob_sha": "1163db7d1fbad815df0c663db3a05157b3325e44"
+    }
+  ],
+  "commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
+  "remote_main_verified": "b9c834874c82ce7475e0022ac04d592977c0feb9"
+}

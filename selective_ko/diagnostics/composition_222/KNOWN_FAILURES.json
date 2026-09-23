@@ -1,0 +1,45 @@
+{
+  "status": "OPEN_ITEMS_NOT_ALL_CONFIRMED_DEFECTS",
+  "items": [
+    {
+      "origin": "PRE_EXISTING",
+      "validation_id": "COMPOSITION221_DATA_SPECIALIZATION_REPLAY_20260923",
+      "observation": "8 dynamic terminal records and 1 empty fallback retain original suffix; not counted as confirmed defects.",
+      "evidence": "SPECIALIZATION_PLAN.json in lineage archive",
+      "impact": "Dynamic tails outside static specialization",
+      "exit_condition": "Observed output with exact variable/branch provenance and a source-grounded correction"
+    },
+    {
+      "origin": "PRE_EXISTING",
+      "validation_id": "COMPOSITION221",
+      "observation": "8 incomplete original-message parses; EVENT/dynamic references not included in helper-ID census.",
+      "evidence": "STATIC_BOUNDARIES.json in lineage archive",
+      "impact": "Expanded B0 ID safety outside reviewed C/J records",
+      "exit_condition": "Complete relevant reference coverage or targeted runtime evidence"
+    },
+    {
+      "origin": "NEW_STAGE",
+      "validation_id": "COMPOSITION222",
+      "observation": "Expanded-count loader behavior and actual game dialogue remain untested.",
+      "evidence": "BUILD_REPORT.json",
+      "impact": "18 changed originals and 40 appended helpers",
+      "exit_condition": "Exact installed artifact identity and real-game observations for affected branches"
+    },
+    {
+      "origin": "PRE_EXISTING",
+      "validation_id": "V371",
+      "observation": "Partial/blocked status and all independent holds remain unchanged.",
+      "evidence": "selective_ko/artifacts/event_169_active_request_partial_54_v1/KNOWN_FAILURES.json",
+      "impact": "TE5; SNR; source identity; inline 139; non-B24 reflow; B0:181/307; suffix3/root; EVENT-to-TAI dependencies; legacy code-version/evidence; circular readback",
+      "exit_condition": "Original authority-specific closure conditions; this diagnostic does not discharge them"
+    },
+    {
+      "origin": "PRE_EXISTING",
+      "validation_id": "COMPOSITION219/220",
+      "observation": "Native machine-code route lacks a verified injection area; not used by 222.",
+      "evidence": "Native study archives retained in prior work",
+      "impact": "General runtime particle handling",
+      "exit_condition": "Validated implementation/injection contract, only if route is resumed"
+    }
+  ]
+}

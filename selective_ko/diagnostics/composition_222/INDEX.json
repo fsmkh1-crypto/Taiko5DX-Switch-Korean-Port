@@ -1,0 +1,29 @@
+{
+  "validation_id": "COMPOSITION222_SOURCE_FROZEN_PACKAGE_READBACK",
+  "status": "PACKAGE_VERIFIED_STORAGE_PENDING_RUNTIME_NOT_RUN",
+  "builder_source_commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
+  "provenance_report_commit": "COMMIT_CONTAINING_THIS_INDEX",
+  "artifact": {
+    "filename": "TAIKO5DX_KR_DIAG_222_COMPOSITION.zip",
+    "bytes": 4155050,
+    "sha256": "dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e",
+    "tai_sha256": "77c5231d7b9e297cb82445334eb1f1f75f3049865d4b2da59bbea7b2ba29ec1a"
+  },
+  "planned_drive_folder_id": "1MJyrPP1qtzsfvbwc2qdarw-m37p79jdH",
+  "planned_drive_path": "GPT/태합입지전 프로젝트/CODEX/TAIKO5DX_KR_DIAG_222_COMPOSITION.zip",
+  "evidence": [
+    "BUILD_REPORT.json",
+    "INHERITED_IPS_READBACK.json",
+    "SOURCE_RECEIPT.json",
+    "REPORT.md",
+    "KNOWN_FAILURES.json"
+  ],
+  "record_ledger_retention": "Evidence archive; 14,872 per-record SHA-256 rows",
+  "lineage_archive": {
+    "drive_id": "1LPob4F5cfTi5V4rMGKj6isjsu6778Wrn",
+    "sha256": "236ec68d15a54997c6283fa2ee1dca3ba01d85efae4a202c24da50b6d119d598"
+  },
+  "product_state": "V369_UNCHANGED",
+  "v371": "PARTIAL_BLOCKED",
+  "semantic_release_admissions": 0
+}
