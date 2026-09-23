@@ -1,0 +1,682 @@
+{
+  "schema": "MESSAGE_COVERAGE_DIAGNOSTIC_218_V1",
+  "input_sha256": {
+    "original": "aae037dd5948f79b9fc2e5affcb1e60e08efca39f897123045fe685786be978f",
+    "pc": "e3b4522a1047ff409e099b5ee197d7689279ea7472cb403d305b2507fec96090",
+    "mapping": "429dccba3444caf9e63524908f3f00249504da56e60fe5249fb0f1ee0213146f",
+    "baseline": "43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe",
+    "main": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+  },
+  "records": 14832,
+  "diagnostic_targets": 10220,
+  "preserved_reviewed": 3227,
+  "unchanged_original_pc": 1233,
+  "initial_holds": 134,
+  "dependency_holds": 18,
+  "held_original": 152,
+  "capacity": [
+    {
+      "block": 0,
+      "used": 63599,
+      "declared": 63616
+    },
+    {
+      "block": 1,
+      "used": 64206,
+      "declared": 64256
+    },
+    {
+      "block": 2,
+      "used": 59132,
+      "declared": 59136
+    },
+    {
+      "block": 3,
+      "used": 56048,
+      "declared": 56064
+    },
+    {
+      "block": 4,
+      "used": 73675,
+      "declared": 73728
+    },
+    {
+      "block": 5,
+      "used": 85271,
+      "declared": 85312
+    },
+    {
+      "block": 6,
+      "used": 74289,
+      "declared": 74304
+    },
+    {
+      "block": 7,
+      "used": 72163,
+      "declared": 72192
+    },
+    {
+      "block": 8,
+      "used": 57121,
+      "declared": 57152
+    },
+    {
+      "block": 9,
+      "used": 75158,
+      "declared": 75200
+    },
+    {
+      "block": 10,
+      "used": 78592,
+      "declared": 78592
+    },
+    {
+      "block": 11,
+      "used": 75226,
+      "declared": 75264
+    },
+    {
+      "block": 12,
+      "used": 77654,
+      "declared": 77696
+    },
+    {
+      "block": 13,
+      "used": 78170,
+      "declared": 78208
+    },
+    {
+      "block": 14,
+      "used": 69864,
+      "declared": 69888
+    },
+    {
+      "block": 15,
+      "used": 69164,
+      "declared": 69184
+    },
+    {
+      "block": 16,
+      "used": 70728,
+      "declared": 70784
+    },
+    {
+      "block": 17,
+      "used": 56946,
+      "declared": 56960
+    },
+    {
+      "block": 18,
+      "used": 44760,
+      "declared": 45504
+    },
+    {
+      "block": 19,
+      "used": 62938,
+      "declared": 62976
+    },
+    {
+      "block": 20,
+      "used": 56700,
+      "declared": 56704
+    },
+    {
+      "block": 21,
+      "used": 65061,
+      "declared": 65088
+    },
+    {
+      "block": 22,
+      "used": 76625,
+      "declared": 76672
+    },
+    {
+      "block": 23,
+      "used": 74084,
+      "declared": 74112
+    },
+    {
+      "block": 24,
+      "used": 69687,
+      "declared": 69696
+    },
+    {
+      "block": 25,
+      "used": 69287,
+      "declared": 69312
+    },
+    {
+      "block": 26,
+      "used": 73562,
+      "declared": 73600
+    },
+    {
+      "block": 27,
+      "used": 66752,
+      "declared": 66752
+    },
+    {
+      "block": 28,
+      "used": 39459,
+      "declared": 41088
+    },
+    {
+      "block": 29,
+      "used": 40300,
+      "declared": 42112
+    },
+    {
+      "block": 30,
+      "used": 40457,
+      "declared": 42304
+    },
+    {
+      "block": 31,
+      "used": 40401,
+      "declared": 42432
+    },
+    {
+      "block": 32,
+      "used": 46239,
+      "declared": 51840
+    }
+  ],
+  "semantic_release_admissions": 0,
+  "runtime": "NOT_RUN",
+  "V369": "UNCHANGED",
+  "V371": "PARTIAL_BLOCKED",
+  "scope": "Exact PC programs with matched target-VM controls; coverage experiment, not a release",
+  "open_gates": [
+    "Native/EVENT all-caller semantic admission",
+    "Output/visual capacity and non-B24 reflow",
+    "Runtime branch/variable QA",
+    "TE5/SNR identity scope",
+    "60 source-identity holds",
+    "Remaining 156 EVENT files",
+    "Legacy PASS provenance and circular readback"
+  ],
+  "builder_source_commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+  "tai5msg_sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f",
+  "tai5msg_bytes": 2137993,
+  "independently_read_messages": 14832,
+  "serialized_blocks": [
+    {
+      "block": 0,
+      "offset": 320,
+      "stock_declared": 59328,
+      "declared": 63616,
+      "physical": 63616,
+      "used_end": 63599,
+      "filler": 17,
+      "omitted": 0,
+      "growth": 4288
+    },
+    {
+      "block": 1,
+      "offset": 63936,
+      "stock_declared": 50880,
+      "declared": 64256,
+      "physical": 64256,
+      "used_end": 64206,
+      "filler": 50,
+      "omitted": 0,
+      "growth": 13376
+    },
+    {
+      "block": 2,
+      "offset": 128192,
+      "stock_declared": 49088,
+      "declared": 59136,
+      "physical": 59136,
+      "used_end": 59132,
+      "filler": 4,
+      "omitted": 0,
+      "growth": 10048
+    },
+    {
+      "block": 3,
+      "offset": 187328,
+      "stock_declared": 44224,
+      "declared": 56064,
+      "physical": 56064,
+      "used_end": 56048,
+      "filler": 16,
+      "omitted": 0,
+      "growth": 11840
+    },
+    {
+      "block": 4,
+      "offset": 243392,
+      "stock_declared": 58304,
+      "declared": 73728,
+      "physical": 73728,
+      "used_end": 73675,
+      "filler": 53,
+      "omitted": 0,
+      "growth": 15424
+    },
+    {
+      "block": 5,
+      "offset": 317120,
+      "stock_declared": 65344,
+      "declared": 85312,
+      "physical": 85312,
+      "used_end": 85271,
+      "filler": 41,
+      "omitted": 0,
+      "growth": 19968
+    },
+    {
+      "block": 6,
+      "offset": 402432,
+      "stock_declared": 59584,
+      "declared": 74304,
+      "physical": 74304,
+      "used_end": 74289,
+      "filler": 15,
+      "omitted": 0,
+      "growth": 14720
+    },
+    {
+      "block": 7,
+      "offset": 476736,
+      "stock_declared": 56256,
+      "declared": 72192,
+      "physical": 72192,
+      "used_end": 72163,
+      "filler": 29,
+      "omitted": 0,
+      "growth": 15936
+    },
+    {
+      "block": 8,
+      "offset": 548928,
+      "stock_declared": 44672,
+      "declared": 57152,
+      "physical": 57152,
+      "used_end": 57121,
+      "filler": 31,
+      "omitted": 0,
+      "growth": 12480
+    },
+    {
+      "block": 9,
+      "offset": 606080,
+      "stock_declared": 63680,
+      "declared": 75200,
+      "physical": 75200,
+      "used_end": 75158,
+      "filler": 42,
+      "omitted": 0,
+      "growth": 11520
+    },
+    {
+      "block": 10,
+      "offset": 681280,
+      "stock_declared": 62336,
+      "declared": 78592,
+      "physical": 78592,
+      "used_end": 78592,
+      "filler": 0,
+      "omitted": 0,
+      "growth": 16256
+    },
+    {
+      "block": 11,
+      "offset": 759872,
+      "stock_declared": 61312,
+      "declared": 75264,
+      "physical": 75264,
+      "used_end": 75226,
+      "filler": 38,
+      "omitted": 0,
+      "growth": 13952
+    },
+    {
+      "block": 12,
+      "offset": 835136,
+      "stock_declared": 60544,
+      "declared": 77696,
+      "physical": 77696,
+      "used_end": 77654,
+      "filler": 42,
+      "omitted": 0,
+      "growth": 17152
+    },
+    {
+      "block": 13,
+      "offset": 912832,
+      "stock_declared": 63360,
+      "declared": 78208,
+      "physical": 78208,
+      "used_end": 78170,
+      "filler": 38,
+      "omitted": 0,
+      "growth": 14848
+    },
+    {
+      "block": 14,
+      "offset": 991040,
+      "stock_declared": 58752,
+      "declared": 69888,
+      "physical": 69888,
+      "used_end": 69864,
+      "filler": 24,
+      "omitted": 0,
+      "growth": 11136
+    },
+    {
+      "block": 15,
+      "offset": 1060928,
+      "stock_declared": 57280,
+      "declared": 69184,
+      "physical": 69184,
+      "used_end": 69164,
+      "filler": 20,
+      "omitted": 0,
+      "growth": 11904
+    },
+    {
+      "block": 16,
+      "offset": 1130112,
+      "stock_declared": 55104,
+      "declared": 70784,
+      "physical": 70784,
+      "used_end": 70728,
+      "filler": 56,
+      "omitted": 0,
+      "growth": 15680
+    },
+    {
+      "block": 17,
+      "offset": 1200896,
+      "stock_declared": 56000,
+      "declared": 56960,
+      "physical": 56960,
+      "used_end": 56946,
+      "filler": 14,
+      "omitted": 0,
+      "growth": 960
+    },
+    {
+      "block": 18,
+      "offset": 1257856,
+      "stock_declared": 45504,
+      "declared": 45504,
+      "physical": 45504,
+      "used_end": 44760,
+      "filler": 744,
+      "omitted": 0,
+      "growth": 0
+    },
+    {
+      "block": 19,
+      "offset": 1303360,
+      "stock_declared": 60288,
+      "declared": 62976,
+      "physical": 62976,
+      "used_end": 62938,
+      "filler": 38,
+      "omitted": 0,
+      "growth": 2688
+    },
+    {
+      "block": 20,
+      "offset": 1366336,
+      "stock_declared": 54976,
+      "declared": 56704,
+      "physical": 56704,
+      "used_end": 56700,
+      "filler": 4,
+      "omitted": 0,
+      "growth": 1728
+    },
+    {
+      "block": 21,
+      "offset": 1423040,
+      "stock_declared": 50432,
+      "declared": 65088,
+      "physical": 65088,
+      "used_end": 65061,
+      "filler": 27,
+      "omitted": 0,
+      "growth": 14656
+    },
+    {
+      "block": 22,
+      "offset": 1488128,
+      "stock_declared": 59328,
+      "declared": 76672,
+      "physical": 76672,
+      "used_end": 76625,
+      "filler": 47,
+      "omitted": 0,
+      "growth": 17344
+    },
+    {
+      "block": 23,
+      "offset": 1564800,
+      "stock_declared": 69376,
+      "declared": 74112,
+      "physical": 74112,
+      "used_end": 74084,
+      "filler": 28,
+      "omitted": 0,
+      "growth": 4736
+    },
+    {
+      "block": 24,
+      "offset": 1638912,
+      "stock_declared": 58368,
+      "declared": 69696,
+      "physical": 69696,
+      "used_end": 69687,
+      "filler": 9,
+      "omitted": 0,
+      "growth": 11328
+    },
+    {
+      "block": 25,
+      "offset": 1708608,
+      "stock_declared": 56448,
+      "declared": 69312,
+      "physical": 69312,
+      "used_end": 69287,
+      "filler": 25,
+      "omitted": 0,
+      "growth": 12864
+    },
+    {
+      "block": 26,
+      "offset": 1777920,
+      "stock_declared": 54912,
+      "declared": 73600,
+      "physical": 73600,
+      "used_end": 73562,
+      "filler": 38,
+      "omitted": 0,
+      "growth": 18688
+    },
+    {
+      "block": 27,
+      "offset": 1851520,
+      "stock_declared": 55168,
+      "declared": 66752,
+      "physical": 66752,
+      "used_end": 66752,
+      "filler": 0,
+      "omitted": 0,
+      "growth": 11584
+    },
+    {
+      "block": 28,
+      "offset": 1918272,
+      "stock_declared": 41088,
+      "declared": 41088,
+      "physical": 41088,
+      "used_end": 39459,
+      "filler": 1629,
+      "omitted": 0,
+      "growth": 0
+    },
+    {
+      "block": 29,
+      "offset": 1959360,
+      "stock_declared": 42112,
+      "declared": 42112,
+      "physical": 42112,
+      "used_end": 40300,
+      "filler": 1812,
+      "omitted": 0,
+      "growth": 0
+    },
+    {
+      "block": 30,
+      "offset": 2001472,
+      "stock_declared": 42304,
+      "declared": 42304,
+      "physical": 42304,
+      "used_end": 40457,
+      "filler": 1847,
+      "omitted": 0,
+      "growth": 0
+    },
+    {
+      "block": 31,
+      "offset": 2043776,
+      "stock_declared": 42432,
+      "declared": 42432,
+      "physical": 42432,
+      "used_end": 40401,
+      "filler": 2031,
+      "omitted": 0,
+      "growth": 0
+    },
+    {
+      "block": 32,
+      "offset": 2086208,
+      "stock_declared": 51840,
+      "declared": 51840,
+      "physical": 51785,
+      "used_end": 46239,
+      "filler": 5546,
+      "omitted": 55,
+      "growth": 0
+    }
+  ],
+  "members": [
+    {
+      "path": "exefs/D9120950C258610A746F4A31CE3A3B376DE393D9.ips",
+      "bytes": 2742,
+      "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4"
+    },
+    {
+      "path": "romfs/EVENT/ECF00000.TS5",
+      "bytes": 1119288,
+      "sha256": "1332c037abb44a97f996a1046d4372675428ee2294857b269cb60345bde22c7b"
+    },
+    {
+      "path": "romfs/EVENT/EFF00E00.TS5",
+      "bytes": 13612,
+      "sha256": "e72cba217af5210e4681ac651833fcad94622fd21ea3162a28fc564460388d41"
+    },
+    {
+      "path": "romfs/EVENT/EFF0A700.TS5",
+      "bytes": 7048,
+      "sha256": "ce6264f71051e08be98f7c6e4c890c5fb6f566671259062db4e19d18fb77ae4a"
+    },
+    {
+      "path": "romfs/EVENT/EFF0C300.TS5",
+      "bytes": 334764,
+      "sha256": "e1f4a5aaed8ab015c57e76ab5105b49b2c23d5b1f4673f9d9daa0d5a5491f257"
+    },
+    {
+      "path": "romfs/EVENT/EFF16700.TS5",
+      "bytes": 59748,
+      "sha256": "24460e9aced66bda3a8a3542ea5dd16b611e50838082815e4775b2e57f4151f7"
+    },
+    {
+      "path": "romfs/EVENT/EFF20500.TS5",
+      "bytes": 75820,
+      "sha256": "8d5ef717b614ccc72a3fa1b7176266801f031c961483add8d9135efd6e6a4045"
+    },
+    {
+      "path": "romfs/EVENT/EP124B00.TS5",
+      "bytes": 183644,
+      "sha256": "ae057b4499d46b195f170b33ffd724e73bbf584af1765f661033ebcd71afb5ef"
+    },
+    {
+      "path": "romfs/EVENT/EP12E400.TS5",
+      "bytes": 21820,
+      "sha256": "a6d7b3b233480065aea0ee0bed1a184d05f4cff98db4dde1b190acd163181852"
+    },
+    {
+      "path": "romfs/EVENT/EP12F400.TS5",
+      "bytes": 26692,
+      "sha256": "935b3358271be4c082f0798355130ef111fa339ab7fcc3a82d7b1263c2c50463"
+    },
+    {
+      "path": "romfs/EVENT/EP40CB00.TS5",
+      "bytes": 3372,
+      "sha256": "7d58bcb76e9c511b2daee3ca5d0c64545a0639b672eef1deaef0eec7a2d17d12"
+    },
+    {
+      "path": "romfs/EVENT/EPF00E00.TS5",
+      "bytes": 48468,
+      "sha256": "a8d8964330ed03e64239dfcb39123f73cd79f6397c8faba8dca76c17eb8b2632"
+    },
+    {
+      "path": "romfs/EVENT/EPF20500.TS5",
+      "bytes": 74656,
+      "sha256": "d892fe9fe347159e693224bd36ee69b6d8bb778d84c6a239fc092a04c97d1655"
+    },
+    {
+      "path": "romfs/EVENT/EPF2E000.TS5",
+      "bytes": 12344,
+      "sha256": "c55c7c727cd59ffb59e81581d237144855ae16dadadd1c88fecfaba2dc32d07a"
+    },
+    {
+      "path": "romfs/FONT/FONT_JPN.G1T",
+      "bytes": 16779036,
+      "sha256": "c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932"
+    },
+    {
+      "path": "romfs/TAI5MSG_JP.DAT",
+      "bytes": 2137993,
+      "sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f"
+    }
+  ],
+  "zip": {
+    "name": "TAIKO5DX_KR_DIAG_218_MESSAGE_COVERAGE.zip",
+    "bytes": 4152716,
+    "sha256": "4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70"
+  },
+  "provenance_report_commit": {
+    "resolution": "Commit introducing this report",
+    "path": "selective_ko/diagnostics/message_coverage_218/BUILD_REPORT.json"
+  },
+  "transport": {
+    "drive_id": "1_N515MlNCrmlBmxkoIKaTjEIjcIO_-pb",
+    "bytes": 4152716,
+    "sha256": "4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70",
+    "downloaded_again": true
+  },
+  "source_readback": "selective_ko/diagnostics/message_coverage_218/REMOTE_SOURCE_RECEIPT.json",
+  "vm_review": "selective_ko/diagnostics/message_coverage_218/VM_REVIEW.json",
+  "regression_tests": 7,
+  "source_ci": {
+    "run_id": 35860132924,
+    "name": "Document governance",
+    "conclusion": "success",
+    "not_runtime_validation": true
+  },
+  "evidence_archive": {
+    "name": "TAIKO5DX_DIAG_218_EVIDENCE.zip",
+    "bytes": 4362474,
+    "sha256": "7f4840eab49232f65587798591a3a2777d8be669d910ce7915d183e79c041828",
+    "library_file_id": "libfile_fb2a4dcd5c3c819181edf29d38e235a7",
+    "drive_upload": "FAILED_TOOL_INTERNAL_ERROR; no returned file identity; no destructive retry",
+    "includes": "Full decoded field census, ARM64 disassembly, bounded atom harness/results, 14832-row ledger and English report"
+  },
+  "package_library_file_id": "libfile_994491a5ef1c8191b0cb76d9cab169c7"
+}

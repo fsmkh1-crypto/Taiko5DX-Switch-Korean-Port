@@ -1,0 +1,37 @@
+{
+  "repository": "fsmkh1-crypto/Taiko5DX-Switch-Korean-Port",
+  "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+  "remote_main_verified": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+  "files": [
+    {
+      "repository_path": "selective_ko/diagnostics/message_coverage_218/build.py",
+      "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+      "sha256": "b85e7a6e4152f0d24578051ecdbb56509d8bf8a1d16da0900df3d51bf82c68b7",
+      "git_blob_sha": "d865d84f521a430e39eb91f1f640fc179ea9eedb"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/message_coverage_218/switch_vm_fields.py",
+      "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+      "sha256": "c343cacf993eeb9794c87eab19b88f03afebe1fdd781720bbae10541e644b84a",
+      "git_blob_sha": "848d76dd5b2aff4dc37b5a67d1088f06a538492d"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/selective_tai5msg.py",
+      "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+      "sha256": "8046a0fb363d778b4d5a3b6241fe0a10a45aec4e79e5d1ffecae14248e02ea7a",
+      "git_blob_sha": "195261a30cfa5dbea4d1ae6542204aa0cf7ce15c"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/tai5msg_corrections.py",
+      "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+      "sha256": "1c9530980c1fe6bd57361b122b2bf1223cec5d8c88f71fee649f04b06ab397b9",
+      "git_blob_sha": "c6337bead608b4a360f751fbd56fd8da2e28d720"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/message_coverage_218/vendor/builder/tai5msg_percent_macro_roots.py",
+      "commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+      "sha256": "bb716715ddf9574ff31087a2ed2d5b765f731ecad970be73d9015c77b89fe2c5",
+      "git_blob_sha": "c101e4862a0f0ced2331b91ce44ae6dc7c1eac69"
+    }
+  ]
+}

@@ -1,6 +1,6 @@
 {
   "schema": "MESSAGE_COVERAGE_218_INDEX_V1",
-  "status": "SOURCE_FREEZE_PREPARED_PENDING_BUILD",
+  "status": "DIAGNOSTIC_ZIP_CREATED_STORAGE_VERIFIED_RUNTIME_NOT_RUN",
   "pc_patch_oracle_gate": "PASS_EXACT_PC_REPLACEMENT_BYTES",
   "readme": "selective_ko/diagnostics/message_coverage_218/README.md",
   "source_map": "selective_ko/diagnostics/message_coverage_218/SOURCE_MAP.json",
@@ -11,5 +11,11 @@
   "runtime": "NOT_RUN",
   "diagnostic_targets": 10220,
   "semantic_release_admissions": 0,
-  "base_head": "815167966a2db852c585c73e75ffe1d4e3f807eb"
+  "base_head": "815167966a2db852c585c73e75ffe1d4e3f807eb",
+  "builder_source_commit": "9a5d28af420c7e1cfc329ec0971abe16e7978508",
+  "build_report": "selective_ko/diagnostics/message_coverage_218/BUILD_REPORT.json",
+  "package_drive_id": "1_N515MlNCrmlBmxkoIKaTjEIjcIO_-pb",
+  "package_sha256": "4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70",
+  "package_bytes": 4152716,
+  "held_original": 152
 }
