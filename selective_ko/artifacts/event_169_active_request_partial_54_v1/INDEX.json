@@ -1,0 +1,51 @@
+{
+  "schema": "EVENT_169_ACTIVE_REQUEST_PARTIAL_CHECKPOINT_INDEX_V1",
+  "validation_id": "V371",
+  "scope": "V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION",
+  "status": "PARTIAL_54_OF_169_REPLAY_80_UNITS_OBSERVED_NOT_FULL_CANDIDATE_ACCEPTANCE",
+  "base_head": "736f8b56ae641e847315f8e3735ad958f9538870",
+  "product_milestone": "V369_UNCHANGED",
+  "candidate_event_files_emitted": 0,
+  "counts": {
+    "declared_requests": 169,
+    "actual_source_files_replayed": 54,
+    "actual_source_files_remaining": 115,
+    "file_local_passed": 54,
+    "owners_observed": 45669,
+    "owners_not_observed": 21318,
+    "recipe_views_observed": 35913,
+    "recipe_views_not_observed": 16578,
+    "field_policies_satisfied": 18010,
+    "field_policies_not_observed": 6295,
+    "final_responsibility_units_observed": 80,
+    "relation_receipts_satisfied": 130,
+    "support_receipts_satisfied": 5,
+    "late_final_fault_probes_passed": 80,
+    "obligations_satisfied": 3163,
+    "obligations_not_observed": 2105,
+    "source_identity_provenance_holds": 60,
+    "hold_byte_matches_this_scope": 8,
+    "provenance_holds_released": 0
+  },
+  "legacy_ecf_pending": {
+    "direct_escape_particle_rows": 350,
+    "lexical_false_positive_rows": 12,
+    "derived_and_mixed_rows": 61,
+    "non_particle_suffix_rows": 3
+  },
+  "drive": {
+    "folder": "GPT/태합입지전 프로젝트/CODEX",
+    "report": {"id": "18aGjvV3Dr6wwB_x5tUMzjRXANajCksWK", "name": "V371_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_REPORT_20260923.md"},
+    "archive": {"id": "1_2ndn8EbetZa-6qGSvN3fMWkFp7et01Z", "name": "V371_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_20260923.zip", "bytes": 37986692, "sha256": "4322d6eca20dd2888e619c4cbfc98be98afd2cce323d4d65126ceb39f8d8e46f", "members": 460},
+    "result": {"id": "1-JRBbrI4Guwie2BDpDPblRa6QYtbD04Q", "name": "V371_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_RESULT_20260923.json"},
+    "packaging_receipt": {"id": "1_uge2S9RbQjb2mc3GLg5NyHWaBja5tqM", "name": "V371_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_PACKAGING_RECEIPT_20260923.json"}
+  },
+  "claim_boundary": {
+    "full_169_file_candidate_acceptance": false,
+    "val01": false,
+    "ips_package": false,
+    "runtime_hardware": false,
+    "runtime_hook_required": false
+  },
+  "next_scope": "AWAIT_EXPLICIT_CONTINUE_V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION"
+}

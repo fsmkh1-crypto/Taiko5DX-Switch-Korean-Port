@@ -1,0 +1,29 @@
+{
+  "schema": "EVENT_169_ACTIVE_REQUEST_PARTIAL_KNOWN_FAILURES_V1",
+  "validation_id": "V371",
+  "scope": "V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION",
+  "status": "PARTIAL_CHECKPOINT",
+  "product_blockers_confirmed": [],
+  "pending_not_failures": [
+    "115 Switch EVENT source files not replayed in this checkpoint",
+    "legacy ECF overlays pending: direct escape 350, lexical 12, derived/mixed 61, suffix 3",
+    "2105 obligation rows remain NOT_OBSERVED",
+    "60 source-identity provenance holds remain unreleased",
+    "TAI5MSG/VAL01/IPS/package/Eden/Switch runtime stages not run"
+  ],
+  "rejected_do_not_repeat": [
+    "geometry-change 11,764 individual exceptions",
+    "CONTACT 700 all runtime hooks",
+    "EC500000:1DC hard NUL conflict",
+    "rediscover field writers from final bytes",
+    "runtime-hook-first implementation",
+    "blanket four-byte consumer/relation views"
+  ],
+  "operational_failures_not_product_failures": [
+    "catalog units/file attribute access error in diagnostic harness",
+    "local diagnostic JSON permission error",
+    "GitHub binary archive fetch route rejected",
+    "raw public download route failure"
+  ],
+  "next_action": "Continue the same active-request scope under a fresh explicit execution signal; do not reopen frozen role/semantic census."
+}
