@@ -1,8 +1,8 @@
 {
   "validation_id": "COMPOSITION222_SOURCE_FROZEN_PACKAGE_READBACK",
-  "status": "PACKAGE_VERIFIED_STORAGE_PENDING_RUNTIME_NOT_RUN",
+  "status": "PACKAGE_AND_STORAGE_VERIFIED_RUNTIME_NOT_RUN",
   "builder_source_commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
-  "provenance_report_commit": "COMMIT_CONTAINING_THIS_INDEX",
+  "provenance_report_commit": "4a8f6ddf6c09025b9fc6180fbc98db6e6d4b3445",
   "artifact": {
     "filename": "TAIKO5DX_KR_DIAG_222_COMPOSITION.zip",
     "bytes": 4155050,
@@ -16,7 +16,8 @@
     "INHERITED_IPS_READBACK.json",
     "SOURCE_RECEIPT.json",
     "REPORT.md",
-    "KNOWN_FAILURES.json"
+    "KNOWN_FAILURES.json",
+    "STORAGE_VERIFICATION.json"
   ],
   "record_ledger_retention": "Evidence archive; 14,872 per-record SHA-256 rows",
   "lineage_archive": {
@@ -25,5 +26,28 @@
   },
   "product_state": "V369_UNCHANGED",
   "v371": "PARTIAL_BLOCKED",
-  "semantic_release_admissions": 0
+  "semantic_release_admissions": 0,
+  "storage": {
+    "drive_id": "16BB4WUBGwQO62khsyp6NfovAoAeA2yRo",
+    "drive_folder_id": "1MJyrPP1qtzsfvbwc2qdarw-m37p79jdH",
+    "filename": "TAIKO5DX_KR_DIAG_222_COMPOSITION.zip",
+    "bytes": 4155050,
+    "sha256": "dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e",
+    "downloaded_again_matches_committed_artifact": true,
+    "builder_source_commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
+    "provenance_report_commit": "4a8f6ddf6c09025b9fc6180fbc98db6e6d4b3445",
+    "source_governance_ci": {
+      "run_id": 35879795806,
+      "conclusion": "success",
+      "meaning": "Governance only; not product validation"
+    },
+    "runtime": "NOT_RUN"
+  },
+  "evidence_archive": {
+    "filename": "COMPOSITION222_EVIDENCE.zip",
+    "drive_id": "1QYLW4ojnazDGiKk7-z_VQGq7Q3e1gxlw",
+    "bytes": 662855,
+    "sha256": "abb440f5ad12f38937776d828ee7bf31553c2eac1125a45a056ae6a20f2a245b",
+    "downloaded_again_matches": true
+  }
 }

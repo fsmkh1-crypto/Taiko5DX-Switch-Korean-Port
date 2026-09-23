@@ -60,6 +60,21 @@
       "package_sha256": "4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70",
       "package_bytes": 4152716,
       "held_original": 152
+    },
+    "composition_222": {
+      "index": "selective_ko/diagnostics/composition_222/INDEX.json",
+      "status": "PACKAGE_AND_STORAGE_VERIFIED_RUNTIME_NOT_RUN",
+      "builder_source_commit": "b9c834874c82ce7475e0022ac04d592977c0feb9",
+      "provenance_report_commit": "4a8f6ddf6c09025b9fc6180fbc98db6e6d4b3445",
+      "package_drive_id": "16BB4WUBGwQO62khsyp6NfovAoAeA2yRo",
+      "package_sha256": "dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e",
+      "changed_original_records": 18,
+      "appended_helpers": 40,
+      "stored_records_verified": 14872,
+      "product_milestone": "V369_UNCHANGED",
+      "V371": "PARTIAL_BLOCKED",
+      "runtime": "NOT_RUN",
+      "semantic_release_admissions": 0
     }
   }
 }
