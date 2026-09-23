@@ -1,0 +1,45 @@
+{
+  "schema": "V371_OWNER_EXTENT_KNOWN_FAILURES_V1",
+  "base_head": "3130e21e818d0ced734e9defab3f4c8fe7cfbfcf",
+  "entries": [
+    {
+      "id": "OBSERVATION_IS_NOT_OWNER_EXTENT",
+      "status": "FIXED_BOUNDED_REGRESSION_PASS",
+      "reproductions": [
+        "ECF00000.TS5:DAB1C",
+        "EPF11700.TS5:12BC"
+      ],
+      "prohibited_fixes": [
+        "address exception",
+        "clamp observation",
+        "blanket four-byte consumer/relation views",
+        "remove partition gate"
+      ]
+    },
+    {
+      "id": "HEADER_ONLY_RECIPE_END_IS_PAYLOAD_END",
+      "status": "INITIAL_FIX_REJECTED_THEN_CORRECTED",
+      "initial_failures": 3,
+      "cause": "Projecting source header end selects payload terminal anchor when source recipe is four bytes.",
+      "fix": "Mapped header start plus four-byte storage width.",
+      "regression": "test_header_only_source_recipe_growth_keeps_four_byte_identity"
+    },
+    {
+      "id": "TOOL_TIMEOUT_NOT_TEST_RESULT",
+      "status": "OPERATIONAL_ONLY",
+      "attempts": 2,
+      "final_complete_run": "REGRESSION_RESULTS.json"
+    },
+    {
+      "id": "SOURCE_IDENTITY_60",
+      "status": "PROVENANCE_HOLD_UNCHANGED",
+      "not_caused_by_this_gate": true
+    },
+    {
+      "id": "FULL_PRODUCT_VALIDATION",
+      "status": "NOT_EXECUTED",
+      "candidate_files_emitted": 0,
+      "remaining_obligations_not_observed": 5199
+    }
+  ]
+}

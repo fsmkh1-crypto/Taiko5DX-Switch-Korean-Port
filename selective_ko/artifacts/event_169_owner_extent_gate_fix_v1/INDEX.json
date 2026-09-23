@@ -1,0 +1,116 @@
+{
+  "schema": "EVENT_169_OWNER_EXTENT_GATE_FIX_V1_INDEX",
+  "validation_id": "V371",
+  "scope": "V371_OWNER_IDENTITY_AND_VIEW_EXTENT_GATE_FIX_AND_BOUNDED_REGRESSION",
+  "base_head": "3130e21e818d0ced734e9defab3f4c8fe7cfbfcf",
+  "implementation_commit": "59e12802f402ea06c3331c16b32c2cbb9216e900",
+  "implementation_tree": "3d43e663b734137ba56ff66f84b861834e01065c",
+  "status": "BOUNDED_FIX_IMPLEMENTED_AND_TESTED_PRODUCT_NOT_EMITTED",
+  "implementation_files": [
+    {
+      "path": "builder/selective_event_overlap.py",
+      "bytes": 36306,
+      "sha256": "a87a8a8f1fee928a29012539fd4c4f8b793b96c02ab030be68654a0d8474dfec",
+      "git_blob_sha1": "53d15bb133cf7f7dade7ddccc46df8ab27fd3bd8"
+    },
+    {
+      "path": "builder/selective_event_obligation_receipts.py",
+      "bytes": 41231,
+      "sha256": "b3891e33fe095eda3f009bcf461c3652310812c888e93c3990e66b81f8560016",
+      "git_blob_sha1": "c234ced6df7650edaf706b8d7d93d85fa1df6a36"
+    },
+    {
+      "path": "tests/test_v371_owner_extent.py",
+      "bytes": 14602,
+      "sha256": "59f97418ed0dc5947e92ce47a9c750de745d075e4aab362549156846d8ca9146",
+      "git_blob_sha1": "ad7edd1add95cb3686c713ff6334818ba2174554"
+    },
+    {
+      "path": ".github/workflows/event-serializer-policy.yml",
+      "bytes": 2578,
+      "sha256": "8735f3ad25323c97ed0e96556fa6146efabdd7704487fec6021fe634d947cf76",
+      "git_blob_sha1": "1baa973eef384da9881bbd739d815dfb6ae75269"
+    }
+  ],
+  "evidence_package": {
+    "name": "V371_OWNER_IDENTITY_VIEW_EXTENT_FIX_AND_BOUNDED_REGRESSION_20260923.zip",
+    "drive_id": "1Xr1XIlI6OC34DgKvBTl3RQvby2lT8slk",
+    "bytes": 42144503,
+    "sha256": "aac97129f7e236339bd70a9f0c83880bac9cb134cb158d4faf00536fdfc0d071"
+  },
+  "prior_input_checkpoint": {
+    "drive_id": "1H0vvtiy5HN0srMaZv_BDmlDz5jvPSRhj",
+    "bytes": 42576785,
+    "sha256": "815cfbab853cb2d2c916c92d80118b70496f4437df366db5fc93969c50b56108",
+    "archive_member": "archives/PRIOR_INPUT_CHECKPOINT.zip"
+  },
+  "validation": {
+    "collected_existing": 720,
+    "new_extent_tests": 26,
+    "total": 746,
+    "passed": 746,
+    "failed": 0,
+    "errors": 0,
+    "skipped": 0,
+    "population": {
+      "IM01": 150,
+      "IM02": 363,
+      "IM03": 196,
+      "H01": 7,
+      "compact_role_policy": 4,
+      "new_extent": 26
+    },
+    "historical_adapter_731_is_same_population": false,
+    "regression_member": "REGRESSION_RESULTS.json",
+    "actual_results_member": "actual_regression/BOUNDED_REAL_RESULTS.json",
+    "in_memory_real_file_passed": 2,
+    "owner_identity_checks": 16126,
+    "bridge_errors": 0,
+    "relation_passed": 69,
+    "receipt_ids": 5268,
+    "not_observed": 5199,
+    "automatic_ci_population_expected": 37,
+    "ci_result_authority": "External CANONICAL_WRITE_RECEIPT after final ref update"
+  },
+  "actual_files": [
+    {
+      "file": "ECF00000.TS5",
+      "local_complete": true,
+      "source_sha256": "bbaaff8dc552da17a49ea2e6ce49a76da662541ee22fdec7dc7933046430bf09",
+      "in_memory_output_sha256": "ecbece479bb17643b02b8b97427931a70b347dc3e02063e8a0532a3dba22d24c",
+      "in_memory_output_size": 1125212,
+      "identities": 15951,
+      "recipes": 14281,
+      "relations": 96,
+      "candidate_file_emitted": false,
+      "last_writer": "FINAL_TABLE"
+    },
+    {
+      "file": "EPF11700.TS5",
+      "local_complete": true,
+      "source_sha256": "bb70782b6d5f14ed427a90259b922c5f6666f13bee0314b29b019884f287852b",
+      "in_memory_output_sha256": "1b14ec18cfa4bf7a5e3e7b0a710ad7d631041dbea9163047d5e50085472f21b9",
+      "in_memory_output_size": 10460,
+      "identities": 175,
+      "recipes": 155,
+      "relations": 2,
+      "candidate_file_emitted": false,
+      "last_writer": "FINAL_TABLE"
+    }
+  ],
+  "known_failures": "selective_ko/artifacts/event_169_owner_extent_gate_fix_v1/KNOWN_FAILURES.json",
+  "frozen_counts": {
+    "owners": 66987,
+    "recipes": 52491,
+    "field_policies": 24305,
+    "writer_policies": 24284,
+    "no_writer_policies": 21,
+    "units": 80
+  },
+  "source_identity_60_provenance_hold": "UNCHANGED",
+  "product_milestone": "V369_UNCHANGED",
+  "runtime_hook_required": false,
+  "candidate_event_files_emitted": 0,
+  "claim_boundary": "Owner gate fix, collected bounded regressions and two in-memory file-local runs only. Missing obligations are not PASS.",
+  "next_scope_after_fresh_signal": "V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION"
+}
