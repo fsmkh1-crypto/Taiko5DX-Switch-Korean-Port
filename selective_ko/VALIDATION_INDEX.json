@@ -2,12 +2,12 @@
   "schema": "SELECTIVE_VALIDATION_INDEX_V1",
   "track": "SWITCH_SELECTIVE_KOREANIZATION",
   "current_validation_id": "V371",
-  "current_checkpoint": "selective_ko/EVENT_169_ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_V371.md",
-  "current_checkpoint_kind": "ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_AND_BOUNDED_VALIDATION",
-  "current_status": "CLOSED_BOUNDED_ADAPTER_IMPLEMENTED_AWAIT_ACTIVE_REQUEST_AND_169_FILE_OFFLINE_VALIDATION",
-  "parent_validation_id": "V370",
-  "parent_commit": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
-  "implementation_commit": "4c5d2c4e010bf9c760337d39c0a64b6a82314918",
+  "current_checkpoint": "selective_ko/EVENT_169_OWNER_IDENTITY_VIEW_EXTENT_GATE_FIX_V371.md",
+  "current_checkpoint_kind": "OWNER_IDENTITY_VIEW_EXTENT_FIX_AND_BOUNDED_REGRESSION",
+  "current_status": "V371_OWNER_EXTENT_GATE_FIXED_BOUNDED_PASS_AWAIT_169_FILE_CANDIDATE",
+  "parent_validation_id": "V371",
+  "parent_commit": "3130e21e818d0ced734e9defab3f4c8fe7cfbfcf",
+  "implementation_commit": "59e12802f402ea06c3331c16b32c2cbb9216e900",
   "product_milestone": {
     "validation_id": "V369",
     "authority": "selective_ko/EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md",
@@ -15,10 +15,19 @@
     "overlap_index": "selective_ko/artifacts/event_169_overlap_cluster_design_v1/INDEX.json",
     "unchanged_by_v371": true
   },
-  "current_implementation_artifact": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/INDEX.json",
+  "current_implementation_artifact": "selective_ko/artifacts/event_169_owner_extent_gate_fix_v1/INDEX.json",
   "historical_validation_discovery": {
     "catalog": "selective_ko/RESUME_HISTORY_INDEX.json",
     "full_port_index": "docs/VALIDATION_LEDGER.md"
   },
-  "next_scope": "AWAIT_EXPLICIT_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION"
+  "next_scope": "AWAIT_EXPLICIT_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION",
+  "prior_adapter_checkpoint": {
+    "current_checkpoint": "selective_ko/EVENT_169_ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_V371.md",
+    "current_checkpoint_kind": "ROLE_AWARE_FIELD_POLICY_ADAPTER_IMPLEMENTATION_AND_BOUNDED_VALIDATION",
+    "current_status": "CLOSED_BOUNDED_ADAPTER_IMPLEMENTED_AWAIT_ACTIVE_REQUEST_AND_169_FILE_OFFLINE_VALIDATION",
+    "parent_validation_id": "V370",
+    "parent_commit": "fedf8f2dc7161f4aae145fa59fecfe47d0658389",
+    "implementation_commit": "4c5d2c4e010bf9c760337d39c0a64b6a82314918",
+    "current_implementation_artifact": "selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/INDEX.json"
+  }
 }
