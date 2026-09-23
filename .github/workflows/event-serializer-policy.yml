@@ -14,6 +14,7 @@ on:
       - 'tools/validate_event_overlap.py'
       - 'tests/test_selective_event_role_policy.py'
       - 'tests/test_v371_h01_connection.py'
+      - 'tests/test_v371_owner_extent.py'
       - 'selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/**'
       - '.github/workflows/event-serializer-policy.yml'
   pull_request:
@@ -29,6 +30,7 @@ on:
       - 'tools/validate_event_overlap.py'
       - 'tests/test_selective_event_role_policy.py'
       - 'tests/test_v371_h01_connection.py'
+      - 'tests/test_v371_owner_extent.py'
       - 'selective_ko/artifacts/event_169_role_aware_field_policy_adapter_v1/**'
 
 permissions:
@@ -58,3 +60,4 @@ jobs:
           tools/validate_event_overlap.py
       - run: python -m unittest discover -s tests -p 'test_selective_event_role_policy.py' -v
       - run: python -m unittest discover -s tests -p 'test_v371_h01_connection.py' -v
+      - run: python -m unittest discover -s tests -p 'test_v371_owner_extent.py' -v

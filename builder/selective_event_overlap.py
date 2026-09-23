@@ -138,6 +138,11 @@ class FileRun:
     recipe_inputs: tuple[RecipeInput,...]
     consumer_results: tuple[Result,...]
     retained_units: tuple[str,...]
+    # Identity is always four bytes. Recipe and frozen-relation extents are
+    # independent witnesses; an observation alone must never authorize either.
+    owner_identity_spans: Mapping[str,Span]=field(default_factory=dict)
+    owner_recipe_spans: Mapping[str,Span]=field(default_factory=dict)
+    owner_relation_spans: Mapping[str,Span]=field(default_factory=dict)
 
     @property
     def local_complete(self):
@@ -151,6 +156,12 @@ class FileRun:
                                        if required_failure(r)],
                 'physical_observations_not_normative':sum(r.operation.startswith('OBSERVE:') for r in self.attempts),
                 'retained_units':list(self.retained_units),
+                'owner_extent_accounting':{
+                    'identities':len(self.owner_identity_spans),
+                    'exact_recipe_views':len(self.owner_recipe_spans),
+                    'frozen_relation_views':len(self.owner_relation_spans),
+                    'identity_only':len(set(self.owner_identity_spans)
+                                        -set(self.owner_recipe_spans)-set(self.owner_relation_spans))},
                 'layout':None if self.assembled is None else self.assembled.audit.to_dict()}
 
 
@@ -287,12 +298,16 @@ class IntegratedSerializer:
         file=request.file; require(file in self.expected_files,'UNKNOWN_EVENT_FILE',file)
         cat=self.catalog;owners=self.owners_by_file[file];fields=self.fields_by_file[file]
         session=RoleContractSession(cat,dict(self.engine.recipes));extra=[];ris=[];directives={};spans={};assembled=None;view_results=[]
+        identities={};recipe_spans={};relation_spans={}
+        relation_owners=set().union(*self.cluster_members.values()) if self.cluster_members else set()
         units=tuple(sorted(self.units_by_file[file]))
         def capture(op,ex):extra.append(blocked(op,ex.code,detail=str(ex)))
         def finish():
             return FileRun(file,request,assembled,tuple(session.attempts+extra),MappingProxyType(dict(spans)),
                            MappingProxyType(dict(session.prepared)),MappingProxyType(dict(directives)),
-                           tuple(ris),tuple(view_results),units)
+                           tuple(ris),tuple(view_results),units,
+                           MappingProxyType(dict(identities)),MappingProxyType(dict(recipe_spans)),
+                           MappingProxyType(dict(relation_spans)))
         try:
             request.source_identity.verify(file,request.source);g=Geometry.read(request.source)
             payloads=_unique(request.payloads,'owner','PAYLOAD_DIRECTIVE')
@@ -434,15 +449,48 @@ class IntegratedSerializer:
             try:
                 session.attempts.append(entry.check_no_writer(fields[key],layout,trial.data,approvals.get(key)))
             except ContractError as ex:capture('FIELD:'+key,ex)
-        # Preserve every known view jointly. No alternate-view absence is inferred.
+        # Identity is not a runtime extent. Keep recipe, consumer and frozen
+        # relation obligations separate; only an explicit relation authorizes
+        # projecting the retained observed view for topology (not for payload).
         for key,o in sorted(owners.items()):
             try:
-                s=layout.placements.get(key)
-                if s is None:s=layout.project(o.observed_span)
-                require(layout.final_offsets[o.partition]<=s.start<s.end<=layout.final_offsets[o.partition+1],
-                        'FINAL_OWNER_PARTITION',key)
-                require(trial.data[s.start:s.start+4]==o.source_header,'FINAL_OWNER_HEADER',key)
-                spans[key]=s
+                # When an exact source recipe is only its four-byte header,
+                # source_start+4 is also the replaceable payload's end anchor.
+                # Projecting that endpoint would include any newly grown data.
+                # The retained header's storage width stays four bytes instead.
+                identity_start=layout.anchor(o.observed_span.start)
+                identity=Span(identity_start,identity_start+4)
+                require(identity.size==4 and identity.start%4==0,
+                        'FINAL_OWNER_IDENTITY_WIDTH_OR_ALIGNMENT',key)
+                def check_extent(span,code):
+                    require(layout.final_offsets[o.partition]<=span.start<span.end
+                            <=layout.final_offsets[o.partition+1],code,key)
+                    require(span.start==identity.start and span.size>=4
+                            and span.start%4==0 and span.size%4==0,
+                            'FINAL_OWNER_VIEW_IDENTITY_OR_ALIGNMENT',key)
+                check_extent(identity,'FINAL_OWNER_PARTITION')
+                require(trial.data[identity.start:identity.end]==o.source_header,'FINAL_OWNER_HEADER',key)
+                identities[key]=identity
+                if o.needs_upstream_recipe:
+                    prepared=session.prepared[key]
+                    require(prepared.result.status==Status.PREPARED,
+                            'FINAL_OWNER_EXACT_RECIPE_NOT_PREPARED',key)
+                    if o.route==Route.DIRECT:
+                        require(key in layout.placements,'FINAL_DIRECT_PLACEMENT_MISSING',key)
+                        recipe_span=layout.placements[key]
+                    else:
+                        # Delegation suppresses independent writes, NOT the
+                        # exact upstream recipe boundary or its range checks.
+                        recipe_span=layout.project(prepared.source_span)
+                    check_extent(recipe_span,'FINAL_OWNER_RECIPE_PARTITION')
+                    recipe_spans[key]=recipe_span
+                if key in relation_owners:
+                    relation_span=layout.project(o.observed_span)
+                    check_extent(relation_span,'FINAL_OWNER_RELATION_PARTITION')
+                    relation_spans[key]=relation_span
+                # The IM02 bridge labels an identity-only placement explicitly.
+                # It cannot discharge an occurrence, relation or support range.
+                spans[key]=relation_spans.get(key,recipe_spans.get(key,identity))
                 contracts=self.consumers_by_owner.get(key,())
                 if contracts:
                     samples={c.id:tuple(MappedWindow(r.id,r.source_span,layout.project(r.source_span),
@@ -484,7 +532,13 @@ class IntegratedSerializer:
             for key,s in r.owner_spans.items():
                 o=self.catalog.owners[key]
                 mode={Route.DIRECT:'MEMBER_VIEW',Route.DELEGATE:'DELEGATED_VIEW',Route.PRESERVE:'PRESERVED_VIEW'}[o.route]
-                views.append(OwnerView(key,place(file,s,o.partition,o.unit,l.mapping_proof),mode))
+                basis=('FROZEN_RELATION_VIEW' if key in r.owner_relation_spans else
+                       'EXACT_RECIPE_VIEW' if key in r.owner_recipe_spans else 'IDENTITY_ONLY')
+                recipe_span=r.owner_recipe_spans.get(key)
+                recipe_place=(None if recipe_span is None else
+                              place(file,recipe_span,o.partition,o.unit,l.mapping_proof))
+                views.append(OwnerView(key,place(file,s,o.partition,o.unit,l.mapping_proof),mode,
+                                       basis,recipe_place))
             for rr,s in l.final_regions:regions.append(UnitRegion(rr.unit,rr.cluster,place(file,s,rr.partition,rr.unit,l.mapping_proof)))
             for w in a.ownership:
                 writers.append(WriterRange('EVENT:'+file,w.final_span,w.writer,w.unit,candidate.fingerprint))
@@ -509,7 +563,8 @@ class IntegratedSerializer:
                     require(recipe.pc is not None,'OCCURRENCE_PC_RECIPE_REQUIRED',oid)
                     rel=Span(pcspan.start-recipe.pc.span.start,pcspan.end-recipe.pc.span.start)
                     proj=r.directives[key].project(rel,prepared.data)
-                    owner_span=r.owner_spans[key]
+                    require(key in r.owner_recipe_spans,'BRIDGE_EXACT_RECIPE_VIEW_MISSING',oid)
+                    owner_span=r.owner_recipe_spans[key]
                     target=Span(owner_span.start+proj.start,owner_span.start+proj.end)
                     require(target.end<=owner_span.end,'BRIDGE_OCCURRENCE_OUTSIDE_OWNER',oid)
                     p=place(file,target,o.partition,o.unit,l.mapping_proof)

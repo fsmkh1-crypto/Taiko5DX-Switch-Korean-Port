@@ -133,6 +133,10 @@ class OwnerView:
     owner: str
     placement: Placement
     mode: str  # DELEGATED_VIEW / MEMBER_VIEW / PRESERVED_VIEW
+    # ESTABLISHED_VIEW keeps the pre-existing explicit-witness API. The active
+    # bridge always supplies one of the other three, more specific bases.
+    extent_basis: str = 'ESTABLISHED_VIEW'
+    recipe_placement: Placement | None = None
 
 
 @dataclass(frozen=True)
@@ -475,9 +479,40 @@ class _Evaluation:
                          'SELECTED_REPLACEMENT_CANDIDATE':'MEMBER_VIEW',
                          'PRESERVATION_CANDIDATE':'PRESERVED_VIEW'}[o['draft_route']]
         require(v.mode == expected_mode, 'INDEPENDENT_OUTER_WRITE_OR_WRONG_VIEW_MODE', owner)
+        require(v.extent_basis in ('ESTABLISHED_VIEW','EXACT_RECIPE_VIEW',
+                                  'FROZEN_RELATION_VIEW','IDENTITY_ONLY'),
+                'UNKNOWN_OWNER_EXTENT_BASIS', owner)
+        if v.extent_basis == 'IDENTITY_ONLY':
+            require(v.placement.span.size == 4 and v.recipe_placement is None,
+                    'IDENTITY_ONLY_VIEW_CANNOT_CARRY_RANGE', owner)
+        if v.extent_basis == 'EXACT_RECIPE_VIEW':
+            require(v.recipe_placement == v.placement, 'EXACT_RECIPE_VIEW_MISMATCH', owner)
+        if v.recipe_placement is not None:
+            rp = v.recipe_placement; payload = self.slice(rp, v.placement.artifact)
+            require(rp.partition == v.placement.partition and rp.unit == v.placement.unit
+                    and rp.span.start == v.placement.span.start and rp.span.size >= 4
+                    and rp.span.size % 4 == 0 and payload[:4] == bytes.fromhex(o['source_header_hex']),
+                    'RECIPE_VIEW_IDENTITY_PARTITION_OR_ALIGNMENT', owner)
         require(v.placement.span.start % 4 == 0 and v.placement.span.size % 4 == 0 and
                 data[:4] == bytes.fromhex(o['source_header_hex']), 'FINAL_VIEW_HEADER_OR_ALIGNMENT', owner)
         return v
+
+    def recipe_view(self, owner: str) -> Placement:
+        v = self.view(owner)
+        if v.recipe_placement is not None:
+            return v.recipe_placement
+        # A header-only witness or a topology view is not payload authority.
+        # Older callers can still submit their pre-existing explicit view.
+        require(v.extent_basis == 'ESTABLISHED_VIEW', 'EXACT_RECIPE_VIEW_NOT_PROVISIONED', owner)
+        return v.placement
+
+    def range_view(self, owner: str, *, relation: bool = False) -> Placement:
+        v = self.view(owner)
+        require(v.extent_basis != 'IDENTITY_ONLY', 'IDENTITY_ONLY_IS_NOT_RANGE_AUTHORITY', owner)
+        if relation:
+            require(v.extent_basis in ('ESTABLISHED_VIEW','FROZEN_RELATION_VIEW'),
+                    'FROZEN_RELATION_VIEW_NOT_PROVISIONED', owner)
+        return v.placement
 
     def prepare(self, owner: str) -> PreparedRecipe:
         if owner in self.prep_errors:
@@ -560,7 +595,7 @@ class _Evaluation:
             sub = self.get('OCC',oid,self.occs)
             require(sub.owner == r['owner'] and sub.pc_span == Span(x['escape_start'],x['literal_end']) and
                     isinstance(sub.action, Action), 'EXACT_OCCURRENCE_KEY_RANGE_OR_ACTION', oid)
-            v = self.view(sub.owner); p = self.prepare(sub.owner); vp = v.placement
+            vp = self.recipe_view(sub.owner); p = self.prepare(sub.owner)
             actual = self.slice(sub.placement, vp.artifact)
             require(sub.placement.partition == vp.partition and sub.placement.unit == vp.unit and
                     vp.span.start+4 <= sub.placement.span.start < sub.placement.span.end <= vp.span.end,
@@ -646,8 +681,8 @@ class _Evaluation:
     def check_relation(self, oid):
         def fn():
             r = self.c.relations[oid]; e = r['canonical_edge']; u = r['unit']
-            ov, iv = self.view(e['outer_owner']), self.view(e['inner_owner'])
-            a,b = ov.placement,iv.placement
+            a = self.range_view(e['outer_owner'], relation=True)
+            b = self.range_view(e['inner_owner'], relation=True)
             region = self.region(u,e['cluster_id']).placement
             require(a.artifact == b.artifact == region.artifact and a.unit == b.unit == u and
                     a.partition == b.partition == region.partition, 'RELATION_PARTITION_OR_UNIT_MISMATCH', oid)
@@ -696,7 +731,7 @@ class _Evaluation:
             need(self.writer_index is not None, 'FINAL_WRITER_WITNESS_NOT_OBSERVED')
             self.writer_index.cover(sub.placement.artifact,sub.placement.span)
             if c['role'] == 'NON_KOREAN_EXTERNAL_HEADER_OVERLAP':
-                v = self.view(c['overlapped_node']).placement
+                v = self.range_view(c['overlapped_node'])
                 inter = overlap(sub.placement.span,v.span)
                 require(inter is not None and inter == Span(v.span.start,v.span.start+4),
                         'SUPPORT_EXTERNAL_HEADER_BOUNDARY_CHANGED', oid)
