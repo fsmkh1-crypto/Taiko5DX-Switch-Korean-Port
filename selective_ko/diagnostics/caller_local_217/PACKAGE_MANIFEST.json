@@ -1,0 +1,196 @@
+{
+  "schema": "CALLER_LOCAL_217_PACKAGE_MANIFEST_V1",
+  "package": {
+    "filename": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "bytes": 4138536,
+    "sha256": "43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe",
+    "members": 17,
+    "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+    "drive_id": "1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt",
+    "file_name": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "roundtrip_exact": true
+  },
+  "members": [
+    {
+      "path": "Taiko5DX_KR_DIAG_217/SELECTIVE_PACKAGE_INFO.json",
+      "bytes": 3140,
+      "sha256": "daf60bfba4ccf4c821c8472a85bd78ccee6019fc8d614216134e8bc2d16b3278"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/exefs/D9120950C258610A746F4A31CE3A3B376DE393D9.ips",
+      "bytes": 2742,
+      "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/ECF00000.TS5",
+      "bytes": 1119288,
+      "sha256": "1332c037abb44a97f996a1046d4372675428ee2294857b269cb60345bde22c7b"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EFF00E00.TS5",
+      "bytes": 13612,
+      "sha256": "e72cba217af5210e4681ac651833fcad94622fd21ea3162a28fc564460388d41"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EFF0A700.TS5",
+      "bytes": 7048,
+      "sha256": "ce6264f71051e08be98f7c6e4c890c5fb6f566671259062db4e19d18fb77ae4a"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EFF0C300.TS5",
+      "bytes": 334764,
+      "sha256": "e1f4a5aaed8ab015c57e76ab5105b49b2c23d5b1f4673f9d9daa0d5a5491f257"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EFF16700.TS5",
+      "bytes": 59748,
+      "sha256": "24460e9aced66bda3a8a3542ea5dd16b611e50838082815e4775b2e57f4151f7"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EFF20500.TS5",
+      "bytes": 75820,
+      "sha256": "8d5ef717b614ccc72a3fa1b7176266801f031c961483add8d9135efd6e6a4045"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EP124B00.TS5",
+      "bytes": 183644,
+      "sha256": "ae057b4499d46b195f170b33ffd724e73bbf584af1765f661033ebcd71afb5ef"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EP12E400.TS5",
+      "bytes": 21820,
+      "sha256": "a6d7b3b233480065aea0ee0bed1a184d05f4cff98db4dde1b190acd163181852"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EP12F400.TS5",
+      "bytes": 26692,
+      "sha256": "935b3358271be4c082f0798355130ef111fa339ab7fcc3a82d7b1263c2c50463"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EP40CB00.TS5",
+      "bytes": 3372,
+      "sha256": "7d58bcb76e9c511b2daee3ca5d0c64545a0639b672eef1deaef0eec7a2d17d12"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EPF00E00.TS5",
+      "bytes": 48468,
+      "sha256": "a8d8964330ed03e64239dfcb39123f73cd79f6397c8faba8dca76c17eb8b2632"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EPF20500.TS5",
+      "bytes": 74656,
+      "sha256": "d892fe9fe347159e693224bd36ee69b6d8bb778d84c6a239fc092a04c97d1655"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/EVENT/EPF2E000.TS5",
+      "bytes": 12344,
+      "sha256": "c55c7c727cd59ffb59e81581d237144855ae16dadadd1c88fecfaba2dc32d07a"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/FONT/FONT_JPN.G1T",
+      "bytes": 16779036,
+      "sha256": "c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932"
+    },
+    {
+      "path": "Taiko5DX_KR_DIAG_217/romfs/TAI5MSG_JP.DAT",
+      "bytes": 1840393,
+      "sha256": "eddf9cf57332f090fde2c6b9ed707342fc57c1ed6a366de89c553b707953ba1c"
+    }
+  ],
+  "package_info": {
+    "V369": "UNCHANGED",
+    "V371": "PARTIAL_BLOCKED",
+    "build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9",
+    "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+    "candidate_fingerprint": "11574e3db579bbf08c6e43e6d714fda0dd76b5263bf9bfd37d4a5d750154d147",
+    "files": [
+      {
+        "bytes": 2742,
+        "path": "exefs/D9120950C258610A746F4A31CE3A3B376DE393D9.ips",
+        "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4"
+      },
+      {
+        "bytes": 1119288,
+        "path": "romfs/EVENT/ECF00000.TS5",
+        "sha256": "1332c037abb44a97f996a1046d4372675428ee2294857b269cb60345bde22c7b"
+      },
+      {
+        "bytes": 13612,
+        "path": "romfs/EVENT/EFF00E00.TS5",
+        "sha256": "e72cba217af5210e4681ac651833fcad94622fd21ea3162a28fc564460388d41"
+      },
+      {
+        "bytes": 7048,
+        "path": "romfs/EVENT/EFF0A700.TS5",
+        "sha256": "ce6264f71051e08be98f7c6e4c890c5fb6f566671259062db4e19d18fb77ae4a"
+      },
+      {
+        "bytes": 334764,
+        "path": "romfs/EVENT/EFF0C300.TS5",
+        "sha256": "e1f4a5aaed8ab015c57e76ab5105b49b2c23d5b1f4673f9d9daa0d5a5491f257"
+      },
+      {
+        "bytes": 59748,
+        "path": "romfs/EVENT/EFF16700.TS5",
+        "sha256": "24460e9aced66bda3a8a3542ea5dd16b611e50838082815e4775b2e57f4151f7"
+      },
+      {
+        "bytes": 75820,
+        "path": "romfs/EVENT/EFF20500.TS5",
+        "sha256": "8d5ef717b614ccc72a3fa1b7176266801f031c961483add8d9135efd6e6a4045"
+      },
+      {
+        "bytes": 183644,
+        "path": "romfs/EVENT/EP124B00.TS5",
+        "sha256": "ae057b4499d46b195f170b33ffd724e73bbf584af1765f661033ebcd71afb5ef"
+      },
+      {
+        "bytes": 21820,
+        "path": "romfs/EVENT/EP12E400.TS5",
+        "sha256": "a6d7b3b233480065aea0ee0bed1a184d05f4cff98db4dde1b190acd163181852"
+      },
+      {
+        "bytes": 26692,
+        "path": "romfs/EVENT/EP12F400.TS5",
+        "sha256": "935b3358271be4c082f0798355130ef111fa339ab7fcc3a82d7b1263c2c50463"
+      },
+      {
+        "bytes": 3372,
+        "path": "romfs/EVENT/EP40CB00.TS5",
+        "sha256": "7d58bcb76e9c511b2daee3ca5d0c64545a0639b672eef1deaef0eec7a2d17d12"
+      },
+      {
+        "bytes": 48468,
+        "path": "romfs/EVENT/EPF00E00.TS5",
+        "sha256": "a8d8964330ed03e64239dfcb39123f73cd79f6397c8faba8dca76c17eb8b2632"
+      },
+      {
+        "bytes": 74656,
+        "path": "romfs/EVENT/EPF20500.TS5",
+        "sha256": "d892fe9fe347159e693224bd36ee69b6d8bb778d84c6a239fc092a04c97d1655"
+      },
+      {
+        "bytes": 12344,
+        "path": "romfs/EVENT/EPF2E000.TS5",
+        "sha256": "c55c7c727cd59ffb59e81581d237144855ae16dadadd1c88fecfaba2dc32d07a"
+      },
+      {
+        "bytes": 16779036,
+        "path": "romfs/FONT/FONT_JPN.G1T",
+        "sha256": "c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932"
+      },
+      {
+        "bytes": 1840393,
+        "path": "romfs/TAI5MSG_JP.DAT",
+        "sha256": "eddf9cf57332f090fde2c6b9ed707342fc57c1ed6a366de89c553b707953ba1c"
+      }
+    ],
+    "implemented_boundaries": 217,
+    "release_accepted": false,
+    "runtime": "NOT_RUN",
+    "schema": "BOUNDED_217_DIAGNOSTIC_PACKAGE_V1",
+    "scope": "13_EVENT_FILES_PLUS_INHERITED_ROOT_PROFILE_FONT_IPS",
+    "title_id": "0100346017304000",
+    "version": "1.1.3"
+  }
+}

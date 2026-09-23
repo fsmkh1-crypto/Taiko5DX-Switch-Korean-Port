@@ -32,10 +32,13 @@
   "supplemental_diagnostics": {
     "caller_local_217": {
       "index": "selective_ko/diagnostics/caller_local_217/INDEX.json",
-      "status": "SOURCE_FREEZE_PREPARED_AWAIT_DIAGNOSTIC_BUILD",
+      "status": "DIAGNOSTIC_ZIP_CREATED_OFFLINE_VERIFIED_RUNTIME_NOT_RUN",
       "product_milestone": "V369_UNCHANGED",
       "V371": "PARTIAL_BLOCKED",
-      "runtime": "NOT_RUN"
+      "runtime": "NOT_RUN",
+      "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "package_sha256": "43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe",
+      "build_report": "selective_ko/diagnostics/caller_local_217/BUILD_REPORT.json"
     }
   }
 }

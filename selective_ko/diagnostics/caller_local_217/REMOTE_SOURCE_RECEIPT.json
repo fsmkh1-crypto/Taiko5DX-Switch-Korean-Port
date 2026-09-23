@@ -1,0 +1,169 @@
+{
+  "repository": "fsmkh1-crypto/Taiko5DX-Switch-Korean-Port",
+  "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+  "remote_main_verified": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+  "files": [
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/evidence/backup/work/resume/replay.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "f76da83ddf455c1eba1cabec616dbb62215cfcef95d74780a246402c39f2aa02",
+      "git_blob_sha": "7de6305bd964ad0fea7c91d98023bd902ce35c95"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/caller_local_integration/compose.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "3deede6da4841b97e38fbebc4df60b6c3d9a5ed65ecb8212dd68cec427267b90",
+      "git_blob_sha": "b9ed277063aa7b820fc219b14d53a4626f077798"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/caller_local_redesign/caller_local.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "764b22fea1e404d8243ddb3569c124fa56bfb5eeefdd23320fe2c6df71612d60",
+      "git_blob_sha": "3e770341f2fe6ed40f0b2edc5455179949ac95ce"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/package_builder.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "b0c5b3f912ac098726ecec30de8634b1c50a088d3a99bbe7402d93a9598abae0",
+      "git_blob_sha": "35baea77942bd407b2842b0e38e9143534a1cc9d"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/validate.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "5c6723f8ebc529ca2cb181ebf6b1b69dbffb478bd9e8d567e7502e78e26208a3",
+      "git_blob_sha": "d2f705bceef8a3eaaedd7c1ef045b1f5263a55a5"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/residual75_integration/residual.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "8781c04c4351e01348a09f6c450fbc7fc2da710be65cc0d7531297f06dff22ec",
+      "git_blob_sha": "1bd1f50aa6e4d5a8f89e36f23afb2590702b1652"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "cba55ab5000dde968fb1ab0d7e8a5ed9860324165815acdc1a03aa0b205852b3",
+      "git_blob_sha": "809932cf863459db1cc71f35d9f802d112f0234a"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_contract_catalog.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "ade650ba435bf197e6859fa641a3473d75f498bdeb8a75ab9b03611dc01209e6",
+      "git_blob_sha": "9397ef08c88e7c443033d6bc72e4c530d184cb23"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_contracts.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "f464a9a0f8a79c332c0aacd30a193da18ab740d59246c124213a681a4877ebc5",
+      "git_blob_sha": "d176f3a9493506f556758d7135faf3e41d6a2355"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_field_policy.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "36710109c675deb0cba6fe1c7ca1ee11192f596103b7a480f1ecbd4f78e28aab",
+      "git_blob_sha": "678860d74a0d83734ca5fb5bb4aa8c25a0036bec"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_final_layout.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "144df60d6764ded14a36f4c75fc11b493a1afb78a9e81b483b0879523d65d1c7",
+      "git_blob_sha": "dd3ae5a7c768b92d205c880170f548aea8fa8ad1"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_obligation_catalog.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "cfb4d783414490dd11b1d7c040026720dd404385ba7491235874cbf37ef7f0cc",
+      "git_blob_sha": "de5ba653ed2acececc4c5c996f9115a472d350fe"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_obligation_receipts.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "2c3085251104ee60e69ce18270adf6e1a5e1288a7f5bb06695694f5ca57d00c7",
+      "git_blob_sha": "b320444c8965a631056cc563aec089b1cb93f1dd"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_overlap.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "a87a8a8f1fee928a29012539fd4c4f8b793b96c02ab030be68654a0d8474dfec",
+      "git_blob_sha": "53d15bb133cf7f7dade7ddccc46df8ab27fd3bd8"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_particle.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "545e2718046da10b5a27adfe020b6af36c252eb99681fe0d044471be03316706",
+      "git_blob_sha": "0c021b779af13cd0633397f4ec1b91a03d9aa5d0"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_recipe_catalog.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "fc079e4d2d43025468a62c478eb5f47c19f5cf33b5c1c0f058dabd4fdf4b9192",
+      "git_blob_sha": "e0f3314b32411273428592e6407ee0d484cf6c91"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_relocation_adapter.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "cf99cac0c54ca3866ba7da687a3b2fa10f16d3ca839867460d57fbaac9152e1d",
+      "git_blob_sha": "d47a8d0ecfb1e8c35c428aa574904453532a15c7"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_role_session.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "ca6539179cc86a16dcdc1a85258bf2b351546e327b7269460d8b4d5ce6284bce",
+      "git_blob_sha": "dd61ebf46861c26dffcb3ecb5ea0e0f27c6fad80"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_event_root_values.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "30f5e9e09623733c1699aced9020c28b02f68e3040d7e2dc706b1c0e0139ccf5",
+      "git_blob_sha": "6751a8715708fc2b8f757e4fb6080b7020fc6794"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_package.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "e7d0349b53d14bb2dde3fd3ccb00bed92c17c25487a5194f1be274bff37a4cde",
+      "git_blob_sha": "169cfaee967569c1f74e66c82df25869a6d10615"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_tai5msg.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "8046a0fb363d778b4d5a3b6241fe0a10a45aec4e79e5d1ffecae14248e02ea7a",
+      "git_blob_sha": "195261a30cfa5dbea4d1ae6542204aa0cf7ce15c"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/selective_tai5msg_additional_roots.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "60ebbd01b827eef6618740051eebd97f73b286543fd98b4ea624666343c0596b",
+      "git_blob_sha": "4731cc788bea49af7ce1124b680d992904287371"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/t5k.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "7557686824d7c5805a3ad5f75382a1b371648c4ca8c749c316c77065eca57028",
+      "git_blob_sha": "fb0c2966bc61ecaa1dfcbb0447341f53dd923ac5"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/tai5msg_corrections.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "1c9530980c1fe6bd57361b122b2bf1223cec5d8c88f71fee649f04b06ab397b9",
+      "git_blob_sha": "c6337bead608b4a360f751fbd56fd8da2e28d720"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/builder/tai5msg_percent_macro_roots.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "bb716715ddf9574ff31087a2ed2d5b765f731ecad970be73d9015c77b89fe2c5",
+      "git_blob_sha": "c101e4862a0f0ced2331b91ce44ae6dc7c1eac69"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/two_root_overlay/work/tools/validate_event_overlap.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "44c7d1d8f9f25e88a9f3eda22cbb69aba6f935ff89b0c7de00115c3620a722dc",
+      "git_blob_sha": "ebc463323b88216c6ffe1b143181d5726f54e5a1"
+    },
+    {
+      "repository_path": "selective_ko/diagnostics/caller_local_217/workspace/implementation/candidate217/build.py",
+      "commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+      "sha256": "be63dc2579db0e8814175562b3ab66455b6c029b789ed85d9ca824b625cc8623",
+      "git_blob_sha": "28105bb397ba498e1b950644a9e2026058cd0fcc"
+    }
+  ]
+}

@@ -67,3 +67,7 @@ Reuse the current adapter and frozen authorities. Connect existing legacy ECF ev
 ## Current supplemental diagnostic stage — 2026-09-23
 
 The user authorized exact source freeze and diagnostic ZIP generation for caller-local 217. Resume this bounded stage through `selective_ko/diagnostics/caller_local_217/INDEX.json`. The preceding 54/169 checkpoint and pending statements describe the earlier payload profile, not this supplemental stage. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain in force. Runtime has not been authorized or run.
+
+### Supplemental diagnostic stage result
+
+Source commit `78accba33eb39d7fbb944f462515282d1b47d3dc` was published before generation. The bounded diagnostic ZIP now contains 13 EVENT files and 17 total members; 217 transformed boundaries and 139 owner readbacks were verified. Package SHA-256 `43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe`. Drive file `1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt` was downloaded again and matched exactly. Build/report pointers are in `selective_ko/diagnostics/caller_local_217/INDEX.json`. The earlier zero-emission figures apply only to the historical checkpoint. Product state remains V369_UNCHANGED; V371 is PARTIAL_BLOCKED. Runtime NOT_RUN; installed game/main identity unverified. Stop after this stage; wait for a new user instruction before runtime or additional implementation.

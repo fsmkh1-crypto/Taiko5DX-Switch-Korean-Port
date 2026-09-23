@@ -1,0 +1,231 @@
+{
+  "schema": "CALLER_LOCAL_217_BUILD_REPORT_V1",
+  "test_id": "CALLER_LOCAL_217_DIAGNOSTIC_20260923",
+  "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+  "provenance_report_commit": {
+    "resolution": "Git commit introducing this report. A self-containing commit hash is intentionally not fabricated.",
+    "path": "selective_ko/diagnostics/caller_local_217/BUILD_REPORT.json"
+  },
+  "pc_patch_oracle_gate": "PASS_INHERITED_EXACT_PC_SOURCE_PAIRS_AND_143_75_DECISION_LEDGERS",
+  "inputs": {
+    "inventory": "selective_ko/diagnostics/caller_local_217/INPUT_INVENTORY.json",
+    "builder_source_readback": "selective_ko/diagnostics/caller_local_217/REMOTE_SOURCE_RECEIPT.json",
+    "switch_identity": {
+      "title_id": "0100346017304000",
+      "version": "1.1.3",
+      "build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9",
+      "expected_main_sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
+      "installed_game_and_main_verified": false
+    },
+    "base_ips_font_drive_id": "18Mux9kvYU5Qmx8ASuI7MELTAnTDuPE5p",
+    "base_archive_sha256": "bc62aa0c8e25b7d7338eb3bd47468d10335636a0c6385c9296e6814a48cfd2f7"
+  },
+  "ips_records": [
+    {
+      "family": "inherited_font_mapping_prerequisite",
+      "role": "prerequisite",
+      "action": "MAP10036_FWD_MISS_HOOK_V1",
+      "mapped_offset": 4392160,
+      "emitted_offset": 4392416,
+      "length": 4,
+      "replacement_hex": "60720514",
+      "replacement_sha256": "2df5115d570e7775ce72bee4b267ffdc1f771f4e4feafcee253c72745f997d2d",
+      "original_hex": null,
+      "original_guard_sha256": "98813cf6edbe59d962385f8bf0f1badd2557cf12ef0c35bc588aa9104f21d45b",
+      "guard_result": "INHERITED_UNCHANGED_V361_IPS; TARGET_MAIN_UNAVAILABLE_NOT_FRESHLY_EXECUTED",
+      "source_provenance": "Committed workspace/implementation/two_root_overlay/work/builder/selective_package.py and V361 base archive"
+    },
+    {
+      "family": "inherited_font_mapping_prerequisite",
+      "role": "prerequisite",
+      "action": "MAP10036_REV_MISS_HOOK_V1",
+      "mapped_offset": 4392856,
+      "emitted_offset": 4393112,
+      "length": 4,
+      "replacement_hex": "da710514",
+      "replacement_sha256": "c92c275afc2d98a43dc2a0f7008bcd62bd4dda07fe4e540e45d33b5c7a80df7d",
+      "original_hex": null,
+      "original_guard_sha256": "196b4f3803e4f689fd5a889e142a35311b7bc5fcccabc1b700c39ebf406a1561",
+      "guard_result": "INHERITED_UNCHANGED_V361_IPS; TARGET_MAIN_UNAVAILABLE_NOT_FRESHLY_EXECUTED",
+      "source_provenance": "Committed workspace/implementation/two_root_overlay/work/builder/selective_package.py and V361 base archive"
+    },
+    {
+      "family": "inherited_font_mapping_prerequisite",
+      "role": "prerequisite",
+      "action": "PAGE_MAPPER",
+      "mapped_offset": 4482316,
+      "emitted_offset": 4482572,
+      "length": 44,
+      "replacement_hex": "693e08532a8103515f610071680100545f29007168000054407d00110400001440990011020000141f2003d5",
+      "replacement_sha256": "f548a5c3ce313c1b578fe4867045c96abfae8b41ea76df09732baafb2fdbe050",
+      "original_hex": "690a4011293d00123ffd2b7168010054093940510ae09b1208010a0b3f01007108b1891a087d0813007d0011",
+      "original_guard_sha256": "7fbdbe36095e02fd55ffd69dd671250c369be1e3b4cce68e576cab98082ade3b",
+      "guard_result": "INHERITED_UNCHANGED_V361_IPS; TARGET_MAIN_UNAVAILABLE_NOT_FRESHLY_EXECUTED",
+      "source_provenance": "Committed workspace/implementation/two_root_overlay/work/builder/selective_package.py and V361 base archive"
+    },
+    {
+      "family": "inherited_font_mapping_prerequisite",
+      "role": "prerequisite",
+      "action": "MAP10036_HELPER_TEXT_V2",
+      "mapped_offset": 5820000,
+      "emitted_offset": 5820256,
+      "length": 308,
+      "replacement_hex": "09a09c523f03096be30000540ab89c523f030a6be20300542903094b29b9241113000014088095523f03086b23030054aaf39a523f030a6bc8020054e9031f2a3f03086b400100548a2100f04a6100914b49693808010b0b290500111f01196b6000005463ffff540a0000148a1780522b09ca1a6ca50a1b6bad03118c0101119ffd01718c358c1a88210b2a9f8dfa172a108052281480529d8dfa171f2003d5287f0853291f00120aad03515f350071e80300542b0101517ff10271880300543ffd017140030054ec979f1a6b010c4b8c1780524a2d0c1bcb3d81525f010b6b62020054cb2581525f010b6ba30000544a010b4b19a09c5239030a0b0b000014198095522a0100348b2100f06b610091ec031f2a6d496c3839030d0b8c0500119f010a6b83ffff54268efa1719b48452248efa17",
+      "replacement_sha256": "f472326cab461ac8258282d5795031c33bcc52c9d2f1cd821b8eb6c94352f493",
+      "original_hex": null,
+      "original_guard_sha256": "9575b2125169377b2ade7b401ea36c81228331d971f49664d9648d4f255d4868",
+      "guard_result": "INHERITED_UNCHANGED_V361_IPS; TARGET_MAIN_UNAVAILABLE_NOT_FRESHLY_EXECUTED",
+      "source_provenance": "Committed workspace/implementation/two_root_overlay/work/builder/selective_package.py and V361 base archive"
+    },
+    {
+      "family": "inherited_font_mapping_prerequisite",
+      "role": "prerequisite",
+      "action": "MAP10036_DELTA_RODATA_V1",
+      "mapped_offset": 10219544,
+      "emitted_offset": 10219800,
+      "length": 2349,
+      "replacement_hex": "0103030101010601010101010101020101010103040801020101070103040b0207040414010303010206010201010103010101040408010201010701010203010801020101040304040902090103030102020301010202010601030402060102020704040903010701030408010202070404090209010303010101050101020201060103040c0107130901030408010209040414010303010107010202071c0103030102060102020104020101020402060102010104030103040801020101070107300101020408010201010701030c03020704040b0105031c010302020801020201010501070c01070114070404080104071c01030407010102020106080c010701030408010308040408010b1c01030202020501010202041f01030408010202070101020301010106010201010101020201010304080102010107010304080523010201040201050102010106010103040801020101070103040801030103040418010304020601020205010104040c240404080102090103040902020701030301080102020714081c040408010b0107080104070103040101060102020104020404140103040206010202050201010203010101010401010201010101040101030408010201010738010102030102010501020202030201030408010201010704040c010704180103030102020401020202020304041414080404080102091c0103040801020207140815070404090202070404080507010303010206010202071c01030301080102010101060103040801020101060101030408010201013f01030402010501020101060101030408010201010714240103040d0708141c0434010304070105231c0404080104230103030108010209040408010b0404080102020701030408010201010104010101030408010201010701030f0223010304080102010106010103040801020207010304080102010107040d0209010304080102020704111b0804040801020207040409020207010304080102020714081c010304080302070103040801020207010304080102020103011e01030408010202070103020101010106010202010302010103040801020101010601070d2301030402060102020105010103040801020101070103040b010102051c01020104020601020207041001230404090202070404090209010102030101010601020204020104040902091c04041404040803090404080325010303010206010201010202030101010103010101010501020204030103040801020101040301030d270103030102060102020106010303010801020101070103040902010104030418010102040801020207041008140801030408010b041801030301010106010202040102080c081c0103040d070404080302070103040801022501030402060102020101050103040206010201010601010304080102010107010f280103030108030101071507010f01020101230103040801043f1c15070103040803025b15070404080127010304080102020701020103010101060102010104030103040801020101070103040801020207040408050701010101030102010501020101050201030408010201010701030408010201010704040d0701010204020601020204030103040d07040408030108040408010209010304080102020701030301080102020202010214080103040805070103040801020207010708030207010304010701020223010303010701010202050201020104080103010601010304080103011c2301030402060103010704043418010303010206010407010310081408040408010b1c0103040801040714081c042d07010304020501010b0404080c01030408010202070103010102010105010102010104010201030408010201010701030403050102020402010404090b0103010201010106010101010101020202010304080102020701010204020105010101010104010101040408010201080103040101020301010202020501030408010201010701030c03020701030408010202070103040801020207010304010106010202070103040801030107010304080104070103040801020207010304080102020205010304060201020201010101010101040408030901030401010501010201010104020103020101020601020101010601030408010201010701030202080507040414010304020601020201060103040801020207040408010301071c01030402060102020101040101070902020714010704040801020207010311070103040101060102020714081c010304080102090404080c01030408010202230103030102060102020103010201030202030501020101070103040801020101070411230103040801020101071507142401030408010202020501070c081408040408012007010304080104071401231c1c1003022301030408010401050101030202080102010101060103040801020101070402020805230103040801020101070103040801020207041008041107010304080102020704040d2304040801020207100c010304080102020714080418040408010202070404080507010304080102022301030301010701020207010304080102020701030408010201010701142301030301080102010107010304080102020704040801020101071c0103040801020207010304080507150708141c010304080102020704040d07150701030408010202070404080c010304080104230103040801020207010304010701020101070103040801020101071523010304020601020101070103040801020207041008041801030408010202050204181c040f02071c010304080102020714081c010304080104070404080507010303010206010209040408010b0103040801020207010102040206010201010403010304080102010107013701030408010201010701030408010202070404080103010708090209010304080102020715230418040409020901030301020601020207152304040803090404080302070404080102250103040801020207010304050301020207010304080102010107152301030402060102020701030408010202070103040801020101070404090b010304050301020204030103040b020701030f0207010304090202070404090209010304050303020704040805070103040d0701030408010202070103040803020701030201010107010202040304040801040701030408010202",
+      "replacement_sha256": "ddedc507fa892a5b5be6f35ab24f0a0e5fac0d71e633134712b33bd4c6a2088f",
+      "original_hex": null,
+      "original_guard_sha256": "9bff4e0fc43a214b9efe2fddbcd29b1d1d61d2d278f89d34f9cd8b9c0f11516a",
+      "guard_result": "INHERITED_UNCHANGED_V361_IPS; TARGET_MAIN_UNAVAILABLE_NOT_FRESHLY_EXECUTED",
+      "source_provenance": "Committed workspace/implementation/two_root_overlay/work/builder/selective_package.py and V361 base archive"
+    }
+  ],
+  "counts": {
+    "new_diagnostic_ips_records": 0,
+    "inherited_prerequisite_ips_records": 5,
+    "total_ips_records": 5,
+    "payload_identity_guards_passed": 5,
+    "fresh_main_guards_passed": 0,
+    "fresh_main_guards_failed": 0,
+    "fresh_main_guards_not_executed": 5,
+    "silent_guard_skips": 0,
+    "unexpected_ips_records": 0,
+    "zip_members": 17,
+    "event_files": 13,
+    "boundaries": 217,
+    "owners": 139
+  },
+  "verification": {
+    "ips_self_reparse_exact": true,
+    "ips_coordinate_roundtrip_exact": true,
+    "zip_member_exact_readback": true,
+    "drive_zip_roundtrip_exact": true,
+    "source_files_exact_committed_readback": 27,
+    "event_and_owner_results": {
+      "exact_occurrence_rewrites_connected": 4,
+      "new_residual_boundaries": 75,
+      "new_residual_owners": 63,
+      "selected_owners": 139,
+      "selected_files": 13,
+      "connected_owners": 139,
+      "connected_boundaries": 142,
+      "connection_conflicts": 0,
+      "changed_occurrences_requiring_new_authority": 0,
+      "files_local_complete": 13,
+      "files_replayed": 13,
+      "bridge_errors": [],
+      "final_owner_readbacks": 139,
+      "obligations": {
+        "scope": "IM02_LOCAL_OBLIGATION_RECEIPTS_ONLY",
+        "catalog_fingerprint": "8ca3ec75d5c6086b622d0150e59e07bd1015b646ba900b0a931e4aa73ea05fce",
+        "candidate_fingerprint": "11574e3db579bbf08c6e43e6d714fda0dd76b5263bf9bfd37d4a5d750154d147",
+        "rewrite_registry_fingerprint": "b2fcbfbf7b9bb4df5bfb194769252e72dcb20e21527aadb36c68e65d9f6ad126",
+        "required_obligations": 5268,
+        "receipt_rows": 5268,
+        "missing_receipt_ids": [],
+        "unexpected_receipt_ids": [],
+        "states": {
+          "SATISFIED_LOCAL_OBLIGATION": 1355,
+          "NOT_OBSERVED": 3913
+        },
+        "by_kind": {
+          "APP": {
+            "SATISFIED_LOCAL_OBLIGATION": 588,
+            "NOT_OBSERVED": 1850
+          },
+          "OCC": {
+            "NOT_OBSERVED": 2011,
+            "SATISFIED_LOCAL_OBLIGATION": 660
+          },
+          "REL": {
+            "SATISFIED_LOCAL_OBLIGATION": 83,
+            "NOT_OBSERVED": 47
+          },
+          "ROOT": {
+            "SATISFIED_LOCAL_OBLIGATION": 5
+          },
+          "ROOTREF": {
+            "SATISFIED_LOCAL_OBLIGATION": 19
+          },
+          "SUP": {
+            "NOT_OBSERVED": 5
+          }
+        },
+        "extra_errors": [],
+        "local_complete": false,
+        "product_accepted": false,
+        "V371_closed": false,
+        "pending_global_gates": [
+          "IM03_ACTUAL_MAPPING_AND_FINAL_WRITER",
+          "H01_H02_NECESSARY_DISPOSITIONS",
+          "FULL_INPUT_AUTHORITY",
+          "VAL01_169_FILE_OUTPUT_VALIDATION"
+        ]
+      },
+      "V369": "UNCHANGED",
+      "V371": "PARTIAL_BLOCKED",
+      "product_accepted": false,
+      "game_files_written": 0
+    },
+    "source_hold_overlap": []
+  },
+  "artifacts": {
+    "filename": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "bytes": 4138536,
+    "sha256": "43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe",
+    "members": 17,
+    "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+    "drive_id": "1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt",
+    "file_name": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "roundtrip_exact": true
+  },
+  "V369": "UNCHANGED",
+  "V371": "PARTIAL_BLOCKED",
+  "runtime": "NOT_RUN",
+  "release_accepted": false,
+  "interpretation": "13 file-local complete results do not close the global 169-file candidate or game runtime. NOT_OBSERVED obligations are not new failures. Internal readback is structural evidence, not independent runtime semantics.",
+  "remaining": [
+    "ADJ:084 held",
+    "69 dynamic identity/address/argument percent calls remain in the 139-owner scope",
+    "TE5/SNR separate scopes",
+    "60 source-identity provenance holds",
+    "inline139 and non-B24 reflow",
+    "full input authority, IM03, H01/H02 and VAL01 global gates",
+    "legacy test/PASS source provenance and circular-readback concerns"
+  ],
+  "rejected_inferences": [
+    "Archive integrity implies product PASS",
+    "217 boundaries means 217 whole dialogs or the full game",
+    "V371 has closed or replaces V369 product authority",
+    "A runtime fix has been demonstrated"
+  ],
+  "build_evidence_archive": {
+    "filename": "TAIKO5DX_DIAG217_BUILD_EVIDENCE_20260923.zip",
+    "drive_id": "15Ib0c7OFTIXKpm4X-XHd85daRhLn9TIK",
+    "bytes": 202173,
+    "sha256": "501f0ded097e8420337dc3d5193e2d9f886efad574d6a4d1b75e5ede4a19448c"
+  },
+  "source_commit_ci": {
+    "runs": [
+      {
+        "id": 35852263670,
+        "name": "Document governance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "78accba33eb39d7fbb944f462515282d1b47d3dc"
+      }
+    ]
+  }
+}

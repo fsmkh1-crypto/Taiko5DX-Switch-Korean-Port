@@ -1,8 +1,8 @@
 {
   "schema": "CALLER_LOCAL_217_DIAGNOSTIC_V1",
-  "status": "SOURCE_FREEZE_PREPARED_AWAIT_DIAGNOSTIC_BUILD",
+  "status": "DIAGNOSTIC_ZIP_CREATED_OFFLINE_VERIFIED_RUNTIME_NOT_RUN",
   "base_head": "821eeaff82aab20eb696dfa1543fa8f67d10a136",
-  "builder_source_commit": null,
+  "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
   "report_commit_resolution": "Commit introducing the completed BUILD_REPORT.json; never confused with builder_source_commit.",
   "scope": {
     "boundaries": 217,
@@ -24,5 +24,34 @@
   "package_manifest": "selective_ko/diagnostics/caller_local_217/PACKAGE_MANIFEST.json",
   "previous_integration_drive_id": "1_EMXa0YPwxug0VPJbYsIkZXFdKoezLUg",
   "previous_source_review_drive_id": "1DaFoFD4UI4BcxjNJopZUE_Wv90T_xvg3",
-  "base_ips_font_drive_id": "18Mux9kvYU5Qmx8ASuI7MELTAnTDuPE5p"
+  "base_ips_font_drive_id": "18Mux9kvYU5Qmx8ASuI7MELTAnTDuPE5p",
+  "package": {
+    "filename": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "bytes": 4138536,
+    "sha256": "43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe",
+    "members": 17,
+    "builder_source_commit": "78accba33eb39d7fbb944f462515282d1b47d3dc",
+    "drive_id": "1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt",
+    "file_name": "TAIKO5DX_KR_DIAG_217_20260923.zip",
+    "roundtrip_exact": true
+  },
+  "global_candidate_accepted": false,
+  "next_scope": "AWAIT_NEW_USER_INSTRUCTION_FOR_RUNTIME_OR_FURTHER_IMPLEMENTATION",
+  "build_evidence_archive": {
+    "filename": "TAIKO5DX_DIAG217_BUILD_EVIDENCE_20260923.zip",
+    "drive_id": "15Ib0c7OFTIXKpm4X-XHd85daRhLn9TIK",
+    "bytes": 202173,
+    "sha256": "501f0ded097e8420337dc3d5193e2d9f886efad574d6a4d1b75e5ede4a19448c"
+  },
+  "source_commit_ci": {
+    "runs": [
+      {
+        "id": 35852263670,
+        "name": "Document governance",
+        "status": "completed",
+        "conclusion": "success",
+        "head_sha": "78accba33eb39d7fbb944f462515282d1b47d3dc"
+      }
+    ]
+  }
 }
