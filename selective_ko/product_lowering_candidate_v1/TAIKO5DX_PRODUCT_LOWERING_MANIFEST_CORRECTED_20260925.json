@@ -1,0 +1,817 @@
+{
+  "schema": "TAIKO5DX_PRODUCT_LOWERING_MANIFEST_V1",
+  "date": "2026-09-25",
+  "scope": "PRODUCT_LOWERING_MANIFEST_MATERIALIZATION",
+  "repository": "fsmkh1-crypto/Taiko5DX-Switch-Korean-Port",
+  "branch": "main",
+  "verified_head": "46442da4a5b8767733aa4e3bc864ba21f5e718ce",
+  "product_state": "V369_UNCHANGED / V371_PARTIAL_BLOCKED",
+  "implementation_state": "CORRECTED_MANIFEST_ADOPTED_IMPLEMENTATION_NOT_STARTED",
+  "analysis_policy": {
+    "sites": 196,
+    "admitted": 196,
+    "remaining": 0,
+    "protected_sites": 829,
+    "protected_cells": 4011
+  },
+  "physical_baseline": {
+    "tai5msg": "DIAGNOSTIC218 TAI5MSG member only",
+    "tai5msg_sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f",
+    "records": 14832,
+    "all_196_caller_preimage_hashes_match": true,
+    "composition222_write_plan_inherited": false,
+    "composition222_serializer_mechanics_reusable_later": true
+  },
+  "accounting": {
+    "site_rows": 196,
+    "unique_caller_messages": 124,
+    "caller_messages_rewrite": 120,
+    "caller_messages_exact_noop": 4,
+    "general_view_sites": 158,
+    "general_unique_views": 51,
+    "general_no_new_view_sites": 8,
+    "special_sites": 30,
+    "family_counts": {
+      "D17_FULL_NOMINAL_DECL": 15,
+      "D17_FULL_NOMINAL_REFLECT": 2,
+      "J01_EXCLAMATORY_PAIR": 9,
+      "J02_PAST_NOTICE": 1,
+      "M29_H_IRREG_Q": 5,
+      "M29_SURPRISE_QUOTATIVE": 4,
+      "P01_ASSERTIVE_NONPAST": 68,
+      "P02_SPEAKER_COMMITMENT": 13,
+      "P03_HONORED_SUBJECT_PREDICTION": 1,
+      "P04_DECISION_QUESTION": 24,
+      "P05_INCLUSIVE_PROPOSAL": 2,
+      "P06_SELF_DELIBERATION": 1,
+      "P07_REPORTED_QUESTION": 1,
+      "P08_PREDICATE_CONTRAST": 2,
+      "P09_APOLOGY_CONTRAST": 5,
+      "P10_CONDITIONAL_PROTASIS": 3,
+      "P11_POTENTIAL_QUESTION": 1,
+      "PA-DIRECTIVE": 16,
+      "PA-FAREWELL": 1,
+      "PA-FULL-COPULA": 1,
+      "PA-MODAL": 10,
+      "PA-PROMISE": 1,
+      "PA-SIMILE": 1,
+      "S9_ARGUMENT_FRAME_RESTORE": 1,
+      "S9_FORCE_RESTORE": 4,
+      "S9_ROLE_RESTORE": 2,
+      "S9_VALENCY_RESTORE": 2
+    },
+    "unassigned_sites": 0,
+    "duplicate_site_rows": 0
+  },
+  "namespace": {
+    "b0_fixed_special": "471..688",
+    "b0_general": "689..999",
+    "b7_d02_np": "554",
+    "b7_general": "555..652",
+    "b0_final_count": 1000,
+    "b7_final_count": 653,
+    "all_local_ids_lt_1000": true
+  },
+  "capacity": {
+    "baseline": "DIAGNOSTIC218_TAI_ONLY",
+    "baseline_records": 14832,
+    "appended_messages_total": 628,
+    "candidate_records": 15460,
+    "b0": {
+      "baseline_count": 471,
+      "general_views": 37,
+      "general_messages": 311,
+      "special_messages": 218,
+      "final_count": 1000,
+      "max_local_id": 999,
+      "program_growth_bytes": 45573,
+      "offset_table_growth_bytes": 2116,
+      "core_growth_bytes": 47689,
+      "final_core_end": 111288,
+      "aligned_declared": 111296,
+      "runtime_capacity": 131072,
+      "remaining_after_alignment": 19776
+    },
+    "b7": {
+      "baseline_count": 554,
+      "d02_np_messages": 1,
+      "general_views": 14,
+      "general_messages": 98,
+      "final_count": 653,
+      "max_local_id": 652,
+      "program_growth_bytes": 9454,
+      "offset_table_growth_bytes": 396,
+      "core_growth_bytes": 9850,
+      "final_core_end": 81976,
+      "aligned_declared": 81984,
+      "runtime_capacity": 131072,
+      "remaining_after_alignment": 49088,
+      "pre_caller_core_end": 82013,
+      "caller_delta_bytes": -37
+    },
+    "all_selected_caller_blocks_conservative_bound": [
+      {
+        "block": 0,
+        "baseline_used": 63599,
+        "baseline_declared": 63616,
+        "selected_sites": 0,
+        "exact_helper_growth": 47689,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 111288,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 19784,
+        "pass": true
+      },
+      {
+        "block": 1,
+        "baseline_used": 64206,
+        "baseline_declared": 64256,
+        "selected_sites": 10,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 2560,
+        "conservative_used_upper": 66766,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 64306,
+        "pass": true
+      },
+      {
+        "block": 2,
+        "baseline_used": 59132,
+        "baseline_declared": 59136,
+        "selected_sites": 1,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 256,
+        "conservative_used_upper": 59388,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 71684,
+        "pass": true
+      },
+      {
+        "block": 3,
+        "baseline_used": 56048,
+        "baseline_declared": 56064,
+        "selected_sites": 2,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 512,
+        "conservative_used_upper": 56560,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 74512,
+        "pass": true
+      },
+      {
+        "block": 4,
+        "baseline_used": 73675,
+        "baseline_declared": 73728,
+        "selected_sites": 40,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 10240,
+        "conservative_used_upper": 83915,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 47157,
+        "pass": true
+      },
+      {
+        "block": 5,
+        "baseline_used": 85271,
+        "baseline_declared": 85312,
+        "selected_sites": 5,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 1280,
+        "conservative_used_upper": 86551,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 44521,
+        "pass": true
+      },
+      {
+        "block": 6,
+        "baseline_used": 74289,
+        "baseline_declared": 74304,
+        "selected_sites": 12,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 3072,
+        "conservative_used_upper": 77361,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 53711,
+        "pass": true
+      },
+      {
+        "block": 7,
+        "baseline_used": 72163,
+        "baseline_declared": 72192,
+        "selected_sites": 7,
+        "exact_helper_growth": 9850,
+        "conservative_caller_growth_bound": 1792,
+        "conservative_used_upper": 83805,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 47267,
+        "pass": true
+      },
+      {
+        "block": 8,
+        "baseline_used": 57121,
+        "baseline_declared": 57152,
+        "selected_sites": 16,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 4096,
+        "conservative_used_upper": 61217,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 69855,
+        "pass": true
+      },
+      {
+        "block": 9,
+        "baseline_used": 75158,
+        "baseline_declared": 75200,
+        "selected_sites": 2,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 512,
+        "conservative_used_upper": 75670,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 55402,
+        "pass": true
+      },
+      {
+        "block": 10,
+        "baseline_used": 78592,
+        "baseline_declared": 78592,
+        "selected_sites": 1,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 256,
+        "conservative_used_upper": 78848,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 52224,
+        "pass": true
+      },
+      {
+        "block": 11,
+        "baseline_used": 75226,
+        "baseline_declared": 75264,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 75226,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 55846,
+        "pass": true
+      },
+      {
+        "block": 12,
+        "baseline_used": 77654,
+        "baseline_declared": 77696,
+        "selected_sites": 8,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 2048,
+        "conservative_used_upper": 79702,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 51370,
+        "pass": true
+      },
+      {
+        "block": 13,
+        "baseline_used": 78170,
+        "baseline_declared": 78208,
+        "selected_sites": 26,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 6656,
+        "conservative_used_upper": 84826,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 46246,
+        "pass": true
+      },
+      {
+        "block": 14,
+        "baseline_used": 69864,
+        "baseline_declared": 69888,
+        "selected_sites": 2,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 512,
+        "conservative_used_upper": 70376,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 60696,
+        "pass": true
+      },
+      {
+        "block": 15,
+        "baseline_used": 69164,
+        "baseline_declared": 69184,
+        "selected_sites": 18,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 4608,
+        "conservative_used_upper": 73772,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 57300,
+        "pass": true
+      },
+      {
+        "block": 16,
+        "baseline_used": 70728,
+        "baseline_declared": 70784,
+        "selected_sites": 3,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 768,
+        "conservative_used_upper": 71496,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 59576,
+        "pass": true
+      },
+      {
+        "block": 17,
+        "baseline_used": 56946,
+        "baseline_declared": 56960,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 56946,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 74126,
+        "pass": true
+      },
+      {
+        "block": 18,
+        "baseline_used": 44760,
+        "baseline_declared": 45504,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 44760,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 86312,
+        "pass": true
+      },
+      {
+        "block": 19,
+        "baseline_used": 62938,
+        "baseline_declared": 62976,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 62938,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 68134,
+        "pass": true
+      },
+      {
+        "block": 20,
+        "baseline_used": 56700,
+        "baseline_declared": 56704,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 56700,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 74372,
+        "pass": true
+      },
+      {
+        "block": 21,
+        "baseline_used": 65061,
+        "baseline_declared": 65088,
+        "selected_sites": 32,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 8192,
+        "conservative_used_upper": 73253,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 57819,
+        "pass": true
+      },
+      {
+        "block": 22,
+        "baseline_used": 76625,
+        "baseline_declared": 76672,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 76625,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 54447,
+        "pass": true
+      },
+      {
+        "block": 23,
+        "baseline_used": 74084,
+        "baseline_declared": 74112,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 74084,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 56988,
+        "pass": true
+      },
+      {
+        "block": 24,
+        "baseline_used": 69687,
+        "baseline_declared": 69696,
+        "selected_sites": 11,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 2816,
+        "conservative_used_upper": 72503,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 58569,
+        "pass": true
+      },
+      {
+        "block": 25,
+        "baseline_used": 69287,
+        "baseline_declared": 69312,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 69287,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 61785,
+        "pass": true
+      },
+      {
+        "block": 26,
+        "baseline_used": 73562,
+        "baseline_declared": 73600,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 73562,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 57510,
+        "pass": true
+      },
+      {
+        "block": 27,
+        "baseline_used": 66752,
+        "baseline_declared": 66752,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 66752,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 64320,
+        "pass": true
+      },
+      {
+        "block": 28,
+        "baseline_used": 39459,
+        "baseline_declared": 41088,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 39459,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 91613,
+        "pass": true
+      },
+      {
+        "block": 29,
+        "baseline_used": 40300,
+        "baseline_declared": 42112,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 40300,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 90772,
+        "pass": true
+      },
+      {
+        "block": 30,
+        "baseline_used": 40457,
+        "baseline_declared": 42304,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 40457,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 90615,
+        "pass": true
+      },
+      {
+        "block": 31,
+        "baseline_used": 40401,
+        "baseline_declared": 42432,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 40401,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 90671,
+        "pass": true
+      },
+      {
+        "block": 32,
+        "baseline_used": 46239,
+        "baseline_declared": 51840,
+        "selected_sites": 0,
+        "exact_helper_growth": 0,
+        "conservative_caller_growth_bound": 0,
+        "conservative_used_upper": 46239,
+        "runtime_capacity": 131072,
+        "remaining_under_bound": 84833,
+        "pass": true
+      }
+    ],
+    "minimum_remaining_under_caller_bound": 19784,
+    "verdict": "PASS_BOUNDED_STATIC",
+    "preflight_exact_block_metrics_receipt": {
+      "source": "TAIKO5DX_PRODUCT_LOWERING_PREFLIGHT_BLOCK_METRICS_20260925.json",
+      "candidate_records": 15460,
+      "candidate_bytes": 2195465,
+      "candidate_sha256": "e8738545c3248db23dedbd4dff6ef7dc253b19260b6da613af0aa5186dc8cc28",
+      "B0": {
+        "messages": 1000,
+        "used": 111288,
+        "declared": 111296,
+        "spare": 19776
+      },
+      "B7": {
+        "messages": 653,
+        "used": 81976,
+        "declared": 81984,
+        "spare": 49088
+      }
+    }
+  },
+  "buffer8_ips_action": {
+    "action_id": "IPS_BUFFER8_NATIVE_LABEL_RELOCATION_REDIRECT",
+    "status": "STATIC_MANIFEST_READY_NOT_EMITTED",
+    "main_sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b",
+    "inherited_ips_sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4",
+    "pool": {
+      "start": "0x9BFA50",
+      "end_exclusive": "0x9BFAB0",
+      "bytes": 96,
+      "payload_hex": "f2b3f5e2efddf39c00f267f3a2eb86f2b300ef55f35af196f09100f2e2f0f3f196f09100f2b3f5e2f196f09100f0f1ebc5f3a4f66f00ef55f35aeb4cf74c00f2e2f0f3eb4cf74c00f4b3f6cdf5e9f36e00efcaf0f100f5e9f36e00f196f09100",
+      "entries": [
+        {
+          "jp": "領土発展",
+          "ko": "영토발전",
+          "address": "0x9BFA50",
+          "bytes_hex": "f2b3f5e2efddf39c00",
+          "bytes": 9,
+          "source_table_entry": "0x9c0b40",
+          "rela_addend_field": "0x58f248"
+        },
+        {
+          "jp": "安定経営",
+          "ko": "안정경영",
+          "address": "0x9BFA59",
+          "bytes_hex": "f267f3a2eb86f2b300",
+          "bytes": 9,
+          "source_table_entry": "0x9c0b78",
+          "rela_addend_field": "0x58f2f0"
+        },
+        {
+          "jp": "里守備",
+          "ko": "마을수비",
+          "address": "0x9BFA62",
+          "bytes_hex": "ef55f35af196f09100",
+          "bytes": 9,
+          "source_table_entry": "0x9c0b98",
+          "rela_addend_field": "0x58f350"
+        },
+        {
+          "jp": "砦守備",
+          "ko": "요새수비",
+          "address": "0x9BFA6B",
+          "bytes_hex": "f2e2f0f3f196f09100",
+          "bytes": 9,
+          "source_table_entry": "0x9c0bb0",
+          "rela_addend_field": "0x58f398"
+        },
+        {
+          "jp": "領土守備",
+          "ko": "영토수비",
+          "address": "0x9BFA74",
+          "bytes_hex": "f2b3f5e2f196f09100",
+          "bytes": 9,
+          "source_table_entry": "0x9c0b48",
+          "rela_addend_field": "0x58f260"
+        },
+        {
+          "jp": "商業圏制覇",
+          "ko": "상권제패",
+          "address": "0x9BFA7D",
+          "bytes_hex": "f0f1ebc5f3a4f66f00",
+          "bytes": 9,
+          "source_table_entry": "0x9c0b80",
+          "rela_addend_field": "0x58f308"
+        },
+        {
+          "jp": "里増強",
+          "ko": "마을강화",
+          "address": "0x9BFA86",
+          "bytes_hex": "ef55f35aeb4cf74c00",
+          "bytes": 9,
+          "source_table_entry": "0x9c0ba0",
+          "rela_addend_field": "0x58f368"
+        },
+        {
+          "jp": "砦増強",
+          "ko": "요새강화",
+          "address": "0x9BFA8F",
+          "bytes_hex": "f2e2f0f3eb4cf74c00",
+          "bytes": 9,
+          "source_table_entry": "0x9c0bb8",
+          "rela_addend_field": "0x58f3b0"
+        },
+        {
+          "jp": "天下統一",
+          "ko": "천하통일",
+          "address": "0x9BFA98",
+          "bytes_hex": "f4b3f6cdf5e9f36e00",
+          "bytes": 9,
+          "source_table_entry": "0x9c0ae8",
+          "rela_addend_field": "0x58f140"
+        },
+        {
+          "jp": "不明",
+          "ko": "미상",
+          "address": "0x9BFAA1",
+          "bytes_hex": "efcaf0f100",
+          "bytes": 5,
+          "source_table_entry": "0x9c0058",
+          "rela_addend_field": "0x58d190"
+        },
+        {
+          "jp": "統一",
+          "ko": "통일",
+          "address": "0x9BFAA6",
+          "bytes_hex": "f5e9f36e00",
+          "bytes": 5,
+          "source_table_entry": "0x9c17f8",
+          "rela_addend_field": "0x591870"
+        },
+        {
+          "jp": "守備",
+          "ko": "수비",
+          "address": "0x9BFAAB",
+          "bytes_hex": "f196f09100",
+          "bytes": 5,
+          "source_table_entry": "0x9c1800",
+          "rela_addend_field": "0x591888"
+        }
+      ],
+      "static_cave_verdict": "PASS_MANIFEST_STATIC",
+      "next_data_segment": "0x9C0000",
+      "bytes_remaining_to_data": 1360
+    },
+    "relocation_redirects": [
+      {
+        "field": "0x58f248",
+        "preimage_hex": "bc8b6a0000000000",
+        "new_addend": "0x9BFA50",
+        "replacement_hex": "50fa9b0000000000",
+        "jp": "領土発展",
+        "ko": "영토발전"
+      },
+      {
+        "field": "0x58f2f0",
+        "preimage_hex": "fd3e680000000000",
+        "new_addend": "0x9BFA59",
+        "replacement_hex": "59fa9b0000000000",
+        "jp": "安定経営",
+        "ko": "안정경영"
+      },
+      {
+        "field": "0x58f350",
+        "preimage_hex": "f7656a0000000000",
+        "new_addend": "0x9BFA62",
+        "replacement_hex": "62fa9b0000000000",
+        "jp": "里守備",
+        "ko": "마을수비"
+      },
+      {
+        "field": "0x58f398",
+        "preimage_hex": "25dd680000000000",
+        "new_addend": "0x9BFA6B",
+        "replacement_hex": "6bfa9b0000000000",
+        "jp": "砦守備",
+        "ko": "요새수비"
+      },
+      {
+        "field": "0x58f260",
+        "preimage_hex": "4a2b680000000000",
+        "new_addend": "0x9BFA74",
+        "replacement_hex": "74fa9b0000000000",
+        "jp": "領土守備",
+        "ko": "영토수비"
+      },
+      {
+        "field": "0x58f308",
+        "preimage_hex": "8050690000000000",
+        "new_addend": "0x9BFA7D",
+        "replacement_hex": "7dfa9b0000000000",
+        "jp": "商業圏制覇",
+        "ko": "상권제패"
+      },
+      {
+        "field": "0x58f368",
+        "preimage_hex": "ffb6680000000000",
+        "new_addend": "0x9BFA86",
+        "replacement_hex": "86fa9b0000000000",
+        "jp": "里増強",
+        "ko": "마을강화"
+      },
+      {
+        "field": "0x58f3b0",
+        "preimage_hex": "693f690000000000",
+        "new_addend": "0x9BFA8F",
+        "replacement_hex": "8ffa9b0000000000",
+        "jp": "砦増強",
+        "ko": "요새강화"
+      },
+      {
+        "field": "0x58f140",
+        "preimage_hex": "f9516a0000000000",
+        "new_addend": "0x9BFA98",
+        "replacement_hex": "98fa9b0000000000",
+        "jp": "天下統一",
+        "ko": "천하통일"
+      },
+      {
+        "field": "0x58d190",
+        "preimage_hex": "daa1680000000000",
+        "new_addend": "0x9BFAA1",
+        "replacement_hex": "a1fa9b0000000000",
+        "jp": "不明",
+        "ko": "미상"
+      },
+      {
+        "field": "0x591870",
+        "preimage_hex": "1f7c680000000000",
+        "new_addend": "0x9BFAA6",
+        "replacement_hex": "a6fa9b0000000000",
+        "jp": "統一",
+        "ko": "통일"
+      },
+      {
+        "field": "0x591888",
+        "preimage_hex": "92dc690000000000",
+        "new_addend": "0x9BFAAB",
+        "replacement_hex": "abfa9b0000000000",
+        "jp": "守備",
+        "ko": "수비"
+      }
+    ],
+    "new_ips_records": 13,
+    "new_payload_bytes": 192,
+    "inherited_record_overlap_count": 0,
+    "new_record_internal_overlap_count": 0,
+    "runtime_validation": "NOT_RUN"
+  },
+  "artifacts": {
+    "site_actions": "TAIKO5DX_PRODUCT_LOWERING_SITE_ACTIONS_196_20260925.jsonl",
+    "message_actions": "TAIKO5DX_PRODUCT_LOWERING_MESSAGE_ACTIONS_124_20260925.jsonl",
+    "shared_views": "TAIKO5DX_PRODUCT_LOWERING_SHARED_VIEWS_20260925.json",
+    "buffer8_ips": "TAIKO5DX_BUFFER8_IPS_ACTION_MANIFEST_20260925.json",
+    "verification": "TAIKO5DX_PRODUCT_LOWERING_MANIFEST_VERIFICATION_20260925.json"
+  },
+  "next_scope": "PRODUCT_LOWERING_CANDIDATE_EMISSION",
+  "next_scope_boundary": "Fresh explicit signal required. Candidate TAI5MSG/IPS emission, builder integration, Git write, build and runtime are not implied.",
+  "correction_adoption": {
+    "status": "ADOPTED",
+    "source_preflight": "PRODUCT_LOWERING_IMPLEMENTATION_PREFLIGHT",
+    "preflight_candidate_in_memory_only": true,
+    "candidate_records": 15460,
+    "in_memory_candidate_bytes": 2195465,
+    "in_memory_candidate_sha256": "e8738545c3248db23dedbd4dff6ef7dc253b19260b6da613af0aa5186dc8cc28",
+    "independent_readback_messages": 15460,
+    "semantic_target_changed": false,
+    "site_action_changed": false,
+    "message_id_or_namespace_changed": false,
+    "corrections": {
+      "J01_H357_program_bytes": {
+        "old": 2513,
+        "new": 2417,
+        "delta": -96
+      },
+      "B0_final_core_end": {
+        "old": 111384,
+        "new": 111288,
+        "delta": -96
+      },
+      "B0_aligned_declared": {
+        "old": 111424,
+        "new": 111296,
+        "delta": -128
+      },
+      "B0_runtime_spare": {
+        "old": 19648,
+        "new": 19776,
+        "delta": 128
+      },
+      "B7_final_core_end": {
+        "old": 82013,
+        "new": 81976,
+        "delta": -37
+      },
+      "B7_aligned_declared": {
+        "old": 82048,
+        "new": 81984,
+        "delta": -64
+      },
+      "B7_runtime_spare": {
+        "old": 49024,
+        "new": 49088,
+        "delta": 64
+      }
+    }
+  }
+}

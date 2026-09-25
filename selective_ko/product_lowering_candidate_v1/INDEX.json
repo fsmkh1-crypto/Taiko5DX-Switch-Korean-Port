@@ -1,0 +1,31 @@
+{
+  "schema": "TAIKO5DX_PRODUCT_LOWERING_BUILDER_INPUT_V1",
+  "repository": "fsmkh1-crypto/Taiko5DX-Switch-Korean-Port",
+  "repository_head": "46442da4a5b8767733aa4e3bc864ba21f5e718ce",
+  "baseline_tai_sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f",
+  "baseline_ips_sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4",
+  "expected_tai_sha256": "e8738545c3248db23dedbd4dff6ef7dc253b19260b6da613af0aa5186dc8cc28",
+  "expected_ips_sha256": "dadb49f92fd66313145620194b05c108373f780f566bd5ba433f045e8acef7ec",
+  "files": [
+    {
+      "path": "TAIKO5DX_PRODUCT_LOWERING_MANIFEST_CORRECTED_20260925.json",
+      "bytes": 24763,
+      "sha256": "72140365c92f0730d732466dc82462919830927edb721e90276e10af4dc5f4aa"
+    },
+    {
+      "path": "TAIKO5DX_PRODUCT_LOWERING_PREFLIGHT_CALLER_BYTES_120_20260925.jsonl",
+      "bytes": 222586,
+      "sha256": "20ded88e1cf1317c3152f7ad2d0b6fbc2d8bbc4ef0e408eb8bd20b516026e4c4"
+    },
+    {
+      "path": "TAIKO5DX_PRODUCT_LOWERING_PREFLIGHT_HELPER_BYTES_628_20260925.jsonl",
+      "bytes": 359440,
+      "sha256": "d40a5f0442d3eba54182232ed6a481d8d42c8b25df2a65969f22ae09d4e123e6"
+    },
+    {
+      "path": "TAIKO5DX_BUFFER8_PREFLIGHT_IPS_RECORDS_13_20260925.json",
+      "bytes": 11380,
+      "sha256": "7c6fdc23238c850a72a3c6649737c2b5c3a6c90c31b257254fc15d2b85ffcefa"
+    }
+  ]
+}
