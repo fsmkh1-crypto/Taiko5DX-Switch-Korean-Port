@@ -15,6 +15,7 @@ Current executable authorities:
 - reproducibility verification: `final_product_v1/FINAL_PRODUCT_REPRO_VERIFICATION.json`
 - current known failures: `final_product_v1/KNOWN_FAILURES.json`
 - implementation report: `FINAL_PRODUCT_CANONICAL_REPRODUCTION_IMPLEMENTATION_20260926.md`
+- active polish roadmap: `advanced_polish/ADVANCED_POLISH_ROADMAP_20260926.md`
 
 Do not resume from the historical V371 54/169 checkpoint unless the user explicitly opens that historical EVENT scope.
 
@@ -76,9 +77,21 @@ This does not claim V371 completion and does not delete its evidence.
 
 ## 6. Next scope
 
-For the current tested product: **none required**.
+The canonical runtime-pass product remains complete and immutable. The active optional quality track is:
 
-Optional after a fresh explicit user signal only:
+`ADVANCED_POLISH_CONTINUE_FROM_ROADMAP`
+
+Authority:
+
+`advanced_polish/ADVANCED_POLISH_ROADMAP_20260926.md`
+
+Current continuation point:
+
+`FONT_A_RUNTIME_VALIDATION_AWAIT_USER_OBSERVATION`
+
+Font A is diagnostic-only and not promoted. After runtime closure, proceed low-risk-first through dialogue quality, untranslated text, names/places excluding world map, terminology, speech-register polish, then world-map labels and broad runtime QA.
+
+Separate maintenance option:
 
 `CANONICAL_RELEASE_METADATA_REFRESH_AND_RUNTIME_RETEST`
 
