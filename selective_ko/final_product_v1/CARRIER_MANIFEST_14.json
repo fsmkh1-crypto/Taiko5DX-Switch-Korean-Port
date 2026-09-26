@@ -1,0 +1,80 @@
+{
+  "schema": "TAIKO5DX_FINAL_CARRIER_MANIFEST_V1",
+  "date": "2026-09-26",
+  "files": [
+    {
+      "path": "romfs/EVENT/ECF00000.TS5",
+      "bytes": 1119288,
+      "sha256": "1332c037abb44a97f996a1046d4372675428ee2294857b269cb60345bde22c7b"
+    },
+    {
+      "path": "romfs/EVENT/EFF00E00.TS5",
+      "bytes": 13612,
+      "sha256": "e72cba217af5210e4681ac651833fcad94622fd21ea3162a28fc564460388d41"
+    },
+    {
+      "path": "romfs/EVENT/EFF0A700.TS5",
+      "bytes": 7048,
+      "sha256": "ce6264f71051e08be98f7c6e4c890c5fb6f566671259062db4e19d18fb77ae4a"
+    },
+    {
+      "path": "romfs/EVENT/EFF0C300.TS5",
+      "bytes": 334764,
+      "sha256": "e1f4a5aaed8ab015c57e76ab5105b49b2c23d5b1f4673f9d9daa0d5a5491f257"
+    },
+    {
+      "path": "romfs/EVENT/EFF16700.TS5",
+      "bytes": 59748,
+      "sha256": "24460e9aced66bda3a8a3542ea5dd16b611e50838082815e4775b2e57f4151f7"
+    },
+    {
+      "path": "romfs/EVENT/EFF20500.TS5",
+      "bytes": 75820,
+      "sha256": "8d5ef717b614ccc72a3fa1b7176266801f031c961483add8d9135efd6e6a4045"
+    },
+    {
+      "path": "romfs/EVENT/EP124B00.TS5",
+      "bytes": 183644,
+      "sha256": "ae057b4499d46b195f170b33ffd724e73bbf584af1765f661033ebcd71afb5ef"
+    },
+    {
+      "path": "romfs/EVENT/EP12E400.TS5",
+      "bytes": 21820,
+      "sha256": "a6d7b3b233480065aea0ee0bed1a184d05f4cff98db4dde1b190acd163181852"
+    },
+    {
+      "path": "romfs/EVENT/EP12F400.TS5",
+      "bytes": 26692,
+      "sha256": "935b3358271be4c082f0798355130ef111fa339ab7fcc3a82d7b1263c2c50463"
+    },
+    {
+      "path": "romfs/EVENT/EP40CB00.TS5",
+      "bytes": 3372,
+      "sha256": "7d58bcb76e9c511b2daee3ca5d0c64545a0639b672eef1deaef0eec7a2d17d12"
+    },
+    {
+      "path": "romfs/EVENT/EPF00E00.TS5",
+      "bytes": 48468,
+      "sha256": "a8d8964330ed03e64239dfcb39123f73cd79f6397c8faba8dca76c17eb8b2632"
+    },
+    {
+      "path": "romfs/EVENT/EPF20500.TS5",
+      "bytes": 74656,
+      "sha256": "d892fe9fe347159e693224bd36ee69b6d8bb778d84c6a239fc092a04c97d1655"
+    },
+    {
+      "path": "romfs/EVENT/EPF2E000.TS5",
+      "bytes": 12344,
+      "sha256": "c55c7c727cd59ffb59e81581d237144855ae16dadadd1c88fecfaba2dc32d07a"
+    },
+    {
+      "path": "romfs/FONT/FONT_JPN.G1T",
+      "bytes": 16779036,
+      "sha256": "c82d80dada61ce80db42f948eafd3eb5b8f3bed5725ceebbc1c0897246166932"
+    }
+  ],
+  "count": 14,
+  "event_files": 13,
+  "font_files": 1,
+  "runtime_reference_zip_sha256": "cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91"
+}

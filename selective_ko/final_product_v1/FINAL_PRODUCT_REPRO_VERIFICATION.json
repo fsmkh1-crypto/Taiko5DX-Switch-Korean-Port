@@ -1,0 +1,79 @@
+{
+  "schema": "TAIKO5DX_FINAL_PRODUCT_CANONICAL_REPRODUCTION_VERIFICATION_V1",
+  "date": "2026-09-26",
+  "status": "PASS",
+  "repository_head": "0d3b90b92da069c928a4539c319b43383dfb123f",
+  "implementation": {
+    "builder": "builder/final_product_candidate.py",
+    "test": "tests/final_product_repro_check.py",
+    "git_write": false
+  },
+  "inputs": {
+    "baseline_tai": {
+      "bytes": 2137993,
+      "sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f",
+      "records": 14832
+    },
+    "baseline_ips": {
+      "bytes": 2742,
+      "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4",
+      "records": 5
+    },
+    "main": {
+      "bytes": 5287359,
+      "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+    }
+  },
+  "rootcause223": {
+    "bytes": 2276425,
+    "records": 16153,
+    "sha256": "8c9a70575258fad362c0197c8b59190fd332843195f35e185894ee34fe6547b1",
+    "independent_readback": "16153/16153"
+  },
+  "b23": {
+    "rows": 617,
+    "reflow": 462,
+    "preserve": 155,
+    "edit_bytes": 1844,
+    "space_to_lf": 1179,
+    "lf_to_space": 665,
+    "other_changes": 0,
+    "target_over32": 0
+  },
+  "final_tai": {
+    "bytes": 2276425,
+    "records": 16153,
+    "sha256": "1b44170a817e047ba942ba10e46571049ff7405c7fac4278c3e1598089efd61e",
+    "independent_readback": "16153/16153"
+  },
+  "final_ips": {
+    "bytes": 2999,
+    "records": 18,
+    "sha256": "28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae",
+    "mapped_preimages": "13/13",
+    "rejected_sha_not_emitted": true
+  },
+  "determinism": {
+    "clean_builds": 2,
+    "tai_byte_exact": true,
+    "ips_byte_exact": true
+  },
+  "runtime_reference": {
+    "zip_sha256": "cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91",
+    "tai_byte_exact": true,
+    "ips_byte_exact": true,
+    "carrier_files_byte_exact": "14/14"
+  },
+  "negative_tests": {
+    "baseline_tai_identity": "PASS",
+    "main_identity": "PASS",
+    "plan_index_tamper": "PASS"
+  },
+  "scope_boundary": {
+    "event_mutation": false,
+    "font_mutation": false,
+    "install_zip_built": false,
+    "runtime_executed": false,
+    "git_write": false
+  }
+}

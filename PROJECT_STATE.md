@@ -1,75 +1,96 @@
 # PROJECT_STATE
 
-Last updated: 2026-09-23 (KST)
+Last updated: 2026-09-26 (KST)
 
 This file is the sole repository-level project-resume authority.
 
-Current exact scope remains the V371 active-request / 169-file offline validation.
-A canonical partial checkpoint now records 54/169 actual Switch replays and all 80 frozen final-responsibility units observed.
-Implementation commit remains `59e12802f402ea06c3331c16b32c2cbb9216e900`; product milestone remains **V369_UNCHANGED**.
+## Active product
 
-<!-- PROJECT_RESUME_V2
-{"schema":"PROJECT_RESUME_V2","scope_id":"V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION","scope_kind":"REPOSITORY_WRITE","checkpoint_kind":"ACTIVE_REQUEST_PARTIAL_54_FILE_REPLAY_AND_80_UNIT_LATE_FAILURE_PROBES","status":"V371_ACTIVE_REQUEST_PARTIAL_54_OF_169_AWAIT_REMAINING_115_AND_LEGACY_ECF_CONNECTION","last_closed_validation_id":"V371","last_closed_stage_commit":"736f8b56ae641e847315f8e3735ad958f9538870","canonical_base_commit":"736f8b56ae641e847315f8e3735ad958f9538870","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"schema_freeze_status":"FROZEN_FZ001","schema_freeze_declaration_id":"FZ001","schema_freeze_declaration":"data/pilot/f1_v1_candidate/schema_freeze_declaration.json","schema_freeze_declaration_git_blob_sha":"6c726b7d004753e2f49f63640bd4f6df343dd736","schema_freeze_basis_validation_id":"V107","schema_freeze_basis_ci_run_id":34691523117,"schema_freeze_basis_head":"ed0e4f2ffe8f9e1c646b96078a5c37ca57f8afea","active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","current_checkpoint_authority":"selective_ko/EVENT_169_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_CHECKPOINT_V371.md","current_artifact_index":"selective_ko/artifacts/event_169_active_request_partial_54_v1/INDEX.json","current_failure_authority":"selective_ko/artifacts/event_169_active_request_partial_54_v1/KNOWN_FAILURES.json","validation_index":"selective_ko/VALIDATION_INDEX.json","historical_dependency_catalog":"selective_ko/RESUME_HISTORY_INDEX.json","failure_discovery_index":"selective_ko/KNOWN_FAILURES_INDEX.json","priority_next_scope":"AWAIT_EXPLICIT_CONTINUE_V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION","priority_next_focus":"AWAIT_COMPOSITION_222_RUNTIME_OBSERVATIONS","exact_next_scope":"V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION","active_read_budget_max":12,"required_reads":["selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/VALIDATION_INDEX.json","selective_ko/EVENT_169_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_CHECKPOINT_V371.md","selective_ko/artifacts/event_169_active_request_partial_54_v1/INDEX.json","selective_ko/artifacts/event_169_active_request_partial_54_v1/KNOWN_FAILURES.json","selective_ko/BOUNDED_RESUME_READ_POLICY.md","docs/GITHUB_AND_CI_POLICY.md","selective_ko/diagnostics/composition_222/INDEX.json"],"v369_product_authority":"selective_ko/EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md","event_169_source_owner_universe":66987,"event_169_recipe_coverage":52491,"event_169_structural_fields":24305,"event_169_final_write_responsibility_units":80,"actual_source_files_replayed":54,"actual_source_files_remaining":115,"actual_file_local_passed":54,"actual_owner_identities":45669,"actual_recipe_views":35913,"actual_field_policies_satisfied":18010,"actual_final_responsibility_units_observed":80,"relation_receipts_satisfied":130,"support_receipts_satisfied":5,"late_final_fault_probes_passed":80,"obligations_satisfied":3163,"obligations_not_observed":2105,"source_identity_provenance_holds":60,"source_identity_hold_byte_matches_this_scope":8,"candidate_event_files_emitted":0,"product_milestone":"V369_UNCHANGED","runtime_hook_required":false,"supplemental_diagnostic_authority":"selective_ko/diagnostics/composition_222/INDEX.json","supplemental_diagnostic_status":"PACKAGE_AND_STORAGE_VERIFIED_RUNTIME_NOT_RUN","supplemental_builder_source_commit":"b9c834874c82ce7475e0022ac04d592977c0feb9"}
-PROJECT_RESUME_V2 -->
+Status: `FINAL_PRODUCT_CANONICAL_REPRODUCTION_ADOPTED / USER_RUNTIME_OBSERVED_PASS`
 
-## Current partial checkpoint
+Target:
+
+- TitleID `0100346017304000`
+- Nintendo Switch v1.1.3
+- Build ID `D9120950C258610A746F4A31CE3A3B376DE393D9`
+
+Canonical final payload identities:
 
 ```text
-declared EVENT requests                    169
-actual Switch replay                       54 / 169 PASS
-remaining Switch replay                   115
-owners observed                        45,669 / 66,987
-recipe views observed                  35,913 / 52,491
-field policies satisfied              18,010 / 24,305
-frozen final-responsibility units          80 / 80 observed
-relation / support receipts              130 / 5 satisfied
-late final-responsibility discard probes   80 / 80 PASS
-obligations satisfied / not observed     3,163 / 2,105
-candidate EVENT files emitted                0
+TAI5MSG_JP.DAT
+  bytes   2,276,425
+  records 16,153
+  sha256  1b44170a817e047ba942ba10e46571049ff7405c7fac4278c3e1598089efd61e
+
+BuildID IPS
+  bytes   2,999
+  records 18
+  sha256  28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae
 ```
 
-This is not 169-file candidate acceptance. The 54 file-local passes are structural/offline observations under the currently connected payload profile; several pre-existing ECF overlays are still not connected.
+The final builder reproduces those bytes from the Diagnostic218 TAI5MSG, inherited 5-record IPS, exact Switch v1.1.3 `main`, and frozen plans in `selective_ko/final_product_v1/`.
 
-## Preserved authority and boundaries
+The user-observed runtime-pass reference ZIP is preserved as a large artifact:
 
-V366-V369 membership, semantic admission, applicability/overlap topology, FZ001, role-aware field authority, H01, CONTACT and final-table writer rules remain unchanged.
-The source-identity provenance hold remains 60; eight held files matched their prior observed length/SHA in this partial replay, but no hold is released.
-TAI5MSG, VAL01, IPS/package, Eden and Switch runtime remain later separately authorized stages.
+- SHA-256 `cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91`
+- Google Drive ID `1yCgjdWKQUTpwEfLll_Y29ztKG96EkXv2`
 
-## Remote preservation
+Implementation/proof archive:
 
-Large evidence is stored in Google Drive `GPT/태합입지전 프로젝트/CODEX`.
-Archive ID `1_2ndn8EbetZa-6qGSvN3fMWkFp7et01Z`, bytes 37,986,692, SHA-256 `4322d6eca20dd2888e619c4cbfc98be98afd2cce323d4d65126ceb39f8d8e46f`.
-Compact Drive IDs and exact counts are pinned in the current artifact index.
+- Google Drive ID `1jiFlitnhVpH0KOBcONfGG6zgcpaXsDme`
+- source implementation evidence was verified before this Git adoption.
 
-## Exact next scope
+<!-- PROJECT_RESUME_V2
+{"schema":"PROJECT_RESUME_V2","scope_id":"FINAL_PRODUCT_CANONICAL_REPRODUCTION_V1","scope_kind":"CANONICAL_PRODUCT","status":"ADOPTED_USER_RUNTIME_OBSERVED_PASS","repository_write_mode":"GIT_OBJECT_ONLY_WRITE_MODE","repository_write_allowed_actions":["create_blob","create_tree","create_commit","update_ref"],"repository_update_ref_force":false,"active_product_track":"SWITCH_SELECTIVE_KOREANIZATION","selective_subtree_resume_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","exact_next_scope_authority":"selective_ko/SELECTIVE_PROJECT_STATE.md","current_builder":"builder/final_product_candidate.py","current_plan_index":"selective_ko/final_product_v1/INDEX.json","current_verification":"selective_ko/final_product_v1/FINAL_PRODUCT_REPRO_VERIFICATION.json","current_failure_authority":"selective_ko/final_product_v1/KNOWN_FAILURES.json","runtime_reference_zip_sha256":"cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91","runtime_reference_drive_id":"1yCgjdWKQUTpwEfLll_Y29ztKG96EkXv2","rootcause223_tai_sha256":"8c9a70575258fad362c0197c8b59190fd332843195f35e185894ee34fe6547b1","final_tai_sha256":"1b44170a817e047ba942ba10e46571049ff7405c7fac4278c3e1598089efd61e","final_ips_sha256":"28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae","defective_ips_do_not_use":"dadb49f92fd66313145620194b05c108373f780f566bd5ba433f045e8acef7ec","v371_event_disposition":"HISTORICAL_NOT_PROMOTED_SUPERSEDED_FOR_CURRENT_PRODUCT","priority_next_scope":"NONE_REQUIRED_FOR_CURRENT_RUNTIME_PRODUCT","optional_next_scope":"CANONICAL_RELEASE_METADATA_REFRESH_AND_RUNTIME_RETEST","required_reads":["selective_ko/SELECTIVE_PROJECT_STATE.md","selective_ko/final_product_v1/INDEX.json","selective_ko/final_product_v1/FINAL_PRODUCT_REPRO_VERIFICATION.json","selective_ko/final_product_v1/KNOWN_FAILURES.json"],"active_read_budget_max":8}
+PROJECT_RESUME_V2 -->
 
-After a fresh explicit user execution signal only, continue the same scope:
+## Provenance closure
 
-`V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION`
+Final RootCause223 lowering is fully accounted:
 
-First connect the already-authorized legacy ECF overlays, then replay the remaining 115 Switch inputs. Do not reopen frozen role/rule/semantic censuses.
-Git writes remain `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.
+```text
+196 layer       120 rewritten callers + 4 exact no-op sites + 628 helpers
+699 layer       699/699 source preimages; 367 sites -> B18 views; 332 preserve original helper
+B18             693/693 helpers reachable from 77 entry roots; orphan 0
+combined        430 changed baseline caller messages / 1,321 appended helpers
+unaccounted     0 callers / 0 helpers
+```
 
+B23 Switch reflow is a final independent TAI stage:
 
-## Current supplemental diagnostic stage — 2026-09-23
+```text
+B23 messages     617
+reflowed         462
+preserved        155
+whitespace edits 1,844
+non-whitespace   0
+over-32 residual 0
+```
 
-The user authorized exact source freeze and diagnostic ZIP generation for caller-local 217. Resume this bounded stage through `selective_ko/diagnostics/caller_local_217/INDEX.json`. The preceding 54/169 checkpoint and pending statements describe the earlier payload profile, not this supplemental stage. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain in force. Runtime has not been authorized or run.
+## V371 disposition
 
-### Supplemental diagnostic stage result
+The historical V371 EVENT replay remains technically partial (54/169 replayed, 115 unreplayed), but it is **not promoted into the current product** and is **not a blocker** for the current runtime-pass carrier.
 
-Source commit `78accba33eb39d7fbb944f462515282d1b47d3dc` was published before generation. The bounded diagnostic ZIP now contains 13 EVENT files and 17 total members; 217 transformed boundaries and 139 owner readbacks were verified. Package SHA-256 `43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe`. Drive file `1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt` was downloaded again and matched exactly. Build/report pointers are in `selective_ko/diagnostics/caller_local_217/INDEX.json`. The earlier zero-emission figures apply only to the historical checkpoint. Product state remains V369_UNCHANGED; V371 is PARTIAL_BLOCKED. Runtime NOT_RUN; installed game/main identity unverified. Stop after this stage; wait for a new user instruction before runtime or additional implementation.
+Preserve V371 artifacts and history. Do not report V371 as 169/169 complete. Resume it only under a new explicit historical/research scope.
 
-## Supplemental message coverage diagnostic 218
+## Known failure boundaries
 
-The user authorized continued implementation through a new installable diagnostic. Resume this experiment through `selective_ko/diagnostics/message_coverage_218/INDEX.json`. It targets 10,220 omitted PC message programs after target-VM field/control checks and explicit C/J hold propagation; 152 records remain held. The 3,227 reviewed baseline messages and existing EVENT/font/IPS bytes are preserved. This is a diagnostic experiment, not semantic release admission. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain. Source freeze precedes game-file emission.
+- `dadb49f9...` Buffer8 IPS is a confirmed startup-freeze artifact and is **DO NOT USE**.
+- changing the proven top-level mod folder created a patch-loading failure during B23 packaging; do not repeat that packaging shortcut.
+- the known-working runtime reference ZIP intentionally retains stale pre-B23 package-info metadata; do not rewrite it in place.
 
-### Diagnostic 218 delivery result
+Detailed current authority: `selective_ko/final_product_v1/KNOWN_FAILURES.json`.
 
-The source-frozen ZIP was generated after commit `9a5d28af420c7e1cfc329ec0971abe16e7978508`. It contains 10,220 additional exact PC message programs, with 152 explicit holds, and preserves 3,227 reviewed baseline messages. All 14,832 stored message payloads/offsets passed independent loader-level readback; 17 ZIP members passed integrity checks. Drive file `1_N515MlNCrmlBmxkoIKaTjEIjcIO_-pb`, SHA-256 `4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70`, was downloaded again and matched. Exact main input and inherited IPS guards were verified, but installed game identity and runtime remain unverified. Source CI governance run 35860132924 succeeded; this is not product validation. See the supplemental build report for the full evidence archive and transport record. V369_UNCHANGED; V371_PARTIAL_BLOCKED; semantic release admissions zero. Await user runtime observations or a fresh next-scope instruction.
+## Current next scope
 
-## Supplemental composition diagnostic 222
+No implementation, EVENT, grammar, or runtime blocker is open for the current tested product.
 
-Source commit `b9c834874c82ce7475e0022ac04d592977c0feb9` preceded generation. Provenance report commit `4a8f6ddf6c09025b9fc6180fbc98db6e6d4b3445` binds the installable ZIP to its exact builder and inputs. Resume via `selective_ko/diagnostics/composition_222/INDEX.json`. Eighteen original message programs change and forty dedicated helpers are appended; all 14,872 stored payloads were checked with an independent reader. Original B0 programs and fifteen prerequisite product files remain unchanged. This separate expanded-count diagnostic does not change the canonical serializer or the 14,832 original source identities.
+Optional only, after a fresh explicit user signal:
 
-Drive package `16BB4WUBGwQO62khsyp6NfovAoAeA2yRo`, SHA-256 `dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e`, was downloaded again and matched. Evidence archive `1QYLW4ojnazDGiKk7-z_VQGq7Q3e1gxlw`, SHA-256 `abb440f5ad12f38937776d828ee7bf31553c2eac1125a45a056ae6a20f2a245b`, contains the record ledger and frozen sources. Runtime NOT_RUN; expanded-profile loading and installed identity unverified. Eight dynamic terminal records and one empty fallback retain original suffix behavior. V369_UNCHANGED; V371_PARTIAL_BLOCKED; zero semantic release admissions. All independent prior holds remain open. Await user observations for this exact artifact or a new next-scope instruction.
+`CANONICAL_RELEASE_METADATA_REFRESH_AND_RUNTIME_RETEST`
+
+That optional scope may generate a metadata-corrected distribution package, but the immutable runtime-pass reference must remain preserved.
+
+Git writes remain restricted to:
+
+`create_blob -> create_tree -> create_commit -> update_ref(force=false)`.

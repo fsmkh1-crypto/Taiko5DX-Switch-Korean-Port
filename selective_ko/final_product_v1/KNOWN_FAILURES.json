@@ -1,0 +1,29 @@
+{
+  "schema": "TAIKO5DX_FINAL_PRODUCT_KNOWN_FAILURES_V1",
+  "date": "2026-09-26",
+  "failures": [
+    {
+      "id": "BUFFER8_IPS_MAPPED_EMITTED_DOMAIN_MISMATCH",
+      "status": "CONFIRMED_CLOSED_DO_NOT_REPEAT",
+      "defective_ips_sha256": "dadb49f92fd66313145620194b05c108373f780f566bd5ba433f045e8acef7ec",
+      "correct_ips_sha256": "28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae",
+      "cause": "13 new Buffer8 records used mapped NSO offsets as emitted IPS offsets; all required emitted=mapped+0x100.",
+      "effect": "12 RELA r_offset fields were corrupted 0x100 before the intended r_addend targets, producing startup freeze.",
+      "guard": "Final builder requires explicit mapped_offset/emitted_offset fields, verifies emitted=mapped+0x100, expands exact Switch main and validates 13 mapped preimages before emission."
+    },
+    {
+      "id": "INSTALL_PACKAGE_ROOT_FOLDER_RENAME",
+      "status": "CONFIRMED_RUNTIME_PACKAGING_FAILURE_DO_NOT_REPEAT",
+      "cause": "A B23 install ZIP changed the proven-working top-level mod folder name, creating a separate/unselected mod identity in the tested Eden workflow.",
+      "effect": "Korean patch payload was not loaded and the game appeared entirely Japanese.",
+      "guard": "Known-working runtime reference keeps the proven root folder name. A future release package may change metadata only after its own explicit runtime validation."
+    },
+    {
+      "id": "RUNTIME_REFERENCE_STALE_PACKAGE_METADATA",
+      "status": "KNOWN_NON_RUNTIME_METADATA_LIMITATION",
+      "runtime_reference_zip_sha256": "cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91",
+      "detail": "SELECTIVE_PACKAGE_INFO.json inside the immutable runtime-pass reference still describes the pre-B23 TAI and NOT_RUN runtime state.",
+      "guard": "Treat the ZIP as immutable runtime evidence, not canonical release metadata. Metadata refresh is a separate optional package+runtime scope."
+    }
+  ]
+}

@@ -1,87 +1,85 @@
 # SELECTIVE PROJECT STATE
 
-Date: 2026-09-23 (KST)
-Status: V371 ACTIVE REQUEST PARTIAL / 54 OF 169 FILE REPLAY PASS / 80 OF 80 FINAL-RESPONSIBILITY UNITS OBSERVED / CANDIDATE NOT EMITTED
+Date: 2026-09-26 (KST)
+Status: `FINAL PRODUCT V1 CANONICAL REPRODUCTION / USER RUNTIME OBSERVED PASS`
 Track: `SWITCH_SELECTIVE_KOREANIZATION`
 
 ## 1. Resume authority
 
-Repository: `fsmkh1-crypto/Taiko5DX-Switch-Korean-Port`, branch `main`.
 Repository-level authority: `../PROJECT_STATE.md`.
-Current checkpoint: `EVENT_169_ACTIVE_REQUEST_PARTIAL_54_FILES_80_UNITS_CHECKPOINT_V371.md`.
-Current artifact index: `artifacts/event_169_active_request_partial_54_v1/INDEX.json`.
-Current failures: `artifacts/event_169_active_request_partial_54_v1/KNOWN_FAILURES.json`.
-Implementation commit remains `59e12802f402ea06c3331c16b32c2cbb9216e900`.
-Product authority remains `EVENT_169_APPLICABILITY_AND_OVERLAP_CANONICALIZATION_V369.md`.
 
-## 2. Frozen product state
+Current executable authorities:
 
-```text
-source-owner universe                    66,987
-INCLUDE_KO recipe coverage               52,491
-role-aware structural fields             24,305
-final write-responsibility units             80
-candidate EVENT output                        0
-runtime_hook_required                     false
-product_milestone                  V369_UNCHANGED
-```
+- builder: `../builder/final_product_candidate.py`
+- frozen plans: `final_product_v1/INDEX.json`
+- reproducibility verification: `final_product_v1/FINAL_PRODUCT_REPRO_VERIFICATION.json`
+- current known failures: `final_product_v1/KNOWN_FAILURES.json`
+- implementation report: `FINAL_PRODUCT_CANONICAL_REPRODUCTION_IMPLEMENTATION_20260926.md`
 
-No role/rule census or final-byte field discovery was reopened.
+Do not resume from the historical V371 54/169 checkpoint unless the user explicitly opens that historical EVENT scope.
 
-## 3. Partial active-request results
+## 2. Active payload
 
 ```text
-actual Switch files replayed              54 / 169
-file-local PASS                           54 / 54
-remaining files                              115
-owner identities observed                   45,669
-recipe views observed                       35,913
-field policies satisfied                    18,010
-field writer / no-writer                    17,994 / 16
-final-responsibility units observed             80 / 80
-relation / support receipts                    130 / 5
-late final fault discard probes                  80 / 80
-obligations SAT / NOT_OBSERVED              3,163 / 2,105
+RootCause223 pre-B23 TAI   8c9a70575258fad362c0197c8b59190fd332843195f35e185894ee34fe6547b1
+Final B23 TAI              1b44170a817e047ba942ba10e46571049ff7405c7fac4278c3e1598089efd61e
+Corrected IPS               28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae
+Final records               16,153
+EVENT carrier               13 files, preserved
+FONT carrier                1 file, preserved
+Runtime reference ZIP       cfd14031bab300929a9926bae9bb82bf28f21a9d417aee50ca527b88df873c91
 ```
 
-All observed file assemblies had zero unassigned/multiply-assigned/conflicting bytes and FINAL_TABLE as last writer.
-The 80/80 fault-probe result covers late final-responsibility corruption only; it is not full-product atomic acceptance.
+Runtime reference Google Drive ID: `1yCgjdWKQUTpwEfLll_Y29ztKG96EkXv2`.
 
-## 4. Pending work
+Observed runtime result: Korean loading restored and B23 card descriptions reported normal in the tested user scope.
 
-Legacy ECF overlays still to connect: direct-escape 350 rows, lexical 12 rows, derived/mixed 61 rows, non-particle suffix 3 rows.
-The remaining 115 Switch inputs are not replayed. 21,318 owners, 16,578 recipe views and 6,295 field-policy rows remain unobserved in actual replay.
-TAI5MSG 5 roots / 19 references, VAL01, IPS/package and runtime remain outside this partial checkpoint.
+## 3. Reproducibility closure
 
-Source-identity provenance holds remain 60 with zero releases; eight held files matched prior observed byte identity in this scope.
+The additive final builder leaves the historical 15,460-record product-lowering builder untouched.
 
-## 5. Exact next scope
+Verified from fresh inputs:
 
-After a fresh explicit user execution signal, continue only:
+- Diagnostic218 -> RootCause223 TAI SHA exact
+- RootCause223 -> B23 final TAI SHA exact
+- exact Switch NSO mapped preimages 13/13 before Buffer8 IPS emission
+- final IPS SHA exact
+- independent TAI readback 16,153/16,153
+- two clean builds byte-exact
+- builder TAI/IPS equal the user-observed runtime-pass ZIP payloads
+- carrier EVENT/FONT 14/14 byte-exact
+- negative identity/tamper tests 3/3 fail closed
 
-`V371_ACTIVE_REQUEST_CONNECTION_AND_169_FILE_CANDIDATE_OFFLINE_VALIDATION`
+## 4. Historical V371
 
-Reuse the current adapter and frozen authorities. Connect existing legacy ECF evidence before the remaining 115-file replay; do not start another role/rule census.
+V371 EVENT is retained as historical partial work:
 
+```text
+actual replay 54 / 169
+remaining     115
+promotion     NO
+current product blocker NO
+```
 
-## Current supplemental diagnostic stage — 2026-09-23
+Disposition: `HISTORICAL_NOT_PROMOTED_SUPERSEDED_FOR_CURRENT_PRODUCT`.
 
-The user authorized exact source freeze and diagnostic ZIP generation for caller-local 217. Resume this bounded stage through `selective_ko/diagnostics/caller_local_217/INDEX.json`. The preceding 54/169 checkpoint and pending statements describe the earlier payload profile, not this supplemental stage. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain in force. Runtime has not been authorized or run.
+This does not claim V371 completion and does not delete its evidence.
 
-### Supplemental diagnostic stage result
+## 5. Do-not-repeat
 
-Source commit `78accba33eb39d7fbb944f462515282d1b47d3dc` was published before generation. The bounded diagnostic ZIP now contains 13 EVENT files and 17 total members; 217 transformed boundaries and 139 owner readbacks were verified. Package SHA-256 `43894d52f3e5498ea3c5f2c7e0597f6f29ea24f40be6afd03d29d0b4e021cefe`. Drive file `1u0aD5jjWCTvfh9YxrvC639wQffp5DaIt` was downloaded again and matched exactly. Build/report pointers are in `selective_ko/diagnostics/caller_local_217/INDEX.json`. The earlier zero-emission figures apply only to the historical checkpoint. Product state remains V369_UNCHANGED; V371 is PARTIAL_BLOCKED. Runtime NOT_RUN; installed game/main identity unverified. Stop after this stage; wait for a new user instruction before runtime or additional implementation.
+- Never accept IPS `dadb49f92fd66313145620194b05c108373f780f566bd5ba433f045e8acef7ec`.
+- Buffer8 plan coordinates must remain typed `mapped_offset` and `emitted_offset`; `emitted = mapped + 0x100`.
+- IPS readback alone is not target proof; the exact Switch `main` mapped preimages must pass.
+- Do not rename the known-working mod root and assume activation is preserved.
+- Do not overwrite the immutable runtime-pass reference merely to correct its stale metadata.
+- Do not reopen B24, RootCause223, the 699/196 language contracts, or V366-V369 merely because this is a new session.
 
-## Supplemental message coverage diagnostic 218
+## 6. Next scope
 
-The user authorized continued implementation through a new installable diagnostic. Resume this experiment through `selective_ko/diagnostics/message_coverage_218/INDEX.json`. It targets 10,220 omitted PC message programs after target-VM field/control checks and explicit C/J hold propagation; 152 records remain held. The 3,227 reviewed baseline messages and existing EVENT/font/IPS bytes are preserved. This is a diagnostic experiment, not semantic release admission. V369_UNCHANGED and V371_PARTIAL_BLOCKED remain. Source freeze precedes game-file emission.
+For the current tested product: **none required**.
 
-### Diagnostic 218 delivery result
+Optional after a fresh explicit user signal only:
 
-The source-frozen ZIP was generated after commit `9a5d28af420c7e1cfc329ec0971abe16e7978508`. It contains 10,220 additional exact PC message programs, with 152 explicit holds, and preserves 3,227 reviewed baseline messages. All 14,832 stored message payloads/offsets passed independent loader-level readback; 17 ZIP members passed integrity checks. Drive file `1_N515MlNCrmlBmxkoIKaTjEIjcIO_-pb`, SHA-256 `4d1dcb177f27f4632307d457da0058ea57075762f2b7035afe5c978b77031a70`, was downloaded again and matched. Exact main input and inherited IPS guards were verified, but installed game identity and runtime remain unverified. Source CI governance run 35860132924 succeeded; this is not product validation. See the supplemental build report for the full evidence archive and transport record. V369_UNCHANGED; V371_PARTIAL_BLOCKED; semantic release admissions zero. Await user runtime observations or a fresh next-scope instruction.
+`CANONICAL_RELEASE_METADATA_REFRESH_AND_RUNTIME_RETEST`
 
-## Supplemental composition diagnostic 222
-
-Source commit `b9c834874c82ce7475e0022ac04d592977c0feb9` preceded generation. Provenance report commit `4a8f6ddf6c09025b9fc6180fbc98db6e6d4b3445` binds the installable ZIP to its exact builder and inputs. Resume via `selective_ko/diagnostics/composition_222/INDEX.json`. Eighteen original message programs change and forty dedicated helpers are appended; all 14,872 stored payloads were checked with an independent reader. Original B0 programs and fifteen prerequisite product files remain unchanged. This separate expanded-count diagnostic does not change the canonical serializer or the 14,832 original source identities.
-
-Drive package `16BB4WUBGwQO62khsyp6NfovAoAeA2yRo`, SHA-256 `dd1c23ca42cdf39ff65390b81b9fb3cbc36f386cd2896a140aadd1639cbbb42e`, was downloaded again and matched. Evidence archive `1QYLW4ojnazDGiKk7-z_VQGq7Q3e1gxlw`, SHA-256 `abb440f5ad12f38937776d828ee7bf31553c2eac1125a45a056ae6a20f2a245b`, contains the record ledger and frozen sources. Runtime NOT_RUN; expanded-profile loading and installed identity unverified. Eight dynamic terminal records and one empty fallback retain original suffix behavior. V369_UNCHANGED; V371_PARTIAL_BLOCKED; zero semantic release admissions. All independent prior holds remain open. Await user observations for this exact artifact or a new next-scope instruction.
+Git writes must use only `create_blob -> create_tree -> create_commit -> update_ref(force=false)`.

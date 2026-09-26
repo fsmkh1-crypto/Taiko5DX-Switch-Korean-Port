@@ -1,0 +1,74 @@
+{
+  "schema": "TAIKO5DX_FINAL_PRODUCT_BUILDER_INPUT_V1",
+  "date": "2026-09-26",
+  "repository_head": "0d3b90b92da069c928a4539c319b43383dfb123f",
+  "baseline_tai": {
+    "bytes": 2137993,
+    "records": 14832,
+    "sha256": "b41edad60a02824c8b3c025f54f9a26a073710c0ae397be8450ec0070e0cdd1f"
+  },
+  "baseline_ips": {
+    "bytes": 2742,
+    "records": 5,
+    "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4"
+  },
+  "main": {
+    "bytes": 5287359,
+    "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+  },
+  "rootcause223_expected": {
+    "bytes": 2276425,
+    "records": 16153,
+    "sha256": "8c9a70575258fad362c0197c8b59190fd332843195f35e185894ee34fe6547b1"
+  },
+  "final_tai_expected": {
+    "bytes": 2276425,
+    "records": 16153,
+    "sha256": "1b44170a817e047ba942ba10e46571049ff7405c7fac4278c3e1598089efd61e"
+  },
+  "final_ips_expected": {
+    "bytes": 2999,
+    "records": 18,
+    "sha256": "28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae"
+  },
+  "counts": {
+    "callers": 430,
+    "helpers": 1321,
+    "b23_rows": 617,
+    "b23_reflow": 462,
+    "carrier": 14
+  },
+  "provenance_gate": "PASS_196_AND_699_NO_UNACCOUNTED_CALLER_OR_HELPER",
+  "files": [
+    {
+      "path": "ROOTCAUSE223_CALLER_BYTES_430.jsonl",
+      "bytes": 883079,
+      "sha256": "2d0c29ff353c0e7090687bcacdf8a829543e29331d2714c0ce3047aa99e6bcbf"
+    },
+    {
+      "path": "ROOTCAUSE223_HELPER_BYTES_1321.jsonl",
+      "bytes": 862678,
+      "sha256": "8f31f98629b348621cc6e8b659573b614498672c17a10a2574e148800a41f39c"
+    },
+    {
+      "path": "B23_REFLOW_MANIFEST_617.jsonl",
+      "bytes": 326511,
+      "sha256": "9e1f24e34fbd54b7a5077de465a355bac1908329b0bcacba04f2f39a55fdd9ad"
+    },
+    {
+      "path": "BUFFER8_IPS_PLAN_V2.json",
+      "bytes": 4784,
+      "sha256": "cced144c65dcf651f9906b6ec986450839e55c46f17e6510c23b7016a88ff51b"
+    },
+    {
+      "path": "CARRIER_MANIFEST_14.json",
+      "bytes": 2495,
+      "sha256": "6f15c668c086a55a9f5dee82e0b2663e55ad0c4273b3274a3aa232004f28919b"
+    },
+    {
+      "path": "PACKAGE_LAYOUT.json",
+      "bytes": 975,
+      "sha256": "e4aa2571aa3a639ce0820b19fd2e7e94dd8b9a4d0b660e4b0210e01aa4965ced"
+    }
+  ]
+}

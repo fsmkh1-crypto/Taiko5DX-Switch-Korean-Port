@@ -1,0 +1,144 @@
+{
+  "schema": "TAIKO5DX_BUFFER8_COORDINATE_TYPED_IPS_PLAN_V2",
+  "date": "2026-09-26",
+  "build_id": "D9120950C258610A746F4A31CE3A3B376DE393D9",
+  "main": {
+    "bytes": 5287359,
+    "sha256": "b366e692208f3c0cc18bc1884ef95689b6b11d722fa2d749b8500abccbc3109b"
+  },
+  "baseline_ips": {
+    "bytes": 2742,
+    "sha256": "6d6989b4d22a12f0bc54e78a45a79944a9aaa0a6523d7d15fc5dc6d3620aaab4",
+    "records": 5
+  },
+  "coordinate_contract": {
+    "input": "MAPPED_NSO_OFFSET",
+    "emission": "CLASSIC_IPS_OFFSET",
+    "formula": "emitted_offset = mapped_offset + 0x100",
+    "readback": "mapped_offset = emitted_offset - 0x100"
+  },
+  "records": [
+    {
+      "record_id": "BUFFER8_POOL",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x9BFA50",
+      "emitted_offset": "0x9BFB50",
+      "preimage_hex": "000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000",
+      "replacement_hex": "f2b3f5e2efddf39c00f267f3a2eb86f2b300ef55f35af196f09100f2e2f0f3f196f09100f2b3f5e2f196f09100f0f1ebc5f3a4f66f00ef55f35aeb4cf74c00f2e2f0f3eb4cf74c00f4b3f6cdf5e9f36e00efcaf0f100f5e9f36e00f196f09100"
+    },
+    {
+      "record_id": "BUFFER8_RELA_01",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F248",
+      "emitted_offset": "0x58F348",
+      "preimage_hex": "bc8b6a0000000000",
+      "replacement_hex": "50fa9b0000000000",
+      "jp": "領土発展"
+    },
+    {
+      "record_id": "BUFFER8_RELA_02",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F2F0",
+      "emitted_offset": "0x58F3F0",
+      "preimage_hex": "fd3e680000000000",
+      "replacement_hex": "59fa9b0000000000",
+      "jp": "安定経営"
+    },
+    {
+      "record_id": "BUFFER8_RELA_03",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F350",
+      "emitted_offset": "0x58F450",
+      "preimage_hex": "f7656a0000000000",
+      "replacement_hex": "62fa9b0000000000",
+      "jp": "里守備"
+    },
+    {
+      "record_id": "BUFFER8_RELA_04",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F398",
+      "emitted_offset": "0x58F498",
+      "preimage_hex": "25dd680000000000",
+      "replacement_hex": "6bfa9b0000000000",
+      "jp": "砦守備"
+    },
+    {
+      "record_id": "BUFFER8_RELA_05",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F260",
+      "emitted_offset": "0x58F360",
+      "preimage_hex": "4a2b680000000000",
+      "replacement_hex": "74fa9b0000000000",
+      "jp": "領土守備"
+    },
+    {
+      "record_id": "BUFFER8_RELA_06",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F308",
+      "emitted_offset": "0x58F408",
+      "preimage_hex": "8050690000000000",
+      "replacement_hex": "7dfa9b0000000000",
+      "jp": "商業圏制覇"
+    },
+    {
+      "record_id": "BUFFER8_RELA_07",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F368",
+      "emitted_offset": "0x58F468",
+      "preimage_hex": "ffb6680000000000",
+      "replacement_hex": "86fa9b0000000000",
+      "jp": "里増強"
+    },
+    {
+      "record_id": "BUFFER8_RELA_08",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F3B0",
+      "emitted_offset": "0x58F4B0",
+      "preimage_hex": "693f690000000000",
+      "replacement_hex": "8ffa9b0000000000",
+      "jp": "砦増強"
+    },
+    {
+      "record_id": "BUFFER8_RELA_09",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58F140",
+      "emitted_offset": "0x58F240",
+      "preimage_hex": "f9516a0000000000",
+      "replacement_hex": "98fa9b0000000000",
+      "jp": "天下統一"
+    },
+    {
+      "record_id": "BUFFER8_RELA_10",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x58D190",
+      "emitted_offset": "0x58D290",
+      "preimage_hex": "daa1680000000000",
+      "replacement_hex": "a1fa9b0000000000",
+      "jp": "不明"
+    },
+    {
+      "record_id": "BUFFER8_RELA_11",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x591870",
+      "emitted_offset": "0x591970",
+      "preimage_hex": "1f7c680000000000",
+      "replacement_hex": "a6fa9b0000000000",
+      "jp": "統一"
+    },
+    {
+      "record_id": "BUFFER8_RELA_12",
+      "coordinate_domain": "MAPPED_NSO",
+      "mapped_offset": "0x591888",
+      "emitted_offset": "0x591988",
+      "preimage_hex": "92dc690000000000",
+      "replacement_hex": "abfa9b0000000000",
+      "jp": "守備"
+    }
+  ],
+  "expected_output": {
+    "bytes": 2999,
+    "records": 18,
+    "sha256": "28c423a0a8e805308f8e935f2a3f5304fe12e3f948ca6468c46dd72a96cdcfae"
+  },
+  "rejected_output_sha256": "dadb49f92fd66313145620194b05c108373f780f566bd5ba433f045e8acef7ec"
+}
